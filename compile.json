@@ -1,0 +1,64 @@
+{
+	"$schema": "https://raw.githubusercontent.com/qooxdoo/qooxdoo-compiler/master/source/resource/qx/tool/schema/compile-1-0-0.json",
+	"targets": [
+		{
+			"type": "source",
+			"outputPath": "compiled/source",
+            "babelOptions": {
+              "targets": "Chrome >= 72, Firefox >= 64, edge >= 18"
+            },
+            "environment": {
+                "qx.buildType": "source"
+            }
+		},
+        {
+            "type": "source",
+            "outputPath": "compiled/source-node",
+            "application-types": [ "node" ],
+            "babelOptions": {
+              "targets": "node >= 11"
+            },
+            "environment": {
+                "qx.buildType": "source"
+            }
+        },
+        {
+            "type": "build",
+            "outputPath": "compiled/build",
+            "babelOptions": {
+              "targets": "Chrome >= 72, Firefox >= 64, edge >= 18"
+            },
+            "environment": {
+                "qx.buildType": "build"
+            }
+        },
+        {
+            "type": "build",
+            "outputPath": "compiled/build-node",
+            "application-types": [ "node" ],
+            "babelOptions": {
+              "targets": "node >= 11"
+            },
+            "environment": {
+                "qx.buildType": "build"
+            }
+        }
+	],
+	"defaultTarget": "source",
+	"locales": [
+		"en"
+	],
+	"environment": {
+		"qx.icontheme": "Tango"
+	},
+	"libraries": [
+	   "."
+	],
+	"applications": [
+        {
+            "class": "qx.test.io.jsonrpc.TestClient",
+            "theme": "qx.theme.Simple",
+            "name": "peerone"
+        }
+	]
+}
