@@ -5,63 +5,21 @@
    http://qooxdoo.org
 
    Copyright:
-     2006 STZ-IDA, Germany, http://www.stz-ida.de
-     2006 Derrell Lipman
+      2020 Christian Boulanger
 
    License:
      MIT: https://opensource.org/licenses/MIT
      See the LICENSE file in the project's top-level directory for details.
 
    Authors:
-     * Andreas Junghans (lucidcake)
-     * Derrell Lipman (derrell)
      * Christian Boulanger (cboulanger)
 
 ************************************************************************ */
 
 /**
- * Provides a Remote Procedure Call (RPC) version 2 implementation.
- * See https://www.jsonrpc.org/specification
- *
- * Each instance of this class represents a "Service". These services can
- * correspond to various concepts on the server side (depending on the
- * programming language/environment being used).
- *
- * When calling a server-side method, the parameters and return values are
- * converted automatically to and from their JSON representation.
- *
- * Server-initiated calls
- *
- * Because of the client-server architecture of HTTP, which we use here, the
- * bidirectional (peer-to-peer), real-time character of JSONRPC v2 cannot
- * be fully implemented. Instead, any server-initiated remote procedure
- * calls "piggy-back" on the responses to  client-initialed calls. If
- * you want to continually listen to server calls, you must use polling
- * or a different implementation. Server calls are only supported by the
- * following API methods: {@link qx.io.remote.Rpc#addRequest}, {@link
- * qx.io.remote.Rpc#addNotification}, and {@link qx.io.remote.Rpc#send}.
- * When they are received, they dispatch the "request" event.
- *
- * JSONRPC v2 batch mode
- *
- * Batched requests and responses are also only supported by
- * {@link qx.io.remote.Rpc#addRequest},
- * {@link qx.io.remote.Rpc#addNotification}, and {@link qx.io.remote.Rpc#send}.
- *
- * Legacy support
- *
- * {@link qx.io.remote.Rpc#callAsync} and {@link
- * qx.io.remote.Rpc#callAsyncListeners} support the JSONRPC v1
- * standard without batch mode, but with support for cross-domain
- * calls via script transport. Note that you cannot mix the
- * two APIs because the JSONRPC ids are computed differently.
- *
- * The implementation also provides legacy support for a
- * non-standard implementation of JSONRPC v1, which is declared
- * deprecated in v6.0.0 and will be removed in v7.0.0.
- *
- * @ignore(qx.core.ServerSettings.*)
-*/
+ * This class provides a JSON-RPC client object with auto-configuration of the
+ * transport used (based on the URI passed)
+ */
 
 qx.Class.define("qx.io.remote.Rpc",
 {
@@ -74,231 +32,29 @@ qx.Class.define("qx.io.remote.Rpc",
   */
 
   /**
-   * @param url {String}
-   *  identifies the url where the service is found.  Note that if the url is
-   *   to
-   *  a domain (server) other than where the qooxdoo script came from, i.e. it
-   *  is cross-domain, then you must also call the setCrossDomain(true) method
-   *   to enable the ScriptTransport instead of the XmlHttpTransport, since the
-   *   latter can not handle cross-domain requests. Alternatively, configure
-   *   your server to support cross-origin requests (see
-   *   https://developer.mozilla.org/de/docs/Web/HTTP/CORS)
-   *
-   * @param serviceName {String}
-   *  identifies the service (dependent on the server implementation).
+   * @param {qx.io.jsonrpc.transport.ITransport|String} transportOrUri
+   *    Transport object or URL for auto-detection of transport
+   * @param {String} serviceName
+   *    Optional service name which will be prepended to the method
    */
-  construct : function(url, serviceName) {
+  construct : function(transportOrUri, serviceName) {
     this.base(arguments);
-
-    if (url !== undefined) {
-      this.setUrl(url);
+    if (!(transportOrUri instanceof qx.io.jsonrpc.transport.ITransport)) {
+      this.assertString(transportOrUri);
+      for (let baseName in qx.io.jsonrpc.transport) {
+        let instance = new qx.io.jsonrpc.transport[baseName](transportOrUri);
+        if (qx.Interface.objectImplements(instance, qx.io.jsonrpc.transport.ITransport)) {
+          if (instance.supportsUriProtocol(transportOrUri)) {
+            transportOrUri = instance;
+          }
+        }
+      }
     }
-
+    this.setTransport(transportOrUri);
     if (serviceName != null) {
       this.setServiceName(serviceName);
     }
-
-    this.__requestQueue = [];
-
-    if (qx.core.ServerSettings) {
-      this.__currentServerSuffix = qx.core.ServerSettings.serverPathSuffix;
-    }
   },
-
-
-
-
-  /*
-  *****************************************************************************
-     EVENTS
-  *****************************************************************************
-  */
-
-  events :
-  {
-    /**
-     * Fired when call is completed
-     */
-    "completed" : "qx.event.type.Event",
-
-    /**
-     * Fired when call aborted.
-     */
-    "aborted" : "qx.event.type.Event",
-
-    /**
-     * Fired when call failed during transport or on the server
-     */
-    "failed" : "qx.event.type.Event",
-
-    /**
-     * Fired when call timed out.
-     */
-    "timeout" : "qx.event.type.Event",
-
-    /**
-     * Fired with the response when the request completed successfully
-     * (addRequest(), addNotification() and send() only)
-     */
-    "success" : "qx.event.type.Data",
-
-    /**
-     * Fired with the error object when the server returns an error object
-     * (addRequest(), addNotification() and send() only)
-     */
-    "error" : "qx.event.type.Data",
-
-    /**
-     * Fired for each jsonrpc request or notification received from the peer
-     * (JSONRPC v2.0) (addRequest(), addNotification() and send() only)
-     */
-    "request" : "qx.event.type.Data"
-  },
-
-
-  /*
-  *****************************************************************************
-     STATICS
-  *****************************************************************************
-  */
-
-  statics :
-  {
-
-    /**
-     * id for JSONRPC v2 requests. Not the same as the sequence number of the
-     * request!
-     * @var Number
-     */
-    __requestId : 0,
-
-
-    /**
-     * Origins of errors
-     * @deprecated since 6.0.0, will be removed in 7.0.0
-     */
-    origin :
-    {
-      server      : 1,
-      application : 2,
-      transport   : 3,
-      local       : 4
-    },
-
-
-    /**
-     *  Locally-detected errors
-     *  @deprecated since 6.0.0, will be removed in 7.0.0
-     */
-    localError :
-    {
-      timeout : 1,
-      abort   : 2,
-      nodata  : 3
-    },
-
-
-    /**
-     * Boolean flag which controls the stringification of date objects.
-     * <code>null</code> for the default behavior, acts like false
-     * <code>true</code> for stringifying dates the old, qooxdoo specific way
-     * <code>false</code> using the native toJSON of date objects.
-     *
-     * When enabled, dates are converted to and parsed from
-     * a literal that complies to the format
-     *
-     * <code>new Date(Date.UTC(year,month,day,hour,min,sec,ms))</code>
-     *
-     * The server can fairly easily parse this in its JSON
-     * implementation by stripping off "new Date(Date.UTC("
-     * from the beginning of the string, and "))" from the
-     * end of the string. What remains is the set of
-     * comma-separated date components, which are also very
-     * easy to parse.
-     *
-     * The work-around compensates for the fact that while the
-     * Date object is a primitive type in Javascript, the
-     * specification neglects to provide a literal form for it.
-     *
-     * This only works if the protocol property is set to "qx1".
-     * @deprecated since 6.0.0, will be removed in 7.0.0
-     */
-    CONVERT_DATES : null,
-
-
-    /**
-     * Boolean flag which controls whether to expect and verify a JSON
-     * response.
-     *
-     * Should be <code>true</code> when backend returns valid JSON.
-     *
-     * Date literals are parsed when CONVERT_DATES is <code>true</code>
-     * and comply to the format
-     *
-     * <code>"new Date(Date.UTC(year,month,day,hour,min,sec,ms))"</code>
-     *
-     * Note the surrounding quotes that encode the literal as string.
-     *
-     * Using valid JSON is recommended, because it allows to use
-     * {@link qx.lang.Json#parse} for parsing. {@link qx.lang.Json#parse}
-     * is preferred over the potentially insecure <code>eval</code>.
-     *
-     * This only works if the protocol property is set to "qx1"
-     * @deprecated since 6.0.0, will be removed in 7.0.0
-     */
-    RESPONSE_JSON : null,
-
-
-    /**
-     * Creates an URL for talking to a local service. A local service is one
-     * that lives in the same application as the page calling the service. For
-     * backends that don't support this auto-generation, this method returns
-     * null.
-     *
-     * @param instanceId {String ? null} an optional identifier for the
-     *  server side instance that should be used. All calls to the same service
-     *  with the same instance id are routed to the same object instance
-     *  on the server. The instance id can also be used to provide additional
-     *  data for the service instantiation on the server.
-     * @return {String} the url.
-     * @deprecated since 6.0.0, will be removed in 7.0.0
-     */
-    makeServerURL : function(instanceId) {
-      var retVal = null;
-
-      // legacy support for non-standard implementation
-      if (qx.core.ServerSettings) {
-        retVal =
-          qx.core.ServerSettings.serverPathPrefix +
-          "/.qxrpc" +
-          qx.core.ServerSettings.serverPathSuffix;
-
-        if (instanceId != null) {
-          retVal += "?instanceId=" + instanceId;
-        }
-      }
-
-      return retVal;
-    },
-
-    /**
-     * Returns the current jsonrpc request id, which is unique among all
-     * instances
-     * @return {number}
-     */
-    getRequestId : function() {
-      return qx.io.remote.Rpc.__requestId;
-    },
-
-    /**
-     * Resets the request id
-     */
-    reset : function() {
-      qx.io.remote.Rpc.__requestId = 0;
-    }
-  },
-
-
 
 
   /*
@@ -309,121 +65,24 @@ qx.Class.define("qx.io.remote.Rpc",
 
   properties :
   {
-    /*
-    ---------------------------------------------------------------------------
-      PROPERTIES
-    ---------------------------------------------------------------------------
-    */
-
-    /** The timeout for asynchronous calls in milliseconds. */
-    timeout :
-    {
-      check : "Integer",
-      nullable : true
-    },
-
 
     /**
-     * Indicate that the request is cross domain.
-     *
-     * A request is cross domain if the request's URL points to a host other
-     * than the local host. This switches the concrete implementation that is
-     * used for sending the request from qx.io.remote.transport.XmlHttp to
-     * qx.io.remote.transport.Script because only the latter can handle cross
-     * domain requests.
-     * @deprecated since 6.0.0
+     * An optional service name which is prepended to the method name
      */
-    crossDomain :
-    {
-      check : "Boolean",
-      init : false
-    },
-
-
-    /** The URL at which the service is located. */
-    url :
-    {
-      check : "String",
-      nullable : true
-    },
-
-
-    /** The service name.  */
     serviceName :
     {
       check : "String",
       nullable : true
     },
 
-
     /**
-     * Data sent as "out of band" data in the request to the server.  The
-     * format of the data is opaque to RPC and may be recognized only by
-     * particular servers It is up to the server to decide what to do with
-     * it: whether to ignore it, handle it locally before calling the
-     * specified method, or pass it on to the method.  This server data is
-     * not sent to the server if it has been set to 'null'.
-     * Part of the non-standard qooxdoo v1 implementation to support legacy
-     * applications. Can be ignored in normal circumstances.
-     * @deprecated since 6.0.0, will be removed in 7.0.0
+     * The transport object
      */
-    serverData :
+    transport:
     {
-      check : "Object",
-      nullable : true
+      check : "qx.io.jsonrpc.transport.ITransport"
     },
 
-
-    /**
-     * Username to use for HTTP authentication. Null if HTTP authentication
-     * is not used.
-     * @deprecated since 6.0.0 Use {@link qx.io.remote.Rpc#authentication}
-     *   instead
-     */
-    username :
-    {
-      check : "String",
-      nullable : true
-    },
-
-
-    /**
-     * Password to use for HTTP authentication. Null if HTTP authentication
-     * is not used.
-     * @deprecated since 6.0.0 Use {@link qx.io.remote.Rpc#authentication}
-     *   instead
-     */
-    password :
-    {
-      check : "String",
-      nullable : true
-    },
-
-
-    /**
-     * Use Basic HTTP Authentication
-     * @deprecated since 6.0.0 Use {@link qx.io.remote.Rpc#authentication}
-     *   instead
-    */
-    useBasicHttpAuth :
-    {
-      check : "Boolean",
-      nullable : true
-    },
-
-    /**
-     * Whether to use the original qooxdoo RPC protocol or the
-     * now-standardized Version 2 protocol.  Defaults to v2.0,
-     * but the legacy protocol can be activated for legacy applications.
-     * Valid values are "qx1" and "2.0".
-     */
-    protocol :
-    {
-      init : "2.0",
-      check : function(val) {
-       return val == "qx1" || val == "2.0";
-      }
-    },
 
     /**
      * The authentication method.  Can be any class implementing
