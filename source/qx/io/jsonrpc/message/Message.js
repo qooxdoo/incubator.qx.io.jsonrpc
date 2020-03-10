@@ -10,9 +10,18 @@ qx.Class.define("qx.io.jsonrpc.message.Message",{
   members : {
     /**
      * Serialize to JSON string
+     * @return {String}
      */
     toString() {
       return qx.util.Serializer.toJson(this);
+    },
+
+    /**
+     * Serialiuze to a native javascript object
+     * @return {Object}
+     */
+    toObject() {
+      return qx.util.Serializer.toNativeObject(this);
     }
   }
 });

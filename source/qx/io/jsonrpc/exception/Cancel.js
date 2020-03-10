@@ -19,7 +19,7 @@
 /**
  *  A class for representing a user-initiated cancellation of a request.
  */
-qx.Class.define("qx.io.remote.exception.Cancel",
+qx.Class.define("qx.io.jsonrpc.exception.Cancel",
 {
   extend : qx.io.Exception,
 
@@ -29,6 +29,6 @@ qx.Class.define("qx.io.remote.exception.Cancel",
    * @param data {*|null}
    */
   construct: function(message, data) {
-    this.base(arguments, message, qx.io.remote.RpcError.type.CANCELLED, data);
+    this.base(arguments, message, qx.io.jsonrpc.exception.Transport.CANCELLED, data);
   }
 });

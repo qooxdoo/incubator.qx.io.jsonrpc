@@ -23,21 +23,6 @@ qx.Class.define("qx.io.Exception",
 {
   extend : qx.type.BaseError,
 
-  statics: {
-    /* Error codes for exceptions that happen in the client execution
-     * context:
-     * TIMEOUT, ABORTED, NO_DATA, INVALID_DATA, CANCELLED
-     */
-    type:
-      {
-        TIMEOUT      : 1,
-        ABORTED      : 2,
-        NO_DATA      : 3,
-        INVALID_DATA : 4,
-        CANCELLED    : 5
-      }
-  },
-
   /**
    * Constructor
    * @param message {String}

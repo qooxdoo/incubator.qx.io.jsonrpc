@@ -19,7 +19,7 @@
 /**
  * A class for representing errors that occurred on the jsonrpc server
  */
-qx.Class.define("qx.io.remote.exception.JsonRpc",
+qx.Class.define("qx.io.jsonrpc.exception.JsonRpc",
 {
   extend : qx.io.Exception
 });

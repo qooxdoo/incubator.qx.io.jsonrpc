@@ -10,7 +10,12 @@ qx.Class.define("qx.io.jsonrpc.message.Notification",{
       nullable: true
     }
   },
-  construct(method, params) {
+  /**
+   * Notification constructor
+   * @param {String} method
+   * @param {Object?} params
+   */
+  construct(method, params=null) {
     this.base(arguments);
     this.set(method, params);
   }
