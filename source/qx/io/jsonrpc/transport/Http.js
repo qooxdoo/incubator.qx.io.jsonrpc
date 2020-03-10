@@ -101,7 +101,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
           }
         }
       }
-      this.handleIncoming("incoming", req.getResponse());
+      this.handleIncoming(req.getResponse());
     },
 
     /**

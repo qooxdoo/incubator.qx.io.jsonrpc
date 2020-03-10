@@ -113,7 +113,6 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
       // filter by type
       let messages = message instanceof qx.io.jsonrpc.message.Batch ? message.getBatch().toArray() : [message];
       let requests = messages.filter(message => message instanceof qx.io.jsonrpc.message.Request);
-      let notifications = messages.filter(message => message instanceof qx.io.jsonrpc.message.Notification);
 
       // store requests
       requests.forEach(request => {
