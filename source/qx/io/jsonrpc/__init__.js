@@ -16,6 +16,8 @@
  * <pre>
  *   (async()=>{
  *    const transport = new qx.io.jsonrpc.transport.Http("https://domain.com/endpoint");
+ *    transport.getRequest().setAuthentication(new qx.io.request.authentication.Bearer("TOKEN"));
+ *    transport.getRequest().setTimeout(10000);
  *    const request = new qx.io.jsonrpc.message.Request("some_method", ["first-param","second-param"]);
  *    const notification = new qx.io.jsonrpc.message.Notification("other_method", [1,2,3]);
  *    let result;
@@ -52,11 +54,12 @@
  *
  * 2) Using qx.io.jsonrpc.Client
  *
- * qx.io.jsonrpc.Client is an API built on top of the transports. It will figure
- * out the type of transport from the URI passed to it, and provides a way to
- * prepend a "service name" to all the method names. This makes working with
- * a JSON-RPC service a bit more convenient, but is also less configurable, unless
- * you subclass the client and use a custom configuration behind the scenes.
+ * qx.io.jsonrpc.Client is an API built on top of the transports. It
+ * will figure out the type of transport from the URI passed to it,
+ * and provides a way to prepend a "service name" to all the method
+ * names. This makes working with a JSON-RPC service a bit more
+ * convenient, but is also less configurable, unless you subclass the
+ * client and use a custom configuration behind the scenes (see below).
  *
  * Here is an example
  *
@@ -92,5 +95,22 @@
  *    }
  *   })();
  * </pre>
+ *
+ * If you want to use the client with a customized transport, create a class
+ * that inherits from <code>qx.io.jsonrpc.transport.Abstract</code> or one of
+ * its subclasses, override the methods which are needed to produce that custom
+ * behavior (such as {@link qx.io.jsonrpc.transport.Http#_createRequest},
+ * and provide a <code>defer</code> section which registers the behavior for
+ * your particular class of URIs:
+ *
+ * <pre>
+ * defer() {
+ *   qx.io.jsonrpc.Client.registerTransport(/^http/, my.custom.Transport);
+ * }
+ * </pre>
+ *
+ * Afterwards, creating a client for alls urls
+ * starting with "http" will use that custom behavior.
+ *
  *
  */

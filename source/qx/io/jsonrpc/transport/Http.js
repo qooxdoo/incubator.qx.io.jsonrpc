@@ -49,6 +49,9 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
 
   properties : {
 
+    /**
+     * @var {qx.io.request.AbstractRequest}
+     */
     request : {
       check : "qx.io.request.AbstractRequest"
     }
@@ -101,6 +104,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
           }
         }
       }
+      // handle responses
       this.handleIncoming(req.getResponse());
     },
 
