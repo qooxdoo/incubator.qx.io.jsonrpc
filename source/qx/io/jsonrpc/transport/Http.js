@@ -75,27 +75,27 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
         if (e instanceof qx.type.BaseError) {
           switch (e.getComment()) {
             case "timeout":
-              this._throwError(new qx.io.jsonrpc.exception.Transport(
+              this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.TIMEOUT,
                 {request: message.toObject() }
               ));
               break;
             case "parseError":
-              this._throwError(new qx.io.jsonrpc.exception.Transport(
+              this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
                 {request: message.toObject() }
               ));
               break;
             case "abort":
-              this._throwError(new qx.io.jsonrpc.exception.Cancel(
+              this._throwTransportException(new qx.io.jsonrpc.exception.Cancel(
                 e.toString(),
                 {request: message.toObject() }
               ));
               break;
             case "failed":
-              this._throwError(new qx.io.jsonrpc.exception.Transport(
+              this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.FAILED,
                 {request: message.toObject() }

@@ -88,12 +88,14 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
     },
 
     /**
-     * Fires "error" event and throws the error
+     * Fires "error" event and throws the error after informing pending requests
+     * about the error.
      * @param exception
      * @private
      */
-    _throwError(exception) {
+    _throwTransportException(exception) {
       this.fireDataEvent("error", exception);
+      this.__requests.forEach(request => request.handleTransportException(exception));
       throw exception;
     },
 
@@ -134,7 +136,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
      */
     handleIncoming(data) {
       if (data === null) {
-       this._throwError(new qx.io.remote.exception.Transport(
+       this._throwTransportException(new qx.io.remote.exception.Transport(
           qx.io.jsonrpc.exception.Transport.NO_DATA,
           "No response data"
         ));
@@ -142,7 +144,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
 
       // check for valid jsonrpc v2 response
       if (!qx.lang.Type.isArray(data) && !qx.lang.Type.isObject(data)) {
-        this._throwError(new qx.io.remote.exception.Transport(
+        this._throwTransportException(new qx.io.remote.exception.Transport(
           qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
           "Invalid jsonrpc data",
           {data}
@@ -163,13 +165,13 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
           id = msgObj.getId();
           request = this.__requests[id];
           if (request === undefined) {
-            this._throwError(new qx.io.remote.exception.Transport(
+            this._throwTransportException(new qx.io.remote.exception.Transport(
               qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
               `Invalid jsonrpc data: Unknown request id ${id}.`,
               {response}));
           }
           if (request.response !== undefined) {
-            this._throwError(
+            this._throwTransportException(
               new qx.io.remote.exception.Transport(
                 qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
                 `Invalid jsonrpc data: multiple responses with same id ${id}.`,

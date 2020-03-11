@@ -36,5 +36,19 @@ qx.Class.define("qx.io.jsonrpc.message.Request",{
     }
     this.set({id});
     this.setPromise(new qx.Promise());
+  },
+
+  members: {
+
+    /**
+     * Determines how an exception during transport is handled. Standard
+     * behavior is to reject the request's promise with that exception.
+     * Classes inheriting from this class might handle it differently, i.e.
+     * by allowing the transport to retry after a timeout occurred.
+     * @param {qx.io.jsonrpc.exception.Transport} exception
+     */
+    handleTransportException(exception) {
+      this.getPromise().reject(exception);
+    }
   }
 });

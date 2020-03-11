@@ -44,7 +44,12 @@ qx.Class.define("qx.io.remote.Client",
       if (qx.io.remote.Client.__transports === null) {
         qx.io.remote.Client.__transports = [];
       }
-      qx.Interface.classImplements(transportClass, qx.io.jsonrpc.transport.ITransport);
+      if (!qx.lang.Type.isRegExp(uriRegExp)) {
+        throw new Error("First argument must be a regular expression!");
+      }
+      if (!qx.Interface.classImplements(transportClass, qx.io.jsonrpc.transport.ITransport)) {
+        throw new Error("Transport class must implement qx.io.jsonrpc.transport.ITransport");
+      }
       qx.io.remote.Client.__transports.push({ uriRegExp, transport: transportClass});
     }
 
