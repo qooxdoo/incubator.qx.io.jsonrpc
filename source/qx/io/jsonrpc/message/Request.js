@@ -4,7 +4,15 @@ qx.Class.define("qx.io.jsonrpc.message.Request",{
     /**
      * Static counter for all request ids
      */
-    current_request_id : 0
+    __current_request_id : 0,
+
+    getCurrentId() {
+      return qx.io.jsonrpc.message.Request.__current_request_id;
+    },
+
+    resetId() {
+      qx.io.jsonrpc.message.Request.__current_request_id = 0;
+    }
   },
   properties: {
     /**

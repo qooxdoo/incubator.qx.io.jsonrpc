@@ -141,7 +141,6 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
           "No response data"
         ));
       }
-
       // check for valid jsonrpc v2 response
       if (!qx.lang.Type.isArray(data) && !qx.lang.Type.isObject(data)) {
         this._throwTransportException(new qx.io.remote.exception.Transport(
@@ -150,60 +149,11 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
           {data}
         ));
       }
-
       // normalize batch and non-batch responses
       let batch = qx.lang.Type.isArray(data) ? data : [data];
-
       // handle each response
       batch.forEach(function(response) {
-
-        let msgObj = this._parseMessage(response);
-
-        // handle responses with an id.
-        let request, id;
-        if (msgObj.getId !== undefined) {
-          id = msgObj.getId();
-          request = this.__requests[id];
-          if (request === undefined) {
-            this._throwTransportException(new qx.io.remote.exception.Transport(
-              qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
-              `Invalid jsonrpc data: Unknown request id ${id}.`,
-              {response}));
-          }
-          if (request.response !== undefined) {
-            this._throwTransportException(
-              new qx.io.remote.exception.Transport(
-                qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
-                `Invalid jsonrpc data: multiple responses with same id ${id}.`,
-                {request, response}));
-          }
-          request.response = response;
-        }
-
-        // handle the different message types
-        if (msgObj instanceof qx.io.jsonrpc.message.Result) {
-          // inform listeners
-          this.fireDataEvent("result", msgObj.toObject());
-          // resolve the individual promise
-          request.promise.resolve(msgObj.getResult());
-        } else if (msgObj instanceof qx.io.jsonrpc.message.Error) {
-          let error = msgObj.getError();
-          let ex = new qx.io.remote.exception.JsonRpc(
-            error.code,
-            error.message, {
-              request: request.toObject(),
-              response
-            });
-          // inform listeners
-          this.fireDataEvent("error", ex);
-          // reject the individual promise
-          request.promise.reject(ex);
-        } else if (msgObj instanceof qx.io.jsonrpc.message.Request || msgObj instanceof qx.io.jsonrpc.message.Notification ) {
-          // handle peer-originated requests and notifications
-          this.fireDataEvent("peerRequest", msgObj)
-        } else {
-          throw new Error("Unhandled message:" + msgObj.toString());
-        }
+        this.handleMessage(this._parseMessage(response));
       });
       // cleanup
       batch.forEach(msgObj => {
@@ -214,6 +164,57 @@ qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
         msgObj.dispose();
       });
       message.dispose();
+    },
+
+    /**
+     * Handle an incoming message
+     * @param {qx.io.jsonrpc.message.Message} message
+     */
+    handleMessage(message) {
+      let request, id;
+      if (msgObj.getId !== undefined) {
+        // handle responses with an id.
+        id = msgObj.getId();
+        request = this.__requests[id];
+        if (request === undefined) {
+          this._throwTransportException(new qx.io.remote.exception.Transport(
+            qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
+            `Invalid jsonrpc data: Unknown request id ${id}.`,
+            {response}));
+        }
+        if (request.response !== undefined) {
+          this._throwTransportException(
+            new qx.io.remote.exception.Transport(
+              qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
+              `Invalid jsonrpc data: multiple responses with same id ${id}.`,
+              {request, response}));
+        }
+        request.response = response;
+      }
+      // handle the different message types
+      if (msgObj instanceof qx.io.jsonrpc.message.Result) {
+        // inform listeners
+        this.fireDataEvent("result", msgObj.toObject());
+        // resolve the individual promise
+        request.promise.resolve(msgObj.getResult());
+      } else if (msgObj instanceof qx.io.jsonrpc.message.Error) {
+        let error = msgObj.getError();
+        let ex = new qx.io.remote.exception.JsonRpc(
+          error.code,
+          error.message, {
+            request: request.toObject(),
+            response
+          });
+        // inform listeners
+        this.fireDataEvent("error", ex);
+        // reject the individual promise
+        request.promise.reject(ex);
+      } else if (msgObj instanceof qx.io.jsonrpc.message.Request || msgObj instanceof qx.io.jsonrpc.message.Notification ) {
+        // handle peer-originated requests and notifications
+        this.fireDataEvent("peerRequest", msgObj)
+      } else {
+        throw new Error("Unhandled message:" + msgObj.toString());
+      }
     },
 
     /**
