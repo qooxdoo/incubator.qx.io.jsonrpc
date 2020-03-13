@@ -1,15 +1,34 @@
 qx.Interface.define("qx.io.jsonrpc.transport.ITransport", {
+  properties: {
+    /**
+     * The URI of the endpoint
+     * @var {String}
+     */
+    endpoint: {}
+  },
+  events: {
+    /**
+     * Event fired when a message is received from the endpoint. Event data
+     * is an UTF-8 encoded string
+     */
+    "message": "qx.event.type.Data"
+  },
   members : {
     /**
-     * Sends a jsonrpc message
-     * @param {qx.io.jsonrpc.message.Message} message
+     * Transport the given message to the endpoint
+     *
+     * @param {String} message
+     * @return {qx.Promise} Promise that resolves (with no data)
+     * when the message has been successfully sent out, and rejects
+     * when there is an error or a cancellation up to that point.
      */
-    send(message) {},
+    async send(message) {},
 
     /**
-     * Receives and handles an incoming JSON-RPC compliant message data
-     * @param {Object|Array} data JSON-RPC message data
+     * Returns the object which implements the transport on the underlying
+     * level, so that transport-specific configuration can be done on it.
+     * @return {qx.core.Object}
      */
-    handleIncoming(data) {}
+    getTransportImpl() {}
   }
 });

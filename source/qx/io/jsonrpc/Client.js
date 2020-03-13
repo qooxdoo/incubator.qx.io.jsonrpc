@@ -55,19 +55,34 @@ qx.Class.define("qx.io.remote.Client",
 
   },
 
-  /*
-  *****************************************************************************
-     CONSTRUCTOR
-  *****************************************************************************
-  */
+  events : {
+    /**
+     * Event fired when a request results in an error. Event data is an instance of
+     * {@link qx.io.jsonrpc.exception.Transport}, {@link qx.io.jsonrpc.exception.JsonRpc},
+     * or {@link qx.io.jsonrpc.exception.Cancel}.
+     * Event fired when a message is received from the endpoint. Event data
+     * is an UTF-8 encoded string
+     */
+    "error" : "qx.event.type.Data",
+
+    /**
+     * Event fired when a peer-originated JSON-RPC message
+     * has been received from the peer endpoint. Event data
+     * is an instance of {@link qx.io.jsonrpc.message.Request}
+     * or {@link qx.io.jsonrpc.message.Notification}.
+     */
+    "peerRequest" : "qx.event.type.Data"
+  },
 
   /**
    * @param {qx.io.jsonrpc.transport.ITransport|String} transportOrUri
    *    Transport object or URL for auto-detection of transport
-   * @param {String} serviceName
+   * @param {String?} methodPrefix
    *    Optional service name which will be prepended to the method
+   * @param {qx.io.jsonrpc.protocol.Parser?} parser
+   *    Optional parser object, which needs to be a subclass of qx.io.jsonrpc.protocol.Parser
    */
-  construct : function(transportOrUri, serviceName) {
+  construct : function(transportOrUri, methodPrefix, parser) {
     this.base(arguments);
     if (qx.lang.Type.isString(transportOrUri)) {
       for (let transport of qx.io.remote.Client.__transports.reverse()) {
@@ -83,25 +98,29 @@ qx.Class.define("qx.io.remote.Client",
       }
     }
     this.setTransport(transportOrUri);
-    if (serviceName != null) {
-      this.setServiceName(serviceName);
+
+    // listen for incoming messages
+    this.getTransport().addListener("message", evt => this.handleIncoming(evt.getData()));
+
+    if (!methodPrefix) {
+      methodPrefix = "";
     }
+    this.setMethodPrefix(methodPrefix);
+
+    if (!parser) {
+      parser = new qx.qx.io.jsonrpc.protocol.Parser();
+    }
+    this.setParser(parser);
   },
 
-
-  /*
-  *****************************************************************************
-     PROPERTIES
-  *****************************************************************************
-  */
 
   properties :
   {
 
     /**
-     * An optional service name which is prepended to the method name
+     * An optional string which is prepended to the method name.
      */
-    serviceName :
+    methodPrefix :
     {
       check : "String",
       nullable : true
@@ -113,14 +132,15 @@ qx.Class.define("qx.io.remote.Client",
     transport:
     {
       check : "qx.io.jsonrpc.transport.ITransport"
+    },
+
+    /**
+     * The parser object, which must be a subclass of {@link qx.io.jsonrpc.protocol.Parser}
+      */
+    parser: {
+      check : "qx.io.jsonrpc.protocol.Parser"
     }
   },
-
-  /*
-  *****************************************************************************
-     MEMBERS
-  *****************************************************************************
-  */
 
   members :
   {
@@ -130,12 +150,52 @@ qx.Class.define("qx.io.remote.Client",
      * @return {String}
      * @private
      */
-    _prependServiceName(method) {
-      let serviceName = this.getServiceName();
-      if (serviceName && !method.startsWith(serviceName + ".")) {
-        return `${serviceName}.${method}`;
+    _prependMethodPrefix(method) {
+      let methodPrefix = this.getMethodPrefix();
+      if (methodPrefix && !method.startsWith(methodPrefix + ".")) {
+        return `${methodPrefix}.${method}`;
       }
       return method;
+    },
+
+    /**
+     * Fires "error" event and throws the error after informing pending requests
+     * about the error.
+     * @param exception
+     * @private
+     */
+    _throwTransportException(exception) {
+      this.fireDataEvent("error", exception);
+      this.__requests.forEach(request => request.handleTransportException(exception));
+      throw exception;
+    },
+
+    /**
+     * Send the given JSON-RPC message object using the configured transport
+     *
+     * @param {qx.io.jsonrpc.protocol.Message} message
+     * @return {qx.Promise} Promise that resolves (with no data)
+     * when the message has been successfully sent out, and rejects
+     * when there is an error or a cancellation up to that point.
+     */
+    async send(message) {
+      this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
+
+      // filter by type
+      let messages = message instanceof qx.io.jsonrpc.protocol.Batch ? message.getBatch().toArray() : [message];
+      let requests = messages.filter(message => message instanceof qx.io.jsonrpc.protocol.Request);
+
+      // store requests
+      requests.forEach(request => {
+        let id = request.getId();
+        if (this.__requests[id] !== undefined) {
+          throw new qx.jsonrpc.exception.Transport(`Request ID ${id} is already in use`, qx.jsonrpc.exception.Transport.INVALID_ID, {request: message.toObject()});
+        }
+        this.__requests[id] = request;
+      });
+
+      // send it async, using transport-specific implementation
+      return this.getTransport().send(message.toString());
     },
 
     /**
@@ -147,8 +207,8 @@ qx.Class.define("qx.io.remote.Client",
      * and rejects with an exception in the {@link qx.io.jsonrpc.exception} namespace.
      */
     async sendRequest(method, params) {
-      const request = new qx.io.jsonrpc.message.Request(this._prependServiceName(method), params);
-      this.getTransport().send(request);
+      const request = new qx.io.jsonrpc.protocol.Request(this._prependMethodPrefix(method), params);
+      this.send(request);
       return await request.getPromise();
     },
 
@@ -159,22 +219,96 @@ qx.Class.define("qx.io.remote.Client",
      * @param {Array|Object?} params
      */
     sendNotification(method, params) {
-      const notification = new qx.io.jsonrpc.message.Notification(this._prependServiceName(method), params);
-      this.getTransport().send(notification);
+      const notification = new qx.io.jsonrpc.protocol.Notification(this._prependMethodPrefix(method), params);
+      this.send(notification);
     },
 
     /**
      * Send the given message batch. If a service name has been configured,
      * it is prepended to the method name in each message with a dot.
-     * @param {qx.io.jsonrpc.message.Batch} batch
+     * @param {qx.io.jsonrpc.protocol.Batch} batch
      * @return {qx.Promise} Promise that resolves with an array of the responses
      * to all requests in the batch, or rejects with any error that occurs.
      */
     async sendBatch(batch) {
-      qx.core.Assert.assertInstance(batch, qx.io.jsonrpc.message.Batch);
-      batch.getBatch().forEach(message => message.setMethod(this._prependServiceName(message.getMethod())));
-      this.getTransport().send(batch);
+      qx.core.Assert.assertInstance(batch, qx.io.jsonrpc.protocol.Batch);
+      batch.getBatch().forEach(message => message.setMethod(this._prependMethodPrefix(message.getMethod())));
+      this.send(batch);
       return await qx.Promise.all(batch.getPromises());
+    },
+
+    /**
+     * Receives and handles an incoming JSON-RPC compliant message data
+     * @param {String} json JSON data
+     */
+    handleIncoming(json) {
+      let message = this.getParser().parse(json);
+      // act on each message
+      this.handleMessage(message);
+      // cleanup
+      let batch = message instanceof qx.io.jsonrpc.protocol.Batch ? message.getBatch() : [message];
+      batch.forEach(msgObj => {
+        if (msgObj instanceof qx.io.jsonrpc.protocol.Request) {
+          let id = msgObj.getId();
+          delete this.__requests[id];
+        }
+        msgObj.dispose();
+      });
+    },
+
+    /**
+     * Handle an incoming message or batch of messages
+     * @param {qx.io.jsonrpc.protocol.Message} message Message or Batch
+     */
+    handleMessage(message) {
+      // handle batches
+      if ( message instanceof qx.io.jsonrpc.protocol.Batch) {
+        message.getBatch().forEach(msg => this.handleMessage(msg));
+        return;
+      }
+      // handle individual message
+      let request, id;
+      if (msgObj instanceof qx.io.jsonrpc.protocol.Result || msgObj instanceof qx.io.jsonrpc.protocol.Error) {
+        // handle results and errors, which are responses to sent requests
+        id = msgObj.getId();
+        request = this.__requests[id];
+        if (request === undefined) {
+          this._throwTransportException(new qx.io.remote.exception.Transport(
+            qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
+            `Invalid jsonrpc data: Unknown request id ${id}.`,
+            {response}));
+        }
+        if (request.response !== undefined) {
+          this._throwTransportException(
+            new qx.io.remote.exception.Transport(
+              qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
+              `Invalid jsonrpc data: multiple responses with same id ${id}.`,
+              {request, response}));
+        }
+        request.response = response;
+      }
+      // handle the different message types
+      if (msgObj instanceof qx.io.jsonrpc.protocol.Result) {
+        // resolve the individual promise
+        request.promise.resolve(msgObj.getResult());
+      } else if (msgObj instanceof qx.io.jsonrpc.protocol.Error) {
+        let error = msgObj.getError();
+        let ex = new qx.io.remote.exception.JsonRpc(
+          error.code,
+          error.message, {
+            request: request.toObject(),
+            response
+          });
+        // inform listeners
+        this.fireDataEvent("error", ex);
+        // reject the individual promise
+        request.promise.reject(ex);
+      } else if (msgObj instanceof qx.io.jsonrpc.protocol.Request || msgObj instanceof qx.io.jsonrpc.protocol.Notification ) {
+        // handle peer-originated requests and notifications
+        this.fireDataEvent("peerRequest", msgObj)
+      } else {
+        throw new Error("Unhandled message:" + msgObj.toString());
+      }
     }
   }
 });

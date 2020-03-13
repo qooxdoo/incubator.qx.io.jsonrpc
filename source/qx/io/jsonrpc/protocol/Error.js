@@ -1,5 +1,5 @@
-qx.Class.define("qx.io.jsonrpc.message.Error",{
-  extend: qx.io.jsonrpc.Message,
+qx.Class.define("qx.io.jsonrpc.protocol.Error",{
+  extend: qx.io.jsonrpc.protocol,
   properties: {
     error : {
       check : value => qx.lang.Type.isObject(value) && "code" in value && "message" in value

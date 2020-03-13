@@ -1,5 +1,5 @@
-qx.Class.define("qx.io.jsonrpc.message.Notification",{
-  extend: qx.io.jsonrpc.Message,
+qx.Class.define("qx.io.jsonrpc.protocol.Notification",{
+  extend: qx.io.jsonrpc.protocol,
   properties: {
     method : {
       check: "String",

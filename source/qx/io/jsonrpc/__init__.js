@@ -18,8 +18,8 @@
  *    const transport = new qx.io.jsonrpc.transport.Http("https://domain.com/endpoint");
  *    transport.getRequest().setAuthentication(new qx.io.request.authentication.Bearer("TOKEN"));
  *    transport.getRequest().setTimeout(10000);
- *    const request = new qx.io.jsonrpc.message.Request("some_method", ["first-param","second-param"]);
- *    const notification = new qx.io.jsonrpc.message.Notification("other_method", [1,2,3]);
+ *    const request = new qx.io.jsonrpc.protocol.Request("some_method", ["first-param","second-param"]);
+ *    const notification = new qx.io.jsonrpc.protocol.Notification("other_method", [1,2,3]);
  *    let result;
  *    try {
  *      transport.send(request);
@@ -36,7 +36,7 @@
  * <pre>
  *   (async()=>{
  *    const transport = new qx.io.jsonrpc.transport.Http("https://domain.com/endpoint");
- *    const batch = ()new qx.io.jsonrpc.message.Batch())
+ *    const batch = ()new qx.io.jsonrpc.protocol.Batch())
  *      .addRequest("method3")
  *      .addNotification("method4")
  *      .addRequest("method5","foo)
@@ -81,7 +81,7 @@
  * <pre>
  *   (async()=>{
  *    const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint", "myServiceName");
- *    const batch = new qx.io.jsonrpc.message.Batch())
+ *    const batch = new qx.io.jsonrpc.protocol.Batch())
  *      .addRequest("method3")
  *      .addNotification("method4")
  *      .addRequest("method5","foo)
@@ -99,7 +99,7 @@
  * If you want to use the client with a customized transport, create a class
  * that inherits from <code>qx.io.jsonrpc.transport.Abstract</code> or one of
  * its subclasses, override the methods which are needed to produce that custom
- * behavior (such as {@link qx.io.jsonrpc.transport.Http#_createRequest},
+ * behavior (such as {@link qx.io.jsonrpc.transport.Http#_createTransportImpl},
  * and provide a <code>defer</code> section which registers the behavior for
  * your particular class of URIs:
  *

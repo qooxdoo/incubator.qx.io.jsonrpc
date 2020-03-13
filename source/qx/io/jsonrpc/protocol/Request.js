@@ -1,4 +1,4 @@
-qx.Class.define("qx.io.jsonrpc.message.Request",{
+qx.Class.define("qx.io.jsonrpc.protocol.Request",{
   extend: qx.io.jsonrpc.Notification,
   statics: {
     /**
@@ -7,11 +7,11 @@ qx.Class.define("qx.io.jsonrpc.message.Request",{
     __current_request_id : 0,
 
     getCurrentId() {
-      return qx.io.jsonrpc.message.Request.__current_request_id;
+      return qx.io.jsonrpc.protocol.Request.__current_request_id;
     },
 
     resetId() {
-      qx.io.jsonrpc.message.Request.__current_request_id = 0;
+      qx.io.jsonrpc.protocol.Request.__current_request_id = 0;
     }
   },
   properties: {

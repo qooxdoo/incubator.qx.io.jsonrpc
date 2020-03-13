@@ -1,4 +1,4 @@
-qx.Class.define("qx.io.jsonrpc.message.Batch",{
+qx.Class.define("qx.io.jsonrpc.protocol.Batch",{
   extend: qx.core.Object,
   properties: {
     batch : {
@@ -13,12 +13,12 @@ qx.Class.define("qx.io.jsonrpc.message.Batch",{
 
     /**
      * Adds a request or notification to the batch
-     * @param {qx.io.jsonrpc.message.Request|qx.io.jsonrpc.message.Notification} message
-     * @return {qx.io.jsonrpc.message.Batch}
+     * @param {qx.io.jsonrpc.protocol.Request|qx.io.jsonrpc.protocol.Notification} message
+     * @return {qx.io.jsonrpc.protocol.Batch}
      */
     add(message) {
-      if (!(message instanceof qx.io.jsonrpc.message.Request || message instanceof qx.io.jsonrpc.message.Notification)) {
-        throw new Error("You can only add an instance of qx.io.jsonrpc.message.Request or qx.io.jsonrpc.message.Notification to the batch.");
+      if (!(message instanceof qx.io.jsonrpc.protocol.Request || message instanceof qx.io.jsonrpc.protocol.Notification)) {
+        throw new Error("You can only add an instance of qx.io.jsonrpc.protocol.Request or qx.io.jsonrpc.protocol.Notification to the batch.");
       }
       this.getBatch().push(message);
       // return the instance for chaining
@@ -31,7 +31,7 @@ qx.Class.define("qx.io.jsonrpc.message.Batch",{
      * @param params
      */
     addRequest(method,params) {
-      this.add(new qx.io.jsonrpc.message.Request(method, params));
+      this.add(new qx.io.jsonrpc.protocol.Request(method, params));
       return this;
     },
 
@@ -41,7 +41,7 @@ qx.Class.define("qx.io.jsonrpc.message.Batch",{
      * @param params
      */
     addNotification(method,params) {
-      this.add(new qx.io.jsonrpc.message.Notification(method, params));
+      this.add(new qx.io.jsonrpc.protocol.Notification(method, params));
       return this;
     },
 

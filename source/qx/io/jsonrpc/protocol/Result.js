@@ -1,5 +1,5 @@
-qx.Class.define("qx.io.jsonrpc.message.Result",{
-  extend: qx.io.jsonrpc.Message,
+qx.Class.define("qx.io.jsonrpc.protocol.Result",{
+  extend: qx.io.jsonrpc.protocol,
   properties: {
     result : {
       nullable: true

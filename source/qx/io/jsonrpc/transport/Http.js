@@ -1,5 +1,12 @@
 /**
- * The implementation for JSON-RPC via HTTP
+ * The implementation of a JSON-RPC transport for JSON-RPC via HTTP
+ *
+ * The HTTP transport implementation is based on the {@link qx.io.request} API,
+ * so any special configuration of the HTTP request must be done on the
+ * underlying implementation of {@link qx.io.request.AbstractRequest}.
+ *
+ * More abstract support for authentication will be added later.
+ *
  */
 qx.Class.define("qx.io.jsonrpc.transport.Http", {
   extend: qx.io.jsonrpc.transport.Abstract,
@@ -7,121 +14,98 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
 
   /**
    * Constructor.
-   * Examples:
    *
-   * <pre>
-   *    const uri = "https://domain.com/endpoint";
-   *    const auth = new qx.io.request.authentication.Bearer("TOKEN");
-   *    const transport1 = new qx.io.jsonrpc.transport.Http(uri);
-   *    transport1.getRequest().setAuthentication(auth);
-   *    // or
-   *    const request = new qx.io.request.Xhr(uri, "POST");
-   *    request.setAuthentication(auth);
-   *    const transport2 = new qx.io.jsonrpc.transport.Http({request});
-   *
-   * </pre>
-   * @param {String|Map} configOrUrl
-   *    - If String, the url which identifies the url where the service is found.
-   *    Note that if the url is to a domain (server) other than where the
-   *    qooxdoo script came from, i.e. it is cross-domain, then you must
-   *    configure your server to support cross-origin requests
-   *    (see https://developer.mozilla.org/de/docs/Web/HTTP/CORS).
-   *    - if Map, a map of properties to set. If you provide one
-   *    without a "request" property, the constructor will set the one provided
-   *    by the {@link qx.io.jsonrpc.transport.Http#createRequest()} method,
-   *    which you can override in a subclass.
-   *
+   * @param {String} url The URL of the http endpoint
    */
-  construct(configOrUrl={}) {
-    this.base(arguments, configOrUrl);
-    if (!this.getRequest()) {
-      this.setRequest(this._createRequest());
-    }
-    // get uri from request url, if set
-    if (!this.getUri() && this.getRequest().getUrl()) {
-      this.setUri(this.getRequest().getUrl());
-    }
-    // sync changes
-    this.bind("uri", this.getRequest(), "url");
-    this.bind("request.url", this, "uri");
-
-  },
-
-  properties : {
-
-    /**
-     * @var {qx.io.request.AbstractRequest}
-     */
-    request : {
-      check : "qx.io.request.AbstractRequest"
-    }
+  construct(url) {
+    this.base(arguments, url);
+    this._tranportImpl = this._createTransportImpl();
   },
 
   members: {
 
     /**
-     * Implements the sending of the json message to the endpoint.
-     * @param {qx.io.jsonrpc.message.Message} message
-     * @private
-     * @return {qx.Promise}
+     * Internal implementation of the transport
+     * @var {qx.io.request.AbstractRequest}
      */
-    async _sendImpl(message) {
-      let json = message.toString();
-      const req = this.getRequest();
-      req.setRequestData(json);
+    _tranportImpl : null,
+
+    /**
+     * Returns the object which implements the transport on the underlying
+     * level, so that transport-specific configuration can be done on it.
+     * @return {qx.core.Object}
+     */
+    getTransportImpl() {
+      return this._tranportImpl;
+    },
+
+    /**
+     * Transport the given message to the endpoint
+     *
+     * @param {String} message
+     *
+     * @return {qx.Promise} Promise that resolves (with no data)
+     * when the message has been successfully sent out, and rejects
+     * when there is an error or a cancellation up to that point.
+     */
+    async send(message) {
+      const req = this._tranportImpl;
+      req.setRequestData(message);
       try {
         await req.sendWithPromise();
       } catch(e) {
         if (e instanceof qx.type.BaseError) {
           switch (e.getComment()) {
             case "timeout":
-              this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
+              throw new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.TIMEOUT,
-                {request: message.toObject() }
-              ));
-              break;
+                {message}
+              );
             case "parseError":
-              this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
+              throw new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
-                {request: message.toObject() }
-              ));
-              break;
+                {message}
+              );
             case "abort":
-              this._throwTransportException(new qx.io.jsonrpc.exception.Cancel(
+              throw new qx.io.jsonrpc.exception.Cancel(
                 e.toString(),
-                {request: message.toObject() }
-              ));
-              break;
+                {message}
+              );
             case "failed":
-              this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
+              throw new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.FAILED,
-                {request: message.toObject() }
-              ));
-              break;
+                {message}
+              );
           }
         }
       }
       // handle responses
-      this.handleIncoming(req.getResponse());
+      this.fireDataEvent("message", req.getResponse());
     },
 
     /**
-     * Factory method to create a request object. By default, a POST request
-     * will be made, and the expected response type will be
-     * "application/json". Classes extending this one may override this method
-     * to obtain a Request object with different parameters and/or different
-     * authentication settings.
+     * Factory method to create a request object. By default, a POST
+     * request will be made, and the expected response type will be
+     * "application/json", but differently to the standard behavior,
+     * the response will not be parsed into a javascript object.
+     *
+     * Classes extending this one may override this
+     * method to obtain a Request object with different
+     * parameters and/or different authentication settings.
      *
      * @return {qx.io.remote.Request}
      */
-    _createRequest: function() {
-      const req =  new qx.io.request.Xhr(this.getUri(),"POST");
+    _createTransportImpl: function() {
+      const req =  new qx.io.request.Xhr(this.getEndpoint(),"POST");
       req.setAccept("application/json");
       req.setCache(false);
-      req.setRequestHeader("content-type", "application/json")
+      req.setRequestHeader("content-type", "application/json");
+      // disable parsing, we are going to parse the JSON ourselves
+      req.setParser(response => response);
+      return req;
     }
   },
 

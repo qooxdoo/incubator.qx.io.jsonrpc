@@ -1,4 +1,4 @@
-qx.Class.define("qx.io.jsonrpc.message.Message",{
+qx.Class.define("qx.io.jsonrpc.protocol.Message",{
   extend: qx.core.Object,
   properties: {
     jsonrpc : {
