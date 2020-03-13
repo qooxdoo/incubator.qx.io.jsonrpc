@@ -3,6 +3,7 @@ node_modules/
 qx_packages
 .package-cache.json
 .settings/
+.nyc_output
 
 # IDE config
 .idea
