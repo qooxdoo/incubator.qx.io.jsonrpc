@@ -38,7 +38,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
     },
 
     setUpFakeRequest : function() {
-      var req = this.request = new qx.io.remote.Request();
+      var req = this.request = new qx.io.jsonrpc.Request();
 
       // In prototype chain
       req.setState = req.getSequenceNumber =
@@ -82,7 +82,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
 
     assertValidRequest : function(method, params, isNotification) {
       this.setUpFakeRequest();
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       client.addRequest(method, params, isNotification||false);
       client.send();
       var requestData = this.request.setData.getCall(0).args[0];
@@ -92,14 +92,14 @@ qx.Class.define("qx.test.io.remote.Rpc",
         params: params
       };
       if (!isNotification) {
-        expected['id'] = qx.io.remote.Rpc.getRequestId()
+        expected['id'] = qx.io.jsonrpc.Rpc.getRequestId()
       }
       this.assertDeepEqual(expected, qx.lang.Json.parse(requestData));
     },
 
     assertResponseIs : function(method, params, response) {
       this.setServerResponse(response);
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       var requestCallback = this.spy();
       var sendCallback = this.spy();
       client.addRequest(method, params).then(requestCallback);
@@ -115,7 +115,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
     assertResponseThrowsException : function(method, params, isNotification, response, exceptions) {
       var sendExceptionClazz = exceptions.send, requestExceptionClazz = exceptions.request;
       this.setServerResponse(response);
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       var that = this;
       var requestErrorCallback = this.spy(function(err){
         if (requestExceptionClazz) {
@@ -151,7 +151,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
 
     "test: send request": function() {
       this.setUpFakeRequest();
-      var rpc = new qx.io.remote.Rpc("/foo");
+      var rpc = new qx.io.jsonrpc.Rpc("/foo");
       rpc.callAsync();
       this.assertCalledOnce(this.request.send);
     },
@@ -169,53 +169,53 @@ qx.Class.define("qx.test.io.remote.Rpc",
     },
 
     "test: send notification and throw on response" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "result": 19, "id": 1});
       this.assertResponseThrowsException("logout", [], true, response, {
-        send: qx.io.remote.exception.Transport
+        send: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and validate reponse" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "result": 19, "id": 1});
       this.assertResponseIs("subtract", [42, 23], response);
     },
 
     "test: call jsonrpc method and expect error on invalid reponse - not array or object" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify("foo");
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        send: qx.io.remote.exception.Transport
+        send: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and expect error on invalid reponse - missing result" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "id": 1});
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        request: qx.io.remote.exception.Transport
+        request: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and expect error on invalid reponse - unknown id" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", result: "foo", "id": 5});
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        send: qx.io.remote.exception.Transport
+        send: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and expect error response" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "error" : {"code": -32600, "message": "Division by zero!"}, "id": 1});
       this.assertResponseThrowsException("divide", [42, 0], false, response, {
-        request: qx.io.remote.exception.JsonRpc
+        request: qx.io.jsonrpc.exception.JsonRpc
       });
     },
 
     "test: send batched requests" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify([
         {"jsonrpc": "2.0", "result": 7, "id": 1},
         {"jsonrpc": "2.0", "result": "foo", "id": 2},
@@ -223,7 +223,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
         {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found"}, "id": 4},
         {"jsonrpc": "2.0", "result": ["hello", 5], "id": 5}]);
       this.setServerResponse(response);
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       var spies = [];
       for( var i=1; i < 6; i++) {
         spies[i] = { result: this.spy(), error: this.spy() };
@@ -243,13 +243,13 @@ qx.Class.define("qx.test.io.remote.Rpc",
     },
 
     "test: receive jsonrpc requests from server" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = [
         {"jsonrpc": "2.0", "method": "clientMethod", "params": ["foo", "bar"], "id": 1},
         {"jsonrpc": "2.0", "method": "clientNotification", "params": []}
       ];
       this.setServerResponse(qx.lang.Json.stringify(response));
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       var spy = this.spy();
       client.addListener("request", function(evt){
         spy(evt.getData());
@@ -273,7 +273,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
           msg,
           data;
 
-      var rpc = new qx.io.remote.Rpc();
+      var rpc = new qx.io.jsonrpc.Rpc();
       rpc.setProtocol("qx1");
       this.stub(rpc, "_isConvertDates").returns(true);
       this.stub(rpc, "createRpcData").returns({"params": obj});
@@ -290,7 +290,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
           msg,
           data;
 
-      var rpc = new qx.io.remote.Rpc();
+      var rpc = new qx.io.jsonrpc.Rpc();
       rpc.setProtocol("qx1");
       this.stub(rpc, "_isConvertDates").returns(true);
       this.stub(rpc, "createRpcData").returns({"params": obj});
@@ -303,9 +303,9 @@ qx.Class.define("qx.test.io.remote.Rpc",
 
     "test: response contains date from literal when convert dates": function() {
       this.setUpFakeRequest();
-      var rpc = new qx.io.remote.Rpc(),
+      var rpc = new qx.io.jsonrpc.Rpc(),
           req = this.request,
-          evt = qx.event.Registration.createEvent("completed", qx.io.remote.Response),
+          evt = qx.event.Registration.createEvent("completed", qx.io.jsonrpc.Response),
           str = '{"result": {"date": new Date(Date.UTC(2020,0,1,0,0,0,123))} }',
           that = this;
 
@@ -329,9 +329,9 @@ qx.Class.define("qx.test.io.remote.Rpc",
 
     "test: response contains date from literal when convert dates and json response": function() {
       this.setUpFakeRequest();
-      var rpc = new qx.io.remote.Rpc(),
+      var rpc = new qx.io.jsonrpc.Rpc(),
           req = this.request,
-          evt = qx.event.Registration.createEvent("completed", qx.io.remote.Response),
+          evt = qx.event.Registration.createEvent("completed", qx.io.jsonrpc.Response),
           str = '{"result": {"date": "new Date(Date.UTC(2020,0,1,0,0,0,123))"} }',
           that = this;
 
@@ -360,9 +360,9 @@ qx.Class.define("qx.test.io.remote.Rpc",
 
     "test: response is parsed as JSON": function() {
       this.setUpFakeRequest();
-      var rpc = new qx.io.remote.Rpc(),
+      var rpc = new qx.io.jsonrpc.Rpc(),
           req = this.request,
-          evt = qx.event.Registration.createEvent("completed", qx.io.remote.Response),
+          evt = qx.event.Registration.createEvent("completed", qx.io.jsonrpc.Response),
           str = '{"result": { "json" : true} }',
           that = this;
 
@@ -386,9 +386,9 @@ qx.Class.define("qx.test.io.remote.Rpc",
 
     "test: response is not parsed when already object": function() {
       this.setUpFakeRequest();
-      var rpc = new qx.io.remote.Rpc(),
+      var rpc = new qx.io.jsonrpc.Rpc(),
           req = this.request,
-          evt = qx.event.Registration.createEvent("completed", qx.io.remote.Response),
+          evt = qx.event.Registration.createEvent("completed", qx.io.jsonrpc.Response),
           obj = {"result": { "json" : true} },
           that = this;
 
@@ -414,9 +414,9 @@ qx.Class.define("qx.test.io.remote.Rpc",
     //
 
     "test: isConvertDates() returns true when Rpc true": function() {
-      var rpc = new qx.io.remote.Rpc();
+      var rpc = new qx.io.jsonrpc.Rpc();
       rpc.setProtocol("qx1");
-      this.stub(qx.io.remote.Rpc, "CONVERT_DATES", true);
+      this.stub(qx.io.jsonrpc.Rpc, "CONVERT_DATES", true);
       this.assertEquals(true, rpc._isConvertDates());
     }
   }

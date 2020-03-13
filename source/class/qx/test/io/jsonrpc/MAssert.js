@@ -1,7 +1,7 @@
 /**
- * Mixin containing methods and tests that are shared among transports
+ * Mixin containing special assert methods
  */
-qx.Mixin.define("qx.test.io.jsonrpc.MTransport",{
+qx.Mixin.define("qx.test.io.jsonrpc.MAssert",{
 
   members : {
 
@@ -22,8 +22,8 @@ qx.Mixin.define("qx.test.io.jsonrpc.MTransport",{
      * @param msg
      */
     assertDeepEqual : function(expected, actual, msg) {
-      msg = msg || "Failed to assert that " + qx.lang.Json.stringify(actual) +
-        " is deeply equal to " + qx.lang.Json.stringify(expected) + "."
+      msg = msg || ("Failed to assert that " + qx.lang.Json.stringify(actual) +
+        " is deeply equal to " + qx.lang.Json.stringify(expected) + ".");
       this.assertTrue(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
     }
 

@@ -1,5 +1,5 @@
 qx.Class.define("qx.io.jsonrpc.protocol.Notification",{
-  extend: qx.io.jsonrpc.protocol,
+  extend: qx.io.jsonrpc.protocol.Message,
   properties: {
     method : {
       check: "String",
@@ -7,7 +7,8 @@ qx.Class.define("qx.io.jsonrpc.protocol.Notification",{
     },
     params : {
       check: "Object",
-      nullable: true
+      nullable: true,
+      init: null
     }
   },
   /**
@@ -17,6 +18,6 @@ qx.Class.define("qx.io.jsonrpc.protocol.Notification",{
    */
   construct(method, params=null) {
     this.base(arguments);
-    this.set(method, params);
+    this.set({method, params});
   }
 });

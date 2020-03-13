@@ -25,29 +25,31 @@ qx.Class.define("qx.io.jsonrpc.protocol.Parser", {
           {message}
         );
       }
-      if (data === null) {
-        this._throwTransportException(new qx.io.remote.exception.Transport(
+      if (message === null) {
+        this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
           qx.io.jsonrpc.exception.Transport.NO_DATA,
           "No data"
         ));
       }
+      // batch
       if (qx.lang.Type.isArray(message)) {
-        const batch = new qx.io.jsonrpc.message.Batch();
-        message.forEach(item => batch.add(this._parseMessage(item)));
+        const batch = new qx.io.jsonrpc.protocol.Batch();
+        message.forEach(item => batch.add(this.parse(JSON.stringify(item))));
         return batch;
       }
+      // individual message
       let {id, result, method, params, error} = message;
       if (id !== undefined && result !== undefined && error === undefined && method === undefined) {
-        return new qx.io.jsonrpc.message.Result(id, result);
+        return new qx.io.jsonrpc.protocol.Result(id, result);
       }
       if (id !== undefined && result === undefined && error !== undefined && method === undefined) {
-        return new qx.io.jsonrpc.message.Error(id, error.code, error.message, error.data);
+        return new qx.io.jsonrpc.protocol.Error(id, error.code, error.message, error.data);
       }
       if (id !== undefined && result === undefined && error === undefined && method !== undefined) {
-        return new qx.io.jsonrpc.message.Request(method, params, id);
+        return new qx.io.jsonrpc.protocol.Request(method, params, id);
       }
       if (id === undefined && result === undefined && error === undefined && method !== undefined) {
-        return new qx.io.jsonrpc.message.Notification(method, params);
+        return new qx.io.jsonrpc.protocol.Notification(method, params);
       }
       throw new qx.io.jsonrpc.exception.Transport(
         "Cannot parse message data.",

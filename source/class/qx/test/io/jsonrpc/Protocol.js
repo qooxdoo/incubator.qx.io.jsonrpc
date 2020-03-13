@@ -1,14 +1,21 @@
-/**
- * Tests for qx.io.jsonrpc.protocol.* objects
- */
-qx.Class.define("qx.test.io.jsonrpc.protocols", {
-  extend: qx.dev.unit.TestCase,
-  members: {
-
-    assertDeepEqual : function(expected, actual, msg) {
-      msg = msg || "Failed to assert that " + qx.lang.Json.stringify(actual) +
-        " is deeply equal to " + qx.lang.Json.stringify(expected) + ".";
-      this.assertTrue(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
+qx.Class.define("qx.test.io.jsonrpc.Protocol",
+{
+  extend : qx.dev.unit.TestCase,
+  include : [qx.test.io.jsonrpc.MAssert],
+  construct() {
+    this.base(arguments);
+    this.parser = new qx.io.jsonrpc.protocol.Parser();
+  },
+  members : {
+    "test: request"() {
+      let expected = {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "foo",
+        "params": [1,2,3]
+      };
+      let message = this.parser.parse(JSON.stringify(expected));
+      this.assertDeepEqual(expected, message.toObject());
     },
 
     "test: JSON-RPC request message object"() {

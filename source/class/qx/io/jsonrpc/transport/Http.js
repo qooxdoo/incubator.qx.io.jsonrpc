@@ -96,7 +96,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
      * method to obtain a Request object with different
      * parameters and/or different authentication settings.
      *
-     * @return {qx.io.remote.Request}
+     * @return {qx.io.jsonrpc.Request}
      */
     _createTransportImpl: function() {
       const req =  new qx.io.request.Xhr(this.getEndpoint(),"POST");

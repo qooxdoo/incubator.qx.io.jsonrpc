@@ -18,12 +18,10 @@
 
 /**
  * This class provides a JSON-RPC client object with auto-configuration of the
- * transport used (based on the URI passed). It is little more than a wrapper
- * around the qx.io.jsonprc.transport.* classes with some additional convenience
- * methods.
+ * transport used (based on the URI passed).
  */
 
-qx.Class.define("qx.io.remote.Client",
+qx.Class.define("qx.io.jsonrpc.Client",
 {
   extend : qx.core.Object,
 
@@ -41,8 +39,8 @@ qx.Class.define("qx.io.remote.Client",
      *    The qooxdoo class implementing the transport
      */
     registerTransport(uriRegExp, transportClass) {
-      if (qx.io.remote.Client.__transports === null) {
-        qx.io.remote.Client.__transports = [];
+      if (qx.io.jsonrpc.Client.__transports === null) {
+        qx.io.jsonrpc.Client.__transports = [];
       }
       if (!qx.lang.Type.isRegExp(uriRegExp)) {
         throw new Error("First argument must be a regular expression!");
@@ -50,7 +48,7 @@ qx.Class.define("qx.io.remote.Client",
       if (!qx.Interface.classImplements(transportClass, qx.io.jsonrpc.transport.ITransport)) {
         throw new Error("Transport class must implement qx.io.jsonrpc.transport.ITransport");
       }
-      qx.io.remote.Client.__transports.push({ uriRegExp, transport: transportClass});
+      qx.io.jsonrpc.Client.__transports.push({ uriRegExp, transport: transportClass});
     }
 
   },
@@ -85,7 +83,7 @@ qx.Class.define("qx.io.remote.Client",
   construct : function(transportOrUri, methodPrefix, parser) {
     this.base(arguments);
     if (qx.lang.Type.isString(transportOrUri)) {
-      for (let transport of qx.io.remote.Client.__transports.reverse()) {
+      for (let transport of qx.io.jsonrpc.Client.__transports.reverse()) {
         if (transportOrUri.match(transport.uriRegExp)) {
           transportOrUri = transport.transportClass;
         }
@@ -108,7 +106,7 @@ qx.Class.define("qx.io.remote.Client",
     this.setMethodPrefix(methodPrefix);
 
     if (!parser) {
-      parser = new qx.qx.io.jsonrpc.protocol.Parser();
+      parser = new qx.io.jsonrpc.protocol.Parser();
     }
     this.setParser(parser);
   },
@@ -189,7 +187,7 @@ qx.Class.define("qx.io.remote.Client",
       requests.forEach(request => {
         let id = request.getId();
         if (this.__requests[id] !== undefined) {
-          throw new qx.jsonrpc.exception.Transport(`Request ID ${id} is already in use`, qx.jsonrpc.exception.Transport.INVALID_ID, {request: message.toObject()});
+          throw new qx.io.jsonrpc.exception.Transport(`Request ID ${id} is already in use`, qx.io.jsonrpc.exception.Transport.INVALID_ID, {request: message.toObject()});
         }
         this.__requests[id] = request;
       });
@@ -232,7 +230,9 @@ qx.Class.define("qx.io.remote.Client",
      */
     async sendBatch(batch) {
       qx.core.Assert.assertInstance(batch, qx.io.jsonrpc.protocol.Batch);
-      batch.getBatch().forEach(message => message.setMethod(this._prependMethodPrefix(message.getMethod())));
+      if (this.getMethodPrefix()) {
+        batch.getBatch().forEach(message => message.setMethod(this._prependMethodPrefix(message.getMethod())));
+      }
       this.send(batch);
       return await qx.Promise.all(batch.getPromises());
     },
@@ -258,12 +258,12 @@ qx.Class.define("qx.io.remote.Client",
 
     /**
      * Handle an incoming message or batch of messages
-     * @param {qx.io.jsonrpc.protocol.Message} message Message or Batch
+     * @param {qx.io.jsonrpc.protocol.Message} msgObj Message or Batch
      */
-    handleMessage(message) {
+    handleMessage(msgObj) {
       // handle batches
-      if ( message instanceof qx.io.jsonrpc.protocol.Batch) {
-        message.getBatch().forEach(msg => this.handleMessage(msg));
+      if ( msgObj instanceof qx.io.jsonrpc.protocol.Batch) {
+        msgObj.getBatch().forEach(msg => this.handleMessage(msg));
         return;
       }
       // handle individual message
@@ -273,19 +273,19 @@ qx.Class.define("qx.io.remote.Client",
         id = msgObj.getId();
         request = this.__requests[id];
         if (request === undefined) {
-          this._throwTransportException(new qx.io.remote.exception.Transport(
+          this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
             qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
             `Invalid jsonrpc data: Unknown request id ${id}.`,
             {response}));
         }
-        if (request.response !== undefined) {
+        if (request.response !== true) {
           this._throwTransportException(
-            new qx.io.remote.exception.Transport(
+            new qx.io.jsonrpc.exception.Transport(
               qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
               `Invalid jsonrpc data: multiple responses with same id ${id}.`,
               {request, response}));
         }
-        request.response = response;
+        request.response = true;
       }
       // handle the different message types
       if (msgObj instanceof qx.io.jsonrpc.protocol.Result) {
@@ -293,7 +293,7 @@ qx.Class.define("qx.io.remote.Client",
         request.promise.resolve(msgObj.getResult());
       } else if (msgObj instanceof qx.io.jsonrpc.protocol.Error) {
         let error = msgObj.getError();
-        let ex = new qx.io.remote.exception.JsonRpc(
+        let ex = new qx.io.jsonrpc.exception.JsonRpc(
           error.code,
           error.message, {
             request: request.toObject(),

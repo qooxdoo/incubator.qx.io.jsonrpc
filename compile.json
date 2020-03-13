@@ -60,23 +60,20 @@
   ],
   "applications": [
     {
-      "class": "qx.test.io.jsonrpc.TestClient",
-      "theme": "qx.theme.Simple",
-      "name": "peerone"
-    },
-    {
       "class": "qxl.testtapper.Application",
       "name": "testtapper",
       "theme": "qx.theme.Simple",
       "title": "Qooxdoo TestTAPper",
       "environment": {
         "qx.icontheme": "Tango",
-        "testtapper.testNameSpace": "qx.test"
+        "testtapper.testNameSpace": "qx.test.io.jsonrpc"
       },
       "include": [
-        "qx.test.*"
+        "qx.*",
+        "qx.io.jsonrpc.protocol.*"
       ],
-      "exclude": []
+      "exclude": [
+      ]
     },
     {
       "class": "qxl.apiviewer.Application",

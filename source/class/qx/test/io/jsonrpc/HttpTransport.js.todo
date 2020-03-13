@@ -182,53 +182,53 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
     },
 
     "test: send notification and throw on response" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "result": 19, "id": 1});
       this.assertResponseThrowsException("logout", [], true, response, {
-        send: qx.io.remote.exception.Transport
+        send: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and validate reponse" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "result": 19, "id": 1});
       this.assertResponseIs("subtract", [42, 23], response);
     },
 
     "test: call jsonrpc method and expect error on invalid reponse - not array or object" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify("foo");
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        send: qx.io.remote.exception.Transport
+        send: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and expect error on invalid reponse - missing result" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "id": 1});
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        request: qx.io.remote.exception.Transport
+        request: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and expect error on invalid reponse - unknown id" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", result: "foo", "id": 5});
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        send: qx.io.remote.exception.Transport
+        send: qx.io.jsonrpc.exception.Transport
       });
     },
 
     "test: call jsonrpc method and expect error response" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "error" : {"code": -32600, "message": "Division by zero!"}, "id": 1});
       this.assertResponseThrowsException("divide", [42, 0], false, response, {
-        request: qx.io.remote.exception.JsonRpc
+        request: qx.io.jsonrpc.exception.JsonRpc
       });
     },
 
     "test: send batched requests" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify([
         {"jsonrpc": "2.0", "result": 7, "id": 1},
         {"jsonrpc": "2.0", "result": "foo", "id": 2},
@@ -236,7 +236,7 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
         {"jsonrpc": "2.0", "error": {"code": -32601, "message": "Method not found"}, "id": 4},
         {"jsonrpc": "2.0", "result": ["hello", 5], "id": 5}]);
       this.setUpFakeServer(response);
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       var spies = [];
       for( var i=1; i < 6; i++) {
         spies[i] = { result: this.spy(), error: this.spy() };
@@ -256,13 +256,13 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
     },
 
     "test: receive jsonrpc requests from server" : function() {
-      qx.io.remote.Rpc.reset();
+      qx.io.jsonrpc.Rpc.reset();
       var response = [
         {"jsonrpc": "2.0", "method": "clientMethod", "params": ["foo", "bar"], "id": 1},
         {"jsonrpc": "2.0", "method": "clientNotification", "params": []}
       ];
       this.setUpFakeServer(qx.lang.Json.stringify(response));
-      var client = new qx.io.remote.Rpc("jsonrpc");
+      var client = new qx.io.jsonrpc.Rpc("jsonrpc");
       var spy = this.spy();
       client.addListener("request", function(evt){
         spy(evt.getData());

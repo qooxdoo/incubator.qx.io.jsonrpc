@@ -1,5 +1,5 @@
 qx.Class.define("qx.io.jsonrpc.protocol.Request",{
-  extend: qx.io.jsonrpc.Notification,
+  extend: qx.io.jsonrpc.protocol.Notification,
   statics: {
     /**
      * Static counter for all request ids
@@ -19,13 +19,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Request",{
      * The integer id of the request
      */
     id : {
-      check: value => qx.lang.Type.isNumber(value) && parseInt(value) === value
-    },
-    /**
-     * Promise that is resolved when the response to this request has been received
-     */
-    promise: {
-      check: "qx.Promise"
+      check: value => qx.lang.Type.isNumber(value) && parseInt(value, 10) === value
     }
   },
 
@@ -40,13 +34,23 @@ qx.Class.define("qx.io.jsonrpc.protocol.Request",{
   construct(method, params, id) {
     this.base(arguments, method, params);
     if (id === undefined) {
-      id = ++this.self(arguments).current_request_id;
+      id = ++qx.io.jsonrpc.protocol.Request.__current_request_id;
     }
     this.set({id});
-    this.setPromise(new qx.Promise());
+    this.__promise = new qx.Promise();
   },
 
   members: {
+
+    __promise : null,
+
+    /**
+     * Getter for promise which resolves with the result to the request
+     * @return {qx.Promise}
+     */
+    getPromise() {
+      return this.__promise;
+    },
 
     /**
      * Determines how an exception during transport is handled. Standard
