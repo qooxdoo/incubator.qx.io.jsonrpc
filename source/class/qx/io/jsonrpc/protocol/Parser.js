@@ -26,10 +26,10 @@ qx.Class.define("qx.io.jsonrpc.protocol.Parser", {
         );
       }
       if (message === null) {
-        this._throwTransportException(new qx.io.jsonrpc.exception.Transport(
-          qx.io.jsonrpc.exception.Transport.NO_DATA,
-          "No data"
-        ));
+        throw new qx.io.jsonrpc.exception.Transport(
+          "No data",
+          qx.io.jsonrpc.exception.Transport.NO_DATA
+        );
       }
       // batch
       if (qx.lang.Type.isArray(message)) {

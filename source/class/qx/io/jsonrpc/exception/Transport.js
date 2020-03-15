@@ -32,6 +32,8 @@ qx.Class.define("qx.io.jsonrpc.exception.Transport",
     INVALD_URI       : 6,
     FAILED           : 7,
     INVALID_ID       : 8,
-    INVALID_JSON     : 9
+    INVALID_JSON     : 9,
+    DUPLICATE_ID     : 10,
+    UNKNOWN_ID       : 11
   }
 });

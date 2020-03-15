@@ -13,13 +13,11 @@ qx.Class.define("qx.io.jsonrpc.protocol.Batch",{
 
     /**
      * Adds a request or notification to the batch
-     * @param {qx.io.jsonrpc.protocol.Request|qx.io.jsonrpc.protocol.Notification} message
+     * @param {qx.io.jsonrpc.protocol.Message} message
      * @return {qx.io.jsonrpc.protocol.Batch}
      */
     add(message) {
-      if (!(message instanceof qx.io.jsonrpc.protocol.Request || message instanceof qx.io.jsonrpc.protocol.Notification)) {
-        throw new Error("You can only add an instance of qx.io.jsonrpc.protocol.Request or qx.io.jsonrpc.protocol.Notification to the batch.");
-      }
+      this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
       this.getBatch().push(message);
       // return the instance for chaining
       return this;
@@ -58,7 +56,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Batch",{
      * @return {*}
      */
     toObject() {
-      return this.getBatch().map(message => message.toObject());
+      return this.getBatch().toArray().map(message => message.toObject());
     },
 
     /**
@@ -66,7 +64,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Batch",{
      * @return {String}
      */
     toString() {
-      return this.getBatch().map(message => message.toString());
+      return JSON.stringify(this.getBatch().toArray().map(message => message.toObject()));
     }
   }
 });

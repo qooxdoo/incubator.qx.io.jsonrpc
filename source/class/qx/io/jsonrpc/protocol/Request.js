@@ -60,7 +60,11 @@ qx.Class.define("qx.io.jsonrpc.protocol.Request",{
      * @param {qx.io.jsonrpc.exception.Transport} exception
      */
     handleTransportException(exception) {
-      this.getPromise().reject(exception);
+      try {
+        this.getPromise().reject(exception);
+      } catch(e) {
+        this.warn("Promise has already been rejected");
+      }
     }
   }
 });

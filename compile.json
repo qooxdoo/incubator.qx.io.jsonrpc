@@ -9,19 +9,18 @@
       },
       "environment": {
         "qx.buildType": "source"
-      }
-    },
-    {
-      "type": "source",
-      "outputPath": "compiled/source-node",
-      "application-types": [
-        "node"
-      ],
-      "babelOptions": {
-        "targets": "node >= 11"
       },
-      "environment": {
-        "qx.buildType": "source"
+      "bundle": {
+        "include": [
+          "qx.*",
+          "qxWeb",
+          "qxl.*"
+        ],
+        "exclude": [
+          "qx.io.jsonrpc.*",
+          "qx.io.request.authentication.*",
+          "qx.test.io.jsonrpc.*"
+        ]
       }
     },
     {
