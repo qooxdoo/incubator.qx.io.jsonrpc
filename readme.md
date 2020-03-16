@@ -10,7 +10,19 @@ This module should be considered **ALPHA RELEASE** and is subject to change with
 - API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.jsonrpc
 - Test runner: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/
 
-## Installation & testing
+## Installation for use in your project
+
+```bash
+git clone https://github.com/qooxdoo/incubator.qx.io.jsonrpc.git
+```
+
+Then, in your application `compile.json`, add the absolute or
+relative path to the repository clone in the `libraries` array.
+
+## Installation & testing (development)
+
+To run this incubator project as a standalone application (for development purposes),
+execute the following steps
 
 ```bash
 npm install --no-save --no-package-lock @qooxdoo/compiler
