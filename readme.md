@@ -1,5 +1,7 @@
 # Qooxdoo JSON-RPC API Incubator
 
+[![Build Status](https://travis-ci.com/qooxdoo/incubator.qx.io.jsonrpc.svg?branch=master)](https://travis-ci.com/qooxdoo/incubator.qx.io.jsonrpc)
+
 This incubator contains a proposal to add an extensible JSON-RPC v2 API 
 to Qooxdoo.
 
