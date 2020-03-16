@@ -9,7 +9,7 @@
  * </p>
  * Here is an example:
  *
- * <code>
+ * <pre class="javascript">
  * (async()=>{
  *   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
  *   let result;
@@ -20,11 +20,11 @@
  *     // handle exceptions
  *   }
  * })();
- * </code>
+ * </pre>
  *
  * or using a batch:
  *
- * <code>
+ * <pre class="javascript">
  * (async()=>{
  *   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
  *   const batch = new qx.io.jsonrpc.protocol.Batch()
@@ -40,30 +40,30 @@
  *     // handle exceptions
  *   }
  * })();
- * </code>
+ * </pre>
  *
  * The high-level Client API does not handle transport-specific issues like
  * authentication - this needs to be done in the transport layer. For example,
  * to use HTTP Bearer authentication, do this:
- * <code>
- *   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
- *   const auth = new qx.io.request.authentication.Bearer("TOKEN");
- *   client.getTransportImpl().setAuthentication(auth);
- *   client.sendRequest("method-needing-authentication", [1,2,3]);
- * </code>
+ * <pre class="javascript">
+ * const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
+ * const auth = new qx.io.request.authentication.Bearer("TOKEN");
+ * client.getTransportImpl().setAuthentication(auth);
+ * client.sendRequest("method-needing-authentication", [1,2,3]);
+ * </pre>
  *
  * If you need a client with a customized transport often, we recommend
  * to create a class that inherits from the client class, override
  * the methods which are needed to produce that custom behavior (such
  * as {@link qx.io.jsonrpc.transport.Http#_createTransportImpl},
- * and provide a <code>defer</code> section which registers
+ * and provide a <pre class="javascript">defer</pre> section which registers
  * the behavior for your particular class of URIs:
  *
- * <code>
+ * <pre class="javascript">
  * defer() {
  *   qx.io.jsonrpc.Client.registerTransport(/^http/, my.custom.Transport);
  * }
- * </code>
+ * </pre>
  *
  * The client will always use the transport that was last registered for
  * a certain endpoint pattern, i.e. from then on, all clients created
