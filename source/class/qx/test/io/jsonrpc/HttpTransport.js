@@ -228,10 +228,14 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
       for( var i=1; i < 6; i++) {
         spies[i] = { result: this.spy(), error: this.spy() };
         let request = new qx.io.jsonrpc.protocol.Request("someMethod", []);
-        request.getPromise().then(spies[i].result).catch(spies[i].error);
+        request.getPromise()
+          .then(spies[i].result)
+          .catch(spies[i].error);
         batch.add(request);
       }
-      client.sendBatch(batch);
+      client.sendBatch(batch).catch(err => {
+        this.assertInstance(err, qx.io.jsonrpc.exception.JsonRpc);
+      });
       this.wait(100, function(){
         this.assertCalledWith(spies[1].result, 7);
         this.assertCalledWith(spies[2].result, "foo");
@@ -251,13 +255,13 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
       var client = new qx.io.jsonrpc.Client("http://jsonrpc");
       var spy = this.spy();
       client.addListener("peerRequest", (evt) => {
-        spy(evt.getData());
+        let message = evt.getData().toObject();
+        this.assertDeepEqual(response.shift(), message);
+        spy(message);
       });
       client.sendNotification("ping");
       this.wait(100, function(){
         this.assertCalledTwice(spy);
-        //this.assertCalledWith(spy.firstCall, response[1]); // recursion error
-        //this.assertCalledWith(spy.secondCall, response[2]); // recursion error
       },this);
     }
   }

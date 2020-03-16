@@ -321,7 +321,6 @@ qx.Class.define("qx.io.jsonrpc.Client",
       if (message instanceof qx.io.jsonrpc.protocol.Result) {
         // resolve the individual promise
         request.getPromise().resolve(message.getResult());
-
       } else if (message instanceof qx.io.jsonrpc.protocol.Error) {
         let error = message.getError();
         let ex = new qx.io.jsonrpc.exception.JsonRpc(
@@ -335,7 +334,6 @@ qx.Class.define("qx.io.jsonrpc.Client",
         this.fireDataEvent("error", ex);
         // reject the individual promise
         request.getPromise().reject(ex);
-
       } else if (message instanceof qx.io.jsonrpc.protocol.Request || message instanceof qx.io.jsonrpc.protocol.Notification ) {
         // handle peer-originated requests and notifications
         this.fireDataEvent("peerRequest", message)
