@@ -1,6 +1,6 @@
 /**
- * <p>This namespace provides an API implementing the <a href="https://www.jsonrpc.org/specification">JSON
- * Remote Procedure Call (JSON-RPC) version 2 specification</a>
+ * <p>This namespace provides an API implementing the
+ * <a href="https://www.jsonrpc.org/specification">JSON Remote Procedure Call (JSON-RPC) version 2 specification</a>
  * </p>
  * <p>JSON-RPC v2 is transport-agnostic. We provide a high-level
  * API interface (qx.io.jsonrpc.Client), a transport interface
