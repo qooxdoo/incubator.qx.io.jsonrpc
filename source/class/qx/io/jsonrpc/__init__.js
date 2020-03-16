@@ -9,7 +9,7 @@
  * </p>
  * Here is an example:
  *
- * <pre>
+ * <code>
  * (async()=>{
  *   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
  *   let result;
@@ -20,11 +20,11 @@
  *     // handle exceptions
  *   }
  * })();
- * </pre>
+ * </code>
  *
  * or using a batch:
  *
- * <pre>
+ * <code>
  * (async()=>{
  *   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
  *   const batch = new qx.io.jsonrpc.protocol.Batch()
@@ -40,17 +40,17 @@
  *     // handle exceptions
  *   }
  * })();
- * </pre>
+ * </code>
  *
  * The high-level Client API does not handle transport-specific issues like
  * authentication - this needs to be done in the transport layer. For example,
  * to use HTTP Bearer authentication, do this:
- * <pre>
+ * <code>
  *   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
  *   const auth = new qx.io.request.authentication.Bearer("TOKEN");
  *   client.getTransportImpl().setAuthentication(auth);
  *   client.sendRequest("method-needing-authentication", [1,2,3]);
- * </pre>
+ * </code>
  *
  * If you need a client with a customized transport often, we recommend
  * to create a class that inherits from the client class, override
@@ -59,11 +59,11 @@
  * and provide a <code>defer</code> section which registers
  * the behavior for your particular class of URIs:
  *
- * <pre>
+ * <code>
  * defer() {
  *   qx.io.jsonrpc.Client.registerTransport(/^http/, my.custom.Transport);
  * }
- * </pre>
+ * </code>
  *
  * The client will always use the transport that was last registered for
  * a certain endpoint pattern, i.e. from then on, all clients created
