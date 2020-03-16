@@ -7,6 +7,9 @@ to Qooxdoo.
 
 This module should be considered **ALPHA RELEASE** and is subject to change without notice.
 
+- API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.jsonrpc
+- Test runner: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/
+
 ## Installation & testing
 
 ```bash
