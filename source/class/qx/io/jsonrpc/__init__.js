@@ -1,12 +1,13 @@
 /**
- * <p>This namespace provides an API implementing the
- * <a href="https://www.jsonrpc.org/specification">JSON Remote Procedure Call (JSON-RPC) version 2 specification</a>
- * </p>
- * <p>JSON-RPC v2 is transport-agnostic. We provide a high-level
+ * This namespace provides an API implementing the <a
+ * href="https://www.jsonrpc.org/specification">JSON Remote
+ * Procedure Call (JSON-RPC) version 2 specification</a>
+ *
+ * JSON-RPC v2 is transport-agnostic. We provide a high-level
  * API interface (qx.io.jsonrpc.Client), a transport interface
  * (qx.io.jsonrpc.transport.ITransport) and an HTTP transport implementation.
  * Other transports based on websockets or other mechanisms can be added later.
- * </p>
+ *
  * Here is an example:
  *
  * <pre class="javascript">
@@ -30,7 +31,7 @@
  *   const batch = new qx.io.jsonrpc.protocol.Batch()
  *     .add(new qx.io.jsonrpc.protocol.Request("method3", [1,2,3]))
  *     .addNotification("method4") // or shorthand method
- *    .addRequest("method5",["foo", "bar"]) // positional parameters
+ *     .addRequest("method5",["foo", "bar"]) // positional parameters
  *     .addRequest("method6", {foo:"bar"}); // named parameters
  *   let results;
  *   try {
@@ -56,7 +57,7 @@
  * to create a class that inherits from the client class, override
  * the methods which are needed to produce that custom behavior (such
  * as {@link qx.io.jsonrpc.transport.Http#_createTransportImpl},
- * and provide a <pre class="javascript">defer</pre> section which registers
+ * and provide a `defer` section which registers
  * the behavior for your particular class of URIs:
  *
  * <pre class="javascript">

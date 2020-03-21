@@ -4,7 +4,9 @@ qx.Interface.define("qx.io.jsonrpc.transport.ITransport", {
      * The URI of the endpoint
      * @var {String}
      */
-    endpoint: {}
+    endpoint: {
+      check: "String"
+    }
   },
   events: {
     /**

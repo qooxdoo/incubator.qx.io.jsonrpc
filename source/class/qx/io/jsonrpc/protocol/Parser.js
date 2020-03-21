@@ -1,6 +1,26 @@
+/* ************************************************************************
+
+   qooxdoo - the new era of web development
+
+   http://qooxdoo.org
+
+   Copyright:
+      2020 Christian Boulanger
+
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
+
+************************************************************************ */
+
+
 /**
  * The parser object has a parse() method, which takes a UTF-encoded string and
- * returns the correponding subclass of {@link qx.io.jsonrpc.protocol.Message}
+ * returns an instance of the correponding subclass of {@link qx.io.jsonrpc.protocol.Message} or
+ * of {@link qx.io.jsonrpc.protocol.Message}.
  */
 qx.Class.define("qx.io.jsonrpc.protocol.Parser", {
   extend: qx.core.Object,

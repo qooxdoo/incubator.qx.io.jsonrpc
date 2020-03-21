@@ -20,7 +20,6 @@
  * This class provides a JSON-RPC client object with auto-configuration of the
  * transport used (based on the URI passed).
  */
-
 qx.Class.define("qx.io.jsonrpc.Client",
 {
   extend : qx.core.Object,
@@ -64,9 +63,9 @@ qx.Class.define("qx.io.jsonrpc.Client",
     "error" : "qx.event.type.Data",
 
     /**
-     * Event fired when a peer-originated JSON-RPC message
-     * has been received from the peer endpoint. Event data
-     * is an instance of {@link qx.io.jsonrpc.message.Request}
+     * Event fired when a peer-originated JSON-RPC message has been
+     * received from the peer endpoint. Event data is an instance of {@link
+     * qx.io.jsonrpc.message.Batch}, {@link qx.io.jsonrpc.message.Request}
      * or {@link qx.io.jsonrpc.message.Notification}.
      */
     "peerRequest" : "qx.event.type.Data"
@@ -74,11 +73,13 @@ qx.Class.define("qx.io.jsonrpc.Client",
 
   /**
    * @param {qx.io.jsonrpc.transport.ITransport|String} transportOrUri
-   *    Transport object or URL for auto-detection of transport
+   *    Transport object, which must implement {@link qx.io.jsonrpc.transport.ITransport}
+   *    or a string URI, which will trigger auto-detection of transport, as long as an
+   *    appropriate transport has been registered with the static `registerTransport()` function.
    * @param {String?} methodPrefix
    *    Optional service name which will be prepended to the method
    * @param {qx.io.jsonrpc.protocol.Parser?} parser
-   *    Optional parser object, which needs to be a subclass of qx.io.jsonrpc.protocol.Parser
+   *    Optional parser object, which needs to be an instance of a subclass of {@link qx.io.jsonrpc.protocol.Parser}
    */
   construct : function(transportOrUri, methodPrefix, parser) {
     this.base(arguments);

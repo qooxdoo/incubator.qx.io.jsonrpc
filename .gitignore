@@ -2,8 +2,10 @@ compiled/
 node_modules/
 qx_packages
 .package-cache.json
+package-lock.json
 .settings/
 .nyc_output
 
 # IDE config
 .idea
+

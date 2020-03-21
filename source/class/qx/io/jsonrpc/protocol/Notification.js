@@ -1,3 +1,24 @@
+/* ************************************************************************
+
+   qooxdoo - the new era of web development
+
+   http://qooxdoo.org
+
+   Copyright:
+      2020 Christian Boulanger
+
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
+
+************************************************************************ */
+
+/**
+ * A JSON-RPC v2.0 notification object
+ */
 qx.Class.define("qx.io.jsonrpc.protocol.Notification",{
   extend: qx.io.jsonrpc.protocol.Message,
   properties: {

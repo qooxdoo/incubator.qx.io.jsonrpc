@@ -1,3 +1,30 @@
+/* ************************************************************************
+
+   qooxdoo - the new era of web development
+
+   http://qooxdoo.org
+
+   Copyright:
+      2020 Christian Boulanger
+
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
+
+************************************************************************ */
+
+/**
+ * A JSON-RPC v2.0 batch message object. A batch is a JSON array containing
+ * one or more of the following message objects:
+ *  - {@link qx.io.jsonrpc.protocol.Request}
+ *  - {@link qx.io.jsonrpc.protocol.Notification}
+ *  - {@link qx.io.jsonrpc.protocol.Result}
+ *  - {@link qx.io.jsonrpc.protocol.Error}
+ *  @see https://www.jsonrpc.org/specification#batch
+ */
 qx.Class.define("qx.io.jsonrpc.protocol.Batch",{
   extend: qx.core.Object,
   properties: {
