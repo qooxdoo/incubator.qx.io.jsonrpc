@@ -18,6 +18,7 @@
 
 /**
  * A JSON-RPC v2.0 notification object
+ * @see https://www.jsonrpc.org/specification#request_object
  */
 qx.Class.define("qx.io.jsonrpc.protocol.Notification",{
   extend: qx.io.jsonrpc.protocol.Message,

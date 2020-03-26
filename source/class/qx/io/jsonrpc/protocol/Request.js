@@ -18,6 +18,7 @@
 
 /**
  * A JSON-RPC v2.0 request object
+ *
  * @see https://www.jsonrpc.org/specification#request_object
  */
 qx.Class.define("qx.io.jsonrpc.protocol.Request",{

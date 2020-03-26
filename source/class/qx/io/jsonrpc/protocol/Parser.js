@@ -20,7 +20,7 @@
 /**
  * The parser object has a parse() method, which takes a UTF-encoded string and
  * returns an instance of the correponding subclass of {@link qx.io.jsonrpc.protocol.Message} or
- * of {@link qx.io.jsonrpc.protocol.Message}.
+ * a {@link qx.io.jsonrpc.protocol.Batch} instance.
  */
 qx.Class.define("qx.io.jsonrpc.protocol.Parser", {
   extend: qx.core.Object,

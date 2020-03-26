@@ -24,7 +24,7 @@
   "requires": {
     "@qooxdoo/framework": "^6.0.0-beta",
     "@qooxdoo/compiler": "^1.0.0-beta",
-    "qooxdoo/qxl.apiviewer": "^1.0.0-beta.8",
+    "qooxdoo/qxl.apiviewer": "^1.0.0-beta.9",
     "qooxdoo/qxl.testtapper": "^0.5.0"
   }
 }

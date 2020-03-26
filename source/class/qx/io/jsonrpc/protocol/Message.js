@@ -38,7 +38,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Message",{
     },
 
     /**
-     * Serialiuze to a native javascript object
+     * Serialize to a native javascript object
      * @return {Object}
      */
     toObject() {

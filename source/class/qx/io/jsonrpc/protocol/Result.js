@@ -19,6 +19,8 @@
 /**
  * A JSON-RPC v2.0 result object, which is a response to a {@link qx.io.jsonrpc.protocol.Request},
  * indicating a successfully processed request.
+ *
+ * @see https://www.jsonrpc.org/specification#response_object
  */
 qx.Class.define("qx.io.jsonrpc.protocol.Result",{
   extend: qx.io.jsonrpc.protocol.Message,

@@ -17,8 +17,8 @@
 ************************************************************************ */
 
 /**
- * A JSON-RPC v2.0 batch message object. A batch is a JSON array containing
- * one or more of the following message objects:
+ * An object representing a JSON-RPC v2.0 batch message object. You can add
+ * one or more of the following message objects to the batch:
  *  - {@link qx.io.jsonrpc.protocol.Request}
  *  - {@link qx.io.jsonrpc.protocol.Notification}
  *  - {@link qx.io.jsonrpc.protocol.Result}
