@@ -49,7 +49,7 @@
  * <pre class="javascript">
  * const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
  * const auth = new qx.io.request.authentication.Bearer("TOKEN");
- * client.getTransportImpl().setAuthentication(auth);
+ * client.getTransport().getTransportImpl().setAuthentication(auth);
  * client.sendRequest("method-needing-authentication", [1,2,3]);
  * </pre>
  *

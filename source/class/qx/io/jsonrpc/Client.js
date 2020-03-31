@@ -83,6 +83,9 @@ qx.Class.define("qx.io.jsonrpc.Client",
    */
   construct : function(transportOrUri, methodPrefix, parser) {
     this.base(arguments);
+    if (qx.io.jsonrpc.Client.__transports === null) {
+      qx.io.jsonrpc.Client.__transports = [];
+    }
     let transport, uri;
     if (qx.lang.Type.isString(transportOrUri)) {
       uri = transportOrUri;
