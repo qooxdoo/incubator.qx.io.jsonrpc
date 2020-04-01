@@ -256,7 +256,7 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
       var spy = this.spy();
       client.addListener("peerRequest", (evt) => {
         let message = evt.getData().toObject();
-        this.assertDeepEqual(response.shift(), message);
+        this.assertDeepEquals(response.shift(), message);
         spy(message);
       });
       client.sendNotification("ping");

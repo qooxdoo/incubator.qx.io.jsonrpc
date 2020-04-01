@@ -15,9 +15,9 @@ qx.Class.define("qx.test.io.jsonrpc.Protocol",
         method: "foo",
         params: ["bar", 1, false]
       };
-      this.assertDeepEqual(expected, message.toObject());
+      this.assertDeepEquals(expected, message.toObject());
       // test parser
-      this.assertDeepEqual(expected, this.parser.parse(JSON.stringify(expected)).toObject());
+      this.assertDeepEquals(expected, this.parser.parse(JSON.stringify(expected)).toObject());
     },
 
     "test: JSON-RPC request notification object"() {
@@ -27,9 +27,9 @@ qx.Class.define("qx.test.io.jsonrpc.Protocol",
         method: "foo",
         params: ["bar", 1, false]
       };
-      this.assertDeepEqual(expected, message.toObject());
+      this.assertDeepEquals(expected, message.toObject());
       // test parser
-      this.assertDeepEqual(expected, this.parser.parse(JSON.stringify(expected)).toObject());
+      this.assertDeepEquals(expected, this.parser.parse(JSON.stringify(expected)).toObject());
     },
 
     "test: JSON-RPC error object"() {
@@ -42,9 +42,9 @@ qx.Class.define("qx.test.io.jsonrpc.Protocol",
           message: "error!"
         }
       };
-      this.assertDeepEqual(expected, message.toObject());
+      this.assertDeepEquals(expected, message.toObject());
       // test parser
-      this.assertDeepEqual(expected, this.parser.parse(JSON.stringify(expected)).toObject());
+      this.assertDeepEquals(expected, this.parser.parse(JSON.stringify(expected)).toObject());
     },
 
     "test: JSON-RPC result object"() {
@@ -54,9 +54,9 @@ qx.Class.define("qx.test.io.jsonrpc.Protocol",
           code: 5, message: "error!"
         }
       };
-      this.assertDeepEqual(expected, message.toObject());
+      this.assertDeepEquals(expected, message.toObject());
       // test parser
-      this.assertDeepEqual(expected, this.parser.parse(JSON.stringify(expected)).toObject());
+      this.assertDeepEquals(expected, this.parser.parse(JSON.stringify(expected)).toObject());
     }
   }
 });

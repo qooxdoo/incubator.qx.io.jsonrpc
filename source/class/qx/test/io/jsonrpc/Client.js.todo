@@ -74,7 +74,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
      * @param actual {*}
      * @param msg
      */
-    assertDeepEqual : function(expected, actual, msg) {
+    assertDeepEquals : function(expected, actual, msg) {
       msg = msg || "Failed to assert that " + qx.lang.Json.stringify(actual) +
         " is deeply equal to " + qx.lang.Json.stringify(expected) + "."
       this.assertTrue(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
@@ -94,7 +94,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
       if (!isNotification) {
         expected['id'] = qx.io.jsonrpc.Rpc.getRequestId()
       }
-      this.assertDeepEqual(expected, qx.lang.Json.parse(requestData));
+      this.assertDeepEquals(expected, qx.lang.Json.parse(requestData));
     },
 
     assertResponseIs : function(method, params, response) {

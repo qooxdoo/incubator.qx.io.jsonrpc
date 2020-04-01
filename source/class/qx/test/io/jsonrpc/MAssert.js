@@ -17,15 +17,15 @@ qx.Mixin.define("qx.test.io.jsonrpc.MAssert",{
      *     in obj1 is deepEqual to the corresponding property in obj2
      *
      * Supports cyclic objects.
-     * @param expected {*}
-     * @param actual {*}
-     * @param msg
+     * @param {*} expected
+     * @param {*} actual
+     * @param {String?} msg
      */
-    assertDeepEqual : function(expected, actual, msg) {
-      msg = msg || ("Failed to assert that " + qx.lang.Json.stringify(actual) +
-        " is deeply equal to " + qx.lang.Json.stringify(expected) + ".");
-      this.assertTrue(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
+    assertDeepEquals : function(expected, actual, msg) {
+      if (!msg) {
+        msg = `Failed to assert that ${qx.lang.Json.stringify(actual)} deeply equals ${qx.lang.Json.stringify(expected)}.`;
+      }
+      this.assert(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
     }
-
   }
 });
