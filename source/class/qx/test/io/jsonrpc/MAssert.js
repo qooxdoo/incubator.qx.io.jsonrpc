@@ -26,6 +26,20 @@ qx.Mixin.define("qx.test.io.jsonrpc.MAssert",{
         msg = `Failed to assert that ${qx.lang.Json.stringify(actual)} deeply equals ${qx.lang.Json.stringify(expected)}.`;
       }
       this.assert(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
+    },
+  
+    /**
+     * Assert that an message is dispatched via the message bus.
+     *
+     * @param {String} name The name of the message
+     * @param {*|Function|undefined} data The data of the message, if any, or a
+     * valiation function which returns true of false depending on whether the
+     * data was correct. If you dont want to check the data and want to provide
+     * a message as the third argument, pass `undefined` explicitly.
+     * @param msg {String?""} Message to be shows if the assertion fails.
+     */
+    assertMessageDispatched : function(name, data, msg) {
+      throw new Error("Needs to be implemented");
     }
   }
 });
