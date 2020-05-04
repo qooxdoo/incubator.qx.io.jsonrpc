@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: |
           npm install @qooxdoo/compiler
-          npx qx test
+          npx qx compile
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
