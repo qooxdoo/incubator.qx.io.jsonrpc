@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/type/Native.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testClone",
+    "domEvent",
+    "event",
+    "type",
+    "Native",
+    "init",
+    "document",
+    "body",
+    "clone",
+    "lang",
+    "Object",
+    "empty",
+    "preventDefault",
+    "dispose",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAmBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,SAAS,EAAG,qBACZ;AACE,YAAIC,QAAQ,GAAG,EAAf;AACA,YAAIC,KAAK,GAAG,IAAIb,EAAE,CAACa,KAAH,CAASC,IAAT,CAAcC,MAAlB,GAA2BC,IAA3B,CAAgCJ,QAAhC,EAA0CK,QAAQ,CAACC,IAAnD,EAAyDD,QAAQ,CAACC,IAAlE,EAAwE,IAAxE,EAA8E,IAA9E,CAAZ;AAEA,YAAIC,KAAK,GAAGN,KAAK,CAACM,KAAN,EAAZ,CAJF,CAME;;AACAnB,QAAAA,EAAE,CAACoB,IAAH,CAAQC,MAAR,CAAeC,KAAf,CAAqBV,QAArB;AAEAO,QAAAA,KAAK,CAACI,cAAN;AAEAV,QAAAA,KAAK,CAACW,OAAN;AACAL,QAAAA,KAAK,CAACK,OAAN;AACD;AAfH;AALF,GADA;AAnBAxB,EAAAA,EAAE,CAACyB,IAAH,CAAQZ,KAAR,CAAcC,IAAd,CAAmBC,MAAnB,CAA0BZ,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n\nqx.Class.define(\"qx.test.event.type.Native\",\n{\n  extend : qx.dev.unit.TestCase,\n\n\n  members :\n  {\n    testClone : function()\n    {\n      var domEvent = {};\n      var event = new qx.event.type.Native().init(domEvent, document.body, document.body, true, true);\n\n      var clone = event.clone();\n\n      // simulate native event disposal\n      qx.lang.Object.empty(domEvent);\n\n      clone.preventDefault();\n\n      event.dispose();\n      clone.dispose();\n    }\n  }\n});"
+  ]
+}

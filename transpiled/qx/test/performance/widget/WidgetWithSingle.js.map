@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/performance/widget/WidgetWithSingle.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "performance",
+    "widget",
+    "AbstractWidget",
+    "members",
+    "CREATE_ITERATIONS",
+    "RESIZE_ITERATIONS",
+    "DISPOSE_ITERATIONS",
+    "_createWidget",
+    "ui",
+    "core",
+    "Widget",
+    "set",
+    "decorator",
+    "WidgetWithSingle"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6CAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BC,cADtC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,iBAAiB,EAAG,GADtB;AAEEC,MAAAA,iBAAiB,EAAG,EAFtB;AAGEC,MAAAA,kBAAkB,EAAG,GAHvB;AAKEC,MAAAA,aAAa,EAAG,yBAAW;AACzB,eAAO,IAAIf,EAAE,CAACgB,EAAH,CAAMC,IAAN,CAAWC,MAAf,GAAwBC,GAAxB,CAA4B;AAACC,UAAAA,SAAS,EAAE;AAAZ,SAA5B,CAAP;AACD;AAPH;AAJF,GADA;AAAApB,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BY,gBAA3B,CAA4ClB,aAA5C,GAA4DA,aAA5D",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.performance.widget.WidgetWithSingle\",\n{\n  extend : qx.test.performance.widget.AbstractWidget,\n\n  members :\n  {\n    CREATE_ITERATIONS : 100,\n    RESIZE_ITERATIONS : 50,\n    DISPOSE_ITERATIONS : 100,\n\n    _createWidget : function() {\n      return new qx.ui.core.Widget().set({decorator: \"window\"});\n    }\n  }\n});"
+  ]
+}

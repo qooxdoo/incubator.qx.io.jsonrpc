@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/testclasses/MMixinOne.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "construct",
+    "core",
+    "Assert",
+    "assertTrue",
+    "state",
+    "push",
+    "members",
+    "getSomething",
+    "test",
+    "testclasses",
+    "MMixinOne"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EAAiD;AAC/CC,IAAAA,SAAS,EAAE,qBAAW;AACpBN,MAAAA,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeC,UAAf,CAA0B,KAAKC,KAAL,KAAe,IAAzC;AACA,WAAKA,KAAL,CAAWC,IAAX,CAAgB,WAAhB;AACD,KAJ8C;AAM/CC,IAAAA,OAAO,EAAE;AACPC,MAAAA,YAAY,EAAE,wBAAW;AACvB,eAAO,WAAP;AACD;AAHM;AANsC,GAAjD;AAAAb,EAAAA,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,SAApB,CAA8Bb,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "qx.Mixin.define(\"qx.test.testclasses.MMixinOne\", {\n  construct: function() {\n    qx.core.Assert.assertTrue(this.state !== null);\n    this.state.push(\"mixin-one\");\n  },\n  \n  members: {\n    getSomething: function() {\n      return \"mixin-one\";\n    }\n  }\n});"
+  ]
+}

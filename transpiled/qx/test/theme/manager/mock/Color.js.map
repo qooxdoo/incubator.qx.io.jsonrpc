@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/theme/manager/mock/Color.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "theme",
+    "modern",
+    "Color",
+    "colors",
+    "test",
+    "manager",
+    "mock"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,kCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,KAAH,CAASC,MAAT,CAAgBC,KAD3B;AAGEC,IAAAA,MAAM,EACN;AACE,oBAAe,KADjB;AAEE,uBAAkB,OAFpB;AAGE,sBAAiB,QAHnB;AAIE,oBAAe;AAJjB;AAJF,GADA;AAAAV,EAAAA,EAAE,CAACW,IAAH,CAAQJ,KAAR,CAAcK,OAAd,CAAsBC,IAAtB,CAA2BJ,KAA3B,CAAiCN,aAAjC,GAAiDA,aAAjD",
+  "sourcesContent": [
+    "qx.Theme.define(\"qx.test.theme.manager.mock.Color\",\n{\n  extend : qx.theme.modern.Color,\n\n  colors :\n  {\n    \"text-label\" : \"red\",\n    \"border-button\" : \"green\",\n    \"button-start\" : \"orange\",\n    \"button-end\" : \"yellow\"\n  }\n});\n"
+  ]
+}

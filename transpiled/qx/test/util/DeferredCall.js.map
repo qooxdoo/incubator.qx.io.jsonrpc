@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/DeferredCall.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testGlobalErrorHandling",
+    "fail",
+    "Error",
+    "onError",
+    "resume",
+    "event",
+    "GlobalError",
+    "setErrorHandler",
+    "deferredCall",
+    "util",
+    "DeferredCall",
+    "schedule",
+    "wait",
+    "core",
+    "AssertionError",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,uBAAuB,EAAG,mCAC1B;AACE,YAAIC,IAAI,GAAG,SAAPA,IAAO,GAAW;AACpB,gBAAM,IAAIC,KAAJ,CAAU,MAAV,CAAN;AACD,SAFD;;AAIA,YAAIC,OAAO,GAAG,SAAVA,OAAU,GAAW;AAAE,eAAKC,MAAL,CAAY,YAAW;AAChDf,YAAAA,EAAE,CAACgB,KAAH,CAASC,WAAT,CAAqBC,eAArB,CAAqC,IAArC,EAA2C,IAA3C;AACD,WAF0B;AAEtB,SAFL;;AAIA,YAAIC,YAAY,GAAG,IAAInB,EAAE,CAACoB,IAAH,CAAQC,YAAZ,CAAyBT,IAAzB,EAA+B,IAA/B,CAAnB;AACAZ,QAAAA,EAAE,CAACgB,KAAH,CAASC,WAAT,CAAqBC,eAArB,CAAqCJ,OAArC,EAA8C,IAA9C;AAEAK,QAAAA,YAAY,CAACG,QAAb;AACA,aAAKC,IAAL,CAAU,IAAV,EAAgB,YAAW;AACzBvB,UAAAA,EAAE,CAACgB,KAAH,CAASC,WAAT,CAAqBC,eAArB,CAAqC,IAArC,EAA2C,IAA3C;AACA,gBAAM,IAAIlB,EAAE,CAACwB,IAAH,CAAQC,cAAZ,CACJ,yBADI,EAEJ,6CAFI,CAAN;AAID,SAND;AAOD;AAtBH;AAJF,GADA;AAlBAzB,EAAAA,EAAE,CAAC0B,IAAH,CAAQN,IAAR,CAAaC,YAAb,CAA0BlB,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.DeferredCall\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testGlobalErrorHandling : function()\n    {\n      var fail = function() {\n        throw new Error(\"fail\");\n      };\n\n      var onError = function() { this.resume(function() {\n        qx.event.GlobalError.setErrorHandler(null, null);\n      }); };\n\n      var deferredCall = new qx.util.DeferredCall(fail, this);\n      qx.event.GlobalError.setErrorHandler(onError, this);\n\n      deferredCall.schedule();\n      this.wait(1000, function() {\n        qx.event.GlobalError.setErrorHandler(null, null);\n        throw new qx.core.AssertionError(\n          \"Asynchronous Test Error\",\n          \"Timeout reached before resume() was called.\"\n        );\n      });\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/io/remote/transport/Iframe.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "test",
+    "io",
+    "MRemoteTest",
+    "members",
+    "setUp",
+    "request",
+    "remote",
+    "transport",
+    "Iframe",
+    "testGetIframeHtmlContent",
+    "isLocal",
+    "needsPHPWarning",
+    "addListener",
+    "resume",
+    "response",
+    "getIframeHtmlContent",
+    "assertNotNull",
+    "assertNotEquals",
+    "lang",
+    "Json",
+    "parse",
+    "assertEquals",
+    "setUrl",
+    "getUrl",
+    "setParameters",
+    "my_param",
+    "send",
+    "wait"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAEA;;;;AAKAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAEEC,IAAAA,OAAO,EAAGV,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWC,WAFvB;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAE,iBAAW;AAChB,aAAKC,OAAL,GAAe,IAAIhB,EAAE,CAACY,EAAH,CAAMK,MAAN,CAAaC,SAAb,CAAuBC,MAA3B,EAAf;AACD,OAHH;AAMEC,MAAAA,wBAAwB,EAAG,oCAAW;AACpC,YAAI,KAAKC,OAAL,EAAJ,EAAoB;AAClB,eAAKC,eAAL;AACA;AACD;;AAED,aAAKN,OAAL,CAAaO,WAAb,CAAyB,WAAzB,EAAsC,YAAW;AAC/C,eAAKC,MAAL,CAAY,YAAW;AACrB,gBAAIC,QAAQ,GAAG,KAAKT,OAAL,CAAaU,oBAAb,EAAf;AACA,iBAAKC,aAAL,CAAmBF,QAAnB,EAA6B,qBAA7B;AACA,iBAAKG,eAAL,CAAqB,EAArB,EAAyBH,QAAzB,EAAmC,oBAAnC;AAEAA,YAAAA,QAAQ,GAAGzB,EAAE,CAAC6B,IAAH,CAAQC,IAAR,CAAaC,KAAb,CAAmBN,QAAnB,CAAX;AACA,iBAAKO,YAAL,CAAkB,mBAAlB,EAAuCP,QAAQ,CAAC,QAAD,CAA/C,EAA2D,oBAA3D;AACD,WAPD,EAOG,IAPH;AAQD,SATD,EASG,IATH,EANoC,CAiBpC;;AACA,aAAKT,OAAL,CAAaiB,MAAb,CAAoB,KAAKC,MAAL,CAAY,sCAAZ,CAApB;AACA,aAAKlB,OAAL,CAAamB,aAAb,CAA2B;AAACC,UAAAA,QAAQ,EAAE;AAAX,SAA3B;AACA,aAAKpB,OAAL,CAAaqB,IAAb;AAEA,aAAKC,IAAL;AACD;AA7BH;AALF,GADA;AAzBAtC,EAAAA,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWK,MAAX,CAAkBC,SAAlB,CAA4BC,MAA5B,CAAmChB,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n  2010 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\n     MIT: https://opensource.org/licenses/MIT\n  See the LICENSE file in the project's top-level directory for details.\n\nAuthors:\n  * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\n/*\n*/\n/**\n *\n * @asset(qx/test/xmlhttp/echo_get_request.php)\n */\n\nqx.Class.define(\"qx.test.io.remote.transport.Iframe\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : qx.test.io.MRemoteTest,\n\n  members :\n  {\n    setUp: function() {\n      this.request = new qx.io.remote.transport.Iframe();\n    },\n\n\n    testGetIframeHtmlContent : function() {\n      if (this.isLocal()) {\n        this.needsPHPWarning();\n        return;\n      }\n\n      this.request.addListener(\"completed\", function() {\n        this.resume(function() {\n          var response = this.request.getIframeHtmlContent();\n          this.assertNotNull(response, \"Response is 'null'!\");\n          this.assertNotEquals(\"\", response, \"Response is empty!\");\n\n          response = qx.lang.Json.parse(response);\n          this.assertEquals(\"my_param=expected\", response[\"_data_\"], \"Response is wrong!\");\n        }, this);\n      }, this);\n\n      // Send request\n      this.request.setUrl(this.getUrl(\"qx/test/xmlhttp/echo_get_request.php\"));\n      this.request.setParameters({my_param: \"expected\"});\n      this.request.send();\n\n      this.wait();\n    }\n  }\n});\n"
+  ]
+}

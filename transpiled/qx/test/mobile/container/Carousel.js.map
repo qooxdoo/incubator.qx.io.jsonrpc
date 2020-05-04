@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/container/Carousel.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testInit",
+    "carousel",
+    "ui",
+    "container",
+    "Carousel",
+    "getRoot",
+    "add",
+    "destroy",
+    "testAddCarouselPage",
+    "carouselPage",
+    "Composite",
+    "testRemoveCarouselPage",
+    "removePageByIndex",
+    "testPageSwitch",
+    "carouselPage1",
+    "carouselPage2",
+    "assertEquals",
+    "getCurrentIndex",
+    "nextPage",
+    "previousPage",
+    "testPageSwitchEvent",
+    "assertEventFired",
+    "e",
+    "getData",
+    "getOldData",
+    "bind",
+    "testScrollToPage",
+    "setCurrentIndex",
+    "window",
+    "setTimeout"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2012 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christopher Zuendorf (czuendorf)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.mobile.container.Carousel\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testInit : function()\n    {\n      var carousel = new qx.ui.mobile.container.Carousel(0.4);\n      this.getRoot().add(carousel);\n      carousel.destroy();\n    },\n\n\n    testAddCarouselPage : function()\n    {\n      var carousel = new qx.ui.mobile.container.Carousel();\n      var carouselPage = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage);\n\n      this.getRoot().add(carousel);\n\n      carousel.destroy();\n      carouselPage.destroy();\n    },\n\n\n    testRemoveCarouselPage : function()\n    {\n      var carousel = new qx.ui.mobile.container.Carousel();\n      var carouselPage = new qx.ui.mobile.container.Composite();\n\n      carousel.add(carouselPage);\n\n      carousel.removePageByIndex(0);\n\n      this.getRoot().add(carousel);\n\n      carousel.destroy();\n      carouselPage.destroy();\n    },\n\n\n    testPageSwitch : function()\n    {\n      var carousel = new qx.ui.mobile.container.Carousel();\n      var carouselPage1 = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage1);\n\n      var carouselPage2 = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage2);\n\n      this.getRoot().add(carousel);\n\n      this.assertEquals(0,carousel.getCurrentIndex());\n\n      carousel.nextPage();\n      this.assertEquals(1, carousel.getCurrentIndex());\n\n      // OVERFLOW\n      carousel.nextPage();\n      this.assertEquals(1, carousel.getCurrentIndex());\n\n      carousel.previousPage();\n      this.assertEquals(0,carousel.getCurrentIndex());\n\n      // OVERFLOW\n      carousel.previousPage();\n      this.assertEquals(0,carousel.getCurrentIndex());\n\n      carousel.destroy();\n      carouselPage1.destroy();\n      carouselPage2.destroy();\n    },\n\n\n    testPageSwitchEvent : function()\n    {\n      var carousel = new qx.ui.mobile.container.Carousel();\n      var carouselPage1 = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage1);\n\n      var carouselPage2 = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage2);\n\n      this.getRoot().add(carousel);\n\n      this.assertEventFired(carousel, \"changeCurrentIndex\", function() {\n        carousel.nextPage();\n      }, function(e) {\n        this.assertEquals(1, e.getData());\n        this.assertEquals(0, e.getOldData());\n      }.bind(this));\n\n      this.assertEventFired(carousel, \"changeCurrentIndex\", function() {\n        carousel.previousPage();\n      }, function(e) {\n        this.assertEquals(0, e.getData());\n        this.assertEquals(1, e.getOldData());\n      }.bind(this));\n\n      carousel.destroy();\n      carouselPage1.destroy();\n      carouselPage2.destroy();\n    },\n\n\n    testScrollToPage : function()\n    {\n      var carousel = new qx.ui.mobile.container.Carousel();\n      var carouselPage1 = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage1);\n\n      var carouselPage2 = new qx.ui.mobile.container.Composite();\n      carousel.add(carouselPage2);\n\n      this.getRoot().add(carousel);\n\n      this.assertEquals(0,carousel.getCurrentIndex());\n\n      carousel.setCurrentIndex(1);\n      this.assertEquals(1, carousel.getCurrentIndex());\n\n      window.setTimeout(function() {\n          carousel.destroy();\n          carouselPage1.destroy();\n          carouselPage2.destroy();\n      }, 600);\n    }\n  }\n\n});\n"
+  ]
+}

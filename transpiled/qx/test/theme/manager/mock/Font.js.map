@@ -1,0 +1,28 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/theme/manager/mock/Font.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "theme",
+    "modern",
+    "Font",
+    "fonts",
+    "size",
+    "family",
+    "test",
+    "manager",
+    "mock"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,KAAH,CAASC,MAAT,CAAgBC,IAD3B;AAIEC,IAAAA,KAAK,EACL;AACE,iBACA;AACEC,QAAAA,IAAI,EAAG,EADT;AAEEC,QAAAA,MAAM,EAAG,CAAC,OAAD,EAAU,YAAV;AAFX;AAFF;AALF,GADA;AAAAZ,EAAAA,EAAE,CAACa,IAAH,CAAQN,KAAR,CAAcO,OAAd,CAAsBC,IAAtB,CAA2BN,IAA3B,CAAgCN,aAAhC,GAAgDA,aAAhD",
+  "sourcesContent": [
+    "qx.Theme.define(\"qx.test.theme.manager.mock.Font\",\n{\n  extend : qx.theme.modern.Font,\n\n\n  fonts :\n  {\n    \"default\" :\n    {\n      size : 99,\n      family : [\"arial\", \"sans-serif\"]\n    }\n  }\n});\n"
+  ]
+}

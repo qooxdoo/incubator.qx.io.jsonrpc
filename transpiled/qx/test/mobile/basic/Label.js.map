@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/basic/Label.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testValue",
+    "label",
+    "ui",
+    "basic",
+    "Label",
+    "getRoot",
+    "add",
+    "assertString",
+    "getValue",
+    "assertEquals",
+    "getContentElement",
+    "innerHTML",
+    "assertEventFired",
+    "setValue",
+    "destroy"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeC,cAD1B;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,SAAS,EAAG,qBACZ;AACE,YAAIC,KAAK,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,KAAb,CAAmBC,KAAvB,CAA6B,MAA7B,CAAZ;AACA,aAAKC,OAAL,GAAeC,GAAf,CAAmBL,KAAnB;AAEA,aAAKM,YAAL,CAAkBN,KAAK,CAACO,QAAN,EAAlB;AACA,aAAKC,YAAL,CAAkBR,KAAK,CAACO,QAAN,EAAlB,EAAoC,MAApC;AACA,aAAKC,YAAL,CAAkBR,KAAK,CAACO,QAAN,EAAlB,EAAoCP,KAAK,CAACS,iBAAN,GAA0BC,SAA9D;AAEA,aAAKC,gBAAL,CAAsBX,KAAtB,EAA6B,aAA7B,EAA4C,YAAW;AACrDA,UAAAA,KAAK,CAACY,QAAN,CAAe,EAAf;AACD,SAFD;AAIA,aAAKJ,YAAL,CAAkBR,KAAK,CAACO,QAAN,EAAlB,EAAoC,EAApC;AACA,aAAKC,YAAL,CAAkBR,KAAK,CAACO,QAAN,EAAlB,EAAoCP,KAAK,CAACS,iBAAN,GAA0BC,SAA9D;AAEAV,QAAAA,KAAK,CAACa,OAAN;AACD;AAlBH;AAJF,GADA;AAlBAzB,EAAAA,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeM,KAAf,CAAqBC,KAArB,CAA2BZ,aAA3B,GAA2CA,aAA3C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.mobile.basic.Label\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testValue : function()\n    {\n      var label = new qx.ui.mobile.basic.Label(\"affe\");\n      this.getRoot().add(label);\n\n      this.assertString(label.getValue());\n      this.assertEquals(label.getValue(), \"affe\");\n      this.assertEquals(label.getValue(), label.getContentElement().innerHTML);\n\n      this.assertEventFired(label, \"changeValue\", function() {\n        label.setValue(\"\");\n      });\n\n      this.assertEquals(label.getValue(), \"\");\n      this.assertEquals(label.getValue(), label.getContentElement().innerHTML);\n\n      label.destroy();\n    }\n  }\n\n});\n"
+  ]
+}

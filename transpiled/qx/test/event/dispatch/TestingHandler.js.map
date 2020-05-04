@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/dispatch/TestingHandler.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "implement",
+    "event",
+    "IEventHandler",
+    "members",
+    "canHandleEvent",
+    "registerEvent",
+    "unregisterEvent",
+    "test",
+    "dispatch",
+    "TestingHandler"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAEEC,IAAAA,SAAS,EAAGT,EAAE,CAACU,KAAH,CAASC,aAFvB;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,cAAc,EAAG,0BAAW;AAC1B,eAAO,IAAP;AACD,OAHH;AAKEC,MAAAA,aAAa,EAAG,yBAAW,CAAE,CAL/B;AAMEC,MAAAA,eAAe,EAAG,2BAAW,CAAE;AANjC;AALF,GADA;AAlBAf,EAAAA,EAAE,CAACgB,IAAH,CAAQN,KAAR,CAAcO,QAAd,CAAuBC,cAAvB,CAAsCf,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.event.dispatch.TestingHandler\",\n{\n  extend : qx.core.Object,\n  implement : qx.event.IEventHandler,\n\n  members :\n  {\n    canHandleEvent : function() {\n      return true;\n    },\n\n    registerEvent : function() {},\n    unregisterEvent : function() {}\n  }\n});\n"
+  ]
+}

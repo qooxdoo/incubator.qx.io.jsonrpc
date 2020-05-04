@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/selection/SelectBox.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "selection",
+    "AbstractSingleSelectonTest",
+    "members",
+    "setUp",
+    "length",
+    "_notInSelection",
+    "_mode",
+    "_widget",
+    "form",
+    "SelectBox",
+    "getRoot",
+    "add",
+    "i",
+    "item",
+    "ListItem",
+    "setSelection",
+    "_selection",
+    "push",
+    "flush",
+    "tearDown",
+    "destroy",
+    "testResetSelectionAllowEmpty",
+    "getChildrenContainer",
+    "setSelectionMode",
+    "testResetSelection",
+    "_getChildren",
+    "getChildren",
+    "_createTestElement",
+    "name"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,SAAX,CAAqBC,0BADhC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBACR;AACE,YAAIC,MAAM,GAAG,EAAb;AACA,aAAKC,eAAL,GAAuB,EAAvB;AACA,aAAKC,KAAL,GAAa,KAAb;AAEA,aAAKC,OAAL,GAAe,IAAIhB,EAAE,CAACQ,EAAH,CAAMS,IAAN,CAAWC,SAAf,EAAf;AACA,aAAKC,OAAL,GAAeC,GAAf,CAAmB,KAAKJ,OAAxB;;AAEA,aAAK,IAAIK,CAAC,GAAG,CAAb,EAAgBA,CAAC,GAAGR,MAApB,EAA4BQ,CAAC,EAA7B,EAAiC;AAC/B,cAAIC,IAAI,GAAG,IAAItB,EAAE,CAACQ,EAAH,CAAMS,IAAN,CAAWM,QAAf,CAAwB,aAAaF,CAArC,CAAX;;AACA,eAAKL,OAAL,CAAaI,GAAb,CAAiBE,IAAjB;;AAEA,cAAID,CAAC,IAAI,CAAT,EAAY;AACV,iBAAKL,OAAL,CAAaQ,YAAb,CAA0B,CAACF,IAAD,CAA1B;;AACA,iBAAKG,UAAL,GAAkB,CAACH,IAAD,CAAlB;AACD,WAHD,MAGO;AACL,iBAAKR,eAAL,CAAqBY,IAArB,CAA0BJ,IAA1B;AACD;AACF;;AAED,aAAKK,KAAL;AACD,OAvBH;AAyBEC,MAAAA,QAAQ,EAAG,oBACX;AACE;;AACA,aAAKZ,OAAL,CAAaa,OAAb;;AACA,aAAKb,OAAL,GAAe,IAAf;AACA,aAAKS,UAAL,GAAkB,IAAlB;AACA,aAAKX,eAAL,GAAuB,IAAvB;AACA,aAAKa,KAAL;AACD,OAjCH;AAmCEG,MAAAA,4BAA4B,EAAG,wCAC/B;AACE,aAAKf,KAAL,GAAa,QAAb;;AACA,aAAKC,OAAL,CAAae,oBAAb,GAAoCC,gBAApC,CAAqD,KAAKjB,KAA1D;;AACA,aAAKkB,kBAAL;AACD,OAxCH;AA0CEC,MAAAA,YAAY,EAAG,wBACf;AACE,YAAI,KAAKlB,OAAL,IAAgB,IAApB,EAA0B;AACxB,iBAAO,KAAKA,OAAL,CAAae,oBAAb,GAAoCI,WAApC,EAAP;AACD,SAFD,MAEO;AACL,iBAAO,EAAP;AACD;AACF,OAjDH;AAmDEC,MAAAA,kBAAkB,EAAG,4BAASC,IAAT,EAAe;AAClC,eAAO,IAAIrC,EAAE,CAACQ,EAAH,CAAMS,IAAN,CAAWM,QAAf,CAAwBc,IAAxB,CAAP;AACD;AArDH;AAJF,GADA;AAlBArC,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,SAAX,CAAqBS,SAArB,CAA+Bf,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Hagendorn (chris_schmidt)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.selection.SelectBox\",\n{\n  extend : qx.test.ui.selection.AbstractSingleSelectonTest,\n\n  members :\n  {\n    setUp : function()\n    {\n      var length = 10;\n      this._notInSelection = [];\n      this._mode = \"one\";\n\n      this._widget = new qx.ui.form.SelectBox();\n      this.getRoot().add(this._widget);\n\n      for (var i = 0; i < length; i++) {\n        var item = new qx.ui.form.ListItem(\"ListItem\" + i);\n        this._widget.add(item);\n\n        if (i == 5) {\n          this._widget.setSelection([item]);\n          this._selection = [item];\n        } else {\n          this._notInSelection.push(item);\n        }\n      }\n\n      this.flush();\n    },\n\n    tearDown : function()\n    {\n      this.base(arguments);\n      this._widget.destroy();\n      this._widget = null;\n      this._selection = null;\n      this._notInSelection = null;\n      this.flush();\n    },\n\n    testResetSelectionAllowEmpty : function()\n    {\n      this._mode = \"single\";\n      this._widget.getChildrenContainer().setSelectionMode(this._mode);\n      this.testResetSelection();\n    },\n\n    _getChildren : function()\n    {\n      if (this._widget != null) {\n        return this._widget.getChildrenContainer().getChildren();\n      } else {\n        return [];\n      }\n    },\n\n    _createTestElement : function(name) {\n      return new qx.ui.form.ListItem(name);\n    }\n  }\n});"
+  ]
+}

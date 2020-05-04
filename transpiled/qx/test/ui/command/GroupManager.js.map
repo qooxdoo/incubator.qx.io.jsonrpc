@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/command/GroupManager.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MMock",
+    "members",
+    "testGroupManager",
+    "handler",
+    "spy",
+    "manager",
+    "ui",
+    "command",
+    "GroupManager",
+    "group",
+    "Group",
+    "cmd",
+    "Command",
+    "group2",
+    "cmd2",
+    "addListener",
+    "add",
+    "setActive",
+    "execute",
+    "assertCallCount",
+    "unblock",
+    "block",
+    "remove",
+    "assertFalse",
+    "has",
+    "assertNull",
+    "getActive",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n     * Mustafa Sak (msak)\n\n************************************************************************ */\nqx.Class.define(\"qx.test.ui.command.GroupManager\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : qx.dev.unit.MMock,\n\n  members :\n  {\n    testGroupManager : function()\n    {\n      var handler = this.spy();\n\n      var manager = new qx.ui.command.GroupManager();\n\n      var group = new qx.ui.command.Group();\n      var cmd = new qx.ui.command.Command(\"Meta+T\");\n\n      var group2 = new qx.ui.command.Group();\n      var cmd2 = new qx.ui.command.Command(\"Meta+T\");\n\n      cmd.addListener(\"execute\", handler);\n      cmd2.addListener(\"execute\", handler);\n      group.add(\"cmd\", cmd);\n      group2.add(\"cmd2\", cmd2);\n\n      manager.add(group);\n      manager.add(group2);\n\n      manager.setActive(group);\n\n      cmd.execute();\n      cmd2.execute();\n      this.assertCallCount(handler, 1);\n\n      manager.setActive(group);\n      cmd.execute();\n      cmd2.execute();\n      this.assertCallCount(handler, 2);\n\n      manager.unblock(group);\n      cmd.execute();\n      cmd2.execute();\n      this.assertCallCount(handler, 3);\n\n      manager.block(group);\n      cmd.execute();\n      cmd2.execute();\n      this.assertCallCount(handler, 3);\n    },\n\n\n    \"test: add and remove group\" : function()\n    {\n      var manager = new qx.ui.command.GroupManager();\n\n      var group = new qx.ui.command.Group();\n      var cmd = new qx.ui.command.Command(\"Meta+T\");\n\n      var group2 = new qx.ui.command.Group();\n      var cmd2 = new qx.ui.command.Command(\"Meta+T\");\n\n      manager.add(group);\n      manager.add(group2);\n\n      manager.setActive(group);\n\n      manager.remove(group);\n\n      this.assertFalse(manager.has(group));\n      this.assertNull(manager.getActive(group));\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/dev/unit/TestCase.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testSkip",
+    "skip",
+    "fail",
+    "testResumeHandler",
+    "__do",
+    "resumeHandler",
+    "param",
+    "assertEquals",
+    "wait",
+    "callback",
+    "window",
+    "setTimeout",
+    "__doSuccess",
+    "bind",
+    "result",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EAA6C;AAE3CC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QAFsB;AAI3CC,IAAAA,OAAO,EAAG;AAERC,MAAAA,QAAQ,EAAG,oBACX;AACE,aAAKC,IAAL;AACA,aAAKC,IAAL,CAAU,qCAAV;AACD,OANO;AASRC,MAAAA,iBAAiB,EAAG,6BACpB;AACE,aAAKC,IAAL,CAAU,KAAKC,aAAL,CAAmB,UAASC,KAAT,EAAgB;AAC3C,eAAKC,YAAL,CAAkBD,KAAlB,EAAyB,KAAzB;AAEA,iBAAO,KAAP;AACD,SAJS,EAIP,IAJO,CAAV;;AAMA,aAAKE,IAAL;AACD,OAlBO;AAoBRJ,MAAAA,IAAI,EAAG,cAASK,QAAT,EACP;AACEC,QAAAA,MAAM,CAACC,UAAP,CAAkB,KAAKC,WAAL,CAAiBC,IAAjB,CAAsB,IAAtB,EAA4BJ,QAA5B,CAAlB,EAAyD,CAAzD;AACD,OAvBO;AAyBRG,MAAAA,WAAW,EAAG,qBAASH,QAAT,EACd;AACE,YAAIK,MAAM,GAAGL,QAAQ,CAAC,KAAD,CAArB;AACA,aAAKF,YAAL,CAAkBO,MAAlB,EAA0B,KAA1B;AACD;AA7BO;AAJiC,GAA7C;AAlBAzB,EAAAA,EAAE,CAAC0B,IAAH,CAAQnB,GAAR,CAAYC,IAAZ,CAAiBC,QAAjB,CAA0BN,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Daniel Wagner (d_wagner)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.dev.unit.TestCase\", {\n\n  extend : qx.dev.unit.TestCase,\n\n  members : {\n\n    testSkip : function()\n    {\n      this.skip();\n      this.fail(\"Executed code after calling skip()!\");\n    },\n\n\n    testResumeHandler : function()\n    {\n      this.__do(this.resumeHandler(function(param) {\n        this.assertEquals(param, \"foo\");\n\n        return \"bar\";\n      }, this));\n\n      this.wait();\n    },\n\n    __do : function(callback)\n    {\n      window.setTimeout(this.__doSuccess.bind(this, callback), 0);\n    },\n\n    __doSuccess : function(callback)\n    {\n      var result = callback(\"foo\");\n      this.assertEquals(result, \"bar\");\n    }\n  }\n});\n"
+  ]
+}

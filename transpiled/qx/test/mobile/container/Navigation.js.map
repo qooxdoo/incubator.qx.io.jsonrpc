@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/container/Navigation.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testCreate",
+    "container",
+    "ui",
+    "Navigation",
+    "getRoot",
+    "add",
+    "destroy",
+    "testAdd",
+    "page",
+    "NavigationPage",
+    "assertFalse",
+    "getContent",
+    "hasChildren",
+    "assertTrue",
+    "testRemove",
+    "remove",
+    "testUpdateEvent",
+    "updateEventFired",
+    "addListener",
+    "page1",
+    "page2",
+    "show"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2012 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.mobile.container.Navigation\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testCreate : function()\n    {\n      var container = new qx.ui.mobile.container.Navigation();\n      this.getRoot().add(container);\n      container.destroy();\n    },\n\n\n    testAdd : function()\n    {\n      var container = new qx.ui.mobile.container.Navigation();\n      var page = new qx.ui.mobile.page.NavigationPage();\n      this.getRoot().add(container);\n      this.assertFalse(container.getContent().hasChildren());\n      container.add(page);\n      this.assertTrue(container.getContent().hasChildren());\n      page.destroy();\n      container.destroy();\n    },\n\n\n    testRemove : function()\n    {\n      var container = new qx.ui.mobile.container.Navigation();\n      var page = new qx.ui.mobile.page.NavigationPage();\n      this.getRoot().add(container);\n      this.assertFalse(container.getContent().hasChildren());\n      container.add(page);\n      this.assertTrue(container.getContent().hasChildren());\n      container.remove(page);\n      this.assertFalse(container.getContent().hasChildren());\n      page.destroy();\n      container.destroy();\n    },\n\n\n    testUpdateEvent : function() {\n      var container = new qx.ui.mobile.container.Navigation();\n      var updateEventFired = false;\n\n      container.addListener(\"update\", function() {\n        updateEventFired = true;\n      }, this);\n\n\n      var page1 = new qx.ui.mobile.page.NavigationPage();\n      var page2 = new qx.ui.mobile.page.NavigationPage();\n      this.getRoot().add(container);\n      container.add(page1);\n      container.add(page2);\n      page2.show();\n\n      this.assertTrue(updateEventFired);\n\n      page1.destroy();\n      page2.destroy();\n      container.destroy();\n    }\n  }\n\n});\n"
+  ]
+}

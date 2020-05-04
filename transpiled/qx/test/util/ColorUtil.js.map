@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/ColorUtil.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testRgbToRgbString",
+    "assertEquals",
+    "util",
+    "ColorUtil",
+    "rgbToRgbString",
+    "testCssStringToRgb",
+    "cssStringToRgb",
+    "testHex3StringToHex6String",
+    "hex3StringToHex6String",
+    "testRgbToHexString",
+    "rgbToHexString",
+    "testStringToRgbString",
+    "stringToRgbString",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Jonathan Weiß (jonathan_rass)\n     * Christian Hagendorn (cs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.ColorUtil\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n\n    testRgbToRgbString : function()\n    {\n      this.assertEquals(\"rgba(255,0,0,1)\", qx.util.ColorUtil.rgbToRgbString([255, 0, 0, 1]));\n      this.assertEquals(\"rgba(255,0,0,0.5)\", qx.util.ColorUtil.rgbToRgbString([255, 0, 0, 0.5]));\n      this.assertEquals(\"rgba(255,0,0,0)\", qx.util.ColorUtil.rgbToRgbString([255, 0, 0, 0]));\n      this.assertEquals(\"rgb(255,0,0)\", qx.util.ColorUtil.rgbToRgbString([255, 0, 0]));\n    },\n\n    testCssStringToRgb : function()\n    {\n      this.assertEquals(\"255,0,0\", qx.util.ColorUtil.cssStringToRgb(\"rgba(255,0,0,1)\"));\n      this.assertEquals(\"201,23,120\", qx.util.ColorUtil.cssStringToRgb(\"rgba(201,23,120,0.3)\"));\n\n      this.assertEquals(\"255,0,0\", qx.util.ColorUtil.cssStringToRgb(\"rgb(255,0,0)\"));\n      this.assertEquals(\"201,23,120\", qx.util.ColorUtil.cssStringToRgb(\"rgb(201,23,120)\"));\n    },\n\n\n    testHex3StringToHex6String : function()\n    {\n      this.assertEquals(\"#FFFFFF\", qx.util.ColorUtil.hex3StringToHex6String(\"#fff\"));\n      this.assertEquals(\"#ffffff\", qx.util.ColorUtil.hex3StringToHex6String(\"#ffffff\"));\n    },\n\n\n    testRgbToHexString : function()\n    {\n      this.assertEquals(\"#FFFFFF\", qx.util.ColorUtil.rgbToHexString([255, 255, 255]));\n      this.assertEquals(\"#000000\", qx.util.ColorUtil.rgbToHexString([0, 0, 0]));\n    },\n\n    testStringToRgbString : function()\n    {\n      this.assertEquals(\"rgb(0,0,0)\", qx.util.ColorUtil.stringToRgbString(\"rgba(0,0,0,0.5)\"));\n      this.assertEquals(\"rgb(-1,-1,-1)\", qx.util.ColorUtil.stringToRgbString(\"rgba(0,0,0,0)\"));\n    }\n  }\n});\n"
+  ]
+}

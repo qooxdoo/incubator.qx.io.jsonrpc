@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/basic/Atom.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "include",
+    "dev",
+    "unit",
+    "MMock",
+    "members",
+    "tearDown",
+    "getSandbox",
+    "restore",
+    "testSelectableSetOnCreation",
+    "a",
+    "basic",
+    "Atom",
+    "set",
+    "selectable",
+    "getRoot",
+    "add",
+    "flush",
+    "l",
+    "getChildControl",
+    "assertEquals",
+    "getContentElement",
+    "getDomElement",
+    "getAttribute",
+    "destroy",
+    "testSelectableUnSetOnCreation",
+    "testSelectableSet",
+    "setSelectable",
+    "testSelectableUnset"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2016- Oetiker+Partner AG, Switzerland, http://www.oetiker.ch\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n   * Fritz Zaucker (fritz.zaucker@oetiker.ch)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.basic.Atom\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  include : [qx.dev.unit.MMock],\n\n  members :\n  {\n    tearDown : function()\n    {\n      this.getSandbox().restore();\n    },\n\n    testSelectableSetOnCreation : function() {\n      var a = new qx.ui.basic.Atom('test').set({selectable: true});\n      this.getRoot().add(a);\n      this.flush();\n      var l = a.getChildControl('label');\t\n      this.assertEquals(\"on\", l.getContentElement().getDomElement().getAttribute(\"qxselectable\"));\n      a.destroy();\n    },\n\n    testSelectableUnSetOnCreation : function() {\n      var a = new qx.ui.basic.Atom('test').set({selectable: false});\n      this.getRoot().add(a);\n      this.flush();\n      var l = a.getChildControl('label');\t\n      this.assertEquals(\"off\", l.getContentElement().getDomElement().getAttribute(\"qxselectable\"));\n      a.destroy();\n    },\n\n    testSelectableSet : function() {\n      var a = new qx.ui.basic.Atom('test');\n      a.setSelectable(true);\n      this.getRoot().add(a);\n      this.flush();\n      var l = a.getChildControl('label');\t\n      this.assertEquals(\"on\", l.getContentElement().getDomElement().getAttribute(\"qxselectable\"));\n      a.destroy();\n    },\n\n    testSelectableUnset : function() {\n      var a = new qx.ui.basic.Atom('test');\n      a.setSelectable(false);\n      this.getRoot().add(a);\n      this.flush();\n      var l = a.getChildControl('label');\t\n      this.assertEquals(\"off\", l.getContentElement().getDomElement().getAttribute(\"qxselectable\"));\n      a.destroy();\n    }\n\n  }\n});\n"
+  ]
+}

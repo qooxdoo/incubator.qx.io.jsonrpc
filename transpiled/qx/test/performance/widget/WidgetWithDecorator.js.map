@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/performance/widget/WidgetWithDecorator.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "performance",
+    "widget",
+    "AbstractWidget",
+    "construct",
+    "__decorator",
+    "ui",
+    "decoration",
+    "Decorator",
+    "set",
+    "width",
+    "style",
+    "color",
+    "members",
+    "_createWidget",
+    "core",
+    "Widget",
+    "decorator",
+    "WidgetWithDecorator"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gDAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BC,cADtC;AAGEC,IAAAA,SAAS,EAAG,qBAAW;AACrB;AACA,WAAKC,WAAL,GAAmB,IAAIZ,EAAE,CAACa,EAAH,CAAMC,UAAN,CAAiBC,SAArB,GAAiCC,GAAjC,CAAqC;AACtDC,QAAAA,KAAK,EAAE,CAD+C;AAEtDC,QAAAA,KAAK,EAAE,OAF+C;AAGtDC,QAAAA,KAAK,EAAE;AAH+C,OAArC,CAAnB;AAKD,KAVH;AAYEC,IAAAA,OAAO,EACP;AACEC,MAAAA,aAAa,EAAG,yBAAW;AACzB,eAAO,IAAIrB,EAAE,CAACa,EAAH,CAAMS,IAAN,CAAWC,MAAf,GAAwBP,GAAxB,CAA4B;AAACQ,UAAAA,SAAS,EAAE,KAAKZ;AAAjB,SAA5B,CAAP;AACD;AAHH;AAbF,GADA;AAAAZ,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BgB,mBAA3B,CAA+CtB,aAA/C,GAA+DA,aAA/D",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.performance.widget.WidgetWithDecorator\",\n{\n  extend : qx.test.performance.widget.AbstractWidget,\n\n  construct : function() {\n    this.base(arguments);\n    this.__decorator = new qx.ui.decoration.Decorator().set({\n      width: 1,\n      style: \"solid\",\n      color: \"red\"\n    });\n  },\n\n  members :\n  {\n    _createWidget : function() {\n      return new qx.ui.core.Widget().set({decorator: this.__decorator});\n    }\n  }\n});\n"
+  ]
+}

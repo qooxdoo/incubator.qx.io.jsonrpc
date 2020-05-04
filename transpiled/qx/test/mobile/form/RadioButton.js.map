@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/form/RadioButton.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testConstruct",
+    "radio1",
+    "ui",
+    "form",
+    "RadioButton",
+    "radio2",
+    "radio3",
+    "group",
+    "RadioGroup",
+    "getRoot",
+    "add",
+    "assertEquals",
+    "getValue",
+    "getItems",
+    "length",
+    "destroy",
+    "dispose",
+    "testValue",
+    "setAllowEmptySelection",
+    "hasCssClass",
+    "setValue",
+    "testEnabled",
+    "setEnabled",
+    "getEnabled",
+    "bom",
+    "element",
+    "has",
+    "getContainerElement"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.mobile.form.RadioButton\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n\n    testConstruct : function() {\n      var radio1 = new qx.ui.mobile.form.RadioButton();\n      var radio2 = new qx.ui.mobile.form.RadioButton();\n      var radio3 = new qx.ui.mobile.form.RadioButton();\n      var group = new qx.ui.mobile.form.RadioGroup(radio1,radio2,radio3);\n\n      this.getRoot().add(radio1);\n      this.getRoot().add(radio2);\n      this.getRoot().add(radio3);\n\n      // Verify: allow empty selection can only be false in this case,\n      // so radio1 has to be true.\n      this.assertEquals(true, radio1.getValue(),\"Radio1 is expected to be true.\");\n      this.assertEquals(false, radio2.getValue(),\"Radio2 is expected to be false.\");\n      this.assertEquals(false, radio3.getValue(),\"Radio3 is expected to be false.\");\n\n      this.assertEquals(3, group.getItems().length);\n\n       // Clean up tests\n      radio1.destroy();\n      radio2.destroy();\n      radio3.destroy();\n      group.dispose();\n    },\n\n    testValue : function()\n    {\n      var radio1 = new qx.ui.mobile.form.RadioButton();\n      var radio2 = new qx.ui.mobile.form.RadioButton();\n      var radio3 = new qx.ui.mobile.form.RadioButton();\n\n      var group = new qx.ui.mobile.form.RadioGroup();\n      group.setAllowEmptySelection(true);\n      group.add(radio1,radio2,radio3);\n\n      this.getRoot().add(radio1);\n      this.getRoot().add(radio2);\n      this.getRoot().add(radio3);\n\n      // Verify: initial all radios buttons should be disabled.\n      this.assertEquals(false, radio1.getValue());\n      this.assertEquals(false, radio2.getValue());\n      this.assertEquals(false, radio3.getValue());\n\n      this.assertEquals(false, radio1.hasCssClass(\"checked\"));\n      this.assertEquals(false, radio2.hasCssClass(\"checked\"));\n      this.assertEquals(false, radio3.hasCssClass(\"checked\"));\n\n      // Radio 1 enabled\n      radio1.setValue(true);\n\n      // Verify\n      this.assertEquals(true, radio1.getValue());\n      this.assertEquals(true, radio1.hasCssClass(\"checked\"));\n      this.assertEquals(false, radio2.getValue());\n      this.assertEquals(false, radio3.getValue());\n\n      // Radio 3 enabled\n      radio3.setValue(true);\n\n      // Verify\n      this.assertEquals(true, radio3.getValue());\n      this.assertEquals(false, radio2.getValue());\n      this.assertEquals(false, radio1.getValue());\n\n      // Clean up tests\n      radio1.destroy();\n      radio2.destroy();\n      radio3.destroy();\n      group.dispose();\n    },\n\n    testEnabled : function()\n    {\n      var radio1 = new qx.ui.mobile.form.RadioButton();\n      this.getRoot().add(radio1);\n\n      radio1.setEnabled(false);\n\n      this.assertEquals(false, radio1.getEnabled());\n      this.assertEquals(true, qx.bom.element.Class.has(radio1.getContainerElement(),'disabled'));\n\n      radio1.destroy();\n    }\n\n  }\n});\n"
+  ]
+}

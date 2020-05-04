@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/core/SizeHintX.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "core",
+    "SizeHint",
+    "members",
+    "assertHint",
+    "min",
+    "size",
+    "max",
+    "hint",
+    "getHint",
+    "assertEquals",
+    "minWidth",
+    "width",
+    "maxWidth",
+    "getDefaultSize",
+    "setSize",
+    "widget",
+    "set",
+    "setStretching",
+    "allowShrink",
+    "allowGrow",
+    "setAllowStretchX",
+    "SizeHintX"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,IAAX,CAAgBC,QAD3B;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,UAAU,EAAG,oBAASC,GAAT,EAAcC,IAAd,EAAoBC,GAApB,EACb;AACE,YAAIC,IAAI,GAAG,KAAKC,OAAL,EAAX;AACA,aAAKC,YAAL,CAAkBL,GAAlB,EAAuBG,IAAI,CAACG,QAA5B,EAAsC,WAAtC;AACA,aAAKD,YAAL,CAAkBJ,IAAlB,EAAwBE,IAAI,CAACI,KAA7B,EAAoC,OAApC;AACA,aAAKF,YAAL,CAAkBH,GAAlB,EAAuBC,IAAI,CAACK,QAA5B,EAAsC,WAAtC;AACD,OAPH;AAUEC,MAAAA,cAAc,EAAG,0BAAW;AAC1B,eAAO,GAAP;AACD,OAZH;AAeEC,MAAAA,OAAO,EAAG,iBAASV,GAAT,EAAcC,IAAd,EAAoBC,GAApB,EACV;AACE,aAAKS,MAAL,CAAYC,GAAZ,CAAgB;AACdN,UAAAA,QAAQ,EAAEN,GADI;AAEdO,UAAAA,KAAK,EAAEN,IAFO;AAGdO,UAAAA,QAAQ,EAAEN;AAHI,SAAhB;AAKD,OAtBH;AAyBEW,MAAAA,aAAa,EAAG,uBAASC,WAAT,EAAsBC,SAAtB,EAAiC;AAC/C,aAAKJ,MAAL,CAAYK,gBAAZ,CAA6BD,SAA7B,EAAwCD,WAAxC;AACD;AA3BH;AAJF,GADA;AAlBA3B,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,IAAX,CAAgBqB,SAAhB,CAA0B3B,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.core.SizeHintX\",\n{\n  extend : qx.test.ui.core.SizeHint,\n\n  members :\n  {\n    assertHint : function(min, size, max)\n    {\n      var hint = this.getHint();\n      this.assertEquals(min, hint.minWidth, \"min width\");\n      this.assertEquals(size, hint.width, \"width\");\n      this.assertEquals(max, hint.maxWidth, \"max width\");\n    },\n\n\n    getDefaultSize : function() {\n      return 100;\n    },\n\n\n    setSize : function(min, size, max)\n    {\n      this.widget.set({\n        minWidth: min,\n        width: size,\n        maxWidth: max\n      });\n    },\n\n\n    setStretching : function(allowShrink, allowGrow) {\n      this.widget.setAllowStretchX(allowGrow, allowShrink);\n    }\n  }\n});\n"
+  ]
+}

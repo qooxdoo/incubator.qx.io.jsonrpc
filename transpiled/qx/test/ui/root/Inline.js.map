@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/root/Inline.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "__inlineIsleElement",
+    "dom",
+    "Element",
+    "create",
+    "inlineStyle",
+    "bom",
+    "element",
+    "Style",
+    "setCss",
+    "insertBegin",
+    "document",
+    "body",
+    "tearDown",
+    "remove",
+    "testAppearEvent",
+    "inlineRoot",
+    "ui",
+    "root",
+    "Inline",
+    "addListener",
+    "e",
+    "resume",
+    "assertTrue",
+    "isInDom",
+    "getContentElement",
+    "getDomElement",
+    "wait",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBACR;AACE,aAAKC,mBAAL,GAA2BZ,EAAE,CAACa,GAAH,CAAOC,OAAP,CAAeC,MAAf,CAAsB,KAAtB,CAA3B;AACA,YAAIC,WAAW,GAAG,+DAAlB;AACAhB,QAAAA,EAAE,CAACiB,GAAH,CAAOC,OAAP,CAAeC,KAAf,CAAqBC,MAArB,CAA4B,KAAKR,mBAAjC,EAAsDI,WAAtD;AAEAhB,QAAAA,EAAE,CAACa,GAAH,CAAOC,OAAP,CAAeO,WAAf,CAA2B,KAAKT,mBAAhC,EAAqDU,QAAQ,CAACC,IAA9D;AACD,OARH;AAWEC,MAAAA,QAAQ,EAAG,oBAAW;AACpBxB,QAAAA,EAAE,CAACa,GAAH,CAAOC,OAAP,CAAeW,MAAf,CAAsB,KAAKb,mBAA3B;AACD,OAbH;AAgBEc,MAAAA,eAAe,EAAG,2BAClB;AACE,YAAIC,UAAU,GAAG,IAAI3B,EAAE,CAAC4B,EAAH,CAAMC,IAAN,CAAWC,MAAf,CAAsB,KAAKlB,mBAA3B,CAAjB;AACAe,QAAAA,UAAU,CAACI,WAAX,CAAuB,QAAvB,EAAiC,UAASC,CAAT,EACjC;AACE,eAAKC,MAAL,CAAY,YAAW;AACrB,iBAAKC,UAAL,CAAgBlC,EAAE,CAACa,GAAH,CAAOC,OAAP,CAAeqB,OAAf,CAAuBR,UAAU,CAACS,iBAAX,GAA+BC,aAA/B,EAAvB,CAAhB;AACD,WAFD,EAEG,IAFH;AAGD,SALD,EAKG,IALH;AAOA,aAAKC,IAAL;AACD;AA3BH;AAJF,GADA;AAlBAtC,EAAAA,EAAE,CAACuC,IAAH,CAAQX,EAAR,CAAWC,IAAX,CAAgBC,MAAhB,CAAuB3B,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Alexander Steitz (aback)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.root.Inline\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    setUp : function()\n    {\n      this.__inlineIsleElement = qx.dom.Element.create(\"div\");\n      var inlineStyle = \"position:absolute;top:50px;left:50px;width:200px;height:200px\";\n      qx.bom.element.Style.setCss(this.__inlineIsleElement, inlineStyle);\n\n      qx.dom.Element.insertBegin(this.__inlineIsleElement, document.body);\n    },\n\n\n    tearDown : function() {\n      qx.dom.Element.remove(this.__inlineIsleElement);\n    },\n\n\n    testAppearEvent : function()\n    {\n      var inlineRoot = new qx.ui.root.Inline(this.__inlineIsleElement);\n      inlineRoot.addListener(\"appear\", function(e)\n      {\n        this.resume(function() {\n          this.assertTrue(qx.dom.Element.isInDom(inlineRoot.getContentElement().getDomElement()));\n        }, this);\n      }, this);\n\n      this.wait();\n    }\n  }\n});\n"
+  ]
+}

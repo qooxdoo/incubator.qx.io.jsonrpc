@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/Timer.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "tearDown",
+    "event",
+    "GlobalError",
+    "setErrorHandler",
+    "testGlobalErrorHandling",
+    "fail",
+    "Error",
+    "onError",
+    "resume",
+    "Timer",
+    "once",
+    "wait",
+    "testStartStop",
+    "runCount",
+    "timer",
+    "addListener",
+    "stop",
+    "start",
+    "assertFalse",
+    "assertIdentical",
+    "bind",
+    "testNoStartByDefault",
+    "testStaticOnce",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.event.Timer\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    tearDown : function ()\n    {\n      qx.event.GlobalError.setErrorHandler(null);\n    },\n\n    testGlobalErrorHandling : function()\n    {\n      var fail = function() {\n        throw new Error(\"fail\");\n      };\n\n      var onError = function() { this.resume(function() {}); };\n      qx.event.GlobalError.setErrorHandler(onError, this);\n\n      qx.event.Timer.once(fail, this, 0);\n      this.wait(100);\n    },\n\n\n    /**\n     * Test if timer can be started and stopped.\n     */\n    testStartStop : function()\n    {\n      var runCount = 0;\n\n      var timer = new qx.event.Timer(50);\n      timer.addListener('interval', function() {\n        runCount++;\n        if (runCount === 2) {\n          timer.stop();\n        }\n      })\n      timer.start();\n\n      // 250ms should be sufficient for exactly two runs of an 50ms timer. We\n      // don't want to use a shorter interval, because cancellation of the timer\n      // via stop() could then become unreliable (timer could fire a third time)\n      this.wait(250, function() {\n          this.assertFalse(runCount === 0, 'Timer did not fire interval event');\n          this.assertFalse(runCount === 1, 'Timer did not fire interval event repeatedly, fired only once');\n          this.assertIdentical(2, runCount, 'Timer fired more interval events than expected (could not be stopped after second run)');\n        }.bind(this));\n    },\n\n\n    /**\n     * Test if newly created timers don't start by default.\n     */\n    testNoStartByDefault : function()\n    {\n      var runCount = 0;\n\n      var timer = new qx.event.Timer(1);\n      timer.addListener('interval', function() {\n        runCount++;\n      });\n\n      this.wait(250, function() { // 250ms should be sufficient to detect an (unwanted) start of an 1ms timer\n        this.assertIdentical(0, runCount, 'New timer did fire interval event without explicitly being started by calling start() or by setting enabled property to true');\n      }.bind(this));\n    },\n\n\n    /**\n     * Timer using static method once() should start automatically and fire\n     * exactly a single time.\n     */\n    testStaticOnce : function()\n    {\n      var runCount = 0;\n\n      qx.event.Timer.once(function() {\n        runCount++;\n      }, this, 1)\n\n      this.wait(250, function() {\n          this.assertIdentical(1, runCount, 'Static method once() is expected to start automatically and to run exactly once');\n        }.bind(this));\n    }\n  }\n});\n"
+  ]
+}

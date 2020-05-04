@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/Selector.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testElementClass",
+    "Element",
+    "dom",
+    "elements",
+    "i",
+    "el",
+    "create",
+    "document",
+    "body",
+    "appendChild",
+    "push",
+    "assertEquals",
+    "bom",
+    "Selector",
+    "query",
+    "length",
+    "forEach",
+    "removeChild",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,gBAAgB,EAAG,4BACnB;AACE,YAAIC,OAAO,GAAGZ,EAAE,CAACa,GAAH,CAAOD,OAArB;AAEA,YAAIE,QAAQ,GAAG,EAAf;;AAEA,aAAK,IAAIC,CAAC,GAAC,CAAX,EAAcA,CAAC,GAAC,GAAhB,EAAqBA,CAAC,EAAtB,EACA;AACE,cAAIC,EAAE,GAAGJ,OAAO,CAACK,MAAR,CAAe,IAAf,EAAqB;AAC5B,qBAAS,UADmB;AAE5B,oBAAQ,wCAFoB;AAG5B,kBAAM,UAASF;AAHa,WAArB,CAAT;AAMAG,UAAAA,QAAQ,CAACC,IAAT,CAAcC,WAAd,CAA0BJ,EAA1B;AACAF,UAAAA,QAAQ,CAACO,IAAT,CAAcL,EAAd;AACD;;AAED,aAAKM,YAAL,CAAkB,GAAlB,EAAuBtB,EAAE,CAACuB,GAAH,CAAOC,QAAP,CAAgBC,KAAhB,CAAsB,aAAtB,EAAqCP,QAAQ,CAACC,IAA9C,EAAoDO,MAA3E;AACA,aAAKJ,YAAL,CAAkB,GAAlB,EAAuBtB,EAAE,CAACuB,GAAH,CAAOC,QAAP,CAAgBC,KAAhB,CAAsB,SAAtB,EAAiCC,MAAxD;AAEAZ,QAAAA,QAAQ,CAACa,OAAT,CAAiB,UAASX,EAAT,EAAa;AAC5BE,UAAAA,QAAQ,CAACC,IAAT,CAAcS,WAAd,CAA0BZ,EAA1B;AACD,SAFD;AAGD;AAzBH;AAJF,GADA;AAlBAhB,EAAAA,EAAE,CAAC6B,IAAH,CAAQN,GAAR,CAAYC,QAAZ,CAAqBrB,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.bom.Selector\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testElementClass : function()\n    {\n      var Element = qx.dom.Element;\n\n      var elements = [];\n\n      for (var i=0; i<250; i++)\n      {\n        var el = Element.create(\"ul\", {\n          \"class\": \"fromcode\",\n          \"html\": \"<li>one</li><li>two</li><li>three</li>\",\n          \"id\": \"setid\"+ i\n        });\n\n        document.body.appendChild(el);\n        elements.push(el);\n      }\n\n      this.assertEquals(250, qx.bom.Selector.query(\"ul.fromcode\", document.body).length);\n      this.assertEquals(750, qx.bom.Selector.query(\"ul > li\").length);\n\n      elements.forEach(function(el) {\n        document.body.removeChild(el);\n      })\n    }\n  }\n});\n"
+  ]
+}

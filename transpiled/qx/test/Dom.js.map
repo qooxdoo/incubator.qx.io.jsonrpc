@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/Dom.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "div",
+    "document",
+    "createElement",
+    "id",
+    "innerHTML",
+    "body",
+    "appendChild",
+    "tearDown",
+    "getElementById",
+    "removeChild",
+    "testIsDocument",
+    "assertTrue",
+    "dom",
+    "Node",
+    "isDocument",
+    "assertFalse",
+    "window",
+    "testContains",
+    "test1",
+    "test2",
+    "test3",
+    "test4",
+    "Hierarchy",
+    "contains",
+    "test",
+    "Dom"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.Dom\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n\n    setUp : function()\n    {\n      var div = document.createElement(\"div\");\n      div.id = \"html_basics\";\n\n      div.innerHTML =\n        '<div id=\"test1\">' +\n\n        '<div id=\"test2\"></div>' +\n\n        '<div id=\"test3\">' +\n          '<div id=\"test4\"></div>' +\n        '</div>' +\n\n        '</div>';\n\n      document.body.appendChild(div);\n    },\n\n\n    tearDown : function()\n    {\n      var div = document.getElementById(\"html_basics\");\n      document.body.removeChild(div);\n    },\n\n\n    testIsDocument : function()\n    {\n      this.assertTrue(qx.dom.Node.isDocument(document));\n      this.assertFalse(qx.dom.Node.isDocument(document.body));\n      this.assertFalse(qx.dom.Node.isDocument(window));\n    },\n\n\n    testContains : function()\n    {\n      var test1 = document.getElementById(\"test1\");\n      var test2 = document.getElementById(\"test2\");\n      var test3 = document.getElementById(\"test3\");\n      var test4 = document.getElementById(\"test4\");\n\n      this.assertTrue(qx.dom.Hierarchy.contains(document, document.body));\n      this.assertTrue(qx.dom.Hierarchy.contains(test1, test2));\n      this.assertTrue(qx.dom.Hierarchy.contains(test1, test4));\n\n      this.assertTrue(qx.dom.Hierarchy.contains(document, test2));\n      this.assertTrue(qx.dom.Hierarchy.contains(document.body, test2));\n\n      this.assertFalse(qx.dom.Hierarchy.contains(document.body, document));\n      this.assertFalse(qx.dom.Hierarchy.contains(test2, test1));\n      this.assertFalse(qx.dom.Hierarchy.contains(test4, test1));\n\n      this.assertFalse(qx.dom.Hierarchy.contains(test2, document));\n      this.assertFalse(qx.dom.Hierarchy.contains(test2, document.body));\n\n\n      this.assertFalse(qx.dom.Hierarchy.contains(test2, test3));\n      this.assertFalse(qx.dom.Hierarchy.contains(test2, test4));\n    }\n\n\n\n  }\n\n});\n"
+  ]
+}

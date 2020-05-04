@@ -1,0 +1,28 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/performance/widget/Button.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "performance",
+    "widget",
+    "AbstractWidget",
+    "members",
+    "_createWidget",
+    "ui",
+    "form",
+    "Button"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BC,cADtC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,aAAa,EAAG,yBAAW;AACzB,eAAO,IAAIZ,EAAE,CAACa,EAAH,CAAMC,IAAN,CAAWC,MAAf,EAAP;AACD;AAHH;AAJF,GADA;AAAAf,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BM,MAA3B,CAAkCZ,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.performance.widget.Button\",\n{\n  extend : qx.test.performance.widget.AbstractWidget,\n\n  members :\n  {\n    _createWidget : function() {\n      return new qx.ui.form.Button();\n    }\n  }\n});"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/form/Spinner.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testCorrectLocaleUsed",
+    "spinner",
+    "ui",
+    "form",
+    "Spinner",
+    "nf",
+    "util",
+    "format",
+    "NumberFormat",
+    "setNumberFormat",
+    "setValue",
+    "assertEquals",
+    "getChildControl",
+    "getValue",
+    "destroy",
+    "dispose",
+    "testPostfixIsAlwaysSet",
+    "set",
+    "maximum",
+    "minimum",
+    "numberFormat",
+    "setPostfix",
+    "tf",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yBAAhB,EAA2C;AACzCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADqB;AAGzCC,IAAAA,OAAO,EAAE;AACP;;;AAGAC,MAAAA,qBAAqB,EAAE,iCAAY;AACjC,YAAIC,OAAO,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAMC,IAAN,CAAWC,OAAf,EAAd,CADiC,CAGjC;;AACA,YAAIC,EAAE,GAAG,IAAIhB,EAAE,CAACiB,IAAH,CAAQC,MAAR,CAAeC,YAAnB,CAAgC,IAAhC,CAAT;AACAP,QAAAA,OAAO,CAACQ,eAAR,CAAwBJ,EAAxB;AAEAJ,QAAAA,OAAO,CAACS,QAAR,CAAiB,IAAjB;AACA,aAAKC,YAAL,CAAkB,MAAlB,EAA0BV,OAAO,CAACW,eAAR,CAAwB,WAAxB,EAAqCC,QAArC,EAA1B;AAEAZ,QAAAA,OAAO,CAACa,OAAR;AACAT,QAAAA,EAAE,CAACU,OAAH;AACD,OAhBM;;AAkBP;;;AAGAC,MAAAA,sBAAsB,EAAG,kCAAW;AAClC,YAAIf,OAAO,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAMC,IAAN,CAAWC,OAAf,EAAd;AACAH,QAAAA,OAAO,CAACgB,GAAR,CAAY;AACVC,UAAAA,OAAO,EAAE,GADC;AAEVC,UAAAA,OAAO,EAAE;AAFC,SAAZ;AAIA,YAAIC,YAAY,GAAG,IAAI/B,EAAE,CAACiB,IAAH,CAAQC,MAAR,CAAeC,YAAnB,EAAnB;AACAY,QAAAA,YAAY,CAACC,UAAb,CAAwB,KAAxB;AACApB,QAAAA,OAAO,CAACQ,eAAR,CAAwBW,YAAxB;AACA,YAAIE,EAAE,GAAGrB,OAAO,CAACW,eAAR,CAAwB,WAAxB,CAAT,CATkC,CAWlC;;AACAU,QAAAA,EAAE,CAACZ,QAAH,CAAY,KAAZ;AACA,aAAKC,YAAL,CAAkB,QAAlB,EAA4BW,EAAE,CAACT,QAAH,EAA5B;AACAS,QAAAA,EAAE,CAACZ,QAAH,CAAY,KAAZ;AACA,aAAKC,YAAL,CAAkB,QAAlB,EAA4BW,EAAE,CAACT,QAAH,EAA5B,EAfkC,CAiBlC;;AACAS,QAAAA,EAAE,CAACZ,QAAH,CAAY,KAAZ;AACA,aAAKC,YAAL,CAAkB,QAAlB,EAA4BW,EAAE,CAACT,QAAH,EAA5B,EAnBkC,CAqBlC;;AACAS,QAAAA,EAAE,CAACZ,QAAH,CAAY,KAAZ;AACA,aAAKC,YAAL,CAAkB,MAAlB,EAA0BW,EAAE,CAACT,QAAH,EAA1B;AACAS,QAAAA,EAAE,CAACZ,QAAH,CAAY,KAAZ;AACA,aAAKC,YAAL,CAAkB,MAAlB,EAA0BW,EAAE,CAACT,QAAH,EAA1B,EAzBkC,CA2BlC;;AACAS,QAAAA,EAAE,CAACZ,QAAH,CAAY,IAAZ;AACA,aAAKC,YAAL,CAAkB,OAAlB,EAA2BW,EAAE,CAACT,QAAH,EAA3B;AACAS,QAAAA,EAAE,CAACZ,QAAH,CAAY,IAAZ;AACA,aAAKC,YAAL,CAAkB,OAAlB,EAA2BW,EAAE,CAACT,QAAH,EAA3B;AAEAZ,QAAAA,OAAO,CAACa,OAAR;AACAM,QAAAA,YAAY,CAACL,OAAb;AACD;AAxDM;AAHgC,GAA3C;AAlBA1B,EAAAA,EAAE,CAACkC,IAAH,CAAQrB,EAAR,CAAWC,IAAX,CAAgBC,OAAhB,CAAwBZ,aAAxB,GAAwCA,aAAxC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2014 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * William Oprandi (woprandi)\n     * Tobias Oberrauch (toberrauch)\n\n************************************************************************ */\nqx.Class.define(\"qx.test.ui.form.Spinner\", {\n  extend: qx.dev.unit.TestCase,\n\n  members: {\n    /**\n     * Test if spinner use NumberFormat locale\n     */\n    testCorrectLocaleUsed: function () {\n      var spinner = new qx.ui.form.Spinner();\n\n      // \"de\" locale has comma as decimal separator\n      var nf = new qx.util.format.NumberFormat(\"de\");\n      spinner.setNumberFormat(nf);\n\n      spinner.setValue(1.23);\n      this.assertEquals(\"1,23\", spinner.getChildControl(\"textfield\").getValue());\n      \n      spinner.destroy();\n      nf.dispose();\n    },\n\n    /**\n     * Test if postfix is always set after textfield of the spinner has been edited\n     */\n    testPostfixIsAlwaysSet : function() {\n      var spinner = new qx.ui.form.Spinner();\n      spinner.set({\n        maximum: 120,\n        minimum: 1\n      });\n      var numberFormat = new qx.util.format.NumberFormat();\n      numberFormat.setPostfix(\"min\");\n      spinner.setNumberFormat(numberFormat);\n      var tf = spinner.getChildControl(\"textfield\");\n\n      // Basic tests\n      tf.setValue(\"113\");\n      this.assertEquals(\"113min\", tf.getValue());\n      tf.setValue(\"121\");\n      this.assertEquals(\"120min\", tf.getValue());\n\n      // Check if postfix is added even if the spinner value won't change (value set to maximum)\n      tf.setValue(\"122\");\n      this.assertEquals(\"120min\", tf.getValue());\n\n      // Same for here (value set to minimum)\n      tf.setValue(\"-67\");\n      this.assertEquals(\"1min\", tf.getValue());\n      tf.setValue(\"-99\");\n      this.assertEquals(\"1min\", tf.getValue());\n\n      // And same here with a valid number\n      tf.setValue(\"50\");\n      this.assertEquals(\"50min\", tf.getValue());\n      tf.setValue(\"50\");\n      this.assertEquals(\"50min\", tf.getValue());\n      \n      spinner.destroy();\n      numberFormat.dispose();\n    }\n  }\n});\n"
+  ]
+}

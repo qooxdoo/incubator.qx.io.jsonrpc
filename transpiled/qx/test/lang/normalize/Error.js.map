@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/lang/normalize/Error.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testToString",
+    "msg",
+    "error",
+    "Error",
+    "assertTrue",
+    "lang",
+    "String",
+    "contains",
+    "toString",
+    "test",
+    "normalize"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,8BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,YAAY,EAAG,wBACf;AACE,YAAIC,GAAG,GAAG,eAAV;AACA,YAAIC,KAAK,GAAG,IAAIC,KAAJ,CAAUF,GAAV,CAAZ;AACA,aAAKG,UAAL,CAAgBf,EAAE,CAACgB,IAAH,CAAQC,MAAR,CAAeC,QAAf,CAAwBL,KAAK,CAACM,QAAN,EAAxB,EAA0CP,GAA1C,CAAhB;AACD;AANH;AAJF,GADA;AArBAZ,EAAAA,EAAE,CAACoB,IAAH,CAAQJ,IAAR,CAAaK,SAAb,CAAuBP,KAAvB,CAA6BX,aAA7B,GAA6CA,aAA7C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * @require(qx.lang.normalize.Error)\n */\nqx.Class.define(\"qx.test.lang.normalize.Error\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testToString : function()\n    {\n      var msg = \"Dummer Fehler\";\n      var error = new Error(msg);\n      this.assertTrue(qx.lang.String.contains(error.toString(), msg));\n    }\n  }\n});\n"
+  ]
+}

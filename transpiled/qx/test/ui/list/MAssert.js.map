@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/list/MAssert.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "assertModelEqualsRowData",
+    "model",
+    "list",
+    "i",
+    "getLength",
+    "assertIdentical",
+    "getItem",
+    "_getDataFromRow",
+    "assertDataArrayEquals",
+    "expected",
+    "value",
+    "assertTrue",
+    "contains",
+    "test",
+    "ui",
+    "MAssert"
+  ],
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yBAAhB,EACA;AACEC,IAAAA,OAAO,EACP;AACEC,MAAAA,wBAAwB,EAAG,kCAASC,KAAT,EAAgBC,IAAhB,EAC3B;AACE,aAAK,IAAIC,CAAC,GAAG,CAAb,EAAgBA,CAAC,GAAGF,KAAK,CAACG,SAAN,EAApB,EAAuCD,CAAC,EAAxC,EAA4C;AAC1C,eAAKE,eAAL,CAAqBJ,KAAK,CAACK,OAAN,CAAcH,CAAd,CAArB,EAAuCD,IAAI,CAACK,eAAL,CAAqBJ,CAArB,CAAvC;AACD;AACF,OANH;AAQEK,MAAAA,qBAAqB,EAAG,+BAASC,QAAT,EAAmBC,KAAnB,EAA0B;AAChD,aAAKL,eAAL,CAAqBI,QAAQ,CAACL,SAAT,EAArB,EAA2CM,KAAK,CAACN,SAAN,EAA3C,EAA8D,0CAA9D;;AACA,aAAK,IAAID,CAAC,GAAG,CAAb,EAAgBA,CAAC,GAAGM,QAAQ,CAACL,SAAT,EAApB,EAA0CD,CAAC,EAA3C,EAA+C;AAC7C,eAAKQ,UAAL,CAAgBD,KAAK,CAACE,QAAN,CAAeH,QAAQ,CAACH,OAAT,CAAiBH,CAAjB,CAAf,CAAhB,EAAqD,qCAAqCM,QAAQ,CAACH,OAAT,CAAiBH,CAAjB,CAArC,GAA2D,GAAhH;AACD;AACF;AAbH;AAFF,GADA;AAlBAV,EAAAA,EAAE,CAACoB,IAAH,CAAQC,EAAR,CAAWZ,IAAX,CAAgBa,OAAhB,CAAwBnB,aAAxB,GAAwCA,aAAxC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Hagendorn (chris_schmidt)\n\n************************************************************************ */\n\nqx.Mixin.define(\"qx.test.ui.list.MAssert\",\n{\n  members :\n  {\n    assertModelEqualsRowData : function(model, list)\n    {\n      for (var i = 0; i < model.getLength(); i++) {\n        this.assertIdentical(model.getItem(i), list._getDataFromRow(i));\n      }\n    },\n\n    assertDataArrayEquals : function(expected, value) {\n      this.assertIdentical(expected.getLength(), value.getLength(), \"The length of both arrays are not equal!\");\n      for (var i = 0; i < expected.getLength(); i++) {\n        this.assertTrue(value.contains(expected.getItem(i)), \"The array doesn't contain item '\" + expected.getItem(i) + \"'\");\n      }\n    }\n  }\n});\n"
+  ]
+}

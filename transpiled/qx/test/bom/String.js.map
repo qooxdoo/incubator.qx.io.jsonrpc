@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/String.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testToText_Break",
+    "assertEquals",
+    "bom",
+    "String",
+    "toText",
+    "testToText_Advanced",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AAEEC,MAAAA,gBAAgB,EAAG,4BACnB;AACE,aAAKC,YAAL,CAAkBZ,EAAE,CAACa,GAAH,CAAOC,MAAP,CAAcC,MAAd,CAAqB,MAArB,CAAlB,EAAgD,IAAhD;AACA,aAAKH,YAAL,CAAkBZ,EAAE,CAACa,GAAH,CAAOC,MAAP,CAAcC,MAAd,CAAqB,QAArB,CAAlB,EAAkD,IAAlD;AACD,OANH;AAQEC,MAAAA,mBAAmB,EAAG,+BACtB;AACE,aAAKJ,YAAL,CAAkBZ,EAAE,CAACa,GAAH,CAAOC,MAAP,CAAcC,MAAd,CAAqB,4BAArB,CAAlB,EAAsE,EAAtE;AACA,aAAKH,YAAL,CAAkBZ,EAAE,CAACa,GAAH,CAAOC,MAAP,CAAcC,MAAd,CAAqB,2CAArB,CAAlB,EAAqF,KAArF;AAEA,aAAKH,YAAL,CAAkBZ,EAAE,CAACa,GAAH,CAAOC,MAAP,CAAcC,MAAd,CAAqB,6BAArB,CAAlB,EAAuE,GAAvE;AACA,aAAKH,YAAL,CAAkBZ,EAAE,CAACa,GAAH,CAAOC,MAAP,CAAcC,MAAd,CAAqB,6CAArB,CAAlB,EAAuF,OAAvF;AACD;AAfH;AAJF,GADA;AAlBAf,EAAAA,EAAE,CAACiB,IAAH,CAAQJ,GAAR,CAAYC,MAAZ,CAAmBX,aAAnB,GAAmCA,aAAnC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Jonathan Weiß (jonathan_rass)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.bom.String\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n\n    testToText_Break : function()\n    {\n      this.assertEquals(qx.bom.String.toText(\"<br>\"), \"\\n\");\n      this.assertEquals(qx.bom.String.toText(\"<br />\"), \"\\n\");\n    },\n\n    testToText_Advanced : function()\n    {\n      this.assertEquals(qx.bom.String.toText(\"<div style='padding:5px;'>\"), \"\");\n      this.assertEquals(qx.bom.String.toText(\"<div style='padding:5px;'>foo</div></div>\"), \"foo\");\n\n      this.assertEquals(qx.bom.String.toText(\"<div style='padding:5px;'> \"), \" \");\n      this.assertEquals(qx.bom.String.toText(\"<div style='padding:5px;'> foo </div></div>\"), \" foo \");\n    }\n\n  }\n});\n"
+  ]
+}

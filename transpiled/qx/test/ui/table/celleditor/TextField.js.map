@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/table/celleditor/TextField.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "table",
+    "celleditor",
+    "AbstractField",
+    "members",
+    "setUp",
+    "factory",
+    "TextField",
+    "tearDown",
+    "dispose"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,KAAX,CAAiBC,UAAjB,CAA4BC,aADvC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBAAW;AACjB,aAAKC,OAAL,GAAe,IAAId,EAAE,CAACQ,EAAH,CAAMC,KAAN,CAAYC,UAAZ,CAAuBK,SAA3B,EAAf;AACD,OAHH;AAKEC,MAAAA,QAAQ,EAAG,oBACX;AACE;AACA,aAAKF,OAAL,CAAaG,OAAb;AACD;AATH;AAJF,GADA;AAlBAjB,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,KAAX,CAAiBC,UAAjB,CAA4BK,SAA5B,CAAsCZ,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.table.celleditor.TextField\",\n{\n  extend : qx.test.ui.table.celleditor.AbstractField,\n\n  members :\n  {\n    setUp : function() {\n      this.factory = new qx.ui.table.celleditor.TextField();\n    },\n\n    tearDown : function()\n    {\n      this.base(arguments);\n      this.factory.dispose();\n    }\n  }\n});\n"
+  ]
+}

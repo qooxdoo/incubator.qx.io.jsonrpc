@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/BackgroundColor.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "testChangeColorInContainer",
+    "widget",
+    "container",
+    "Composite",
+    "getRoot",
+    "add",
+    "assertStyle",
+    "setBackgroundColor",
+    "remove",
+    "destroy",
+    "testChangeColorInDecorator",
+    "deco",
+    "decoration",
+    "Decorator",
+    "set",
+    "width",
+    "setDecorator",
+    "dispose",
+    "testChangeDecorator",
+    "repl",
+    "style",
+    "color",
+    "innerWidth",
+    "innerColor",
+    "testDecorationColor",
+    "backgroundColor",
+    "BackgroundColor"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.BackgroundColor\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  members :\n  {\n    testChangeColorInContainer : function()\n    {\n      var widget = new qx.ui.container.Composite();\n      this.getRoot().add(widget);\n\n      this.assertStyle(widget, \"backgroundColor\", \"transparent\");\n\n      widget.setBackgroundColor(\"red\");\n      this.assertStyle(widget, \"backgroundColor\", \"red\");\n\n      widget.setBackgroundColor(\"green\");\n      this.assertStyle(widget, \"backgroundColor\", \"green\");\n\n      widget.setBackgroundColor(null);\n      this.assertStyle(widget, \"backgroundColor\", \"transparent\");\n\n      this.getRoot().remove(widget);\n      widget.destroy();\n    },\n\n\n    testChangeColorInDecorator : function()\n    {\n      var widget = new qx.ui.container.Composite();\n      this.getRoot().add(widget);\n\n      var deco = new qx.ui.decoration.Decorator().set({\n        width:  1\n      });\n      widget.setDecorator(deco);\n      this.assertStyle(widget, \"backgroundColor\", \"transparent\", \"no bg color\");\n\n      widget.setBackgroundColor(\"red\");\n      this.assertStyle(widget, \"backgroundColor\", \"red\", \"red bg color\");\n\n      widget.setBackgroundColor(\"green\");\n      this.assertStyle(widget, \"backgroundColor\", \"green\", \"green bg color\");\n\n      widget.setBackgroundColor(null);\n      this.assertStyle(widget, \"backgroundColor\", \"transparent\", \"null bg color\");\n\n      this.getRoot().remove(widget);\n      widget.dispose();\n      deco.dispose();\n    },\n\n\n    testChangeDecorator : function()\n    {\n      var widget = new qx.ui.container.Composite();\n      this.getRoot().add(widget);\n      this.assertStyle(widget, \"backgroundColor\", \"transparent\");\n\n      // set decoration\n      var deco = new qx.ui.decoration.Decorator().set({\n        width:  1\n      });\n      widget.setDecorator(deco);\n\n      // set background color\n      widget.setBackgroundColor(\"red\");\n      this.assertStyle(widget, \"backgroundColor\", \"red\");\n\n      // change decorator\n      //var repl = new qx.ui.decoration.Double(1, \"solid\", \"green\", 1, \"black\");\n      var repl = new qx.ui.decoration.Decorator().set({\n        width: 1,\n        style: \"solid\",\n        color: \"green\",\n        innerWidth: 1,\n        innerColor: \"black\"\n      });\n      widget.setDecorator(repl);\n      this.assertStyle(widget, \"backgroundColor\", \"red\");\n\n      widget.destroy();\n      deco.dispose();\n      repl.dispose();\n    },\n\n\n    testDecorationColor : function()\n    {\n      var widget = new qx.ui.container.Composite();\n      this.getRoot().add(widget);\n      this.assertStyle(widget, \"backgroundColor\", \"transparent\");\n\n      widget.setBackgroundColor(\"green\");\n      this.assertStyle(widget, \"backgroundColor\", \"green\");\n\n      // set decoration\n      var deco = new qx.ui.decoration.Decorator().set({\n        width: 1,\n        backgroundColor: \"red\"\n      });\n      widget.setDecorator(deco);\n      // widget color takes precedence over decorator color\n\n      this.assertStyle(widget, \"backgroundColor\", \"green\");\n\n      // reset widget bg color\n      widget.setBackgroundColor(null);\n      this.assertStyle(widget, \"backgroundColor\", \"red\");\n\n      this.getRoot().remove(widget);\n      widget.dispose();\n      deco.dispose();\n    }\n\n  }\n});\n"
+  ]
+}

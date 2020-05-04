@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/theme/manager/Font.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "manager",
+    "theme",
+    "Font",
+    "getInstance",
+    "__formerTheme",
+    "getTheme",
+    "tearDown",
+    "test",
+    "Theme",
+    "themes",
+    "setTheme",
+    "testInclude",
+    "modern",
+    "fonts",
+    "include",
+    "bold",
+    "italic",
+    "A",
+    "fontTheme",
+    "assertKeyInMap",
+    "myfont",
+    "mysecondfont"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBAAW;AACjB,aAAKC,OAAL,GAAeZ,EAAE,CAACa,KAAH,CAASD,OAAT,CAAiBE,IAAjB,CAAsBC,WAAtB,EAAf;AACA,aAAKC,aAAL,GAAqB,KAAKJ,OAAL,CAAaK,QAAb,EAArB;AACD,OAJH;AAOEC,MAAAA,QAAQ,EAAG,oBACX;AACElB,QAAAA,EAAE,CAACmB,IAAH,CAAQC,KAAR,CAAcC,MAAd,GAAuB,IAAvB;AACA,aAAKT,OAAL,CAAaU,QAAb,CAAsB,KAAKN,aAA3B;AACA,aAAKA,aAAL,GAAqB,IAArB;AACD,OAZH;AAeEO,MAAAA,WAAW,EAAG,uBACd;AACEvB,QAAAA,EAAE,CAACoB,KAAH,CAASf,MAAT,CAAgB,wBAAhB,EACA;AACEC,UAAAA,MAAM,EAAGN,EAAE,CAACa,KAAH,CAASW,MAAT,CAAgBV,IAD3B;AAGEW,UAAAA,KAAK,EACL;AACE,sBACA;AACEC,cAAAA,OAAO,EAAG,SADZ;AAEEC,cAAAA,IAAI,EAAG;AAFT,aAFF;AAOE,4BACA;AACED,cAAAA,OAAO,EAAG,QADZ;AAEEE,cAAAA,MAAM,EAAG;AAFX;AARF;AAJF,SADA;AAoBA,aAAKhB,OAAL,CAAaU,QAAb,CAAsBtB,EAAE,CAACmB,IAAH,CAAQC,KAAR,CAAcC,MAAd,CAAqBQ,CAA3C;AAEA,YAAIC,SAAS,GAAG,KAAKlB,OAAL,CAAaK,QAAb,EAAhB;AAEA,aAAKc,cAAL,CAAoB,MAApB,EAA4BD,SAAS,CAACL,KAAV,CAAgBO,MAA5C,EAAoD,6BAApD;AACA,aAAKD,cAAL,CAAoB,YAApB,EAAkCD,SAAS,CAACL,KAAV,CAAgBO,MAAlD,EAA0D,6BAA1D;AACA,aAAKD,cAAL,CAAoB,QAApB,EAA8BD,SAAS,CAACL,KAAV,CAAgBO,MAA9C,EAAsD,6BAAtD;AACA,aAAKD,cAAL,CAAoB,MAApB,EAA4BD,SAAS,CAACL,KAAV,CAAgBO,MAA5C,EAAoD,6BAApD;AAEA,aAAKD,cAAL,CAAoB,MAApB,EAA4BD,SAAS,CAACL,KAAV,CAAgBQ,YAA5C,EAA0D,6BAA1D;AACA,aAAKF,cAAL,CAAoB,YAApB,EAAkCD,SAAS,CAACL,KAAV,CAAgBQ,YAAlD,EAAgE,6BAAhE;AACA,aAAKF,cAAL,CAAoB,QAApB,EAA8BD,SAAS,CAACL,KAAV,CAAgBQ,YAA9C,EAA4D,6BAA5D;AACA,aAAKF,cAAL,CAAoB,MAApB,EAA4BD,SAAS,CAACL,KAAV,CAAgBQ,YAA5C,EAA0D,6BAA1D;AACA,aAAKF,cAAL,CAAoB,QAApB,EAA8BD,SAAS,CAACL,KAAV,CAAgBQ,YAA9C,EAA4D,6BAA5D;AACD;AAnDH;AAJF,GADA;AAlBAjC,EAAAA,EAAE,CAACmB,IAAH,CAAQN,KAAR,CAAcD,OAAd,CAAsBE,IAAtB,CAA2BX,aAA3B,GAA2CA,aAA3C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Alexander Steitz (aback)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.theme.manager.Font\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    setUp : function() {\n      this.manager = qx.theme.manager.Font.getInstance();\n      this.__formerTheme = this.manager.getTheme();\n    },\n\n\n    tearDown : function()\n    {\n      qx.test.Theme.themes = null;\n      this.manager.setTheme(this.__formerTheme);\n      this.__formerTheme = null;\n    },\n\n\n    testInclude : function()\n    {\n      qx.Theme.define(\"qx.test.Theme.themes.A\",\n      {\n        extend : qx.theme.modern.Font,\n\n        fonts :\n        {\n          \"myfont\" :\n          {\n            include : \"default\",\n            bold : true\n          },\n\n          \"mysecondfont\" :\n          {\n            include : \"myfont\",\n            italic : true\n          }\n        }\n      });\n\n      this.manager.setTheme(qx.test.Theme.themes.A);\n\n      var fontTheme = this.manager.getTheme();\n\n      this.assertKeyInMap(\"size\", fontTheme.fonts.myfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"lineHeight\", fontTheme.fonts.myfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"family\", fontTheme.fonts.myfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"bold\", fontTheme.fonts.myfont, \"Including font theme failed\");\n\n      this.assertKeyInMap(\"size\", fontTheme.fonts.mysecondfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"lineHeight\", fontTheme.fonts.mysecondfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"family\", fontTheme.fonts.mysecondfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"bold\", fontTheme.fonts.mysecondfont, \"Including font theme failed\");\n      this.assertKeyInMap(\"italic\", fontTheme.fonts.mysecondfont, \"Including font theme failed\");\n    }\n  }\n});\n"
+  ]
+}

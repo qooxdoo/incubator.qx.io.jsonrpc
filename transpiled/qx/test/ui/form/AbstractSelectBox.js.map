@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/form/AbstractSelectBox.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "setUp",
+    "__selectBox",
+    "form",
+    "SelectBox",
+    "getRoot",
+    "add",
+    "__comboBox",
+    "ComboBox",
+    "flush",
+    "tearDown",
+    "dispose",
+    "testStatePopupOpen",
+    "open",
+    "assertTrue",
+    "hasState",
+    "close",
+    "assertFalse",
+    "AbstractSelectBox"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADtB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBACR;AACE,aAAKC,WAAL,GAAmB,IAAIZ,EAAE,CAACQ,EAAH,CAAMK,IAAN,CAAWC,SAAf,EAAnB;AACA,aAAKC,OAAL,GAAeC,GAAf,CAAmB,KAAKJ,WAAxB;AAEA,aAAKK,UAAL,GAAkB,IAAIjB,EAAE,CAACQ,EAAH,CAAMK,IAAN,CAAWK,QAAf,EAAlB;AACA,aAAKH,OAAL,GAAeC,GAAf,CAAmB,KAAKC,UAAxB;AAEA,aAAKE,KAAL;AACD,OAVH;AAYEC,MAAAA,QAAQ,EAAG,oBACX;AACE;;AAEA,aAAKR,WAAL,CAAiBS,OAAjB;;AACA,aAAKT,WAAL,GAAmB,IAAnB;;AAEA,aAAKK,UAAL,CAAgBI,OAAhB;;AACA,aAAKJ,UAAL,GAAkB,IAAlB;AACD,OArBH;AAuBEK,MAAAA,kBAAkB,EAAG,8BACrB;AACE,aAAKV,WAAL,CAAiBW,IAAjB;;AACA,aAAKJ,KAAL;AACA,aAAKK,UAAL,CAAgB,KAAKZ,WAAL,CAAiBa,QAAjB,CAA0B,WAA1B,CAAhB;;AAEA,aAAKb,WAAL,CAAiBc,KAAjB;;AACA,aAAKP,KAAL;AACA,aAAKQ,WAAL,CAAiB,KAAKf,WAAL,CAAiBa,QAAjB,CAA0B,WAA1B,CAAjB;;AAEA,aAAKR,UAAL,CAAgBM,IAAhB;;AACA,aAAKJ,KAAL;AACA,aAAKK,UAAL,CAAgB,KAAKP,UAAL,CAAgBQ,QAAhB,CAAyB,WAAzB,CAAhB;;AAEA,aAAKR,UAAL,CAAgBS,KAAhB;;AACA,aAAKP,KAAL;AACA,aAAKQ,WAAL,CAAiB,KAAKV,UAAL,CAAgBQ,QAAhB,CAAyB,WAAzB,CAAjB;AACD;AAxCH;AAJF,GADA;AAjBAzB,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWK,IAAX,CAAgBe,iBAAhB,CAAkCzB,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Alexander Steitz (aback)\n\n************************************************************************ */\nqx.Class.define(\"qx.test.ui.form.AbstractSelectBox\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  members :\n  {\n    setUp : function()\n    {\n      this.__selectBox = new qx.ui.form.SelectBox;\n      this.getRoot().add(this.__selectBox);\n\n      this.__comboBox = new qx.ui.form.ComboBox;\n      this.getRoot().add(this.__comboBox);\n\n      this.flush();\n    },\n\n    tearDown : function()\n    {\n      this.base(arguments);\n\n      this.__selectBox.dispose();\n      this.__selectBox = null;\n\n      this.__comboBox.dispose();\n      this.__comboBox = null;\n    },\n\n    testStatePopupOpen : function()\n    {\n      this.__selectBox.open();\n      this.flush();\n      this.assertTrue(this.__selectBox.hasState(\"popupOpen\"));\n\n      this.__selectBox.close();\n      this.flush();\n      this.assertFalse(this.__selectBox.hasState(\"popupOpen\"));\n\n      this.__comboBox.open();\n      this.flush();\n      this.assertTrue(this.__comboBox.hasState(\"popupOpen\"));\n\n      this.__comboBox.close();\n      this.flush();\n      this.assertFalse(this.__comboBox.hasState(\"popupOpen\"));\n    }\n  }\n});"
+  ]
+}

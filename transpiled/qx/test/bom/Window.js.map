@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/Window.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "test",
+    "bom",
+    "Window"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP,CACE;AACA;AACA;AACA;;AAEA;;;;;;;;;;;;;;;;;;;;;AANF;AAJF,GADA;AAlBAV,EAAAA,EAAE,CAACW,IAAH,CAAQC,GAAR,CAAYC,MAAZ,CAAmBV,aAAnB,GAAmCA,aAAnC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Alexander Steitz (aback)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.bom.Window\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    // Disabling tests for native window because every browser has a popup\n    // blocker enabled. As long as we do not have special setup test machines\n    // these tests will fail. Adding a try ... catch block won't helper either\n    // since we do not want to blur the test results\n\n    /*testOpen : function()\n    {\n      var win = qx.bom.Window.open(\"http://qooxdoo.org\");\n      this.assertFalse(win.closed);\n      win.close();\n    },\n\n    testClose : function()\n    {\n      var win = qx.bom.Window.open(\"http://qooxdoo.org\");\n      qx.bom.Window.close(win);\n      this.assertTrue(qx.bom.Window.isClosed(win));\n    },\n\n    testIsClosed : function()\n    {\n      var win = qx.bom.Window.open(\"http://qooxdoo.org\");\n      this.assertFalse(qx.bom.Window.isClosed(win));\n      win.close();\n\n      var win2 = qx.bom.Window.open(\"http://qooxdoo.org\");\n      win2.close();\n      this.assertTrue(qx.bom.Window.isClosed(win2));\n    }*/\n  }\n});\n"
+  ]
+}

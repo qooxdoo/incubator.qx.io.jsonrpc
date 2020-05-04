@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/virtual/layer/LayerMock.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "virtual",
+    "layer",
+    "Abstract",
+    "construct",
+    "calls",
+    "members",
+    "updateLayerData",
+    "push",
+    "lang",
+    "Array",
+    "fromArguments",
+    "arguments",
+    "_updateLayerData",
+    "fullUpdate",
+    "firstRow",
+    "firstColumn",
+    "rowSizes",
+    "columnSizes",
+    "_fullUpdate",
+    "updateLayerWindow",
+    "_updateLayerWindow",
+    "test",
+    "LayerMock"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,KAAd,CAAoBC,QAD/B;AAGEC,IAAAA,SAAS,EAAG,qBACZ;AACE;AAEA,WAAKC,KAAL,GAAa,EAAb;AACD,KARH;;AAUE;;;;;AAMAC,IAAAA,OAAO,EACP;AACEC,MAAAA,eAAe,EAAG,2BAClB;AACE,aAAKF,KAAL,CAAWG,IAAX,CAAgB,CAAC,iBAAD,EAAoBf,EAAE,CAACgB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BC,SAA5B,CAApB,CAAhB;AACA;AACD,OALH;AAQEC,MAAAA,gBAAgB,EAAG,4BAAW;AAC5B,aAAKR,KAAL,CAAWG,IAAX,CAAgB,CAAC,kBAAD,EAAqBf,EAAE,CAACgB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BC,SAA5B,CAArB,CAAhB;AACD,OAVH;AAaEE,MAAAA,UAAU,EAAG,oBACXC,QADW,EACDC,WADC,EAEXC,QAFW,EAEDC,WAFC,EAIb;AACE,aAAKb,KAAL,CAAWG,IAAX,CAAgB,CAAC,YAAD,EAAef,EAAE,CAACgB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BC,SAA5B,CAAf,CAAhB;AACA,gFACaG,QADb,EACuBC,WADvB,EAEEC,QAFF,EAEYC,WAFZ;AAID,OAvBH;AA0BEC,MAAAA,WAAW,EAAG,qBAASJ,QAAT,EAAmBC,WAAnB,EAAgCC,QAAhC,EAA0CC,WAA1C,EAAuD;AACnE,aAAKb,KAAL,CAAWG,IAAX,CAAgB,CAAC,aAAD,EAAgBf,EAAE,CAACgB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BC,SAA5B,CAAhB,CAAhB;AACD,OA5BH;AA+BEQ,MAAAA,iBAAiB,EAAG,2BAClBL,QADkB,EACRC,WADQ,EAElBC,QAFkB,EAERC,WAFQ,EAIpB;AACE,aAAKb,KAAL,CAAWG,IAAX,CAAgB,CAAC,mBAAD,EAAsBf,EAAE,CAACgB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BC,SAA5B,CAAtB,CAAhB;AACA,uFACaG,QADb,EACuBC,WADvB,EAEEC,QAFF,EAEYC,WAFZ;AAID,OAzCH;AA4CEG,MAAAA,kBAAkB,EAAG,4BACnBN,QADmB,EACTC,WADS,EAEnBC,QAFmB,EAETC,WAFS,EAGnB;AACA,aAAKb,KAAL,CAAWG,IAAX,CAAgB,CAAC,oBAAD,EAAuBf,EAAE,CAACgB,IAAH,CAAQC,KAAR,CAAcC,aAAd,CAA4BC,SAA5B,CAAvB,CAAhB;AACD;AAjDH;AAjBF,GADA;AAlBAnB,EAAAA,EAAE,CAAC6B,IAAH,CAAQtB,EAAR,CAAWC,OAAX,CAAmBC,KAAnB,CAAyBqB,SAAzB,CAAmC3B,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n   * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.virtual.layer.LayerMock\",\n{\n  extend : qx.ui.virtual.layer.Abstract,\n\n  construct : function()\n  {\n    this.base(arguments);\n\n    this.calls = [];\n  },\n\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members :\n  {\n    updateLayerData : function()\n    {\n      this.calls.push([\"updateLayerData\", qx.lang.Array.fromArguments(arguments)]);\n      this.base(arguments);\n    },\n\n\n    _updateLayerData : function() {\n      this.calls.push([\"_updateLayerData\", qx.lang.Array.fromArguments(arguments)]);\n    },\n\n\n    fullUpdate : function(\n      firstRow, firstColumn,\n      rowSizes, columnSizes\n    )\n    {\n      this.calls.push([\"fullUpdate\", qx.lang.Array.fromArguments(arguments)]);\n      this.base(\n        arguments, firstRow, firstColumn,\n        rowSizes, columnSizes\n      );\n    },\n\n\n    _fullUpdate : function(firstRow, firstColumn, rowSizes, columnSizes) {\n      this.calls.push([\"_fullUpdate\", qx.lang.Array.fromArguments(arguments)]);\n    },\n\n\n    updateLayerWindow : function(\n      firstRow, firstColumn,\n      rowSizes, columnSizes\n    )\n    {\n      this.calls.push([\"updateLayerWindow\", qx.lang.Array.fromArguments(arguments)]);\n      this.base(\n        arguments, firstRow, firstColumn,\n        rowSizes, columnSizes\n      );\n    },\n\n\n    _updateLayerWindow : function(\n      firstRow, firstColumn,\n      rowSizes, columnSizes\n    ) {\n      this.calls.push([\"_updateLayerWindow\", qx.lang.Array.fromArguments(arguments)]);\n    }\n  }\n});\n"
+  ]
+}

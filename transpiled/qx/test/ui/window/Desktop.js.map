@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/window/Desktop.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "setUp",
+    "windowManager",
+    "window",
+    "Manager",
+    "desktop",
+    "Desktop",
+    "getRoot",
+    "add",
+    "tearDown",
+    "destroy",
+    "flush",
+    "testEvents",
+    "Window",
+    "set",
+    "width",
+    "height",
+    "showClose",
+    "showMinimize",
+    "assertEventFired",
+    "bind",
+    "remove",
+    "destruct"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EAA6C;AAC3CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADwB;AAG3CC,IAAAA,OAAO,EAAE;AACPC,MAAAA,KAAK,EAAE,iBAAY;AACjB;AAEA,YAAIC,aAAa,GAAG,IAAIZ,EAAE,CAACQ,EAAH,CAAMK,MAAN,CAAaC,OAAjB,EAApB;AACA,YAAIC,OAAO,GAAG,IAAIf,EAAE,CAACQ,EAAH,CAAMK,MAAN,CAAaG,OAAjB,CAAyBJ,aAAzB,CAAd;AAEA,aAAKK,OAAL,GAAeC,GAAf,CAAmBH,OAAnB;AACA,aAAKA,OAAL,GAAeA,OAAf;AACD,OATM;AAWPI,MAAAA,QAAQ,EAAE,oBAAY;AACpB,aAAKJ,OAAL,CAAaK,OAAb;AACA;AACA,aAAKC,KAAL;AACD,OAfM;AAiBPC,MAAAA,UAAU,EAAE,sBAAY;AACtB,YAAIT,MAAM,GAAG,IAAIb,EAAE,CAACQ,EAAH,CAAMK,MAAN,CAAaU,MAAjB,CAAwB,QAAxB,CAAb;AACAV,QAAAA,MAAM,CAACW,GAAP,CAAW;AACTC,UAAAA,KAAK,EAAE,GADE;AAETC,UAAAA,MAAM,EAAE,GAFC;AAGTC,UAAAA,SAAS,EAAE,KAHF;AAITC,UAAAA,YAAY,EAAE;AAJL,SAAX;AAMA,aAAKC,gBAAL,CAAsB,KAAKd,OAA3B,EAAoC,aAApC,EAAmD,YAAY;AAC7D,eAAKA,OAAL,CAAaG,GAAb,CAAiBL,MAAjB;AACD,SAFkD,CAEjDiB,IAFiD,CAE5C,IAF4C,CAAnD;AAIA,aAAKD,gBAAL,CAAsB,KAAKd,OAA3B,EAAoC,eAApC,EAAqD,YAAY;AAC/D,eAAKA,OAAL,CAAagB,MAAb,CAAoBlB,MAApB;AACD,SAFoD,CAEnDiB,IAFmD,CAE9C,IAF8C,CAArD;AAGD,OAhCM;AAkCPE,MAAAA,QAAQ,EAAE,oBAAY;AACpB,aAAKjB,OAAL,GAAe,IAAf;AACD;AApCM;AAHkC,GAA7C;AAlBAf,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWK,MAAX,CAAkBG,OAAlB,CAA0Bb,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n qooxdoo - the new era of web development\n\n http://qooxdoo.org\n\n Copyright:\n 2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n License:\n     MIT: https://opensource.org/licenses/MIT\n See the LICENSE file in the project's top-level directory for details.\n\n Authors:\n * Fabian Jakobs (fjakobs)\n\n ************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.window.Desktop\", {\n  extend: qx.test.ui.LayoutTestCase,\n\n  members: {\n    setUp: function () {\n      this.base(arguments);\n\n      var windowManager = new qx.ui.window.Manager();\n      var desktop = new qx.ui.window.Desktop(windowManager);\n\n      this.getRoot().add(desktop);\n      this.desktop = desktop;\n    },\n\n    tearDown: function () {\n      this.desktop.destroy();\n      this.base(arguments);\n      this.flush();\n    },\n\n    testEvents: function () {\n      var window = new qx.ui.window.Window(\"Window\");\n      window.set({\n        width: 300,\n        height: 200,\n        showClose: false,\n        showMinimize: false\n      });\n      this.assertEventFired(this.desktop, \"windowAdded\", function () {\n        this.desktop.add(window);\n      }.bind(this));\n\n      this.assertEventFired(this.desktop, \"windowRemoved\", function () {\n        this.desktop.remove(window);\n      }.bind(this));\n    },\n\n    destruct: function () {\n      this.desktop = null;\n    }\n  }\n});\n"
+  ]
+}

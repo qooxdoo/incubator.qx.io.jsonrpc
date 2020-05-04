@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/FileReader.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MRequirements",
+    "members",
+    "hasReader",
+    "core",
+    "Environment",
+    "get",
+    "setUp",
+    "tearDown",
+    "test",
+    "bom",
+    "FileReader"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAEA;;;;;;;;;;;;;;;;;;AAkBA;;;;;AAIA;;;;AAKAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAEEC,IAAAA,OAAO,EAAE,CAACV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,aAAb,CAFX;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,SAAS,EAAE,qBAAW;AACpB,eAAOb,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,iBAAxB,CAAP;AACD,OAHH;AAKEC,MAAAA,KAAK,EAAE,iBAAW,CACjB,CANH;AAQEC,MAAAA,QAAQ,EAAE,oBAAW,CACpB;AATH;AALF,GADA;AA7BAlB,EAAAA,EAAE,CAACmB,IAAH,CAAQC,GAAR,CAAYC,UAAZ,CAAuBlB,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "\n\n/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Derrell Lipman (derrell)\n\n************************************************************************ */\n\n/* ************************************************************************\n\n\n************************************************************************ */\n/**\n *\n * @asset(qx/test/webworker.js)\n */\n\nqx.Class.define(\"qx.test.bom.FileReader\",\n{\n  extend : qx.dev.unit.TestCase,\n  include: [qx.dev.unit.MRequirements],\n\n  members :\n  {\n    hasReader: function() {\n      return qx.core.Environment.get(\"html.filereader\");\n    },\n\n    setUp: function() {\n    },\n\n    tearDown: function() {\n    }\n  }\n});\n"
+  ]
+}

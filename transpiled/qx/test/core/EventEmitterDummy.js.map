@@ -1,0 +1,24 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/core/EventEmitterDummy.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "events",
+    "test",
+    "EventEmitterDummy"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EACA;AACEC,IAAAA,MAAM,EAAMN,EAAE,CAACO,IAAH,CAAQC,MADtB;AAEEC,IAAAA,MAAM,EAAG;AACP,eAAU,qBADH;AAEP,eAAU,cAFH;AAGP,cAAS,oBAHF;AAIP,mBAAc;AAJP;AAFX,GADA;AAAAT,EAAAA,EAAE,CAACU,IAAH,CAAQH,IAAR,CAAaI,iBAAb,CAA+BR,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.core.EventEmitterDummy\",\n{\n  extend    : qx.core.Object,\n  events : {\n    \"plain\" : \"qx.event.type.Event\",\n    \"error\" : \"qx.__12345__\",\n    \"data\" : \"qx.event.type.Data\",\n    \"eventName\" : \"qx.event.type.Data\"\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/data/singlevalue/TextFieldDummy.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "value",
+    "setValue",
+    "properties",
+    "appearance",
+    "check",
+    "event",
+    "init",
+    "enabled",
+    "zIndex",
+    "nullable",
+    "floatt",
+    "backgroundColor",
+    "test",
+    "data",
+    "singlevalue",
+    "TextFieldDummy"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAGEC,IAAAA,SAAS,EAAG,mBAASC,KAAT,EAAgB;AAC1B;;AACA,UAAIA,KAAK,IAAI,IAAb,EAAmB;AACjB,aAAKC,QAAL,CAAcD,KAAd;AACD;AACF,KARH;AAUEE,IAAAA,UAAU,EAAG;AACXC,MAAAA,UAAU,EAAG;AACXC,QAAAA,KAAK,EAAG,QADG;AAEXC,QAAAA,KAAK,EAAG,kBAFG;AAGXC,QAAAA,IAAI,EAAG;AAHI,OADF;AAMXC,MAAAA,OAAO,EAAG;AACRH,QAAAA,KAAK,EAAG,SADA;AAERC,QAAAA,KAAK,EAAG,eAFA;AAGRC,QAAAA,IAAI,EAAG;AAHC,OANC;AAWXE,MAAAA,MAAM,EAAG;AACPJ,QAAAA,KAAK,EAAG,SADD;AAEPC,QAAAA,KAAK,EAAG,cAFD;AAGPI,QAAAA,QAAQ,EAAG;AAHJ,OAXE;AAgBXC,MAAAA,MAAM,EAAG;AACPL,QAAAA,KAAK,EAAG;AADD,OAhBE;AAmBXL,MAAAA,KAAK,EAAG;AACNI,QAAAA,KAAK,EAAG,QADF;AAENC,QAAAA,KAAK,EAAG,aAFF;AAGNI,QAAAA,QAAQ,EAAE;AAHJ,OAnBG;AAwBXE,MAAAA,eAAe,EAAG;AAChBP,QAAAA,KAAK,EAAG,QADQ;AAEhBC,QAAAA,KAAK,EAAG,uBAFQ;AAGhBC,QAAAA,IAAI,EAAG;AAHS;AAxBP;AAVf,GADA;AAlBAhB,EAAAA,EAAE,CAACsB,IAAH,CAAQC,IAAR,CAAaC,WAAb,CAAyBC,cAAzB,CAAwCtB,aAAxC,GAAwDA,aAAxD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.data.singlevalue.TextFieldDummy\",\n{\n  extend : qx.core.Object,\n\n  construct : function(value) {\n    this.base(arguments);\n    if (value != null) {\n      this.setValue(value);\n    }\n  },\n\n  properties : {\n    appearance : {\n      check : \"String\",\n      event : \"changeAppearance\",\n      init : \"\"\n    },\n    enabled : {\n      check : \"Boolean\",\n      event : \"changeEnabled\",\n      init : true\n    },\n    zIndex : {\n      check : \"Integer\",\n      event : \"changeZIndex\",\n      nullable : true\n    },\n    floatt : {\n      event : \"changeFloatt\"\n    },\n    value : {\n      check : \"String\",\n      event : \"changeValue\",\n      nullable: true\n    },\n    backgroundColor : {\n      check : \"String\",\n      event : \"changeBackgroundColor\",\n      init : \"\"\n    }\n  }\n});"
+  ]
+}

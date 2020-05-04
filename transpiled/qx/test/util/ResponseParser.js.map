@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/ResponseParser.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "responseParser",
+    "util",
+    "ResponseParser",
+    "tearDown",
+    "__assertParser",
+    "contentType",
+    "parser",
+    "msg",
+    "assertEquals",
+    "_getParser",
+    "undefined",
+    "json",
+    "PARSER",
+    "xml",
+    "customParser",
+    "setParser",
+    "assertFunction",
+    "expectedResponse",
+    "parsedResponse",
+    "parse",
+    "assertNull",
+    "call",
+    "animals",
+    "documentElement",
+    "nodeName",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2013 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Richard Sternagel (rsternagel)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.ResponseParser\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    setUp : function() {\n      this.responseParser = new qx.util.ResponseParser();\n    },\n\n    tearDown : function()\n    {\n      this.responseParser = null;\n    },\n\n    __assertParser: function(contentType, parser) {\n      var msg = \"Content type '\" + contentType + \"' handled incorrectly\";\n      this.assertEquals(parser, this.responseParser._getParser(contentType), msg);\n    },\n\n    \"test: getParser() returns undefined for unknown\": function() {\n      this.__assertParser(\"text/html\", undefined);\n      this.__assertParser(\"application/pdf\", undefined);\n    },\n\n    \"test: getParser() returns undefined for malformed\": function() {\n      this.__assertParser(\"\", undefined);\n      this.__assertParser(\"json\", undefined);\n      this.__assertParser(\"text/foo+json\", undefined);\n      this.__assertParser(\"application/foo+jsonish\", undefined);\n      this.__assertParser(\"application/foo+xmlish\", undefined);\n    },\n\n    \"test: getParser() detects json\": function() {\n      var json = qx.util.ResponseParser.PARSER.json;\n      this.__assertParser(\"application/json\", json);\n      this.__assertParser(\"application/vnd.affe+json\", json);\n      this.__assertParser(\"application/prs.affe+json\", json);\n      this.__assertParser(\"application/vnd.oneandone.onlineoffice.email+json\", json);\n    },\n\n    \"test: getParser() detects xml\": function() {\n      var xml = qx.util.ResponseParser.PARSER.xml;\n      this.__assertParser(\"application/xml\", xml);\n      this.__assertParser(\"application/vnd.oneandone.domains.domain+xml\", xml);\n      this.__assertParser(\"text/xml\");  // Deprecated\n    },\n\n    \"test: getParser() detects deprecated xml\": function() {\n      var xml = qx.util.ResponseParser.PARSER.xml;\n      this.__assertParser(\"text/xml\");\n    },\n\n    \"test: getParser() handles character set\": function() {\n      var json = qx.util.ResponseParser.PARSER.json;\n      this.__assertParser(\"application/json; charset=utf-8\", json);\n    },\n\n    \"test: setParser() function\": function() {\n      var customParser = function() {};\n      this.responseParser.setParser(customParser);\n      this.assertEquals(customParser, this.responseParser._getParser());\n    },\n\n    \"test: setParser() symbolically\": function() {\n      this.responseParser.setParser(\"json\");\n      this.assertFunction(this.responseParser._getParser());\n    },\n\n    \"test: parse() not parse empty response\": function() {\n      var expectedResponse = \"\",\n          parsedResponse = this.responseParser.parse(\"\", \"application/json\");\n\n      this.assertEquals(expectedResponse, parsedResponse);\n    },\n\n    \"test: parse() not parse unknown response\": function() {\n      this.assertNull(this.responseParser._getParser(\"application/idontexist\"));\n    },\n\n    // JSON\n\n    \"test: parse() json response\": function() {\n      var json = '{\"animals\": [\"monkey\", \"mouse\"]}',\n          expectedResponse = qx.util.ResponseParser.PARSER.json.call(this, json),\n          parsedResponse = this.responseParser.parse(json, \"application/json\");\n\n      this.assertEquals(expectedResponse.animals[0], parsedResponse.animals[0]);\n    },\n\n    // XML\n\n    \"test: parse() xml response\": function() {\n      var xml = \"<animals><monkey/><mouse/></animals>\",\n          expectedResponse = qx.util.ResponseParser.PARSER.xml.call(this, xml),\n          parsedResponse = this.responseParser.parse(xml, \"application/xml\");\n\n      this.assertEquals(expectedResponse.documentElement.nodeName, parsedResponse.documentElement.nodeName);\n    },\n\n    \"test: parse() arbitrary xml response\": function() {\n      var xml = \"<animals><monkey/><mouse/></animals>\",\n          expectedResponse = qx.util.ResponseParser.PARSER.xml.call(this, xml),\n          parsedResponse = this.responseParser.parse(xml, \"animal/affe+xml\");\n\n      this.assertEquals(expectedResponse.documentElement.nodeName, parsedResponse.documentElement.nodeName);\n    }\n  }\n});\n"
+  ]
+}

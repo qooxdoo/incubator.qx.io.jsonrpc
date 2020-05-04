@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/virtual/performance/layer/HtmlDivRelative.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "ui",
+    "virtual",
+    "layer",
+    "Abstract",
+    "members",
+    "_fullUpdate",
+    "firstRow",
+    "firstColumn",
+    "rowSizes",
+    "columnSizes",
+    "html",
+    "left",
+    "top",
+    "row",
+    "col",
+    "x",
+    "length",
+    "y",
+    "content",
+    "push",
+    "getContentElement",
+    "setAttribute",
+    "join",
+    "test",
+    "performance",
+    "HtmlDivRelative"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sDAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,KAAd,CAAoBC,QAD/B;;AAIE;;;;;AAMAC,IAAAA,OAAO,EACP;AACEC,MAAAA,WAAW,EAAG,qBACZC,QADY,EACFC,WADE,EAEZC,QAFY,EAEFC,WAFE,EAId;AACE,YAAIC,IAAI,GAAG,EAAX;AACA,YAAIC,IAAI,GAAG,CAAX;AACA,YAAIC,GAAG,GAAG,CAAV;AACA,YAAIC,GAAG,GAAGP,QAAV;AACA,YAAIQ,GAAG,GAAGP,WAAV;;AACA,aAAK,IAAIQ,CAAC,GAAC,CAAX,EAAcA,CAAC,GAACP,QAAQ,CAACQ,MAAzB,EAAiCD,CAAC,EAAlC,EACA;AACE,cAAIJ,IAAI,GAAG,CAAX;AACA,cAAIG,GAAG,GAAGP,WAAV;;AACA,eAAI,IAAIU,CAAC,GAAC,CAAV,EAAaA,CAAC,GAACR,WAAW,CAACO,MAA3B,EAAmCC,CAAC,EAApC,EACA;AACE,gBAAIC,OAAO,GAAGJ,GAAG,GAAG,KAAN,GAAcD,GAA5B;AAEAH,YAAAA,IAAI,CAACS,IAAL,CACE,cADF,EAEE,cAFF,EAGE,QAHF,EAGYV,WAAW,CAACQ,CAAD,CAHvB,EAG4B,KAH5B,EAIE,SAJF,EAIaT,QAAQ,CAACO,CAAD,CAJrB,EAI0B,KAJ1B,EAKE,IALF,EAMEG,OANF,EAOE,QAPF;AASAJ,YAAAA,GAAG;AACHH,YAAAA,IAAI,IAAIF,WAAW,CAACQ,CAAD,CAAnB;AACD;;AACDL,UAAAA,GAAG,IAAIJ,QAAQ,CAACO,CAAD,CAAf;AACAF,UAAAA,GAAG;AACJ;;AAED,aAAKO,iBAAL,GAAyBC,YAAzB,CAAsC,MAAtC,EAA8CX,IAAI,CAACY,IAAL,CAAU,EAAV,CAA9C;AACD;AApCH;AAXF,GADA;AAlBA7B,EAAAA,EAAE,CAAC8B,IAAH,CAAQvB,EAAR,CAAWC,OAAX,CAAmBuB,WAAnB,CAA+BtB,KAA/B,CAAqCuB,eAArC,CAAqD7B,aAArD,GAAqEA,aAArE",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.virtual.performance.layer.HtmlDivRelative\",\n{\n  extend : qx.ui.virtual.layer.Abstract,\n\n\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members :\n  {\n    _fullUpdate : function(\n      firstRow, firstColumn,\n      rowSizes, columnSizes\n    )\n    {\n      var html = [];\n      var left = 0;\n      var top = 0;\n      var row = firstRow;\n      var col = firstColumn;\n      for (var x=0; x<rowSizes.length; x++)\n      {\n        var left = 0;\n        var col = firstColumn;\n        for(var y=0; y<columnSizes.length; y++)\n        {\n          var content = col + \" / \" + row;\n\n          html.push(\n            \"<div style='\",\n            \"float: left;\",\n            \"width:\", columnSizes[y], \"px;\",\n            \"height:\", rowSizes[x], \"px;\",\n            \"'>\",\n            content,\n            \"</div>\"\n          );\n          col++;\n          left += columnSizes[y];\n        }\n        top += rowSizes[x];\n        row++;\n      }\n\n      this.getContentElement().setAttribute(\"html\", html.join(\"\"));\n    }\n  }\n});\n"
+  ]
+}

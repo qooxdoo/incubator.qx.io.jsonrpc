@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/lang/normalize/Function.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testBind",
+    "context",
+    "result",
+    "add",
+    "a",
+    "b",
+    "assertEquals",
+    "window",
+    "boundAdd",
+    "bind",
+    "addOne",
+    "testBindWithUndefinedArguments",
+    "undef",
+    "callback",
+    "arg",
+    "assertTrue",
+    "bound",
+    "test",
+    "lang",
+    "normalize",
+    "Function"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,QAAQ,EAAG,oBACX;AACE,YAAIC,OAAO,GAAG,IAAd;AACA,YAAIC,MAAM,GAAG,CAAb;;AAEA,YAAIC,GAAG,GAAG,SAANA,GAAM,CAASC,CAAT,EAAYC,CAAZ,EACV;AACEJ,UAAAA,OAAO,GAAG,IAAV;AACA,iBAAOG,CAAC,GAAGC,CAAX;AACD,SAJD;;AAMAJ,QAAAA,OAAO,GAAG,IAAV;AACAC,QAAAA,MAAM,GAAGC,GAAG,CAAC,CAAD,EAAI,CAAJ,CAAZ;AAEA,aAAKG,YAAL,CAAkBL,OAAlB,EAA2BM,MAA3B;AACA,aAAKD,YAAL,CAAkB,CAAlB,EAAqBJ,MAArB;AAEAD,QAAAA,OAAO,GAAG,IAAV;AACA,YAAIO,QAAQ,GAAGL,GAAG,CAACM,IAAJ,CAAS,IAAT,CAAf;AACAP,QAAAA,MAAM,GAAGM,QAAQ,CAAC,CAAD,EAAI,CAAJ,CAAjB;AACA,aAAKF,YAAL,CAAkBL,OAAlB,EAA2B,IAA3B;AACA,aAAKK,YAAL,CAAkB,CAAlB,EAAqBJ,MAArB;AAEAD,QAAAA,OAAO,GAAG,IAAV;AACA,YAAIS,MAAM,GAAGP,GAAG,CAACM,IAAJ,CAAS,IAAT,EAAe,CAAf,CAAb;AACAP,QAAAA,MAAM,GAAGQ,MAAM,CAAC,CAAD,CAAf;AACA,aAAKJ,YAAL,CAAkBL,OAAlB,EAA2B,IAA3B;AACA,aAAKK,YAAL,CAAkB,CAAlB,EAAqBJ,MAArB;AACD,OA7BH;AAgCES,MAAAA,8BAA8B,EAAG,0CACjC;AACE,YAAIC,KAAJ;;AACA,YAAIC,QAAQ,GAAG,SAAXA,QAAW,CAASD,KAAT,EAAgBE,GAAhB,EAAqB;AAClC,eAAKC,UAAL,CAAgBD,GAAhB;AACD,SAFD;;AAGA,YAAIE,KAAK,GAAGH,QAAQ,CAACJ,IAAT,CAAc,IAAd,EAAoBG,KAApB,EAA2B,IAA3B,CAAZ;AACAI,QAAAA,KAAK;AACN;AAxCH;AAJF,GADA;AArBA3B,EAAAA,EAAE,CAAC4B,IAAH,CAAQC,IAAR,CAAaC,SAAb,CAAuBC,QAAvB,CAAgC5B,aAAhC,GAAgDA,aAAhD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * @require(qx.lang.normalize.Function)\n */\nqx.Class.define(\"qx.test.lang.normalize.Function\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testBind : function()\n    {\n      var context = null;\n      var result = 0;\n\n      var add = function(a, b)\n      {\n        context = this;\n        return a + b;\n      };\n\n      context = null;\n      result = add(1, 2);\n\n      this.assertEquals(context, window);\n      this.assertEquals(3, result);\n\n      context = null;\n      var boundAdd = add.bind(this);\n      result = boundAdd(1, 3);\n      this.assertEquals(context, this);\n      this.assertEquals(4, result);\n\n      context = null;\n      var addOne = add.bind(this, 1);\n      result = addOne(4);\n      this.assertEquals(context, this);\n      this.assertEquals(5, result);\n    },\n\n\n    testBindWithUndefinedArguments : function()\n    {\n      var undef;\n      var callback = function(undef, arg) {\n        this.assertTrue(arg);\n      };\n      var bound = callback.bind(this, undef, true);\n      bound();\n    }\n  }\n});\n"
+  ]
+}

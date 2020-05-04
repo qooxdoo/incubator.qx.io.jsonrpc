@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/data/singlevalue/Resolve.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testResolveDepth1",
+    "model",
+    "data",
+    "marshal",
+    "Json",
+    "createModel",
+    "a",
+    "assertEquals",
+    "SingleValueBinding",
+    "resolvePropertyChain",
+    "dispose",
+    "testResolveDepth2",
+    "b",
+    "testResolveDepthHuge",
+    "c",
+    "d",
+    "e",
+    "f",
+    "testResolveArrayIndex",
+    "arr",
+    "Array",
+    "testResolveWithArray",
+    "testResolveNestedArray",
+    "testResolveNotExistant",
+    "assertException",
+    "test",
+    "singlevalue",
+    "Resolve"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2012 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n\n************************************************************************ */\n\n/**\n * testResolve-Class for testResolveing the single value binding\n */\nqx.Class.define(\"qx.test.data.singlevalue.Resolve\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testResolveDepth1 : function() {\n      var model = qx.data.marshal.Json.createModel({a: 12});\n      this.assertEquals(12, qx.data.SingleValueBinding.resolvePropertyChain(model, \"a\"));\n      model.dispose();\n    },\n\n\n    testResolveDepth2 : function() {\n      var model = qx.data.marshal.Json.createModel({a: {b:12}});\n      this.assertEquals(12, qx.data.SingleValueBinding.resolvePropertyChain(model, \"a.b\"));\n      model.dispose();\n    },\n\n\n    testResolveDepthHuge : function() {\n      var model = qx.data.marshal.Json.createModel({a: {b: {c: {d: {e: {f: 12}}}}}});\n      this.assertEquals(12, qx.data.SingleValueBinding.resolvePropertyChain(model, \"a.b.c.d.e.f\"));\n      model.dispose();\n    },\n\n    testResolveArrayIndex : function() {\n      var arr = new qx.data.Array([23]);\n      this.assertEquals(23, qx.data.SingleValueBinding.resolvePropertyChain(arr,\"[0]\"));\n    },\n\n\n    testResolveWithArray : function() {\n      var model = qx.data.marshal.Json.createModel({a: {b: [{c: 12}]}});\n      this.assertEquals(12, qx.data.SingleValueBinding.resolvePropertyChain(model, \"a.b[0].c\"));\n      model.dispose();\n    },\n\n\n    testResolveNestedArray : function() {\n      var model = qx.data.marshal.Json.createModel({a: [[23]]});\n      this.assertEquals(23, qx.data.SingleValueBinding.resolvePropertyChain(model, \"a[0][0]\"));\n      model.dispose();\n    },\n\n\n    testResolveNotExistant : function() {\n      var model = qx.data.marshal.Json.createModel({a: 12});\n      this.assertException(function() {\n        this.assertEquals(12, qx.data.SingleValueBinding.resolvePropertyChain(model, \"b\"));\n      });\n      model.dispose();\n    }\n  }\n});"
+  ]
+}

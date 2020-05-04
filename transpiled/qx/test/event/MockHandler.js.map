@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/MockHandler.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "implement",
+    "event",
+    "IEventHandler",
+    "statics",
+    "PRIORITY",
+    "Registration",
+    "PRIORITY_FIRST",
+    "SUPPORTED_TYPES",
+    "TARGET_CHECK",
+    "TARGET_OBJECT",
+    "IGNORE_CAN_HANDLE",
+    "members",
+    "calls",
+    "canHandleEvent",
+    "target",
+    "type",
+    "push",
+    "startsWith",
+    "registerEvent",
+    "capture",
+    "unregisterEvent",
+    "defer",
+    "addHandler",
+    "test",
+    "MockHandler"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAEEC,IAAAA,SAAS,EAAGT,EAAE,CAACU,KAAH,CAASC,aAFvB;;AAQE;;;;;AAMAC,IAAAA,OAAO,EACP;AACE;AACAC,MAAAA,QAAQ,EAAGb,EAAE,CAACU,KAAH,CAASI,YAAT,CAAsBC,cAFnC;;AAIE;AACAC,MAAAA,eAAe,EAAG,IALpB;;AAOE;AACAC,MAAAA,YAAY,EAAGjB,EAAE,CAACU,KAAH,CAASC,aAAT,CAAuBO,aARxC;;AAUE;AACAC,MAAAA,iBAAiB,EAAG;AAXtB,KAfF;;AAiCE;;;;;AAMAC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,EADV;;AAGE;;;;;AAMA;AACAC,MAAAA,cAAc,EAAG,wBAASC,MAAT,EAAiBC,IAAjB,EACjB;AACE,aAAKH,KAAL,CAAWI,IAAX,CAAgB,CAAC,gBAAD,EAAmBF,MAAnB,EAA2BC,IAA3B,CAAhB;AACA,eAAOA,IAAI,CAACE,UAAL,CAAgB,OAAhB,CAAP;AACD,OAdH;AAiBE;AACAC,MAAAA,aAAa,EAAG,uBAASJ,MAAT,EAAiBC,IAAjB,EAAuBI,OAAvB,EAAgC;AAC9C,aAAKP,KAAL,CAAWI,IAAX,CAAgB,CAAC,eAAD,EAAkBF,MAAlB,EAA0BC,IAA1B,EAAgCI,OAAhC,CAAhB;AACD,OApBH;AAuBE;AACAC,MAAAA,eAAe,EAAG,yBAASN,MAAT,EAAiBC,IAAjB,EAAuBI,OAAvB,EAAgC;AAChD,aAAKP,KAAL,CAAWI,IAAX,CAAgB,CAAC,iBAAD,EAAoBF,MAApB,EAA4BC,IAA5B,EAAkCI,OAAlC,CAAhB;AACD;AA1BH,KAxCF;;AA0EE;;;;;AAMAE,IAAAA,KAAK,EAAG,eAASlB,OAAT,EAAkB;AACxBZ,MAAAA,EAAE,CAACU,KAAH,CAASI,YAAT,CAAsBiB,UAAtB,CAAiCnB,OAAjC;AACD;AAlFH,GADA;AArBAZ,EAAAA,EAAE,CAACgC,IAAH,CAAQtB,KAAR,CAAcuB,WAAd,CAA0B9B,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n/**\n * This class provides qooxdoo object event support.\n */\nqx.Class.define(\"qx.test.event.MockHandler\",\n{\n  extend : qx.core.Object,\n  implement : qx.event.IEventHandler,\n\n\n\n\n\n  /*\n  *****************************************************************************\n     STATICS\n  *****************************************************************************\n  */\n\n  statics :\n  {\n    /** @type {Integer} Priority of this handler */\n    PRIORITY : qx.event.Registration.PRIORITY_FIRST,\n\n    /** @type {Map} Supported event types */\n    SUPPORTED_TYPES : null,\n\n    /** @type {Integer} Which target check to use */\n    TARGET_CHECK : qx.event.IEventHandler.TARGET_OBJECT,\n\n    /** @type {Integer} Whether the method \"canHandleEvent\" must be called */\n    IGNORE_CAN_HANDLE : false\n  },\n\n\n\n\n\n  /*\n  *****************************************************************************\n     MEMBERS\n  *****************************************************************************\n  */\n\n  members :\n  {\n    calls : [],\n\n    /*\n    ---------------------------------------------------------------------------\n      EVENT HANDLER INTERFACE\n    ---------------------------------------------------------------------------\n    */\n\n    // interface implementation\n    canHandleEvent : function(target, type)\n    {\n      this.calls.push([\"canHandleEvent\", target, type]);\n      return type.startsWith(\"$test\");\n    },\n\n\n    // interface implementation\n    registerEvent : function(target, type, capture) {\n      this.calls.push([\"registerEvent\", target, type, capture]);\n    },\n\n\n    // interface implementation\n    unregisterEvent : function(target, type, capture) {\n      this.calls.push([\"unregisterEvent\", target, type, capture]);\n    }\n  },\n\n\n\n\n\n\n  /*\n  *****************************************************************************\n     DEFER\n  *****************************************************************************\n  */\n\n  defer : function(statics) {\n    qx.event.Registration.addHandler(statics);\n  }\n});\n"
+  ]
+}

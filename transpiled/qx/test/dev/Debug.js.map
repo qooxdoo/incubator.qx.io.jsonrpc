@@ -1,0 +1,49 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/dev/Debug.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MRequirements",
+    "members",
+    "hasDisposeDebug",
+    "testDisposeProfilingCheckFunction",
+    "require",
+    "n",
+    "core",
+    "Object",
+    "ignoreHash",
+    "toHashCode",
+    "checkFunction",
+    "object",
+    "o",
+    "undisposed",
+    "Debug",
+    "stopDisposeProfiling",
+    "assertArray",
+    "assertEquals",
+    "length",
+    "stackOk",
+    "assertMatch",
+    "stackTrace",
+    "join",
+    "classname",
+    "dispose",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;AAeAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAEEC,IAAAA,OAAO,EAAG,CAACV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,aAAb,CAFZ;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,eAAe,EAAG,2BAClB;AACE;AACD,OAJH;AAMEC,MAAAA,iCAAiC,EAAG,6CACpC;AACE,aAAKC,OAAL,CAAa,CAAC,cAAD,CAAb;;AAEA,YAAIC,CAAC,GAAG,IAAIhB,EAAE,CAACiB,IAAH,CAAQC,MAAZ,EAAR;AACA,YAAIC,UAAU,GAAGH,CAAC,CAACI,UAAF,EAAjB;;AACA,YAAIC,aAAa,GAAG,SAAhBA,aAAgB,CAASC,MAAT,EAAiB;AACnC,cAAIA,MAAM,CAACF,UAAP,MAAuBD,UAA3B,EAAuC;AACrC,mBAAO,KAAP;AACD;;AACD,iBAAO,IAAP;AACD,SALD;;AAOA,YAAII,CAAC,GAAG,IAAIvB,EAAE,CAACiB,IAAH,CAAQC,MAAZ,EAAR,CAZF,CAaE;;AACA,YAAIM,UAAU,GAAGxB,EAAE,CAACO,GAAH,CAAOkB,KAAP,CAAaC,oBAAb,CAAkCL,aAAlC,CAAjB;AACA,aAAKM,WAAL,CAAiBH,UAAjB;AACA,aAAKI,YAAL,CAAkB,CAAlB,EAAqBJ,UAAU,CAACK,MAAhC;AACA,aAAKD,YAAL,CAAkBL,CAAlB,EAAqBC,UAAU,CAAC,CAAD,CAAV,CAAcF,MAAnC;AACA,YAAIQ,OAAO,GAAG,KAAd;AACA,aAAKC,WAAL,CAAiBP,UAAU,CAAC,CAAD,CAAV,CAAcQ,UAAd,CAAyBC,IAAzB,CAA8B,GAA9B,CAAjB,EAAqD,KAAKC,SAA1D;AAEAlB,QAAAA,CAAC,CAACmB,OAAF;AACAZ,QAAAA,CAAC,CAACY,OAAF;AACD;AA9BH;AALF,GADA;AAfAnC,EAAAA,EAAE,CAACoC,IAAH,CAAQ7B,GAAR,CAAYkB,KAAZ,CAAkBtB,aAAlB,GAAkCA,aAAlC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.dev.Debug\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : [qx.dev.unit.MRequirements],\n\n  members :\n  {\n    hasDisposeDebug : function()\n    {\n      return qx.core.Environment.get(\"qx.debug.dispose\");\n    },\n\n    testDisposeProfilingCheckFunction : function()\n    {\n      this.require([\"disposeDebug\"]);\n\n      var n = new qx.core.Object();\n      var ignoreHash = n.toHashCode();\n      var checkFunction = function(object) {\n        if (object.toHashCode() == ignoreHash) {\n          return false;\n        }\n        return true;\n      };\n\n      var o = new qx.core.Object();\n      // no need to call startDisposeProfiling - the Testrunner did that already\n      var undisposed = qx.dev.Debug.stopDisposeProfiling(checkFunction);\n      this.assertArray(undisposed);\n      this.assertEquals(1, undisposed.length);\n      this.assertEquals(o, undisposed[0].object);\n      var stackOk = false;\n      this.assertMatch(undisposed[0].stackTrace.join(\" \"), this.classname);\n\n      n.dispose();\n      o.dispose();\n    }\n  }\n});"
+  ]
+}

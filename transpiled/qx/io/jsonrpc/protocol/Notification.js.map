@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/source/class/qx/io/jsonrpc/protocol/Notification.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "jsonrpc",
+    "protocol",
+    "Message",
+    "properties",
+    "method",
+    "check",
+    "nullable",
+    "params",
+    "init",
+    "construct",
+    "set",
+    "Notification"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,qCAAhB,EAAsD;AACpDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBC,OADqB;AAEpDC,IAAAA,UAAU,EAAE;AACVC,MAAAA,MAAM,EAAG;AACPC,QAAAA,KAAK,EAAE,QADA;AAEPC,QAAAA,QAAQ,EAAE;AAFH,OADC;AAKVC,MAAAA,MAAM,EAAG;AACPF,QAAAA,KAAK,EAAE,QADA;AAEPC,QAAAA,QAAQ,EAAE,IAFH;AAGPE,QAAAA,IAAI,EAAE;AAHC;AALC,KAFwC;;AAapD;;;;;AAKAC,IAAAA,SAAS,CAACL,MAAD,EAASG,MAAM,GAAC,IAAhB,EAAsB;AAC7B;AACA,WAAKG,GAAL,CAAS;AAACN,QAAAA,MAAD;AAASG,QAAAA;AAAT,OAAT;AACD;;AArBmD,GAAtD;AAtBAf,EAAAA,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBU,YAAvB,CAAoChB,aAApC,GAAoDA,aAApD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * A JSON-RPC v2.0 notification object\n * @see https://www.jsonrpc.org/specification#request_object\n */\nqx.Class.define(\"qx.io.jsonrpc.protocol.Notification\",{\n  extend: qx.io.jsonrpc.protocol.Message,\n  properties: {\n    method : {\n      check: \"String\",\n      nullable: false\n    },\n    params : {\n      check: \"Object\",\n      nullable: true,\n      init: null\n    }\n  },\n  /**\n   * Notification constructor\n   * @param {String} method\n   * @param {Object?} params\n   */\n  construct(method, params=null) {\n    this.base(arguments);\n    this.set({method, params});\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/RingBuffer.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testAdd",
+    "max",
+    "buf",
+    "util",
+    "RingBuffer",
+    "addEntry",
+    "assertEquals",
+    "getAllEntries",
+    "length",
+    "allEntries",
+    "testAddMany",
+    "i",
+    "testGet",
+    "entries",
+    "getEntries",
+    "testMark",
+    "mark",
+    "entriesSinceMark",
+    "testClear",
+    "clear",
+    "testDataTypes",
+    "some",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Carsten Lergenmueller (carstenl)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.RingBuffer\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testAdd : function()\n    {\n      var max = 3;\n      var buf = new qx.util.RingBuffer(max);\n\n      buf.addEntry(1);\n      this.assertEquals(1, buf.getAllEntries().length);\n\n      buf.addEntry(2);\n      this.assertEquals(2, buf.getAllEntries().length);\n\n      buf.addEntry(3);\n      this.assertEquals(3, buf.getAllEntries().length);\n\n      buf.addEntry(4);\n\n      var allEntries = buf.getAllEntries();\n      this.assertEquals(3, allEntries.length);\n\n      this.assertEquals(allEntries[0], 2);\n      this.assertEquals(allEntries[1], 3);\n      this.assertEquals(allEntries[2], 4);\n    },\n\n\n    testAddMany : function()\n    {\n      var max = 3;\n      var buf = new qx.util.RingBuffer(max);\n\n      for (var i=0; i<=1003; i++){\n         buf.addEntry(i);\n      }\n\n      var allEntries = buf.getAllEntries();\n      this.assertEquals(3, allEntries.length);\n\n      this.assertEquals(allEntries[0], 1001);\n      this.assertEquals(allEntries[1], 1002);\n      this.assertEquals(allEntries[2], 1003);\n    },\n\n\n    testGet : function()\n    {\n      var max = 7;\n      var buf = new qx.util.RingBuffer(max);\n\n      buf.addEntry(1);\n      buf.addEntry(2);\n      buf.addEntry(3);\n      buf.addEntry(5);\n      buf.addEntry(6);\n      buf.addEntry(7);\n      buf.addEntry(8);\n      buf.addEntry(9);\n      buf.addEntry(10);\n\n      var entries = buf.getEntries(4);\n      this.assertEquals(4, entries.length);\n\n      this.assertEquals(entries[0], 7);\n      this.assertEquals(entries[1], 8);\n      this.assertEquals(entries[2], 9);\n      this.assertEquals(entries[3], 10);\n    },\n\n\n    testMark : function()\n    {\n      var max = 3;\n      var buf = new qx.util.RingBuffer(max);\n\n      buf.addEntry(1);\n      buf.addEntry(2);\n      buf.mark();\n      buf.addEntry(3);\n      buf.addEntry(4);\n\n      var entriesSinceMark = buf.getEntries(9999, true);\n      this.assertEquals(2, entriesSinceMark.length);\n\n      this.assertEquals(entriesSinceMark[0], 3);\n      this.assertEquals(entriesSinceMark[1], 4);\n    },\n\n\n    testClear : function()\n    {\n      var max = 3;\n      var buf = new qx.util.RingBuffer(max);\n\n      buf.addEntry(1);\n      buf.addEntry(2);\n      buf.addEntry(3);\n      buf.addEntry(4);\n\n      this.assertEquals(3, buf.getAllEntries().length);\n\n      buf.clear();\n\n      this.assertEquals(0, buf.getAllEntries().length);\n    },\n\n\n    testDataTypes : function()\n    {\n      var max = 6;\n      var buf = new qx.util.RingBuffer(max);\n\n      buf.addEntry(1);\n      buf.addEntry(2);\n      buf.addEntry(3);\n\n      buf.addEntry(null);\n      buf.addEntry(buf);\n      buf.addEntry(\"Some string\");\n      buf.addEntry({\"some\":\"map\"});\n      buf.addEntry([\"Some array\"]);\n      buf.addEntry(function(){});\n\n      var allEntries = buf.getAllEntries();\n      this.assertEquals(6, allEntries.length);\n\n      this.assertEquals(allEntries[0], null);\n      this.assertEquals(allEntries[1], buf);\n      this.assertEquals(allEntries[2], \"Some string\");\n      this.assertEquals(allEntries[3].some, \"map\");\n      this.assertEquals(allEntries[4][0], \"Some array\");\n      this.assertEquals(typeof allEntries[5], \"function\");\n    }\n  }\n});"
+  ]
+}

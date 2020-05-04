@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/source/class/qx/io/Exception.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "type",
+    "BaseError",
+    "construct",
+    "message",
+    "code",
+    "data",
+    "name",
+    "classname",
+    "io",
+    "Exception"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,SADnB;;AAGE;;;;;;AAMAC,IAAAA,SAAS,EAAE,mBAASC,OAAT,EAAkBC,IAAlB,EAAwBC,IAAxB,EAA8B;AACvC,+CAAqB,EAArB,EAAyBF,OAAzB;AACA,WAAKC,IAAL,GAAYA,IAAZ;AACA,WAAKC,IAAL,GAAYA,IAAZ;AACA,WAAKC,IAAL,GAAY,KAAKC,SAAjB;AACD;AAdH,GADA;AArBAd,EAAAA,EAAE,CAACe,EAAH,CAAMC,SAAN,CAAgBb,aAAhB,GAAgCA,aAAhC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * A generic class for representing exceptions that occur during io operations.\n */\nqx.Class.define(\"qx.io.Exception\",\n{\n  extend : qx.type.BaseError,\n\n  /**\n   * Constructor\n   * @param message {String}\n   * @param code {Number}\n   * @param data {*|null}\n   */\n  construct: function(message, code, data) {\n    this.base(arguments, \"\", message);\n    this.code = code;\n    this.data = data;\n    this.name = this.classname;\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/basic/Image.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testSrc",
+    "source",
+    "util",
+    "ResourceManager",
+    "getInstance",
+    "toUri",
+    "io",
+    "ImageLoader",
+    "isLoaded",
+    "debug",
+    "image",
+    "ui",
+    "basic",
+    "Image",
+    "addListener",
+    "resume",
+    "window",
+    "setTimeout",
+    "destroy",
+    "getRoot",
+    "add",
+    "wait",
+    "testLoadingFailed",
+    "Math",
+    "random"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeC,cAD1B;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,OAAO,EAAG,mBACV;AACE,YAAIC,MAAM,GAAGZ,EAAE,CAACa,IAAH,CAAQC,eAAR,CAAwBC,WAAxB,GAAsCC,KAAtC,CAA4C,oCAA5C,CAAb;;AACA,YAAIhB,EAAE,CAACiB,EAAH,CAAMC,WAAN,CAAkBC,QAAlB,CAA2BP,MAA3B,CAAJ,EAAwC;AACtC,eAAKQ,KAAL,CAAW,gDAAX;AACA;AACD;;AACD,YAAIC,KAAK,GAAG,IAAIrB,EAAE,CAACsB,EAAH,CAAMd,MAAN,CAAae,KAAb,CAAmBC,KAAvB,CAA6B,oCAA7B,CAAZ;AACAH,QAAAA,KAAK,CAACI,WAAN,CAAkB,QAAlB,EAA4B,YAAW;AACrC,eAAKC,MAAL,CAAY,YAAW;AACrB;AACA;AACAC,YAAAA,MAAM,CAACC,UAAP,CAAkB,YAAW;AAC3BP,cAAAA,KAAK,CAACQ,OAAN;AACD,aAFD;AAGD,WAND;AAOD,SARD,EAQG,IARH;AAWA,aAAKC,OAAL,GAAeC,GAAf,CAAmBV,KAAnB;AACA,aAAKW,IAAL;AACD,OAtBH;AAyBEC,MAAAA,iBAAiB,EAAG,6BACpB;AACE,YAAIZ,KAAK,GAAG,IAAIrB,EAAE,CAACsB,EAAH,CAAMd,MAAN,CAAae,KAAb,CAAmBC,KAAvB,CAA6B,uBAAuBU,IAAI,CAACC,MAAL,EAApD,CAAZ;AACA,aAAKL,OAAL,GAAeC,GAAf,CAAmBV,KAAnB;AAEAA,QAAAA,KAAK,CAACI,WAAN,CAAkB,eAAlB,EAAmC,YAAW;AAC5C,eAAKC,MAAL,CAAY,YAAW;AACrB;AACA;AACAC,YAAAA,MAAM,CAACC,UAAP,CAAkB,YAAW;AAC3BP,cAAAA,KAAK,CAACQ,OAAN;AACD,aAFD;AAGD,WAND;AAOD,SARD,EAQG,IARH;AAUA,aAAKG,IAAL;AACD;AAzCH;AAJF,GADA;AAtBAhC,EAAAA,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAee,KAAf,CAAqBC,KAArB,CAA2BrB,aAA3B,GAA2CA,aAA3C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\n/**\n * @asset(qx/icon/Tango/48/places/folder.png)\n */\n\nqx.Class.define(\"qx.test.mobile.basic.Image\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testSrc : function()\n    {\n      var source = qx.util.ResourceManager.getInstance().toUri(\"qx/icon/Tango/48/places/folder.png\");\n      if (qx.io.ImageLoader.isLoaded(source)) {\n        this.debug(\"testLoadedEvent skipped! Image already loaded.\");\n        return;\n      }\n      var image = new qx.ui.mobile.basic.Image(\"qx/icon/Tango/48/places/folder.png\");\n      image.addListener(\"loaded\", function() {\n        this.resume(function() {\n          // use a timeout to dispose the image because it needs to\n          // end its processing after the event has been fired.\n          window.setTimeout(function() {\n            image.destroy();\n          });\n        });\n      }, this);\n\n\n      this.getRoot().add(image);\n      this.wait();\n    },\n\n\n    testLoadingFailed : function()\n    {\n      var image = new qx.ui.mobile.basic.Image(\"does not exist.png\" + Math.random());\n      this.getRoot().add(image);\n\n      image.addListener(\"loadingFailed\", function() {\n        this.resume(function() {\n          // use a timeout to dispose the image because it needs to\n          // end its processing after the event has been fired.\n          window.setTimeout(function() {\n            image.destroy();\n          });\n        });\n      }, this);\n\n      this.wait();\n    }\n  }\n\n});\n"
+  ]
+}

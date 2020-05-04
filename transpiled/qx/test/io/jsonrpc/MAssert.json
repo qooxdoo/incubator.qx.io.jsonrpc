@@ -1,0 +1,120 @@
+{
+  "className": "qx.test.io.jsonrpc.MAssert",
+  "packageName": "qx.test.io.jsonrpc",
+  "name": "MAssert",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 4,
+        "column": 0
+      },
+      "end": {
+        "line": 45,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<p>Mixin containing special assert methods</p>"
+        }
+      ]
+    }
+  },
+  "type": "mixin",
+  "members": {
+    "assertDeepEquals": {
+      "location": {
+        "start": {
+          "line": 24,
+          "column": 4
+        },
+        "end": {
+          "line": 29,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Deep equal comparison, using Sinon's <code>deepEqual</code> comparison.\n Two values are \"deep equal\" if:</p>\n<ul>\n<li>They are equal, according to samsam.identical\n(https://sinonjs.github.io/samsam/)</li>\n<li>They are both date objects representing the same time</li>\n<li>They are both arrays containing elements that are all deepEqual</li>\n<li>They are objects with the same set of properties, and each property\n in obj1 is deepEqual to the corresponding property in obj2\nSupports cyclic objects.</li>\n</ul>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{*} expected"
+          },
+          {
+            "name": "@param",
+            "body": "{*} actual"
+          },
+          {
+            "name": "@param",
+            "body": "{String?} msg"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "assertMessageDispatched": {
+      "location": {
+        "start": {
+          "line": 41,
+          "column": 4
+        },
+        "end": {
+          "line": 43,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Assert that an message is dispatched via the message bus.</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{String} name The name of the message",
+            "paramName": "name",
+            "description": "The name of the message",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "{*|Function|undefined} data The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass `undefined` explicitly.",
+            "paramName": "data",
+            "description": "The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass `undefined` explicitly.",
+            "type": [
+              "*",
+              "Function",
+              "undefined"
+            ]
+          },
+          {
+            "name": "@param",
+            "body": "msg {String?\"\"} Message to be shows if the assertion fails.",
+            "paramName": "msg",
+            "description": " Message to be shows if the assertion fails.",
+            "optional": true,
+            "defaultValue": "\"\"",
+            "type": "String"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

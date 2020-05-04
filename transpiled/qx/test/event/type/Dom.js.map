@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/type/Dom.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testClone",
+    "domEvent",
+    "shiftKey",
+    "ctrlKey",
+    "altKey",
+    "metaKey",
+    "event",
+    "type",
+    "Dom",
+    "init",
+    "document",
+    "body",
+    "reference",
+    "shift",
+    "isShiftPressed",
+    "ctrl",
+    "isCtrlPressed",
+    "alt",
+    "isAltPressed",
+    "meta",
+    "isMetaPressed",
+    "clone",
+    "lang",
+    "Object",
+    "empty",
+    "assertEquals",
+    "dispose",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAmBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,SAAS,EAAG,qBACZ;AACE,YAAIC,QAAQ,GAAG;AACbC,UAAAA,QAAQ,EAAE,IADG;AAEbC,UAAAA,OAAO,EAAE,IAFI;AAGbC,UAAAA,MAAM,EAAE,IAHK;AAIbC,UAAAA,OAAO,EAAE;AAJI,SAAf;AAOA,YAAIC,KAAK,GAAG,IAAIjB,EAAE,CAACiB,KAAH,CAASC,IAAT,CAAcC,GAAlB,GAAwBC,IAAxB,CAA6BR,QAA7B,EAAuCS,QAAQ,CAACC,IAAhD,EAAsDD,QAAQ,CAACC,IAA/D,EAAqE,IAArE,EAA2E,IAA3E,CAAZ;AAEA,YAAIC,SAAS,GAAG;AACdC,UAAAA,KAAK,EAAEP,KAAK,CAACQ,cAAN,EADO;AAEdC,UAAAA,IAAI,EAAET,KAAK,CAACU,aAAN,EAFQ;AAGdC,UAAAA,GAAG,EAAEX,KAAK,CAACY,YAAN,EAHS;AAIdC,UAAAA,IAAI,EAAEb,KAAK,CAACc,aAAN;AAJQ,SAAhB;AAOA,YAAIC,KAAK,GAAGf,KAAK,CAACe,KAAN,EAAZ,CAjBF,CAmBE;;AACAhC,QAAAA,EAAE,CAACiC,IAAH,CAAQC,MAAR,CAAeC,KAAf,CAAqBvB,QAArB;AAEA,aAAKwB,YAAL,CAAkBb,SAAS,CAACC,KAA5B,EAAmCQ,KAAK,CAACP,cAAN,EAAnC;AACA,aAAKW,YAAL,CAAkBb,SAAS,CAACG,IAA5B,EAAkCM,KAAK,CAACL,aAAN,EAAlC;AACA,aAAKS,YAAL,CAAkBb,SAAS,CAACK,GAA5B,EAAiCI,KAAK,CAACH,YAAN,EAAjC;AACA,aAAKO,YAAL,CAAkBb,SAAS,CAACO,IAA5B,EAAkCE,KAAK,CAACD,aAAN,EAAlC;AAEAd,QAAAA,KAAK,CAACoB,OAAN;AACAL,QAAAA,KAAK,CAACK,OAAN;AACD;AA/BH;AALF,GADA;AAnBArC,EAAAA,EAAE,CAACsC,IAAH,CAAQrB,KAAR,CAAcC,IAAd,CAAmBC,GAAnB,CAAuBhB,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\n\nqx.Class.define(\"qx.test.event.type.Dom\",\n{\n  extend : qx.dev.unit.TestCase,\n\n\n  members :\n  {\n    testClone : function()\n    {\n      var domEvent = {\n        shiftKey: true,\n        ctrlKey: true,\n        altKey: true,\n        metaKey: true\n      };\n\n      var event = new qx.event.type.Dom().init(domEvent, document.body, document.body, true, true);\n\n      var reference = {\n        shift: event.isShiftPressed(),\n        ctrl: event.isCtrlPressed(),\n        alt: event.isAltPressed(),\n        meta: event.isMetaPressed()\n      };\n\n      var clone = event.clone();\n\n      // simulate native event disposal\n      qx.lang.Object.empty(domEvent);\n\n      this.assertEquals(reference.shift, clone.isShiftPressed());\n      this.assertEquals(reference.ctrl, clone.isCtrlPressed());\n      this.assertEquals(reference.alt, clone.isAltPressed());\n      this.assertEquals(reference.meta, clone.isMetaPressed());\n\n      event.dispose();\n      clone.dispose();\n    }\n  }\n});"
+  ]
+}

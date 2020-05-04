@@ -1,0 +1,73 @@
+{
+  "className": "qx.io.Exception",
+  "packageName": "qx.io",
+  "name": "Exception",
+  "superClass": "qx.type.BaseError",
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 38,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        },
+        {
+          "name": "@description",
+          "body": "<p>A generic class for representing exceptions that occur during io operations.</p>"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 32,
+        "column": 13
+      },
+      "end": {
+        "line": 37,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<p>Constructor</p>"
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "message {String}"
+        },
+        {
+          "name": "@param",
+          "body": "code {Number}"
+        },
+        {
+          "name": "@param",
+          "body": "data {*|null}"
+        }
+      ]
+    }
+  },
+  "descendants": [
+    "qx.io.jsonrpc.exception.Cancel",
+    "qx.io.jsonrpc.exception.JsonRpc",
+    "qx.io.jsonrpc.exception.Transport"
+  ]
+}

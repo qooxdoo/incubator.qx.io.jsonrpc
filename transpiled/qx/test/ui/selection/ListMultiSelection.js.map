@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/selection/ListMultiSelection.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "selection",
+    "AbstractMultiSelectonTest",
+    "members",
+    "setUp",
+    "length",
+    "_selection",
+    "_notInSelection",
+    "_mode",
+    "_widget",
+    "form",
+    "List",
+    "set",
+    "selectionMode",
+    "width",
+    "height",
+    "getRoot",
+    "add",
+    "getSelection",
+    "assertIdentical",
+    "i",
+    "item",
+    "ListItem",
+    "addToSelection",
+    "push",
+    "flush",
+    "tearDown",
+    "destroy",
+    "_getChildren",
+    "getChildren",
+    "_createTestElement",
+    "name",
+    "ListMultiSelection"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,SAAX,CAAqBC,yBADhC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBACR;AACE,YAAIC,MAAM,GAAG,EAAb;AACA,aAAKC,UAAL,GAAkB,EAAlB;AACA,aAAKC,eAAL,GAAuB,EAAvB;AACA,aAAKC,KAAL,GAAa,OAAb;AAEA,aAAKC,OAAL,GAAe,IAAIjB,EAAE,CAACQ,EAAH,CAAMU,IAAN,CAAWC,IAAf,GAAsBC,GAAtB,CACf;AACEC,UAAAA,aAAa,EAAE,KAAKL,KADtB;AAEEM,UAAAA,KAAK,EAAG,GAFV;AAGEC,UAAAA,MAAM,EAAG;AAHX,SADe,CAAf;AAMA,aAAKC,OAAL,GAAeC,GAAf,CAAmB,KAAKR,OAAxB;;AAEA,YAAIR,SAAS,GAAG,KAAKQ,OAAL,CAAaS,YAAb,EAAhB;;AACA,aAAKC,eAAL,CAAqBlB,SAAS,CAACI,MAA/B,EAAuC,CAAvC,EACE,oDADF;;AAGA,aAAK,IAAIe,CAAC,GAAG,CAAb,EAAgBA,CAAC,GAAGf,MAApB,EAA4Be,CAAC,EAA7B,EAAiC;AAC/B,cAAIC,IAAI,GAAG,IAAI7B,EAAE,CAACQ,EAAH,CAAMU,IAAN,CAAWY,QAAf,CAAwB,aAAaF,CAArC,CAAX;;AACA,eAAKX,OAAL,CAAaQ,GAAb,CAAiBI,IAAjB;;AAEA,cAAID,CAAC,GAAG,CAAJ,IAAS,CAAb,EAAgB;AACd,iBAAKX,OAAL,CAAac,cAAb,CAA4BF,IAA5B;;AACA,iBAAKf,UAAL,CAAgBkB,IAAhB,CAAqBH,IAArB;AACD,WAHD,MAGO;AACL,iBAAKd,eAAL,CAAqBiB,IAArB,CAA0BH,IAA1B;AACD;AACF;;AAED,aAAKI,KAAL;AACD,OAjCH;AAmCEC,MAAAA,QAAQ,EAAG,oBACX;AACE;;AACA,aAAKjB,OAAL,CAAakB,OAAb;;AACA,aAAKlB,OAAL,GAAe,IAAf;AACA,aAAKH,UAAL,GAAkB,IAAlB;AACA,aAAKC,eAAL,GAAuB,IAAvB;AACA,aAAKkB,KAAL;AACD,OA3CH;AA6CEG,MAAAA,YAAY,EAAG,wBACf;AACE,YAAI,KAAKnB,OAAL,IAAgB,IAApB,EAA0B;AACxB,iBAAO,KAAKA,OAAL,CAAaoB,WAAb,EAAP;AACD,SAFD,MAEO;AACL,iBAAO,EAAP;AACD;AACF,OApDH;AAsDEC,MAAAA,kBAAkB,EAAG,4BAASC,IAAT,EAAe;AAClC,eAAO,IAAIvC,EAAE,CAACQ,EAAH,CAAMU,IAAN,CAAWY,QAAf,CAAwBS,IAAxB,CAAP;AACD;AAxDH;AAJF,GADA;AAlBAvC,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,SAAX,CAAqB+B,kBAArB,CAAwCrC,aAAxC,GAAwDA,aAAxD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Hagendorn (chris_schmidt)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.selection.ListMultiSelection\",\n{\n  extend : qx.test.ui.selection.AbstractMultiSelectonTest,\n\n  members :\n  {\n    setUp : function()\n    {\n      var length = 10;\n      this._selection = [];\n      this._notInSelection = [];\n      this._mode = \"multi\";\n\n      this._widget = new qx.ui.form.List().set(\n      {\n        selectionMode: this._mode,\n        width : 200,\n        height : 400\n      });\n      this.getRoot().add(this._widget);\n\n      var selection = this._widget.getSelection();\n      this.assertIdentical(selection.length, 0,\n        \"Couldn't setup test, because selection isn't empty\");\n\n      for (var i = 0; i < length; i++) {\n        var item = new qx.ui.form.ListItem(\"ListItem\" + i);\n        this._widget.add(item);\n\n        if (i % 2 == 0) {\n          this._widget.addToSelection(item);\n          this._selection.push(item);\n        } else {\n          this._notInSelection.push(item);\n        }\n      }\n\n      this.flush();\n    },\n\n    tearDown : function()\n    {\n      this.base(arguments);\n      this._widget.destroy();\n      this._widget = null;\n      this._selection = null;\n      this._notInSelection = null;\n      this.flush();\n    },\n\n    _getChildren : function()\n    {\n      if (this._widget != null) {\n        return this._widget.getChildren();\n      } else {\n        return [];\n      }\n    },\n\n    _createTestElement : function(name) {\n      return new qx.ui.form.ListItem(name);\n    }\n  }\n});"
+  ]
+}

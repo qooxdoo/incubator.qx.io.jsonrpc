@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/page/NavigationPage.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testNavigationInterface",
+    "page",
+    "ui",
+    "NavigationPage",
+    "assertNotNull",
+    "getTitleWidget",
+    "getLeftContainer",
+    "getRightContainer",
+    "destroy",
+    "testTitle",
+    "setTitle",
+    "assertEquals",
+    "getValue",
+    "testBackButton",
+    "setShowBackButton",
+    "setBackButtonText",
+    "_getBackButton",
+    "assertTrue",
+    "isVisible",
+    "assertFalse",
+    "testButton",
+    "setShowButton",
+    "setButtonText",
+    "_getButton"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAmBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeC,cAD1B;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,uBAAuB,EAAG,mCAC1B;AACE,YAAIC,IAAI,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaI,IAAb,CAAkBE,cAAtB,EAAX;AAEA,aAAKC,aAAL,CAAmBH,IAAI,CAACI,cAAL,EAAnB;AACA,aAAKD,aAAL,CAAmBH,IAAI,CAACK,gBAAL,EAAnB;AACA,aAAKF,aAAL,CAAmBH,IAAI,CAACM,iBAAL,EAAnB;AAEAN,QAAAA,IAAI,CAACO,OAAL;AACD,OAVH;AAaEC,MAAAA,SAAS,EAAG,qBACZ;AACE,YAAIR,IAAI,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaI,IAAb,CAAkBE,cAAtB,EAAX;AAEAF,QAAAA,IAAI,CAACS,QAAL,CAAc,MAAd;AACA,aAAKC,YAAL,CAAkB,MAAlB,EAA0BV,IAAI,CAACI,cAAL,GAAsBO,QAAtB,EAA1B;AAEAX,QAAAA,IAAI,CAACO,OAAL;AACD,OArBH;AAwBEK,MAAAA,cAAc,EAAG,0BACjB;AACE,YAAIZ,IAAI,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaI,IAAb,CAAkBE,cAAtB,EAAX;AAEAF,QAAAA,IAAI,CAACK,gBAAL;AAEAL,QAAAA,IAAI,CAACa,iBAAL,CAAuB,IAAvB;AACAb,QAAAA,IAAI,CAACc,iBAAL,CAAuB,MAAvB;AACA,aAAKJ,YAAL,CAAkB,MAAlB,EAA0BV,IAAI,CAACe,cAAL,GAAsBJ,QAAtB,EAA1B;AACA,aAAKK,UAAL,CAAgBhB,IAAI,CAACe,cAAL,GAAsBE,SAAtB,EAAhB;AACAjB,QAAAA,IAAI,CAACa,iBAAL,CAAuB,KAAvB;AACA,aAAKK,WAAL,CAAiBlB,IAAI,CAACe,cAAL,GAAsBE,SAAtB,EAAjB;AAEAjB,QAAAA,IAAI,CAACO,OAAL;AACD,OAtCH;AAyCEY,MAAAA,UAAU,EAAG,sBACb;AACE,YAAInB,IAAI,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaI,IAAb,CAAkBE,cAAtB,EAAX;AAEAF,QAAAA,IAAI,CAACM,iBAAL;AAEAN,QAAAA,IAAI,CAACoB,aAAL,CAAmB,IAAnB;AACApB,QAAAA,IAAI,CAACqB,aAAL,CAAmB,MAAnB;AACA,aAAKX,YAAL,CAAkB,MAAlB,EAA0BV,IAAI,CAACsB,UAAL,GAAkBX,QAAlB,EAA1B;AACA,aAAKK,UAAL,CAAgBhB,IAAI,CAACsB,UAAL,GAAkBL,SAAlB,EAAhB;AACAjB,QAAAA,IAAI,CAACoB,aAAL,CAAmB,KAAnB;AACA,aAAKF,WAAL,CAAiBlB,IAAI,CAACsB,UAAL,GAAkBL,SAAlB,EAAjB;AAEAjB,QAAAA,IAAI,CAACO,OAAL;AACD;AAvDH;AAJF,GADA;AAnBAnB,EAAAA,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeI,IAAf,CAAoBE,cAApB,CAAmCX,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\n\nqx.Class.define(\"qx.test.mobile.page.NavigationPage\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testNavigationInterface : function()\n    {\n      var page = new qx.ui.mobile.page.NavigationPage();\n\n      this.assertNotNull(page.getTitleWidget());\n      this.assertNotNull(page.getLeftContainer());\n      this.assertNotNull(page.getRightContainer());\n\n      page.destroy();\n    },\n\n\n    testTitle : function()\n    {\n      var page = new qx.ui.mobile.page.NavigationPage();\n\n      page.setTitle(\"Affe\");\n      this.assertEquals(\"Affe\", page.getTitleWidget().getValue());\n\n      page.destroy();\n    },\n\n\n    testBackButton : function()\n    {\n      var page = new qx.ui.mobile.page.NavigationPage();\n\n      page.getLeftContainer();\n\n      page.setShowBackButton(true);\n      page.setBackButtonText(\"Affe\");\n      this.assertEquals(\"Affe\", page._getBackButton().getValue());\n      this.assertTrue(page._getBackButton().isVisible());\n      page.setShowBackButton(false);\n      this.assertFalse(page._getBackButton().isVisible());\n\n      page.destroy();\n    },\n\n\n    testButton : function()\n    {\n      var page = new qx.ui.mobile.page.NavigationPage();\n\n      page.getRightContainer();\n\n      page.setShowButton(true);\n      page.setButtonText(\"Affe\");\n      this.assertEquals(\"Affe\", page._getButton().getValue());\n      this.assertTrue(page._getButton().isVisible());\n      page.setShowButton(false);\n      this.assertFalse(page._getButton().isVisible());\n\n      page.destroy();\n    }\n  }\n});\n"
+  ]
+}

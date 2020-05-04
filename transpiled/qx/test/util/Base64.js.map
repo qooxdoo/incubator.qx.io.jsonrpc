@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/Base64.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testEncodeDecode",
+    "str",
+    "encodedStr",
+    "util",
+    "Base64",
+    "encode",
+    "assertEquals",
+    "decode",
+    "testChineseChars",
+    "testChineseCharsExplicitNot8bit",
+    "testChineseCharsExplicit8bit",
+    "assertNotEquals",
+    "testGermanChars",
+    "testKnownEncoding",
+    "expected",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,qBAAhB,EAAuC;AACrCC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADgB;AAGrCC,IAAAA,OAAO,EAAG;AACRC,MAAAA,gBAAgB,EAAG,4BAAW;AAC5B,YAAIC,GAAG,GAAG,sCAAV;AACA,YAAIC,UAAU,GAAGb,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBJ,GAAtB,CAAjB;AACA,aAAKK,YAAL,CAAkBL,GAAlB,EAAuBZ,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeG,MAAf,CAAsBL,UAAtB,CAAvB;AACD,OALO;AAQRM,MAAAA,gBAAgB,EAAG,4BAAW;AAC5B,YAAIP,GAAG,GAAG,iBAAV;AACA,YAAIC,UAAU,GAAGb,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBJ,GAAtB,CAAjB;AACA,aAAKK,YAAL,CAAkBL,GAAlB,EAAuBZ,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeG,MAAf,CAAsBL,UAAtB,CAAvB;AACD,OAZO;AAeRO,MAAAA,+BAA+B,EAAG,2CAAW;AAC3C,YAAIR,GAAG,GAAG,iBAAV;AACA,YAAIC,UAAU,GAAGb,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBJ,GAAtB,EAA2B,KAA3B,CAAjB;AACA,aAAKK,YAAL,CAAkBL,GAAlB,EAAuBZ,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeG,MAAf,CAAsBL,UAAtB,EAAkC,KAAlC,CAAvB;AACD,OAnBO;AAsBRQ,MAAAA,4BAA4B,EAAG,wCAAW;AACxC,YAAIT,GAAG,GAAG,iBAAV;AACA,YAAIC,UAAU,GAAGb,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBJ,GAAtB,EAA2B,KAA3B,CAAjB;AACA,aAAKU,eAAL,CAAqBV,GAArB,EAA0BZ,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeG,MAAf,CAAsBL,UAAtB,EAAkC,IAAlC,CAA1B;AACD,OA1BO;AA6BRU,MAAAA,eAAe,EAAG,2BAAW;AAC3B,YAAIX,GAAG,GAAG,yTAAV;AACA,YAAIC,UAAU,GAAGb,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBJ,GAAtB,CAAjB;AACA,aAAKK,YAAL,CAAkBL,GAAlB,EAAuBZ,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeG,MAAf,CAAsBL,UAAtB,CAAvB;AACD,OAjCO;AAmCRW,MAAAA,iBAAiB,EAAG,6BAAW;AAC7B,YAAIZ,GAAG,GAAG,gCAAV;AACA,YAAIa,QAAQ,GAAG,sCAAf;AACA,YAAIZ,UAAU,GAAGb,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBJ,GAAtB,CAAjB;AACA,aAAKK,YAAL,CAAkBJ,UAAlB,EAA8BY,QAA9B;AACA,aAAKR,YAAL,CAAkBL,GAAlB,EAAuBZ,EAAE,CAACc,IAAH,CAAQC,MAAR,CAAeG,MAAf,CAAsBL,UAAtB,CAAvB;AACD;AAzCO;AAH2B,GAAvC;AAlBAb,EAAAA,EAAE,CAAC0B,IAAH,CAAQZ,IAAR,CAAaC,MAAb,CAAoBZ,aAApB,GAAoCA,aAApC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Adrian Olaru (adrianolaru)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.Base64\", {\n  extend : qx.dev.unit.TestCase,\n\n  members : {\n    testEncodeDecode : function() {\n      var str = \"Luke, I'm your father! Nooooooooooo!\";\n      var encodedStr = qx.util.Base64.encode(str);\n      this.assertEquals(str, qx.util.Base64.decode(encodedStr));\n    },\n\n\n    testChineseChars : function() {\n      var str = \"Abecedariab语言工具\";\n      var encodedStr = qx.util.Base64.encode(str);\n      this.assertEquals(str, qx.util.Base64.decode(encodedStr));\n    },\n\n\n    testChineseCharsExplicitNot8bit : function() {\n      var str = \"Abecedariab语言工具\";\n      var encodedStr = qx.util.Base64.encode(str, false);\n      this.assertEquals(str, qx.util.Base64.decode(encodedStr, false));\n    },\n\n\n    testChineseCharsExplicit8bit : function() {\n      var str = \"Abecedariab语言工具\";\n      var encodedStr = qx.util.Base64.encode(str, false);\n      this.assertNotEquals(str, qx.util.Base64.decode(encodedStr, true));\n    },\n\n\n    testGermanChars : function() {\n      var str = \"Am Donnerstag diskutieren die Abgeordneten dann ab 9 Uhr zweieinhalb Stunden lang in erster Lesung über drei fraktionsübergreifende Gesetzentwürfe zur Präimplantationsdiagnostik (PID). Weitere Themen sind am Donnerstag unter anderem der Schutz vor Straßen- und Schienenlärm und die Einführung eines Mindestlohns\";\n      var encodedStr = qx.util.Base64.encode(str);\n      this.assertEquals(str, qx.util.Base64.decode(encodedStr));\n    },\n\n    testKnownEncoding : function() {\n      var str = \"Hello\\nThis\\nIs\\nA\\nText\\nFile\";\n      var expected = \"SGVsbG8KVGhpcwpJcwpBClRleHQKRmlsZQ==\";\n      var encodedStr = qx.util.Base64.encode(str);\n      this.assertEquals(encodedStr, expected);\n      this.assertEquals(str, qx.util.Base64.decode(encodedStr));\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/lang/Number.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testEquals",
+    "assertNotUndefined",
+    "lang",
+    "Number",
+    "assertFunction",
+    "equals",
+    "assertTrue",
+    "assertFalse",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,qBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,UAAU,EAAG,sBAAW;AACtB,aAAKC,kBAAL,CAAwBZ,EAAE,CAACa,IAAH,CAAQC,MAAhC;AACA,aAAKC,cAAL,CAAoBf,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAnC,EAFsB,CAItB;;AACA,aAAKC,UAAL,CAAgBjB,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,CAAtB,EAAyB,CAAzB,CAAhB;AACA,aAAKE,WAAL,CAAiBlB,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,CAAtB,EAAyB,CAAzB,CAAjB,EANsB,CAQtB;;AACA,aAAKC,UAAL,CAAgBjB,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,GAAtB,EAA2B,GAA3B,CAAhB;AACA,aAAKC,UAAL,CAAgBjB,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,sBAAiC,GAAjC,CAAhB;AACA,aAAKE,WAAL,CAAiBlB,EAAE,CAACa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,GAAtB,EAA2B,WAA3B,CAAjB;AACD;AAbH;AAJF,GADA;AAlBAhB,EAAAA,EAAE,CAACmB,IAAH,CAAQN,IAAR,CAAaC,MAAb,CAAoBX,aAApB,GAAoCA,aAApC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Markus Bader (mbgonicus)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.lang.Number\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    testEquals : function() {\n      this.assertNotUndefined(qx.lang.Number);\n      this.assertFunction(qx.lang.Number.equals);\n\n      // Check integers\n      this.assertTrue(qx.lang.Number.equals(1, 1));\n      this.assertFalse(qx.lang.Number.equals(1, 0));\n\n      // Check floats\n      this.assertTrue(qx.lang.Number.equals(1.5, 1.5));\n      this.assertTrue(qx.lang.Number.equals(0.1 + 0.2, 0.3));\n      this.assertFalse(qx.lang.Number.equals(1.5, 1.500000001));\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/testclasses/BaseClassBoth.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "testclasses",
+    "RootClass",
+    "include",
+    "MMixinOne",
+    "construct",
+    "state",
+    "push",
+    "defer",
+    "patch",
+    "BaseClassBoth",
+    "MMixinTwo"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EAAqD;AACnDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,SADuB;AAEnDC,IAAAA,OAAO,EAAE,CAAEV,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBG,SAAtB,CAF0C;AAInDC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACA,WAAKC,KAAL,CAAWC,IAAX,CAAgB,MAAhB;AACD,KAPkD;AASnDC,IAAAA,KAAK,EAAE,iBAAW;AAChBf,MAAAA,EAAE,CAACI,KAAH,CAASY,KAAT,CAAehB,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBS,aAAnC,EAAkDjB,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBU,SAAtE;AACD;AAXkD,GAArD;AAAAlB,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBS,aAApB,CAAkCd,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.testclasses.BaseClassBoth\", {\n  extend: qx.test.testclasses.RootClass,\n  include: [ qx.test.testclasses.MMixinOne ],\n  \n  construct: function() {\n    this.base(arguments);\n    this.state.push(\"base\");\n  },\n  \n  defer: function() {\n    qx.Class.patch(qx.test.testclasses.BaseClassBoth, qx.test.testclasses.MMixinTwo);\n  }\n});"
+  ]
+}

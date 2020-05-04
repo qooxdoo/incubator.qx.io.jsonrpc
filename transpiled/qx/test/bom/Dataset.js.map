@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/Dataset.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "div",
+    "document",
+    "createElement",
+    "id",
+    "_el",
+    "body",
+    "appendChild",
+    "tearDown",
+    "removeChild",
+    "testSetAttribute",
+    "Dataset",
+    "bom",
+    "element",
+    "set",
+    "assertEquals",
+    "get",
+    "getAttribute",
+    "testSetAttributeWithUndefinedValue",
+    "undefined",
+    "assertNull",
+    "assertUndefined",
+    "testGetAttribute",
+    "setAttribute",
+    "testRemoveAttribute",
+    "remove",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Gabriel Munteanu (gabios)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.bom.Dataset\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    setUp : function()\n    {\n      var div = document.createElement(\"div\");\n      div.id = \"el\";\n\n      this._el = div;\n      document.body.appendChild(div);\n    },\n\n\n    tearDown : function() {\n      document.body.removeChild(this._el);\n    },\n\n\n    testSetAttribute : function()\n    {\n      var Dataset = qx.bom.element.Dataset;\n\n      Dataset.set(this._el, \"maxAge\", \"100\");\n      this.assertEquals(\"100\", Dataset.get(this._el,\"maxAge\"));\n      this.assertEquals(\"100\", this._el.getAttribute(\"data-max-age\"));\n\n    },\n\n\n    testSetAttributeWithUndefinedValue : function()\n    {\n      var Dataset = qx.bom.element.Dataset;\n\n      Dataset.set(this._el, \"age\", undefined);\n      this.assertNull(this._el.getAttribute(\"data-age\"));\n      this.assertUndefined(Dataset.get(this._el, \"age\", undefined));\n\n      Dataset.set(this._el, \"age2\", null);\n      this.assertNull(this._el.getAttribute(\"data-age2\"));\n      this.assertUndefined(Dataset.get(this._el, \"age2\", null));\n    },\n\n\n    testGetAttribute : function()\n    {\n      var Dataset = qx.bom.element.Dataset;\n\n      this.assertUndefined(Dataset.get(this._el, \"salary\"));\n\n      this._el.setAttribute(\"data-salary\", \"20\");\n      this.assertEquals(\"20\", Dataset.get(this._el, \"salary\"));\n    },\n\n    testRemoveAttribute : function()\n    {\n      var Dataset = qx.bom.element.Dataset;\n\n      Dataset.set(this._el, \"age\", \"44\");\n      Dataset.remove(this._el, \"age\");\n      this.assertNull(this._el.getAttribute(\"age\"));\n      this.assertUndefined(Dataset.get(this._el, \"age\"));\n    }\n  }\n});"
+  ]
+}

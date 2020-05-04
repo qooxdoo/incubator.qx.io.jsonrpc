@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/renderer/Color.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testValidColors",
+    "validColors",
+    "color",
+    "assertJsonEquals",
+    "util",
+    "ColorUtil",
+    "stringToRgb",
+    "testInvalidColors",
+    "invalidColors",
+    "i",
+    "length",
+    "assertException",
+    "Error",
+    "test",
+    "renderer",
+    "Color"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EACP;AAEEC,MAAAA,eAAe,EAAG,2BAClB;AACE,YAAIC,WAAW,GAAG;AAChB,iBAAQ,CAAC,GAAD,EAAK,CAAL,EAAO,CAAP,CADQ;AACG;AACnB,mBAAU,CAAC,CAAD,EAAG,CAAH,EAAK,CAAL,CAFM;AAEG;AACnB,kBAAS,CAAC,GAAD,EAAK,GAAL,EAAS,GAAT,CAHO;AAGQ;AACxB,kBAAS,CAAC,GAAD,EAAK,GAAL,EAAS,EAAT,CAJO;AAIO;AACvB,qBAAY,CAAC,CAAD,EAAG,CAAH,EAAK,GAAL,CALI;AAKO;AACvB,2BAAkB,CAAC,GAAD,EAAM,EAAN,EAAU,CAAV,CANF,CAMe;;AANf,SAAlB;;AASA,aAAK,IAAIC,KAAT,IAAkBD,WAAlB,EAA+B;AAC7B,eAAKE,gBAAL,CAAsBF,WAAW,CAACC,KAAD,CAAjC,EAA0Cb,EAAE,CAACe,IAAH,CAAQC,SAAR,CAAkBC,WAAlB,CAA8BJ,KAA9B,CAA1C;AACD;AACF,OAhBH;AAkBEK,MAAAA,iBAAiB,EAAG,6BACpB;AACE,YAAIC,aAAa,GAAG,CAClB,MADkB,EAElB,MAFkB,EAGlB,KAHkB,EAIlB,OAJkB,EAKlB,YALkB,CAApB;;AAQA,aAAK,IAAIC,CAAC,GAAC,CAAX,EAAcA,CAAC,GAACD,aAAa,CAACE,MAA9B,EAAsCD,CAAC,EAAvC,EACA;AACE,eAAKE,eAAL,CACE,YAAW;AACTtB,YAAAA,EAAE,CAACe,IAAH,CAAQC,SAAR,CAAkBC,WAAlB,CAA8BE,aAAa,CAACC,CAAD,CAA3C;AACD,WAHH,EAIEG,KAJF,EAKE,uBALF;AAOD;;AAED,aAAKD,eAAL,CACE,YAAW;AACTtB,UAAAA,EAAE,CAACe,IAAH,CAAQC,SAAR,CAAkBC,WAAlB,CAA8B,qBAA9B;AACD,SAHH,EAIEM,KAJF,EAKE,wCALF;AAOD;AAGL;;;;;;;;;;;;;;;;AAjDE;AAJF,GADA;AAlBAvB,EAAAA,EAAE,CAACwB,IAAH,CAAQC,QAAR,CAAiBC,KAAjB,CAAuBvB,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.renderer.Color\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n\n    testValidColors : function()\n    {\n      var validColors = {\n        \"red\" : [255,0,0], //named\n        \"black\" : [0,0,0], //named\n        \"#FFF\" : [255,255,255], //hex3\n        \"#Ff1\" : [255,255,17], //hex3\n        \"#0101FF\" : [1,1,255], //hex6\n        \"rgb(123,11,1)\" : [123, 11, 1] //rgb\n      };\n\n      for (var color in validColors) {\n        this.assertJsonEquals(validColors[color], qx.util.ColorUtil.stringToRgb(color));\n      }\n    },\n\n    testInvalidColors : function()\n    {\n      var invalidColors = [\n        \"blau\",\n        \"1234\",\n        \"#ff\",\n        \"#ffff\",\n        \"rgb(12,13)\"\n      ];\n\n      for (var i=0; i<invalidColors.length; i++)\n      {\n        this.assertException(\n          function() {\n            qx.util.ColorUtil.stringToRgb(invalidColors[i]);\n          },\n          Error,\n          \"Could not parse color\"\n        );\n      }\n\n      this.assertException(\n        function() {\n          qx.util.ColorUtil.stringToRgb(\"inactivecaptiontext\");\n        },\n        Error,\n        \"Could not convert system colors to RGB\"\n      );\n    }\n\n\n/*\n    testThemedColors : function()\n    {\n      var colorMgr = qx.theme.manager.Color.getInstance();\n      var oldTheme = colorMgr.getColorTheme();\n\n      colorMgr.setColorTheme(qx.theme.ext.Color);\n      this.assertJsonEquals([ 101, 147, 207 ], qx.util.ColorUtil.stringToRgb(\"border-dark-shadow\"));\n\n      colorMgr.setColorTheme(qx.theme.classic.color.LunaBlue);\n      this.assertJsonEquals([ 172, 168, 153 ], qx.util.ColorUtil.stringToRgb(\"border-dark-shadow\"));\n\n      colorMgr.setColorTheme(oldTheme);\n    }\n*/\n\n  }\n});\n"
+  ]
+}

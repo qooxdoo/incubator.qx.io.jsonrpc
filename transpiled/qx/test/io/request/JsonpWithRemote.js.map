@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/io/request/JsonpWithRemote.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "test",
+    "io",
+    "MRemoteTest",
+    "MRequirements",
+    "members",
+    "setUp",
+    "require",
+    "tearDown",
+    "req",
+    "dispose",
+    "request",
+    "Jsonp",
+    "url",
+    "noCache",
+    "getUrl",
+    "addListener",
+    "e",
+    "resume",
+    "assertObject",
+    "getResponse",
+    "assertTrue",
+    "setUrl",
+    "send",
+    "wait",
+    "util",
+    "Uri",
+    "appendParamsToUrl",
+    "Date",
+    "valueOf",
+    "JsonpWithRemote"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;AAIA;;;;AAKAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,OAAO,EAAE,CAACV,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWC,WAAZ,EACCb,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYM,aADb,CAHX;AAMEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAE,iBAAW;AAChB,aAAKC,OAAL,CAAa,CAAC,MAAD,CAAb;AACD,OAHH;AAKEC,MAAAA,QAAQ,EAAE,oBAAW;AACnB,aAAKC,GAAL,CAASC,OAAT;AACD,OAPH;AASE,0BAAoB,yBAAW;AAC7B,YAAID,GAAG,GAAG,KAAKA,GAAL,GAAW,IAAInB,EAAE,CAACY,EAAH,CAAMS,OAAN,CAAcC,KAAlB,EAArB;AAAA,YACIC,GAAG,GAAG,KAAKC,OAAL,CAAa,KAAKC,MAAL,CAAY,6BAAZ,CAAb,CADV;AAGAN,QAAAA,GAAG,CAACO,WAAJ,CAAgB,MAAhB,EAAwB,UAASC,CAAT,EAAY;AAClC,eAAKC,MAAL,CAAY,YAAW;AACrB,iBAAKC,YAAL,CAAkBV,GAAG,CAACW,WAAJ,EAAlB;AACA,iBAAKC,UAAL,CAAgBZ,GAAG,CAACW,WAAJ,GAAkB,SAAlB,CAAhB;AACD,WAHD,EAGG,IAHH;AAID,SALD,EAKG,IALH;AAOAX,QAAAA,GAAG,CAACa,MAAJ,CAAWT,GAAX;AACAJ,QAAAA,GAAG,CAACc,IAAJ;AAEA,aAAKC,IAAL;AACD,OAxBH;AA0BEV,MAAAA,OAAO,EAAE,iBAASD,GAAT,EAAc;AACrB,eAAOvB,EAAE,CAACmC,IAAH,CAAQC,GAAR,CAAYC,iBAAZ,CAA8Bd,GAA9B,EAAmC,aAAc,IAAIe,IAAJ,EAAD,CAAWC,OAAX,EAAhD,CAAP;AACD;AA5BH;AAPF,GADA;AA3BAvC,EAAAA,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWS,OAAX,CAAmBmB,eAAnB,CAAmCrC,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\n/* ************************************************************************\n\n\n************************************************************************ */\n/**\n *\n * @asset(qx/test/jsonp_primitive.php)\n */\n\nqx.Class.define(\"qx.test.io.request.JsonpWithRemote\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  include: [qx.test.io.MRemoteTest,\n            qx.dev.unit.MRequirements],\n\n  members :\n  {\n    setUp: function() {\n      this.require([\"http\"]);\n    },\n\n    tearDown: function() {\n      this.req.dispose();\n    },\n\n    \"test: fetch json\": function() {\n      var req = this.req = new qx.io.request.Jsonp(),\n          url = this.noCache(this.getUrl(\"qx/test/jsonp_primitive.php\"));\n\n      req.addListener(\"load\", function(e) {\n        this.resume(function() {\n          this.assertObject(req.getResponse());\n          this.assertTrue(req.getResponse()[\"boolean\"]);\n        }, this);\n      }, this);\n\n      req.setUrl(url);\n      req.send();\n\n      this.wait();\n    },\n\n    noCache: function(url) {\n      return qx.util.Uri.appendParamsToUrl(url, \"nocache=\" + (new Date).valueOf());\n    }\n\n  }\n});\n"
+  ]
+}

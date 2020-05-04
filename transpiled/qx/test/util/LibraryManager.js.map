@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/LibraryManager.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "construct",
+    "__mgr",
+    "util",
+    "LibraryManager",
+    "getInstance",
+    "libKeys",
+    "__qxBackup",
+    "key",
+    "$$libraries",
+    "hasOwnProperty",
+    "members",
+    "testHas",
+    "assert",
+    "has",
+    "assertFalse",
+    "testGet",
+    "i",
+    "l",
+    "length",
+    "assertEquals",
+    "get",
+    "testSet",
+    "set",
+    "tearDownTestSet",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAGEC,IAAAA,SAAS,EAAG,qBACZ;AACE;AAEA,WAAKC,KAAL,GAAaX,EAAE,CAACY,IAAH,CAAQC,cAAR,CAAuBC,WAAvB,EAAb;AACA,WAAKC,OAAL,GAAe,CAAC,WAAD,EAAc,aAAd,CAAf;AAEA,WAAKC,UAAL,GAAkB,EAAlB;;AACA,WAAK,IAAIC,GAAT,IAAgBjB,EAAE,CAACkB,WAAH,CAAelB,EAA/B,EAAmC;AACjC,YAAIA,EAAE,CAACkB,WAAH,CAAelB,EAAf,CAAkBmB,cAAlB,CAAiCF,GAAjC,CAAJ,EAA2C;AACzC,eAAKD,UAAL,CAAgBC,GAAhB,IAAuBjB,EAAE,CAACkB,WAAH,CAAelB,EAAf,CAAkBiB,GAAlB,CAAvB;AACD;AACF;AACF,KAhBH;AAkBEG,IAAAA,OAAO,EACP;AACET,MAAAA,KAAK,EAAG,IADV;AAEEK,MAAAA,UAAU,EAAG,IAFf;AAGED,MAAAA,OAAO,EAAG,IAHZ;AAKEM,MAAAA,OAAO,EAAG,mBACV;AACE,aAAKC,MAAL,CAAY,KAAKX,KAAL,CAAWY,GAAX,CAAe,IAAf,CAAZ;AACA,aAAKC,WAAL,CAAiB,KAAKb,KAAL,CAAWY,GAAX,CAAe,KAAf,CAAjB;AACD,OATH;AAWEE,MAAAA,OAAO,EAAG,mBACV;AACE,aAAK,IAAIC,CAAC,GAAC,CAAN,EAASC,CAAC,GAAC,KAAKZ,OAAL,CAAaa,MAA7B,EAAqCF,CAAC,GAACC,CAAvC,EAA0CD,CAAC,EAA3C,EAA+C;AAC7C,cAAIT,GAAG,GAAG,KAAKF,OAAL,CAAaW,CAAb,CAAV;AACA,eAAKG,YAAL,CAAkB7B,EAAE,CAACkB,WAAH,CAAelB,EAAf,CAAkBiB,GAAlB,CAAlB,EAA0C,KAAKN,KAAL,CAAWmB,GAAX,CAAe,IAAf,EAAqBb,GAArB,CAA1C;AACD;AACF,OAjBH;AAmBEc,MAAAA,OAAO,EAAG,mBACV;AACE,aAAK,IAAIL,CAAC,GAAC,CAAN,EAASC,CAAC,GAAC,KAAKZ,OAAL,CAAaa,MAA7B,EAAqCF,CAAC,GAACC,CAAvC,EAA0CD,CAAC,EAA3C,EAA+C;AAC7C,cAAIT,GAAG,GAAG,KAAKF,OAAL,CAAaW,CAAb,CAAV;;AACA,eAAKf,KAAL,CAAWqB,GAAX,CAAe,IAAf,EAAqBf,GAArB,EAA0B,KAA1B;;AACA,eAAKY,YAAL,CAAkB,KAAlB,EAAyB7B,EAAE,CAACkB,WAAH,CAAelB,EAAf,CAAkBiB,GAAlB,CAAzB;AACD;AACF,OA1BH;AA4BEgB,MAAAA,eAAe,EAAG,2BAClB;AACE,aAAK,IAAIhB,GAAT,IAAgB,KAAKD,UAArB,EAAiC;AAC/BhB,UAAAA,EAAE,CAACkB,WAAH,CAAelB,EAAf,CAAkBiB,GAAlB,IAAyB,KAAKD,UAAL,CAAgBC,GAAhB,CAAzB;AACD;AACF;AAjCH;AAnBF,GADA;AAlBAjB,EAAAA,EAAE,CAACkC,IAAH,CAAQtB,IAAR,CAAaC,cAAb,CAA4BV,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2012 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Daniel Wagner (danielwagner)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.LibraryManager\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  construct : function()\n  {\n    this.base(arguments);\n\n    this.__mgr = qx.util.LibraryManager.getInstance();\n    this.libKeys = [\"sourceUri\", \"resourceUri\"];\n\n    this.__qxBackup = {};\n    for (var key in qx.$$libraries.qx) {\n      if (qx.$$libraries.qx.hasOwnProperty(key)) {\n        this.__qxBackup[key] = qx.$$libraries.qx[key];\n      }\n    }\n  },\n\n  members :\n  {\n    __mgr : null,\n    __qxBackup : null,\n    libKeys : null,\n\n    testHas : function()\n    {\n      this.assert(this.__mgr.has(\"qx\"));\n      this.assertFalse(this.__mgr.has(\"foo\"));\n    },\n\n    testGet : function()\n    {\n      for (var i=0, l=this.libKeys.length; i<l; i++) {\n        var key = this.libKeys[i];\n        this.assertEquals(qx.$$libraries.qx[key], this.__mgr.get(\"qx\", key));\n      }\n    },\n\n    testSet : function()\n    {\n      for (var i=0, l=this.libKeys.length; i<l; i++) {\n        var key = this.libKeys[i];\n        this.__mgr.set(\"qx\", key, \"foo\");\n        this.assertEquals(\"foo\", qx.$$libraries.qx[key]);\n      }\n    },\n\n    tearDownTestSet : function()\n    {\n      for (var key in this.__qxBackup) {\n        qx.$$libraries.qx[key] = this.__qxBackup[key];\n      }\n    }\n  }\n});"
+  ]
+}

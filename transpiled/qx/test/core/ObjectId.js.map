@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/core/ObjectId.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MMock",
+    "members",
+    "testGetObject",
+    "clazz",
+    "core",
+    "Object",
+    "_createQxObjectImpl",
+    "id",
+    "ui",
+    "form",
+    "TextField",
+    "obj",
+    "demo",
+    "MyClass",
+    "Id",
+    "getInstance",
+    "register",
+    "txt",
+    "getQxObject",
+    "assertTrue",
+    "getQxObjectId",
+    "removeOwnedQxObject",
+    "txt2",
+    "setQxObjectId",
+    "addOwnedQxObject",
+    "obj2",
+    "undefined",
+    "unregister",
+    "test",
+    "ObjectId"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uBAAhB,EAAyC;AACvCC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADmB;AAEvCC,IAAAA,OAAO,EAAEV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,KAFkB;AAIvCC,IAAAA,OAAO,EAAE;AACPC,MAAAA,aAAa,EAAE,yBAAW;AACxB,YAAIC,KAAK,GAAGd,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,cAAhB,EAAgC;AAC1CC,UAAAA,MAAM,EAAEN,EAAE,CAACe,IAAH,CAAQC,MAD0B;AAE1CJ,UAAAA,OAAO,EAAE;AACPK,YAAAA,mBAAmB,EAAE,6BAASC,EAAT,EAAa;AAChC,sBAAOA,EAAP;AACA,qBAAK,KAAL;AACE,yBAAO,IAAIlB,EAAE,CAACmB,EAAH,CAAMC,IAAN,CAAWC,SAAf,EAAP;AAFF;;AAIA,gFAA4BH,EAA5B;AACD;AAPM;AAFiC,SAAhC,CAAZ;AAaA,YAAII,GAAG,GAAG,IAAIC,IAAI,CAACC,OAAT,EAAV;AACA,YAAIC,EAAE,GAAGzB,EAAE,CAACe,IAAH,CAAQU,EAAR,CAAWC,WAAX,EAAT;AACAD,QAAAA,EAAE,CAACE,QAAH,CAAYL,GAAZ,EAAiB,MAAjB;AACA,YAAIM,GAAG,GAAGN,GAAG,CAACO,WAAJ,CAAgB,KAAhB,CAAV;AACA,aAAKC,UAAL,CAAgBF,GAAG,KAAKN,GAAG,CAACO,WAAJ,CAAgB,KAAhB,CAAxB;AACA,aAAKC,UAAL,CAAgBF,GAAG,CAACG,aAAJ,OAAwB,KAAxC;AACA,aAAKD,UAAL,CAAgBL,EAAE,CAACI,WAAH,CAAe,MAAf,MAA2BP,GAA3C;AACA,aAAKQ,UAAL,CAAgBL,EAAE,CAACI,WAAH,CAAe,UAAf,MAA+BD,GAA/C;AAEAN,QAAAA,GAAG,CAACU,mBAAJ,CAAwBJ,GAAxB;AACA,YAAIK,IAAI,GAAGX,GAAG,CAACO,WAAJ,CAAgB,KAAhB,CAAX;AACA,aAAKC,UAAL,CAAgBF,GAAG,KAAKK,IAAxB;AACA,aAAKH,UAAL,CAAgBG,IAAI,KAAKX,GAAG,CAACO,WAAJ,CAAgB,KAAhB,CAAzB;AAEAD,QAAAA,GAAG,CAACM,aAAJ,CAAkB,UAAlB;AACAZ,QAAAA,GAAG,CAACa,gBAAJ,CAAqBP,GAArB;AACA,aAAKE,UAAL,CAAgBF,GAAG,KAAKN,GAAG,CAACO,WAAJ,CAAgB,UAAhB,CAAxB;AAEA,YAAIO,IAAI,GAAG,IAAIb,IAAI,CAACC,OAAT,EAAX;AACAY,QAAAA,IAAI,CAACD,gBAAL,CAAsBP,GAAtB;AACA,aAAKE,UAAL,CAAgBR,GAAG,CAACO,WAAJ,CAAgB,UAAhB,MAAgCQ,SAAhD;AACA,aAAKP,UAAL,CAAgBM,IAAI,CAACP,WAAL,CAAiB,UAAjB,MAAiCD,GAAjD;AAEAH,QAAAA,EAAE,CAACa,UAAH,CAAc,MAAd;AACA,aAAKR,UAAL,CAAgB,CAACL,EAAE,CAACI,WAAH,CAAe,MAAf,CAAjB;AACD;AAxCM;AAJ8B,GAAzC;AArBA7B,EAAAA,EAAE,CAACuC,IAAH,CAAQxB,IAAR,CAAayB,QAAb,CAAsBrC,aAAtB,GAAsCA,aAAtC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2017 Zenesis Limited, http://www.zenesis.com\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * John Spackman (john.spackman@zenesis.com, @johnspackman)\n\n************************************************************************ */\n\n/**\n * @ignore(demo.MyClass)\n */\nqx.Class.define(\"qx.test.core.ObjectId\", {\n  extend: qx.dev.unit.TestCase,\n  include: qx.dev.unit.MMock,\n\n  members: {\n    testGetObject: function() {\n      var clazz = qx.Class.define(\"demo.MyClass\", {\n        extend: qx.core.Object,\n        members: {\n          _createQxObjectImpl: function(id) {\n            switch(id) {\n            case \"txt\":\n              return new qx.ui.form.TextField();\n            }\n            return this.base(arguments, id);\n          }\n        }\n      });\n      \n      var obj = new demo.MyClass();\n      var Id = qx.core.Id.getInstance();\n      Id.register(obj, \"test\");\n      var txt = obj.getQxObject(\"txt\");\n      this.assertTrue(txt === obj.getQxObject(\"txt\"));\n      this.assertTrue(txt.getQxObjectId() === \"txt\");\n      this.assertTrue(Id.getQxObject(\"test\") === obj);\n      this.assertTrue(Id.getQxObject(\"test/txt\") === txt);\n      \n      obj.removeOwnedQxObject(txt);\n      var txt2 = obj.getQxObject(\"txt\");\n      this.assertTrue(txt !== txt2);\n      this.assertTrue(txt2 === obj.getQxObject(\"txt\"));\n      \n      txt.setQxObjectId(\"txt-orig\");\n      obj.addOwnedQxObject(txt);\n      this.assertTrue(txt === obj.getQxObject(\"txt-orig\"));\n\n      var obj2 = new demo.MyClass();\n      obj2.addOwnedQxObject(txt);\n      this.assertTrue(obj.getQxObject(\"txt-orig\") === undefined);\n      this.assertTrue(obj2.getQxObject(\"txt-orig\") === txt);\n      \n      Id.unregister(\"test\");\n      this.assertTrue(!Id.getQxObject(\"test\"));\n    }\n  }\n});\n"
+  ]
+}

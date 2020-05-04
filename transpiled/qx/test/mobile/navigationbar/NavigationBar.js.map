@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/navigationbar/NavigationBar.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testCreate",
+    "bar",
+    "ui",
+    "navigationbar",
+    "NavigationBar",
+    "getRoot",
+    "add",
+    "back",
+    "BackButton",
+    "title",
+    "Title",
+    "button",
+    "Button",
+    "assertEquals",
+    "getChildren",
+    "length",
+    "destroy"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4CAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeC,cAD1B;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,UAAU,EAAG,sBACb;AACE,YAAIC,GAAG,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,aAAb,CAA2BC,aAA/B,EAAV;AACA,aAAKC,OAAL,GAAeC,GAAf,CAAmBL,GAAnB;AAEA,YAAIM,IAAI,GAAG,IAAIlB,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,aAAb,CAA2BK,UAA/B,CAA0C,MAA1C,CAAX;AACAP,QAAAA,GAAG,CAACK,GAAJ,CAAQC,IAAR;AAEA,YAAIE,KAAK,GAAG,IAAIpB,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,aAAb,CAA2BO,KAA/B,CAAqC,OAArC,CAAZ;AACAT,QAAAA,GAAG,CAACK,GAAJ,CAAQG,KAAR;AAEA,YAAIE,MAAM,GAAG,IAAItB,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,aAAb,CAA2BS,MAA/B,CAAsC,QAAtC,CAAb;AACAX,QAAAA,GAAG,CAACK,GAAJ,CAAQK,MAAR;AAEA,aAAKE,YAAL,CAAkB,CAAlB,EAAqBZ,GAAG,CAACa,WAAJ,GAAkBC,MAAvC;AAEAR,QAAAA,IAAI,CAACS,OAAL;AACAP,QAAAA,KAAK,CAACO,OAAN;AACAL,QAAAA,MAAM,CAACK,OAAP;AACAf,QAAAA,GAAG,CAACe,OAAJ;AACD;AArBH;AAJF,GADA;AAlBA3B,EAAAA,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeM,aAAf,CAA6BC,aAA7B,CAA2CZ,aAA3C,GAA2DA,aAA3D",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.mobile.navigationbar.NavigationBar\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testCreate : function()\n    {\n      var bar = new qx.ui.mobile.navigationbar.NavigationBar();\n      this.getRoot().add(bar);\n\n      var back = new qx.ui.mobile.navigationbar.BackButton(\"Back\");\n      bar.add(back);\n\n      var title = new qx.ui.mobile.navigationbar.Title(\"Title\");\n      bar.add(title);\n\n      var button = new qx.ui.mobile.navigationbar.Button(\"Action\");\n      bar.add(button);\n\n      this.assertEquals(3, bar.getChildren().length);\n\n      back.destroy();\n      title.destroy();\n      button.destroy();\n      bar.destroy();\n    }\n  }\n\n});\n"
+  ]
+}

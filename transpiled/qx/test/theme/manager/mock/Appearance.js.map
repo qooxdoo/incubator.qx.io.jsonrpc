@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/theme/manager/mock/Appearance.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "theme",
+    "modern",
+    "Appearance",
+    "appearances",
+    "alias",
+    "style",
+    "states",
+    "decorator",
+    "padding",
+    "textColor",
+    "test",
+    "manager",
+    "mock"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,KAAH,CAASC,MAAT,CAAgBC,UAD3B;AAGEC,IAAAA,WAAW,EACX;AACE,sBACA;AACEC,QAAAA,KAAK,EAAG,MADV;AAGEC,QAAAA,KAAK,EAAG,eAASC,MAAT,EACR;AACE,iBAAO;AACLC,YAAAA,SAAS,EAAG,QADP;AAELC,YAAAA,OAAO,EAAG,CAAC,EAAD,EAAK,EAAL;AAFL,WAAP;AAID;AATH,OAFF;AAeE,4BAAuB;AACrBJ,QAAAA,KAAK,EAAG,YADa;AAGrBC,QAAAA,KAAK,EAAG,eAASC,MAAT,EACR;AACE,iBAAO;AACLG,YAAAA,SAAS,EAAG;AADP,WAAP;AAGD;AARoB;AAfzB;AAJF,GADA;AAAAhB,EAAAA,EAAE,CAACiB,IAAH,CAAQV,KAAR,CAAcW,OAAd,CAAsBC,IAAtB,CAA2BV,UAA3B,CAAsCN,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "qx.Theme.define(\"qx.test.theme.manager.mock.Appearance\",\n{\n  extend : qx.theme.modern.Appearance,\n\n  appearances :\n  {\n    \"button-frame\" :\n    {\n      alias : \"atom\",\n\n      style : function(states)\n      {\n        return {\n          decorator : \"button\",\n          padding : [30, 80]\n        };\n      }\n    },\n\n\n    \"button-frame/label\" : {\n      alias : \"atom/label\",\n\n      style : function(states)\n      {\n        return {\n          textColor : \"text-label\"\n        };\n      }\n    }\n  }\n});\n"
+  ]
+}

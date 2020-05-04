@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/log/fixture/ClassA.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "_callCountApplyOldProperty",
+    "_callCountApplyNewProperty",
+    "log",
+    "Logger",
+    "deprecateMethodOverriding",
+    "test",
+    "fixture",
+    "ClassA",
+    "properties",
+    "oldProperty",
+    "init",
+    "apply",
+    "newProperty",
+    "members",
+    "_applyOldProperty",
+    "_applyNewProperty",
+    "getCallCountApplyOldProperty",
+    "getCallCountApplyNewProperty"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAGEC,IAAAA,SAAS,EAAG,qBACZ;AACE,WAAKC,0BAAL,GAAkC,CAAlC;AACA,WAAKC,0BAAL,GAAkC,CAAlC;AAEAX,MAAAA,EAAE,CAACY,GAAH,CAAOC,MAAP,CAAcC,yBAAd,CAAwC,IAAxC,EAA8Cd,EAAE,CAACe,IAAH,CAAQH,GAAR,CAAYI,OAAZ,CAAoBC,MAAlE,EAA0E,mBAA1E;AACD,KATH;AAWEC,IAAAA,UAAU,EACV;AACEC,MAAAA,WAAW,EAAG;AACZC,QAAAA,IAAI,EAAG,aADK;AAEZC,QAAAA,KAAK,EAAG;AAFI,OADhB;AAMEC,MAAAA,WAAW,EAAG;AACZF,QAAAA,IAAI,EAAG,aADK;AAEZC,QAAAA,KAAK,EAAG;AAFI;AANhB,KAZF;AAwBEE,IAAAA,OAAO,EACP;AACEb,MAAAA,0BAA0B,EAAG,IAD/B;AAEEC,MAAAA,0BAA0B,EAAG,IAF/B;AAIEa,MAAAA,iBAAiB,EAAG,6BAAY;AAC9B,aAAKd,0BAAL;AACD,OANH;AAQEe,MAAAA,iBAAiB,EAAG,6BAAY;AAC9B,aAAKd,0BAAL;AACD,OAVH;AAYEe,MAAAA,4BAA4B,EAAG,wCAAY;AACzC,eAAO,KAAKhB,0BAAZ;AACD,OAdH;AAgBEiB,MAAAA,4BAA4B,EAAG,wCAAY;AACzC,eAAO,KAAKhB,0BAAZ;AACD;AAlBH;AAzBF,GADA;AAAAX,EAAAA,EAAE,CAACe,IAAH,CAAQH,GAAR,CAAYI,OAAZ,CAAoBC,MAApB,CAA2Bd,aAA3B,GAA2CA,aAA3C",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.log.fixture.ClassA\",\n{\n  extend : qx.core.Object,\n\n  construct : function()\n  {\n    this._callCountApplyOldProperty = 0;\n    this._callCountApplyNewProperty = 0;\n\n    qx.log.Logger.deprecateMethodOverriding(this, qx.test.log.fixture.ClassA, \"_applyOldProperty\");\n  },\n\n  properties :\n  {\n    oldProperty : {\n      init : \"oldProperty\",\n      apply : \"_applyOldProperty\"\n    },\n\n    newProperty : {\n      init : \"newProperty\",\n      apply : \"_applyNewProperty\"\n    }\n  },\n\n  members :\n  {\n    _callCountApplyOldProperty : null,\n    _callCountApplyNewProperty : null,\n\n    _applyOldProperty : function () {\n      this._callCountApplyOldProperty++;\n    },\n\n    _applyNewProperty : function () {\n      this._callCountApplyNewProperty++;\n    },\n\n    getCallCountApplyOldProperty : function () {\n      return this._callCountApplyOldProperty;\n    },\n\n    getCallCountApplyNewProperty : function () {\n      return this._callCountApplyNewProperty;\n    }\n  }\n});\n"
+  ]
+}

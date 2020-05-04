@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/form/List.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "__list",
+    "setUp",
+    "list",
+    "form",
+    "List",
+    "items",
+    "forEach",
+    "item",
+    "ListItem",
+    "add",
+    "getRoot",
+    "flush",
+    "found",
+    "findItem",
+    "assertInstance",
+    "set",
+    "rich",
+    "container",
+    "_createListItemContainer",
+    "Composite",
+    "dispose",
+    "tearDown",
+    "destroy"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADtB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,MAAM,EAAG,IADX;AAGEC,MAAAA,KAAK,EAAG,iBACR;AACE,YAAIC,IAAI,GAAG,KAAKF,MAAL,GAAc,IAAIX,EAAE,CAACQ,EAAH,CAAMM,IAAN,CAAWC,IAAf,EAAzB;AACA,YAAIC,KAAK,GAAG,CAAC,KAAD,EAAQ,KAAR,EAAe,KAAf,CAAZ;AACAA,QAAAA,KAAK,CAACC,OAAN,CAAc,UAASC,IAAT,EAAe;AAC3BA,UAAAA,IAAI,GAAG,IAAIlB,EAAE,CAACQ,EAAH,CAAMM,IAAN,CAAWK,QAAf,CAAwBD,IAAxB,CAAP;AACAL,UAAAA,IAAI,CAACO,GAAL,CAASF,IAAT;AACD,SAHD;AAKA,aAAKG,OAAL,GAAeD,GAAf,CAAmBP,IAAnB;AACA,aAAKS,KAAL;AACD,OAdH;AAgBE,iCAA2B,+BAAW;AACpC,YAAIT,IAAI,GAAG,KAAKF,MAAhB;AACA,YAAIY,KAAK,GAAGV,IAAI,CAACW,QAAL,CAAc,KAAd,CAAZ;AACA,aAAKC,cAAL,CAAoBF,KAApB,EAA2BvB,EAAE,CAACQ,EAAH,CAAMM,IAAN,CAAWK,QAAtC,EAAgD,gBAAhD;AACD,OApBH;AAsBE,mCAA6B,gCAAW;AACtC,YAAIN,IAAI,GAAG,KAAKF,MAAhB;AACA,YAAIO,IAAI,GAAG,IAAIlB,EAAE,CAACQ,EAAH,CAAMM,IAAN,CAAWK,QAAf,CAAwB,aAAxB,EAAuCO,GAAvC,CAA2C;AAACC,UAAAA,IAAI,EAAE;AAAP,SAA3C,CAAX;AACAd,QAAAA,IAAI,CAACO,GAAL,CAASF,IAAT;AACA,aAAKI,KAAL;AAEA,YAAIC,KAAK,GAAGV,IAAI,CAACW,QAAL,CAAc,MAAd,CAAZ;AACA,aAAKC,cAAL,CAAoBF,KAApB,EAA2BvB,EAAE,CAACQ,EAAH,CAAMM,IAAN,CAAWK,QAAtC,EAAgD,gBAAhD;AACD,OA9BH;AAgCE,4CAAuC,wCACvC;AACE,YAAIS,SAAS,GAAG,KAAKjB,MAAL,CAAYkB,wBAAZ,EAAhB;;AAEA,aAAKJ,cAAL,CAAoBG,SAApB,EAA+B5B,EAAE,CAACQ,EAAH,CAAMoB,SAAN,CAAgBE,SAA/C,EAA0D,kDAA1D;AACAF,QAAAA,SAAS,CAACG,OAAV;AACD,OAtCH;AAwCEC,MAAAA,QAAQ,EAAG,oBACX;AACE;;AACA,aAAKrB,MAAL,CAAYsB,OAAZ;AACD;AA5CH;AAJF,GADA;AAlBAjC,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWM,IAAX,CAAgBC,IAAhB,CAAqBZ,aAArB,GAAqCA,aAArC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.form.List\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  members :\n  {\n    __list : null,\n\n    setUp : function()\n    {\n      var list = this.__list = new qx.ui.form.List();\n      var items = [\"AAA\", \"BBB\", \"CCC\"];\n      items.forEach(function(item) {\n        item = new qx.ui.form.ListItem(item);\n        list.add(item);\n      });\n\n      this.getRoot().add(list);\n      this.flush();\n    },\n\n    \"test: find regular item\": function() {\n      var list = this.__list;\n      var found = list.findItem(\"AAA\");\n      this.assertInstance(found, qx.ui.form.ListItem, \"Item not found\");\n    },\n\n    \"test: find rich-text item\": function() {\n      var list = this.__list;\n      var item = new qx.ui.form.ListItem(\"<b>Bold</b>\").set({rich: true});\n      list.add(item);\n      this.flush();\n\n      var found = list.findItem(\"Bold\");\n      this.assertInstance(found, qx.ui.form.ListItem, \"Item not found\");\n    },\n\n    \"test: get container for list items\" : function()\n    {\n      var container = this.__list._createListItemContainer();\n\n      this.assertInstance(container, qx.ui.container.Composite, \"Wrong return value of '_createListItemContainer'\");\n      container.dispose();\n    },\n\n    tearDown : function()\n    {\n      this.base(arguments);\n      this.__list.destroy();\n    }\n  }\n});\n"
+  ]
+}

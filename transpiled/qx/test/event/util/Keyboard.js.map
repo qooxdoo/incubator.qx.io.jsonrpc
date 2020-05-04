@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/util/Keyboard.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testCommaAsValidKeyIdentifier",
+    "isValidKeyIdentifier",
+    "event",
+    "util",
+    "Keyboard",
+    "assertTrue",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EAA+C;AAC7CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADyB;AAG7CC,IAAAA,OAAO,EAAE;AACPC,MAAAA,6BAA6B,EAAE,yCAAY;AACzC,YAAIC,oBAAoB,GAAGZ,EAAE,CAACa,KAAH,CAASC,IAAT,CAAcC,QAAd,CAAuBH,oBAAvB,CAA4C,GAA5C,CAA3B;AAEA,aAAKI,UAAL,CAAgBJ,oBAAhB;AACD;AALM;AAHoC,GAA/C;AAlBAZ,EAAAA,EAAE,CAACiB,IAAH,CAAQJ,KAAR,CAAcC,IAAd,CAAmBC,QAAnB,CAA4BZ,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n qooxdoo - the new era of web development\n\n http://qooxdoo.org\n\n Copyright:\n 2007-20014 1&1 Internet AG, Germany, http://www.1und1.de\n\n License:\n     MIT: https://opensource.org/licenses/MIT\n See the LICENSE file in the project's top-level directory for details.\n\n Authors:\n * Tobias Oberrauch <tobias.oberrauch@1und1.de>\n\n ************************************************************************\n */\nqx.Class.define(\"qx.test.event.util.Keyboard\", {\n  extend: qx.dev.unit.TestCase,\n\n  members: {\n    testCommaAsValidKeyIdentifier: function () {\n      var isValidKeyIdentifier = qx.event.util.Keyboard.isValidKeyIdentifier(',');\n\n      this.assertTrue(isValidKeyIdentifier);\n    }\n  }\n});"
+  ]
+}

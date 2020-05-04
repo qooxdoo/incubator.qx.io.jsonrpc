@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/performance/BaseCall.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MMeasure",
+    "members",
+    "ITERATIONS",
+    "testBaseCall",
+    "obj",
+    "test",
+    "performance",
+    "Extend",
+    "self",
+    "measure",
+    "i",
+    "foo_base",
+    "testPlainCall",
+    "foo_call",
+    "testPlainApply",
+    "foo_apply",
+    "core",
+    "Object",
+    "a",
+    "b",
+    "c",
+    "Base",
+    "prototype",
+    "call",
+    "apply",
+    "arguments",
+    "BaseCall"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/**\n * @ignore(qx.test.performance.Base.*)\n * @ignore(qx.test.performance.Extend)\n */\n\nqx.Class.define(\"qx.test.performance.BaseCall\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : qx.dev.unit.MMeasure,\n\n  members :\n  {\n    ITERATIONS : 100000,\n\n    testBaseCall : function()\n    {\n      var obj = new qx.test.performance.Extend();\n      var self = this;\n      this.measure(\n        \"this.base()\",\n        function() {\n          for (var i=0; i<self.ITERATIONS; i++) {\n            obj.foo_base();\n          }\n        },\n        function() {},\n        this.ITERATIONS\n      );\n    },\n\n    testPlainCall : function()\n    {\n      var obj = new qx.test.performance.Extend();\n      var self = this;\n      this.measure(\n          \"Base.prototype.foo_base.call\",\n          function() {\n            for (var i=0; i<self.ITERATIONS; i++) {\n              obj.foo_call();\n            }\n          },\n          function() {},\n          this.ITERATIONS\n      );\n    },\n\n    testPlainApply : function()\n    {\n      var obj = new qx.test.performance.Extend();\n      var self = this;\n      this.measure(\n        \"Base.prototype.foo_base.apply\",\n        function() {\n          for (var i=0; i<self.ITERATIONS; i++) {\n            obj.foo_apply();\n          }\n        },\n        function() {},\n        this.ITERATIONS\n      );\n    }\n  }\n});\n\nqx.Class.define(\"qx.test.performance.Base\", {\n  extend : qx.core.Object,\n\n  members : {\n    foo_base : function(a,b,c) {}\n  }\n});\n\n/**\n * @ignore(qx.test.performance.Base.*)\n */\nqx.Class.define(\"qx.test.performance.Extend\", {\n  extend : qx.test.performance.Base,\n\n  members : {\n    foo_base : function(a,b,c) {\n      this.base(arguments, a, b, c);\n    },\n\n    foo_call : function(a, b, c) {\n      qx.test.performance.Base.prototype.foo_base.call(this, a, b, c);\n    },\n\n    foo_apply : function(a, b, c) {\n      qx.test.performance.Base.prototype.foo_base.apply(this, arguments);\n    }\n  }\n});\n"
+  ]
+}

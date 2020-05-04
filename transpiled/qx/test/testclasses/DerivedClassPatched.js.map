@@ -1,0 +1,28 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/testclasses/DerivedClassPatched.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "testclasses",
+    "BaseClassPatched",
+    "construct",
+    "state",
+    "push",
+    "members",
+    "getSomething",
+    "DerivedClassPatched"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yCAAhB,EAA2D;AACzDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,gBAD6B;AAGzDC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACA,WAAKC,KAAL,CAAWC,IAAX,CAAgB,SAAhB;AACD,KANwD;AAQzDC,IAAAA,OAAO,EAAE;AACPC,MAAAA,YAAY,EAAE,wBAAW;AACvB,eAAO,iFAAuB,UAA9B;AACD;AAHM;AARgD,GAA3D;AAAAd,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBO,mBAApB,CAAwCZ,aAAxC,GAAwDA,aAAxD",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.testclasses.DerivedClassPatched\", {\n  extend: qx.test.testclasses.BaseClassPatched,\n  \n  construct: function() {\n    this.base(arguments);\n    this.state.push(\"derived\");\n  },\n  \n  members: {\n    getSomething: function() {\n      return this.base(arguments) + \":derived\";\n    }\n  }\n});"
+  ]
+}

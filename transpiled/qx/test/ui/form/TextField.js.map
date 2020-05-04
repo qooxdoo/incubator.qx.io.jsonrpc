@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/form/TextField.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "setUp",
+    "__field",
+    "form",
+    "TextField",
+    "getRoot",
+    "add",
+    "tearDown",
+    "destroy",
+    "l",
+    "getMaxLength",
+    "assertEquals",
+    "Infinity",
+    "setMaxLength",
+    "resetMaxLength",
+    "setFilter",
+    "s",
+    "_validateInput"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Henner Kollmann\n\n************************************************************************ */\nqx.Class.define(\"qx.test.ui.form.TextField\",\n{\n  extend: qx.test.ui.LayoutTestCase,\n\n  members:\n  {\n    setUp: function() {\n      this.__field = new qx.ui.form.TextField();\n      this.getRoot().add(this.__field);\n    },\n\n    tearDown: function() {\n      this.__field.destroy();\n\t  this.__field = null;\n      this.base(arguments);\n    },\n\n    \"test: get default length\": function() {\n      var l = this.__field.getMaxLength();\n      this.assertEquals(Infinity, l);\n    },\n\n    \"test: set max length\": function() {\n      this.__field.setMaxLength(4);\n      var l = this.__field.getMaxLength();\n      this.assertEquals(4, l);\n    },\n\t\n    \"test: reset max length\": function() {\n      this.__field.setMaxLength(4);\n      var l = this.__field.getMaxLength();\n      this.assertEquals(4, l);\n      this.__field.resetMaxLength();\n      var l = this.__field.getMaxLength();\n      this.assertEquals(Infinity, l);\n    },\n\t\n    \"test: validate input with filter\": function() {\n      this.__field.setFilter(/[0-9]/);\n      var s = this.__field._validateInput(\"a\");\n      this.assertEquals(\"\", s);\n      var s = this.__field._validateInput(\"111\");\n      this.assertEquals(\"111\", s);\n    },\n    \"test: validate input with complex filter\": function() {\n      this.__field.setFilter(/^(\\+|-)?\\d*$/);\n      var s = this.__field._validateInput(\"a\");\n      this.assertEquals(\"\", s);\n      var s = this.__field._validateInput(\"1\");\n      this.assertEquals(\"1\", s);\n      var s = this.__field._validateInput(\"-\");\n      this.assertEquals(\"-\", s);\n      var s = this.__field._validateInput(\"111\");\n      this.assertEquals(\"111\", s);\n      var s = this.__field._validateInput(\"-111\");\n      this.assertEquals(\"-111\", s);\n      var s = this.__field._validateInput(\"-11-1\");\n      this.assertEquals(\"\", s);\n    },\n  \"test: validate input with complex filter 2\": function() {\n      this.__field.setFilter(/^xy$/);\n      var s = this.__field._validateInput(\"x? y?\");\n      this.assertEquals(\"\", s);\n    },\n\n    __field: null\n  }\n});\n"
+  ]
+}

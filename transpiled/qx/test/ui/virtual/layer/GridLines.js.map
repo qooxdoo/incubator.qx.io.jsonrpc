@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/virtual/layer/GridLines.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "_assertGridLines",
+    "linesLayer",
+    "isHorizontal",
+    "color",
+    "lineSize",
+    "msg",
+    "assertEquals",
+    "getDefaultLineColor",
+    "getDefaultLineSize",
+    "testCreate",
+    "lines",
+    "virtual",
+    "layer",
+    "GridLines",
+    "destroy"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAmBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADtB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,gBAAgB,EAAG,0BAASC,UAAT,EAAqBC,YAArB,EAAmCC,KAAnC,EAA0CC,QAA1C,EAAoDC,GAApD,EACnB;AACE,aAAKC,YAAL,CAAkBJ,YAAlB,EAAgCD,UAAU,CAACC,YAAX,EAAhC,EAA2DG,GAA3D;AACA,aAAKC,YAAL,CAAkBH,KAAlB,EAAyBF,UAAU,CAACM,mBAAX,EAAzB,EAA2DF,GAA3D;AACA,aAAKC,YAAL,CAAkBF,QAAlB,EAA4BH,UAAU,CAACO,kBAAX,EAA5B,EAA6DH,GAA7D;AACD,OANH;AAQEI,MAAAA,UAAU,EAAG,sBACb;AACE,YAAIC,KAAK,GAAG,IAAIrB,EAAE,CAACQ,EAAH,CAAMc,OAAN,CAAcC,KAAd,CAAoBC,SAAxB,EAAZ;;AACA,aAAKb,gBAAL,CAAsBU,KAAtB,EAA6B,IAA7B,EAAmC,MAAnC,EAA2C,CAA3C;;AACAA,QAAAA,KAAK,CAACI,OAAN;AAEA,YAAIJ,KAAK,GAAG,IAAIrB,EAAE,CAACQ,EAAH,CAAMc,OAAN,CAAcC,KAAd,CAAoBC,SAAxB,CAAkC,YAAlC,CAAZ;;AACA,aAAKb,gBAAL,CAAsBU,KAAtB,EAA6B,IAA7B,EAAmC,MAAnC,EAA2C,CAA3C;;AACAA,QAAAA,KAAK,CAACI,OAAN;AAEA,YAAIJ,KAAK,GAAG,IAAIrB,EAAE,CAACQ,EAAH,CAAMc,OAAN,CAAcC,KAAd,CAAoBC,SAAxB,CAAkC,UAAlC,EAA8C,KAA9C,CAAZ;;AACA,aAAKb,gBAAL,CAAsBU,KAAtB,EAA6B,KAA7B,EAAoC,KAApC,EAA2C,CAA3C;;AACAA,QAAAA,KAAK,CAACI,OAAN;AAEA,YAAIJ,KAAK,GAAG,IAAIrB,EAAE,CAACQ,EAAH,CAAMc,OAAN,CAAcC,KAAd,CAAoBC,SAAxB,CAAkC,UAAlC,EAA8C,KAA9C,EAAqD,CAArD,CAAZ;;AACA,aAAKb,gBAAL,CAAsBU,KAAtB,EAA6B,KAA7B,EAAoC,KAApC,EAA2C,CAA3C;;AACAA,QAAAA,KAAK,CAACI,OAAN;AACD;AAzBH;AAJF,GADA;AAnBAzB,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWc,OAAX,CAAmBC,KAAnB,CAAyBC,SAAzB,CAAmCrB,aAAnC,GAAmDA,aAAnD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n   * Jonathan Weiß (jonathan_rass)\n   * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.virtual.layer.GridLines\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  members :\n  {\n    _assertGridLines : function(linesLayer, isHorizontal, color, lineSize, msg)\n    {\n      this.assertEquals(isHorizontal, linesLayer.isHorizontal(), msg);\n      this.assertEquals(color, linesLayer.getDefaultLineColor(), msg);\n      this.assertEquals(lineSize, linesLayer.getDefaultLineSize(), msg);\n    },\n\n    testCreate : function()\n    {\n      var lines = new qx.ui.virtual.layer.GridLines();\n      this._assertGridLines(lines, true, \"gray\", 1);\n      lines.destroy();\n\n      var lines = new qx.ui.virtual.layer.GridLines(\"horizontal\");\n      this._assertGridLines(lines, true, \"gray\", 1);\n      lines.destroy();\n\n      var lines = new qx.ui.virtual.layer.GridLines(\"vertical\", \"red\");\n      this._assertGridLines(lines, false, \"red\", 1);\n      lines.destroy();\n\n      var lines = new qx.ui.virtual.layer.GridLines(\"vertical\", \"red\", 5);\n      this._assertGridLines(lines, false, \"red\", 5);\n      lines.destroy();\n    }\n  }\n});\n"
+  ]
+}

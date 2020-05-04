@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/lang/normalize/String.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MMock",
+    "members",
+    "assertEquals",
+    "trim",
+    "str",
+    "assertTrue",
+    "startsWith",
+    "assertFalse",
+    "endsWith",
+    "Number",
+    "POSITIVE_INFINITY",
+    "test",
+    "lang",
+    "normalize",
+    "String"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAEEC,IAAAA,OAAO,EAAG,CAACV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,KAAb,CAFZ;AAKEC,IAAAA,OAAO,EACP;AACE,qBAAgB,oBAChB;AACE,aAAKC,YAAL,CAAkB,GAAlB,EAAuB,OAAOC,IAAP,EAAvB;AACA,aAAKD,YAAL,CAAkB,GAAlB,EAAuB,OAAOC,IAAP,EAAvB;AACA,aAAKD,YAAL,CAAkB,GAAlB,EAAuB,OAAOC,IAAP,EAAvB;AACD,OANH;AASE,2BAAsB,0BACtB;AACE,YAAIC,GAAG,GAAG,4CAAV;AAEA,aAAKC,UAAL,CAAkBD,GAAG,CAACE,UAAJ,CAAe,OAAf,CAAlB,EAHF,CAGuD;;AACrD,aAAKC,WAAL,CAAkBH,GAAG,CAACE,UAAJ,CAAe,WAAf,CAAlB,EAJF,CAIuD;;AACrD,aAAKD,UAAL,CAAkBD,GAAG,CAACE,UAAJ,CAAe,WAAf,EAA4B,EAA5B,CAAlB,EALF,CAKuD;AACtD,OAhBH;AAmBE,yBAAoB,wBACpB;AACE,YAAIF,GAAG,GAAG,4CAAV;AAEA,aAAKC,UAAL,CAAkBD,GAAG,CAACI,QAAJ,CAAa,WAAb,CAAlB,EAHF,CAGiD;;AAC/C,aAAKD,WAAL,CAAkBH,GAAG,CAACI,QAAJ,CAAa,OAAb,CAAlB,EAJF,CAIiD;;AAC/C,aAAKH,UAAL,CAAkBD,GAAG,CAACI,QAAJ,CAAa,OAAb,EAAsB,EAAtB,CAAlB,EALF,CAKiD;AAE/C;AACA;AACA;AAEA;;AACA,aAAKH,UAAL,CAAkBD,GAAG,CAACI,QAAJ,CAAa,WAAb,EAA0BC,MAAM,CAACC,iBAAjC,CAAlB;AACA,aAAKH,WAAL,CAAkBH,GAAG,CAACI,QAAJ,CAAa,OAAb,EAA0BC,MAAM,CAACC,iBAAjC,CAAlB,EAbF,CAcE;;AACA,aAAKL,UAAL,CAAkBD,GAAG,CAACI,QAAJ,CAAa,WAAb,EAA0B,IAA1B,CAAlB;AACA,aAAKD,WAAL,CAAkBH,GAAG,CAACI,QAAJ,CAAa,OAAb,EAA0B,IAA1B,CAAlB,EAhBF,CAiBE;;AACA,aAAKH,UAAL,CAAkBD,GAAG,CAACI,QAAJ,CAAa,WAAb,EAA0B,EAA1B,CAAlB;AACA,aAAKD,WAAL,CAAkBH,GAAG,CAACI,QAAJ,CAAa,OAAb,EAA0B,EAA1B,CAAlB;AAED;AAzCH;AANF,GADA;AArBAnB,EAAAA,EAAE,CAACsB,IAAH,CAAQC,IAAR,CAAaC,SAAb,CAAuBC,MAAvB,CAA8BtB,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2012 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (wittemann)\n\n************************************************************************ */\n\n/**\n * @require(qx.lang.normalize.String)\n */\nqx.Class.define(\"qx.test.lang.normalize.String\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : [qx.dev.unit.MMock],\n\n\n  members :\n  {\n    \"test trim()\" : function ()\n    {\n      this.assertEquals(\"y\", \"   y\".trim());\n      this.assertEquals(\"y\", \"y   \".trim());\n      this.assertEquals(\"y\", \" y  \".trim());\n    },\n\n\n    \"test startsWith()\" : function ()\n    {\n      var str = \"To be, or not to be, that is the question.\";\n\n      this.assertTrue ( str.startsWith(\"To be\")         ); // true\n      this.assertFalse( str.startsWith(\"not to be\")     ); // false\n      this.assertTrue ( str.startsWith(\"not to be\", 10) ); // true\n    },\n\n\n    \"test endsWith()\" : function ()\n    {\n      var str = \"To be, or not to be, that is the question.\";\n\n      this.assertTrue ( str.endsWith(\"question.\") ); // true\n      this.assertFalse( str.endsWith(\"to be\")     ); // false\n      this.assertTrue ( str.endsWith(\"to be\", 19) ); // true\n\n      //\n      // Increase test covarage\n      //\n\n      // not finite\n      this.assertTrue ( str.endsWith(\"question.\", Number.POSITIVE_INFINITY) );\n      this.assertFalse( str.endsWith(\"to be\"    , Number.POSITIVE_INFINITY) );\n      // float\n      this.assertTrue ( str.endsWith(\"question.\", 42.2) );\n      this.assertFalse( str.endsWith(\"to be\"    , 42.2) );\n      // len > str.length\n      this.assertTrue ( str.endsWith(\"question.\", 43) );\n      this.assertFalse( str.endsWith(\"to be\"    , 43) );\n\n    }\n  }\n});\n"
+  ]
+}

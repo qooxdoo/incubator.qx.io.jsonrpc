@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/source/class/qx/io/jsonrpc/protocol/Result.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "jsonrpc",
+    "protocol",
+    "Message",
+    "properties",
+    "id",
+    "check",
+    "value",
+    "lang",
+    "Type",
+    "isNumber",
+    "parseInt",
+    "result",
+    "nullable",
+    "construct",
+    "set",
+    "Result"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;;AAMAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EAAgD;AAC9CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBC,OADe;AAE9CC,IAAAA,UAAU,EAAE;AAEV;;;AAGAC,MAAAA,EAAE,EAAG;AACHC,QAAAA,KAAK,EAAEC,KAAK,IAAId,EAAE,CAACe,IAAH,CAAQC,IAAR,CAAaC,QAAb,CAAsBH,KAAtB,KAAgCI,QAAQ,CAACJ,KAAD,EAAQ,EAAR,CAAR,KAAwBA;AADrE,OALK;AASVK,MAAAA,MAAM,EAAG;AACPC,QAAAA,QAAQ,EAAE;AADH;AATC,KAFkC;;AAe9C;;;;;AAKAC,IAAAA,SAAS,CAACT,EAAD,EAAKO,MAAL,EAAa;AACpB,WAAKG,GAAL,CAAS;AAACV,QAAAA,EAAD;AAAKO,QAAAA;AAAL,OAAT;AACD;;AAtB6C,GAAhD;AAxBAnB,EAAAA,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBc,MAAvB,CAA8BpB,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * A JSON-RPC v2.0 result object, which is a response to a {@link qx.io.jsonrpc.protocol.Request},\n * indicating a successfully processed request.\n *\n * @see https://www.jsonrpc.org/specification#response_object\n */\nqx.Class.define(\"qx.io.jsonrpc.protocol.Result\",{\n  extend: qx.io.jsonrpc.protocol.Message,\n  properties: {\n\n    /**\n     * The integer id of the request\n     */\n    id : {\n      check: value => qx.lang.Type.isNumber(value) && parseInt(value, 10) === value\n    },\n\n    result : {\n      nullable: true\n    }\n  },\n  /**\n   * The result messsage constructor\n   * @param {Number} id^\n   * @param {*} result\n   */\n  construct(id, result) {\n    this.set({id, result})\n  }\n});\n"
+  ]
+}

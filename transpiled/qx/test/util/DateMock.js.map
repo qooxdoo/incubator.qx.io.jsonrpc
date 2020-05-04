@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/util/DateMock.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "dateMap",
+    "__date",
+    "members",
+    "getFullYear",
+    "fullYear",
+    "getMonth",
+    "month",
+    "getDate",
+    "date",
+    "getDay",
+    "day",
+    "getHours",
+    "hours",
+    "getSeconds",
+    "seconds",
+    "getMinutes",
+    "minutes",
+    "getMilliseconds",
+    "milliseconds",
+    "getTimezoneOffset",
+    "timezoneOffset",
+    "getTime",
+    "time",
+    "test",
+    "util",
+    "DateMock"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAGEC,IAAAA,SAAS,EAAG,mBAASC,OAAT,EACZ;AACE;AACA,WAAKC,MAAL,GAAcD,OAAd;AACD,KAPH;AASEE,IAAAA,OAAO,EACP;AACEC,MAAAA,WAAW,EAAG,uBAAW;AACvB,eAAO,KAAKF,MAAL,CAAYG,QAAnB;AACD,OAHH;AAKEC,MAAAA,QAAQ,EAAG,oBAAW;AACpB,eAAO,KAAKJ,MAAL,CAAYK,KAAnB;AACD,OAPH;AASEC,MAAAA,OAAO,EAAG,mBAAW;AACnB,eAAO,KAAKN,MAAL,CAAYO,IAAnB;AACD,OAXH;AAaEC,MAAAA,MAAM,EAAG,kBAAW;AAClB,eAAO,KAAKR,MAAL,CAAYS,GAAnB;AACD,OAfH;AAiBEC,MAAAA,QAAQ,EAAG,oBAAW;AACpB,eAAO,KAAKV,MAAL,CAAYW,KAAnB;AACD,OAnBH;AAqBEC,MAAAA,UAAU,EAAG,sBAAW;AACtB,eAAO,KAAKZ,MAAL,CAAYa,OAAnB;AACD,OAvBH;AAyBEC,MAAAA,UAAU,EAAG,sBAAW;AACtB,eAAO,KAAKd,MAAL,CAAYe,OAAnB;AACD,OA3BH;AA6BEC,MAAAA,eAAe,EAAG,2BAAW;AAC3B,eAAO,KAAKhB,MAAL,CAAYiB,YAAnB;AACD,OA/BH;AAiCEC,MAAAA,iBAAiB,EAAG,6BAAW;AAC7B,eAAO,KAAKlB,MAAL,CAAYmB,cAAnB;AACD,OAnCH;AAqCEC,MAAAA,OAAO,EAAG,mBAAU;AAClB,eAAO,KAAKpB,MAAL,CAAYqB,IAAnB;AACD;AAvCH;AAVF,GADA;AAlBAhC,EAAAA,EAAE,CAACiC,IAAH,CAAQC,IAAR,CAAaC,QAAb,CAAsBhC,aAAtB,GAAsCA,aAAtC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.util.DateMock\",\n{\n  extend : qx.core.Object,\n\n  construct : function(dateMap)\n  {\n    this.base(arguments);\n    this.__date = dateMap;\n  },\n\n  members :\n  {\n    getFullYear : function() {\n      return this.__date.fullYear;\n    },\n\n    getMonth : function() {\n      return this.__date.month;\n    },\n\n    getDate : function() {\n      return this.__date.date;\n    },\n\n    getDay : function() {\n      return this.__date.day;\n    },\n\n    getHours : function() {\n      return this.__date.hours;\n    },\n\n    getSeconds : function() {\n      return this.__date.seconds;\n    },\n\n    getMinutes : function() {\n      return this.__date.minutes;\n    },\n\n    getMilliseconds : function() {\n      return this.__date.milliseconds;\n    },\n\n    getTimezoneOffset : function() {\n      return this.__date.timezoneOffset;\n    },\n\n    getTime : function(){\n      return this.__date.time;\n    }\n  }\n});"
+  ]
+}

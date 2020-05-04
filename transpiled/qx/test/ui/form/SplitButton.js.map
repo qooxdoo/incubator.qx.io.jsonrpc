@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/form/SplitButton.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "setUp",
+    "_split",
+    "form",
+    "SplitButton",
+    "getRoot",
+    "add",
+    "tearDown",
+    "destroy",
+    "flush",
+    "testArrowAvailable",
+    "setIcon",
+    "arrow",
+    "getChildControl",
+    "icon",
+    "assertTrue",
+    "isVisible",
+    "setShow",
+    "assertFalse"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADtB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAG,iBAAW;AACjB,aAAKC,MAAL,GAAc,IAAIZ,EAAE,CAACQ,EAAH,CAAMK,IAAN,CAAWC,WAAf,EAAd;AACA,aAAKC,OAAL,GAAeC,GAAf,CAAmB,KAAKJ,MAAxB;AACD,OAJH;AAOEK,MAAAA,QAAQ,EAAG,oBAAW;AACpB,aAAKL,MAAL,CAAYM,OAAZ;;AACA,aAAKC,KAAL;AACD,OAVH;AAaEC,MAAAA,kBAAkB,EAAG,8BAAW;AAC9B,aAAKR,MAAL,CAAYS,OAAZ,CAAoB,yCAApB;;AAEA,YAAIC,KAAK,GAAG,KAAKV,MAAL,CAAYW,eAAZ,CAA4B,OAA5B,EAAqCA,eAArC,CAAqD,MAArD,CAAZ;;AACA,YAAIC,IAAI,GAAG,KAAKZ,MAAL,CAAYW,eAAZ,CAA4B,QAA5B,EAAsCA,eAAtC,CAAsD,MAAtD,CAAX;;AAEA,aAAKJ,KAAL,GAN8B,CAQ9B;;AACA,aAAKM,UAAL,CAAgBH,KAAK,CAACI,SAAN,EAAhB,EAAmC,YAAnC;AACA,aAAKD,UAAL,CAAgBD,IAAI,CAACE,SAAL,EAAhB,EAAkC,WAAlC;;AAEA,aAAKd,MAAL,CAAYe,OAAZ,CAAoB,OAApB;;AACA,aAAKR,KAAL,GAb8B,CAe9B;;AACA,aAAKM,UAAL,CAAgBH,KAAK,CAACI,SAAN,EAAhB,EAAmC,eAAnC;AACA,aAAKE,WAAL,CAAiBJ,IAAI,CAACE,SAAL,EAAjB,EAAmC,cAAnC;AACD;AA/BH;AAJF,GADA;AAjBA1B,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWK,IAAX,CAAgBC,WAAhB,CAA4BX,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2013 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (wittemann)\n\n************************************************************************ */\nqx.Class.define(\"qx.test.ui.form.SplitButton\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  members :\n  {\n    setUp : function() {\n      this._split = new qx.ui.form.SplitButton();\n      this.getRoot().add(this._split);\n    },\n\n\n    tearDown : function() {\n      this._split.destroy();\n      this.flush();\n    },\n\n\n    testArrowAvailable : function() {\n      this._split.setIcon(\"qx/icon/Oxygen/22/emotes/face-smile.png\");\n\n      var arrow = this._split.getChildControl(\"arrow\").getChildControl(\"icon\");\n      var icon = this._split.getChildControl(\"button\").getChildControl(\"icon\");\n\n      this.flush();\n\n      // check initial values\n      this.assertTrue(arrow.isVisible(), \"init arrow\");\n      this.assertTrue(icon.isVisible(), \"init icon\");\n\n      this._split.setShow(\"label\");\n      this.flush();\n\n      // check changed values\n      this.assertTrue(arrow.isVisible(), \"changed arrow\");\n      this.assertFalse(icon.isVisible(), \"changed icon\");\n    }\n  }\n});"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/testclasses/RootClass.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "construct",
+    "Assert",
+    "assertTrue",
+    "state",
+    "members",
+    "getSomething",
+    "test",
+    "testclasses",
+    "RootClass"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,+BAAhB,EAAiD;AAC/CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MAD+B;AAG/CC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACAT,MAAAA,EAAE,CAACO,IAAH,CAAQG,MAAR,CAAeC,UAAf,CAA0B,KAAKC,KAAL,KAAe,IAAzC;AACA,WAAKA,KAAL,GAAa,CAAE,MAAF,CAAb;AACD,KAP8C;AAS/CC,IAAAA,OAAO,EAAE;AACPD,MAAAA,KAAK,EAAE,IADA;AAGPE,MAAAA,YAAY,EAAE,wBAAW;AACvB,eAAO,MAAP;AACD;AALM;AATsC,GAAjD;AAAAd,EAAAA,EAAE,CAACe,IAAH,CAAQC,WAAR,CAAoBC,SAApB,CAA8Bd,aAA9B,GAA8CA,aAA9C",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.testclasses.RootClass\", {\n  extend: qx.core.Object,\n  \n  construct: function() {\n    this.base(arguments);\n    qx.core.Assert.assertTrue(this.state === null);\n    this.state = [ \"root\" ];\n  },\n  \n  members: {\n    state: null,\n    \n    getSomething: function() {\n      return \"root\";\n    }\n  }\n});"
+  ]
+}

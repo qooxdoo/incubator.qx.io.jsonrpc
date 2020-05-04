@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/storage/Local.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "bom",
+    "storage",
+    "WebStorageTestCase",
+    "include",
+    "dev",
+    "unit",
+    "MRequirements",
+    "members",
+    "_getStorage",
+    "Storage",
+    "getLocal",
+    "Local"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,GAAR,CAAYC,OAAZ,CAAoBC,kBAD/B;AAEEC,IAAAA,OAAO,EAAE,CAACX,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYC,aAAb,CAFX;AAIEC,IAAAA,OAAO,EAAE;AACPC,MAAAA,WAAW,EAAE,uBAAW;AACtB,eAAOhB,EAAE,CAACQ,GAAH,CAAOS,OAAP,CAAeC,QAAf,EAAP;AACD;AAHM;AAJX,GADA;AAlBAlB,EAAAA,EAAE,CAACO,IAAH,CAAQC,GAAR,CAAYC,OAAZ,CAAoBU,KAApB,CAA0BhB,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Adrian Olaru (adrianolaru)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.bom.storage.Local\",\n{\n  extend : qx.test.bom.storage.WebStorageTestCase,\n  include: [qx.dev.unit.MRequirements],\n\n  members: {\n    _getStorage: function() {\n      return qx.bom.Storage.getLocal();\n    }\n  }\n});\n"
+  ]
+}

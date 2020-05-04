@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/mobile/page/Manager.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "mobile",
+    "MobileTestCase",
+    "members",
+    "testCreate",
+    "manager",
+    "ui",
+    "page",
+    "Manager",
+    "dispose",
+    "testAddTablet",
+    "NavigationPage",
+    "addMaster",
+    "addDetail",
+    "testAddMobile",
+    "page1",
+    "page2"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeC,cAD1B;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,UAAU,EAAG,sBACb;AACE,YAAIC,OAAO,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,IAAb,CAAkBC,OAAtB,EAAd;AACAH,QAAAA,OAAO,CAACI,OAAR;AACD,OALH;AAQEC,MAAAA,aAAa,EAAG,yBAAW;AACzB,YAAIL,OAAO,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,IAAb,CAAkBC,OAAtB,CAA8B,IAA9B,CAAd;AACA,YAAID,IAAI,GAAG,IAAId,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,IAAb,CAAkBI,cAAtB,EAAX;AACAN,QAAAA,OAAO,CAACO,SAAR,CAAkB,CAACL,IAAD,CAAlB;AACAF,QAAAA,OAAO,CAACQ,SAAR,CAAkB,CAACN,IAAD,CAAlB;AACAF,QAAAA,OAAO,CAACI,OAAR;AACD,OAdH;AAiBEK,MAAAA,aAAa,EAAG,yBAAW;AACzB,YAAIT,OAAO,GAAG,IAAIZ,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,IAAb,CAAkBC,OAAtB,CAA8B,KAA9B,CAAd;AACA,YAAIO,KAAK,GAAG,IAAItB,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,IAAb,CAAkBI,cAAtB,EAAZ;AACA,YAAIK,KAAK,GAAG,IAAIvB,EAAE,CAACa,EAAH,CAAML,MAAN,CAAaM,IAAb,CAAkBI,cAAtB,EAAZ;AACAN,QAAAA,OAAO,CAACO,SAAR,CAAkB,CAACG,KAAD,CAAlB;AACAV,QAAAA,OAAO,CAACO,SAAR,CAAkB,CAACI,KAAD,CAAlB;AACAX,QAAAA,OAAO,CAACI,OAAR;AACD;AAxBH;AAJF,GADA;AAlBAhB,EAAAA,EAAE,CAACO,IAAH,CAAQC,MAAR,CAAeM,IAAf,CAAoBC,OAApB,CAA4BZ,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2012 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tino Butz (tbtz)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.mobile.page.Manager\",\n{\n  extend : qx.test.mobile.MobileTestCase,\n\n  members :\n  {\n    testCreate : function()\n    {\n      var manager = new qx.ui.mobile.page.Manager();\n      manager.dispose();\n    },\n\n\n    testAddTablet : function() {\n      var manager = new qx.ui.mobile.page.Manager(true);\n      var page = new qx.ui.mobile.page.NavigationPage();\n      manager.addMaster([page]);\n      manager.addDetail([page]);\n      manager.dispose();\n    },\n\n\n    testAddMobile : function() {\n      var manager = new qx.ui.mobile.page.Manager(false);\n      var page1 = new qx.ui.mobile.page.NavigationPage();\n      var page2 = new qx.ui.mobile.page.NavigationPage();\n      manager.addMaster([page1]);\n      manager.addMaster([page2]);\n      manager.dispose();\n    }\n  }\n\n});\n"
+  ]
+}

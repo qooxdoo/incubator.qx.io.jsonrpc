@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/log/RingBuffer.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "__initialLogLevel",
+    "log",
+    "Logger",
+    "getLevel",
+    "tearDown",
+    "setLevel",
+    "appender",
+    "unregister",
+    "testLog",
+    "RingBuffer",
+    "clear",
+    "register",
+    "debug",
+    "events",
+    "getAllLogEvents",
+    "assertEquals",
+    "length",
+    "items",
+    "text",
+    "testExceedMaxMessages",
+    "i",
+    "process",
+    "index",
+    "testRetrieveLogEvents",
+    "event",
+    "retrieveLogEvents",
+    "testClearHistory",
+    "clearHistory",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Fabian Jakobs (fjakobs)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.log.RingBuffer\",\n{\n  extend : qx.dev.unit.TestCase,\n\n  members :\n  {\n    setUp : function()\n    {\n      this.__initialLogLevel = qx.log.Logger.getLevel();\n    },\n\n    tearDown : function()\n    {\n      qx.log.Logger.setLevel(this.__initialLogLevel);\n      if (this.appender) {\n        qx.log.Logger.unregister(this.appender);\n      }\n      this.appender = null;\n    },\n\n    testLog : function()\n    {\n      this.appender = new qx.log.appender.RingBuffer();\n\n      qx.log.Logger.setLevel(\"debug\");\n      qx.log.Logger.clear();\n      qx.log.Logger.register(this.appender);\n      qx.log.Logger.debug(\"test\");\n\n      var events = this.appender.getAllLogEvents();\n      this.assertEquals(1, events.length);\n      this.assertEquals(\"test\", events[0].items[0].text);\n\n      qx.log.Logger.unregister(this.appender);\n      this.appender = null;\n    },\n\n\n    testExceedMaxMessages : function()\n    {\n      var appender = new qx.log.appender.RingBuffer(2);\n\n      for (var i=0; i<10; i++) {\n        appender.process({index: i});\n      }\n\n      var events = appender.getAllLogEvents();\n      this.assertEquals(2, events.length);\n      this.assertEquals(8, events[0].index);\n      this.assertEquals(9, events[1].index);\n    },\n\n\n    testRetrieveLogEvents : function()\n    {\n      var appender = new qx.log.appender.RingBuffer(6);\n\n      for (var i=0; i<10; i++)\n      {\n        var event = {\n          index: i\n        };\n        appender.process(event);\n      }\n\n      var events = appender.retrieveLogEvents(5);\n      this.assertEquals(5, events.length);\n      this.assertEquals(5, events[0].index);\n      this.assertEquals(9, events[4].index);\n    },\n\n\n    testClearHistory : function()\n    {\n      var appender = new qx.log.appender.RingBuffer();\n      appender.process({});\n      this.assertEquals(1, appender.getAllLogEvents().length);\n\n      appender.clearHistory();\n      this.assertEquals(0, appender.getAllLogEvents().length);\n    }\n  }\n});\n"
+  ]
+}

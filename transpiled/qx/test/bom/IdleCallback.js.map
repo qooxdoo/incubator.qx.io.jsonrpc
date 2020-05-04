@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/IdleCallback.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MMock",
+    "MRequirements",
+    "members",
+    "tearDown",
+    "getSandbox",
+    "restore",
+    "setting",
+    "stub",
+    "core",
+    "Environment",
+    "withArgs",
+    "returns",
+    "clb",
+    "spy",
+    "bom",
+    "IdleCallback",
+    "request",
+    "wait",
+    "assertCalledOnce",
+    "assertFalse",
+    "args",
+    "didTimeout",
+    "assertFunction",
+    "timeRemaining",
+    "assertNumber",
+    "cancel",
+    "assertNotCalled",
+    "get",
+    "skip",
+    "test"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2016 GONICUS GmbH, Germany, http://www.gonicus.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Cajus Pollmeier (cajus)\n\n************************************************************************ */\n\n\nqx.Class.define(\"qx.test.bom.IdleCallback\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : [\n    qx.dev.unit.MMock,\n    qx.dev.unit.MRequirements\n  ],\n\n  members :\n  {\n    tearDown: function() {\n      this.getSandbox().restore();\n    },\n\n\n    \"test: emulated requestIdleCallback\" : function() {\n      var setting = this.stub(qx.core.Environment, \"get\").withArgs(\"client.idle\");\n      setting.returns(false);\n\n      var clb = this.spy();\n      qx.bom.IdleCallback.request(clb);\n      this.getSandbox().restore();\n\n      this.wait(500, function() {\n        this.assertCalledOnce(clb);\n        this.assertFalse(clb.args[0][0].didTimeout);\n        this.assertFunction(clb.args[0][0].timeRemaining);\n        this.assertNumber(clb.args[0][0].timeRemaining());\n        this.assertNumber(clb.args[0][0].timeRemaining(), 0);\n      }, this);\n    },\n\n    \"test: emulated cancelIdleCallback\" : function() {\n      var setting = this.stub(qx.core.Environment, \"get\").withArgs(\"client.idle\");\n      setting.returns(false);\n\n      var clb = this.spy();\n      var request = qx.bom.IdleCallback.request(clb);\n      qx.bom.IdleCallback.cancel(request);\n      this.getSandbox().restore();\n\n      this.wait(500, function() {\n        this.assertNotCalled(clb);\n      }, this);\n    },\n\n\n    \"test: native requestIdleCallback\" : function() {\n      if (!qx.core.Environment.get(\"client.idle\")) {\n        this.skip();\n      }\n\n      var clb = this.spy();\n      qx.bom.IdleCallback.request(clb);\n      this.wait(500, function() {\n        this.assertCalledOnce(clb);\n        this.assertFalse(clb.args[0][0].didTimeout);\n        this.assertFunction(clb.args[0][0].timeRemaining);\n        this.assertNumber(clb.args[0][0].timeRemaining());\n      }, this);\n    },\n\n\n    \"test: native cancelIdleCallback\" : function() {\n      if (!qx.core.Environment.get(\"client.idle\")) {\n        this.skip();\n      }\n\n      var clb = this.spy();\n      var request = qx.bom.IdleCallback.request(clb);\n      qx.bom.IdleCallback.cancel(request);\n\n      this.wait(500, function() {\n        this.assertNotCalled(clb);\n      }, this);\n    }\n  }\n});\n"
+  ]
+}

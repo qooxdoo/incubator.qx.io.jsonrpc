@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/bom/media/Audio.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "bom",
+    "media",
+    "MediaTestCase",
+    "include",
+    "dev",
+    "unit",
+    "MRequirements",
+    "members",
+    "_getSrc",
+    "core",
+    "Environment",
+    "get",
+    "util",
+    "ResourceManager",
+    "getInstance",
+    "toUri",
+    "_createMedia",
+    "Audio",
+    "_src",
+    "_checkFeature",
+    "require",
+    "hasAudio"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;AAIA;;;;AAKAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,yBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,GAAR,CAAYC,KAAZ,CAAkBC,aAD7B;AAEEC,IAAAA,OAAO,EAAE,CAACX,EAAE,CAACY,GAAH,CAAOC,IAAP,CAAYC,aAAb,CAFX;AAIEC,IAAAA,OAAO,EACP;AACEC,MAAAA,OAAO,EAAE,mBAAW;AAClB,YAAIhB,EAAE,CAACiB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,gBAAxB,CAAJ,EAA+C;AAC7C,iBAAOnB,EAAE,CAACoB,IAAH,CAAQC,eAAR,CAAwBC,WAAxB,GAAsCC,KAAtC,CAA4C,yBAA5C,CAAP;AACD,SAFD,MAEO,IAAGvB,EAAE,CAACiB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,gBAAxB,CAAH,EAA8C;AACnD,iBAAOnB,EAAE,CAACoB,IAAH,CAAQC,eAAR,CAAwBC,WAAxB,GAAsCC,KAAtC,CAA4C,yBAA5C,CAAP;AACD,SAFM,MAEA,IAAGvB,EAAE,CAACiB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,gBAAxB,CAAH,EAA8C;AACnD,iBAAOnB,EAAE,CAACoB,IAAH,CAAQC,eAAR,CAAwBC,WAAxB,GAAsCC,KAAtC,CAA4C,yBAA5C,CAAP;AACD;AACF,OATH;AAWEC,MAAAA,YAAY,EAAE,wBAAW;AACvB,eAAO,IAAIxB,EAAE,CAACQ,GAAH,CAAOC,KAAP,CAAagB,KAAjB,CAAuB,KAAKC,IAA5B,CAAP;AACD,OAbH;AAeEC,MAAAA,aAAa,EAAE,yBAAW;AACxB,aAAKC,OAAL,CAAa,CAAC,OAAD,CAAb;AACD,OAjBH;AAmBEC,MAAAA,QAAQ,EAAE,oBAAW;AACnB,eAAO7B,EAAE,CAACiB,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,YAAxB,CAAP;AACD;AArBH;AALF,GADA;AA3BAnB,EAAAA,EAAE,CAACO,IAAH,CAAQC,GAAR,CAAYC,KAAZ,CAAkBgB,KAAlB,CAAwBtB,aAAxB,GAAwCA,aAAxC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2007-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Adrian Olaru (adrianolaru)\n\n************************************************************************ */\n\n/* ************************************************************************\n\n\n************************************************************************ */\n/**\n *\n * @asset(qx/test/media/*)\n */\n\nqx.Class.define(\"qx.test.bom.media.Audio\",\n{\n  extend : qx.test.bom.media.MediaTestCase,\n  include: [qx.dev.unit.MRequirements],\n\n  members :\n  {\n    _getSrc: function() {\n      if (qx.core.Environment.get(\"html.audio.mp3\")) {\n        return qx.util.ResourceManager.getInstance().toUri(\"qx/test/media/knock.mp3\");\n      } else if(qx.core.Environment.get(\"html.audio.ogg\")) {\n        return qx.util.ResourceManager.getInstance().toUri(\"qx/test/media/knock.ogg\");\n      } else if(qx.core.Environment.get(\"html.audio.wav\")) {\n        return qx.util.ResourceManager.getInstance().toUri(\"qx/test/media/knock.wav\");\n      }\n    },\n\n    _createMedia: function() {\n      return new qx.bom.media.Audio(this._src);\n    },\n\n    _checkFeature: function() {\n      this.require([\"audio\"]);\n    },\n\n    hasAudio: function() {\n      return qx.core.Environment.get(\"html.audio\");\n    }\n  }\n});\n"
+  ]
+}

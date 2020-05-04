@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/Browser.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "testForIn",
+    "map",
+    "order",
+    "core",
+    "Environment",
+    "get",
+    "indexOf",
+    "i",
+    "key",
+    "assertEquals",
+    "Browser"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iBAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADtB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,SAAS,EAAG,qBACZ;AACE,YAAIC,GAAG,GAAG,EAAV;AAEAA,QAAAA,GAAG,CAAC,KAAD,CAAH,GAAa,GAAb;AACAA,QAAAA,GAAG,CAAC,KAAD,CAAH,GAAa,GAAb;AACAA,QAAAA,GAAG,CAAC,KAAD,CAAH,GAAa,GAAb;AAEA,YAAIC,KAAK,GAAG,CAAC,KAAD,EAAQ,KAAR,EAAe,KAAf,CAAZ,CAPF,CASE;;AACA,YACEb,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,cAAxB,EAAwCC,OAAxC,CAAgD,QAAhD,KAA6D,CAAC,CAA9D,IACAjB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,cAAxB,KAA2C,MAD3C,IAEChB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,cAAxB,KAA2C,OAA3C,IACAhB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,iBAAxB,KAA8C,IAH/C,IAIChB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,cAAxB,KAA2C,IAA3C,IACAhB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,sBAAxB,KAAmD,CALpD,IAMChB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,cAAxB,KAA2C,SAA3C,IACAhB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,iBAAxB,KAA8C,EAP/C,IAQChB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,cAAxB,KAA2C,QAA3C,IACAhB,EAAE,CAACc,IAAH,CAAQC,WAAR,CAAoBC,GAApB,CAAwB,iBAAxB,KAA8C,CAVjD,EAWE;AACA,cAAIE,CAAC,GAAG,CAAR,CADA,CAEA;;AACA,eAAK,IAAIC,GAAT,IAAgBP,GAAhB,EAAqB;AACnB,gBAAIM,CAAC,IAAI,CAAT,EAAY;AACV,mBAAKE,YAAL,CAAkB,KAAlB,EAAyBD,GAAzB,EAA8B,GAA9B;AACD,aAFD,MAEO,IAAID,CAAC,IAAI,CAAT,EAAY;AACjB,mBAAKE,YAAL,CAAkB,KAAlB,EAAyBD,GAAzB,EAA8B,GAA9B;AACD,aAFM,MAEA;AACL,mBAAKC,YAAL,CAAkB,KAAlB,EAAyBD,GAAzB,EAA8B,GAA9B;AACD;;AACDD,YAAAA,CAAC;AACF;AACF,SAxBD,CA0BA;AA1BA,aA2BK;AACH,gBAAIA,CAAC,GAAG,CAAR,CADG,CAEH;;AACA,iBAAK,IAAIC,GAAT,IAAgBP,GAAhB,EAAqB;AACnB,mBAAKQ,YAAL,CAAkBP,KAAK,CAACK,CAAD,CAAvB,EAA4BC,GAA5B;AACAD,cAAAA,CAAC;AACF;AACF;AACF;AA/CH;AAJF,GADA;AAjBAlB,EAAAA,EAAE,CAACO,IAAH,CAAQc,OAAR,CAAgBlB,aAAhB,GAAgCA,aAAhC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Martin Wittemann (martinwittemann)\n\n************************************************************************ */\nqx.Class.define(\"qx.test.Browser\",\n{\n  extend : qx.test.ui.LayoutTestCase,\n\n  members :\n  {\n    testForIn : function()\n    {\n      var map = {};\n\n      map[\"234\"] = 234;\n      map[\"123\"] = 123;\n      map[\"345\"] = 345;\n\n      var order = [\"234\", \"123\", \"345\"];\n\n      // google chrome, opera 10.5, Safari 7 and ie 9\n      if (\n        qx.core.Environment.get(\"browser.name\").indexOf(\"chrome\") != -1 ||\n        qx.core.Environment.get(\"browser.name\") == \"edge\" ||\n        (qx.core.Environment.get(\"browser.name\") == \"opera\" &&\n         qx.core.Environment.get(\"browser.version\") >= 10.5) ||\n        (qx.core.Environment.get(\"browser.name\") == \"ie\" &&\n         qx.core.Environment.get(\"browser.documentmode\") >= 9) ||\n        (qx.core.Environment.get(\"browser.name\") == \"firefox\" &&\n         qx.core.Environment.get(\"browser.version\") >= 21) ||\n        (qx.core.Environment.get(\"browser.name\") == \"safari\" &&\n         qx.core.Environment.get(\"browser.version\") >= 7)\n      ) {\n        var i = 0;\n        // is in a sorted order\n        for (var key in map) {\n          if (i == 0) {\n            this.assertEquals(\"123\", key, \"1\");\n          } else if (i == 1) {\n            this.assertEquals(\"234\", key, \"2\");\n          } else {\n            this.assertEquals(\"345\", key, \"3\");\n          }\n          i++;\n        }\n      }\n\n      // default browsers\n      else {\n        var i = 0;\n        // should be the same order the elements were added\n        for (var key in map) {\n          this.assertEquals(order[i], key);\n          i++;\n        }\n      }\n    }\n  }\n});\n"
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "className": "qx.io.jsonrpc.exception.Transport",
+  "packageName": "qx.io.jsonrpc.exception",
+  "name": "Transport",
+  "superClass": "qx.io.Exception",
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 23,
+        "column": 0
+      },
+      "end": {
+        "line": 39,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        },
+        {
+          "name": "@description",
+          "body": "<p>A class for representing errors that occurred during the request transport.\n  In the context of HTTP requests, the error code is the HTTP error code.</p>"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "statics": {
+    "TIMEOUT": {
+      "location": {
+        "start": {
+          "line": 27,
+          "column": 4
+        },
+        "end": {
+          "line": 27,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "ABORTED": {
+      "location": {
+        "start": {
+          "line": 28,
+          "column": 4
+        },
+        "end": {
+          "line": 28,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "NO_DATA": {
+      "location": {
+        "start": {
+          "line": 29,
+          "column": 4
+        },
+        "end": {
+          "line": 29,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "INVALID_MSG_DATA": {
+      "location": {
+        "start": {
+          "line": 30,
+          "column": 4
+        },
+        "end": {
+          "line": 30,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "CANCELLED": {
+      "location": {
+        "start": {
+          "line": 31,
+          "column": 4
+        },
+        "end": {
+          "line": 31,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "INVALD_URI": {
+      "location": {
+        "start": {
+          "line": 32,
+          "column": 4
+        },
+        "end": {
+          "line": 32,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "FAILED": {
+      "location": {
+        "start": {
+          "line": 33,
+          "column": 4
+        },
+        "end": {
+          "line": 33,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "INVALID_ID": {
+      "location": {
+        "start": {
+          "line": 34,
+          "column": 4
+        },
+        "end": {
+          "line": 34,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "INVALID_JSON": {
+      "location": {
+        "start": {
+          "line": 35,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "DUPLICATE_ID": {
+      "location": {
+        "start": {
+          "line": 36,
+          "column": 4
+        },
+        "end": {
+          "line": 36,
+          "column": 25
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    },
+    "UNKNOWN_ID": {
+      "location": {
+        "start": {
+          "line": 37,
+          "column": 4
+        },
+        "end": {
+          "line": 37,
+          "column": 25
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

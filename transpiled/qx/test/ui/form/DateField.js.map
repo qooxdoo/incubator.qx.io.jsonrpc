@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/form/DateField.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "LayoutTestCase",
+    "members",
+    "setUp",
+    "__datefield",
+    "form",
+    "DateField",
+    "getRoot",
+    "add",
+    "tearDown",
+    "destroy",
+    "datefield",
+    "chooser",
+    "getChildControl",
+    "date",
+    "Date",
+    "setValue",
+    "assertEquals",
+    "getValue",
+    "textfield",
+    "dateStr",
+    "formatDate",
+    "_onChangeDate",
+    "getDateFormat",
+    "format",
+    "skip",
+    "msg",
+    "dev",
+    "unit",
+    "RequirementError"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,cADrB;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,KAAK,EAAE,iBAAW;AAChB,aAAKC,WAAL,GAAmB,IAAIZ,EAAE,CAACQ,EAAH,CAAMK,IAAN,CAAWC,SAAf,EAAnB;AACA,aAAKC,OAAL,GAAeC,GAAf,CAAmB,KAAKJ,WAAxB;AACD,OAJH;AAMEK,MAAAA,QAAQ,EAAE,oBAAW;AACnB,aAAKL,WAAL,CAAiBM,OAAjB;;AACA;AACD,OATH;AAWE,kDAA4C,6CAAW;AACrD,YAAIC,SAAS,GAAG,KAAKP,WAArB;AAAA,YACIQ,OAAO,GAAGD,SAAS,CAACE,eAAV,CAA0B,MAA1B,CADd;AAAA,YAEIC,IAAI,GAAG,IAAIC,IAAJ,EAFX;AAIAJ,QAAAA,SAAS,CAACK,QAAV,CAAmBF,IAAnB;AACA,aAAKG,YAAL,CAAkBH,IAAlB,EAAwBF,OAAO,CAACM,QAAR,EAAxB;AACD,OAlBH;AAoBE,qDAA+C,gDAAW;AACxD,YAAIP,SAAS,GAAG,KAAKP,WAArB;AAAA,YACIe,SAAS,GAAGR,SAAS,CAACE,eAAV,CAA0B,WAA1B,CADhB;AAAA,YAEID,OAAO,GAAID,SAAS,CAACE,eAAV,CAA0B,MAA1B,CAFf;AAAA,YAGIC,IAAI,GAAG,IAAIC,IAAJ,EAHX;AAAA,YAIIK,OAAO,GAAG,KAAKC,UAAL,CAAgBP,IAAhB,CAJd;AAMAF,QAAAA,OAAO,CAACI,QAAR,CAAiBF,IAAjB,EAPwD,CASxD;;AACAH,QAAAA,SAAS,CAACW,aAAV;;AAEA,aAAKL,YAAL,CAAkBG,OAAlB,EAA2BD,SAAS,CAACD,QAAV,EAA3B;AACD,OAjCH;AAmCEG,MAAAA,UAAU,EAAE,oBAASP,IAAT,EAAe;AACzB,eAAO,KAAKV,WAAL,CAAiBmB,aAAjB,GAAiCC,MAAjC,CAAwCV,IAAxC,CAAP;AACD,OArCH;AAuCEW,MAAAA,IAAI,EAAE,cAASC,GAAT,EAAc;AAClB,cAAM,IAAIlC,EAAE,CAACmC,GAAH,CAAOC,IAAP,CAAYC,gBAAhB,CAAiC,IAAjC,EAAuCH,GAAvC,CAAN;AACD;AAzCH;AAJF,GADA;AAlBAlC,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWK,IAAX,CAAgBC,SAAhB,CAA0BX,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.form.DateField\",\n{\n  extend: qx.test.ui.LayoutTestCase,\n\n  members:\n  {\n    setUp: function() {\n      this.__datefield = new qx.ui.form.DateField();\n      this.getRoot().add(this.__datefield);\n    },\n\n    tearDown: function() {\n      this.__datefield.destroy();\n      this.base(arguments);\n    },\n\n    \"test: setting value sets date of chooser\": function() {\n      var datefield = this.__datefield,\n          chooser = datefield.getChildControl(\"list\"),\n          date = new Date();\n\n      datefield.setValue(date);\n      this.assertEquals(date, chooser.getValue());\n    },\n\n    \"test: choosing date fills in formatted date\": function() {\n      var datefield = this.__datefield,\n          textfield = datefield.getChildControl(\"textfield\"),\n          chooser =  datefield.getChildControl(\"list\"),\n          date = new Date(),\n          dateStr = this.formatDate(date);\n\n      chooser.setValue(date);\n\n      // Fake \"execute\" on calendar popup\n      datefield._onChangeDate();\n\n      this.assertEquals(dateStr, textfield.getValue());\n    },\n\n    formatDate: function(date) {\n      return this.__datefield.getDateFormat().format(date);\n    },\n\n    skip: function(msg) {\n      throw new qx.dev.unit.RequirementError(null, msg);\n    }\n\n  }\n});"
+  ]
+}

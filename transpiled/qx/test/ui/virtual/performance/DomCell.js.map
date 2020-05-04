@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/virtual/performance/DomCell.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "ui",
+    "virtual",
+    "performance",
+    "AbstractLayerTest",
+    "type",
+    "members",
+    "getLayer",
+    "layer",
+    "DomCell"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,OAAX,CAAmBC,WAAnB,CAA+BC,iBAD1C;AAEEC,IAAAA,IAAI,EAAG,UAFT;AAEqB;AAEnBC,IAAAA,OAAO,EACP;AACEC,MAAAA,QAAQ,EAAG,oBAAW;AACpB,eAAO,IAAId,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,OAAX,CAAmBC,WAAnB,CAA+BK,KAA/B,CAAqCC,OAAzC,EAAP;AACD;AAHH;AALF,GADA;AAlBAhB,EAAAA,EAAE,CAACO,IAAH,CAAQC,EAAR,CAAWC,OAAX,CAAmBC,WAAnB,CAA+BM,OAA/B,CAAuCb,aAAvC,GAAuDA,aAAvD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2009 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Jonathan Weiß (jonathan_rass)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.ui.virtual.performance.DomCell\",\n{\n  extend : qx.test.ui.virtual.performance.AbstractLayerTest,\n  type : \"abstract\", // disabled\n\n  members :\n  {\n    getLayer : function() {\n      return new qx.test.ui.virtual.performance.layer.DomCell();\n    }\n  }\n\n});\n"
+  ]
+}

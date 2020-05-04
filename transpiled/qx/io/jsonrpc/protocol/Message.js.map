@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/source/class/qx/io/jsonrpc/protocol/Message.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "properties",
+    "jsonrpc",
+    "check",
+    "init",
+    "members",
+    "toString",
+    "util",
+    "Serializer",
+    "toJson",
+    "toObject",
+    "toNativeObject",
+    "io",
+    "protocol",
+    "Message"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAiD;AAC/CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MAD+B;AAE/CC,IAAAA,UAAU,EAAE;AACVC,MAAAA,OAAO,EAAG;AACRC,QAAAA,KAAK,EAAE,QADC;AAERC,QAAAA,IAAI,EAAE;AAFE;AADA,KAFmC;AAS/CC,IAAAA,OAAO,EAAG;AACR;;;;AAIAC,MAAAA,QAAQ,GAAG;AACT,eAAOd,EAAE,CAACe,IAAH,CAAQC,UAAR,CAAmBC,MAAnB,CAA0B,IAA1B,CAAP;AACD,OAPO;;AASR;;;;AAIAC,MAAAA,QAAQ,GAAG;AACT,eAAOlB,EAAE,CAACe,IAAH,CAAQC,UAAR,CAAmBG,cAAnB,CAAkC,IAAlC,CAAP;AACD;;AAfO;AATqC,GAAjD;AArBAnB,EAAAA,EAAE,CAACoB,EAAH,CAAMV,OAAN,CAAcW,QAAd,CAAuBC,OAAvB,CAA+BnB,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * The base class for all JSON-RPC v2.0 object except {@link qx.io.jsonrpc.protocol.Batch}\n */\nqx.Class.define(\"qx.io.jsonrpc.protocol.Message\",{\n  extend: qx.core.Object,\n  properties: {\n    jsonrpc : {\n      check: \"String\",\n      init: \"2.0\"\n    }\n  },\n\n  members : {\n    /**\n     * Serialize to JSON string\n     * @return {String}\n     */\n    toString() {\n      return qx.util.Serializer.toJson(this);\n    },\n\n    /**\n     * Serialize to a native javascript object\n     * @return {Object}\n     */\n    toObject() {\n      return qx.util.Serializer.toNativeObject(this);\n    }\n  }\n});\n"
+  ]
+}

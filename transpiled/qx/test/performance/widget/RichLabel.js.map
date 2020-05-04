@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/performance/widget/RichLabel.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "performance",
+    "widget",
+    "AbstractWidget",
+    "members",
+    "_createWidget",
+    "ui",
+    "basic",
+    "Label",
+    "set",
+    "rich",
+    "RichLabel"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,sCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BC,cADtC;AAGEC,IAAAA,OAAO,EACP;AACEC,MAAAA,aAAa,EAAG,yBAAW;AACzB,eAAO,IAAIZ,EAAE,CAACa,EAAH,CAAMC,KAAN,CAAYC,KAAhB,CAAsB,aAAtB,EAAqCC,GAArC,CAAyC;AAACC,UAAAA,IAAI,EAAE;AAAP,SAAzC,CAAP;AACD;AAHH;AAJF,GADA;AAAAjB,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,MAApB,CAA2BS,SAA3B,CAAqCf,aAArC,GAAqDA,aAArD",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.performance.widget.RichLabel\",\n{\n  extend : qx.test.performance.widget.AbstractWidget,\n\n  members :\n  {\n    _createWidget : function() {\n      return new qx.ui.basic.Label(\"<b>juhu</b>\").set({rich: true});\n    }\n  }\n});"
+  ]
+}

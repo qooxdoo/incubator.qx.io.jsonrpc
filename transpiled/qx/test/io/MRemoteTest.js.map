@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/io/MRemoteTest.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "getUrl",
+    "path",
+    "util",
+    "ResourceManager",
+    "getInstance",
+    "toUri",
+    "isLocal",
+    "window",
+    "location",
+    "protocol",
+    "needsPHPWarning",
+    "warn",
+    "test",
+    "io",
+    "MRemoteTest"
+  ],
+  "mappings": ";;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EACA;AACEC,IAAAA,OAAO,EACP;AACEC,MAAAA,MAAM,EAAG,gBAASC,IAAT,EAAe;AACtB,eAAOR,EAAE,CAACS,IAAH,CAAQC,eAAR,CAAwBC,WAAxB,GAAsCC,KAAtC,CAA4CJ,IAA5C,CAAP;AACD,OAHH;AAMEK,MAAAA,OAAO,EAAG,mBAAW;AACnB,eAAOC,MAAM,CAACC,QAAP,CAAgBC,QAAhB,IAA4B,OAAnC;AACD,OARH;AAWEC,MAAAA,eAAe,EAAG,2BAAW;AAC3B,aAAKC,IAAL,CAAU,+DAAV;AACD;AAbH;AAFF,GADA;AAAAlB,EAAAA,EAAE,CAACmB,IAAH,CAAQC,EAAR,CAAWC,WAAX,CAAuBlB,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "qx.Mixin.define(\"qx.test.io.MRemoteTest\",\n{\n  members :\n  {\n    getUrl : function(path) {\n      return qx.util.ResourceManager.getInstance().toUri(path);\n    },\n\n\n    isLocal : function() {\n      return window.location.protocol == \"file:\";\n    },\n\n\n    needsPHPWarning : function() {\n      this.warn(\"This test can only be run from a web server with PHP support.\");\n    }\n  }\n});"
+  ]
+}

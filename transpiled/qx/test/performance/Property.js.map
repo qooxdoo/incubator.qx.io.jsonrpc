@@ -1,0 +1,52 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/performance/Property.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MMeasure",
+    "members",
+    "SET_ITERATIONS",
+    "testPropertySet",
+    "Clazz",
+    "core",
+    "Object",
+    "properties",
+    "alpha",
+    "init",
+    "nullable",
+    "check",
+    "event",
+    "obj",
+    "addListener",
+    "self",
+    "measure",
+    "i",
+    "setAlpha",
+    "dispose",
+    "undefine",
+    "testAsyncPropertySet",
+    "console",
+    "log",
+    "warn",
+    "async",
+    "test",
+    "performance",
+    "Property"
+  ],
+  "mappings": "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",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.performance.Property\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : qx.dev.unit.MMeasure,\n\n  members :\n  {\n    SET_ITERATIONS : 10000,\n\n\n    testPropertySet : function()\n    {\n      var Clazz = qx.Class.define(\"demo.MyClass\", {\n        extend: qx.core.Object,\n        properties: {\n          alpha: {\n            init: null,\n            nullable: true,\n            check: \"String\",\n            event: \"changeAlpha\"\n          }\n        }\n      });\n      var obj = new Clazz();\n      obj.addListener(\"changeAlpha\", function() {}, this);\n      var self = this;\n      this.measure(\n        \"property set\",\n        function() {\n          for (var i=0; i<self.SET_ITERATIONS; i++) {\n            obj.setAlpha(\"value #\" + i);\n          }\n        },\n        function() {\n          obj.dispose();\n          qx.Class.undefine(\"demo.MyClass\");\n        },\n        this.SET_ITERATIONS\n      );\n    },\n\n\n    testAsyncPropertySet : function()\n    {\n      if (qx.core.Environment.get(\"qx.promise.longStackTraces\")) {\n        (console.log||this.warn)(\"Long Stack Traces are enabled - this will significantly slow down the test\");\n      }\n      var Clazz = qx.Class.define(\"demo.MyClass\", {\n        extend: qx.core.Object,\n        properties: {\n          alpha: {\n            init: null,\n            nullable: true,\n            check: \"String\",\n            event: \"changeAlpha\",\n            async: true\n          }\n        }\n      });\n      var obj = new Clazz();\n      obj.addListener(\"changeAlpha\", function() {}, this);\n      var self = this;\n      this.measure(\n        \"property set\",\n        function() {\n          for (var i=0; i<self.SET_ITERATIONS; i++) {\n            obj.setAlpha(\"value #\" + i);\n          }\n        },\n        function() {\n          obj.dispose();\n          qx.Class.undefine(\"demo.MyClass\");\n        },\n        this.SET_ITERATIONS\n      );\n    }\n  }\n});\n"
+  ]
+}

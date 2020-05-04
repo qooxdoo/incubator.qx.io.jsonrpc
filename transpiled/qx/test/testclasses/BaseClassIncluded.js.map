@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/testclasses/BaseClassIncluded.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "test",
+    "testclasses",
+    "RootClass",
+    "include",
+    "MMixinOne",
+    "MMixinTwo",
+    "construct",
+    "state",
+    "push",
+    "BaseClassIncluded"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,uCAAhB,EAAyD;AACvDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBC,SAD2B;AAEvDC,IAAAA,OAAO,EAAE,CAAEV,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBG,SAAtB,EAAiCX,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBI,SAArD,CAF8C;AAIvDC,IAAAA,SAAS,EAAE,qBAAW;AACpB;AACA,WAAKC,KAAL,CAAWC,IAAX,CAAgB,MAAhB;AACD;AAPsD,GAAzD;AAAAf,EAAAA,EAAE,CAACO,IAAH,CAAQC,WAAR,CAAoBQ,iBAApB,CAAsCb,aAAtC,GAAsDA,aAAtD",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.testclasses.BaseClassIncluded\", {\n  extend: qx.test.testclasses.RootClass,\n  include: [ qx.test.testclasses.MMixinOne, qx.test.testclasses.MMixinTwo ],\n  \n  construct: function() {\n    this.base(arguments);\n    this.state.push(\"base\");\n  }\n  \n});"
+  ]
+}
