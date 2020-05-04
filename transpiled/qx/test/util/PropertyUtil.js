@@ -103,4 +103,4 @@
   qx.test.util.PropertyUtil.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PropertyUtil.js.map?dt=1588615810699
+//# sourceMappingURL=PropertyUtil.js.map?dt=1588623989482

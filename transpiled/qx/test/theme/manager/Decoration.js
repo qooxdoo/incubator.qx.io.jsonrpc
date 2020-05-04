@@ -144,4 +144,4 @@
   qx.test.theme.manager.Decoration.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Decoration.js.map?dt=1588615805975
+//# sourceMappingURL=Decoration.js.map?dt=1588623983757

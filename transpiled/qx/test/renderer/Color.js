@@ -87,4 +87,4 @@
   qx.test.renderer.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1588615805858
+//# sourceMappingURL=Color.js.map?dt=1588623983612

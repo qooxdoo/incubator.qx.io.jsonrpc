@@ -886,4 +886,4 @@
   qx.test.io.rest.Resource.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resource.js.map?dt=1588615804328
+//# sourceMappingURL=Resource.js.map?dt=1588623981754

@@ -135,4 +135,4 @@
   qx.test.ui.virtual.layer.WidgetCellSpan.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WidgetCellSpan.js.map?dt=1588615810107
+//# sourceMappingURL=WidgetCellSpan.js.map?dt=1588623988802

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": [
-    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/source/class/qx/io/jsonrpc/exception/Transport.js"
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/io/jsonrpc/exception/Transport.js"
   ],
   "names": [
     "qx",

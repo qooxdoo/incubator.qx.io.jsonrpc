@@ -110688,7 +110688,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1588615837392
+//# sourceMappingURL=package-7.js.map?dt=1588624021153
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

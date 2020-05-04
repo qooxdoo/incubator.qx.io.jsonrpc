@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": [
-    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/qx_packages/qooxdoo_qxl_testtapper_v0_5_0/source/class/qxl/testtapper/TreeItem.js"
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/qx_packages/qooxdoo_qxl_testtapper_v0_5_0/source/class/qxl/testtapper/TreeItem.js"
   ],
   "names": [
     "qx",

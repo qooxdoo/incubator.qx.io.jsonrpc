@@ -100,4 +100,4 @@
   qx.test.bom.Basic.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Basic.js.map?dt=1588615799075
+//# sourceMappingURL=Basic.js.map?dt=1588623975798

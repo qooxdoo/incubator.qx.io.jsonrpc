@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": [
-    "/home/travis/build/qooxdoo/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/selection/RadioGroup.js"
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/ui/selection/RadioGroup.js"
   ],
   "names": [
     "qx",

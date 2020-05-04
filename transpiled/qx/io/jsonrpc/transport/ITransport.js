@@ -48,4 +48,4 @@
   qx.io.jsonrpc.transport.ITransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ITransport.js.map?dt=1588615795281
+//# sourceMappingURL=ITransport.js.map?dt=1588623971531

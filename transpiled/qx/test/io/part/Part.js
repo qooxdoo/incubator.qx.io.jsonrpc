@@ -208,4 +208,4 @@
   qx.test.io.part.Part.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Part.js.map?dt=1588615803875
+//# sourceMappingURL=Part.js.map?dt=1588623981226

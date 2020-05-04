@@ -47,4 +47,4 @@
   qx.test.performance.decorator.Background.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Background.js.map?dt=1588615805720
+//# sourceMappingURL=Background.js.map?dt=1588623983430
