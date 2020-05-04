@@ -5,7 +5,7 @@
 This incubator contains a proposal to add an extensible JSON-RPC v2 API 
 to qooxdoo.
 
-This module should be considered **ALPHA RELEASE** and is subject to change without notice.
+Development status: beta. The API should be fairly stable.
 
 - API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.jsonrpc
 - Test runner: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/
