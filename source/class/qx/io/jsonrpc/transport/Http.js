@@ -26,7 +26,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
 
     /**
      * Internal implementation of the transport
-     * @var {qx.io.request.AbstractRequest}
+     * @var {qx.io.request.Xhr}
      */
     _tranportImpl : null,
 
@@ -74,7 +74,8 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
                 e.toString(),
                 {message}
               );
-            case "failed":
+            case "statusError":
+            case "error":
               throw new qx.io.jsonrpc.exception.Transport(
                 e.toString(),
                 qx.io.jsonrpc.exception.Transport.FAILED,
