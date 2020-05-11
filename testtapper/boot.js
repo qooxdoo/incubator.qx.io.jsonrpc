@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compilerVersion": "1.0.0-beta.20200503-1758",
+  "qx.compilerVersion": "1.0.0-beta.20200507-1713",
   "qx.icontheme": "Tango",
   "qx.buildType": "source",
   "qx.headless": false,

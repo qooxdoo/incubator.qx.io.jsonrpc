@@ -85,4 +85,4 @@
   qx.test.ui.virtual.performance.layer.HtmlTableCell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlTableCell.js.map?dt=1588623988999
+//# sourceMappingURL=HtmlTableCell.js.map?dt=1589218267333

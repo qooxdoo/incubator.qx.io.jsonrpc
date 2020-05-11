@@ -72,4 +72,4 @@
   qx.locale.Number.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Number.js.map?dt=1588623973460
+//# sourceMappingURL=Number.js.map?dt=1589218250999

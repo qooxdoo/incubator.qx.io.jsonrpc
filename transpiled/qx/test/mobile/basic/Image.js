@@ -79,4 +79,4 @@
   qx.test.mobile.basic.Image.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Image.js.map?dt=1588623982563
+//# sourceMappingURL=Image.js.map?dt=1589218260623

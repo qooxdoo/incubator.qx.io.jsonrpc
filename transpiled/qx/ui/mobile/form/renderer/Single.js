@@ -349,4 +349,4 @@
   qx.ui.mobile.form.renderer.Single.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Single.js.map?dt=1588623999649
+//# sourceMappingURL=Single.js.map?dt=1589218278573

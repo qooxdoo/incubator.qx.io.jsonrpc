@@ -57,4 +57,4 @@
   qx.test.locale.LocalizedString.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LocalizedString.js.map?dt=1588623982298
+//# sourceMappingURL=LocalizedString.js.map?dt=1589218260347

@@ -229,4 +229,4 @@
   qx.ui.progressive.renderer.table.cell.Icon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Icon.js.map?dt=1588624000898
+//# sourceMappingURL=Icon.js.map?dt=1589218279905
