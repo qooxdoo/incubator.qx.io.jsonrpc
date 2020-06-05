@@ -40,7 +40,7 @@ npx qx package install qooxdoo/qxl.apiviewer --save=0
 
 ## Usage
 
-This namespace provides an API implementing the [">JSON Remote Procedure Call
+This namespace provides an API implementing the [JSON Remote Procedure Call
 (JSON-RPC) version 2 specification](https://www.jsonrpc.org/specification).
 
 JSON-RPC v2 is transport-agnostic. We provide a high-level
@@ -95,9 +95,9 @@ client.sendRequest("method-needing-authentication", [1,2,3]);
 ```
 
 If you need a client with a customized transport often, we recommend
-to create a class that inherits from the client class, override the
-methods which are needed to produce that custom behavior (such as 
-`qx.io.jsonrpc.transport.Http#_createTransportImpl`, and provide a `defer`
+to 1) create a class that inherits from the `qx.io.jsonrpc.transport.Http`, 
+2) override the methods which are needed to produce that custom behavior (such as 
+`qx.io.jsonrpc.transport.Http#_createTransportImpl`, and 3) provide a `defer`
 section which registers the behavior for your particular class of URIs:
 
 ```javascript
@@ -106,6 +106,6 @@ defer() {
 }
 ```
 
-The client will always use the transport that was last registered for
+`qx.io.jsonrpc.Client` will always use the transport that was last registered for
 a certain endpoint pattern, i.e. from then on, all clients created
 with urls that start with "http" will use that custom behavior.
