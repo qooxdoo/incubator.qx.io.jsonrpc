@@ -70,7 +70,7 @@
        * @param opacity {Number} The CSS opacity value for the blocker
        * @param zIndex {Number} The zIndex value for the blocker
        */
-      __attachBlocker: function __attachBlocker(item, color, opacity, zIndex) {
+      __attachBlocker__P_187_0: function __attachBlocker__P_187_0(item, color, opacity, zIndex) {
         var win = qxWeb.getWindow(item);
         var isDocument = qxWeb.isDocument(item);
 
@@ -78,19 +78,19 @@
           return;
         }
 
-        if (!item.__blocker) {
-          item.__blocker = {
+        if (!item.__blocker__P_187_1) {
+          item.__blocker__P_187_1 = {
             div: qxWeb.create("<div class='qx-blocker' />")
           };
         }
 
         if (isDocument) {
-          item.__blocker.div.insertBefore(qxWeb(win.document.body).getChildren(':first'));
+          item.__blocker__P_187_1.div.insertBefore(qxWeb(win.document.body).getChildren(':first'));
         } else {
-          item.__blocker.div.appendTo(win.document.body);
+          item.__blocker__P_187_1.div.appendTo(win.document.body);
         }
 
-        qx.module.Blocker.__styleBlocker(item, color, opacity, zIndex, isDocument);
+        qx.module.Blocker.__styleBlocker__P_187_2(item, color, opacity, zIndex, isDocument);
       },
 
       /**
@@ -102,7 +102,7 @@
        * @param zIndex {Number} The zIndex value for the blocker
        * @param isDocument {Boolean} Whether the item is a document node
        */
-      __styleBlocker: function __styleBlocker(item, color, opacity, zIndex, isDocument) {
+      __styleBlocker__P_187_2: function __styleBlocker__P_187_2(item, color, opacity, zIndex, isDocument) {
         var qItem = qxWeb(item);
         var styles = {
           "display": "block"
@@ -131,7 +131,7 @@
           styles.height = qItem.getHeight() + "px";
         }
 
-        item.__blocker.div.setStyles(styles);
+        item.__blocker__P_187_1.div.setStyles(styles);
       },
 
       /**
@@ -140,12 +140,12 @@
        * @param item {Element} Blocked element
        * @param index {Number} index of the item in the collection
        */
-      __detachBlocker: function __detachBlocker(item, index) {
-        if (!item.__blocker) {
+      __detachBlocker__P_187_3: function __detachBlocker__P_187_3(item, index) {
+        if (!item.__blocker__P_187_1) {
           return;
         }
 
-        item.__blocker.div.remove();
+        item.__blocker__P_187_1.div.remove();
       },
 
       /**
@@ -154,11 +154,11 @@
        * @param collection {qxWeb} Collection to get the blocker elements from
        * @return {qxWeb} collection of blocker elements
        */
-      __getBlocker: function __getBlocker(collection) {
+      __getBlocker__P_187_4: function __getBlocker__P_187_4(collection) {
         var blockerElements = qxWeb();
         collection.forEach(function (item, index) {
-          if (typeof item.__blocker !== "undefined") {
-            blockerElements = blockerElements.concat(item.__blocker.div);
+          if (typeof item.__blocker__P_187_1 !== "undefined") {
+            blockerElements = blockerElements.concat(item.__blocker__P_187_1.div);
           }
         });
         return blockerElements;
@@ -181,7 +181,7 @@
         }
 
         this.forEach(function (item, index) {
-          qx.module.Blocker.__attachBlocker(item, color, opacity, zIndex);
+          qx.module.Blocker.__attachBlocker__P_187_0(item, color, opacity, zIndex);
         });
         return this;
       },
@@ -197,7 +197,7 @@
           return this;
         }
 
-        this.forEach(qx.module.Blocker.__detachBlocker);
+        this.forEach(qx.module.Blocker.__detachBlocker__P_187_3);
         return this;
       },
 
@@ -216,7 +216,7 @@
           return this;
         }
 
-        var collection = qx.module.Blocker.__getBlocker(this);
+        var collection = qx.module.Blocker.__getBlocker__P_187_4(this);
 
         return collection;
       }
@@ -228,4 +228,4 @@
   qx.module.Blocker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Blocker.js.map?dt=1589218251522
+//# sourceMappingURL=Blocker.js.map?dt=1591362971955

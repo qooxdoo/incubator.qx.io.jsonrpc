@@ -311,9 +311,6 @@
         "css.gradient.linear": {
           "className": "qx.bom.client.Css"
         },
-        "css.gradient.filter": {
-          "className": "qx.bom.client.Css"
-        },
         "css.gradient.radial": {
           "className": "qx.bom.client.Css"
         },
@@ -795,7 +792,6 @@
         this.assertBoolean(qx.core.Environment.get("css.opacity"));
         var linearGradient = qx.core.Environment.get("css.gradient.linear");
         this.assert(typeof linearGradient == "string" || linearGradient === null);
-        this.assertBoolean(qx.core.Environment.get("css.gradient.filter"));
         var radialGradient = qx.core.Environment.get("css.gradient.radial");
         this.assert(typeof radialGradient == "string" || radialGradient === null);
         this.assertBoolean(qx.core.Environment.get("css.gradient.legacywebkit"));
@@ -880,4 +876,4 @@
   qx.test.core.Environment.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Environment.js.map?dt=1589218255489
+//# sourceMappingURL=Environment.js.map?dt=1591362976457

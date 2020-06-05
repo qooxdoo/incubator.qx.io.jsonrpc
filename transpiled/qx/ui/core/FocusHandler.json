@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 616,
+        "line": 630,
         "column": 3
       }
     },
@@ -54,15 +54,74 @@
       ]
     }
   },
+  "properties": {
+    "useTabNavigation": {
+      "location": {
+        "start": {
+          "line": 55,
+          "column": 4
+        },
+        "end": {
+          "line": 58,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Activate changing focus with the tab key (default: true)</p>"
+          }
+        ]
+      },
+      "name": "useTabNavigation",
+      "propertyType": "new",
+      "init": true,
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "qxOwner": {
+      "type": "property",
+      "name": "qxOwner",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
+    },
+    "qxObjectId": {
+      "type": "property",
+      "name": "qxObjectId",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
+    }
+  },
   "members": {
     "__roots": {
       "location": {
         "start": {
-          "line": 56,
+          "line": 70,
           "column": 4
         },
         "end": {
-          "line": 56,
+          "line": 70,
           "column": 18
         }
       },
@@ -72,11 +131,11 @@
     "__activeChild": {
       "location": {
         "start": {
-          "line": 57,
+          "line": 71,
           "column": 4
         },
         "end": {
-          "line": 57,
+          "line": 71,
           "column": 24
         }
       },
@@ -86,11 +145,11 @@
     "__focusedChild": {
       "location": {
         "start": {
-          "line": 58,
+          "line": 72,
           "column": 4
         },
         "end": {
-          "line": 58,
+          "line": 72,
           "column": 25
         }
       },
@@ -100,11 +159,11 @@
     "__currentRoot": {
       "location": {
         "start": {
-          "line": 59,
+          "line": 73,
           "column": 4
         },
         "end": {
-          "line": 59,
+          "line": 73,
           "column": 24
         }
       },
@@ -114,11 +173,11 @@
     "connectTo": {
       "location": {
         "start": {
-          "line": 70,
+          "line": 84,
           "column": 4
         },
         "end": {
-          "line": 78,
+          "line": 92,
           "column": 5
         }
       },
@@ -145,11 +204,11 @@
     "addRoot": {
       "location": {
         "start": {
-          "line": 86,
+          "line": 100,
           "column": 4
         },
         "end": {
-          "line": 90,
+          "line": 104,
           "column": 5
         }
       },
@@ -176,11 +235,11 @@
     "removeRoot": {
       "location": {
         "start": {
-          "line": 98,
+          "line": 112,
           "column": 4
         },
         "end": {
-          "line": 102,
+          "line": 116,
           "column": 5
         }
       },
@@ -207,11 +266,11 @@
     "getActiveWidget": {
       "location": {
         "start": {
-          "line": 111,
+          "line": 125,
           "column": 4
         },
         "end": {
-          "line": 113,
+          "line": 127,
           "column": 5
         }
       },
@@ -237,11 +296,11 @@
     "isActive": {
       "location": {
         "start": {
-          "line": 122,
+          "line": 136,
           "column": 4
         },
         "end": {
-          "line": 124,
+          "line": 138,
           "column": 5
         }
       },
@@ -276,11 +335,11 @@
     "getFocusedWidget": {
       "location": {
         "start": {
-          "line": 133,
+          "line": 147,
           "column": 4
         },
         "end": {
-          "line": 135,
+          "line": 149,
           "column": 5
         }
       },
@@ -306,11 +365,11 @@
     "isFocused": {
       "location": {
         "start": {
-          "line": 144,
+          "line": 158,
           "column": 4
         },
         "end": {
-          "line": 146,
+          "line": 160,
           "column": 5
         }
       },
@@ -345,11 +404,11 @@
     "isFocusRoot": {
       "location": {
         "start": {
-          "line": 155,
+          "line": 169,
           "column": 4
         },
         "end": {
-          "line": 157,
+          "line": 171,
           "column": 5
         }
       },
@@ -384,11 +443,11 @@
     "_onActivate": {
       "location": {
         "start": {
-          "line": 174,
+          "line": 188,
           "column": 4
         },
         "end": {
-          "line": 184,
+          "line": 198,
           "column": 5
         }
       },
@@ -419,11 +478,11 @@
     "_onDeactivate": {
       "location": {
         "start": {
-          "line": 192,
+          "line": 206,
           "column": 4
         },
         "end": {
-          "line": 198,
+          "line": 212,
           "column": 5
         }
       },
@@ -450,11 +509,11 @@
     "_onFocusIn": {
       "location": {
         "start": {
-          "line": 206,
+          "line": 220,
           "column": 4
         },
         "end": {
-          "line": 214,
+          "line": 228,
           "column": 5
         }
       },
@@ -481,11 +540,11 @@
     "_onFocusOut": {
       "location": {
         "start": {
-          "line": 222,
+          "line": 236,
           "column": 4
         },
         "end": {
-          "line": 230,
+          "line": 244,
           "column": 5
         }
       },
@@ -512,11 +571,11 @@
     "__onKeyPress": {
       "location": {
         "start": {
-          "line": 238,
+          "line": 252,
           "column": 4
         },
         "end": {
-          "line": 264,
+          "line": 278,
           "column": 5
         }
       },
@@ -543,11 +602,11 @@
     "__findFocusRoot": {
       "location": {
         "start": {
-          "line": 282,
+          "line": 296,
           "column": 4
         },
         "end": {
-          "line": 295,
+          "line": 309,
           "column": 5
         }
       },
@@ -586,11 +645,11 @@
     "__compareTabOrder": {
       "location": {
         "start": {
-          "line": 315,
+          "line": 329,
           "column": 4
         },
         "end": {
-          "line": 357,
+          "line": 371,
           "column": 5
         }
       },
@@ -636,11 +695,11 @@
     "__getFirstWidget": {
       "location": {
         "start": {
-          "line": 366,
+          "line": 380,
           "column": 4
         },
         "end": {
-          "line": 368,
+          "line": 382,
           "column": 5
         }
       },
@@ -666,11 +725,11 @@
     "__getLastWidget": {
       "location": {
         "start": {
-          "line": 377,
+          "line": 391,
           "column": 4
         },
         "end": {
-          "line": 379,
+          "line": 393,
           "column": 5
         }
       },
@@ -696,11 +755,11 @@
     "__getWidgetAfter": {
       "location": {
         "start": {
-          "line": 388,
+          "line": 402,
           "column": 4
         },
         "end": {
-          "line": 409,
+          "line": 423,
           "column": 5
         }
       },
@@ -735,11 +794,11 @@
     "__getWidgetBefore": {
       "location": {
         "start": {
-          "line": 418,
+          "line": 432,
           "column": 4
         },
         "end": {
-          "line": 439,
+          "line": 453,
           "column": 5
         }
       },
@@ -774,11 +833,11 @@
     "__collectAllAfter": {
       "location": {
         "start": {
-          "line": 461,
+          "line": 475,
           "column": 4
         },
         "end": {
-          "line": 484,
+          "line": 498,
           "column": 5
         }
       },
@@ -823,11 +882,11 @@
     "__collectAllBefore": {
       "location": {
         "start": {
-          "line": 496,
+          "line": 510,
           "column": 4
         },
         "end": {
-          "line": 519,
+          "line": 533,
           "column": 5
         }
       },
@@ -868,11 +927,11 @@
     "__getFirst": {
       "location": {
         "start": {
-          "line": 529,
+          "line": 543,
           "column": 4
         },
         "end": {
-          "line": 559,
+          "line": 573,
           "column": 5
         }
       },
@@ -916,11 +975,11 @@
     "__getLast": {
       "location": {
         "start": {
-          "line": 569,
+          "line": 583,
           "column": 4
         },
         "end": {
-          "line": 599,
+          "line": 613,
           "column": 5
         }
       },
@@ -1020,7 +1079,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -1079,17 +1146,115 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
+    },
+    "getUseTabNavigation": {
+      "type": "function",
+      "name": "getUseTabNavigation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>useTabNavigation</code>.\n\nFor further details take a look at the property definition: {@link #useTabNavigation}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for useTabNavigation"
+          }
+        ]
+      }
+    },
+    "isUseTabNavigation": {
+      "type": "function",
+      "name": "isUseTabNavigation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the (computed) value of the property <code>useTabNavigation</code>.\n\nFor further details take a look at the property definition: {@link #useTabNavigation}."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for useTabNavigation"
+          }
+        ]
+      }
+    },
+    "setUseTabNavigation": {
+      "type": "function",
+      "name": "setUseTabNavigation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the user value of the property <code>useTabNavigation</code>.\n\nFor further details take a look at the property definition: {@link #useTabNavigation}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for useTabNavigation"
+          }
+        ]
+      }
+    },
+    "resetUseTabNavigation": {
+      "type": "function",
+      "name": "resetUseTabNavigation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>useTabNavigation</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #useTabNavigation}."
+          }
+        ]
+      }
     }
   },
   "destruct": {
     "location": {
       "start": {
-        "line": 611,
+        "line": 625,
         "column": 13
       },
       "end": {
-        "line": 615,
+        "line": 629,
         "column": 3
       }
     },

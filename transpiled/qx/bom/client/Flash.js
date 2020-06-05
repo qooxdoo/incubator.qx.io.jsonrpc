@@ -158,7 +158,7 @@
         }
 
         var os = qx.bom.client.OperatingSystem.getName();
-        return (os == "win" || os == "osx") && qx.bom.client.Flash.__supportsVersion("6.0.65", availableVersion);
+        return (os == "win" || os == "osx") && qx.bom.client.Flash.__supportsVersion__P_39_0("6.0.65", availableVersion);
       },
 
       /**
@@ -177,9 +177,9 @@
         var full = version.split(".");
 
         if (full[0] < 10) {
-          return qx.bom.client.Flash.__supportsVersion("9.0.151", version);
+          return qx.bom.client.Flash.__supportsVersion__P_39_0("9.0.151", version);
         } else {
-          return qx.bom.client.Flash.__supportsVersion("10.0.12", version);
+          return qx.bom.client.Flash.__supportsVersion__P_39_0("10.0.12", version);
         }
       },
 
@@ -199,7 +199,7 @@
        *   system.
        * @return {Boolean} <code>true</code>, if the version is supported.
        */
-      __supportsVersion: function __supportsVersion(input, availableVersion) {
+      __supportsVersion__P_39_0: function __supportsVersion__P_39_0(input, availableVersion) {
         var splitInput = input.split(".");
         var system = availableVersion || qx.bom.client.Flash.getVersion();
         system = system.split(".");
@@ -227,4 +227,4 @@
   qx.bom.client.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1589218239161
+//# sourceMappingURL=Flash.js.map?dt=1591362958613

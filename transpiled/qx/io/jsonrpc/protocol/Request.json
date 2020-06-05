@@ -283,7 +283,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.io.jsonrpc.protocol.Notification",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -342,7 +350,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.io.jsonrpc.protocol.Notification",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getJsonrpc": {
       "type": "function",
@@ -403,7 +419,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.io.jsonrpc.protocol.Notification",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>jsonrpc</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #jsonrpc}."
+          }
+        ]
+      }
     },
     "getMethod": {
       "type": "function",
@@ -464,7 +488,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.io.jsonrpc.protocol.Notification",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>method</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #method}."
+          }
+        ]
+      }
     },
     "getParams": {
       "type": "function",
@@ -525,7 +557,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.io.jsonrpc.protocol.Notification",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>params</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #params}."
+          }
+        ]
+      }
     },
     "getId": {
       "type": "function",

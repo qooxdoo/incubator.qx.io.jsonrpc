@@ -40,83 +40,83 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__renderedElement = qx.dom.Element.create("div");
-        document.body.appendChild(this.__renderedElement);
-        this.__unRenderedElement = qx.dom.Element.create("div");
-        this.__notDisplayedElement = qx.dom.Element.create("div");
-        document.body.appendChild(this.__notDisplayedElement);
-        qx.bom.element.Style.set(this.__notDisplayedElement, "display", "none");
-        this.__childOfNotDisplayedElement = qx.dom.Element.create("div");
+        this.__renderedElement__P_242_0 = qx.dom.Element.create("div");
+        document.body.appendChild(this.__renderedElement__P_242_0);
+        this.__unRenderedElement__P_242_1 = qx.dom.Element.create("div");
+        this.__notDisplayedElement__P_242_2 = qx.dom.Element.create("div");
+        document.body.appendChild(this.__notDisplayedElement__P_242_2);
+        qx.bom.element.Style.set(this.__notDisplayedElement__P_242_2, "display", "none");
+        this.__childOfNotDisplayedElement__P_242_3 = qx.dom.Element.create("div");
 
-        this.__notDisplayedElement.appendChild(this.__childOfNotDisplayedElement);
+        this.__notDisplayedElement__P_242_2.appendChild(this.__childOfNotDisplayedElement__P_242_3);
       },
       tearDown: function tearDown() {
-        if (this.__childElement) {
-          this.__renderedElement.removeChild(this.__childElement);
+        if (this.__childElement__P_242_4) {
+          this.__renderedElement__P_242_0.removeChild(this.__childElement__P_242_4);
 
-          this.__childElement = null;
+          this.__childElement__P_242_4 = null;
         }
 
-        if (this.__siblingElement) {
-          document.body.removeChild(this.__siblingElement);
-          this.__siblingElement = null;
+        if (this.__siblingElement__P_242_5) {
+          document.body.removeChild(this.__siblingElement__P_242_5);
+          this.__siblingElement__P_242_5 = null;
         }
 
-        document.body.removeChild(this.__renderedElement);
-        this.__renderedElement = null;
-        this.__unRenderedElement = null;
-        document.body.removeChild(this.__notDisplayedElement);
-        this.__notDisplayedElement = null;
+        document.body.removeChild(this.__renderedElement__P_242_0);
+        this.__renderedElement__P_242_0 = null;
+        this.__unRenderedElement__P_242_1 = null;
+        document.body.removeChild(this.__notDisplayedElement__P_242_2);
+        this.__notDisplayedElement__P_242_2 = null;
 
-        if (this.__iframe) {
-          document.body.removeChild(this.__iframe);
-          this.__iframe = null;
+        if (this.__iframe__P_242_6) {
+          document.body.removeChild(this.__iframe__P_242_6);
+          this.__iframe__P_242_6 = null;
         }
       },
       testIsRendered: function testIsRendered() {
-        this.assertTrue(qx.dom.Hierarchy.isRendered(this.__renderedElement));
-        this.assertFalse(qx.dom.Hierarchy.isRendered(this.__unRenderedElement));
-        this.assertTrue(qx.dom.Hierarchy.isRendered(this.__notDisplayedElement));
-        this.assertTrue(qx.dom.Hierarchy.isRendered(this.__childOfNotDisplayedElement));
+        this.assertTrue(qx.dom.Hierarchy.isRendered(this.__renderedElement__P_242_0));
+        this.assertFalse(qx.dom.Hierarchy.isRendered(this.__unRenderedElement__P_242_1));
+        this.assertTrue(qx.dom.Hierarchy.isRendered(this.__notDisplayedElement__P_242_2));
+        this.assertTrue(qx.dom.Hierarchy.isRendered(this.__childOfNotDisplayedElement__P_242_3));
       },
       testIsRenderedIframe: function testIsRenderedIframe() {
-        this.__iframe = qx.bom.Iframe.create();
+        this.__iframe__P_242_6 = qx.bom.Iframe.create();
         var src = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
         src = qx.util.Uri.getAbsolute(src);
-        qx.bom.Iframe.setSource(this.__iframe, src);
-        document.body.appendChild(this.__iframe);
-        qx.event.Registration.addListener(this.__iframe, "load", function (e) {
+        qx.bom.Iframe.setSource(this.__iframe__P_242_6, src);
+        document.body.appendChild(this.__iframe__P_242_6);
+        qx.event.Registration.addListener(this.__iframe__P_242_6, "load", function (e) {
           this.resume(function () {
-            this.assertTrue(qx.dom.Hierarchy.isRendered(this.__iframe));
+            this.assertTrue(qx.dom.Hierarchy.isRendered(this.__iframe__P_242_6));
           }, this);
         }, this);
         this.wait(10000);
       },
       testContains: function testContains() {
-        this.assertTrue(qx.dom.Hierarchy.contains(document.body, this.__renderedElement));
-        this.__childElement = qx.dom.Element.create("div");
+        this.assertTrue(qx.dom.Hierarchy.contains(document.body, this.__renderedElement__P_242_0));
+        this.__childElement__P_242_4 = qx.dom.Element.create("div");
 
-        this.__renderedElement.appendChild(this.__childElement);
+        this.__renderedElement__P_242_0.appendChild(this.__childElement__P_242_4);
 
-        this.assertTrue(qx.dom.Hierarchy.contains(this.__renderedElement, this.__childElement));
-        this.assertFalse(qx.dom.Hierarchy.contains(this.__childElement, this.__renderedElement));
-        this.__siblingElement = qx.dom.Element.create("div");
-        document.body.appendChild(this.__siblingElement);
-        this.assertFalse(qx.dom.Hierarchy.contains(this.__renderedElement, this.__siblingElement));
+        this.assertTrue(qx.dom.Hierarchy.contains(this.__renderedElement__P_242_0, this.__childElement__P_242_4));
+        this.assertFalse(qx.dom.Hierarchy.contains(this.__childElement__P_242_4, this.__renderedElement__P_242_0));
+        this.__siblingElement__P_242_5 = qx.dom.Element.create("div");
+        document.body.appendChild(this.__siblingElement__P_242_5);
+        this.assertFalse(qx.dom.Hierarchy.contains(this.__renderedElement__P_242_0, this.__siblingElement__P_242_5));
       },
       testGetCommonParent: function testGetCommonParent() {
-        this.__siblingElement = qx.dom.Element.create("div");
-        document.body.appendChild(this.__siblingElement);
-        this.assertEquals(document.body, qx.dom.Hierarchy.getCommonParent(this.__renderedElement, this.__siblingElement));
-        this.__childElement = qx.dom.Element.create("div");
+        this.__siblingElement__P_242_5 = qx.dom.Element.create("div");
+        document.body.appendChild(this.__siblingElement__P_242_5);
+        this.assertEquals(document.body, qx.dom.Hierarchy.getCommonParent(this.__renderedElement__P_242_0, this.__siblingElement__P_242_5));
+        this.__childElement__P_242_4 = qx.dom.Element.create("div");
 
-        this.__renderedElement.appendChild(this.__childElement);
+        this.__renderedElement__P_242_0.appendChild(this.__childElement__P_242_4);
 
-        this.assertEquals(this.__renderedElement, qx.dom.Hierarchy.getCommonParent(this.__renderedElement, this.__childElement));
+        this.assertEquals(this.__renderedElement__P_242_0, qx.dom.Hierarchy.getCommonParent(this.__renderedElement__P_242_0, this.__childElement__P_242_4));
       }
     }
   });
   qx.test.dom.Hierarchy.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Hierarchy.js.map?dt=1589218258115
+//# sourceMappingURL=Hierarchy.js.map?dt=1591362979512

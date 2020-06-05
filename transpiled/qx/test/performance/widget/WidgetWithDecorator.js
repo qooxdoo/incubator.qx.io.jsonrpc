@@ -20,7 +20,7 @@
     extend: qx.test.performance.widget.AbstractWidget,
     construct: function construct() {
       qx.test.performance.widget.AbstractWidget.constructor.call(this);
-      this.__decorator = new qx.ui.decoration.Decorator().set({
+      this.__decorator__P_270_0 = new qx.ui.decoration.Decorator().set({
         width: 1,
         style: "solid",
         color: "red"
@@ -29,7 +29,7 @@
     members: {
       _createWidget: function _createWidget() {
         return new qx.ui.core.Widget().set({
-          decorator: this.__decorator
+          decorator: this.__decorator__P_270_0
         });
       }
     }
@@ -37,4 +37,4 @@
   qx.test.performance.widget.WidgetWithDecorator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WidgetWithDecorator.js.map?dt=1589218261707
+//# sourceMappingURL=WidgetWithDecorator.js.map?dt=1591362983607

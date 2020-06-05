@@ -58,7 +58,7 @@
   qx.Class.define("qx.io.jsonrpc.Client", {
     extend: qx.core.Object,
     statics: {
-      __transports: null,
+      __transports__P_158_0: null,
 
       /**
        * Register a transport class for use with uris that match the given
@@ -70,8 +70,8 @@
        *    The qooxdoo class implementing the transport
        */
       registerTransport(uriRegExp, transportClass) {
-        if (qx.io.jsonrpc.Client.__transports === null) {
-          qx.io.jsonrpc.Client.__transports = [];
+        if (qx.io.jsonrpc.Client.__transports__P_158_0 === null) {
+          qx.io.jsonrpc.Client.__transports__P_158_0 = [];
         }
 
         if (!qx.lang.Type.isRegExp(uriRegExp)) {
@@ -82,7 +82,7 @@
           throw new Error("Transport class must implement qx.io.jsonrpc.transport.ITransport");
         }
 
-        qx.io.jsonrpc.Client.__transports.push({
+        qx.io.jsonrpc.Client.__transports__P_158_0.push({
           uriRegExp,
           transport: transportClass
         });
@@ -121,8 +121,8 @@
     construct: function construct(transportOrUri, methodPrefix, parser) {
       qx.core.Object.constructor.call(this);
 
-      if (qx.io.jsonrpc.Client.__transports === null) {
-        qx.io.jsonrpc.Client.__transports = [];
+      if (qx.io.jsonrpc.Client.__transports__P_158_0 === null) {
+        qx.io.jsonrpc.Client.__transports__P_158_0 = [];
       }
 
       let transport, uri;
@@ -130,7 +130,7 @@
       if (qx.lang.Type.isString(transportOrUri)) {
         uri = transportOrUri;
 
-        for (let registeredTransport of qx.io.jsonrpc.Client.__transports.reverse()) {
+        for (let registeredTransport of qx.io.jsonrpc.Client.__transports__P_158_0.reverse()) {
           if (uri.match(registeredTransport.uriRegExp)) {
             transport = new registeredTransport.transport(uri);
           }
@@ -158,7 +158,7 @@
       }
 
       this.setParser(parser);
-      this.__requests = [];
+      this.__requests__P_158_1 = [];
     },
     properties: {
       /**
@@ -187,7 +187,7 @@
       /**
        * A cache of the requests which have been sent out and are still pending
        */
-      __requests: null,
+      __requests__P_158_1: null,
 
       /**
        * If a service name has been configured, prepend it to the method name
@@ -214,7 +214,7 @@
       _throwTransportException(exception) {
         this.fireDataEvent("error", exception);
 
-        this.__requests.forEach(request => request.handleTransportException(exception));
+        this.__requests__P_158_1.forEach(request => request.handleTransportException(exception));
 
         throw exception;
       },
@@ -239,13 +239,13 @@
         requests.forEach(request => {
           let id = request.getId();
 
-          if (this.__requests[id] !== undefined) {
+          if (this.__requests__P_158_1[id] !== undefined) {
             throw new qx.io.jsonrpc.exception.Transport(`Request ID ${id} is already in use`, qx.io.jsonrpc.exception.Transport.INVALID_ID, {
               request: message.toObject()
             });
           }
 
-          this.__requests[id] = request;
+          this.__requests__P_158_1[id] = request;
         }); // send it async, using transport-specific implementation
 
         return this.getTransport().send(message.toString());
@@ -325,7 +325,7 @@
       _cleanup(message) {
         if (message instanceof qx.io.jsonrpc.protocol.Request) {
           let id = message.getId();
-          delete this.__requests[id];
+          delete this.__requests__P_158_1[id];
         }
 
         message.dispose();
@@ -349,7 +349,7 @@
         if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
           // handle results and errors, which are responses to sent requests
           id = message.getId();
-          request = this.__requests[id];
+          request = this.__requests__P_158_1[id];
 
           if (request === undefined) {
             throw new qx.io.jsonrpc.exception.Transport(`Invalid jsonrpc response data: Unknown id ${id}.`, qx.io.jsonrpc.exception.Transport.UNKNOWN_ID, {
@@ -394,4 +394,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1589218248583
+//# sourceMappingURL=Client.js.map?dt=1591362968866

@@ -76,14 +76,14 @@
     */
     construct: function construct() {
       qx.io.remote.transport.Abstract.constructor.call(this);
-      var vUniqueId = ++qx.io.remote.transport.Script.__uniqueId;
+      var vUniqueId = ++qx.io.remote.transport.Script.__uniqueId__P_169_0;
 
       if (vUniqueId >= 2000000000) {
-        qx.io.remote.transport.Script.__uniqueId = vUniqueId = 1;
+        qx.io.remote.transport.Script.__uniqueId__P_169_0 = vUniqueId = 1;
       }
 
-      this.__element = null;
-      this.__uniqueId = vUniqueId;
+      this.__element__P_169_1 = null;
+      this.__uniqueId__P_169_0 = vUniqueId;
     },
 
     /*
@@ -97,7 +97,7 @@
        *
        * @internal
        */
-      __uniqueId: 0,
+      __uniqueId__P_169_0: 0,
 
       /**
        * Registry for all script transport instances.
@@ -202,9 +202,9 @@
     *****************************************************************************
     */
     members: {
-      __lastReadyState: 0,
-      __element: null,
-      __uniqueId: null,
+      __lastReadyState__P_169_2: 0,
+      __element__P_169_1: null,
+      __uniqueId__P_169_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -221,7 +221,7 @@
         //   Adding parameters
         // --------------------------------------
 
-        vUrl += (vUrl.indexOf("?") >= 0 ? "&" : "?") + qx.io.remote.transport.Script.ScriptTransport_ID_PARAM + "=" + this.__uniqueId;
+        vUrl += (vUrl.indexOf("?") >= 0 ? "&" : "?") + qx.io.remote.transport.Script.ScriptTransport_ID_PARAM + "=" + this.__uniqueId__P_169_0;
         var vParameters = this.getParameters();
         var vParametersList = [];
 
@@ -254,19 +254,19 @@
           vUrl += "&" + qx.io.remote.transport.Script.ScriptTransport_DATA_PARAM + "=" + encodeURIComponent(vData);
         }
 
-        qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId] = this;
-        this.__element = document.createElement("script"); // IE needs this (it ignores the
+        qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId__P_169_0] = this;
+        this.__element__P_169_1 = document.createElement("script"); // IE needs this (it ignores the
         // encoding from the header sent by the
         // server for dynamic script tags)
 
-        this.__element.charset = "utf-8";
-        this.__element.src = vUrl;
+        this.__element__P_169_1.charset = "utf-8";
+        this.__element__P_169_1.src = vUrl;
         {
           if (qx.core.Environment.get("qx.debug.io.remote.data")) {
             this.debug("Request: " + vUrl);
           }
         }
-        document.body.appendChild(this.__element);
+        document.body.appendChild(this.__element__P_169_1);
       },
 
       /**
@@ -286,8 +286,8 @@
         } // Updating internal state
 
 
-        while (this.__lastReadyState < vReadyState) {
-          this.setState(qx.io.remote.Exchange._nativeMap[++this.__lastReadyState]);
+        while (this.__lastReadyState__P_169_2 < vReadyState) {
+          this.setState(qx.io.remote.Exchange._nativeMap[++this.__lastReadyState__P_169_2]);
         }
       },
 
@@ -436,15 +436,15 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__element) {
-        delete qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId];
-        document.body.removeChild(this.__element);
+      if (this.__element__P_169_1) {
+        delete qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId__P_169_0];
+        document.body.removeChild(this.__element__P_169_1);
       }
 
-      this.__element = this._responseContent = null;
+      this.__element__P_169_1 = this._responseContent = null;
     }
   });
   qx.io.remote.transport.Script.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Script.js.map?dt=1589218249644
+//# sourceMappingURL=Script.js.map?dt=1591362969952

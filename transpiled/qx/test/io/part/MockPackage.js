@@ -55,9 +55,9 @@
         if (!this._loadWithClosure) {
           this.execute();
         } else {
-          this.__readyState = "cached";
+          this.__readyState__P_251_0 = "cached";
 
-          this.__notifyPackageResult(this);
+          this.__notifyPackageResult__P_251_1(this);
         }
       },
       execute: function execute() {
@@ -66,7 +66,7 @@
       loadClosure: function loadClosure(notifyPackageResult, self) {
         var pkg = this;
         this._loadWithClosure = true;
-        this.__notifyPackageResult = qx.Bootstrap.bind(notifyPackageResult, self);
+        this.__notifyPackageResult__P_251_1 = qx.Bootstrap.bind(notifyPackageResult, self);
         pkg.readyState = "loading";
         setTimeout(function () {
           if (pkg.error) {
@@ -86,4 +86,4 @@
   qx.test.io.part.MockPackage.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MockPackage.js.map?dt=1589218259122
+//# sourceMappingURL=MockPackage.js.map?dt=1591362980736

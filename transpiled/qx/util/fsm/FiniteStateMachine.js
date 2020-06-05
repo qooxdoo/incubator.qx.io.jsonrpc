@@ -56,34 +56,34 @@
 
       this.setName(machineName); // Initialize the states object
 
-      this.__states = {}; // The first state added will become the start state
+      this.__states__P_586_0 = {}; // The first state added will become the start state
 
-      this.__startState = null; // Initialize the saved-states stack
+      this.__startState__P_586_1 = null; // Initialize the saved-states stack
 
-      this.__savedStates = []; // Initialize the pending event queue
+      this.__savedStates__P_586_2 = []; // Initialize the pending event queue
 
-      this.__eventQueue = []; // Initialize the blocked events queue
+      this.__eventQueue__P_586_3 = []; // Initialize the blocked events queue
 
-      this.__blockedEvents = []; // Create the friendlyToObject" object.  Each object has as its property
+      this.__blockedEvents__P_586_4 = []; // Create the friendlyToObject" object.  Each object has as its property
       // name, the friendly name of the object; and as its property value, the
       // object itself.
 
-      this.__friendlyToObject = {}; // Create the "friendlyToHash" object.  Each object has as its property
+      this.__friendlyToObject__P_586_5 = {}; // Create the "friendlyToHash" object.  Each object has as its property
       // name, the friendly name of the object; and as its property value, the
       // hash code of the object.
 
-      this.__friendlyToHash = {}; // Create the "hashToFriendly" object.  Each object has as its property
+      this.__friendlyToHash__P_586_6 = {}; // Create the "hashToFriendly" object.  Each object has as its property
       // name, the hash code of the object; and as its property value, the
       // friendly name of the object.
 
-      this.__hashToFriendly = {}; // Friendly names can be added to groups, for easy manipulation of
+      this.__hashToFriendly__P_586_7 = {}; // Friendly names can be added to groups, for easy manipulation of
       // enabling and disabling groups of widgets.  Track which friendly names
       // are in which group.
 
-      this.__groupToFriendly = {}; // We also need to be able to map back from friendly name to the groups it
+      this.__groupToFriendly__P_586_8 = {}; // We also need to be able to map back from friendly name to the groups it
       // is in.
 
-      this.__friendlyToGroups = {};
+      this.__friendlyToGroups__P_586_9 = {};
     },
     statics: {
       /**
@@ -218,18 +218,18 @@
       }
     },
     members: {
-      __states: null,
-      __startState: null,
-      __eventQueue: null,
-      __blockedEvents: null,
-      __savedStates: null,
-      __friendlyToObject: null,
-      __friendlyToHash: null,
-      __hashToFriendly: null,
-      __groupToFriendly: null,
-      __friendlyToGroups: null,
-      __bEventProcessingInProgress: false,
-      __bTerminated: true,
+      __states__P_586_0: null,
+      __startState__P_586_1: null,
+      __eventQueue__P_586_3: null,
+      __blockedEvents__P_586_4: null,
+      __savedStates__P_586_2: null,
+      __friendlyToObject__P_586_5: null,
+      __friendlyToHash__P_586_6: null,
+      __hashToFriendly__P_586_7: null,
+      __groupToFriendly__P_586_8: null,
+      __friendlyToGroups__P_586_9: null,
+      __bEventProcessingInProgress__P_586_10: false,
+      __bTerminated__P_586_11: true,
 
       /**
        * Checks whether the finite state machine is terminated or not.
@@ -237,7 +237,7 @@
        * @return {Boolean} If the finite state machine is terminated.
        */
       isTerminated: function isTerminated() {
-        return this.__bTerminated;
+        return this.__bTerminated__P_586_11;
       },
 
       /**
@@ -261,18 +261,18 @@
 
         var stateName = state.getName(); // Ensure that the state name doesn't already exist
 
-        if (stateName in this.__states) {
+        if (stateName in this.__states__P_586_0) {
           throw new Error("State " + stateName + " already exists");
         } // Is this the first state being added?
 
 
-        if (this.__startState == null) {
+        if (this.__startState__P_586_1 == null) {
           // Yup.  Save this state as the start state.
-          this.__startState = stateName;
+          this.__startState__P_586_1 = stateName;
         } // Add the new state object to the finite state machine
 
 
-        this.__states[stateName] = state;
+        this.__states__P_586_0[stateName] = state;
       },
 
       /**
@@ -306,9 +306,9 @@
 
         var stateName = state.getName(); // Save the old state object, so we can return it to be disposed
 
-        var oldState = this.__states[stateName]; // Replace the old state with the new state object.
+        var oldState = this.__states__P_586_0[stateName]; // Replace the old state with the new state object.
 
-        this.__states[stateName] = state; // Did they request that the old state be disposed?
+        this.__states__P_586_0[stateName] = state; // Did they request that the old state be disposed?
 
         if (bDispose) {
           // Yup.  Mark it to be disposed.
@@ -335,9 +335,9 @@
        */
       addObject: function addObject(friendlyName, obj, groupNames) {
         var hash = qx.core.ObjectRegistry.toHashCode(obj);
-        this.__friendlyToHash[friendlyName] = hash;
-        this.__hashToFriendly[hash] = friendlyName;
-        this.__friendlyToObject[friendlyName] = obj; // If no groupNames are specified, we're done.
+        this.__friendlyToHash__P_586_6[friendlyName] = hash;
+        this.__hashToFriendly__P_586_7[hash] = friendlyName;
+        this.__friendlyToObject__P_586_5[friendlyName] = obj; // If no groupNames are specified, we're done.
 
         if (!groupNames) {
           return;
@@ -354,22 +354,22 @@
         for (var i = 0; i < groupNames.length; i++) {
           var groupName = groupNames[i]; // If the group name doesn't yet exist...
 
-          if (!this.__groupToFriendly[groupName]) {
+          if (!this.__groupToFriendly__P_586_8[groupName]) {
             // ... then create it.
-            this.__groupToFriendly[groupName] = {};
+            this.__groupToFriendly__P_586_8[groupName] = {};
           } // Add the friendly name to the list of names in this group
 
 
-          this.__groupToFriendly[groupName][friendlyName] = true; // If the friendly name group mapping doesn't yet exist...
+          this.__groupToFriendly__P_586_8[groupName][friendlyName] = true; // If the friendly name group mapping doesn't yet exist...
 
-          if (!this.__friendlyToGroups[friendlyName]) {
+          if (!this.__friendlyToGroups__P_586_9[friendlyName]) {
             // ... then create it.
-            this.__friendlyToGroups[friendlyName] = [];
+            this.__friendlyToGroups__P_586_9[friendlyName] = [];
           } // Append this group name to the list of groups this friendly name is
           // in
 
 
-          this.__friendlyToGroups[friendlyName].push(groupName);
+          this.__friendlyToGroups__P_586_9[friendlyName].push(groupName);
         }
       },
 
@@ -387,16 +387,16 @@
         var groupName;
         var objName;
         var bGroupEmpty;
-        hash = this.__friendlyToHash[friendlyName]; // Delete references to any groups this friendly name was in
+        hash = this.__friendlyToHash__P_586_6[friendlyName]; // Delete references to any groups this friendly name was in
 
-        if (this.__friendlyToGroups[friendlyName]) {
-          for (var i = 0; i < this.__friendlyToGroups[friendlyName].length; i++) {
-            groupName = this.__friendlyToGroups[friendlyName][i];
-            delete this.__groupToFriendly[groupName][friendlyName]; // Is the group empty now?
+        if (this.__friendlyToGroups__P_586_9[friendlyName]) {
+          for (var i = 0; i < this.__friendlyToGroups__P_586_9[friendlyName].length; i++) {
+            groupName = this.__friendlyToGroups__P_586_9[friendlyName][i];
+            delete this.__groupToFriendly__P_586_8[groupName][friendlyName]; // Is the group empty now?
 
             bGroupEmpty = true;
 
-            for (objName in this.__groupToFriendly[groupName]) {
+            for (objName in this.__groupToFriendly__P_586_8[groupName]) {
               // The group is not empty. That's all we wanted to know.
               bGroupEmpty = false;
               break;
@@ -405,17 +405,17 @@
 
             if (bGroupEmpty) {
               // ... then we can delete the entire entry
-              delete this.__groupToFriendly[groupName];
+              delete this.__groupToFriendly__P_586_8[groupName];
             }
           }
 
-          delete this.__friendlyToGroups[friendlyName];
+          delete this.__friendlyToGroups__P_586_9[friendlyName];
         } // Delete the friendly name
 
 
-        delete this.__hashToFriendly[hash];
-        delete this.__friendlyToHash[friendlyName];
-        delete this.__friendlyToObject[friendlyName];
+        delete this.__hashToFriendly__P_586_7[hash];
+        delete this.__friendlyToHash__P_586_6[friendlyName];
+        delete this.__friendlyToObject__P_586_5[friendlyName];
       },
 
       /**
@@ -431,7 +431,7 @@
        *   object has been associated with that name.
        */
       getObject: function getObject(friendlyName) {
-        return this.__friendlyToObject[friendlyName];
+        return this.__friendlyToObject__P_586_5[friendlyName];
       },
 
       /**
@@ -447,7 +447,7 @@
        */
       getFriendlyName: function getFriendlyName(obj) {
         var hash = obj ? qx.core.ObjectRegistry.toHashCode(obj) : null;
-        return hash ? this.__hashToFriendly[hash] : null;
+        return hash ? this.__hashToFriendly__P_586_7[hash] : null;
       },
 
       /**
@@ -465,7 +465,7 @@
       getGroupObjects: function getGroupObjects(groupName) {
         var a = [];
 
-        for (var name in this.__groupToFriendly[groupName]) {
+        for (var name in this.__groupToFriendly__P_586_8[groupName]) {
           a.push(name);
         }
 
@@ -477,11 +477,11 @@
        *
        */
       displayAllObjects: function displayAllObjects() {
-        for (var friendlyName in this.__friendlyToHash) {
-          var hash = this.__friendlyToHash[friendlyName];
+        for (var friendlyName in this.__friendlyToHash__P_586_6) {
+          var hash = this.__friendlyToHash__P_586_6[friendlyName];
           var obj = this.getObject(friendlyName);
           this.debug(friendlyName + " => " + hash);
-          this.debug("  " + hash + " => " + this.__hashToFriendly[hash]);
+          this.debug("  " + hash + " => " + this.__hashToFriendly__P_586_7[hash]);
           this.debug("  " + friendlyName + " => " + this.getObject(friendlyName));
           this.debug("  " + this.getObject(friendlyName) + " => " + this.getFriendlyName(obj));
         }
@@ -506,16 +506,16 @@
        */
       _getInternalData: function _getInternalData() {
         return {
-          "states": this.__states,
-          "startState": this.__startState,
-          "eventQueue": this.__eventQueue,
-          "blockedEvents": this.__blockedEvents,
-          "savedStates": this.__savedStates,
-          "friendlyToObject": this.__friendlyToObject,
-          "friendlyToHash": this.__friendlyToHash,
-          "hashToFriendly": this.__hashToFriendly,
-          "groupToFriendly": this.__groupToFriendly,
-          "friendlyToGroups": this.__friendlyToGroups
+          "states": this.__states__P_586_0,
+          "startState": this.__startState__P_586_1,
+          "eventQueue": this.__eventQueue__P_586_3,
+          "blockedEvents": this.__blockedEvents__P_586_4,
+          "savedStates": this.__savedStates__P_586_2,
+          "friendlyToObject": this.__friendlyToObject__P_586_5,
+          "friendlyToHash": this.__friendlyToHash__P_586_6,
+          "hashToFriendly": this.__hashToFriendly__P_586_7,
+          "groupToFriendly": this.__groupToFriendly__P_586_8,
+          "friendlyToGroups": this.__friendlyToGroups__P_586_9
         };
       },
 
@@ -527,8 +527,8 @@
        * @throws {Error} If the machine stared with not available state.
        */
       start: function start() {
-        this.__bTerminated = false;
-        var stateName = this.__startState;
+        this.__bTerminated__P_586_11 = false;
+        var stateName = this.__startState__P_586_1;
 
         if (stateName == null) {
           throw new Error("Machine started with no available states");
@@ -545,21 +545,21 @@
           this.debug(this.getName() + "#" + stateName + "#actionsBeforeOnentry");
         }
 
-        this.__states[stateName].getAutoActionsBeforeOnentry()(this); // Run the entry function for the new state, if one is specified
+        this.__states__P_586_0[stateName].getAutoActionsBeforeOnentry()(this); // Run the entry function for the new state, if one is specified
 
 
         if (debugFunctions) {
           this.debug(this.getName() + "#" + stateName + "#entry");
         }
 
-        this.__states[stateName].getOnentry()(this, null); // Run the actionsAfterOnentry actions for the initial state
+        this.__states__P_586_0[stateName].getOnentry()(this, null); // Run the actionsAfterOnentry actions for the initial state
 
 
         if (debugFunctions) {
           this.debug(this.getName() + "#" + stateName + "#actionsAfterOnentry");
         }
 
-        this.__states[stateName].getAutoActionsAfterOnentry()(this);
+        this.__states__P_586_0[stateName].getAutoActionsAfterOnentry()(this);
       },
 
       /**
@@ -589,19 +589,19 @@
        */
       pushState: function pushState(state) {
         // See if there's room on the state stack for a new state
-        if (this.__savedStates.length >= this.getMaxSavedStates()) {
+        if (this.__savedStates__P_586_2.length >= this.getMaxSavedStates()) {
           // Nope.  Programmer error.
           throw new Error("Saved-state stack is full");
         }
 
         if (state === true) {
           // Push the current state onto the saved-state stack
-          this.__savedStates.push(this.getState());
+          this.__savedStates__P_586_2.push(this.getState());
         } else if (state) {
-          this.__savedStates.push(state);
+          this.__savedStates__P_586_2.push(state);
         } else {
           // Push the previous state onto the saved-state stack
-          this.__savedStates.push(this.getPreviousState());
+          this.__savedStates__P_586_2.push(this.getPreviousState());
         }
       },
 
@@ -614,12 +614,12 @@
        */
       popState: function popState() {
         // Is there anything on the saved-state stack?
-        if (this.__savedStates.length == 0) {
+        if (this.__savedStates__P_586_2.length == 0) {
           // Nope. Programmer error.
           throw new Error("Saved-state stack is empty");
         }
 
-        return this.__savedStates.pop();
+        return this.__savedStates__P_586_2.pop();
       },
 
       /**
@@ -634,7 +634,7 @@
       postponeEvent: function postponeEvent(event) {
         // Add this event to the blocked event queue, so it will be passed to the
         // next state upon transition.
-        this.__blockedEvents.unshift(event);
+        this.__blockedEvents__P_586_4.unshift(event);
       },
 
       /**
@@ -654,10 +654,10 @@
         // Add the event to the event queue
         if (bAddAtHead) {
           // Put event at the head of the queue
-          this.__eventQueue.push(event);
+          this.__eventQueue__P_586_3.push(event);
         } else {
           // Put event at the tail of the queue
-          this.__eventQueue.unshift(event);
+          this.__eventQueue__P_586_3.unshift(event);
         }
 
         if (this.getDebugFlags() & qx.util.fsm.FiniteStateMachine.DebugFlags.EVENTS) {
@@ -678,7 +678,7 @@
        * @param event {qx.event.type.Event} The event that was dispatched.
        */
       eventListener: function eventListener(event) {
-        if (this.__bTerminated) {
+        if (this.__bTerminated__P_586_11) {
           this.debug(this.getName() + ": Cannot listen to event '" + event.getType() + "', because the finite state machine is not running.");
           return;
         } // Events are enqueued upon receipt.  Some events are then processed
@@ -692,7 +692,7 @@
 
         this.enqueueEvent(e, false); // Process events
 
-        this.__processEvents();
+        this.__processEvents__P_586_12();
       },
 
       /**
@@ -712,7 +712,7 @@
        *
        */
       fireImmediateEvent: function fireImmediateEvent(type, target, data) {
-        if (this.__bTerminated) {
+        if (this.__bTerminated__P_586_11) {
           this.debug(this.getName() + ": Cannot listen to event '" + type + "', because the finite state machine is not running.");
           return;
         }
@@ -757,23 +757,23 @@
        * Process all of the events on the event queue.
        *
        */
-      __processEvents: function __processEvents() {
+      __processEvents__P_586_12: function __processEvents__P_586_12() {
         // eventListener() can potentially be called while we're processing
         // events
-        if (this.__bEventProcessingInProgress) {
+        if (this.__bEventProcessingInProgress__P_586_10) {
           // We were processing already, so don't process concurrently.
           return;
         } // Track that we're processing events
 
 
-        this.__bEventProcessingInProgress = true; // Process each of the events on the event queue
+        this.__bEventProcessingInProgress__P_586_10 = true; // Process each of the events on the event queue
 
-        while (this.__eventQueue.length > 0) {
+        while (this.__eventQueue__P_586_3.length > 0) {
           // Pull the next event from the pending event queue
-          var event = this.__eventQueue.pop(); // Run the finite state machine with this event
+          var event = this.__eventQueue__P_586_3.pop(); // Run the finite state machine with this event
 
 
-          var bDispose = this.__run(event); // If we didn't block (and re-queue) the event, dispose it.
+          var bDispose = this.__run__P_586_13(event); // If we didn't block (and re-queue) the event, dispose it.
 
 
           if (bDispose) {
@@ -782,7 +782,7 @@
         } // We're no longer processing events
 
 
-        this.__bEventProcessingInProgress = false;
+        this.__bEventProcessingInProgress__P_586_10 = false;
       },
 
       /**
@@ -805,7 +805,7 @@
        * @throws {Error} If the state stack is empty and the next state is POP_STATE_STACK
        * @throws {Error} If the next state is invalid.
        */
-      __run: function __run(event) {
+      __run__P_586_13: function __run__P_586_13(event) {
         // For use in generated functions...
         // State name variables
         var thisState;
@@ -836,7 +836,7 @@
 
         thisState = this.getState(); // Get the current State object
 
-        currentState = this.__states[thisState]; // Get a list of the transitions available from this state
+        currentState = this.__states__P_586_0[thisState]; // Get a list of the transitions available from this state
 
         transitions = currentState.transitions; // Determine how to handle this event
 
@@ -890,7 +890,7 @@
               this.debug(this.getName() + ": Event '" + event.getType() + "'" + " blocked.  Re-queuing.");
             }
 
-            this.__blockedEvents.unshift(event);
+            this.__blockedEvents__P_586_4.unshift(event);
 
             return false;
 
@@ -940,7 +940,7 @@
 
           if (typeof nextState == "string") {
             // We found a literal state name.  Ensure it exists.
-            if (!nextState in this.__states) {
+            if (!nextState in this.__states__P_586_0) {
               throw new Error("Attempt to transition to nonexistent state " + nextState);
             } // It exists.  Track it being the next state.
 
@@ -957,18 +957,18 @@
 
               case qx.util.fsm.FiniteStateMachine.StateChange.POP_STATE_STACK:
                 // Switch to the state at the top of the state stack.
-                if (this.__savedStates.length == 0) {
+                if (this.__savedStates__P_586_2.length == 0) {
                   throw new Error("Attempt to transition to POP_STATE_STACK while state stack is empty.");
                 } // Pop the state stack to retrieve the state to transition to
 
 
-                nextState = this.__savedStates.pop();
+                nextState = this.__savedStates__P_586_2.pop();
                 this.setNextState(nextState);
                 break;
 
               case qx.util.fsm.FiniteStateMachine.StateChange.TERMINATE:
                 // Terminate fsm
-                this.__bTerminated = true;
+                this.__bTerminated__P_586_11 = true;
                 this.setNextState(null);
                 break;
 
@@ -1020,7 +1020,7 @@
           } // It the fsm has terminated, stop right here
 
 
-          if (this.__bTerminated) {
+          if (this.__bTerminated__P_586_11) {
             if (debugFunctions) {
               this.debug(this.getName() + "#" + "TERMINATED");
             }
@@ -1030,7 +1030,7 @@
           } // Reset currentState to the new state object
 
 
-          currentState = this.__states[this.getNextState()]; // set previousState and state, and clear nextState, for transition
+          currentState = this.__states__P_586_0[this.getNextState()]; // set previousState and state, and clear nextState, for transition
 
           this.setPreviousState(thisState);
           this.setState(this.getNextState());
@@ -1057,10 +1057,10 @@
 
           currentState.getAutoActionsAfterOnentry()(this); // Add any blocked events back onto the pending event queue
 
-          for (var i = 0; i < this.__blockedEvents.length; i++) {
-            e = this.__blockedEvents.pop();
+          for (var i = 0; i < this.__blockedEvents__P_586_4.length; i++) {
+            e = this.__blockedEvents__P_586_4.pop();
 
-            this.__eventQueue.unshift(e);
+            this.__eventQueue__P_586_3.unshift(e);
           }
 
           if (debugTransitions) {
@@ -1079,14 +1079,14 @@
       }
     },
     destruct: function destruct() {
-      this._disposeArray("__eventQueue");
+      this._disposeArray("__eventQueue__P_586_3");
 
-      this._disposeArray("__blockedEvents");
+      this._disposeArray("__blockedEvents__P_586_4");
 
-      this.__savedStates = this.__states = null;
+      this.__savedStates__P_586_2 = this.__states__P_586_0 = null;
     }
   });
   qx.util.fsm.FiniteStateMachine.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FiniteStateMachine.js.map?dt=1589218287548
+//# sourceMappingURL=FiniteStateMachine.js.map?dt=1591363012760

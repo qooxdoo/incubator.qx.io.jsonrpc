@@ -35,20 +35,20 @@
   qx.Class.define("qx.test.event.message.Bus", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __subscriberOne: null,
-      __subscriberTwo: null,
-      __subscriberThree: null,
+      __subscriberOne__P_246_0: null,
+      __subscriberTwo__P_246_1: null,
+      __subscriberThree__P_246_2: null,
       setUp: function setUp() {
-        this.__subscriberOne = new qx.core.Object();
-        this.__subscriberTwo = new qx.core.Object();
-        this.__subscriberThree = new qx.core.Object();
+        this.__subscriberOne__P_246_0 = new qx.core.Object();
+        this.__subscriberTwo__P_246_1 = new qx.core.Object();
+        this.__subscriberThree__P_246_2 = new qx.core.Object();
       },
       tearDown: function tearDown() {
-        this.__subscriberOne.dispose();
+        this.__subscriberOne__P_246_0.dispose();
 
-        this.__subscriberTwo.dispose();
+        this.__subscriberTwo__P_246_1.dispose();
 
-        this.__subscriberThree.dispose();
+        this.__subscriberThree__P_246_2.dispose();
 
         var subscribers = qx.event.message.Bus.getSubscriptions();
 
@@ -66,15 +66,15 @@
           calls++;
           that.assertEquals("MyMessage", message.getName());
           that.assertEquals(10, message.getData());
-        }, this.__subscriberOne);
+        }, this.__subscriberOne__P_246_0);
         bus.subscribe("MyMessage2", function (message) {
           that.assertFalse(true, "Wrong subscriber called!");
-        }, this.__subscriberTwo);
+        }, this.__subscriberTwo__P_246_1);
         bus.subscribe("MyMessage", function (message) {
           calls++;
           that.assertEquals("MyMessage", message.getName());
           that.assertEquals(10, message.getData());
-        }, this.__subscriberThree);
+        }, this.__subscriberThree__P_246_2);
         var msg = new qx.event.message.Message("MyMessage", 10);
         this.assertTrue(bus.dispatch(msg), "Message not dispatched");
         this.assertEquals(2, calls, "Wrong callbacks!");
@@ -88,18 +88,18 @@
           calls++;
           that.assertEquals("MyMessage", message.getName());
           that.assertEquals(10, message.getData());
-        }, this.__subscriberOne);
+        }, this.__subscriberOne__P_246_0);
 
-        this.__subscriberTwo.dispose();
+        this.__subscriberTwo__P_246_1.dispose();
 
         bus.subscribe("MyMessage", function (message) {
           that.assertFalse(true, "Wrong subscriber called!");
-        }, this.__subscriberTwo);
+        }, this.__subscriberTwo__P_246_1);
         bus.subscribe("MyMessage", function (message) {
           calls++;
           that.assertEquals("MyMessage", message.getName());
           that.assertEquals(10, message.getData());
-        }, this.__subscriberThree);
+        }, this.__subscriberThree__P_246_2);
         var msg = new qx.event.message.Message("MyMessage", 10);
         this.assertTrue(bus.dispatch(msg), "Message not dispatched");
         this.assertEquals(2, calls, "Wrong callbacks!");
@@ -131,6 +131,41 @@
         this.assertTrue(messageBus.dispatch(msg2), "Message not dispatched");
         this.assertTrue(flag1, "Handler1 (filter '*') was not called for message 'massage'.");
         this.assertFalse(flag2, "Handler2 (filter 'mess*') was wrongly called for message 'massage'.");
+        msg1.dispose();
+        msg2.dispose();
+      },
+      testRegex: function testRegex() {
+        var flag1 = false;
+
+        function handler1() {
+          flag1 = true;
+        }
+
+        var messageBus = qx.event.message.Bus.getInstance();
+        messageBus.subscribe(/^test\.[a-z]+$/, handler1, this);
+        var msg1 = new qx.event.message.Message("test.abc", true);
+        this.assertTrue(messageBus.dispatch(msg1), "Message not dispatched");
+        this.assertTrue(flag1, "Handler1 (filter /^test\\.[a-z]+$/) was not called for message '" + msg1.getName() + "'");
+        var msg2 = new qx.event.message.Message("test.123", true);
+        this.assertFalse(messageBus.dispatch(msg2), "Message was dispatched and shouldn't have been");
+        msg1.dispose();
+        msg2.dispose();
+      },
+      testSubscribeOnce: function testSubscribeOnce() {
+        var flag1 = false;
+
+        function handler1() {
+          flag1 = true;
+        }
+
+        var messageBus = qx.event.message.Bus.getInstance();
+        messageBus.subscribeOnce("testSubscribeOnce", handler1, this);
+        var msg1 = new qx.event.message.Message("testSubscribeOnce", true);
+        this.assertTrue(messageBus.dispatch(msg1), "Message not dispatched");
+        this.assertTrue(flag1, "Handler (filter \"testSubscribeOnce\") was not called for message '" + msg1.getName() + "'");
+        flag1 = false;
+        var msg2 = new qx.event.message.Message("testSubscribeOnce", true);
+        this.assertFalse(messageBus.dispatch(msg2), "Message was dispatched but shouldn't have been.");
         msg1.dispose();
         msg2.dispose();
       },
@@ -203,4 +238,4 @@
   qx.test.event.message.Bus.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Bus.js.map?dt=1589218258599
+//# sourceMappingURL=Bus.js.map?dt=1591362980131

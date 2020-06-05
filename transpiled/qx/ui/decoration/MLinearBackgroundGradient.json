@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 419,
+        "line": 417,
         "column": 3
       }
     },
@@ -33,60 +33,206 @@
   "type": "mixin",
   "properties": {
     "startColor": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 75,
+          "column": 4
+        },
+        "end": {
+          "line": 79,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Start color of the background gradient.\n Note that alpha transparency (rgba) is not supported in IE 8.</p>"
+          }
+        ]
+      },
       "name": "startColor",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "apply": "_applyLinearBackgroundGradient",
+      "nullable": true,
+      "allowNull": true
     },
     "endColor": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 85,
+          "column": 4
+        },
+        "end": {
+          "line": 89,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>End color of the background gradient.\n Note that alpha transparency (rgba) is not supported in IE 8.</p>"
+          }
+        ]
+      },
       "name": "endColor",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "apply": "_applyLinearBackgroundGradient",
+      "nullable": true,
+      "allowNull": true
     },
     "orientation": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 92,
+          "column": 4
+        },
+        "end": {
+          "line": 96,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The orientation of the gradient.</p>"
+          }
+        ]
+      },
       "name": "orientation",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "apply": "_applyLinearBackgroundGradient",
+      "init": "vertical",
+      "defaultValue": "vertical"
     },
     "startColorPosition": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 99,
+          "column": 4
+        },
+        "end": {
+          "line": 103,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Position in percent where to start the color.</p>"
+          }
+        ]
+      },
       "name": "startColorPosition",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "apply": "_applyLinearBackgroundGradient",
+      "init": 0,
+      "defaultValue": 0
     },
     "endColorPosition": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 106,
+          "column": 4
+        },
+        "end": {
+          "line": 110,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Position in percent where to start the color.</p>"
+          }
+        ]
+      },
       "name": "endColorPosition",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "apply": "_applyLinearBackgroundGradient",
+      "init": 100,
+      "defaultValue": 100
     },
     "colorPositionUnit": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 113,
+          "column": 4
+        },
+        "end": {
+          "line": 117,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Defines if the given positions are in % or px.</p>"
+          }
+        ]
+      },
       "name": "colorPositionUnit",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "apply": "_applyLinearBackgroundGradient",
+      "init": "%",
+      "defaultValue": "%"
     },
     "gradientStart": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 121,
+          "column": 4
+        },
+        "end": {
+          "line": 125,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Property group to set the start color including its start position.</p>"
+          }
+        ]
+      },
       "name": "gradientStart",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "group": [
+        "startColor",
+        "startColorPosition"
+      ]
     },
     "gradientEnd": {
-      "type": "property",
+      "location": {
+        "start": {
+          "line": 128,
+          "column": 4
+        },
+        "end": {
+          "line": 132,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Property group to set the end color including its end position.</p>"
+          }
+        ]
+      },
       "name": "gradientEnd",
-      "abstract": false,
-      "mixin": true,
-      "access": "public"
+      "propertyType": "new",
+      "group": [
+        "endColor",
+        "endColorPosition"
+      ]
     }
   },
   "members": {
@@ -97,7 +243,7 @@
           "column": 4
         },
         "end": {
-          "line": 191,
+          "line": 189,
           "column": 5
         }
       },
@@ -124,11 +270,11 @@
     "__styleLinearBackgroundGradientForLegacyWebkit": {
       "location": {
         "start": {
-          "line": 209,
+          "line": 207,
           "column": 4
         },
         "end": {
-          "line": 227,
+          "line": 225,
           "column": 5
         }
       },
@@ -212,11 +358,11 @@
     "__styleLinearBackgroundGradientWithCanvas": {
       "location": {
         "start": {
-          "line": 245,
+          "line": 243,
           "column": 4
         },
         "end": {
-          "line": 305,
+          "line": 303,
           "column": 5
         }
       },
@@ -300,11 +446,11 @@
     "__styleLinearBackgroundGradientWithMSFilter": {
       "location": {
         "start": {
-          "line": 323,
+          "line": 321,
           "column": 4
         },
         "end": {
-          "line": 361,
+          "line": 359,
           "column": 5
         }
       },
@@ -388,11 +534,11 @@
     "__styleLinearBackgroundGradientAccordingToSpec": {
       "location": {
         "start": {
-          "line": 379,
+          "line": 377,
           "column": 4
         },
         "end": {
-          "line": 395,
+          "line": 393,
           "column": 5
         }
       },
@@ -476,11 +622,11 @@
     "__getColor": {
       "location": {
         "start": {
-          "line": 402,
+          "line": 400,
           "column": 4
         },
         "end": {
-          "line": 405,
+          "line": 403,
           "column": 5
         }
       },
@@ -515,11 +661,11 @@
     "_applyLinearBackgroundGradient": {
       "location": {
         "start": {
-          "line": 409,
+          "line": 407,
           "column": 4
         },
         "end": {
-          "line": 417,
+          "line": 415,
           "column": 5
         }
       },

@@ -64,104 +64,104 @@
         return qx.core.Environment.get("engine.name") !== "mshtml";
       },
       setUp: function setUp() {
-        this.__font = new qx.bom.Font();
+        this.__font__P_206_0 = new qx.bom.Font();
       },
       tearDown: function tearDown() {
         qx.test.bom.Font.prototype.tearDown.base.call(this);
 
-        this.__font.dispose();
+        this.__font__P_206_0.dispose();
       },
       testBold: function testBold() {
-        this.__font.setBold(true);
+        this.__font__P_206_0.setBold(true);
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("bold", styles.fontWeight, "Wrong style value for 'bold' property!");
       },
       testWeight: function testWeight() {
-        this.__font.setWeight("400");
+        this.__font__P_206_0.setWeight("400");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("400", styles.fontWeight, "something went wrong settng the 'font weight'");
       },
       testItalic: function testItalic() {
-        this.__font.setItalic(true);
+        this.__font__P_206_0.setItalic(true);
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("italic", styles.fontStyle, "Wrong style value for 'italic' property!");
       },
       testDecorationUnderline: function testDecorationUnderline() {
-        this.__font.setDecoration("underline");
+        this.__font__P_206_0.setDecoration("underline");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("underline", styles.textDecoration, "Wrong style value for 'decoration' property!");
       },
       testDecorationLineThrough: function testDecorationLineThrough() {
-        this.__font.setDecoration("line-through");
+        this.__font__P_206_0.setDecoration("line-through");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("line-through", styles.textDecoration, "Wrong style value for 'decoration' property!");
       },
       testDecorationOverline: function testDecorationOverline() {
-        this.__font.setDecoration("overline");
+        this.__font__P_206_0.setDecoration("overline");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("overline", styles.textDecoration, "Wrong style value for 'decoration' property!");
       },
       testFontFamily: function testFontFamily() {
-        this.__font.setFamily(["Arial"]);
+        this.__font__P_206_0.setFamily(["Arial"]);
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("Arial", styles.fontFamily, "Wrong style value for 'family' property!");
       },
       testFontFamilyMultipleWords: function testFontFamilyMultipleWords() {
-        this.__font.setFamily(['Times New Roman']);
+        this.__font__P_206_0.setFamily(['Times New Roman']);
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals('"Times New Roman"', styles.fontFamily, "Wrong style value for 'family' property!");
       },
       testLineHeight: function testLineHeight() {
-        this.__font.setLineHeight(1.5);
+        this.__font__P_206_0.setLineHeight(1.5);
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals(1.5, styles.lineHeight, "Wrong style value for 'lineHeight' property!");
       },
       testSize: function testSize() {
-        this.__font.setSize(20);
+        this.__font__P_206_0.setSize(20);
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("20px", styles.fontSize, "Wrong style value for 'size' property!");
       },
       testColor: function testColor() {
-        this.__font.setColor("red");
+        this.__font__P_206_0.setColor("red");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("red", styles.color, "Wrong style value for 'color' property!");
       },
       testTextShadow: function testTextShadow() {
         this.require(["noIe"]);
 
-        this.__font.setTextShadow("red 1px 1px 3px, green -1px -1px 3px, white -1px 1px 3px, white 1px -1px 3px");
+        this.__font__P_206_0.setTextShadow("red 1px 1px 3px, green -1px -1px 3px, white -1px 1px 3px, white 1px -1px 3px");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         this.assertEquals("red 1px 1px 3px, green -1px -1px 3px, white -1px 1px 3px, white 1px -1px 3px", styles.textShadow, "Wrong style value for 'textShadow' property!");
       },
       testColorAtWidget: function testColorAtWidget() {
-        this.__font.setColor("#ff0000");
+        this.__font__P_206_0.setColor("#ff0000");
 
         var label = new qx.ui.basic.Label("myLabel");
-        label.setFont(this.__font);
+        label.setFont(this.__font__P_206_0);
         this.getRoot().add(label);
         this.flush();
         var useRgbValue = true;
@@ -179,7 +179,7 @@
         label.destroy();
       },
       testGetStyles: function testGetStyles() {
-        var styles = this.__font.getStyles(); // we expect a map with only 'fontFamily' set, otherwise the null values
+        var styles = this.__font__P_206_0.getStyles(); // we expect a map with only 'fontFamily' set, otherwise the null values
         // which are returned are overwriting styles. Only return styles which are set.
 
 
@@ -196,15 +196,15 @@
         this.assertNotUndefined(styles.textShadow, "Key 'textShadow' has to be present!");
       },
       testGetSomeStyles: function testGetSomeStyles() {
-        this.__font.setBold(true);
+        this.__font__P_206_0.setBold(true);
 
-        this.__font.setItalic(true);
+        this.__font__P_206_0.setItalic(true);
 
-        this.__font.setColor("#3f3f3f");
+        this.__font__P_206_0.setColor("#3f3f3f");
 
-        this.__font.setDecoration("underline");
+        this.__font__P_206_0.setDecoration("underline");
 
-        var styles = this.__font.getStyles();
+        var styles = this.__font__P_206_0.getStyles();
 
         var keys = Object.keys(styles);
         this.assertMap(styles, "Method 'getStyles' should return a map!");
@@ -268,4 +268,4 @@
   qx.test.bom.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1589218253802
+//# sourceMappingURL=Font.js.map?dt=1591362974591

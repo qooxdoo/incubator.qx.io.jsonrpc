@@ -55,7 +55,7 @@
       "change": "qx.event.type.Event"
     },
     members: {
-      __ranges: null,
+      __ranges__P_546_0: null,
 
       /**
        * Get the default size of the items.
@@ -74,7 +74,7 @@
       setDefaultItemSize: function setDefaultItemSize(defaultItemSize) {
         if (this.defaultItemSize !== defaultItemSize) {
           this.defaultItemSize = defaultItemSize;
-          this.__ranges = null;
+          this.__ranges__P_546_0 = null;
           this.fireNonBubblingEvent("change");
         }
       },
@@ -96,7 +96,7 @@
       setItemCount: function setItemCount(itemCount) {
         if (this.itemCount !== itemCount) {
           this.itemCount = itemCount;
-          this.__ranges = null;
+          this.__ranges__P_546_0 = null;
           this.fireNonBubblingEvent("change");
         }
       },
@@ -124,7 +124,7 @@
           this.customSizes[index] = size;
         }
 
-        this.__ranges = null;
+        this.__ranges__P_546_0 = null;
         this.fireNonBubblingEvent("change");
       },
 
@@ -144,7 +144,7 @@
        */
       resetItemSizes: function resetItemSizes() {
         this.customSizes = {};
-        this.__ranges = null;
+        this.__ranges__P_546_0 = null;
         this.fireNonBubblingEvent("change");
       },
 
@@ -157,9 +157,9 @@
        *
        * @return {Map[]} The sorted list of ranges.
        */
-      __getRanges: function __getRanges() {
-        if (this.__ranges) {
-          return this.__ranges;
+      __getRanges__P_546_1: function __getRanges__P_546_1() {
+        if (this.__ranges__P_546_0) {
+          return this.__ranges__P_546_0;
         }
 
         var defaultSize = this.defaultItemSize;
@@ -182,7 +182,7 @@
             rangeStart: 0,
             rangeEnd: itemCount * defaultSize - 1
           }];
-          this.__ranges = ranges;
+          this.__ranges__P_546_0 = ranges;
           return ranges;
         }
 
@@ -230,7 +230,7 @@
         var remainingItemsSize = (itemCount - lastRange.startIndex - 1) * defaultSize;
         lastRange.rangeEnd = lastRange.rangeStart + lastRange.firstItemSize + remainingItemsSize - 1;
         lastRange.endIndex = itemCount - 1;
-        this.__ranges = ranges;
+        this.__ranges__P_546_0 = ranges;
         return ranges;
       },
 
@@ -242,8 +242,8 @@
        * @param position {Integer} The position.
        * @return {Map} The range, which contains the given position.
        */
-      __findRangeByPosition: function __findRangeByPosition(position) {
-        var ranges = this.__ranges || this.__getRanges();
+      __findRangeByPosition__P_546_2: function __findRangeByPosition__P_546_2(position) {
+        var ranges = this.__ranges__P_546_0 || this.__getRanges__P_546_1();
 
         var start = 0;
         var end = ranges.length - 1; // binary search in the sorted ranges list
@@ -276,7 +276,7 @@
           return null;
         }
 
-        var range = this.__findRangeByPosition(position);
+        var range = this.__findRangeByPosition__P_546_2(position);
 
         var startPos = range.rangeStart;
         var index = range.startIndex;
@@ -304,8 +304,8 @@
        * @param index {Integer} The index of the item to get the range for.
        * @return {Map} The range for the index.
        */
-      __findRangeByIndex: function __findRangeByIndex(index) {
-        var ranges = this.__ranges || this.__getRanges();
+      __findRangeByIndex__P_546_3: function __findRangeByIndex__P_546_3(index) {
+        var ranges = this.__ranges__P_546_0 || this.__getRanges__P_546_1();
 
         var start = 0;
         var end = ranges.length - 1; // binary search in the sorted ranges list
@@ -336,7 +336,7 @@
           return null;
         }
 
-        var range = this.__findRangeByIndex(index);
+        var range = this.__findRangeByIndex__P_546_3(index);
 
         if (range.startIndex == index) {
           return range.rangeStart;
@@ -351,7 +351,7 @@
        * @return {Integer} The sum of all item sizes.
        */
       getTotalSize: function getTotalSize() {
-        var ranges = this.__ranges || this.__getRanges();
+        var ranges = this.__ranges__P_546_0 || this.__getRanges__P_546_1();
 
         return ranges[ranges.length - 1].rangeEnd + 1;
       },
@@ -388,10 +388,10 @@
       }
     },
     destruct: function destruct() {
-      this.customSizes = this.__ranges = null;
+      this.customSizes = this.__ranges__P_546_0 = null;
     }
   });
   qx.ui.virtual.core.Axis.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Axis.js.map?dt=1589218284469
+//# sourceMappingURL=Axis.js.map?dt=1591363009281

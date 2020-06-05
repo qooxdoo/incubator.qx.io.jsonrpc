@@ -133,33 +133,33 @@
       // The purpose of the iframe is to receive data coming back from the server (see below).
 
 
-      this.__frame = qx.bom.Iframe.create({
+      this.__frame__P_168_0 = qx.bom.Iframe.create({
         id: vFrameName,
         name: vFrameName,
         src: vFrameSource
       });
-      qx.bom.element.Style.set(this.__frame, "display", "none"); // Create form element with textarea as conduit for request data.
+      qx.bom.element.Style.set(this.__frame__P_168_0, "display", "none"); // Create form element with textarea as conduit for request data.
       // The target of the form is the hidden iframe, which means the response
       // coming back from the server is written into the iframe.
 
-      this.__form = qx.dom.Element.create("form", {
+      this.__form__P_168_1 = qx.dom.Element.create("form", {
         id: vFormName,
         name: vFormName,
         target: vFrameName
       });
-      qx.bom.element.Style.set(this.__form, "display", "none");
-      qx.dom.Element.insertEnd(this.__form, qx.dom.Node.getBodyElement(document));
-      this.__data = qx.dom.Element.create("textarea", {
+      qx.bom.element.Style.set(this.__form__P_168_1, "display", "none");
+      qx.dom.Element.insertEnd(this.__form__P_168_1, qx.dom.Node.getBodyElement(document));
+      this.__data__P_168_2 = qx.dom.Element.create("textarea", {
         id: "_data_",
         name: "_data_"
       });
-      qx.dom.Element.insertEnd(this.__data, this.__form); // Finally, attach iframe to DOM and add listeners
+      qx.dom.Element.insertEnd(this.__data__P_168_2, this.__form__P_168_1); // Finally, attach iframe to DOM and add listeners
 
-      qx.dom.Element.insertEnd(this.__frame, qx.dom.Node.getBodyElement(document));
-      qx.event.Registration.addListener(this.__frame, "load", this._onload, this); // qx.event.handler.Iframe does not yet support the readystatechange event
+      qx.dom.Element.insertEnd(this.__frame__P_168_0, qx.dom.Node.getBodyElement(document));
+      qx.event.Registration.addListener(this.__frame__P_168_0, "load", this._onload, this); // qx.event.handler.Iframe does not yet support the readystatechange event
 
-      this.__onreadystatechangeWrapper = qx.lang.Function.listener(this._onreadystatechange, this);
-      qx.bom.Event.addNativeListener(this.__frame, "readystatechange", this.__onreadystatechangeWrapper);
+      this.__onreadystatechangeWrapper__P_168_3 = qx.lang.Function.listener(this._onreadystatechange, this);
+      qx.bom.Event.addNativeListener(this.__frame__P_168_0, "readystatechange", this.__onreadystatechangeWrapper__P_168_3);
     },
 
     /*
@@ -218,11 +218,11 @@
     *****************************************************************************
     */
     members: {
-      __data: null,
-      __lastReadyState: 0,
-      __form: null,
-      __frame: null,
-      __onreadystatechangeWrapper: null,
+      __data__P_168_2: null,
+      __lastReadyState__P_168_4: 0,
+      __form__P_168_1: null,
+      __frame__P_168_0: null,
+      __onreadystatechangeWrapper__P_168_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -293,20 +293,20 @@
           vField.name = vId;
           vField.appendChild(document.createTextNode(vFormFields[vId]));
 
-          this.__form.appendChild(vField);
+          this.__form__P_168_1.appendChild(vField);
         } // --------------------------------------
         //   Preparing form
         // --------------------------------------
 
 
-        this.__form.action = vUrl;
-        this.__form.method = vMethod; // --------------------------------------
+        this.__form__P_168_1.action = vUrl;
+        this.__form__P_168_1.method = vMethod; // --------------------------------------
         //   Sending data
         // --------------------------------------
 
-        this.__data.appendChild(document.createTextNode(this.getData()));
+        this.__data__P_168_2.appendChild(document.createTextNode(this.getData()));
 
-        this.__form.submit();
+        this.__form__P_168_1.submit();
 
         this.setState("sending");
       },
@@ -325,7 +325,7 @@
           return;
         }
 
-        if (this.__form.src) {
+        if (this.__form__P_168_1.src) {
           return;
         }
 
@@ -339,7 +339,7 @@
        * @param e {qx.event.type.Event} event object
        */
       _onreadystatechange: qx.event.GlobalError.observeMethod(function (e) {
-        this._switchReadyState(qx.io.remote.transport.Iframe._numericMap[this.__frame.readyState]);
+        this._switchReadyState(qx.io.remote.transport.Iframe._numericMap[this.__frame__P_168_0.readyState]);
       }),
 
       /**
@@ -359,8 +359,8 @@
         } // Updating internal state
 
 
-        while (this.__lastReadyState < vReadyState) {
-          this.setState(qx.io.remote.Exchange._nativeMap[++this.__lastReadyState]);
+        while (this.__lastReadyState__P_168_4 < vReadyState) {
+          this.setState(qx.io.remote.Exchange._nativeMap[++this.__lastReadyState__P_168_4]);
         }
       },
 
@@ -447,7 +447,7 @@
        * @return {Object} DOM window object
        */
       getIframeWindow: function getIframeWindow() {
-        return qx.bom.Iframe.getWindow(this.__frame);
+        return qx.bom.Iframe.getWindow(this.__frame__P_168_0);
       },
 
       /**
@@ -456,7 +456,7 @@
        * @return {Object} document node
        */
       getIframeDocument: function getIframeDocument() {
-        return qx.bom.Iframe.getDocument(this.__frame);
+        return qx.bom.Iframe.getDocument(this.__frame__P_168_0);
       },
 
       /**
@@ -465,7 +465,7 @@
        * @return {Object} body node
        */
       getIframeBody: function getIframeBody() {
-        return qx.bom.Iframe.getBody(this.__frame);
+        return qx.bom.Iframe.getBody(this.__frame__P_168_0);
       },
 
       /*
@@ -620,27 +620,27 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__frame) {
-        qx.event.Registration.removeListener(this.__frame, "load", this._onload, this);
-        qx.bom.Event.removeNativeListener(this.__frame, "readystatechange", this.__onreadystatechangeWrapper); // Reset source to a blank image for gecko
+      if (this.__frame__P_168_0) {
+        qx.event.Registration.removeListener(this.__frame__P_168_0, "load", this._onload, this);
+        qx.bom.Event.removeNativeListener(this.__frame__P_168_0, "readystatechange", this.__onreadystatechangeWrapper__P_168_3); // Reset source to a blank image for gecko
         // Otherwise it will switch into a load-without-end behaviour
 
         if (qx.core.Environment.get("engine.name") == "gecko") {
-          this.__frame.src = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.gif");
+          this.__frame__P_168_0.src = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.gif");
         } // Finally, remove element node
 
 
-        qx.dom.Element.remove(this.__frame);
+        qx.dom.Element.remove(this.__frame__P_168_0);
       }
 
-      if (this.__form) {
-        qx.dom.Element.remove(this.__form);
+      if (this.__form__P_168_1) {
+        qx.dom.Element.remove(this.__form__P_168_1);
       }
 
-      this.__frame = this.__form = this.__data = null;
+      this.__frame__P_168_0 = this.__form__P_168_1 = this.__data__P_168_2 = null;
     }
   });
   qx.io.remote.transport.Iframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Iframe.js.map?dt=1589218249569
+//# sourceMappingURL=Iframe.js.map?dt=1591362969881

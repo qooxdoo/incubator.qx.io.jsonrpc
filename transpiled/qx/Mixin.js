@@ -104,7 +104,7 @@
 
 
           {
-            this.__validateConfig(name, config);
+            this.__validateConfig__P_6_0(name, config);
           } // Create Interface from statics
 
           var mixin = config.statics ? config.statics : {};
@@ -305,7 +305,7 @@
       $$registry: {},
 
       /** @type {Map} allowed keys in mixin definition */
-      __allowedKeys: {
+      __allowedKeys__P_6_1: {
         "include": "object",
         // Mixin | Mixin[]
         "statics": "object",
@@ -329,9 +329,9 @@
        * @param name {String} The name of the class
        * @param config {Map} Configuration map
        */
-      __validateConfig: function __validateConfig(name, config) {
+      __validateConfig__P_6_0: function __validateConfig__P_6_0(name, config) {
         // Validate keys
-        var allowed = this.__allowedKeys;
+        var allowed = this.__allowedKeys__P_6_1;
 
         for (var key in config) {
           if (!allowed[key]) {
@@ -378,4 +378,4 @@
   qx.Mixin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Mixin.js.map?dt=1589218235195
+//# sourceMappingURL=Mixin.js.map?dt=1591362954111

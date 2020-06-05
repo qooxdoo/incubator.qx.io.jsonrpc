@@ -154,7 +154,7 @@
           }
 
           if (!qx.io.ImageLoader.isFailed(uri) && !qx.io.ImageLoader.isLoaded(uri)) {
-            qx.io.ImageLoader.load(uri, this.__loaderCallback, this);
+            qx.io.ImageLoader.load(uri, this.__loaderCallback__P_451_0, this);
           }
         }
 
@@ -200,7 +200,7 @@
        * @param source {String} Image source which was loaded
        * @param imageInfo {Map} Dimensions of the loaded image
        */
-      __loaderCallback: function __loaderCallback(source, imageInfo) {
+      __loaderCallback__P_451_0: function __loaderCallback__P_451_0(source, imageInfo) {
         // Ignore the callback on already disposed images
         if (this.$$disposed === true) {
           return;
@@ -251,4 +251,4 @@
   qx.ui.mobile.basic.Image.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Image.js.map?dt=1589218276859
+//# sourceMappingURL=Image.js.map?dt=1591363000755

@@ -207,7 +207,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.test.ui.LayoutTestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -266,7 +274,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.test.ui.LayoutTestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getTestResult": {
       "type": "function",
@@ -327,7 +343,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.test.ui.LayoutTestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testResult</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testResult}."
+          }
+        ]
+      }
     },
     "getTestFunc": {
       "type": "function",
@@ -388,7 +412,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.test.ui.LayoutTestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testFunc</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testFunc}."
+          }
+        ]
+      }
     }
   },
   "descendants": []

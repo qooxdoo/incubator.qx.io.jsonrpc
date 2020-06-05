@@ -50,7 +50,7 @@
         this.tree.openNode(root.getChildren().getItem(2).getChildren().getItem(4));
         var openNodes = [sortedModel, sortedModel.getChildren().getItem(2), sortedModel.getChildren().getItem(2).getChildren().getItem(4)];
 
-        this.__sortModel(sortedModel, sorter);
+        this.__sortModel__P_341_0(sortedModel, sorter);
 
         var delegate = {
           sorter: sorter
@@ -60,7 +60,7 @@
         var expected = this.getVisibleItemsFrom(sortedModel, openNodes);
         qx.lang.Array.insertAt(expected, sortedModel, 0);
 
-        this.__testBuildLookupTable(expected); //this.__logModel(sortedModel);
+        this.__testBuildLookupTable__P_341_1(expected); //this.__logModel(sortedModel);
 
 
         sortedModel.dispose();
@@ -80,7 +80,7 @@
         this.tree.setDelegate(delegate);
         this.flush();
 
-        this.__testOrderNotChanged(rootChildrenClone.toArray(), root.getChildren().toArray());
+        this.__testOrderNotChanged__P_341_2(rootChildrenClone.toArray(), root.getChildren().toArray());
 
         rootChildrenClone.dispose();
       },
@@ -96,7 +96,7 @@
 
         sortedModel.getChildren().removeAt(2);
 
-        this.__sortModel(sortedModel, sorter);
+        this.__sortModel__P_341_0(sortedModel, sorter);
 
         var delegate = {
           sorter: sorter,
@@ -109,12 +109,12 @@
         var expected = this.getVisibleItemsFrom(sortedModel, []);
         qx.lang.Array.insertAt(expected, sortedModel, 0);
 
-        this.__testBuildLookupTable(expected); //this.__logModel(sortedModel);
+        this.__testBuildLookupTable__P_341_1(expected); //this.__logModel(sortedModel);
 
 
         sortedModel.dispose();
       },
-      __sortModel: function __sortModel(model, sorter) {
+      __sortModel__P_341_0: function __sortModel__P_341_0(model, sorter) {
         var children = model.getChildren();
         children.sort(sorter);
 
@@ -122,11 +122,11 @@
           var child = children.getItem(i);
 
           if (child instanceof qx.test.ui.tree.virtual.Node) {
-            this.__sortModel(child, sorter);
+            this.__sortModel__P_341_0(child, sorter);
           }
         }
       },
-      __testBuildLookupTable: function __testBuildLookupTable(expected) {
+      __testBuildLookupTable__P_341_1: function __testBuildLookupTable__P_341_1(expected) {
         var found = this.tree.getLookupTable().toArray();
         var msg = "Expected [" + expected.join(", ") + "], but found [" + found.join(", ") + "]";
         this.assertEquals(expected.length, found.length, msg);
@@ -137,7 +137,7 @@
 
         this.assertEquals(expected.length, this.tree.getPane().getRowConfig().getItemCount());
       },
-      __testOrderNotChanged: function __testOrderNotChanged(expected, found) {
+      __testOrderNotChanged__P_341_2: function __testOrderNotChanged__P_341_2(expected, found) {
         var msg = "Expected [" + expected.join(", ") + "], but found [" + found.join(", ") + "]";
         this.assertEquals(expected.length, found.length, msg);
 
@@ -151,7 +151,7 @@
         HELPER METHOD TO LOG TREE MODEL
       ---------------------------------------------------------------------------
       */
-      __logModel: function __logModel(model, level) {
+      __logModel__P_341_3: function __logModel__P_341_3(model, level) {
         level = level != null ? level : 0;
         var prefix = "";
 
@@ -168,7 +168,7 @@
         var children = model.getChildren();
 
         for (var i = 0; i < children.getLength(); i++) {
-          this.__logModel(children.getItem(i), level + 1);
+          this.__logModel__P_341_3(children.getItem(i), level + 1);
         }
       }
     }
@@ -176,4 +176,4 @@
   qx.test.ui.tree.virtual.Sorting.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Sorting.js.map?dt=1589218266278
+//# sourceMappingURL=Sorting.js.map?dt=1591362988800

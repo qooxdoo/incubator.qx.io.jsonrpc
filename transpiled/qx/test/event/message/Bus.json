@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 207,
+        "line": 247,
         "column": 3
       }
     },
@@ -148,14 +148,42 @@
       "type": "function",
       "access": "public"
     },
-    "testUnsubscribe": {
+    "testRegex": {
       "location": {
         "start": {
-          "line": 141,
+          "line": 140,
           "column": 4
         },
         "end": {
-          "line": 164,
+          "line": 157,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "testSubscribeOnce": {
+      "location": {
+        "start": {
+          "line": 159,
+          "column": 4
+        },
+        "end": {
+          "line": 177,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "testUnsubscribe": {
+      "location": {
+        "start": {
+          "line": 181,
+          "column": 4
+        },
+        "end": {
+          "line": 204,
           "column": 5
         }
       },
@@ -173,11 +201,11 @@
     "testUnsubscribeAll": {
       "location": {
         "start": {
-          "line": 166,
+          "line": 206,
           "column": 4
         },
         "end": {
-          "line": 189,
+          "line": 229,
           "column": 5
         }
       },
@@ -187,11 +215,11 @@
     "testWrongDispatch": {
       "location": {
         "start": {
-          "line": 191,
+          "line": 231,
           "column": 4
         },
         "end": {
-          "line": 205,
+          "line": 245,
           "column": 5
         }
       },
@@ -257,7 +285,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -316,7 +352,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getTestResult": {
       "type": "function",
@@ -377,7 +421,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testResult</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testResult}."
+          }
+        ]
+      }
     },
     "getTestFunc": {
       "type": "function",
@@ -438,7 +490,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testFunc</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testFunc}."
+          }
+        ]
+      }
     }
   },
   "descendants": []

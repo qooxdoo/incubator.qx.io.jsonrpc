@@ -45,7 +45,7 @@
         qx.test.ui.layout.Box.prototype.tearDown.base.call(this);
         this.root.dispose();
       },
-      __testExclude: function __testExclude(layout, test) {
+      __testExclude__P_328_0: function __testExclude__P_328_0(layout, test) {
         // composite
         var comp = new qx.ui.container.Composite();
         comp.setBackgroundColor("#AA0000");
@@ -85,14 +85,14 @@
       testExcludeHBox: function testExcludeHBox() {
         var layout = new qx.ui.layout.HBox();
 
-        this.__testExclude(layout, "width");
+        this.__testExclude__P_328_0(layout, "width");
 
         layout.dispose();
       },
       testExcludeVBox: function testExcludeVBox() {
         var layout = new qx.ui.layout.VBox();
 
-        this.__testExclude(layout, "height");
+        this.__testExclude__P_328_0(layout, "height");
 
         layout.dispose();
       }
@@ -101,4 +101,4 @@
   qx.test.ui.layout.Box.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Box.js.map?dt=1589218264815
+//# sourceMappingURL=Box.js.map?dt=1591362987170

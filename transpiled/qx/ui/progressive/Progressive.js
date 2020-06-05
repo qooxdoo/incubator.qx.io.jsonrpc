@@ -67,7 +67,7 @@
     construct: function construct(structure) {
       qx.ui.container.Composite.constructor.call(this, new qx.ui.layout.VBox()); // Create an object in which we'll track renderers that have been added
 
-      this.__renderer = {}; // Prepare to have our pane structure added to us.
+      this.__renderer__P_486_0 = {}; // Prepare to have our pane structure added to us.
 
       this.set({
         backgroundColor: "white"
@@ -79,15 +79,15 @@
       } // Prepare our pane structure
 
 
-      this.__structure = structure;
+      this.__structure__P_486_1 = structure;
       structure.applyStructure(this); // We've not yet done our initial render
 
-      this.__bInitialRenderComplete = false; // We're not currently rendering
+      this.__bInitialRenderComplete__P_486_2 = false; // We're not currently rendering
 
-      this.__bRendering = false; // Number of elements available to be rendered.  Useful for progress
+      this.__bRendering__P_486_3 = false; // Number of elements available to be rendered.  Useful for progress
       // handlers, e.g. a progress bar or status counter.
 
-      this.__initialNumElements = 0;
+      this.__initialNumElements__P_486_4 = 0;
     },
     events: {
       /**
@@ -205,12 +205,12 @@
       }
     },
     members: {
-      __renderer: null,
-      __bRendering: null,
-      __t1: null,
-      __initialNumElements: null,
-      __bInitialRenderComplete: null,
-      __structure: null,
+      __renderer__P_486_0: null,
+      __bRendering__P_486_3: null,
+      __t1__P_486_5: null,
+      __initialNumElements__P_486_4: null,
+      __bInitialRenderComplete__P_486_2: null,
+      __structure__P_486_1: null,
 
       /**
        * Return the structure object
@@ -218,7 +218,7 @@
        * @return {qx.ui.progressive.structure.Abstract} The structure object
        */
       getStructure: function getStructure() {
-        return this.__structure;
+        return this.__structure__P_486_1;
       },
 
       /**
@@ -232,7 +232,7 @@
        *
        */
       addRenderer: function addRenderer(name, renderer) {
-        this.__renderer[name] = renderer;
+        this.__renderer__P_486_0[name] = renderer;
         renderer.join(this, name);
       },
 
@@ -244,11 +244,11 @@
        *
        */
       removeRenderer: function removeRenderer(name) {
-        if (!this.__renderer[name]) {
+        if (!this.__renderer__P_486_0[name]) {
           throw new Error("No existing renderer named " + name);
         }
 
-        delete this.__renderer[name];
+        delete this.__renderer__P_486_0[name];
       },
 
       /**
@@ -262,33 +262,33 @@
        */
       render: function render() {
         // Prevent render calls while we're already rendering
-        if (this.__bRendering) {
+        if (this.__bRendering__P_486_3) {
           return;
         }
 
-        this.__bRendering = true;
+        this.__bRendering__P_486_3 = true;
         var state = new qx.ui.progressive.State({
           progressive: this,
           model: this.getDataModel(),
-          pane: this.__structure.getPane(),
+          pane: this.__structure__P_486_1.getPane(),
           batchSize: this.getBatchSize(),
-          rendererData: this.__createStateRendererData(),
+          rendererData: this.__createStateRendererData__P_486_6(),
           userData: {}
         }); // Record render start time
 
-        this.__t1 = new Date(); // Render the first batch of elements.  Subsequent batches will be via
+        this.__t1__P_486_5 = new Date(); // Render the first batch of elements.  Subsequent batches will be via
         // timer started from this.__renderElementBatch().
 
-        if (this.__bInitialRenderComplete) {
+        if (this.__bInitialRenderComplete__P_486_2) {
           // Get the starting number of elements
-          this.__initialNumElements = state.getModel().getElementCount(); // Let listeners know we're beginning to render
+          this.__initialNumElements__P_486_4 = state.getModel().getElementCount(); // Let listeners know we're beginning to render
 
           this.fireDataEvent("renderStart", {
             state: state,
-            initial: this.__initialNumElements
+            initial: this.__initialNumElements__P_486_4
           }); // Begin rendering
 
-          this.__renderElementBatch(state);
+          this.__renderElementBatch__P_486_7(state);
         } else {
           // Ensure we leave enough time that 'this' has been rendered, so that
           // this.getContentElement().getDomElement() is valid and has
@@ -297,15 +297,15 @@
           // FIXME: Why isn't an event listener for "appear" an adequate delay???
           //        (It's done with a timer like this in Table's Pane too.)
           qx.event.Timer.once(function () {
-            this.__initialNumElements = state.getModel().getElementCount();
+            this.__initialNumElements__P_486_4 = state.getModel().getElementCount();
             this.fireDataEvent("renderStart", {
               state: state,
-              initial: this.__initialNumElements
+              initial: this.__initialNumElements__P_486_4
             });
 
-            this.__renderElementBatch(state);
+            this.__renderElementBatch__P_486_7(state);
 
-            this.__bInitialRenderComplete = true;
+            this.__bInitialRenderComplete__P_486_2 = true;
           }, this, 10);
         }
       },
@@ -323,13 +323,13 @@
       _applyDataModel: function _applyDataModel(value, old) {
         if (old) {
           // Remove the old event listener
-          old.removeListener("dataAvailable", this.__dataAvailable, this); // Dispose the old model
+          old.removeListener("dataAvailable", this.__dataAvailable__P_486_8, this); // Dispose the old model
 
           old.dispose();
         } // Add an event listener so we know when data is available in the model
 
 
-        value.addListener("dataAvailable", this.__dataAvailable, this);
+        value.addListener("dataAvailable", this.__dataAvailable__P_486_8, this);
       },
 
       /**
@@ -342,7 +342,7 @@
        *   The current state of rendering.
        *
        */
-      __renderElementBatch: function __renderElementBatch(state) {
+      __renderElementBatch__P_486_7: function __renderElementBatch__P_486_7(state) {
         var current;
         var element;
         var renderer;
@@ -353,8 +353,8 @@
 
           if (!current) {
             // No more elements.  We're done.
-            this.debug("Render time: " + (new Date() - this.__t1) + "ms");
-            this.__bRendering = false; // Notify any progress handlers that are listening
+            this.debug("Render time: " + (new Date() - this.__t1__P_486_5) + "ms");
+            this.__bRendering__P_486_3 = false; // Notify any progress handlers that are listening
 
             this.fireDataEvent("renderEnd", state); // We don't need our render state any longer
 
@@ -366,12 +366,12 @@
 
           element = current.element; // Get the element's renderer
 
-          renderer = this.__renderer[element.renderer]; // Render this element
+          renderer = this.__renderer__P_486_0[element.renderer]; // Render this element
 
           renderer.render(state, element); // Notify any progress detail handlers that are listening
 
           this.fireDataEvent("progressDetail", {
-            initial: this.__initialNumElements,
+            initial: this.__initialNumElements__P_486_4,
             remaining: current.remaining,
             element: element
           });
@@ -379,7 +379,7 @@
 
 
         this.fireDataEvent("progress", {
-          initial: this.__initialNumElements,
+          initial: this.__initialNumElements__P_486_4,
           remaining: current.remaining
         }); // Flush the widget queue
 
@@ -389,7 +389,7 @@
 
 
         qx.event.Timer.once(function () {
-          this.__renderElementBatch(state);
+          this.__renderElementBatch__P_486_7(state);
         }, this, this.getInterElementTimeout());
       },
 
@@ -397,10 +397,10 @@
        * Create the map of empty objects for use by the renderers.
        * @return {Map} renderer data map
        */
-      __createStateRendererData: function __createStateRendererData() {
+      __createStateRendererData__P_486_6: function __createStateRendererData__P_486_6() {
         var rendererData = {};
 
-        for (var name in this.__renderer) {
+        for (var name in this.__renderer__P_486_0) {
           rendererData[name] = {};
         }
 
@@ -414,8 +414,8 @@
        *   A "dataAvailable" event's data contains the initial number of elements
        *
        */
-      __dataAvailable: function __dataAvailable(e) {
-        this.__initialNumElements = e.getData();
+      __dataAvailable__P_486_8: function __dataAvailable__P_486_8(e) {
+        this.__initialNumElements__P_486_4 = e.getData();
         this.render();
       }
     },
@@ -424,16 +424,16 @@
      */
     destruct: function destruct() {
       // For each renderer...
-      for (var name in this.__renderer) {
+      for (var name in this.__renderer__P_486_0) {
         // ... dispose it
-        this.__renderer[name].dispose();
+        this.__renderer__P_486_0[name].dispose();
       } // Clean up references
 
 
-      this.__t1 = this.__renderer = this.__structure = null;
+      this.__t1__P_486_5 = this.__renderer__P_486_0 = this.__structure__P_486_1 = null;
     }
   });
   qx.ui.progressive.Progressive.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Progressive.js.map?dt=1589218279455
+//# sourceMappingURL=Progressive.js.map?dt=1591363003663

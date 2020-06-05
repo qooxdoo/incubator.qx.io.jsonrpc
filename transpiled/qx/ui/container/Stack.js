@@ -86,7 +86,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/stack.html' target='_blank'>
+   * <a href='http://qooxdoo.org/docs/#desktop/widget/stack.md' target='_blank'>
    * Documentation of this widget in the qooxdoo manual.</a>
    */
   qx.Class.define("qx.ui.container.Stack", {
@@ -104,7 +104,7 @@
 
       this._setLayout(new qx.ui.layout.Grow());
 
-      this.addListener("changeSelection", this.__onChangeSelection, this);
+      this.addListener("changeSelection", this.__onChangeSelection__P_371_0, this);
     },
 
     /*
@@ -191,7 +191,7 @@
        *
        * @param e {qx.event.type.Data} Data event.
        */
-      __onChangeSelection: function __onChangeSelection(e) {
+      __onChangeSelection__P_371_0: function __onChangeSelection__P_371_0(e) {
         var old = e.getOldData()[0];
         var value = e.getData()[0];
 
@@ -274,4 +274,4 @@
   qx.ui.container.Stack.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Stack.js.map?dt=1589218270065
+//# sourceMappingURL=Stack.js.map?dt=1591362993025

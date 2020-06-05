@@ -82,7 +82,7 @@
       // Borrow super-class constructor
       qx.bom.request.Script.apply(this);
 
-      this.__generateId();
+      this.__generateId__P_60_0();
     },
     members: {
       /**
@@ -93,40 +93,40 @@
       /**
        * @type {Number} Identifier of this instance.
        */
-      __id: null,
+      __id__P_60_1: null,
 
       /**
        * @type {String} Callback parameter.
        */
-      __callbackParam: null,
+      __callbackParam__P_60_2: null,
 
       /**
        * @type {String} Callback name.
        */
-      __callbackName: null,
+      __callbackName__P_60_3: null,
 
       /**
        * @type {Boolean} Whether callback was called.
        */
-      __callbackCalled: null,
+      __callbackCalled__P_60_4: null,
 
       /**
        * @type {Boolean} Whether a custom callback was created automatically.
        */
-      __customCallbackCreated: null,
+      __customCallbackCreated__P_60_5: null,
 
       /**
        * @type {String} The generated URL for the current request
        */
-      __generatedUrl: null,
+      __generatedUrl__P_60_6: null,
 
       /**
        * @type {Boolean} Whether request was disposed.
        */
-      __disposed: null,
+      __disposed__P_60_7: null,
 
       /** Prefix used for the internal callback name. */
-      __prefix: "",
+      __prefix__P_60_8: "",
 
       /**
        * Initializes (prepares) request.
@@ -139,7 +139,7 @@
        *   The URL to which to send the request.
        */
       open: function open(method, url) {
-        if (this.__disposed) {
+        if (this.__disposed__P_60_7) {
           return;
         }
 
@@ -149,26 +149,26 @@
             that = this; // Reset properties that may have been set by previous request
 
         this.responseJson = null;
-        this.__callbackCalled = false;
-        callbackParam = this.__callbackParam || "callback";
-        callbackName = this.__callbackName || this.__prefix + "qx.bom.request.Jsonp." + this.__id + ".callback"; // Default callback
+        this.__callbackCalled__P_60_4 = false;
+        callbackParam = this.__callbackParam__P_60_2 || "callback";
+        callbackName = this.__callbackName__P_60_3 || this.__prefix__P_60_8 + "qx.bom.request.Jsonp." + this.__id__P_60_1 + ".callback"; // Default callback
 
-        if (!this.__callbackName) {
+        if (!this.__callbackName__P_60_3) {
           // Store globally available reference to this object
-          this.constructor[this.__id] = this; // Custom callback
+          this.constructor[this.__id__P_60_1] = this; // Custom callback
         } else {
           // Dynamically create globally available callback (if it does not
           // exist yet) with user defined name. Delegate to this object’s
           // callback method.
-          if (!window[this.__callbackName]) {
-            this.__customCallbackCreated = true;
+          if (!window[this.__callbackName__P_60_3]) {
+            this.__customCallbackCreated__P_60_5 = true;
 
-            window[this.__callbackName] = function (data) {
+            window[this.__callbackName__P_60_3] = function (data) {
               that.callback(data);
             };
           } else {
             if (qx.core.Environment.get("qx.debug.io")) {
-              qx.Bootstrap.debug(qx.bom.request.Jsonp, "Callback " + this.__callbackName + " already exists");
+              qx.Bootstrap.debug(qx.bom.request.Jsonp, "Callback " + this.__callbackName__P_60_3 + " already exists");
             }
           }
         }
@@ -178,9 +178,9 @@
         }
 
         query[callbackParam] = callbackName;
-        this.__generatedUrl = url = qx.util.Uri.appendParamsToUrl(url, query);
+        this.__generatedUrl__P_60_6 = url = qx.util.Uri.appendParamsToUrl(url, query);
 
-        this.__callBase("open", [method, url]);
+        this.__callBase__P_60_9("open", [method, url]);
       },
 
       /**
@@ -197,12 +197,12 @@
        * @param data {Object} JSON
        */
       callback: function callback(data) {
-        if (this.__disposed) {
+        if (this.__disposed__P_60_7) {
           return;
         } // Signal callback was called
 
 
-        this.__callbackCalled = true; // Sanitize and parse
+        this.__callbackCalled__P_60_4 = true; // Sanitize and parse
 
         {
           data = qx.lang.Json.stringify(data);
@@ -211,9 +211,9 @@
 
         this.responseJson = data; // Delete global reference to this
 
-        this.constructor[this.__id] = undefined;
+        this.constructor[this.__id__P_60_1] = undefined;
 
-        this.__deleteCustomCallback();
+        this.__deleteCustomCallback__P_60_10();
       },
 
       /**
@@ -227,7 +227,7 @@
        * @return {qx.bom.request.Jsonp} Self reference for chaining.
        */
       setCallbackParam: function setCallbackParam(param) {
-        this.__callbackParam = param;
+        this.__callbackParam__P_60_2 = param;
         return this;
       },
 
@@ -251,7 +251,7 @@
        * @return {qx.bom.request.Jsonp} Self reference for chaining.
        */
       setCallbackName: function setCallbackName(name) {
-        this.__callbackName = name;
+        this.__callbackName__P_60_3 = name;
         return this;
       },
 
@@ -262,7 +262,7 @@
        * @param prefix {String} The prefix to put in front of 'qx'
        */
       setPrefix: function setPrefix(prefix) {
-        this.__prefix = prefix;
+        this.__prefix__P_60_8 = prefix;
       },
 
       /**
@@ -272,13 +272,13 @@
        * @return {String} The current generated URL for the request
        */
       getGeneratedUrl: function getGeneratedUrl() {
-        return this.__generatedUrl;
+        return this.__generatedUrl__P_60_6;
       },
       dispose: function dispose() {
         // In case callback was not called
-        this.__deleteCustomCallback();
+        this.__deleteCustomCallback__P_60_10();
 
-        this.__callBase("dispose");
+        this.__callBase__P_60_9("dispose");
       },
 
       /**
@@ -291,18 +291,18 @@
         // not called, it is assumed the server failed to provide an appropriate
         // response. Since the exact reason of the error is unknown, the most
         // generic message ("500 Internal Server Error") is chosen.
-        this.status = this.__callbackCalled ? 200 : 500;
+        this.status = this.__callbackCalled__P_60_4 ? 200 : 500;
 
-        this.__callBase("_onNativeLoad");
+        this.__callBase__P_60_9("_onNativeLoad");
       },
 
       /**
        *  Delete custom callback if dynamically created before.
        */
-      __deleteCustomCallback: function __deleteCustomCallback() {
-        if (this.__customCallbackCreated && window[this.__callbackName]) {
-          window[this.__callbackName] = undefined;
-          this.__customCallbackCreated = false;
+      __deleteCustomCallback__P_60_10: function __deleteCustomCallback__P_60_10() {
+        if (this.__customCallbackCreated__P_60_5 && window[this.__callbackName__P_60_3]) {
+          window[this.__callbackName__P_60_3] = undefined;
+          this.__customCallbackCreated__P_60_5 = false;
         }
       },
 
@@ -312,21 +312,21 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase: function __callBase(method, args) {
+      __callBase__P_60_9: function __callBase__P_60_9(method, args) {
         qx.bom.request.Script.prototype[method].apply(this, args || []);
       },
 
       /**
        * Generate ID.
        */
-      __generateId: function __generateId() {
+      __generateId__P_60_0: function __generateId__P_60_0() {
         // Add random digits to date to allow immediately following requests
         // that may be send at the same time
-        this.__id = "qx" + new Date().valueOf() + ("" + Math.random()).substring(2, 5);
+        this.__id__P_60_1 = "qx" + new Date().valueOf() + ("" + Math.random()).substring(2, 5);
       }
     }
   });
   qx.bom.request.Jsonp.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Jsonp.js.map?dt=1589218240745
+//# sourceMappingURL=Jsonp.js.map?dt=1591362960358

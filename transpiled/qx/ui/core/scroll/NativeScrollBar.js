@@ -78,7 +78,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/scrollbar.html' target='_blank'>
+   * <a href='http://qooxdoo.org/docs/#desktop/widget/scrollbar.md' target='_blank'>
    * Documentation of this widget in the qooxdoo manual.</a>
    */
   qx.Class.define("qx.ui.core.scroll.NativeScrollBar", {
@@ -156,10 +156,10 @@
       }
     },
     members: {
-      __isHorizontal: null,
-      __scrollPaneElement: null,
-      __requestId: null,
-      __scrollAnimationframe: null,
+      __isHorizontal__P_398_0: null,
+      __scrollPaneElement__P_398_1: null,
+      __requestId__P_398_2: null,
+      __scrollAnimationframe__P_398_3: null,
 
       /**
        * Get the scroll pane html element.
@@ -167,11 +167,11 @@
        * @return {qx.html.Element} The element
        */
       _getScrollPaneElement: function _getScrollPaneElement() {
-        if (!this.__scrollPaneElement) {
-          this.__scrollPaneElement = new qx.html.Element();
+        if (!this.__scrollPaneElement__P_398_1) {
+          this.__scrollPaneElement__P_398_1 = new qx.html.Element();
         }
 
-        return this.__scrollPaneElement;
+        return this.__scrollPaneElement__P_398_1;
       },
 
       /*
@@ -191,12 +191,12 @@
       _getContentHint: function _getContentHint() {
         var scrollbarWidth = qx.bom.element.Scroll.getScrollbarWidth();
         return {
-          width: this.__isHorizontal ? 100 : scrollbarWidth,
-          maxWidth: this.__isHorizontal ? null : scrollbarWidth,
-          minWidth: this.__isHorizontal ? null : scrollbarWidth,
-          height: this.__isHorizontal ? scrollbarWidth : 100,
-          maxHeight: this.__isHorizontal ? scrollbarWidth : null,
-          minHeight: this.__isHorizontal ? scrollbarWidth : null
+          width: this.__isHorizontal__P_398_0 ? 100 : scrollbarWidth,
+          maxWidth: this.__isHorizontal__P_398_0 ? null : scrollbarWidth,
+          minWidth: this.__isHorizontal__P_398_0 ? null : scrollbarWidth,
+          height: this.__isHorizontal__P_398_0 ? scrollbarWidth : 100,
+          maxHeight: this.__isHorizontal__P_398_0 ? scrollbarWidth : null,
+          minHeight: this.__isHorizontal__P_398_0 ? scrollbarWidth : null
         };
       },
       // overridden
@@ -219,7 +219,7 @@
       _applyPosition: function _applyPosition(value) {
         var content = this.getContentElement();
 
-        if (this.__isHorizontal) {
+        if (this.__isHorizontal__P_398_0) {
           content.scrollToX(value);
         } else {
           content.scrollToY(value);
@@ -227,7 +227,7 @@
       },
       // property apply
       _applyOrientation: function _applyOrientation(value, old) {
-        var isHorizontal = this.__isHorizontal = value === "horizontal";
+        var isHorizontal = this.__isHorizontal__P_398_0 = value === "horizontal";
         this.set({
           allowGrowX: isHorizontal,
           allowShrinkX: isHorizontal,
@@ -254,7 +254,7 @@
        * enabled state.
        */
       _updateScrollBar: function _updateScrollBar() {
-        var isHorizontal = this.__isHorizontal;
+        var isHorizontal = this.__isHorizontal__P_398_0;
         var bounds = this.getBounds();
 
         if (!bounds) {
@@ -297,20 +297,20 @@
 
         if (duration) {
           var from = this.getPosition();
-          this.__scrollAnimationframe = new qx.bom.AnimationFrame();
+          this.__scrollAnimationframe__P_398_3 = new qx.bom.AnimationFrame();
 
-          this.__scrollAnimationframe.on("frame", function (timePassed) {
+          this.__scrollAnimationframe__P_398_3.on("frame", function (timePassed) {
             var newPos = parseInt(timePassed / duration * (position - from) + from);
             this.updatePosition(newPos);
           }, this);
 
-          this.__scrollAnimationframe.on("end", function () {
+          this.__scrollAnimationframe__P_398_3.on("end", function () {
             this.setPosition(Math.max(0, Math.min(this.getMaximum(), position)));
-            this.__scrollAnimationframe = null;
+            this.__scrollAnimationframe__P_398_3 = null;
             this.fireEvent("scrollAnimationEnd");
           }, this);
 
-          this.__scrollAnimationframe.startSequence(duration);
+          this.__scrollAnimationframe__P_398_3.startSequence(duration);
         } else {
           this.updatePosition(position);
         }
@@ -337,10 +337,10 @@
        * If a scroll animation is running, it will be stopped.
        */
       stopScrollAnimation: function stopScrollAnimation() {
-        if (this.__scrollAnimationframe) {
-          this.__scrollAnimationframe.cancelSequence();
+        if (this.__scrollAnimationframe__P_398_3) {
+          this.__scrollAnimationframe__P_398_3.cancelSequence();
 
-          this.__scrollAnimationframe = null;
+          this.__scrollAnimationframe__P_398_3 = null;
         }
       },
 
@@ -351,7 +351,7 @@
        */
       _onScroll: function _onScroll(e) {
         var container = this.getContentElement();
-        var position = this.__isHorizontal ? container.getScrollX() : container.getScrollY();
+        var position = this.__isHorizontal__P_398_0 ? container.getScrollX() : container.getScrollY();
         this.setPosition(position);
       },
 
@@ -375,10 +375,10 @@
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__scrollPaneElement");
+      this._disposeObjects("__scrollPaneElement__P_398_1");
     }
   });
   qx.ui.core.scroll.NativeScrollBar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NativeScrollBar.js.map?dt=1589218272027
+//# sourceMappingURL=NativeScrollBar.js.map?dt=1591362995257

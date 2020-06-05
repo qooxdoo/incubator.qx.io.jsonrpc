@@ -58,8 +58,8 @@
      */
     members: {
       _widget: null,
-      __cachedProperties: null,
-      __cachedChildLayoutProperties: null,
+      __cachedProperties__P_475_0: null,
+      __cachedChildLayoutProperties__P_475_1: null,
 
       /**
        * Returns the css classes in an array that the layout is using.
@@ -141,14 +141,14 @@
         if (widget) {
           widget.addCssClasses(this._getCssClasses());
 
-          if (this.__cachedProperties) {
-            for (var property in this.__cachedProperties) {
+          if (this.__cachedProperties__P_475_0) {
+            for (var property in this.__cachedProperties__P_475_0) {
               this.reset(property);
-              this.set(property, this.__cachedProperties[property]);
+              this.set(property, this.__cachedProperties__P_475_0[property]);
             }
           }
         } else {
-          this.__cachedProperties = null;
+          this.__cachedProperties__P_475_0 = null;
         }
       },
 
@@ -191,11 +191,11 @@
        * @param value {var} The value of the property to add
        */
       _addCachedProperty: function _addCachedProperty(property, value) {
-        if (!this.__cachedProperties) {
-          this.__cachedProperties = {};
+        if (!this.__cachedProperties__P_475_0) {
+          this.__cachedProperties__P_475_0 = {};
         }
 
-        this.__cachedProperties[property] = value;
+        this.__cachedProperties__P_475_0[property] = value;
       },
 
       /**
@@ -206,7 +206,7 @@
        * @return {var} The value of the given property
        */
       _getChildLayoutPropertyValue: function _getChildLayoutPropertyValue(widget, property) {
-        var cache = this.__getChildLayoutPropertyCache(widget);
+        var cache = this.__getChildLayoutPropertyCache__P_475_2(widget);
 
         return cache[property];
       },
@@ -220,7 +220,7 @@
        * @param value {var} The value of the property to add
        */
       _addPropertyToChildLayoutCache: function _addPropertyToChildLayoutCache(widget, property, value) {
-        var cache = this.__getChildLayoutPropertyCache(widget);
+        var cache = this.__getChildLayoutPropertyCache__P_475_2(widget);
 
         if (value == null) {
           delete cache[property];
@@ -236,12 +236,12 @@
        * @return {Map} The child layout property cache for the given widget.
        *     Key / value pairs.
        */
-      __getChildLayoutPropertyCache: function __getChildLayoutPropertyCache(widget) {
-        if (!this.__cachedChildLayoutProperties) {
-          this.__cachedChildLayoutProperties = {};
+      __getChildLayoutPropertyCache__P_475_2: function __getChildLayoutPropertyCache__P_475_2(widget) {
+        if (!this.__cachedChildLayoutProperties__P_475_1) {
+          this.__cachedChildLayoutProperties__P_475_1 = {};
         }
 
-        var cache = this.__cachedChildLayoutProperties;
+        var cache = this.__cachedChildLayoutProperties__P_475_1;
         var hash = widget.toHashCode();
 
         if (!cache[hash]) {
@@ -264,4 +264,4 @@
   qx.ui.mobile.layout.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1589218278626
+//# sourceMappingURL=Abstract.js.map?dt=1591363002723

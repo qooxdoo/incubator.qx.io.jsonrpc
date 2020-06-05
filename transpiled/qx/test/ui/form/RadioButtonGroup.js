@@ -35,30 +35,30 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__radioButtonGroup = new qx.ui.form.RadioButtonGroup();
-        this.__radioButtons = [];
+        this.__radioButtonGroup__P_313_0 = new qx.ui.form.RadioButtonGroup();
+        this.__radioButtons__P_313_1 = [];
         var radioButton;
 
         for (var i = 0, j = 10; i < j; i++) {
           radioButton = new qx.ui.form.RadioButton("option " + i);
           radioButton.setModel("option" + i);
 
-          this.__radioButtons.push(radioButton);
+          this.__radioButtons__P_313_1.push(radioButton);
 
-          this.__radioButtonGroup.add(radioButton);
+          this.__radioButtonGroup__P_313_0.add(radioButton);
         }
       },
       tearDown: function tearDown() {
         qx.test.ui.form.RadioButtonGroup.prototype.tearDown.base.call(this);
 
-        this.__radioButtonGroup.removeAll();
+        this.__radioButtonGroup__P_313_0.removeAll();
 
-        this.__radioButtons = null;
+        this.__radioButtons__P_313_1 = null;
       },
       testRemoveAll: function testRemoveAll() {
-        this.__radioButtonGroup.removeAll();
+        this.__radioButtonGroup__P_313_0.removeAll();
 
-        var amountOfRadioButtons = this.__radioButtonGroup.getRadioGroup().getItems().length;
+        var amountOfRadioButtons = this.__radioButtonGroup__P_313_0.getRadioGroup().getItems().length;
 
         this.assertEquals(0, amountOfRadioButtons, "There are still some radio buttons left.");
       }
@@ -67,4 +67,4 @@
   qx.test.ui.form.RadioButtonGroup.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RadioButtonGroup.js.map?dt=1589218264276
+//# sourceMappingURL=RadioButtonGroup.js.map?dt=1591362986583

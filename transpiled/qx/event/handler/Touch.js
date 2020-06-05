@@ -121,10 +121,10 @@
      */
     construct: function construct(manager) {
       // Define shorthands
-      this.__manager = manager;
-      this.__window = manager.getWindow();
-      this.__root = this.__window.document;
-      qx.event.handler.TouchCore.apply(this, [this.__root]);
+      this.__manager__P_139_0 = manager;
+      this.__window__P_139_1 = manager.getWindow();
+      this.__root__P_139_2 = this.__window__P_139_1.document;
+      qx.event.handler.TouchCore.apply(this, [this.__root__P_139_2]);
     },
 
     /*
@@ -168,11 +168,11 @@
     *****************************************************************************
     */
     members: {
-      __manager: null,
-      __window: null,
-      __root: null,
+      __manager__P_139_0: null,
+      __window__P_139_1: null,
+      __root__P_139_2: null,
       // Checks if the mouse movement is happening while simulating a touch event
-      __isInTouch: false,
+      __isInTouch__P_139_3: false,
 
       /*
       ---------------------------------------------------------------------------
@@ -214,7 +214,7 @@
         } // Fire user action event
 
 
-        qx.event.Registration.fireEvent(this.__window, "useraction", qx.event.type.Data, [type]);
+        qx.event.Registration.fireEvent(this.__window__P_139_1, "useraction", qx.event.type.Data, [type]);
       },
 
       /*
@@ -237,9 +237,9 @@
        * Dispose this object
        */
       dispose: function dispose() {
-        this.__callBase("dispose");
+        this.__callBase__P_139_4("dispose");
 
-        this.__manager = this.__window = this.__root = null;
+        this.__manager__P_139_0 = this.__window__P_139_1 = this.__root__P_139_2 = null;
       },
 
       /**
@@ -248,7 +248,7 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase: function __callBase(method, args) {
+      __callBase__P_139_4: function __callBase__P_139_4(method, args) {
         qx.event.handler.TouchCore.prototype[method].apply(this, args || []);
       }
     },
@@ -270,4 +270,4 @@
   qx.event.handler.Touch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Touch.js.map?dt=1589218247022
+//# sourceMappingURL=Touch.js.map?dt=1591362967222

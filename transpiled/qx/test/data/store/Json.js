@@ -56,17 +56,17 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __store: null,
-      __data: null,
-      __propertyNames: null,
+      __store__P_238_0: null,
+      __data__P_238_1: null,
+      __propertyNames__P_238_2: null,
 
       /**
        * @lint ignoreDeprecated(eval)
        */
       setUp: function setUp() {
-        this.__store = new qx.data.store.Json();
-        this.__data = eval("({s: 'String', n: 12, b: true})");
-        this.__propertyNames = ["s", "n", "b"];
+        this.__store__P_238_0 = new qx.data.store.Json();
+        this.__data__P_238_1 = eval("({s: 'String', n: 12, b: true})");
+        this.__propertyNames__P_238_2 = ["s", "n", "b"];
         this.url = qx.util.ResourceManager.getInstance().toUri("qx/test/primitive.json");
       },
       setUpFakeRequest: function setUpFakeRequest() {
@@ -90,7 +90,7 @@
           this.request.dispose();
         }
 
-        this.__store.dispose(); // Remove the former created classes
+        this.__store__P_238_0.dispose(); // Remove the former created classes
 
 
         qx.data.model = {};
@@ -106,9 +106,9 @@
         store.dispose();
       },
       testLoadUrl: function testLoadUrl() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertEquals("String", model.getString(), "The model is not created how it should!");
           }, this);
@@ -116,7 +116,7 @@
 
         var url = this.url;
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -124,7 +124,7 @@
         var url = this.url,
             states = [];
 
-        this.__store.addListener("changeState", function (evt) {
+        this.__store__P_238_0.addListener("changeState", function (evt) {
           var state = evt.getData();
           states.push(state);
 
@@ -136,14 +136,14 @@
           }
         }, this);
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
       testLoadResource: function testLoadResource() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertEquals("String", model.getString(), "The model is not created how it should!");
           }, this);
@@ -151,12 +151,12 @@
 
         var resource = "qx/test/primitive.json";
 
-        this.__store.setUrl(resource);
+        this.__store__P_238_0.setUrl(resource);
 
         this.wait();
       },
       testParseErrorForResource: function testParseErrorForResource() {
-        this.__store.addListener("parseError", function (ev) {
+        this.__store__P_238_0.addListener("parseError", function (ev) {
           this.resume(function () {
             this.assertString(ev.getData().response, "Parse error object does not contain response!");
             this.assertObject(ev.getData().error, "Parse error object does not contain parser exception!");
@@ -165,14 +165,14 @@
 
         var resource = "qx/test/failing.json";
 
-        this.__store.setUrl(resource);
+        this.__store__P_238_0.setUrl(resource);
 
         this.wait();
       },
       testLoadAlias: function testLoadAlias() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertEquals("String", model.getString(), "The model is not created how it should!");
             qx.util.AliasManager.getInstance().remove("testLoadResource");
@@ -183,19 +183,19 @@
         qx.util.AliasManager.getInstance().add("testLoadResource", "qx/test");
         var alias = "testLoadResource/primitive.json";
 
-        this.__store.setUrl(alias);
+        this.__store__P_238_0.setUrl(alias);
 
         this.wait();
       },
       testDispose: function testDispose() {
-        this.__store.setUrl(this.url);
+        this.__store__P_238_0.setUrl(this.url);
 
-        this.__store.dispose();
+        this.__store__P_238_0.dispose();
       },
       testWholePrimitive: function testWholePrimitive() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertEquals("String", model.getString(), "The model is not created how it should!");
             this.assertEquals(12, model.getNumber(), "The model is not created how it should!");
@@ -206,14 +206,14 @@
 
         var url = this.url;
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
       testWholeArray: function testWholeArray() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertNotNull(model.getArray(), "The model is not created how it should!");
             this.assertEquals("qx.data.Array", model.getArray().classname, "Wrong array class.");
@@ -225,14 +225,14 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/array.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
       testWholeObject: function testWholeObject() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertNotNull(model.getO(), "The model is not created how it should!");
             this.assertEquals("a", model.getO().getA(), "Wrong content of the object.");
@@ -242,7 +242,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -270,11 +270,11 @@
             return null;
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertNotNull(model.getO(), "The model is not created how it should!");
             this.assertEquals("qx.test.AB", model.getO().classname, "Not the given class used!");
@@ -285,7 +285,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -295,11 +295,11 @@
             return null;
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertNotNull(model.getO(), "The model is not created how it should!");
             this.assertEquals("a", model.getO().getA(), "Wrong content of the object.");
@@ -309,7 +309,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -323,11 +323,11 @@
             return qx.test.O;
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertTrue(qx.Class.isSubClassOf(model.constructor, qx.test.O));
             this.assertNotNull(model.getO(), "The model is not created how it should!");
@@ -339,7 +339,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -353,11 +353,11 @@
             return null;
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertNotNull(model.getO(), "The model is not created how it should!");
             this.assertEquals("a", model.getO().getA(), "Wrong content of the object.");
@@ -367,7 +367,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -377,11 +377,11 @@
             return null;
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertNotNull(model.getO(), "The model is not created how it should!");
             this.assertEquals("a", model.getO().getA(), "Wrong content of the object.");
@@ -391,7 +391,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -409,11 +409,11 @@
             return qx.test.M;
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertTrue(model.a(), "Mixin not included.");
             this.assertNotNull(model.getO(), "The model is not created how it should!");
@@ -425,7 +425,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -450,11 +450,11 @@
             return [qx.test.M1, qx.test.M2];
           }
         };
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel();
+            var model = this.__store__P_238_0.getModel();
 
             this.assertTrue(model.a(), "Mixin not included.");
             this.assertTrue(model.b(), "Mixin not included.");
@@ -467,7 +467,7 @@
 
         var url = qx.util.ResourceManager.getInstance().toUri("qx/test/object.json");
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -479,11 +479,11 @@
         };
         this.spy(delegate, "manipulateData");
 
-        this.__store.dispose();
+        this.__store__P_238_0.dispose();
 
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
             this.assertCalled(delegate.manipulateData);
           }, this);
@@ -491,7 +491,7 @@
 
         var url = this.url;
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
@@ -505,11 +505,11 @@
         };
         this.spy(delegate, "configureRequest");
 
-        this.__store.dispose();
+        this.__store__P_238_0.dispose();
 
-        this.__store = new qx.data.store.Json(null, delegate);
+        this.__store__P_238_0 = new qx.data.store.Json(null, delegate);
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
             this.assertCalled(delegate.configureRequest);
           }, this);
@@ -517,14 +517,14 @@
 
         var url = this.url;
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
       testDisposeOldModel: function testDisposeOldModel() {
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store.getModel(); // check if the new model is not the old model
+            var model = this.__store__P_238_0.getModel(); // check if the new model is not the old model
 
 
             this.assertNotEquals(fakeModel, model); // check if the old model has been disposed
@@ -536,20 +536,20 @@
 
         var fakeModel = new qx.core.Object();
 
-        this.__store.setModel(fakeModel);
+        this.__store__P_238_0.setModel(fakeModel);
 
         var url = this.url;
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
 
         this.wait();
       },
       testDisposeRequest: function testDisposeRequest() {
         this.setUpFakeRequest();
 
-        this.__store.setUrl(this.url);
+        this.__store__P_238_0.setUrl(this.url);
 
-        this.__store.dispose();
+        this.__store__P_238_0.dispose();
 
         this.assertCalled(this.request.dispose);
       },
@@ -557,24 +557,24 @@
         this.setUpFakeRequest();
         var url = this.url;
 
-        this.__store.addListener("loaded", function () {
+        this.__store__P_238_0.addListener("loaded", function () {
           this.resume(function () {
-            this.__store.dispose();
+            this.__store__P_238_0.dispose();
 
             this.assertCalled(this.request.dispose);
           }, this);
         }, this);
 
-        this.__store.setUrl(url);
+        this.__store__P_238_0.setUrl(url);
       },
       testErrorEvent: function testErrorEvent() {
-        this.__store.addListener("error", function (ev) {
+        this.__store__P_238_0.addListener("error", function (ev) {
           this.resume(function () {
             this.assertNotNull(ev);
           }, this);
         }, this);
 
-        this.__store.setUrl("not-found");
+        this.__store__P_238_0.setUrl("not-found");
 
         this.wait();
       },
@@ -585,14 +585,14 @@
           "Content-Type": "application/json"
         }, "SERVER ERROR"]);
 
-        this.__store.addListener("error", function (e) {
+        this.__store__P_238_0.addListener("error", function (e) {
           this.resume(function () {
             this.assertTrue(e.getData().getPhase() == "statusError");
           });
         }, this);
 
         qx.event.Timer.once(function () {
-          this.__store.setUrl("/foo");
+          this.__store__P_238_0.setUrl("/foo");
 
           server.respond();
         }, this, 500);
@@ -603,4 +603,4 @@
   qx.test.data.store.Json.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Json.js.map?dt=1589218257740
+//# sourceMappingURL=Json.js.map?dt=1591362979151

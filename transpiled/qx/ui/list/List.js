@@ -106,8 +106,8 @@
 
       this._init();
 
-      this.__defaultGroups = new qx.data.Array();
-      this.initGroups(this.__defaultGroups);
+      this.__defaultGroups__P_443_0 = new qx.data.Array();
+      this.initGroups(this.__defaultGroups__P_443_0);
 
       if (model != null) {
         this.initModel(model);
@@ -286,40 +286,40 @@
        *
        * Note the value <code>-1</code> indicates that the value is a group item.
        */
-      __lookupTable: null,
+      __lookupTable__P_443_1: null,
 
       /** @type {Array} lookup table for getting the group index from the row */
-      __lookupTableForGroup: null,
+      __lookupTableForGroup__P_443_2: null,
 
       /**
        * @type {Map} contains all groups with the items as children. The key is
        *   the group name and the value is an <code>Array</code> containing each
        *   item's model index.
        */
-      __groupHashMap: null,
+      __groupHashMap__P_443_3: null,
 
       /**
        * @type {Boolean} indicates when one or more <code>String</code> are used for grouping.
        */
-      __groupStringsUsed: false,
+      __groupStringsUsed__P_443_4: false,
 
       /**
        * @type {Boolean} indicates when one or more <code>Object</code> are used for grouping.
        */
-      __groupObjectsUsed: false,
+      __groupObjectsUsed__P_443_5: false,
 
       /**
        * @type {Boolean} indicates when a default group is used for grouping.
        */
-      __defaultGroupUsed: false,
-      __defaultGroups: null,
-      __deferredLayerUpdate: null,
+      __defaultGroupUsed__P_443_6: false,
+      __defaultGroups__P_443_0: null,
+      __deferredLayerUpdate__P_443_7: null,
 
       /**
        * Trigger a rebuild from the internal data structure.
        */
       refresh: function refresh() {
-        this.__buildUpLookupTable();
+        this.__buildUpLookupTable__P_443_8();
       },
       // overridden
       _createChildControlImpl: function _createChildControlImpl(id, hash) {
@@ -347,12 +347,12 @@
       _init: function _init() {
         this._initWidgetProvider();
 
-        this.__lookupTable = [];
-        this.__lookupTableForGroup = [];
-        this.__groupHashMap = {};
-        this.__groupStringsUsed = false;
-        this.__groupObjectsUsed = false;
-        this.__defaultGroupUsed = false;
+        this.__lookupTable__P_443_1 = [];
+        this.__lookupTableForGroup__P_443_2 = [];
+        this.__groupHashMap__P_443_3 = {};
+        this.__groupStringsUsed__P_443_4 = false;
+        this.__groupObjectsUsed__P_443_5 = false;
+        this.__defaultGroupUsed__P_443_6 = false;
         this.getPane().addListener("resize", this._onResize, this);
 
         this._initBackground();
@@ -419,7 +419,7 @@
        * @return {Array} The internal lookup table.
        */
       _getLookupTable: function _getLookupTable() {
-        return this.__lookupTable;
+        return this.__lookupTable__P_443_1;
       },
 
       /**
@@ -430,7 +430,7 @@
        *   <code>-1</code> if the row is a group item.
        */
       _lookup: function _lookup(row) {
-        return this.__lookupTable[row];
+        return this.__lookupTable__P_443_1[row];
       },
 
       /**
@@ -441,7 +441,7 @@
        *   <code>-1</code> if the row is a not a group item.
        */
       _lookupGroup: function _lookupGroup(row) {
-        return this.__lookupTableForGroup.indexOf(row);
+        return this.__lookupTableForGroup__P_443_2.indexOf(row);
       },
 
       /**
@@ -456,7 +456,7 @@
           return -1;
         }
 
-        return this.__lookupTable.indexOf(index);
+        return this.__lookupTable__P_443_1.indexOf(index);
       },
 
       /**
@@ -502,7 +502,7 @@
       },
       // apply method
       _applyGroupRowHeight: function _applyGroupRowHeight(value, old) {
-        this.__updateGroupRowHeight();
+        this.__updateGroupRowHeight__P_443_9();
       },
       // apply method
       _applyLabelPath: function _applyLabelPath(value, old) {
@@ -532,7 +532,7 @@
       _applyDelegate: function _applyDelegate(value, old) {
         this._provider.setDelegate(value);
 
-        this.__buildUpLookupTable();
+        this.__buildUpLookupTable__P_443_8();
       },
       // property apply
       _applyVariableItemHeight: function _applyVariableItemHeight(value, old) {
@@ -570,7 +570,7 @@
         // see: https://github.com/qooxdoo/qooxdoo/issues/196
         this._provider.removeBindings();
 
-        this.__buildUpLookupTable();
+        this.__buildUpLookupTable__P_443_8();
 
         this._applyDefaultSelection();
 
@@ -591,13 +591,13 @@
           return;
         }
 
-        if (this.__deferredLayerUpdate === null) {
-          this.__deferredLayerUpdate = new qx.util.DeferredCall(function () {
+        if (this.__deferredLayerUpdate__P_443_7 === null) {
+          this.__deferredLayerUpdate__P_443_7 = new qx.util.DeferredCall(function () {
             this._setRowItemSize();
           }, this);
         }
 
-        this.__deferredLayerUpdate.schedule();
+        this.__deferredLayerUpdate__P_443_7.schedule();
       },
 
       /*
@@ -609,15 +609,15 @@
       /**
        * Helper method to update the row count.
        */
-      __updateRowCount: function __updateRowCount() {
-        this.getPane().getRowConfig().setItemCount(this.__lookupTable.length);
+      __updateRowCount__P_443_10: function __updateRowCount__P_443_10() {
+        this.getPane().getRowConfig().setItemCount(this.__lookupTable__P_443_1.length);
         this.getPane().fullUpdate();
       },
 
       /**
        * Helper method to update group row heights.
        */
-      __updateGroupRowHeight: function __updateGroupRowHeight() {
+      __updateGroupRowHeight__P_443_9: function __updateGroupRowHeight__P_443_9() {
         /*
          * In case of having variableItemHeight set to true,
          * the group item height has a variable height as well
@@ -637,8 +637,8 @@
         rc.resetItemSizes();
 
         if (gh) {
-          for (var i = 0, l = this.__lookupTable.length; i < l; ++i) {
-            if (this.__lookupTable[i] == -1) {
+          for (var i = 0, l = this.__lookupTable__P_443_1.length; i < l; ++i) {
+            if (this.__lookupTable__P_443_1[i] == -1) {
               rc.setItemSize(i, gh);
             }
           }
@@ -648,10 +648,10 @@
       /**
        * Internal method for building the lookup table.
        */
-      __buildUpLookupTable: function __buildUpLookupTable() {
-        this.__lookupTable = [];
-        this.__lookupTableForGroup = [];
-        this.__groupHashMap = {};
+      __buildUpLookupTable__P_443_8: function __buildUpLookupTable__P_443_8() {
+        this.__lookupTable__P_443_1 = [];
+        this.__lookupTableForGroup__P_443_2 = [];
+        this.__groupHashMap__P_443_3 = {};
 
         if (this.isAutoGrouping()) {
           this.getGroups().removeAll();
@@ -669,9 +669,9 @@
 
         this._updateSelection();
 
-        this.__updateGroupRowHeight();
+        this.__updateGroupRowHeight__P_443_9();
 
-        this.__updateRowCount();
+        this.__updateRowCount__P_443_10();
       },
 
       /**
@@ -684,7 +684,7 @@
 
         for (var i = 0, l = model.length; i < l; ++i) {
           if (filter == null || filter(model.getItem(i))) {
-            this.__lookupTable.push(i);
+            this.__lookupTable__P_443_1.push(i);
           }
         }
       },
@@ -695,14 +695,14 @@
        * @param model {qx.data.IListData} The model.
        */
       _runDelegateSorter: function _runDelegateSorter(model) {
-        if (this.__lookupTable.length == 0) {
+        if (this.__lookupTable__P_443_1.length == 0) {
           return;
         }
 
         var sorter = qx.util.Delegate.getMethod(this.getDelegate(), "sorter");
 
         if (sorter != null) {
-          this.__lookupTable.sort(function (a, b) {
+          this.__lookupTable__P_443_1.sort(function (a, b) {
             return sorter(model.getItem(a), model.getItem(b));
           });
         }
@@ -717,15 +717,15 @@
         var groupMethod = qx.util.Delegate.getMethod(this.getDelegate(), "group");
 
         if (groupMethod != null) {
-          for (var i = 0, l = this.__lookupTable.length; i < l; ++i) {
-            var index = this.__lookupTable[i];
+          for (var i = 0, l = this.__lookupTable__P_443_1.length; i < l; ++i) {
+            var index = this.__lookupTable__P_443_1[i];
             var item = this.getModel().getItem(index);
             var group = groupMethod(item);
 
-            this.__addGroup(group, index);
+            this.__addGroup__P_443_11(group, index);
           }
 
-          this.__lookupTable = this.__createLookupFromGroup();
+          this.__lookupTable__P_443_1 = this.__createLookupFromGroup__P_443_12();
         }
       },
 
@@ -735,24 +735,24 @@
        * @param group {String|Object|null} the group.
        * @param index {Integer} model index to add.
        */
-      __addGroup: function __addGroup(group, index) {
+      __addGroup__P_443_11: function __addGroup__P_443_11(group, index) {
         // if group is null add to default group
         if (group == null) {
-          this.__defaultGroupUsed = true;
+          this.__defaultGroupUsed__P_443_6 = true;
           group = "???";
         }
 
-        var name = this.__getUniqueGroupName(group);
+        var name = this.__getUniqueGroupName__P_443_13(group);
 
-        if (this.__groupHashMap[name] == null) {
-          this.__groupHashMap[name] = [];
+        if (this.__groupHashMap__P_443_3[name] == null) {
+          this.__groupHashMap__P_443_3[name] = [];
 
           if (this.isAutoGrouping()) {
             this.getGroups().push(group);
           }
         }
 
-        this.__groupHashMap[name].push(index);
+        this.__groupHashMap__P_443_3[name].push(index);
       },
 
       /**
@@ -760,8 +760,8 @@
        *
        * @return {Array} the lookup table based on the internal group hash map.
        */
-      __createLookupFromGroup: function __createLookupFromGroup() {
-        this.__checkGroupStructure();
+      __createLookupFromGroup__P_443_12: function __createLookupFromGroup__P_443_12() {
+        this.__checkGroupStructure__P_443_14();
 
         var result = [];
         var row = 0;
@@ -772,13 +772,13 @@
 
           result.push(-1);
 
-          this.__lookupTableForGroup.push(row);
+          this.__lookupTableForGroup__P_443_2.push(row);
 
           row++;
 
-          var key = this.__getUniqueGroupName(group);
+          var key = this.__getUniqueGroupName__P_443_13(group);
 
-          var groupMembers = this.__groupHashMap[key];
+          var groupMembers = this.__groupHashMap__P_443_3[key];
 
           if (groupMembers != null) {
             for (var k = 0; k < groupMembers.length; k++) {
@@ -797,12 +797,12 @@
        * @param group {String|Object} Group to find unique group name.
        * @return {String} Unique group name.
        */
-      __getUniqueGroupName: function __getUniqueGroupName(group) {
+      __getUniqueGroupName__P_443_13: function __getUniqueGroupName__P_443_13(group) {
         var name = null;
 
         if (!qx.lang.Type.isString(group)) {
           var index = this.getGroups().indexOf(group);
-          this.__groupObjectsUsed = true;
+          this.__groupObjectsUsed__P_443_5 = true;
           name = "group";
 
           if (index == -1) {
@@ -811,7 +811,7 @@
             name += index;
           }
         } else {
-          this.__groupStringsUsed = true;
+          this.__groupStringsUsed__P_443_4 = true;
           var name = group;
         }
 
@@ -822,8 +822,8 @@
        * Checks that <code>Object</code> and <code>String</code> are not mixed
        * as group identifier, otherwise an exception occurs.
        */
-      __checkGroupStructure: function __checkGroupStructure() {
-        if (this.__groupObjectsUsed && this.__defaultGroupUsed || this.__groupObjectsUsed && this.__groupStringsUsed) {
+      __checkGroupStructure__P_443_14: function __checkGroupStructure__P_443_14() {
+        if (this.__groupObjectsUsed__P_443_5 && this.__defaultGroupUsed__P_443_6 || this.__groupObjectsUsed__P_443_5 && this.__groupStringsUsed__P_443_4) {
           throw new Error("GroupingTypeError: You can't mix 'Objects' and 'Strings' as group identifier!");
         }
       },
@@ -849,7 +849,7 @@
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__deferredLayerUpdate");
+      this._disposeObjects("__deferredLayerUpdate__P_443_7");
 
       var model = this.getModel();
 
@@ -869,14 +869,14 @@
 
       this._layer.dispose();
 
-      this._background = this._provider = this._layer = this.__lookupTable = this.__lookupTableForGroup = this.__groupHashMap = null;
+      this._background = this._provider = this._layer = this.__lookupTable__P_443_1 = this.__lookupTableForGroup__P_443_2 = this.__groupHashMap__P_443_3 = null;
 
-      if (this.__defaultGroups) {
-        this.__defaultGroups.dispose();
+      if (this.__defaultGroups__P_443_0) {
+        this.__defaultGroups__P_443_0.dispose();
       }
     }
   });
   qx.ui.list.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1589218276221
+//# sourceMappingURL=List.js.map?dt=1591363000022

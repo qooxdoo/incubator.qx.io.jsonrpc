@@ -61,177 +61,177 @@
       });
     },
     members: {
-      __list: null,
-      __controller: null,
-      __data: null,
-      __model: null,
+      __list__P_231_0: null,
+      __controller__P_231_1: null,
+      __data__P_231_2: null,
+      __model__P_231_3: null,
       setUp: function setUp() {
-        this.__list = new qx.ui.form.List(); // create the model
+        this.__list__P_231_0 = new qx.ui.form.List(); // create the model
 
-        this.__data = [];
+        this.__data__P_231_2 = [];
 
         for (var i = 0; i < 5; i++) {
           var obj = new qx.test.ListWithObject();
           obj.setName("name" + i);
           obj.setIcon("icon" + i);
 
-          this.__data.push(obj);
+          this.__data__P_231_2.push(obj);
         } // create a new array
 
 
-        this.__model = new qx.data.Array(this.__data);
+        this.__model__P_231_3 = new qx.data.Array(this.__data__P_231_2);
       },
       tearDown: function tearDown() {
         this.flush();
 
-        this.__controller.dispose();
+        this.__controller__P_231_1.dispose();
 
-        this.__controller = null;
+        this.__controller__P_231_1 = null;
 
-        this.__model.setAutoDisposeItems(true);
+        this.__model__P_231_3.setAutoDisposeItems(true);
 
-        this.__model.dispose();
+        this.__model__P_231_3.dispose();
 
-        this.__model = null;
-        this.__data = null;
+        this.__model__P_231_3 = null;
+        this.__data__P_231_2 = null;
 
-        this.__list.dispose();
+        this.__list__P_231_0.dispose();
       },
       testRead: function testRead() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name"); // check the binding
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name"); // check the binding
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         }
       },
       testChangeLablePath: function testChangeLablePath() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name"); // check the binding
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name"); // check the binding
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         }
 
-        this.__controller.setLabelPath("icon"); // check the binding again
+        this.__controller__P_231_1.setLabelPath("icon"); // check the binding again
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getIcon(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getIcon(), label, "Binding " + i + " is wrong!");
         }
       },
       testSelection: function testSelection() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name"); // select the first object
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name"); // select the first object
 
-        this.__list.addToSelection(this.__list.getChildren()[0]); // test the selection
-
-
-        this.assertEquals(this.__model.getItem(0), this.__controller.getSelection().getItem(0), "Selection does not work."); // test for the length
-
-        this.assertEquals(1, this.__controller.getSelection().length, "Selection length is wrong."); // select the second object
-
-        this.__list.addToSelection(this.__list.getChildren()[1]); // test the selection
+        this.__list__P_231_0.addToSelection(this.__list__P_231_0.getChildren()[0]); // test the selection
 
 
-        this.assertEquals(this.__model.getItem(1), this.__controller.getSelection().getItem(0), "Selection does not work."); // test for the length
+        this.assertEquals(this.__model__P_231_3.getItem(0), this.__controller__P_231_1.getSelection().getItem(0), "Selection does not work."); // test for the length
 
-        this.assertEquals(1, this.__controller.getSelection().length, "Selection length is wrong.");
+        this.assertEquals(1, this.__controller__P_231_1.getSelection().length, "Selection length is wrong."); // select the second object
+
+        this.__list__P_231_0.addToSelection(this.__list__P_231_0.getChildren()[1]); // test the selection
+
+
+        this.assertEquals(this.__model__P_231_3.getItem(1), this.__controller__P_231_1.getSelection().getItem(0), "Selection does not work."); // test for the length
+
+        this.assertEquals(1, this.__controller__P_231_1.getSelection().length, "Selection length is wrong.");
       },
       testSelectionBackMultiple: function testSelectionBackMultiple() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name"); // select the second and third object
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name"); // select the second and third object
 
-        this.__list.setSelectionMode("multi"); // add the some elements to the selection
-
-
-        this.__controller.getSelection().push(this.__model.getItem(1));
-
-        this.__controller.getSelection().push(this.__model.getItem(2)); // test the selection
+        this.__list__P_231_0.setSelectionMode("multi"); // add the some elements to the selection
 
 
-        this.assertEquals(this.__model.getItem(1), this.__controller.getSelection().getItem(0), "addToSelection does not work.");
-        this.assertEquals(this.__model.getItem(2), this.__controller.getSelection().getItem(1), "addToSelection does not work.");
+        this.__controller__P_231_1.getSelection().push(this.__model__P_231_3.getItem(1));
+
+        this.__controller__P_231_1.getSelection().push(this.__model__P_231_3.getItem(2)); // test the selection
+
+
+        this.assertEquals(this.__model__P_231_3.getItem(1), this.__controller__P_231_1.getSelection().getItem(0), "addToSelection does not work.");
+        this.assertEquals(this.__model__P_231_3.getItem(2), this.__controller__P_231_1.getSelection().getItem(1), "addToSelection does not work.");
       },
       testChangeModelSmaller: function testChangeModelSmaller() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name"); // create the model
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name"); // create the model
 
-        this.__data = [];
+        this.__data__P_231_2 = [];
 
         for (var i = 0; i < 2; i++) {
           var obj = new qx.test.ListWithObject();
           obj.setName("name");
           obj.setIcon("icon");
 
-          this.__data.push(obj);
+          this.__data__P_231_2.push(obj);
         } // create a new array
 
 
-        this.__model.setAutoDisposeItems(true);
+        this.__model__P_231_3.setAutoDisposeItems(true);
 
-        this.__model.dispose();
+        this.__model__P_231_3.dispose();
 
-        this.__model = new qx.data.Array(this.__data);
+        this.__model__P_231_3 = new qx.data.Array(this.__data__P_231_2);
 
-        this.__controller.setModel(this.__model); // check the binding
+        this.__controller__P_231_1.setModel(this.__model__P_231_3); // check the binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         } // check the length
 
 
-        this.assertEquals(this.__data.length, this.__list.getChildren().length, "Wrong length!");
+        this.assertEquals(this.__data__P_231_2.length, this.__list__P_231_0.getChildren().length, "Wrong length!");
       },
       testIcon: function testIcon() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name");
 
-        this.__controller.setIconPath("icon"); // check the label binding
+        this.__controller__P_231_1.setIconPath("icon"); // check the label binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         } // check the icon binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var icon = this.__list.getChildren()[i].getIcon();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var icon = this.__list__P_231_0.getChildren()[i].getIcon();
 
-          this.assertEquals(this.__data[i].getIcon(), icon, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getIcon(), icon, "Binding " + i + " is wrong!");
         }
       },
       testChangeIconPath: function testChangeIconPath() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name");
 
-        this.__controller.setIconPath("icon"); // check the binding
+        this.__controller__P_231_1.setIconPath("icon"); // check the binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var icon = this.__list.getChildren()[i].getIcon();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var icon = this.__list__P_231_0.getChildren()[i].getIcon();
 
-          this.assertEquals(this.__data[i].getIcon(), icon, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getIcon(), icon, "Binding " + i + " is wrong!");
         }
 
-        this.__controller.setIconPath("name"); // check the binding again
+        this.__controller__P_231_1.setIconPath("name"); // check the binding again
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var icon = this.__list.getChildren()[i].getIcon();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var icon = this.__list__P_231_0.getChildren()[i].getIcon();
 
-          this.assertEquals(this.__data[i].getName(), icon, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), icon, "Binding " + i + " is wrong!");
         }
       },
       testConversionLabelAndIcon: function testConversionLabelAndIcon() {
@@ -248,59 +248,59 @@
           }
         }; // create the controller
 
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name");
 
-        this.__controller.setIconPath("icon");
+        this.__controller__P_231_1.setIconPath("icon");
 
-        this.__controller.setLabelOptions(labelOptions);
+        this.__controller__P_231_1.setLabelOptions(labelOptions);
 
-        this.__controller.setIconOptions(iconOptions); // check the label binding
+        this.__controller__P_231_1.setIconOptions(iconOptions); // check the label binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals("Dr. " + this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals("Dr. " + this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         } // check the icon binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var icon = this.__list.getChildren()[i].getIcon();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var icon = this.__list__P_231_0.getChildren()[i].getIcon();
 
-          this.assertEquals(this.__data[i].getIcon() + ".png", icon, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getIcon() + ".png", icon, "Binding " + i + " is wrong!");
         }
       },
       testSetModelLate: function testSetModelLate() {
         // create the controller
-        this.__controller = new qx.data.controller.List(null, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(null, this.__list__P_231_0, "name");
 
-        this.__controller.setModel(this.__model); // check the binding
+        this.__controller__P_231_1.setModel(this.__model__P_231_3); // check the binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         }
       },
       testSetTargetLate: function testSetTargetLate() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, null, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, null, "name");
 
-        this.__controller.setTarget(this.__list); // check the binding
+        this.__controller__P_231_1.setTarget(this.__list__P_231_0); // check the binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         }
       },
       testFilter: function testFilter() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name");
 
-        this.__controller.setIconPath("icon");
+        this.__controller__P_231_1.setIconPath("icon");
 
         var delegate = {};
 
@@ -309,16 +309,16 @@
         }; // set the filter
 
 
-        this.__controller.setDelegate(delegate); // check for the length
+        this.__controller__P_231_1.setDelegate(delegate); // check for the length
 
 
-        this.assertEquals(1, this.__list.getChildren().length, "Too much list items."); // check the label binding
+        this.assertEquals(1, this.__list__P_231_0.getChildren().length, "Too much list items."); // check the label binding
 
-        var label = this.__list.getChildren()[0].getLabel();
+        var label = this.__list__P_231_0.getChildren()[0].getLabel();
 
         this.assertEquals("name2", label, "Label binding is wrong!"); // check the icon binding
 
-        var icon = this.__list.getChildren()[0].getIcon();
+        var icon = this.__list__P_231_0.getChildren()[0].getIcon();
 
         this.assertEquals("icon2", icon, "Icon binding is wrong!");
       },
@@ -332,20 +332,20 @@
         }; // create the controller
 
 
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name");
 
-        this.__controller.setLabelOptions(options); // change something to invoke a change of a binding
-
-
-        this.__data.pop().dispose();
-
-        this.__model.pop().dispose(); // check the binding
+        this.__controller__P_231_1.setLabelOptions(options); // change something to invoke a change of a binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        this.__data__P_231_2.pop().dispose();
 
-          this.assertEquals(this.__data[i].getName(), label, "Binding " + i + " is wrong!");
+        this.__model__P_231_3.pop().dispose(); // check the binding
+
+
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
+
+          this.assertEquals(this.__data__P_231_2[i].getName(), label, "Binding " + i + " is wrong!");
         } // check if the flag is set
 
 
@@ -394,14 +394,14 @@
         parents.push(parentA);
         parents.push(parentB);
         parents.push(parentC);
-        this.__controller = new qx.data.controller.List(parents, this.__list, "name");
-        this.assertEquals(parentC.getName(), this.__list.getChildren()[2].getModel().getName(), "Wrong model stored before the splice.");
+        this.__controller__P_231_1 = new qx.data.controller.List(parents, this.__list__P_231_0, "name");
+        this.assertEquals(parentC.getName(), this.__list__P_231_0.getChildren()[2].getModel().getName(), "Wrong model stored before the splice.");
         var temp = parents.splice(parents.indexOf(parentB), 1);
         temp.getItem(0).getKid().dispose();
         temp.setAutoDisposeItems(true);
         temp.dispose();
-        this.assertEquals("parentC", this.__list.getChildren()[1].getLabel(), "Wrong name of the parent.");
-        this.assertEquals(parentC, this.__list.getChildren()[1].getModel(), "Wrong model stored after the splice."); // clean up
+        this.assertEquals("parentC", this.__list__P_231_0.getChildren()[1].getLabel(), "Wrong name of the parent.");
+        this.assertEquals(parentC, this.__list__P_231_0.getChildren()[1].getModel(), "Wrong model stored after the splice."); // clean up
 
         for (var i = 0; i < parents.length; i++) {
           parents.getItem(i).getKid().dispose();
@@ -412,7 +412,7 @@
       },
       testModelProperty: function testModelProperty() {
         // create the controller
-        this.__controller = new qx.data.controller.List(null, this.__list, "name"); // filter only the first item
+        this.__controller__P_231_1 = new qx.data.controller.List(null, this.__list__P_231_0, "name"); // filter only the first item
 
         var delegate = {};
 
@@ -425,29 +425,29 @@
         }; // set the filter
 
 
-        this.__controller.setDelegate(delegate);
+        this.__controller__P_231_1.setDelegate(delegate);
 
-        this.__controller.setModel(this.__model);
+        this.__controller__P_231_1.setModel(this.__model__P_231_3);
 
-        this.assertEquals(3, this.__list.getChildren().length); // check the binding
+        this.assertEquals(3, this.__list__P_231_0.getChildren().length); // check the binding
 
-        this.assertEquals(this.__model.getItem(1), this.__list.getChildren()[0].getModel());
-        this.assertEquals(this.__model.getItem(3), this.__list.getChildren()[1].getModel());
-        this.assertEquals(this.__model.getItem(4), this.__list.getChildren()[2].getModel()); // add another item
+        this.assertEquals(this.__model__P_231_3.getItem(1), this.__list__P_231_0.getChildren()[0].getModel());
+        this.assertEquals(this.__model__P_231_3.getItem(3), this.__list__P_231_0.getChildren()[1].getModel());
+        this.assertEquals(this.__model__P_231_3.getItem(4), this.__list__P_231_0.getChildren()[2].getModel()); // add another item
 
         var item = new qx.test.ListWithObject().set({
           name: "name5",
           icon: "icon5"
         });
 
-        this.__model.push(item);
+        this.__model__P_231_3.push(item);
 
-        this.assertEquals(this.__model.getItem(5), this.__list.getChildren()[3].getModel());
+        this.assertEquals(this.__model__P_231_3.getItem(5), this.__list__P_231_0.getChildren()[3].getModel());
         item.dispose();
       },
       testModelPropertyBinding: function testModelPropertyBinding() {
         // create the controller
-        this.__controller = new qx.data.controller.List(null, this.__list, "name"); // filter only the first item
+        this.__controller__P_231_1 = new qx.data.controller.List(null, this.__list__P_231_0, "name"); // filter only the first item
 
         var delegate = {};
 
@@ -456,28 +456,28 @@
         }; // set the filter
 
 
-        this.__controller.setDelegate(delegate);
+        this.__controller__P_231_1.setDelegate(delegate);
 
-        this.__controller.setModel(this.__model); // test the right set model properties
+        this.__controller__P_231_1.setModel(this.__model__P_231_3); // test the right set model properties
 
 
-        for (var i = 0; i < this.__list.getChildren().length; i++) {
-          var child = this.__list.getChildren()[i];
+        for (var i = 0; i < this.__list__P_231_0.getChildren().length; i++) {
+          var child = this.__list__P_231_0.getChildren()[i];
 
           this.assertEquals("icon" + i, child.getModel());
         }
 
         ; // test selection
 
-        this.__controller.getSelection().push("icon1");
+        this.__controller__P_231_1.getSelection().push("icon1");
 
-        this.assertEquals("icon1", this.__list.getSelection()[0].getModel());
+        this.assertEquals("icon1", this.__list__P_231_0.getSelection()[0].getModel());
       },
       testModelInConverter: function testModelInConverter() {
         // create the controller
-        this.__controller = new qx.data.controller.List(this.__model, this.__list, "name");
+        this.__controller__P_231_1 = new qx.data.controller.List(this.__model__P_231_3, this.__list__P_231_0, "name");
 
-        this.__controller.setLabelOptions({
+        this.__controller__P_231_1.setLabelOptions({
           converter: function converter(value, model) {
             return model.getIcon();
           }
@@ -488,16 +488,16 @@
         obj.setName("namex");
         obj.setIcon("iconx");
 
-        this.__model.push(obj); // check the binding
+        this.__model__P_231_3.push(obj); // check the binding
 
 
-        for (var i = 0; i < this.__data.length; i++) {
-          var label = this.__list.getChildren()[i].getLabel();
+        for (var i = 0; i < this.__data__P_231_2.length; i++) {
+          var label = this.__list__P_231_0.getChildren()[i].getLabel();
 
-          this.assertEquals(this.__data[i].getIcon(), label, "Binding " + i + " is wrong!");
+          this.assertEquals(this.__data__P_231_2[i].getIcon(), label, "Binding " + i + " is wrong!");
         }
 
-        var label = this.__list.getChildren()[this.__data.length].getLabel();
+        var label = this.__list__P_231_0.getChildren()[this.__data__P_231_2.length].getLabel();
 
         this.assertEquals("iconx", label, "New binding is wrong!");
       }
@@ -506,4 +506,4 @@
   qx.test.data.controller.ListWithObjects.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ListWithObjects.js.map?dt=1589218256724
+//# sourceMappingURL=ListWithObjects.js.map?dt=1591362977856

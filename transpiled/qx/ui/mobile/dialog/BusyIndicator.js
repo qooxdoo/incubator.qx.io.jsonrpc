@@ -76,20 +76,20 @@
       SPINNER_ANIMATION: null
     },
     members: {
-      __animationHandle: null,
+      __animationHandle__P_462_0: null,
 
       /**
        * Listener for appear event.
        */
       _onAppear: function _onAppear() {
-        this.__animationHandle = qx.bom.element.Animation.animate(this.getIconWidget().getContainerElement(), qx.ui.mobile.dialog.BusyIndicator.SPINNER_ANIMATION);
+        this.__animationHandle__P_462_0 = qx.bom.element.Animation.animate(this.getIconWidget().getContainerElement(), qx.ui.mobile.dialog.BusyIndicator.SPINNER_ANIMATION);
       },
 
       /**
        * Handler for disappear event.
        */
       _onDisappear: function _onDisappear() {
-        this.__animationHandle.stop();
+        this.__animationHandle__P_462_0.stop();
       },
       // overridden
       _createIconWidget: function _createIconWidget(iconUrl) {
@@ -113,11 +113,11 @@
       this.removeListener("appear", this._onAppear, this);
       this.removeListener("disappear", this._onDisappear, this);
 
-      if (this.__animationHandle) {
-        this.__animationHandle.stop();
+      if (this.__animationHandle__P_462_0) {
+        this.__animationHandle__P_462_0.stop();
       }
 
-      this.__animationHandle = null;
+      this.__animationHandle__P_462_0 = null;
     },
     defer: function defer() {
       qx.ui.mobile.dialog.BusyIndicator.SPINNER_ANIMATION = {
@@ -139,4 +139,4 @@
   qx.ui.mobile.dialog.BusyIndicator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BusyIndicator.js.map?dt=1589218277785
+//# sourceMappingURL=BusyIndicator.js.map?dt=1591363001804

@@ -43,24 +43,24 @@
   qx.Class.define("qx.test.html.Flash", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __flash: null,
+      __flash__P_247_0: null,
       setUp: function setUp() {
-        this.__flash = new qx.html.Flash();
+        this.__flash__P_247_0 = new qx.html.Flash();
       },
       tearDown: function tearDown() {
-        this.__flash.dispose();
+        this.__flash__P_247_0.dispose();
 
-        this.__flash = null;
+        this.__flash__P_247_0 = null;
       },
       testSetSource: function testSetSource(value) {
-        this.__flash.setSource("movieURL");
+        this.__flash__P_247_0.setSource("movieURL");
 
-        this.assertIdentical("movieURL", this.__flash.getAttributes().movie);
+        this.assertIdentical("movieURL", this.__flash__P_247_0.getAttributes().movie);
       },
       testSetId: function testSetId(value) {
-        this.__flash.setId("flashID");
+        this.__flash__P_247_0.setId("flashID");
 
-        this.assertIdentical("flashID", this.__flash.getAttributes().id);
+        this.assertIdentical("flashID", this.__flash__P_247_0.getAttributes().id);
       },
       testSetVariables: function testSetVariables(value) {
         var map = {
@@ -68,81 +68,81 @@
           b: "valueB"
         };
 
-        this.__flash.setVariables(map);
+        this.__flash__P_247_0.setVariables(map);
 
-        this.assertIdentical(map, this.__flash.getVariables());
+        this.assertIdentical(map, this.__flash__P_247_0.getVariables());
       },
       testSetAttribute: function testSetAttribute(key, value) {
-        this.__flash.setAttribute("attrib1", "hoho");
+        this.__flash__P_247_0.setAttribute("attrib1", "hoho");
 
-        this.__flash.setAttribute("attrib2", "gogo");
+        this.__flash__P_247_0.setAttribute("attrib2", "gogo");
 
-        this.__flash.setAttribute("attrib3", true);
+        this.__flash__P_247_0.setAttribute("attrib3", true);
 
-        this.__flash.setAttribute("attrib4", false);
+        this.__flash__P_247_0.setAttribute("attrib4", false);
 
-        var map = this.__flash.getAttribute();
+        var map = this.__flash__P_247_0.getAttribute();
 
-        this.assertIdentical("hoho", this.__flash.getAttributes().attrib1);
-        this.assertIdentical("gogo", this.__flash.getAttributes().attrib2);
-        this.assertTrue(this.__flash.getAttributes().attrib3);
-        this.assertFalse(this.__flash.getAttributes().attrib4);
+        this.assertIdentical("hoho", this.__flash__P_247_0.getAttributes().attrib1);
+        this.assertIdentical("gogo", this.__flash__P_247_0.getAttributes().attrib2);
+        this.assertTrue(this.__flash__P_247_0.getAttributes().attrib3);
+        this.assertFalse(this.__flash__P_247_0.getAttributes().attrib4);
 
-        this.__flash.setAttribute("attrib1");
+        this.__flash__P_247_0.setAttribute("attrib1");
 
-        this.__flash.setAttribute("attrib3");
+        this.__flash__P_247_0.setAttribute("attrib3");
 
-        this.assertUndefined(this.__flash.getAttributes().attrib1);
-        this.assertIdentical("gogo", this.__flash.getAttributes().attrib2);
-        this.assertUndefined(this.__flash.getAttributes().attrib3);
-        this.assertFalse(this.__flash.getAttributes().attrib4);
+        this.assertUndefined(this.__flash__P_247_0.getAttributes().attrib1);
+        this.assertIdentical("gogo", this.__flash__P_247_0.getAttributes().attrib2);
+        this.assertUndefined(this.__flash__P_247_0.getAttributes().attrib3);
+        this.assertFalse(this.__flash__P_247_0.getAttributes().attrib4);
 
-        this.__flash.setAttribute("attrib2", null);
+        this.__flash__P_247_0.setAttribute("attrib2", null);
 
-        this.__flash.setAttribute("attrib4", null);
+        this.__flash__P_247_0.setAttribute("attrib4", null);
 
-        this.assertUndefined(this.__flash.getAttributes().attrib1);
-        this.assertUndefined(this.__flash.getAttributes().attrib2);
-        this.assertUndefined(this.__flash.getAttributes().attrib3);
-        this.assertUndefined(this.__flash.getAttributes().attrib4);
+        this.assertUndefined(this.__flash__P_247_0.getAttributes().attrib1);
+        this.assertUndefined(this.__flash__P_247_0.getAttributes().attrib2);
+        this.assertUndefined(this.__flash__P_247_0.getAttributes().attrib3);
+        this.assertUndefined(this.__flash__P_247_0.getAttributes().attrib4);
       },
       testSetParam: function testSetParam(key, value) {
-        this.__flash.setParam("param1", "hoho");
+        this.__flash__P_247_0.setParam("param1", "hoho");
 
-        this.__flash.setParam("param2", "gogo");
+        this.__flash__P_247_0.setParam("param2", "gogo");
 
-        this.__flash.setParam("param3", true);
+        this.__flash__P_247_0.setParam("param3", true);
 
-        this.__flash.setParam("param4", false);
+        this.__flash__P_247_0.setParam("param4", false);
 
-        var map = this.__flash.getParams();
+        var map = this.__flash__P_247_0.getParams();
 
-        this.assertIdentical("hoho", this.__flash.getParams().param1);
-        this.assertIdentical("gogo", this.__flash.getParams().param2);
-        this.assertTrue(this.__flash.getParams().param3);
-        this.assertFalse(this.__flash.getParams().param4);
+        this.assertIdentical("hoho", this.__flash__P_247_0.getParams().param1);
+        this.assertIdentical("gogo", this.__flash__P_247_0.getParams().param2);
+        this.assertTrue(this.__flash__P_247_0.getParams().param3);
+        this.assertFalse(this.__flash__P_247_0.getParams().param4);
 
-        this.__flash.setParam("param1");
+        this.__flash__P_247_0.setParam("param1");
 
-        this.__flash.setParam("param3");
+        this.__flash__P_247_0.setParam("param3");
 
-        this.assertUndefined(this.__flash.getParams().param1);
-        this.assertIdentical("gogo", this.__flash.getParams().param2);
-        this.assertUndefined(this.__flash.getParams().param3);
-        this.assertFalse(this.__flash.getParams().param4);
+        this.assertUndefined(this.__flash__P_247_0.getParams().param1);
+        this.assertIdentical("gogo", this.__flash__P_247_0.getParams().param2);
+        this.assertUndefined(this.__flash__P_247_0.getParams().param3);
+        this.assertFalse(this.__flash__P_247_0.getParams().param4);
 
-        this.__flash.setParam("param2", null);
+        this.__flash__P_247_0.setParam("param2", null);
 
-        this.__flash.setParam("param4", null);
+        this.__flash__P_247_0.setParam("param4", null);
 
-        this.assertUndefined(this.__flash.getParams().param1);
-        this.assertUndefined(this.__flash.getParams().param2);
-        this.assertUndefined(this.__flash.getParams().param3);
-        this.assertUndefined(this.__flash.getParams().param4);
+        this.assertUndefined(this.__flash__P_247_0.getParams().param1);
+        this.assertUndefined(this.__flash__P_247_0.getParams().param2);
+        this.assertUndefined(this.__flash__P_247_0.getParams().param3);
+        this.assertUndefined(this.__flash__P_247_0.getParams().param4);
       }
     }
   });
   qx.test.html.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1589218258851
+//# sourceMappingURL=Flash.js.map?dt=1591362980440

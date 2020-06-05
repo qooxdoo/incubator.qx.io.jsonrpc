@@ -177,7 +177,7 @@
         } // Finally create the SWF
 
 
-        var flash = this.__createSwf(element, attributes, params, win);
+        var flash = this.__createSwf__P_15_0(element, attributes, params, win);
 
         this._flashObjects[attributes.id] = flash;
         return flash;
@@ -204,21 +204,21 @@
        */
       destroy: function destroy(element, win) {
         if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 11) {
-          element = this.__getFlashObject(element);
+          element = this.__getFlashObject__P_15_1(element);
 
           if (element.readyState == 4) {
-            this.__destroyObjectInIE(element);
+            this.__destroyObjectInIE__P_15_2(element);
           } else {
             if (!win) {
               win = window;
             }
 
             qx.bom.Event.addNativeListener(win, "load", function () {
-              qx.bom.Flash.__destroyObjectInIE(element);
+              qx.bom.Flash.__destroyObjectInIE__P_15_2(element);
             });
           }
         } else {
-          element = this.__getFlashObject(element);
+          element = this.__getFlashObject__P_15_1(element);
 
           if (element.parentNode) {
             element.parentNode.removeChild(element);
@@ -234,7 +234,7 @@
        * @param element {Element} The element to look.
        * @return {Element} Flash object element
        */
-      __getFlashObject: function __getFlashObject(element) {
+      __getFlashObject__P_15_1: function __getFlashObject__P_15_1(element) {
         if (!element) {
           throw new Error("DOM element is null or undefined!");
         }
@@ -256,7 +256,7 @@
        * @signature function(element)
        * @param element {Element} Flash object element to destroy.
        */
-      __destroyObjectInIE: qx.core.Environment.select("engine.name", {
+      __destroyObjectInIE__P_15_2: qx.core.Environment.select("engine.name", {
         "mshtml": qx.event.GlobalError.observeMethod(function (element) {
           for (var i in element) {
             if (typeof element[i] == "function") {
@@ -278,18 +278,18 @@
        *
        * @signature function()
        */
-      __fixOutOfMemoryError: qx.event.GlobalError.observeMethod(function () {
+      __fixOutOfMemoryError__P_15_3: qx.event.GlobalError.observeMethod(function () {
         // IE Memory Leak Fix
         for (var key in qx.bom.Flash._flashObjects) {
           qx.bom.Flash.destroy(qx.bom.Flash._flashObjects[key]);
         }
 
-        window.__flash_unloadHandler = function () {};
+        window.__flash_unloadHandler__P_15_4 = function () {};
 
-        window.__flash_savedUnloadHandler = function () {}; // Remove listener again
+        window.__flash_savedUnloadHandler__P_15_5 = function () {}; // Remove listener again
 
 
-        qx.bom.Event.removeNativeListener(window, "beforeunload", qx.bom.Flash.__fixOutOfMemoryError);
+        qx.bom.Event.removeNativeListener(window, "beforeunload", qx.bom.Flash.__fixOutOfMemoryError__P_15_3);
       }),
 
       /**
@@ -301,7 +301,7 @@
        * @param win {Window} Window to create the element for.
        * @signature function(element, attributes, params, win)
        */
-      __createSwf: function __createSwf(element, attributes, params, win) {
+      __createSwf__P_15_0: function __createSwf__P_15_0(element, attributes, params, win) {
         if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 11) {
           // Move data from params to attributes
           params.movie = attributes.data;
@@ -363,11 +363,11 @@
     */
     defer: function defer(statics) {
       if (qx.core.Environment.get("engine.name") == "mshtml") {
-        qx.bom.Event.addNativeListener(window, "beforeunload", statics.__fixOutOfMemoryError);
+        qx.bom.Event.addNativeListener(window, "beforeunload", statics.__fixOutOfMemoryError__P_15_3);
       }
     }
   });
   qx.bom.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1589218237069
+//# sourceMappingURL=Flash.js.map?dt=1591362956304

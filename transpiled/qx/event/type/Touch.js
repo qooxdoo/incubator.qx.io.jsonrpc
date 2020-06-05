@@ -136,7 +136,7 @@
        * @return {Boolean} Is multi-touch
        */
       isMultiTouch: function isMultiTouch() {
-        return this.__getEventSpecificTouches().length > 1;
+        return this.__getEventSpecificTouches__P_148_0().length > 1;
       },
 
       /**
@@ -189,7 +189,7 @@
        * @return {Integer} The horizontal position of the touch in the document.
        */
       getDocumentLeft: function getDocumentLeft(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).pageX;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).pageX;
       },
 
       /**
@@ -201,7 +201,7 @@
        * @return {Integer} The vertical position of the touch in the document.
        */
       getDocumentTop: function getDocumentTop(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).pageY;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).pageY;
       },
 
       /**
@@ -212,7 +212,7 @@
        * @return {Integer} The horizontal position of the touch
        */
       getScreenLeft: function getScreenLeft(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).screenX;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).screenX;
       },
 
       /**
@@ -223,7 +223,7 @@
        * @return {Integer} The vertical position of the touch
        */
       getScreenTop: function getScreenTop(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).screenY;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).screenY;
       },
 
       /**
@@ -234,7 +234,7 @@
        * @return {Integer} The horizontal position of the touch
        */
       getViewportLeft: function getViewportLeft(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).clientX;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).clientX;
       },
 
       /**
@@ -245,7 +245,7 @@
        * @return {Integer} The vertical position of the touch
        */
       getViewportTop: function getViewportTop(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).clientY;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).clientY;
       },
 
       /**
@@ -255,7 +255,7 @@
        * @return {Integer} Unique identifier of the touch object
        */
       getIdentifier: function getIdentifier(touchIndex) {
-        return this.__getEventSpecificTouch(touchIndex).identifier;
+        return this.__getEventSpecificTouch__P_148_1(touchIndex).identifier;
       },
 
       /**
@@ -267,9 +267,9 @@
        *     retrieve
        * @return {Object} A native Touch object
        */
-      __getEventSpecificTouch: function __getEventSpecificTouch(touchIndex) {
+      __getEventSpecificTouch__P_148_1: function __getEventSpecificTouch__P_148_1(touchIndex) {
         touchIndex = touchIndex == null ? 0 : touchIndex;
-        return this.__getEventSpecificTouches()[touchIndex];
+        return this.__getEventSpecificTouches__P_148_0()[touchIndex];
       },
 
       /**
@@ -279,7 +279,7 @@
        *
        * @return {Object[]} Array of native Touch objects
        */
-      __getEventSpecificTouches: function __getEventSpecificTouches() {
+      __getEventSpecificTouches__P_148_0: function __getEventSpecificTouches__P_148_0() {
         var touches = this._isTouchEnd() ? this.getChangedTargetTouches() : this.getTargetTouches();
         return touches;
       },
@@ -300,4 +300,4 @@
   qx.event.type.Touch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Touch.js.map?dt=1589218247755
+//# sourceMappingURL=Touch.js.map?dt=1591362967979

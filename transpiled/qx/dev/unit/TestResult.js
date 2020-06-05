@@ -188,7 +188,7 @@
                 var that = this;
 
                 var defaultTimeoutFunction = function defaultTimeoutFunction() {
-                  throw new qx.core.AssertionError("Asynchronous Test Error in setUp", "Timeout reached before resume() was called.");
+                  throw new qx.core.AssertionError("Asynchronous Test Error in setUp", "Timeout of " + ex.getDelay() + " ms reached before resume() was called.");
                 };
 
                 var timeoutFunc = ex.getDeferredFunction() ? ex.getDeferredFunction() : defaultTimeoutFunction;
@@ -246,7 +246,7 @@
               var that = this;
 
               var defaultTimeoutFunction = function defaultTimeoutFunction() {
-                throw new qx.core.AssertionError("Asynchronous Test Error", "Timeout reached before resume() was called.");
+                throw new qx.core.AssertionError("Asynchronous Test Error", "Timeout of " + ex.getDelay() + " ms reached before resume() was called.");
               };
 
               var timeoutFunc = ex.getDeferredFunction() ? ex.getDeferredFunction() : defaultTimeoutFunction;
@@ -337,7 +337,7 @@
        *
        * @param testFunction {qx.dev.unit.TestFunction} The current test
        */
-      __wrapAddListener: function __wrapAddListener(testFunction) {
+      __wrapAddListener__P_111_0: function __wrapAddListener__P_111_0(testFunction) {
         testFunction._addedListeners = [];
 
         if (!qx.event.Registration.addListenerOriginal) {
@@ -365,7 +365,7 @@
        *
        * @param testFunction {qx.dev.unit.TestFunction} The current test
        */
-      __removeListeners: function __removeListeners(testFunction) {
+      __removeListeners__P_111_1: function __removeListeners__P_111_1(testFunction) {
         // remove listeners added during test execution
         if (testFunction._addedListeners) {
           var listeners = testFunction._addedListeners;
@@ -421,4 +421,4 @@
   qx.dev.unit.TestResult.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TestResult.js.map?dt=1589218244943
+//# sourceMappingURL=TestResult.js.map?dt=1591362965090

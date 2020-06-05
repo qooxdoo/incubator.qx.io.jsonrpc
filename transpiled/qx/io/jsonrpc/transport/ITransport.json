@@ -25,7 +25,21 @@
       "name": "endpoint",
       "abstract": true,
       "mixin": false,
-      "access": "public"
+      "access": "public",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The URI of the endpoint</p>"
+          }
+        ],
+        "@var": [
+          {
+            "name": "@var",
+            "body": "{String}"
+          }
+        ]
+      }
     }
   },
   "events": {

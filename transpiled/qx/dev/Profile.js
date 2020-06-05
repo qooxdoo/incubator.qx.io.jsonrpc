@@ -45,51 +45,51 @@
        *
        * @internal
        */
-      __profileData: {},
+      __profileData__P_100_0: {},
 
       /**
        * Array for call stack-like data types.
        *
        * @internal
        */
-      __callStack: [],
+      __callStack__P_100_1: [],
 
       /**
        * Flag marking profiler run.
        *
        * @internal
        */
-      __doProfile: true,
+      __doProfile__P_100_2: true,
 
       /**
        * Profiler execution time. Subtracted for more accurate calculations.
        *
        * @internal
        */
-      __callOverhead: undefined,
+      __callOverhead__P_100_3: undefined,
 
       /**
        * Amount of times to run calculation of profiler overhead.
        *
        * @internal
        */
-      __calibrateCount: 4000,
+      __calibrateCount__P_100_4: 4000,
 
       /**
        * Clear profiling data and start profiling.
        */
       start: function start() {
-        this.__doProfile = true;
-        this.__profileData = {};
+        this.__doProfile__P_100_2 = true;
+        this.__profileData__P_100_0 = {};
 
-        this.__callStack.splice(0, this.__callStack.length - 2);
+        this.__callStack__P_100_1.splice(0, this.__callStack__P_100_1.length - 2);
       },
 
       /**
        * Stop profiling.
        */
       stop: function stop() {
-        this.__doProfile = false;
+        this.__doProfile__P_100_2 = false;
       },
 
       /**
@@ -128,7 +128,7 @@
        * @return {Map} The current profiling data.
        */
       getProfileData: function getProfileData() {
-        return this.__profileData;
+        return this.__profileData__P_100_0;
       },
 
       /**
@@ -140,7 +140,7 @@
       showResults: function showResults(maxLength) {
         this.stop();
         this.normalizeProfileData();
-        var data = Object.values(this.__profileData);
+        var data = Object.values(this.__profileData__P_100_0);
         data = data.sort(function (a, b) {
           return a.calibratedOwnTime < b.calibratedOwnTime ? 1 : -1;
         });
@@ -186,7 +186,7 @@
        * @param count {Integer} Number of iterations to measure.
        * @return {Number} Overhead of a wrapped function call in milliseconds.
        */
-      __calibrate: function __calibrate(count) {
+      __calibrate__P_100_5: function __calibrate__P_100_5(count) {
         // we use eval to unroll the loop because we don't want to measure the loop overhead.
         // Measure wrapped function
         var fcn;
@@ -222,20 +222,20 @@
       /**
        * Helper to measure overhead.
        */
-      __calibrateHelper: function __calibrateHelper() {},
+      __calibrateHelper__P_100_6: function __calibrateHelper__P_100_6() {},
 
       /**
        * Normalize profiling data by subtracting the overhead of wrapping from the
        * function's own time.
        */
       normalizeProfileData: function normalizeProfileData() {
-        if (this.__callOverhead == undefined) {
-          this.__callOverhead = this.__calibrate(this.__calibrateCount);
+        if (this.__callOverhead__P_100_3 == undefined) {
+          this.__callOverhead__P_100_3 = this.__calibrate__P_100_5(this.__calibrateCount__P_100_4);
         }
 
-        for (var key in this.__profileData) {
-          var profileData = this.__profileData[key];
-          profileData.calibratedOwnTime = Math.max(profileData.ownTime - profileData.subRoutineCalls * this.__callOverhead, 0);
+        for (var key in this.__profileData__P_100_0) {
+          var profileData = this.__profileData__P_100_0[key];
+          profileData.calibratedOwnTime = Math.max(profileData.ownTime - profileData.subRoutineCalls * this.__callOverhead__P_100_3, 0);
           profileData.calibratedAvgTime = profileData.calibratedOwnTime / profileData.callCount;
         }
       },
@@ -252,7 +252,7 @@
       profileBefore: function profileBefore(fullName, fcn, type, args) {
         var me = qx.dev.Profile;
 
-        if (!me.__doProfile) {
+        if (!me.__doProfile__P_100_2) {
           return;
         }
 
@@ -261,7 +261,7 @@
           subRoutineCalls: 0
         };
 
-        me.__callStack.push(callData);
+        me.__callStack__P_100_1.push(callData);
 
         callData.startTime = new Date();
       },
@@ -279,27 +279,27 @@
       profileAfter: function profileAfter(fullName, fcn, type, args, returnValue) {
         var me = qx.dev.Profile;
 
-        if (!me.__doProfile) {
+        if (!me.__doProfile__P_100_2) {
           return;
         }
 
         var endTime = new Date();
 
-        var callData = me.__callStack.pop();
+        var callData = me.__callStack__P_100_1.pop();
 
         var totalTime = endTime - callData.startTime;
         var ownTime = totalTime - callData.subRoutineTime;
 
-        if (me.__callStack.length > 0) {
-          var lastCall = me.__callStack[me.__callStack.length - 1];
+        if (me.__callStack__P_100_1.length > 0) {
+          var lastCall = me.__callStack__P_100_1[me.__callStack__P_100_1.length - 1];
           lastCall.subRoutineTime += totalTime;
           lastCall.subRoutineCalls += 1;
         }
 
         var fcnKey = fullName + " (" + type + ")";
 
-        if (me.__profileData[fcnKey] === undefined) {
-          me.__profileData[fcnKey] = {
+        if (me.__profileData__P_100_0[fcnKey] === undefined) {
+          me.__profileData__P_100_0[fcnKey] = {
             totalTime: 0,
             ownTime: 0,
             callCount: 0,
@@ -309,7 +309,7 @@
           };
         }
 
-        var functionData = me.__profileData[fcnKey];
+        var functionData = me.__profileData__P_100_0[fcnKey];
         functionData.totalTime += totalTime;
         functionData.ownTime += ownTime;
         functionData.callCount += 1;
@@ -321,4 +321,4 @@
   qx.dev.Profile.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Profile.js.map?dt=1589218243709
+//# sourceMappingURL=Profile.js.map?dt=1591362963727

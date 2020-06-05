@@ -53,20 +53,20 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __marshaler: null,
-      __data: null,
-      __propertyNames: null,
+      __marshaler__P_234_0: null,
+      __data__P_234_1: null,
+      __propertyNames__P_234_2: null,
       setUp: function setUp() {
-        this.__marshaler = new qx.data.marshal.Json();
-        this.__data = {
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json();
+        this.__data__P_234_1 = {
           s: 'String',
           n: 12,
           b: true
         };
-        this.__propertyNames = ["s", "n", "b"];
+        this.__propertyNames__P_234_2 = ["s", "n", "b"];
       },
       tearDown: function tearDown() {
-        this.__marshaler.dispose(); // remove the former created classes
+        this.__marshaler__P_234_0.dispose(); // remove the former created classes
 
 
         qx.data.model = {};
@@ -82,7 +82,7 @@
           $$a: "b"
         };
 
-        this.__marshaler.toClass(data); // check if the class is defined
+        this.__marshaler__P_234_0.toClass(data); // check if the class is defined
 
 
         this.assertTrue(qx.Class.isDefined('qx.data.model.$$a'), "Class not created.");
@@ -101,16 +101,16 @@
           a: str
         };
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
-        var model = this.__marshaler.toModel(data);
+        var model = this.__marshaler__P_234_0.toModel(data);
 
         this.assertEquals(str, model.getA());
         model.dispose();
         qx.Class.undefine('qx.data.model.a');
       },
       testClassCreationSingle: function testClassCreationSingle() {
-        this.__marshaler.toClass(this.__data); // check if the class is defined
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // check if the class is defined
 
 
         this.assertTrue(qx.Class.isDefined('qx.data.model.b|n|s'), "Class not created.");
@@ -119,17 +119,17 @@
         var i = 0;
 
         for (var name in clazz.$$properties) {
-          this.assertEquals(this.__propertyNames[i], name, "Property " + i + "does have the wrong name.");
-          this.assertEquals("change" + qx.lang.String.firstUp(this.__propertyNames[i]), clazz.$$properties[name].event, "event has a wrong name.");
+          this.assertEquals(this.__propertyNames__P_234_2[i], name, "Property " + i + "does have the wrong name.");
+          this.assertEquals("change" + qx.lang.String.firstUp(this.__propertyNames__P_234_2[i]), clazz.$$properties[name].event, "event has a wrong name.");
           i++;
         }
       },
       testClassCreationArray: function testClassCreationArray() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: ['a', 'b', 'c']
         };
 
-        this.__marshaler.toClass(this.__data); // check if the class is defined
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // check if the class is defined
 
 
         this.assertTrue(qx.Class.isDefined("qx.data.model.a"), "Class not created.");
@@ -138,13 +138,13 @@
         this.assertNotNull(clazz.$$properties.a, "Property does not exist.");
       },
       testClassCreationObject: function testClassCreationObject() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             b: 'test'
           }
         };
 
-        this.__marshaler.toClass(this.__data); // check if the classes are defined
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // check if the classes are defined
 
 
         this.assertTrue(qx.Class.isDefined("qx.data.model.a"), "Class not created.");
@@ -156,7 +156,7 @@
         this.assertNotNull(clazz2.$$properties.b, "Property does not exist.");
       },
       testClassCreationArrayWithObject: function testClassCreationArrayWithObject() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [{
             b: 'test'
           }, {
@@ -164,7 +164,7 @@
           }]
         };
 
-        this.__marshaler.toClass(this.__data); // check if the classes are defined
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // check if the classes are defined
 
 
         this.assertTrue(qx.Class.isDefined("qx.data.model.a"), "Class not created.");
@@ -176,7 +176,7 @@
         this.assertNotNull(clazz2.$$properties.b, "Property does not exist.");
       },
       testClassCreationAllSmoke: function testClassCreationAllSmoke() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [{
             b: 'test',
             c: ['f', 'x', 'e']
@@ -191,19 +191,19 @@
           }
         };
 
-        this.__marshaler.toClass(this.__data);
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1);
       },
       testModelWithNumber: function testModelWithNumber() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: 10,
           b: -15,
           c: 10.5e10
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         this.assertEquals(10, model.getA(), "getA does not work.");
@@ -212,15 +212,15 @@
         model.dispose();
       },
       testModelWithBoolean: function testModelWithBoolean() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: true,
           b: false
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         this.assertEquals(true, model.getA(), "getA does not work.");
@@ -228,15 +228,15 @@
         model.dispose();
       },
       testModelWithString: function testModelWithString() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: 'affe',
           b: 'AFFE'
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         this.assertEquals("affe", model.getA(), "getA does not work.");
@@ -244,16 +244,16 @@
         model.dispose();
       },
       testModelWithPrimitive: function testModelWithPrimitive() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: 'affe',
           b: true,
           c: 156
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         this.assertEquals("affe", model.getA(), "getA does not work.");
@@ -262,14 +262,14 @@
         model.dispose();
       },
       testModelWithArrayPrimitive: function testModelWithArrayPrimitive() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: ['affe', 'affen', 'AFFE']
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         var a = model.getA();
@@ -281,14 +281,14 @@
         model.dispose();
       },
       testModelWithArrayArray: function testModelWithArrayArray() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [[true, false], [10, 15]]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         var a = model.getA();
@@ -305,7 +305,7 @@
         model.dispose();
       },
       testModelWithObjectPrimitive: function testModelWithObjectPrimitive() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             b: true,
             bb: false
@@ -316,10 +316,10 @@
           }
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         var a = model.getA();
@@ -333,16 +333,16 @@
         model.dispose();
       },
       testModelWithObjectArray: function testModelWithObjectArray() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             b: ['affe', 'AFFE']
           }
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         var a = model.getA();
@@ -355,7 +355,7 @@
         model.dispose();
       },
       testModelWithArrayObject: function testModelWithArrayObject() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [{
             a: 15
           }, {
@@ -363,10 +363,10 @@
           }]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         var a = model.getA();
@@ -381,7 +381,7 @@
         model.dispose();
       },
       testModelWithObjectObject: function testModelWithObjectObject() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             a: {
               a: 'affe'
@@ -389,17 +389,17 @@
           }
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         this.assertEquals("affe", model.getA().getA().getA(), "No affe is there!");
         model.dispose();
       },
       testModelWithAllSmoke: function testModelWithAllSmoke() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [{
             aa: ['affe'],
             ab: false,
@@ -413,25 +413,25 @@
           }
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data);
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1);
 
         this.assertNotNull(model, "No model set.");
         model.dispose();
       },
       testBubbleEventsDepth1: function testBubbleEventsDepth1() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: 10,
           b: -15,
           c: 10.5e10
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for a
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for a
 
 
         var self = this;
@@ -457,17 +457,17 @@
         model.dispose();
       },
       testBubbleEventsDepth2: function testBubbleEventsDepth2() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             b: 10,
             c: 20
           }
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for b
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for b
 
 
         var self = this;
@@ -493,7 +493,7 @@
         model.dispose();
       },
       testBubbleEventsDepth3: function testBubbleEventsDepth3() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             b: {
               c: 10
@@ -501,10 +501,10 @@
           }
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for c
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for c
 
 
         var self = this;
@@ -520,14 +520,14 @@
         model.dispose();
       },
       testBubbleEventsArrayDepth1: function testBubbleEventsArrayDepth1() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [12, 23, 34]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for the first array element
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for the first array element
 
 
         var self = this;
@@ -542,7 +542,7 @@
         model.dispose();
       },
       testBubbleEventsArrayDepth2: function testBubbleEventsArrayDepth2() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [{
             b: 10
           }, {
@@ -550,10 +550,10 @@
           }]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for the first array element
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for the first array element
 
 
         var self = this;
@@ -568,16 +568,16 @@
         model.dispose();
       },
       testBubbleEventsArrayDepthAlot: function testBubbleEventsArrayDepthAlot() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [[[[{
             b: 10
           }]]]]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for the first array element
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for the first array element
 
 
         var self = this;
@@ -592,7 +592,7 @@
         model.dispose();
       },
       testBubbleEventsArrayDepthAlotMix: function testBubbleEventsArrayDepthAlotMix() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [{
             b: [[{
               c: {
@@ -602,10 +602,10 @@
           }]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for the first array element
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for the first array element
 
 
         var self = this;
@@ -620,14 +620,14 @@
         model.dispose();
       },
       testBubbleEventsArrayLong: function testBubbleEventsArrayLong() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the event for the first array element
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the event for the first array element
 
 
         var self = this;
@@ -642,14 +642,14 @@
         model.dispose();
       },
       testBubbleEventsArrayReorder: function testBubbleEventsArrayReorder() {
-        this.__data = {
+        this.__data__P_234_1 = {
           a: [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }; // first create the classes before setting the data
 
-        this.__marshaler.toClass(this.__data, true); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1, true); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data);
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1);
 
         model.getA().sort(); // check the event for the first array element
 
@@ -783,13 +783,13 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(this.__data);
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1);
 
-        var model = this.__marshaler.toModel(this.__data); // check for the right class hash
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check for the right class hash
 
 
         this.assertEquals('b|n|s', propertiesSaved); // set working values
@@ -814,11 +814,11 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass({
+        this.__marshaler__P_234_0.toClass({
           custom: 1,
           props: true
         });
@@ -827,16 +827,16 @@
       },
       testQooxdooObject: function testQooxdooObject() {
         var qxObject = new qx.core.Object();
-        this.__data = {
+        this.__data__P_234_1 = {
           a: {
             b: qxObject
           }
         };
 
-        this.__marshaler.toClass(this.__data); // set the data
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1); // set the data
 
 
-        var model = this.__marshaler.toModel(this.__data); // check the model
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1); // check the model
 
 
         this.assertEquals(qxObject, model.getA().getB(), "wrong qx object!");
@@ -916,13 +916,13 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(this.__data);
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1);
 
-        var model = this.__marshaler.toModel(this.__data);
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1);
 
         this.assertTrue(model instanceof qx.test.model.C);
         this.assertEquals("String", model.getS());
@@ -955,7 +955,7 @@
           }.bind(this)
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
         var data = {
           a: {
@@ -964,13 +964,13 @@
             }]
           }
         };
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
         this.assertEquals(3, called);
 
-        var model = this.__marshaler.toModel(data);
+        var model = this.__marshaler__P_234_0.toModel(data);
 
         this.assertEquals(6, called);
         model.dispose();
@@ -992,13 +992,13 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(this.__data);
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1);
 
-        var model = this.__marshaler.toModel(this.__data);
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1);
 
         this.assertTrue(model instanceof qx.test.model.C);
         this.assertUndefined(model.getS);
@@ -1028,7 +1028,7 @@
           }.bind(this)
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
         var data = {
           a: {
@@ -1037,9 +1037,9 @@
             }]
           }
         };
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
         this.assertEquals(3, called);
       },
@@ -1064,7 +1064,7 @@
           }.bind(this)
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
         var data = {
           a: {
@@ -1073,9 +1073,9 @@
             }]
           }
         };
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
         this.assertEquals(3, called);
       },
@@ -1086,13 +1086,13 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(this.__data);
+        this.__marshaler__P_234_0.toClass(this.__data__P_234_1);
 
-        var model = this.__marshaler.toModel(this.__data);
+        var model = this.__marshaler__P_234_0.toModel(this.__data__P_234_1);
 
         this.assertEquals("String", model.getSss());
         this.assertEquals(12, model.getNnn());
@@ -1120,7 +1120,7 @@
           }.bind(this)
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
         var data = {
           a: {
@@ -1129,9 +1129,9 @@
             }]
           }
         };
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
         this.assertEquals(3, called);
       },
@@ -1142,9 +1142,9 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
         var data = {
           a: [0],
           b: {
@@ -1155,9 +1155,9 @@
           }
         };
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
-        var model = this.__marshaler.toModel(data);
+        var model = this.__marshaler__P_234_0.toModel(data);
 
         this.assertEquals(0, model.getA()[0]);
         this.assertEquals(1, model.getB().x);
@@ -1171,9 +1171,9 @@
           }
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
         var data = {
           a: [],
           b: {
@@ -1184,9 +1184,9 @@
           }
         };
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
-        var model = this.__marshaler.toModel(data);
+        var model = this.__marshaler__P_234_0.toModel(data);
 
         this.assertInstance(model.getA(), qx.data.Array);
         this.assertEquals(1, model.getB().x);
@@ -1218,14 +1218,14 @@
           }.bind(this)
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
         var data = ["a", "b"];
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
-        var model = this.__marshaler.toModel(data);
+        var model = this.__marshaler__P_234_0.toModel(data);
 
         this.assertInstance(model, qx.test.Array);
         model.dispose();
@@ -1258,9 +1258,9 @@
           }.bind(this)
         };
 
-        this.__marshaler.dispose();
+        this.__marshaler__P_234_0.dispose();
 
-        this.__marshaler = new qx.data.marshal.Json(delegate);
+        this.__marshaler__P_234_0 = new qx.data.marshal.Json(delegate);
         var data = {
           a: [],
           b: [],
@@ -1271,9 +1271,9 @@
           }
         };
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_234_0.toClass(data);
 
-        var model = this.__marshaler.toModel(data);
+        var model = this.__marshaler__P_234_0.toModel(data);
 
         this.assertInstance(model.getA(), qx.data.Array);
         this.assertInstance(model.getB(), qx.test.Array);
@@ -1288,4 +1288,4 @@
   qx.test.data.marshal.Json.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Json.js.map?dt=1589218257233
+//# sourceMappingURL=Json.js.map?dt=1591362978577

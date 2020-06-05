@@ -218,8 +218,8 @@
               var s = "";
 
               if (!dontRecurs) {
-                this.__b = new qx.Patch2();
-                s += "++" + this.__b.foo(true) + "__";
+                this.__b__P_200_0 = new qx.Patch2();
+                s += "++" + this.__b__P_200_0.foo(true) + "____P_200_1";
               }
 
               s += qx.MPatch.$$members.foo.base.call(this);
@@ -248,7 +248,7 @@
         var o = new qx.Patch1();
         this.assertEquals("++bar__foo", o.foo());
 
-        o.__b.dispose();
+        o.__b__P_200_0.dispose();
 
         o.dispose();
       },
@@ -301,4 +301,4 @@
   qx.test.Mixin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Mixin.js.map?dt=1589218253119
+//# sourceMappingURL=Mixin.js.map?dt=1591362973732

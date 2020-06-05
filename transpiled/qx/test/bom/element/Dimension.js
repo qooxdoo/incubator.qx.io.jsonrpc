@@ -34,40 +34,40 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__inlineElement = document.createElement("span");
-        document.body.appendChild(this.__inlineElement);
-        this.__inlineElementWithPadding = document.createElement("span");
-        this.__inlineElementWithPadding.style.padding = "2px";
-        document.body.appendChild(this.__inlineElementWithPadding);
-        this.__blockElement = document.createElement("div");
-        this.__blockElement.style.width = "200px";
-        document.body.appendChild(this.__blockElement);
-        this.__blockElementWithPadding = document.createElement("div");
-        this.__blockElementWithPadding.style.padding = "2px";
-        this.__blockElementWithPadding.style.width = "200px";
-        document.body.appendChild(this.__blockElementWithPadding);
+        this.__inlineElement__P_218_0 = document.createElement("span");
+        document.body.appendChild(this.__inlineElement__P_218_0);
+        this.__inlineElementWithPadding__P_218_1 = document.createElement("span");
+        this.__inlineElementWithPadding__P_218_1.style.padding = "2px";
+        document.body.appendChild(this.__inlineElementWithPadding__P_218_1);
+        this.__blockElement__P_218_2 = document.createElement("div");
+        this.__blockElement__P_218_2.style.width = "200px";
+        document.body.appendChild(this.__blockElement__P_218_2);
+        this.__blockElementWithPadding__P_218_3 = document.createElement("div");
+        this.__blockElementWithPadding__P_218_3.style.padding = "2px";
+        this.__blockElementWithPadding__P_218_3.style.width = "200px";
+        document.body.appendChild(this.__blockElementWithPadding__P_218_3);
       },
       tearDown: function tearDown() {
-        document.body.removeChild(this.__inlineElement);
-        this.__inlineElement = null;
-        document.body.removeChild(this.__inlineElementWithPadding);
-        this.__inlineElementWithPadding = null;
-        document.body.removeChild(this.__blockElement);
-        this.__blockElement = null;
-        document.body.removeChild(this.__blockElementWithPadding);
-        this.__blockElementWithPadding = null;
+        document.body.removeChild(this.__inlineElement__P_218_0);
+        this.__inlineElement__P_218_0 = null;
+        document.body.removeChild(this.__inlineElementWithPadding__P_218_1);
+        this.__inlineElementWithPadding__P_218_1 = null;
+        document.body.removeChild(this.__blockElement__P_218_2);
+        this.__blockElement__P_218_2 = null;
+        document.body.removeChild(this.__blockElementWithPadding__P_218_3);
+        this.__blockElementWithPadding__P_218_3 = null;
       },
       testContentWidthOfInlineElement: function testContentWidthOfInlineElement() {
-        this.assertEquals(0, qx.bom.element.Dimension.getContentWidth(this.__inlineElement));
+        this.assertEquals(0, qx.bom.element.Dimension.getContentWidth(this.__inlineElement__P_218_0));
       },
       testContentWidthOfInlineElementWithPadding: function testContentWidthOfInlineElementWithPadding() {
-        this.assertEquals(0, qx.bom.element.Dimension.getContentWidth(this.__inlineElementWithPadding));
+        this.assertEquals(0, qx.bom.element.Dimension.getContentWidth(this.__inlineElementWithPadding__P_218_1));
       },
       testContentWidthOfBlockElement: function testContentWidthOfBlockElement() {
-        this.assertEquals(200, qx.bom.element.Dimension.getContentWidth(this.__blockElement));
+        this.assertEquals(200, qx.bom.element.Dimension.getContentWidth(this.__blockElement__P_218_2));
       },
       testContentWidthOfBlockElementWithPadding: function testContentWidthOfBlockElementWithPadding() {
-        this.assertEquals(200, qx.bom.element.Dimension.getContentWidth(this.__blockElementWithPadding));
+        this.assertEquals(200, qx.bom.element.Dimension.getContentWidth(this.__blockElementWithPadding__P_218_3));
       },
       testRoundingErrorInWidthAndHeightGetters: function testRoundingErrorInWidthAndHeightGetters() {
         // width = left - right = height = bottom - top = 38.416656494140625
@@ -105,4 +105,4 @@
   qx.test.bom.element.Dimension.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Dimension.js.map?dt=1589218254437
+//# sourceMappingURL=Dimension.js.map?dt=1591362975261

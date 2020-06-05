@@ -93,7 +93,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/layout/canvas.html'>
+   * <a href='http://qooxdoo.org/docs/#layout/canvas.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Canvas", {
@@ -353,4 +353,4 @@
   qx.ui.layout.Canvas.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Canvas.js.map?dt=1589218275561
+//# sourceMappingURL=Canvas.js.map?dt=1591362999300

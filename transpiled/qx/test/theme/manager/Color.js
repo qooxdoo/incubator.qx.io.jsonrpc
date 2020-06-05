@@ -36,15 +36,15 @@
   qx.Class.define("qx.test.theme.manager.Color", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __formerTheme: null,
+      __formerTheme__P_271_0: null,
       setUp: function setUp() {
         this.manager = qx.theme.manager.Color.getInstance();
-        this.__formerTheme = this.manager.getTheme();
+        this.__formerTheme__P_271_0 = this.manager.getTheme();
       },
       tearDown: function tearDown() {
         qx.test.Theme.themes = null;
-        this.manager.setTheme(this.__formerTheme);
-        this.__formerTheme = null;
+        this.manager.setTheme(this.__formerTheme__P_271_0);
+        this.__formerTheme__P_271_0 = null;
       },
       testInclude: function testInclude() {
         qx.Theme.define("qx.test.Theme.themes.A", {
@@ -118,4 +118,4 @@
   qx.test.theme.manager.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1589218261860
+//# sourceMappingURL=Color.js.map?dt=1591362983765

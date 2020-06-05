@@ -25,7 +25,7 @@
         },
         {
           "name": "@description",
-          "body": "<p>The grow layout stretches all children to the full available size\n but still respects limits configured by min/max values.\n It will place all children over each other with the top and left coordinates\n set to <code>0</code>. The {@link qx.ui.container.Stack} and the\n {@link qx.ui.core.scroll.ScrollPane} are using this layout.\n<em>Features</em></p>\n<ul>\n<li>Auto-sizing</li>\n<li><p>Respects minimum and maximum child dimensions\n<em>Item Properties</em>\nNone\n<em>Example</em></p></li>\n</ul>\n<pre class=\"javascript\">\n var layout = new qx.ui.layout.Grow();\n var w1 = new qx.ui.core.Widget();\n var w2 = new qx.ui.core.Widget();\n var w3 = new qx.ui.core.Widget();\n var container = new qx.ui.container.Composite(layout);\n container.add(w1);\n container.add(w2);\n container.add(w3);\n </pre>\n<p><em>External Documentation</em>\n <a href='http://manual.qooxdoo.org/${qxversion}/pages/layout/grow.html'>\n Extended documentation</a> and links to demos of this layout in the qooxdoo manual.</p>"
+          "body": "<p>The grow layout stretches all children to the full available size\n but still respects limits configured by min/max values.\n It will place all children over each other with the top and left coordinates\n set to <code>0</code>. The {@link qx.ui.container.Stack} and the\n {@link qx.ui.core.scroll.ScrollPane} are using this layout.\n<em>Features</em></p>\n<ul>\n<li>Auto-sizing</li>\n<li><p>Respects minimum and maximum child dimensions\n<em>Item Properties</em>\nNone\n<em>Example</em></p></li>\n</ul>\n<pre class=\"javascript\">\n var layout = new qx.ui.layout.Grow();\n var w1 = new qx.ui.core.Widget();\n var w2 = new qx.ui.core.Widget();\n var w3 = new qx.ui.core.Widget();\n var container = new qx.ui.container.Composite(layout);\n container.add(w1);\n container.add(w2);\n container.add(w3);\n </pre>\n<p><em>External Documentation</em>\n <a href='http://qooxdoo.org/docs/#layout/grow.md'>\n Extended documentation</a> and links to demos of this layout in the qooxdoo manual.</p>"
         }
       ]
     }
@@ -53,29 +53,6 @@
             "name": "@description",
             "body": "<p>overridden</p>"
           }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "body": "item {Object} The affected layout item",
-            "paramName": "item",
-            "description": " The affected layout item",
-            "type": "Object"
-          },
-          {
-            "name": "@param",
-            "body": "name {Object} Name of the layout property",
-            "paramName": "name",
-            "description": " Name of the layout property",
-            "type": "Object"
-          },
-          {
-            "name": "@param",
-            "body": "value {Object} Value of the layout property",
-            "paramName": "value",
-            "description": " Value of the layout property",
-            "type": "Object"
-          }
         ]
       },
       "type": "function",
@@ -102,29 +79,6 @@
             "name": "@description",
             "body": "<p>overridden</p>"
           }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "body": "availWidth {Integer} Final width available for the content (in pixel)",
-            "paramName": "availWidth",
-            "description": " Final width available for the content (in pixel)",
-            "type": "Integer"
-          },
-          {
-            "name": "@param",
-            "body": "availHeight {Integer} Final height available for the content (in pixel)",
-            "paramName": "availHeight",
-            "description": " Final height available for the content (in pixel)",
-            "type": "Integer"
-          },
-          {
-            "name": "@param",
-            "body": "padding {Map} Map containing the padding values. Keys:\n <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>",
-            "paramName": "padding",
-            "description": " Map containing the padding values. Keys:\n <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>",
-            "type": "Map"
-          }
         ]
       },
       "type": "function",
@@ -150,14 +104,6 @@
           {
             "name": "@description",
             "body": "<p>overridden</p>"
-          }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "body": "{Map} The size hint.",
-            "type": "Map",
-            "description": " The size hint."
           }
         ]
       },
@@ -227,7 +173,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.ui.layout.Abstract",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -286,7 +240,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.ui.layout.Abstract",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     }
   },
   "descendants": []

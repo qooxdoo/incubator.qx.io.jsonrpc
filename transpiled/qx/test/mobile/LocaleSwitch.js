@@ -67,11 +67,11 @@
     },
     members: {
       manager: null,
-      __translationAdded: null,
+      __translationAdded__P_259_0: null,
       setUp: function setUp() {
         qx.test.mobile.LocaleSwitch.prototype.setUp.base.call(this);
 
-        if (!this.__translationAdded) {
+        if (!this.__translationAdded__P_259_0) {
           // add dummy translations
           this.manager.addTranslation("en_QX", {
             "test one": "test one",
@@ -85,7 +85,7 @@
             "test Hello %1!": "Servus %1!",
             "test Jonny": "Jonathan"
           });
-          this.__translationAdded = true;
+          this.__translationAdded__P_259_0 = true;
         }
 
         this.manager.setLocale("en_QX");
@@ -131,7 +131,7 @@
         this.addAutoDispose(list);
         this.getRoot().add(list);
 
-        this.__testListEn();
+        this.__testListEn__P_259_1();
 
         this.manager.setLocale("de_QX");
         var title0 = q(".list * .list-item-title").eq(0).getHtml();
@@ -144,9 +144,9 @@
         this.assertEquals("Jonathan", subtitle1);
         this.manager.setLocale("en_QX");
 
-        this.__testListEn();
+        this.__testListEn__P_259_1();
       },
-      __testListEn: function __testListEn() {
+      __testListEn__P_259_1: function __testListEn__P_259_1() {
         //debugger
         var title0 = q(".list * .list-item-title").eq(0).getHtml();
         this.assertEquals("test one".title0);
@@ -180,4 +180,4 @@
   qx.test.mobile.LocaleSwitch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LocaleSwitch.js.map?dt=1589218260540
+//# sourceMappingURL=LocaleSwitch.js.map?dt=1591362982365

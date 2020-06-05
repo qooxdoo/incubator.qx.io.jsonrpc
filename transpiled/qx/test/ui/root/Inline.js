@@ -36,16 +36,16 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__inlineIsleElement = qx.dom.Element.create("div");
+        this.__inlineIsleElement__P_332_0 = qx.dom.Element.create("div");
         var inlineStyle = "position:absolute;top:50px;left:50px;width:200px;height:200px";
-        qx.bom.element.Style.setCss(this.__inlineIsleElement, inlineStyle);
-        qx.dom.Element.insertBegin(this.__inlineIsleElement, document.body);
+        qx.bom.element.Style.setCss(this.__inlineIsleElement__P_332_0, inlineStyle);
+        qx.dom.Element.insertBegin(this.__inlineIsleElement__P_332_0, document.body);
       },
       tearDown: function tearDown() {
-        qx.dom.Element.remove(this.__inlineIsleElement);
+        qx.dom.Element.remove(this.__inlineIsleElement__P_332_0);
       },
       testAppearEvent: function testAppearEvent() {
-        var inlineRoot = new qx.ui.root.Inline(this.__inlineIsleElement);
+        var inlineRoot = new qx.ui.root.Inline(this.__inlineIsleElement__P_332_0);
         inlineRoot.addListener("appear", function (e) {
           this.resume(function () {
             this.assertTrue(qx.dom.Element.isInDom(inlineRoot.getContentElement().getDomElement()));
@@ -58,4 +58,4 @@
   qx.test.ui.root.Inline.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Inline.js.map?dt=1589218265343
+//# sourceMappingURL=Inline.js.map?dt=1591362987742

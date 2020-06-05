@@ -27,7 +27,7 @@
         },
         {
           "name": "@description",
-          "body": "<p>The label class brings typical text content to the widget system.\n It supports simple text nodes and complex HTML (rich). The default\n content mode is for text only. The mode is changeable through the property\n {@link #rich}.\n The label supports heightForWidth when used in HTML mode. This means\n that multi line HTML automatically computes the correct preferred height.\n<em>Example</em>\n Here is a little example of how to use the widget.\n </p>\n<pre class='javascript'>\n\n   var label1 = new qx.ui.basic.Label(\"Simple text label\");\n   this.getRoot().add(label1, {left:20, top:10});\n\n   var label2 = new qx.ui.basic.Label().set({\n     value: \"A <b>long label</b> text with auto-wrapping. This also may contain <b style='color:red'>rich HTML</b> markup.\",\n     rich : true,\n     width: 120\n   });\n   this.getRoot().add(label2, {left:20, top:50});\n </pre>\n<p>The first label in this example is a basic text only label. As such no\n automatic wrapping is supported. The second label is a long label containing\n HTML markup with automatic line wrapping.\n<em>External Documentation</em>\n <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/label.html' target='_blank'>\n Documentation of this widget in the qooxdoo manual.</a>\n NOTE: Instances of this class must be disposed of after use</p>"
+          "body": "<p>The label class brings typical text content to the widget system.\n It supports simple text nodes and complex HTML (rich). The default\n content mode is for text only. The mode is changeable through the property\n {@link #rich}.\n The label supports heightForWidth when used in HTML mode. This means\n that multi line HTML automatically computes the correct preferred height.\n<em>Example</em>\n Here is a little example of how to use the widget.\n </p>\n<pre class='javascript'>\n\n   var label1 = new qx.ui.basic.Label(\"Simple text label\");\n   this.getRoot().add(label1, {left:20, top:10});\n\n   var label2 = new qx.ui.basic.Label().set({\n     value: \"A <b>long label</b> text with auto-wrapping. This also may contain <b style='color:red'>rich HTML</b> markup.\",\n     rich : true,\n     width: 120\n   });\n   this.getRoot().add(label2, {left:20, top:50});\n </pre>\n<p>The first label in this example is a basic text only label. As such no\n automatic wrapping is supported. The second label is a long label containing\n HTML markup with automatic line wrapping.\n<em>External Documentation</em>\n <a href='http://qooxdoo.org/docs/#desktop/widget/label.md' target='_blank'>\n Documentation of this widget in the qooxdoo manual.</a>\n NOTE: Instances of this class must be disposed of after use</p>"
         }
       ]
     }
@@ -383,7 +383,15 @@
       "abstract": false,
       "mixin": true,
       "access": "public",
-      "overriddenFrom": "qx.core.MObjectId"
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
     },
     "qxObjectId": {
       "type": "property",
@@ -391,7 +399,15 @@
       "abstract": false,
       "mixin": true,
       "access": "public",
-      "overriddenFrom": "qx.core.MObjectId"
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
     }
   },
   "members": {
@@ -472,14 +488,6 @@
             "name": "@description",
             "body": "<p>overridden</p>"
           }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "body": "{Map}",
-            "type": "Map",
-            "description": ""
-          }
         ]
       },
       "type": "function",
@@ -505,14 +513,6 @@
           {
             "name": "@description",
             "body": "<p>overridden</p>"
-          }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "body": "{Boolean} Whether the item supports height for width",
-            "type": "Boolean",
-            "description": " Whether the item supports height for width"
           }
         ]
       },
@@ -566,23 +566,6 @@
             "name": "@description",
             "body": "<p>overridden</p>"
           }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "body": "width {Integer} Incoming width (as limitation)",
-            "paramName": "width",
-            "description": " Incoming width (as limitation)",
-            "type": "Integer"
-          }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "body": "{Integer} Computed height while respecting the given width.",
-            "type": "Integer",
-            "description": " Computed height while respecting the given width."
-          }
         ]
       },
       "type": "function",
@@ -608,14 +591,6 @@
           {
             "name": "@description",
             "body": "<p>overridden</p>"
-          }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "body": "{qx.html.Element} The widget's content element",
-            "type": "qx.html.Element",
-            "description": " The widget's content element"
           }
         ]
       },
@@ -1370,7 +1345,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -1429,7 +1412,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getMinWidth": {
       "type": "function",

@@ -27,7 +27,7 @@
         },
         {
           "name": "@description",
-          "body": "<p>Container, which allows vertical and horizontal scrolling if the contents is\n larger than the container.\n Note that this class can only have one child widget. This container has a\n fixed layout, which cannot be changed.\n<em>Example</em>\n Here is a little example of how to use the widget.\n </p>\n<pre class='javascript'>\n\n   var scroll = new qx.ui.container.Scroll().set({\n     width: 300,\n     height: 200\n   });\n\n   scroll.add(new qx.ui.core.Widget().set({\n     width: 600,\n     minWidth: 600,\n     height: 400,\n     minHeight: 400\n   }));\n   this.getRoot().add(scroll);\n </pre>\n<p>This example creates a scroll container and adds a widget, which is larger\n than the container. This will cause the container to display vertical\n and horizontal toolbars.\n<em>External Documentation</em>\n <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/scroll.html' target='_blank'>\n Documentation of this widget in the qooxdoo manual.</a></p>"
+          "body": "<p>Container, which allows vertical and horizontal scrolling if the contents is\n larger than the container.\n Note that this class can only have one child widget. This container has a\n fixed layout, which cannot be changed.\n<em>Example</em>\n Here is a little example of how to use the widget.\n </p>\n<pre class='javascript'>\n\n   var scroll = new qx.ui.container.Scroll().set({\n     width: 300,\n     height: 200\n   });\n\n   scroll.add(new qx.ui.core.Widget().set({\n     width: 600,\n     minWidth: 600,\n     height: 400,\n     minHeight: 400\n   }));\n   this.getRoot().add(scroll);\n </pre>\n<p>This example creates a scroll container and adds a widget, which is larger\n than the container. This will cause the container to display vertical\n and horizontal toolbars.\n<em>External Documentation</em>\n <a href='http://qooxdoo.org/docs/#desktop/widget/scroll.md' target='_blank'>\n Documentation of this widget in the qooxdoo manual.</a></p>"
         }
       ]
     }
@@ -198,7 +198,15 @@
       "mixin": true,
       "inherited": true,
       "access": "protected",
-      "overriddenFrom": "qx.ui.core.MContentPadding"
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>property apply</p>"
+          }
+        ]
+      }
     },
     "getContentPaddingTop": {
       "type": "function",
@@ -573,7 +581,15 @@
       "mixin": true,
       "inherited": true,
       "access": "protected",
-      "overriddenFrom": "qx.ui.core.scroll.MRoll"
+      "overriddenFrom": "qx.ui.core.scroll.MRoll",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Responsible for adding the event listener needed for scroll handling.</p>"
+          }
+        ]
+      }
     },
     "_removeRollHandling": {
       "type": "function",
@@ -582,7 +598,15 @@
       "mixin": true,
       "inherited": true,
       "access": "protected",
-      "overriddenFrom": "qx.ui.core.scroll.MRoll"
+      "overriddenFrom": "qx.ui.core.scroll.MRoll",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Responsible for removing the event listener needed for scroll handling.</p>"
+          }
+        ]
+      }
     },
     "_onPointerDownForRoll": {
       "type": "function",
@@ -1630,7 +1654,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -1689,7 +1721,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getMinWidth": {
       "type": "function",

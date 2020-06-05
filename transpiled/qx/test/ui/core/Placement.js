@@ -36,26 +36,26 @@
   qx.Class.define("qx.test.ui.core.Placement", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __nogo: null,
+      __nogo__P_290_0: null,
       setUp: function setUp() {
-        this.__nogo = new qx.ui.core.Widget().set({
+        this.__nogo__P_290_0 = new qx.ui.core.Widget().set({
           backgroundColor: "red",
           width: 100,
           height: 300
         });
-        this.getRoot().add(this.__nogo, {
+        this.getRoot().add(this.__nogo__P_290_0, {
           left: 150
         }); // set the always visible element
 
-        qx.ui.core.MPlacement.setVisibleElement(this.__nogo);
+        qx.ui.core.MPlacement.setVisibleElement(this.__nogo__P_290_0);
       },
       tearDown: function tearDown() {
         qx.test.ui.core.Placement.prototype.tearDown.base.call(this);
         qx.ui.core.MPlacement.setVisibleElement(null);
 
-        this.__nogo.destroy();
+        this.__nogo__P_290_0.destroy();
       },
-      __testAlwaysVisibleElement: function __testAlwaysVisibleElement(w) {
+      __testAlwaysVisibleElement__P_290_1: function __testAlwaysVisibleElement__P_290_1(w) {
         // force an addition to the dom!
         w.show();
         w.hide(); // modify the placed widget
@@ -76,18 +76,18 @@
       testVisibleWithPopoup: function testVisibleWithPopoup() {
         var w = new qx.ui.popup.Popup();
 
-        this.__testAlwaysVisibleElement(w);
+        this.__testAlwaysVisibleElement__P_290_1(w);
 
         w.destroy();
       },
       testVisibleWithMenu: function testVisibleWithMenu() {
         var w = new qx.ui.menu.Menu();
 
-        this.__testAlwaysVisibleElement(w);
+        this.__testAlwaysVisibleElement__P_290_1(w);
 
         w.destroy();
       },
-      __testAlwaysVisibleElementTooBig: function __testAlwaysVisibleElementTooBig(w) {
+      __testAlwaysVisibleElementTooBig__P_290_2: function __testAlwaysVisibleElementTooBig__P_290_2(w) {
         // force an addition to the dom!
         w.show();
         w.hide(); // modify the placed widget
@@ -109,23 +109,23 @@
       testVisibleWithPopoupTooBig: function testVisibleWithPopoupTooBig() {
         var w = new qx.ui.popup.Popup();
 
-        this.__testAlwaysVisibleElementTooBig(w);
+        this.__testAlwaysVisibleElementTooBig__P_290_2(w);
 
         w.destroy();
       },
       testVisibleWithMenuTooBig: function testVisibleWithMenuTooBig() {
         var w = new qx.ui.menu.Menu();
 
-        this.__testAlwaysVisibleElementTooBig(w);
+        this.__testAlwaysVisibleElementTooBig__P_290_2(w);
 
         w.destroy();
       },
-      __testAlwaysVisibleElementAbove: function __testAlwaysVisibleElementAbove(w) {
+      __testAlwaysVisibleElementAbove__P_290_3: function __testAlwaysVisibleElementAbove__P_290_3(w) {
         // force an addition to the dom!
         w.show();
         w.hide();
 
-        this.__nogo.setLayoutProperties({
+        this.__nogo__P_290_0.setLayoutProperties({
           top: 100
         }); // modify the placed widget
 
@@ -146,18 +146,18 @@
       testVisibleWithPopoupAbove: function testVisibleWithPopoupAbove() {
         var w = new qx.ui.popup.Popup();
 
-        this.__testAlwaysVisibleElementAbove(w);
+        this.__testAlwaysVisibleElementAbove__P_290_3(w);
 
         w.destroy();
       },
       testVisibleWithMenuAbove: function testVisibleWithMenuAbove() {
         var w = new qx.ui.menu.Menu();
 
-        this.__testAlwaysVisibleElementAbove(w);
+        this.__testAlwaysVisibleElementAbove__P_290_3(w);
 
         w.destroy();
       },
-      __testAlwaysVisibleElementBelow: function __testAlwaysVisibleElementBelow(w) {
+      __testAlwaysVisibleElementBelow__P_290_4: function __testAlwaysVisibleElementBelow__P_290_4(w) {
         // force an addition to the dom!
         w.show();
         w.hide(); // modify the placed widget
@@ -178,14 +178,14 @@
       testVisibleWithPopoupBelow: function testVisibleWithPopoupBelow() {
         var w = new qx.ui.popup.Popup();
 
-        this.__testAlwaysVisibleElementBelow(w);
+        this.__testAlwaysVisibleElementBelow__P_290_4(w);
 
         w.destroy();
       },
       testVisibleWithMenuBelow: function testVisibleWithMenuBelow() {
         var w = new qx.ui.menu.Menu();
 
-        this.__testAlwaysVisibleElementBelow(w);
+        this.__testAlwaysVisibleElementBelow__P_290_4(w);
 
         w.destroy();
       }
@@ -194,4 +194,4 @@
   qx.test.ui.core.Placement.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Placement.js.map?dt=1589218263066
+//# sourceMappingURL=Placement.js.map?dt=1591362985155

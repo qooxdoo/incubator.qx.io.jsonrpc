@@ -49,14 +49,14 @@
   qx.Class.define("qx.test.ui.core.Appearance", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __oldAppearance: null,
+      __oldAppearance__P_288_0: null,
       setUp: function setUp() {
-        this.__oldAppearance = qx.theme.manager.Appearance.getInstance().getTheme();
+        this.__oldAppearance__P_288_0 = qx.theme.manager.Appearance.getInstance().getTheme();
         qx.theme.manager.Appearance.getInstance().setTheme(qx.test.ui.core.Theme);
       },
       tearDown: function tearDown() {
         qx.test.ui.core.Appearance.prototype.tearDown.base.call(this);
-        qx.theme.manager.Appearance.getInstance().setTheme(this.__oldAppearance);
+        qx.theme.manager.Appearance.getInstance().setTheme(this.__oldAppearance__P_288_0);
       },
       testDefault: function testDefault() {
         var a = new qx.test.ui.core.Test();
@@ -174,4 +174,4 @@
   qx.test.ui.core.Appearance.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Appearance.js.map?dt=1589218262952
+//# sourceMappingURL=Appearance.js.map?dt=1591362985016

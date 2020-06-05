@@ -96,10 +96,10 @@
     construct: function construct(model, target, childPath, labelPath) {
       qx.core.Object.constructor.call(this); // internal bindings reference
 
-      this.__bindings = {};
-      this.__boundProperties = []; // reference to the child
+      this.__bindings__P_92_0 = {};
+      this.__boundProperties__P_92_1 = []; // reference to the child
 
-      this.__childrenRef = {
+      this.__childrenRef__P_92_2 = {
         a: 1
       };
 
@@ -207,10 +207,10 @@
     */
     members: {
       // private members
-      __childrenRef: null,
-      __bindings: null,
-      __boundProperties: null,
-      __oldChildrenPath: null,
+      __childrenRef__P_92_2: null,
+      __bindings__P_92_0: null,
+      __boundProperties__P_92_1: null,
+      __oldChildrenPath__P_92_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -241,7 +241,7 @@
        * @param old {Map|null} The old options map.
        */
       _applyIconOptions: function _applyIconOptions(value, old) {
-        this.__renewBindings();
+        this.__renewBindings__P_92_4();
       },
 
       /**
@@ -252,7 +252,7 @@
        * @param old {Map|null} The old options map.
        */
       _applyLabelOptions: function _applyLabelOptions(value, old) {
-        this.__renewBindings();
+        this.__renewBindings__P_92_4();
       },
 
       /**
@@ -266,13 +266,13 @@
       _applyTarget: function _applyTarget(value, old) {
         // if there was an old target
         if (old != undefined) {
-          this.__emptyTarget(old);
+          this.__emptyTarget__P_92_5(old);
         } // if a model is set
 
 
         if (this.getModel() != null) {
           // build up the tree
-          this.__buildTree();
+          this.__buildTree__P_92_6();
         } // add a listener for the target change
 
 
@@ -287,7 +287,7 @@
        * @param old {qx.core.Object|null} The old tree.
        */
       _applyModel: function _applyModel(value, old) {
-        this.__buildTree();
+        this.__buildTree__P_92_6();
       },
 
       /**
@@ -299,12 +299,12 @@
        */
       _applyChildPath: function _applyChildPath(value, old) {
         // save the old name because it is needed to remove the old bindings
-        this.__oldChildrenPath = old;
+        this.__oldChildrenPath__P_92_3 = old;
 
-        this.__buildTree(); // reset the old name
+        this.__buildTree__P_92_6(); // reset the old name
 
 
-        this.__oldChildrenPath = null;
+        this.__oldChildrenPath__P_92_3 = null;
       },
 
       /**
@@ -315,7 +315,7 @@
        * @param old {String|null} The old path or the icon property.
        */
       _applyIconPath: function _applyIconPath(value, old) {
-        this.__renewBindings();
+        this.__renewBindings__P_92_4();
       },
 
       /**
@@ -326,7 +326,7 @@
        * @param old {String|null} The old path of the label property.
        */
       _applyLabelPath: function _applyLabelPath(value, old) {
-        this.__buildTree();
+        this.__buildTree__P_92_6();
       },
 
       /*
@@ -341,17 +341,17 @@
        *
        * @param ev {qx.event.type.Event} The changeLength event of a data array.
        */
-      __changeModelChildren: function __changeModelChildren(ev) {
+      __changeModelChildren__P_92_7: function __changeModelChildren__P_92_7(ev) {
         // get the stored data
         var children = ev.getTarget();
         qx.core.ObjectRegistry.register(children);
 
-        var treeNode = this.__childrenRef[children.toHashCode()].treeNode;
+        var treeNode = this.__childrenRef__P_92_2[children.toHashCode()].treeNode;
 
-        var modelNode = this.__childrenRef[children.toHashCode()].modelNode; // update the subtree
+        var modelNode = this.__childrenRef__P_92_2[children.toHashCode()].modelNode; // update the subtree
 
 
-        this.__updateTreeChildren(treeNode, modelNode); // update the selection in case a selected element has been removed
+        this.__updateTreeChildren__P_92_8(treeNode, modelNode); // update the selection in case a selected element has been removed
 
 
         this._updateSelection();
@@ -362,33 +362,33 @@
        *
        * @param e {qx.event.type.Data} Change event for the children property.
        */
-      __changeChildrenArray: function __changeChildrenArray(e) {
+      __changeChildrenArray__P_92_9: function __changeChildrenArray__P_92_9(e) {
         var children = e.getData();
         var oldChildren = e.getOldData(); // get the old ref and delete it
 
-        var oldRef = this.__childrenRef[oldChildren.toHashCode()];
+        var oldRef = this.__childrenRef__P_92_2[oldChildren.toHashCode()];
 
         oldChildren.removeListenerById(oldRef.changeListenerId);
         this.debug("1: removing children=" + oldChildren.toHashCode() + " from this=" + this.toHashCode());
-        delete this.__childrenRef[oldChildren.toHashCode()]; // remove the old change listener for the children
+        delete this.__childrenRef__P_92_2[oldChildren.toHashCode()]; // remove the old change listener for the children
 
         oldRef.modelNode.removeListenerById(oldRef.changeChildernListenerId); // add a new change listener
 
         var modelNode = oldRef.modelNode;
         var property = qx.Class.getPropertyDefinition(oldRef.modelNode.constructor, this.getChildPath());
         var eventName = property.event;
-        var changeChildernListenerId = modelNode.addListener(eventName, this.__changeChildrenArray, this); // add the new ref
+        var changeChildernListenerId = modelNode.addListener(eventName, this.__changeChildrenArray__P_92_9, this); // add the new ref
 
         var treeNode = oldRef.treeNode;
         this.debug("1: adding children=" + children.toHashCode() + " to this=" + this.toHashCode());
-        this.__childrenRef[children.toHashCode()] = {
+        this.__childrenRef__P_92_2[children.toHashCode()] = {
           modelNode: modelNode,
           treeNode: treeNode,
           changeListenerId: oldRef.changeListenerId,
           changeChildernListenerId: changeChildernListenerId
         }; // update the subtree
 
-        this.__updateTreeChildren(treeNode, modelNode); // update the selection in case a selected element has been removed
+        this.__updateTreeChildren__P_92_8(treeNode, modelNode); // update the selection in case a selected element has been removed
 
 
         this._updateSelection();
@@ -429,7 +429,7 @@
        * recursive creation of all subtrees to the {#__updateTreeChildren}
        * function.
        */
-      __buildTree: function __buildTree() {
+      __buildTree__P_92_6: function __buildTree__P_92_6() {
         // only fill the target if there is a target, its known how to
         // access the children and what needs to be displayed as label
         if (this.getTarget() == null || this.getChildPath() == null) {
@@ -442,7 +442,7 @@
         } // Clean the target completely
 
 
-        this.__emptyTarget(); // only build up a new tree if a model is given
+        this.__emptyTarget__P_92_5(); // only build up a new tree if a model is given
 
 
         if (this.getModel() != null) {
@@ -451,9 +451,9 @@
 
           rootNode.setModel(this.getModel()); // bind the root node
 
-          this.__addBinding(this.getModel(), rootNode);
+          this.__addBinding__P_92_10(this.getModel(), rootNode);
 
-          this.__updateTreeChildren(rootNode, this.getModel()); // assign the new root once the tree has been built
+          this.__updateTreeChildren__P_92_8(rootNode, this.getModel()); // assign the new root once the tree has been built
 
 
           this.getTarget().setRoot(rootNode);
@@ -470,7 +470,7 @@
        * @param modelNode {qx.core.Object} The model nodes which represent the
        *   data in the current subtree.
        */
-      __updateTreeChildren: function __updateTreeChildren(rootNode, modelNode) {
+      __updateTreeChildren__P_92_8: function __updateTreeChildren__P_92_8(rootNode, modelNode) {
         // ignore items which don't have children
         if (modelNode["get" + qx.lang.String.firstUp(this.getChildPath())] == undefined) {
           return;
@@ -479,15 +479,15 @@
 
         var children = modelNode["get" + qx.lang.String.firstUp(this.getChildPath())](); // store the children reference
 
-        if (this.__childrenRef[children.toHashCode()] == undefined) {
+        if (this.__childrenRef__P_92_2[children.toHashCode()] == undefined) {
           // add the listener for the change
-          var changeListenerId = children.addListener("change", this.__changeModelChildren, this); // add a listener for the change of the children array itself
+          var changeListenerId = children.addListener("change", this.__changeModelChildren__P_92_7, this); // add a listener for the change of the children array itself
 
           var property = qx.Class.getPropertyDefinition(modelNode.constructor, this.getChildPath());
           var eventName = property.event;
-          var changeChildernListenerId = modelNode.addListener(eventName, this.__changeChildrenArray, this);
+          var changeChildernListenerId = modelNode.addListener(eventName, this.__changeChildrenArray__P_92_9, this);
           this.debug("2: adding children=" + children.toHashCode() + " to this=" + this.toHashCode());
-          this.__childrenRef[children.toHashCode()] = {
+          this.__childrenRef__P_92_2[children.toHashCode()] = {
             modelNode: modelNode,
             treeNode: rootNode,
             changeListenerId: changeListenerId,
@@ -532,10 +532,10 @@
               treeNode.setModel(children.getItem(i));
               rootNode.addAt(treeNode, i);
 
-              this.__addBinding(children.getItem(i), treeNode); // add all children recursive
+              this.__addBinding__P_92_10(children.getItem(i), treeNode); // add all children recursive
 
 
-              this.__updateTreeChildren(treeNode, children.getItem(i));
+              this.__updateTreeChildren__P_92_8(treeNode, children.getItem(i));
             }
           }
         } // remove the rest of the tree items if they exist
@@ -544,7 +544,7 @@
         for (var i = rootNode.getChildren().length - 1; i >= children.length; i--) {
           var treeFolder = rootNode.getChildren()[i];
 
-          this.__removeFolder(treeFolder, rootNode);
+          this.__removeFolder__P_92_11(treeFolder, rootNode);
         }
       },
 
@@ -552,7 +552,7 @@
        * Removes all folders and bindings for the current set target.
        * @param tree {qx.ui.tree.Tree} The tree to empty.
        */
-      __emptyTarget: function __emptyTarget(tree) {
+      __emptyTarget__P_92_5: function __emptyTarget__P_92_5(tree) {
         if (tree == null) {
           tree = this.getTarget();
         } // only do something if a tree is set
@@ -568,17 +568,17 @@
         if (root != null) {
           tree.setRoot(null);
 
-          this.__removeAllFolders(root);
+          this.__removeAllFolders__P_92_12(root);
 
           var model = root.getModel();
 
           if (model) {
-            this.__removeBinding(model);
+            this.__removeBinding__P_92_13(model);
           }
 
           root.destroy();
           this.debug("erasing all children from this=" + this.toHashCode());
-          this.__childrenRef = {
+          this.__childrenRef__P_92_2 = {
             b: 2
           };
         }
@@ -590,15 +590,15 @@
        *
        * @param node {qx.ui.tree.core.AbstractTreeItem} The used tree folder.
        */
-      __removeAllFolders: function __removeAllFolders(node) {
+      __removeAllFolders__P_92_12: function __removeAllFolders__P_92_12(node) {
         var children = node.getChildren() || []; // remove all subchildren
 
         for (var i = children.length - 1; i >= 0; i--) {
           if (children[i].getChildren().length > 0) {
-            this.__removeAllFolders(children[i]);
+            this.__removeAllFolders__P_92_12(children[i]);
           }
 
-          this.__removeFolder(children[i], node);
+          this.__removeFolder__P_92_11(children[i], node);
         }
       },
 
@@ -611,10 +611,10 @@
        * @param rootNode {qx.ui.tree.core.AbstractTreeItem} The folder holding the
        *   treeFolder.
        */
-      __removeFolder: function __removeFolder(treeFolder, rootNode) {
+      __removeFolder__P_92_11: function __removeFolder__P_92_11(treeFolder, rootNode) {
         // get the model
         var model = treeFolder.getModel();
-        var childPath = this.__oldChildrenPath || this.getChildPath();
+        var childPath = this.__oldChildrenPath__P_92_3 || this.getChildPath();
         var childrenGetterName = "get" + qx.lang.String.firstUp(childPath); // if the model does have a child path
 
         if (model[childrenGetterName] != undefined) {
@@ -622,19 +622,19 @@
           var children = model[childrenGetterName]();
           this.debug("2: removing children=" + children.toHashCode() + " from this=" + this.toHashCode());
 
-          var oldRef = this.__childrenRef[children.toHashCode()];
+          var oldRef = this.__childrenRef__P_92_2[children.toHashCode()];
 
           children.removeListenerById(oldRef.changeListenerId);
           model.removeListenerById(oldRef.changeChildernListenerId); // also remove all its children [BUG #4296]
 
-          this.__removeAllFolders(treeFolder); // delete the model reference
+          this.__removeAllFolders__P_92_12(treeFolder); // delete the model reference
 
 
-          delete this.__childrenRef[children.toHashCode()];
+          delete this.__childrenRef__P_92_2[children.toHashCode()];
         } // get the binding and remove it
 
 
-        this.__removeBinding(model); // remove the folder from the tree
+        this.__removeBinding__P_92_13(model); // remove the folder from the tree
 
 
         rootNode.remove(treeFolder); // get rid of the old tree folder
@@ -668,12 +668,12 @@
         // set up the binding
         var id = modelNode.bind(sourcePath, targetWidget, targetPath, options); // check for the storage for the references
 
-        if (this.__bindings[targetPath] == null) {
-          this.__bindings[targetPath] = {};
+        if (this.__bindings__P_92_0[targetPath] == null) {
+          this.__bindings__P_92_0[targetPath] = {};
         } // store the binding reference
 
 
-        var storage = this.__bindings[targetPath];
+        var storage = this.__bindings__P_92_0[targetPath];
         qx.core.ObjectRegistry.register(modelNode);
 
         if (storage[modelNode.toHashCode()]) {
@@ -691,8 +691,8 @@
         } // save the bound property
 
 
-        if (!this.__boundProperties.includes(targetPath)) {
-          this.__boundProperties.push(targetPath);
+        if (!this.__boundProperties__P_92_1.includes(targetPath)) {
+          this.__boundProperties__P_92_1.push(targetPath);
         }
       },
 
@@ -715,12 +715,12 @@
         // set up the binding
         var id = sourceWidget.bind(sourcePath, modelNode, targetPath, options); // check for the storage for the references
 
-        if (this.__bindings[sourcePath] == null) {
-          this.__bindings[sourcePath] = {};
+        if (this.__bindings__P_92_0[sourcePath] == null) {
+          this.__bindings__P_92_0[sourcePath] = {};
         } // check if there is already a stored item
 
 
-        var storage = this.__bindings[sourcePath];
+        var storage = this.__bindings__P_92_0[sourcePath];
         qx.core.ObjectRegistry.register(modelNode);
 
         if (storage[modelNode.toHashCode()]) {
@@ -738,8 +738,8 @@
         } // save the bound property
 
 
-        if (!this.__boundProperties.includes(sourcePath)) {
-          this.__boundProperties.push(sourcePath);
+        if (!this.__boundProperties__P_92_1.includes(sourcePath)) {
+          this.__boundProperties__P_92_1.push(sourcePath);
         }
       },
 
@@ -768,26 +768,26 @@
        * Helper method renewing all bindings with the currently saved options and
        * paths.
        */
-      __renewBindings: function __renewBindings() {
+      __renewBindings__P_92_4: function __renewBindings__P_92_4() {
         // get the first bound property
         var firstProp;
 
-        for (var key in this.__bindings) {
+        for (var key in this.__bindings__P_92_0) {
           firstProp = key;
           break;
         } // go through all stored bindings for that property
         // (should have all the same amount of entries and tree nodes)
 
 
-        for (var hash in this.__bindings[firstProp]) {
+        for (var hash in this.__bindings__P_92_0[firstProp]) {
           // get the data
-          var treeNode = this.__bindings[firstProp][hash].treeNode;
+          var treeNode = this.__bindings__P_92_0[firstProp][hash].treeNode;
           var modelNode = qx.core.ObjectRegistry.fromHashCode(hash); // remove the old bindings
 
-          this.__removeBinding(modelNode); // add the new bindings
+          this.__removeBinding__P_92_13(modelNode); // add the new bindings
 
 
-          this.__addBinding(modelNode, treeNode);
+          this.__addBinding__P_92_10(modelNode, treeNode);
         }
       },
 
@@ -799,7 +799,7 @@
        * @param treeNode {qx.ui.tree.TreeFolder} The corresponding tree folder
        *   to the model node.
        */
-      __addBinding: function __addBinding(modelNode, treeNode) {
+      __addBinding__P_92_10: function __addBinding__P_92_10(modelNode, treeNode) {
         var delegate = this.getDelegate(); // if a delegate for creating the binding is given, use it
 
         if (delegate != null && delegate.bindItem != null) {
@@ -815,11 +815,11 @@
        * @param modelNode {qx.core.Object} the model node for which the bindings
        *   should be removed.
        */
-      __removeBinding: function __removeBinding(modelNode) {
-        for (var i = 0; i < this.__boundProperties.length; i++) {
-          var property = this.__boundProperties[i];
+      __removeBinding__P_92_13: function __removeBinding__P_92_13(modelNode) {
+        for (var i = 0; i < this.__boundProperties__P_92_1.length; i++) {
+          var property = this.__boundProperties__P_92_1[i];
 
-          var bindingsMap = this.__bindings[property][modelNode.toHashCode()];
+          var bindingsMap = this.__bindings__P_92_0[property][modelNode.toHashCode()];
 
           if (bindingsMap != null) {
             if (bindingsMap.id) {
@@ -832,7 +832,7 @@
               bindingsMap.reverseId = null;
             }
 
-            delete this.__bindings[property][modelNode.toHashCode()];
+            delete this.__bindings__P_92_0[property][modelNode.toHashCode()];
           }
         }
       },
@@ -885,9 +885,9 @@
 
         this._startSelectionModification();
 
-        this.__emptyTarget();
+        this.__emptyTarget__P_92_5();
 
-        this.__buildTree();
+        this.__buildTree__P_92_6();
 
         this._endSelectionModification();
 
@@ -909,7 +909,7 @@
             return;
           }
 
-          this.__buildTree();
+          this.__buildTree__P_92_6();
         }
       }
     },
@@ -928,10 +928,10 @@
         this.setModel(null);
       }
 
-      this.__bindings = this.__childrenRef = this.__boundProperties = null;
+      this.__bindings__P_92_0 = this.__childrenRef__P_92_2 = this.__boundProperties__P_92_1 = null;
     }
   });
   qx.data.controller.Tree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Tree.js.map?dt=1589218243219
+//# sourceMappingURL=Tree.js.map?dt=1591362963165

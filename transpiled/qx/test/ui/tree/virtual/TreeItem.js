@@ -84,7 +84,7 @@
           that.assertTrue(node.hasListener("changeChildren"), "There must be a 'changeChildren' event listener!");
           that.assertTrue(node.getChildren().hasListener("changeLength"), "There must be a 'changeLength' event listener on children array!"); // check for open indent
 
-          var widget = that.__getWidgetForm(node);
+          var widget = that.__getWidgetForm__P_343_0(node);
 
           that.assertTrue(widget.isOpenable(), "Must be openable!"); // dispose and check if event listeners are removed
 
@@ -96,7 +96,7 @@
         this.assertNull(node.getChildren(), "Must be null");
         this.wait(50);
       },
-      __getWidgetForm: function __getWidgetForm(modelItem) {
+      __getWidgetForm__P_343_0: function __getWidgetForm__P_343_0(modelItem) {
         var widget = null;
         var row = this.tree.getLookupTable().indexOf(modelItem);
 
@@ -111,4 +111,4 @@
   qx.test.ui.tree.virtual.TreeItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TreeItem.js.map?dt=1589218266388
+//# sourceMappingURL=TreeItem.js.map?dt=1591362988931

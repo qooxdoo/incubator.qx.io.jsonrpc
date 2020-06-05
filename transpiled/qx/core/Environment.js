@@ -119,10 +119,6 @@
    *       <td>{@link qx.bom.client.Css#getLinearGradient}</td>
    *     </tr>
    *     <tr>
-   *       <td>css.gradient.filter</td><td><i>Boolean</i></td><td><code>true</code></td>
-   *       <td>{@link qx.bom.client.Css#getFilterGradient}</td>
-   *     </tr>
-   *     <tr>
    *       <td>css.gradient.radial</td><td><i>String</i> or <i>null</i></td><td><code>-moz-radial-gradient</code></td>
    *       <td>{@link qx.bom.client.Css#getRadialGradient}</td>
    *     </tr>
@@ -197,10 +193,6 @@
    *     <tr>
    *       <td>css.textShadow</td><td><i>Boolean</i></td><td><code>true</code></td>
    *       <td>{@link qx.bom.client.Css#getTextShadow}</td>
-   *     </tr>
-   *     <tr>
-   *       <td>css.textShadow.filter</td><td><i>Boolean</i></td><td><code>true</code></td>
-   *       <td>{@link qx.bom.client.Css#getFilterTextShadow}</td>
    *     </tr>
    *     <tr>
    *       <td>css.alphaimageloaderneeded</td><td><i>Boolean</i></td><td><code>false</code></td>
@@ -881,7 +873,7 @@
       _asyncChecks: {},
 
       /** Internal cache for all checks. */
-      __cache: {},
+      __cache__P_75_0: {},
 
       /**
        * Internal map for environment keys to check methods.
@@ -943,8 +935,8 @@
        */
       get: function get(key) {
         // check the cache
-        if (this.__cache[key] != undefined) {
-          return this.__cache[key];
+        if (this.__cache__P_75_0[key] != undefined) {
+          return this.__cache__P_75_0[key];
         } // search for a matching check
 
 
@@ -953,7 +945,7 @@
         if (check) {
           // execute the check and write the result in the cache
           var value = check();
-          this.__cache[key] = value;
+          this.__cache__P_75_0[key] = value;
           return value;
         } // try class lookup
 
@@ -965,7 +957,7 @@
           var method = classAndMethod[1];
           var value = clazz[method](); // call the check method
 
-          this.__cache[key] = value;
+          this.__cache__P_75_0[key] = value;
           return value;
         } // debug flag
 
@@ -1019,10 +1011,10 @@
         // check the cache
         var env = this;
 
-        if (this.__cache[key] != undefined) {
+        if (this.__cache__P_75_0[key] != undefined) {
           // force async behavior
           window.setTimeout(function () {
-            callback.call(self, env.__cache[key]);
+            callback.call(self, env.__cache__P_75_0[key]);
           }, 0);
           return;
         }
@@ -1031,7 +1023,7 @@
 
         if (check) {
           check(function (result) {
-            env.__cache[key] = result;
+            env.__cache__P_75_0[key] = result;
             callback.call(self, result);
           });
           return;
@@ -1045,7 +1037,7 @@
           var method = classAndMethod[1];
           clazz[method](function (result) {
             // call the check method
-            env.__cache[key] = result;
+            env.__cache__P_75_0[key] = result;
             callback.call(self, result);
           });
           return;
@@ -1068,7 +1060,7 @@
        *   check of the key.
        */
       select: function select(key, values) {
-        return this.__pickFromValues(this.get(key), values);
+        return this.__pickFromValues__P_75_1(this.get(key), values);
       },
 
       /**
@@ -1084,7 +1076,7 @@
        */
       selectAsync: function selectAsync(key, values, self) {
         this.getAsync(key, function (result) {
-          var value = this.__pickFromValues(key, values);
+          var value = this.__pickFromValues__P_75_1(key, values);
 
           value.call(self, result);
         }, this);
@@ -1100,7 +1092,7 @@
        * @param values {Map} A map containing some keys.
        * @return {var} The value stored as values[key] usually.
        */
-      __pickFromValues: function __pickFromValues(key, values) {
+      __pickFromValues__P_75_1: function __pickFromValues__P_75_1(key, values) {
         var value = values[key];
 
         if (values.hasOwnProperty(key)) {
@@ -1157,7 +1149,7 @@
        * @param key {String} The key of the check.
        */
       invalidateCacheKey: function invalidateCacheKey(key) {
-        delete this.__cache[key];
+        delete this.__cache__P_75_0[key];
       },
 
       /**
@@ -1180,7 +1172,7 @@
 
             this._checks[key] = check; // otherwise, create a check function and use that
           } else {
-            this._checks[key] = this.__createCheck(check);
+            this._checks[key] = this.__createCheck__P_75_2(check);
           }
         }
       },
@@ -1238,12 +1230,12 @@
       /**
        * Import checks from global qx.$$environment into the Environment class.
        */
-      __importFromGenerator: function __importFromGenerator() {
+      __importFromGenerator__P_75_3: function __importFromGenerator__P_75_3() {
         // import the environment map
         if (qx && qx.$$environment) {
           for (var key in qx.$$environment) {
             var value = qx.$$environment[key];
-            this._checks[key] = this.__createCheck(value);
+            this._checks[key] = this.__createCheck__P_75_2(value);
           }
         }
       },
@@ -1252,7 +1244,7 @@
        * Checks the URL for environment settings and imports these into the
        * Environment class.
        */
-      __importFromUrl: function __importFromUrl() {
+      __importFromUrl__P_75_4: function __importFromUrl__P_75_4() {
         if (window.document && window.document.location) {
           var urlChecks = window.document.location.search.slice(1).split("&");
 
@@ -1274,7 +1266,7 @@
               value = parseFloat(value);
             }
 
-            this._checks[key] = this.__createCheck(value);
+            this._checks[key] = this.__createCheck__P_75_2(value);
           }
         }
       },
@@ -1285,7 +1277,7 @@
        * @param value {var} The value which should be returned.
        * @return {Function} A function which could be used by a test.
        */
-      __createCheck: function __createCheck(value) {
+      __createCheck__P_75_2: function __createCheck__P_75_2(value) {
         return qx.Bootstrap.bind(function (value) {
           return value;
         }, null, value);
@@ -1296,15 +1288,15 @@
       statics._initDefaultQxValues(); // load the checks from the generator
 
 
-      statics.__importFromGenerator(); // load the checks from the url
+      statics.__importFromGenerator__P_75_3(); // load the checks from the url
 
 
       if (statics.get("qx.allowUrlSettings") === true) {
-        statics.__importFromUrl();
+        statics.__importFromUrl__P_75_4();
       }
     }
   });
   qx.core.Environment.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Environment.js.map?dt=1589218241652
+//# sourceMappingURL=Environment.js.map?dt=1591362961376

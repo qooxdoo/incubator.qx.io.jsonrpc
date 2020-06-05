@@ -51,16 +51,16 @@
     extend: qx.ui.virtual.cell.Abstract,
     construct: function construct() {
       qx.ui.virtual.cell.Abstract.constructor.call(this);
-      this.__stylesheet = qx.ui.virtual.cell.CellStylesheet.getInstance();
-      this.__userStyles = {};
-      this.__themeStyles = {};
-      this.__userPaddings = {};
-      this.__themePaddings = {};
-      this.__states = {};
-      this.__themeValues = {};
+      this.__stylesheet__P_544_0 = qx.ui.virtual.cell.CellStylesheet.getInstance();
+      this.__userStyles__P_544_1 = {};
+      this.__themeStyles__P_544_2 = {};
+      this.__userPaddings__P_544_3 = {};
+      this.__themePaddings__P_544_4 = {};
+      this.__states__P_544_5 = {};
+      this.__themeValues__P_544_6 = {};
       this.initAppearance();
 
-      this.__initializeThemableProperties();
+      this.__initializeThemableProperties__P_544_7();
     },
 
     /*
@@ -175,26 +175,26 @@
     */
     members: {
       /** @type {Array} List of all non CSS themable properties */
-      __themableProperties: null,
+      __themableProperties__P_544_8: null,
 
       /** @type {String} Unique key over the current set of states */
-      __statesKey: null,
-      __states: null,
-      __themeValues: null,
-      __themeStyles: null,
-      __userStyles: null,
-      __userPaddings: null,
-      __themePaddings: null,
-      __isThemed: false,
-      __stylesheet: null,
+      __statesKey__P_544_9: null,
+      __states__P_544_5: null,
+      __themeValues__P_544_6: null,
+      __themeStyles__P_544_2: null,
+      __userStyles__P_544_1: null,
+      __userPaddings__P_544_3: null,
+      __themePaddings__P_544_4: null,
+      __isThemed__P_544_10: false,
+      __stylesheet__P_544_0: null,
 
       /**
        * Collect all themable properties, which are not CSS properties
        */
-      __initializeThemableProperties: function __initializeThemableProperties() {
+      __initializeThemableProperties__P_544_7: function __initializeThemableProperties__P_544_7() {
         var PropertyUtil = qx.util.PropertyUtil;
         var cssProperties = qx.lang.Object.fromArray(this._getCssProperties());
-        this.__themableProperties = [];
+        this.__themableProperties__P_544_8 = [];
         var clazz = this.constructor;
 
         while (clazz) {
@@ -202,7 +202,7 @@
 
           for (var prop in properties) {
             if (!cssProperties[prop]) {
-              this.__themableProperties.push(prop);
+              this.__themableProperties__P_544_8.push(prop);
             }
           }
 
@@ -221,7 +221,7 @@
       // property apply
       _applyAppearance: function _applyAppearance(value, old) {
         if (old) {
-          this.__themeStyles = {};
+          this.__themeStyles__P_544_2 = {};
         }
       },
 
@@ -232,7 +232,7 @@
        * @return {var} The Property value
        */
       _getValue: function _getValue(propertyName) {
-        if (this.__isThemed) {
+        if (this.__isThemed__P_544_10) {
           return qx.util.PropertyUtil.getThemeValue(this, propertyName);
         } else {
           return qx.util.PropertyUtil.getUserValue(this, propertyName);
@@ -250,10 +250,10 @@
       _storeStyle: function _storeStyle(propertyName, styles) {
         var store;
 
-        if (this.__isThemed) {
-          store = this.__themeStyles;
+        if (this.__isThemed__P_544_10) {
+          store = this.__themeStyles__P_544_2;
         } else {
-          store = this.__userStyles;
+          store = this.__userStyles__P_544_1;
         }
 
         if (styles === null) {
@@ -308,10 +308,10 @@
       _applyPadding: function _applyPadding(value, old, name) {
         var value = this._getValue(name);
 
-        if (this.__isThemed) {
-          var paddingStore = this.__themePaddings;
+        if (this.__isThemed__P_544_10) {
+          var paddingStore = this.__themePaddings__P_544_4;
         } else {
-          paddingStore = this.__userPaddings;
+          paddingStore = this.__userPaddings__P_544_3;
         }
 
         if (value === null) {
@@ -336,7 +336,7 @@
       */
       // overridden
       getCellProperties: function getCellProperties(value, states) {
-        this.__setStates(states);
+        this.__setStates__P_544_11(states);
 
         return {
           classes: this.getCssClasses(value, states),
@@ -356,7 +356,7 @@
       },
       // overridden
       getCssClasses: function getCssClasses(value, states) {
-        var cssClass = this.__stylesheet.getCssClass(this.__statesKey) || "";
+        var cssClass = this.__stylesheet__P_544_0.getCssClass(this.__statesKey__P_544_9) || "";
         return "qx-cell " + cssClass;
       },
 
@@ -366,7 +366,7 @@
        *
        * @param states {Object} A map containing the cell's state names as map keys.
        */
-      __setStates: function __setStates(states) {
+      __setStates__P_544_11: function __setStates__P_544_11(states) {
         // Avoid errors if no states are set
         if (!states) {
           states = {};
@@ -375,32 +375,32 @@
         var appearance = this.getAppearance();
         var statesKey = appearance + "-" + Object.keys(states).sort().join(" ");
 
-        if (this.__statesKey == statesKey) {
+        if (this.__statesKey__P_544_9 == statesKey) {
           return;
         }
 
-        this.__statesKey = statesKey;
-        var themeStyles = this.__states[this.__statesKey];
+        this.__statesKey__P_544_9 = statesKey;
+        var themeStyles = this.__states__P_544_5[this.__statesKey__P_544_9];
 
         if (!themeStyles) {
-          this.__clearThemedPropertyValues();
+          this.__clearThemedPropertyValues__P_544_12();
 
-          this.__updateThemeableProperties(states);
+          this.__updateThemeableProperties__P_544_13(states);
 
-          this.__computeCssClassForStates(states);
+          this.__computeCssClassForStates__P_544_14(states);
 
-          this.__cacheThemedValues();
+          this.__cacheThemedValues__P_544_15();
 
-          this.__states[this.__statesKey] = 1;
+          this.__states__P_544_5[this.__statesKey__P_544_9] = 1;
         }
 
-        this.__applyThemeValues();
+        this.__applyThemeValues__P_544_16();
       },
 
       /**
        * Remove the themed value from all CSS properties
        */
-      __clearThemedPropertyValues: function __clearThemedPropertyValues() {
+      __clearThemedPropertyValues__P_544_12: function __clearThemedPropertyValues__P_544_12() {
         var PropertyUtil = qx.util.PropertyUtil;
 
         var themableProperties = this._getCssProperties();
@@ -415,9 +415,9 @@
        *
        * @param states {Object} A map containing the cell's state names as map keys.
        */
-      __updateThemeableProperties: function __updateThemeableProperties(states) {
-        this.__themeStyles = {};
-        this.__isThemed = true;
+      __updateThemeableProperties__P_544_13: function __updateThemeableProperties__P_544_13(states) {
+        this.__themeStyles__P_544_2 = {};
+        this.__isThemed__P_544_10 = true;
         var appearance = this.getAppearance();
         var PropertyUtil = qx.util.PropertyUtil;
         var styles = qx.theme.manager.Appearance.getInstance().styleFrom(appearance, states);
@@ -428,23 +428,23 @@
           }
         }
 
-        this.__isThemed = false;
+        this.__isThemed__P_544_10 = false;
       },
 
       /**
        * Compute a CSS class for the current values of all CSS properties
        */
-      __computeCssClassForStates: function __computeCssClassForStates() {
-        var styleString = Object.values(this.__themeStyles).join(";");
+      __computeCssClassForStates__P_544_14: function __computeCssClassForStates__P_544_14() {
+        var styleString = Object.values(this.__themeStyles__P_544_2).join(";");
 
-        this.__stylesheet.computeClassForStyles(this.__statesKey, styleString);
+        this.__stylesheet__P_544_0.computeClassForStyles(this.__statesKey__P_544_9, styleString);
       },
 
       /**
        * Cache the themed values for the current state combination
        */
-      __cacheThemedValues: function __cacheThemedValues() {
-        var properties = this.__themableProperties;
+      __cacheThemedValues__P_544_15: function __cacheThemedValues__P_544_15() {
+        var properties = this.__themableProperties__P_544_8;
         var PropertyUtil = qx.util.PropertyUtil;
         var themeValues = {};
 
@@ -457,15 +457,15 @@
           }
         }
 
-        this.__themeValues[this.__statesKey] = themeValues;
+        this.__themeValues__P_544_6[this.__statesKey__P_544_9] = themeValues;
       },
 
       /**
        * Apply the themed values to the properties
        */
-      __applyThemeValues: function __applyThemeValues() {
+      __applyThemeValues__P_544_16: function __applyThemeValues__P_544_16() {
         var PropertyUtil = qx.util.PropertyUtil;
-        var themeValues = this.__themeValues[this.__statesKey] || {};
+        var themeValues = this.__themeValues__P_544_6[this.__statesKey__P_544_9] || {};
 
         for (var key in themeValues) {
           PropertyUtil.setThemed(this, key, themeValues[key]);
@@ -473,12 +473,12 @@
       },
       // overridden
       getStyles: function getStyles(value, states) {
-        return Object.values(this.__userStyles).join(";");
+        return Object.values(this.__userStyles__P_544_1).join(";");
       },
       // overridden
       getInsets: function getInsets(value, states) {
-        var user = this.__userPaddings;
-        var theme = this.__themePaddings;
+        var user = this.__userPaddings__P_544_3;
+        var theme = this.__themePaddings__P_544_4;
         var top = (user.paddingTop !== undefined ? user.paddingTop : theme.paddingTop) || 0;
         var right = (user.paddingRight !== undefined ? user.paddingRight : theme.paddingRight) || 0;
         var bottom = (user.paddingBottom !== undefined ? user.paddingBottom : theme.paddingBottom) || 0;
@@ -487,10 +487,10 @@
       }
     },
     destruct: function destruct() {
-      this.__stylesheet = this.__userStyles = this.__themeStyles = this.__userPaddings = this.__themePaddings = this.__states = this.__themeValues = this.__themableProperties = null;
+      this.__stylesheet__P_544_0 = this.__userStyles__P_544_1 = this.__themeStyles__P_544_2 = this.__userPaddings__P_544_3 = this.__themePaddings__P_544_4 = this.__states__P_544_5 = this.__themeValues__P_544_6 = this.__themableProperties__P_544_8 = null;
     }
   });
   qx.ui.virtual.cell.Cell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Cell.js.map?dt=1589218284251
+//# sourceMappingURL=Cell.js.map?dt=1591363009058

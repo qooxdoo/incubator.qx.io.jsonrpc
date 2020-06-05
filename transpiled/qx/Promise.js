@@ -113,10 +113,10 @@
     construct: function construct(fn, context) {
       qx.core.Object.constructor.call(this);
 
-      qx.Promise.__initialize();
+      qx.Promise.__initialize__P_8_0();
 
       if (fn instanceof qx.Promise.Bluebird) {
-        this.__p = fn;
+        this.__p__P_8_1 = fn;
       } else if (fn) {
         if (context !== undefined && context !== null) {
           fn = fn.bind(context);
@@ -132,7 +132,7 @@
 
               if (reason === undefined) {
                 args.shift();
-                args.unshift(qx.Promise.__DEFAULT_ERROR);
+                args.unshift(qx.Promise.__DEFAULT_ERROR__P_8_2);
               } else if (reason && !(reason instanceof Error)) {
                 self.error("Calling reject with non-error object, createdAt=" + JSON.stringify(self.$$createdAt || null));
               }
@@ -141,16 +141,16 @@
             });
           };
         }
-        this.__p = new qx.Promise.Bluebird(fn);
+        this.__p__P_8_1 = new qx.Promise.Bluebird(fn);
       } else {
-        this.__p = new qx.Promise.Bluebird(this.__externalPromise.bind(this));
+        this.__p__P_8_1 = new qx.Promise.Bluebird(this.__externalPromise__P_8_3.bind(this));
       }
 
-      qx.core.Assert.assertTrue(!this.__p.$$qxPromise);
-      this.__p.$$qxPromise = this;
+      qx.core.Assert.assertTrue(!this.__p__P_8_1.$$qxPromise);
+      this.__p__P_8_1.$$qxPromise = this;
 
       if (context !== undefined && context !== null) {
-        this.__p = this.__p.bind(context);
+        this.__p__P_8_1 = this.__p__P_8_1.bind(context);
       }
     },
 
@@ -158,15 +158,15 @@
      * Destructor
      */
     destruct: function destruct() {
-      delete this.__p.$$qxPromise;
-      delete this.__p;
+      delete this.__p__P_8_1.$$qxPromise;
+      delete this.__p__P_8_1;
     },
     members: {
       /** The Promise */
-      __p: null,
+      __p__P_8_1: null,
 
       /** Stores data for completing the promise externally */
-      __external: null,
+      __external__P_8_4: null,
 
       /* *********************************************************************************
        * 
@@ -215,7 +215,7 @@
        * @return {qx.Promise} the new promise
        */
       bind: function bind(context) {
-        return qx.Promise.__wrap(this.__p.bind(context));
+        return qx.Promise.__wrap__P_8_5(this.__p__P_8_1.bind(context));
       },
 
       /**
@@ -416,8 +416,8 @@
       /**
        * External promise handler
        */
-      __externalPromise: function __externalPromise(resolve, reject) {
-        this.__external = {
+      __externalPromise__P_8_3: function __externalPromise__P_8_3(resolve, reject) {
+        this.__external__P_8_4 = {
           resolve: resolve,
           reject: reject,
           complete: false
@@ -427,31 +427,31 @@
       /**
        * Returns the data stored by __externalPromise, throws an exception once processed
        */
-      __getPendingExternal: function __getPendingExternal() {
-        if (!this.__external) {
+      __getPendingExternal__P_8_6: function __getPendingExternal__P_8_6() {
+        if (!this.__external__P_8_4) {
           throw new Error("Promise cannot be resolved externally");
         }
 
-        if (this.__external.complete) {
+        if (this.__external__P_8_4.complete) {
           throw new Error("Promise has already been resolved or rejected");
         }
 
-        this.__external.complete = true;
-        return this.__external;
+        this.__external__P_8_4.complete = true;
+        return this.__external__P_8_4;
       },
 
       /**
        * Resolves an external promise
        */
       resolve: function resolve(value) {
-        this.__getPendingExternal().resolve(value);
+        this.__getPendingExternal__P_8_6().resolve(value);
       },
 
       /**
        * Rejects an external promise
        */
       reject: function reject(reason) {
-        this.__getPendingExternal().reject(reason);
+        this.__getPendingExternal__P_8_6().reject(reason);
       },
 
       /* *********************************************************************************
@@ -464,10 +464,10 @@
        * Helper method used to call Promise methods which iterate over an array
        */
       _callIterableMethod: function _callIterableMethod(methodName, args) {
-        args = qx.Promise.__bindArgs(args);
-        return qx.Promise.__wrap(this.__p.then(function (value) {
+        args = qx.Promise.__bindArgs__P_8_7(args);
+        return qx.Promise.__wrap__P_8_5(this.__p__P_8_1.then(function (value) {
           var newP = qx.Promise.Bluebird.resolve(value instanceof qx.data.Array ? value.toArray() : value);
-          return qx.Promise.__wrap(newP[methodName].apply(newP, args));
+          return qx.Promise.__wrap__P_8_5(newP[methodName].apply(newP, args));
         }));
       },
 
@@ -475,8 +475,8 @@
        * Helper method used to call a Promise method
        */
       _callMethod: function _callMethod(methodName, args) {
-        args = qx.Promise.__bindArgs(args);
-        return qx.Promise.__wrap(this.__p[methodName].apply(this.__p, args));
+        args = qx.Promise.__bindArgs__P_8_7(args);
+        return qx.Promise.__wrap__P_8_5(this.__p__P_8_1[methodName].apply(this.__p__P_8_1, args));
       },
 
       /**
@@ -490,7 +490,7 @@
        * @deprecated {6.0} this API method is subject to change
        */
       toPromise: function toPromise() {
-        return this.__p;
+        return this.__p__P_8_1;
       }
     },
     statics: {
@@ -506,7 +506,7 @@
       /** This is used to suppress warnings about rejections without an Error object, only used if
        * the reason is undefined
        */
-      __DEFAULT_ERROR: new Error("Default Error"),
+      __DEFAULT_ERROR__P_8_2: new Error("Default Error"),
 
       /* *********************************************************************************
        * 
@@ -531,7 +531,7 @@
         if (value instanceof qx.Promise) {
           promise = value;
         } else {
-          promise = qx.Promise.__wrap(qx.Promise.Bluebird.resolve(value));
+          promise = qx.Promise.__wrap__P_8_5(qx.Promise.Bluebird.resolve(value));
         }
 
         if (context !== undefined) {
@@ -552,12 +552,12 @@
 
         if (reason === undefined) {
           args.shift();
-          args.unshift(qx.Promise.__DEFAULT_ERROR);
+          args.unshift(qx.Promise.__DEFAULT_ERROR__P_8_2);
         } else if (!(reason instanceof Error)) {
           qx.log.Logger.warn("Rejecting a promise with a non-Error value");
         }
 
-        var promise = qx.Promise.__callStaticMethod('reject', args, 0);
+        var promise = qx.Promise.__callStaticMethod__P_8_8('reject', args, 0);
 
         if (context !== undefined) {
           promise = promise.bind(context);
@@ -606,7 +606,7 @@
        * @return {qx.Promise}
        */
       all: function all(iterable) {
-        return qx.Promise.__callStaticMethod('all', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('all', arguments);
       },
 
       /**
@@ -616,7 +616,7 @@
        * @return {qx.Promise}
        */
       race: function race(iterable) {
-        return qx.Promise.__callStaticMethod('race', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('race', arguments);
       },
 
       /* *********************************************************************************
@@ -633,7 +633,7 @@
        * @return {qx.Promise}
        */
       any: function any(iterable) {
-        return qx.Promise.__callStaticMethod('any', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('any', arguments);
       },
 
       /**
@@ -647,7 +647,7 @@
        * @return {qx.Promise}
        */
       some: function some(iterable, count) {
-        return qx.Promise.__callStaticMethod('some', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('some', arguments);
       },
 
       /**
@@ -665,7 +665,7 @@
        * @return {qx.Promise}
        */
       forEach: function forEach(iterable, iterator) {
-        return qx.Promise.__callStaticMethod('each', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('each', arguments);
       },
 
       /**
@@ -693,7 +693,7 @@
        * @return {qx.Promise}
        */
       filter: function filter(iterable, iterator, options) {
-        return qx.Promise.__callStaticMethod('filter', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('filter', arguments);
       },
 
       /**
@@ -738,7 +738,7 @@
        * @return {qx.Promise}
        */
       map: function map(iterable, iterator, options) {
-        return qx.Promise.__callStaticMethod('map', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('map', arguments);
       },
 
       /**
@@ -777,7 +777,7 @@
        * @return {qx.Promise}
        */
       mapSeries: function mapSeries(iterable, iterator) {
-        return qx.Promise.__callStaticMethod('mapSeries', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('mapSeries', arguments);
       },
 
       /**
@@ -817,7 +817,7 @@
        * @return {qx.Promise}
        */
       reduce: function reduce(iterable, reducer, initialValue) {
-        return qx.Promise.__callStaticMethod('reduce', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('reduce', arguments);
       },
 
       /**
@@ -829,7 +829,7 @@
       method: function method(cb) {
         var wrappedCb = qx.Promise.Bluebird.method(cb);
         return function () {
-          return qx.Promise.__wrap(wrappedCb.apply(this, arguments));
+          return qx.Promise.__wrap__P_8_5(wrappedCb.apply(this, arguments));
         };
       },
 
@@ -848,7 +848,7 @@
        * @return {qx.Promise}
        */
       props: function props(input) {
-        return qx.Promise.__callStaticMethod('props', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('props', arguments);
       },
 
       /**
@@ -905,7 +905,7 @@
        * @return {qx.Promise}
        */
       promisify: function promisify(f, options) {
-        return qx.Promise.__callStaticMethod('promisify', arguments);
+        return qx.Promise.__callStaticMethod__P_8_8('promisify', arguments);
       },
 
       /* *********************************************************************************
@@ -918,7 +918,7 @@
        * Called when the Bluebird Promise class is loaded
        * @param Promise {Class} the Promise class
        */
-      __attachBluebird: function __attachBluebird(Promise) {
+      __attachBluebird__P_8_9: function __attachBluebird__P_8_9(Promise) {
         qx.Promise.Bluebird = Promise;
         Promise.config({
           warnings: true,
@@ -928,25 +928,25 @@
       },
 
       /** Whether one-time initialisaton has happened */
-      __initialized: false,
+      __initialized__P_8_10: false,
 
       /**
        * One-time initializer
        */
-      __initialize: function __initialize() {
-        if (qx.Promise.__initialized) {
+      __initialize__P_8_0: function __initialize__P_8_0() {
+        if (qx.Promise.__initialized__P_8_10) {
           return;
         }
 
-        qx.Promise.__initialized = true;
-        qx.bom.Event.addNativeListener(window, "unhandledrejection", qx.Promise.__onUnhandledRejection.bind(this));
+        qx.Promise.__initialized__P_8_10 = true;
+        qx.bom.Event.addNativeListener(window, "unhandledrejection", qx.Promise.__onUnhandledRejection__P_8_11.bind(this));
       },
 
       /**
        * Handles unhandled errors and passes them through to Qooxdoo's global error handler
        * @param e {NativeEvent}
        */
-      __onUnhandledRejection: function __onUnhandledRejection(e) {
+      __onUnhandledRejection__P_8_11: function __onUnhandledRejection__P_8_11(e) {
         e.preventDefault();
         var reason = null;
 
@@ -967,7 +967,7 @@
        * @param value {Object}
        * @return {Object}
        */
-      __wrap: function __wrap(value) {
+      __wrap__P_8_5: function __wrap__P_8_5(value) {
         if (value instanceof qx.Promise.Bluebird) {
           if (value.$$qxPromise) {
             value = value.$$qxPromise;
@@ -988,7 +988,7 @@
        * 	this is used to determine whether the last value is for binding (default is 1)
        * @return {Array} array of new arguments with functions bound as necessary
        */
-      __bindArgs: function __bindArgs(args, minArgs) {
+      __bindArgs__P_8_7: function __bindArgs__P_8_7(args, minArgs) {
         args = qx.lang.Array.fromArguments(args);
 
         if (minArgs === undefined) {
@@ -1019,16 +1019,16 @@
        * @param minArgs {Integer?} {@see __bindArgs}
        * @return {Object?}
        */
-      __callStaticMethod: function __callStaticMethod(methodName, args, minArgs) {
-        args = qx.Promise.__bindArgs(args, minArgs);
-        return qx.Promise.__wrap(qx.Promise.Bluebird[methodName].apply(qx.Promise.Bluebird, qx.Promise.__mapArgs(args)));
+      __callStaticMethod__P_8_8: function __callStaticMethod__P_8_8(methodName, args, minArgs) {
+        args = qx.Promise.__bindArgs__P_8_7(args, minArgs);
+        return qx.Promise.__wrap__P_8_5(qx.Promise.Bluebird[methodName].apply(qx.Promise.Bluebird, qx.Promise.__mapArgs__P_8_12(args)));
       },
 
       /**
        * Maps all arguments ready for passing to a Bluebird function; qx.data.Array are
        * translated to native arrays and qx.Promise to Promise.  This is not recursive.
        */
-      __mapArgs: function __mapArgs(args) {
+      __mapArgs__P_8_12: function __mapArgs__P_8_12(args) {
         var dest = [];
         args.forEach(function (arg) {
           if (arg instanceof qx.data.Array) {
@@ -1125,7 +1125,7 @@
      * Features enabled: core, race, call_get, generators, map, nodeify, promisify, props, reduce, settle, some, using, timers, filter, any, each
      */
     !function (e) {
-      qx.Promise.__attachBluebird(e());
+      qx.Promise.__attachBluebird__P_8_9(e());
     }(function () {
       var define, module, exports;
       return function e(t, n, r) {
@@ -2287,10 +2287,10 @@
 
                 if (trace !== undefined) {
                   trace.attachExtraTrace(error);
-                } else if (!error.__stackCleaned__) {
+                } else if (!error.__stackCleaned____P_8_13) {
                   var parsed = parseStackAndMessage(error);
                   util.notEnumerableProp(error, "stack", parsed.message + "\n" + parsed.stack.join("\n"));
-                  util.notEnumerableProp(error, "__stackCleaned__", true);
+                  util.notEnumerableProp(error, "__stackCleaned____P_8_13", true);
                 }
               }
             }
@@ -2686,7 +2686,7 @@
             };
 
             CapturedTrace.prototype.attachExtraTrace = function (error) {
-              if (error.__stackCleaned__) return;
+              if (error.__stackCleaned____P_8_13) return;
               this.uncycle();
               var parsed = parseStackAndMessage(error);
               var message = parsed.message;
@@ -2701,7 +2701,7 @@
               removeCommonRoots(stacks);
               removeDuplicateOrEmptyJumps(stacks);
               util.notEnumerableProp(error, "stack", reconstructStack(message, stacks));
-              util.notEnumerableProp(error, "__stackCleaned__", true);
+              util.notEnumerableProp(error, "__stackCleaned____P_8_13", true);
             };
 
             var captureStackTrace = function stackDetection() {
@@ -3027,7 +3027,7 @@
           }
 
           inherits(OperationalError, Error);
-          var errorTypes = Error["__BluebirdErrorTypes__"];
+          var errorTypes = Error["__BluebirdErrorTypes____P_8_14"];
 
           if (!errorTypes) {
             errorTypes = Objectfreeze({
@@ -3037,7 +3037,7 @@
               RejectionError: OperationalError,
               AggregateError: AggregateError
             });
-            es5.defineProperty(Error, "__BluebirdErrorTypes__", {
+            es5.defineProperty(Error, "__BluebirdErrorTypes____P_8_14", {
               value: errorTypes,
               writable: false,
               enumerable: false,
@@ -5131,9 +5131,9 @@
 
             var defaultSuffix = "Async";
             var defaultPromisified = {
-              __isPromisified__: true
+              __isPromisified____P_8_15: true
             };
-            var noCopyProps = ["arity", "length", "name", "arguments", "caller", "callee", "prototype", "__isPromisified__"];
+            var noCopyProps = ["arity", "length", "name", "arguments", "caller", "callee", "prototype", "__isPromisified____P_8_15"];
             var noCopyPropsPattern = new RegExp("^(?:" + noCopyProps.join("|") + ")$");
 
             var defaultFilter = function defaultFilter(name) {
@@ -5146,7 +5146,7 @@
 
             function isPromisified(fn) {
               try {
-                return fn.__isPromisified__ === true;
+                return fn.__isPromisified____P_8_15 === true;
               } catch (e) {
                 return false;
               }
@@ -5197,7 +5197,7 @@
 
             var makeNodePromisifiedEval;
 
-            function makeNodePromisifiedClosure(callback, receiver, _, fn, __, multiArgs) {
+            function makeNodePromisifiedClosure(callback, receiver, _, fn, ____P_8_16, multiArgs) {
               var defaultThis = function () {
                 return this;
               }();
@@ -5228,7 +5228,7 @@
                 return promise;
               }
 
-              util.notEnumerableProp(promisified, "__isPromisified__", true);
+              util.notEnumerableProp(promisified, "__isPromisified____P_8_15", true);
               return promisified;
             }
 
@@ -5249,7 +5249,7 @@
                   var promisified = promisifier(fn, function () {
                     return makeNodePromisified(key, THIS, key, fn, suffix, multiArgs);
                   });
-                  util.notEnumerableProp(promisified, "__isPromisified__", true);
+                  util.notEnumerableProp(promisified, "__isPromisified____P_8_15", true);
                   obj[promisifiedKey] = promisified;
                 }
               }
@@ -6153,12 +6153,12 @@
               return (this._bitField & 8454144) !== 0;
             };
 
-            Promise.prototype.__isCancelled = function () {
+            Promise.prototype.__isCancelled__P_8_17 = function () {
               return (this._bitField & 65536) === 65536;
             };
 
             Promise.prototype._isCancelled = function () {
-              return this._target().__isCancelled();
+              return this._target().__isCancelled__P_8_17();
             };
 
             Promise.prototype.isCancelled = function () {
@@ -6910,7 +6910,7 @@
 
           function originatesFromRejection(e) {
             if (e == null) return false;
-            return e instanceof Error["__BluebirdErrorTypes__"].OperationalError || e["isOperational"] === true;
+            return e instanceof Error["__BluebirdErrorTypes____P_8_14"].OperationalError || e["isOperational"] === true;
           }
 
           function canAttachTrace(obj) {
@@ -7069,4 +7069,4 @@
   qx.Promise.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Promise.js.map?dt=1589218236373
+//# sourceMappingURL=Promise.js.map?dt=1591362955527

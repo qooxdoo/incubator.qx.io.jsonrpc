@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 512,
+        "line": 511,
         "column": 3
       }
     },
@@ -501,7 +501,7 @@
           "column": 4
         },
         "end": {
-          "line": 425,
+          "line": 424,
           "column": 5
         }
       },
@@ -511,11 +511,11 @@
     "testPhoneGap": {
       "location": {
         "start": {
-          "line": 427,
+          "line": 426,
           "column": 4
         },
         "end": {
-          "line": 430,
+          "line": 429,
           "column": 5
         }
       },
@@ -525,11 +525,11 @@
     "testEvent": {
       "location": {
         "start": {
-          "line": 432,
+          "line": 431,
           "column": 4
         },
         "end": {
-          "line": 439,
+          "line": 438,
           "column": 5
         }
       },
@@ -539,11 +539,11 @@
     "testEcmaScript": {
       "location": {
         "start": {
-          "line": 441,
+          "line": 440,
           "column": 4
         },
         "end": {
-          "line": 461,
+          "line": 460,
           "column": 5
         }
       },
@@ -553,11 +553,11 @@
     "testDataUrl": {
       "location": {
         "start": {
-          "line": 463,
+          "line": 462,
           "column": 4
         },
         "end": {
-          "line": 470,
+          "line": 469,
           "column": 5
         }
       },
@@ -567,11 +567,11 @@
     "testDevice": {
       "location": {
         "start": {
-          "line": 472,
+          "line": 471,
           "column": 4
         },
         "end": {
-          "line": 474,
+          "line": 473,
           "column": 5
         }
       },
@@ -581,11 +581,11 @@
     "testDeviceType": {
       "location": {
         "start": {
-          "line": 476,
+          "line": 475,
           "column": 4
         },
         "end": {
-          "line": 478,
+          "line": 477,
           "column": 5
         }
       },
@@ -595,11 +595,11 @@
     "testDevicePixelRatio": {
       "location": {
         "start": {
-          "line": 480,
+          "line": 479,
           "column": 4
         },
         "end": {
-          "line": 482,
+          "line": 481,
           "column": 5
         }
       },
@@ -609,11 +609,11 @@
     "testQx": {
       "location": {
         "start": {
-          "line": 484,
+          "line": 483,
           "column": 4
         },
         "end": {
-          "line": 499,
+          "line": 498,
           "column": 5
         }
       },
@@ -623,11 +623,11 @@
     "testAnimationTransformTransition": {
       "location": {
         "start": {
-          "line": 502,
+          "line": 501,
           "column": 4
         },
         "end": {
-          "line": 510,
+          "line": 509,
           "column": 5
         }
       },
@@ -693,7 +693,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -752,7 +760,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getTestResult": {
       "type": "function",
@@ -813,7 +829,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testResult</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testResult}."
+          }
+        ]
+      }
     },
     "getTestFunc": {
       "type": "function",
@@ -874,7 +898,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testFunc</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testFunc}."
+          }
+        ]
+      }
     }
   },
   "descendants": []

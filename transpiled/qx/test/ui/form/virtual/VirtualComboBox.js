@@ -34,26 +34,26 @@
   qx.Class.define("qx.test.ui.form.virtual.VirtualComboBox", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __comboBox: null,
-      __model: null,
+      __comboBox__P_324_0: null,
+      __model__P_324_1: null,
       setUp: function setUp() {
         qx.test.ui.form.virtual.VirtualComboBox.prototype.setUp.base.call(this);
-        this.__comboBox = new qx.ui.form.VirtualComboBox();
-        this.getRoot().add(this.__comboBox);
+        this.__comboBox__P_324_0 = new qx.ui.form.VirtualComboBox();
+        this.getRoot().add(this.__comboBox__P_324_0);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.virtual.VirtualComboBox.prototype.tearDown.base.call(this);
 
-        this.__comboBox.destroy();
+        this.__comboBox__P_324_0.destroy();
 
-        this.__comboBox = null;
+        this.__comboBox__P_324_0 = null;
 
-        this.__model.dispose();
+        this.__model__P_324_1.dispose();
 
         this.flush();
       },
-      __createSimpleModel: function __createSimpleModel() {
+      __createSimpleModel__P_324_2: function __createSimpleModel__P_324_2() {
         var model = new qx.data.Array();
 
         for (var i = 0; i < 100; i++) {
@@ -62,7 +62,7 @@
 
         return model;
       },
-      __createRichModel: function __createRichModel() {
+      __createRichModel__P_324_3: function __createRichModel__P_324_3() {
         var model = new qx.data.Array();
 
         for (var i = 0; i < 100; i++) {
@@ -71,7 +71,7 @@
 
         return model;
       },
-      __createNestedModel: function __createNestedModel() {
+      __createNestedModel__P_324_4: function __createNestedModel__P_324_4() {
         var rawData = [{
           firstname: "James",
           lastname: "Kirk"
@@ -86,47 +86,47 @@
         return model;
       },
       testPreselectOnOpen: function testPreselectOnOpen() {
-        this.__model = this.__createSimpleModel();
+        this.__model__P_324_1 = this.__createSimpleModel__P_324_2();
 
-        this.__comboBox.setModel(this.__model);
+        this.__comboBox__P_324_0.setModel(this.__model__P_324_1);
 
-        this.__comboBox.setValue("i");
-
-        this.flush();
-
-        this.__comboBox.open();
+        this.__comboBox__P_324_0.setValue("i");
 
         this.flush();
 
-        this.__comboBox.close();
+        this.__comboBox__P_324_0.open();
+
+        this.flush();
+
+        this.__comboBox__P_324_0.close();
 
         this.flush(); // Preselection may not change the actual value
 
-        this.assertNotEquals("item 1", this.__comboBox.getValue());
-        this.assertEquals("i", this.__comboBox.getValue());
+        this.assertNotEquals("item 1", this.__comboBox__P_324_0.getValue());
+        this.assertEquals("i", this.__comboBox__P_324_0.getValue());
       },
       testSelectFirstMatch: function testSelectFirstMatch() {
-        this.__model = this.__createSimpleModel();
+        this.__model__P_324_1 = this.__createSimpleModel__P_324_2();
 
-        this.__comboBox.setModel(this.__model);
+        this.__comboBox__P_324_0.setModel(this.__model__P_324_1);
 
-        this.__comboBox.setValue("item 4");
-
-        this.flush();
-
-        this.__comboBox.open();
+        this.__comboBox__P_324_0.setValue("item 4");
 
         this.flush();
 
-        var preselected = this.__comboBox.getChildControl("dropdown")._preselected;
+        this.__comboBox__P_324_0.open();
+
+        this.flush();
+
+        var preselected = this.__comboBox__P_324_0.getChildControl("dropdown")._preselected;
 
         this.assertEquals("item 4", preselected);
-        this.assertEquals("item 4", this.__comboBox.getValue());
+        this.assertEquals("item 4", this.__comboBox__P_324_0.getValue());
       },
       testSelectFirstMatchWithSortedModel: function testSelectFirstMatchWithSortedModel() {
-        this.__model = this.__createSimpleModel();
+        this.__model__P_324_1 = this.__createSimpleModel__P_324_2();
 
-        this.__comboBox.setModel(this.__model);
+        this.__comboBox__P_324_0.setModel(this.__model__P_324_1);
 
         var delegate = {
           // invert sort order
@@ -135,20 +135,20 @@
           }
         };
 
-        this.__comboBox.setDelegate(delegate);
+        this.__comboBox__P_324_0.setDelegate(delegate);
 
-        this.__comboBox.setValue("item 4");
-
-        this.flush();
-
-        this.__comboBox.open();
+        this.__comboBox__P_324_0.setValue("item 4");
 
         this.flush();
 
-        var preselected = this.__comboBox.getChildControl("dropdown")._preselected;
+        this.__comboBox__P_324_0.open();
+
+        this.flush();
+
+        var preselected = this.__comboBox__P_324_0.getChildControl("dropdown")._preselected;
 
         this.assertEquals("item 49", preselected);
-        this.assertEquals("item 4", this.__comboBox.getValue()); // The virtual list uses a timeout to asynchronously flush the layout
+        this.assertEquals("item 4", this.__comboBox__P_324_0.getValue()); // The virtual list uses a timeout to asynchronously flush the layout
         // queue and scroll the (pre)selected item into view. tearDown is called
         // before this timer's callback so the list container tries to scroll a
         // disposed widget which causes an exception. To get around this, we use
@@ -161,9 +161,9 @@
         this.wait(200);
       },
       testSelectFirstMatchWithFilteredModel: function testSelectFirstMatchWithFilteredModel() {
-        this.__model = this.__createSimpleModel();
+        this.__model__P_324_1 = this.__createSimpleModel__P_324_2();
 
-        this.__comboBox.setModel(this.__model);
+        this.__comboBox__P_324_0.setModel(this.__model__P_324_1);
 
         var delegate = {
           // remove even-numbered items
@@ -173,25 +173,25 @@
           }
         };
 
-        this.__comboBox.setDelegate(delegate);
+        this.__comboBox__P_324_0.setDelegate(delegate);
 
-        this.__comboBox.setValue("item 22");
+        this.__comboBox__P_324_0.setValue("item 22");
 
         this.flush();
 
-        this.__comboBox.open();
+        this.__comboBox__P_324_0.open();
 
         this.flush(); // item 22 is not in the list, nothing should be preselected
 
-        var preselected = this.__comboBox.getChildControl("dropdown")._preselected;
+        var preselected = this.__comboBox__P_324_0.getChildControl("dropdown")._preselected;
 
         this.assertNull(preselected);
-        this.assertEquals("item 22", this.__comboBox.getValue());
+        this.assertEquals("item 22", this.__comboBox__P_324_0.getValue());
       },
       testSelectFirstMatchWithFormatter: function testSelectFirstMatchWithFormatter() {
-        this.__model = this.__createRichModel();
+        this.__model__P_324_1 = this.__createRichModel__P_324_3();
 
-        this.__comboBox.setModel(this.__model);
+        this.__comboBox__P_324_0.setModel(this.__model__P_324_1);
 
         var delegate = {
           configureItem: function configureItem(item) {
@@ -199,9 +199,9 @@
           }
         };
 
-        this.__comboBox.setDelegate(delegate);
+        this.__comboBox__P_324_0.setDelegate(delegate);
 
-        this.__comboBox.setDefaultFormat(function (data) {
+        this.__comboBox__P_324_0.setDefaultFormat(function (data) {
           if (data) {
             data = qx.lang.String.stripTags(data);
             data = qx.bom.String.unescape(data);
@@ -210,52 +210,52 @@
           return data;
         });
 
-        this.__comboBox.setValue("item 4");
+        this.__comboBox__P_324_0.setValue("item 4");
 
         this.flush();
 
-        this.__comboBox.open();
+        this.__comboBox__P_324_0.open();
 
         this.flush();
 
-        var preselected = this.__comboBox.getChildControl("dropdown")._preselected;
+        var preselected = this.__comboBox__P_324_0.getChildControl("dropdown")._preselected;
 
         this.assertEquals("<b>item 4</b>", preselected);
-        this.assertEquals("item 4", this.__comboBox.getValue());
+        this.assertEquals("item 4", this.__comboBox__P_324_0.getValue());
       },
       testSelectFirstMatchByLabelPath: function testSelectFirstMatchByLabelPath() {
-        this.__model = this.__createNestedModel();
+        this.__model__P_324_1 = this.__createNestedModel__P_324_4();
 
-        this.__comboBox.setLabelPath("lastname");
+        this.__comboBox__P_324_0.setLabelPath("lastname");
 
-        this.__comboBox.setModel(this.__model);
+        this.__comboBox__P_324_0.setModel(this.__model__P_324_1);
 
-        this.__comboBox.setValue("Si");
-
-        this.flush();
-
-        this.__comboBox.open();
+        this.__comboBox__P_324_0.setValue("Si");
 
         this.flush();
 
-        var preselected = this.__comboBox.getChildControl("dropdown")._preselected.getLastname();
+        this.__comboBox__P_324_0.open();
+
+        this.flush();
+
+        var preselected = this.__comboBox__P_324_0.getChildControl("dropdown")._preselected.getLastname();
 
         this.assertEquals("Sisko", preselected);
-        this.assertEquals("Si", this.__comboBox.getValue());
+        this.assertEquals("Si", this.__comboBox__P_324_0.getValue());
       },
       testEmptySelection: function testEmptySelection() {
-        this.__comboBox.setLabelPath("label");
+        this.__comboBox__P_324_0.setLabelPath("label");
 
         var rawData = [{
           label: "foo"
         }];
-        var model = this.__model = qx.data.marshal.Json.createModel(rawData);
+        var model = this.__model__P_324_1 = qx.data.marshal.Json.createModel(rawData);
 
-        this.__comboBox.setModel(model);
+        this.__comboBox__P_324_0.setModel(model);
 
-        var selection = this.__comboBox.getChildControl("dropdown").getSelection();
+        var selection = this.__comboBox__P_324_0.getChildControl("dropdown").getSelection();
 
-        selection.push(this.__comboBox.getModel().getItem(0));
+        selection.push(this.__comboBox__P_324_0.getModel().getItem(0));
         selection.removeAll();
       },
       testOpenWithUnrenderedWidget: function testOpenWithUnrenderedWidget() {
@@ -268,4 +268,4 @@
   qx.test.ui.form.virtual.VirtualComboBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualComboBox.js.map?dt=1589218264681
+//# sourceMappingURL=VirtualComboBox.js.map?dt=1591362987020

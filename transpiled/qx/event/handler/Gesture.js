@@ -138,25 +138,25 @@
      */
     construct: function construct(manager) {
       // Define shorthands
-      this.__manager = manager;
-      this.__window = manager.getWindow();
-      this.__root = this.__window.document;
-      qx.event.handler.GestureCore.apply(this, [this.__root]);
+      this.__manager__P_129_0 = manager;
+      this.__window__P_129_1 = manager.getWindow();
+      this.__root__P_129_2 = this.__window__P_129_1.document;
+      qx.event.handler.GestureCore.apply(this, [this.__root__P_129_2]);
     },
     members: {
-      __manager: null,
-      __window: null,
-      __root: null,
-      __listener: null,
-      __onDblClickWrapped: null,
-      __fireRollWrapped: null,
+      __manager__P_129_0: null,
+      __window__P_129_1: null,
+      __root__P_129_2: null,
+      __listener__P_129_3: null,
+      __onDblClickWrapped__P_129_4: null,
+      __fireRollWrapped__P_129_5: null,
 
       /**
        * Getter for the internal __window object
        * @return {Window} DOM window instance
        */
       getWindow: function getWindow() {
-        return this.__window;
+        return this.__window__P_129_1;
       },
       // interface implementation
       canHandleEvent: function canHandleEvent(target, type) {},
@@ -168,22 +168,22 @@
       },
       // overridden
       _initObserver: function _initObserver() {
-        this.__listener = qx.lang.Function.listener(this.checkAndFireGesture, this);
+        this.__listener__P_129_3 = qx.lang.Function.listener(this.checkAndFireGesture, this);
         qx.event.handler.Gesture.GESTURE_EVENTS.forEach(function (type) {
-          qx.event.Registration.addListener(this.__root, type, this.__listener, this);
+          qx.event.Registration.addListener(this.__root__P_129_2, type, this.__listener__P_129_3, this);
         }.bind(this));
 
         if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9) {
-          this.__onDblClickWrapped = qx.lang.Function.listener(this._onDblClick, this);
-          qx.bom.Event.addNativeListener(this.__root, "dblclick", this.__onDblClickWrapped);
+          this.__onDblClickWrapped__P_129_4 = qx.lang.Function.listener(this._onDblClick, this);
+          qx.bom.Event.addNativeListener(this.__root__P_129_2, "dblclick", this.__onDblClickWrapped__P_129_4);
         } // list to wheel events
 
 
-        var data = qx.bom.client.Event.getMouseWheel(this.__window);
-        this.__fireRollWrapped = qx.lang.Function.listener(this._fireRoll, this); // replaced the useCapture (4th parameter) from this to true
+        var data = qx.bom.client.Event.getMouseWheel(this.__window__P_129_1);
+        this.__fireRollWrapped__P_129_5 = qx.lang.Function.listener(this._fireRoll, this); // replaced the useCapture (4th parameter) from this to true
         // see https://github.com/qooxdoo/qooxdoo/pull/9292
 
-        qx.bom.Event.addNativeListener(data.target, data.type, this.__fireRollWrapped, true, false);
+        qx.bom.Event.addNativeListener(data.target, data.type, this.__fireRollWrapped__P_129_5, true, false);
       },
 
       /**
@@ -194,20 +194,20 @@
        * @param target {Element ? null} event target
        */
       checkAndFireGesture: function checkAndFireGesture(pointerEvent, type, target) {
-        this.__callBase("checkAndFireGesture", [pointerEvent.getNativeEvent(), pointerEvent.getType(), pointerEvent.getTarget()]);
+        this.__callBase__P_129_6("checkAndFireGesture", [pointerEvent.getNativeEvent(), pointerEvent.getType(), pointerEvent.getTarget()]);
       },
       // overridden
       _stopObserver: function _stopObserver() {
         qx.event.handler.Gesture.GESTURE_EVENTS.forEach(function (type) {
-          qx.event.Registration.removeListener(this.__root, type, this.__listener);
+          qx.event.Registration.removeListener(this.__root__P_129_2, type, this.__listener__P_129_3);
         }.bind(this));
 
         if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9) {
-          qx.bom.Event.removeNativeListener(this.__root, "dblclick", this.__onDblClickWrapped);
+          qx.bom.Event.removeNativeListener(this.__root__P_129_2, "dblclick", this.__onDblClickWrapped__P_129_4);
         }
 
-        var data = qx.bom.client.Event.getMouseWheel(this.__window);
-        qx.bom.Event.removeNativeListener(data.target, data.type, this.__fireRollWrapped);
+        var data = qx.bom.client.Event.getMouseWheel(this.__window__P_129_1);
+        qx.bom.Event.removeNativeListener(data.target, data.type, this.__fireRollWrapped__P_129_5);
       },
       // overridden
       _hasIntermediaryHandler: function _hasIntermediaryHandler(target) {
@@ -239,7 +239,7 @@
         } // Fire user action event
 
 
-        qx.event.Registration.fireEvent(this.__window, "useraction", qx.event.type.Data, [type]);
+        qx.event.Registration.fireEvent(this.__window__P_129_1, "useraction", qx.event.type.Data, [type]);
       },
 
       /**
@@ -248,9 +248,9 @@
       dispose: function dispose() {
         this._stopObserver();
 
-        this.__callBase("dispose");
+        this.__callBase__P_129_6("dispose");
 
-        this.__manager = this.__window = this.__root = this.__onDblClickWrapped = null;
+        this.__manager__P_129_0 = this.__window__P_129_1 = this.__root__P_129_2 = this.__onDblClickWrapped__P_129_4 = null;
       },
 
       /**
@@ -259,7 +259,7 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase: function __callBase(method, args) {
+      __callBase__P_129_6: function __callBase__P_129_6(method, args) {
         qx.event.handler.GestureCore.prototype[method].apply(this, args || []);
       }
     },
@@ -271,4 +271,4 @@
   qx.event.handler.Gesture.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Gesture.js.map?dt=1589218246268
+//# sourceMappingURL=Gesture.js.map?dt=1591362966508

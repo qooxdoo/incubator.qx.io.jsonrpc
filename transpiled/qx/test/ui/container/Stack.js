@@ -34,15 +34,15 @@
   qx.Class.define("qx.test.ui.container.Stack", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __stack: null,
-      __c1: null,
-      __c2: null,
-      __c3: null,
+      __stack__P_286_0: null,
+      __c1__P_286_1: null,
+      __c2__P_286_2: null,
+      __c3__P_286_3: null,
       setUp: function setUp() {
-        var stack = this.__stack = new qx.ui.container.Stack();
-        var c1 = this.__c1 = new qx.ui.container.Composite();
-        var c2 = this.__c2 = new qx.ui.container.Composite();
-        var c3 = this.__c3 = new qx.ui.container.Composite();
+        var stack = this.__stack__P_286_0 = new qx.ui.container.Stack();
+        var c1 = this.__c1__P_286_1 = new qx.ui.container.Composite();
+        var c2 = this.__c2__P_286_2 = new qx.ui.container.Composite();
+        var c3 = this.__c3__P_286_3 = new qx.ui.container.Composite();
         c1.set({
           backgroundColor: "#F00",
           width: 200,
@@ -60,13 +60,13 @@
         });
       },
       tearDown: function tearDown() {
-        this.__stack.destroy();
+        this.__stack__P_286_0.destroy();
 
-        this.__c1.destroy();
+        this.__c1__P_286_1.destroy();
 
-        this.__c2.destroy();
+        this.__c2__P_286_2.destroy();
 
-        this.__c3.destroy();
+        this.__c3__P_286_3.destroy();
       },
 
       /**
@@ -74,9 +74,9 @@
        * the new added child should be selected
        */
       testAddAndSelectChild: function testAddAndSelectChild() {
-        this.__stack.add(this.__c1);
+        this.__stack__P_286_0.add(this.__c1__P_286_1);
 
-        this.assertIdentical(this.__c1, this.__stack.getSelection()[0]);
+        this.assertIdentical(this.__c1__P_286_1, this.__stack__P_286_0.getSelection()[0]);
       },
 
       /**
@@ -84,14 +84,14 @@
        * the new added one should be excluded/hide but not selected.
        */
       testAddAndDontSelectChildInADynamicStack: function testAddAndDontSelectChildInADynamicStack() {
-        this.__stack.setDynamic(false);
+        this.__stack__P_286_0.setDynamic(false);
 
-        this.__stack.add(this.__c1);
+        this.__stack__P_286_0.add(this.__c1__P_286_1);
 
-        this.__stack.add(this.__c2);
+        this.__stack__P_286_0.add(this.__c2__P_286_2);
 
-        this.assertIdentical(this.__c1, this.__stack.getSelection()[0]);
-        this.assertTrue(this.__c2.isHidden());
+        this.assertIdentical(this.__c1__P_286_1, this.__stack__P_286_0.getSelection()[0]);
+        this.assertTrue(this.__c2__P_286_2.isHidden());
       },
 
       /**
@@ -99,29 +99,29 @@
        * the new added one should be excluded/hide but not selected.
        */
       testAddAndDontSelectChildInANonDynamicStack: function testAddAndDontSelectChildInANonDynamicStack() {
-        this.__stack.setDynamic(true);
+        this.__stack__P_286_0.setDynamic(true);
 
-        this.__stack.add(this.__c1);
+        this.__stack__P_286_0.add(this.__c1__P_286_1);
 
-        this.__stack.add(this.__c2);
+        this.__stack__P_286_0.add(this.__c2__P_286_2);
 
-        this.assertIdentical(this.__c1, this.__stack.getSelection()[0]);
-        this.assertTrue(this.__c2.isExcluded());
+        this.assertIdentical(this.__c1__P_286_1, this.__stack__P_286_0.getSelection()[0]);
+        this.assertTrue(this.__c2__P_286_2.isExcluded());
       },
 
       /**
        *if we remove child, selected the first one
        */
       testRemoveSelectedChildSelectFirstOne: function testRemoveSelectedChildSelectFirstOne() {
-        this.__stack.add(this.__c1);
+        this.__stack__P_286_0.add(this.__c1__P_286_1);
 
-        this.__stack.add(this.__c2);
+        this.__stack__P_286_0.add(this.__c2__P_286_2);
 
-        this.__stack.setSelection([this.__c2]);
+        this.__stack__P_286_0.setSelection([this.__c2__P_286_2]);
 
-        this.__stack.remove(this.__c2);
+        this.__stack__P_286_0.remove(this.__c2__P_286_2);
 
-        this.assertIdentical(this.__c1, this.__stack.getSelection()[0]);
+        this.assertIdentical(this.__c1__P_286_1, this.__stack__P_286_0.getSelection()[0]);
       },
 
       /**
@@ -129,23 +129,23 @@
        * reset selection.
        */
       testRemoveSelectedChildResetSelection: function testRemoveSelectedChildResetSelection() {
-        this.__stack.add(this.__c1);
+        this.__stack__P_286_0.add(this.__c1__P_286_1);
 
-        this.__stack.add(this.__c2);
+        this.__stack__P_286_0.add(this.__c2__P_286_2);
 
-        this.__stack.add(this.__c3);
+        this.__stack__P_286_0.add(this.__c3__P_286_3);
 
-        this.__stack.remove(this.__c1);
+        this.__stack__P_286_0.remove(this.__c1__P_286_1);
 
-        this.__stack.remove(this.__c2);
+        this.__stack__P_286_0.remove(this.__c2__P_286_2);
 
-        this.__stack.remove(this.__c3);
+        this.__stack__P_286_0.remove(this.__c3__P_286_3);
 
-        this.assertArrayEquals([], this.__stack.getSelection());
+        this.assertArrayEquals([], this.__stack__P_286_0.getSelection());
       }
     }
   });
   qx.test.ui.container.Stack.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Stack.js.map?dt=1589218262890
+//# sourceMappingURL=Stack.js.map?dt=1591362984949

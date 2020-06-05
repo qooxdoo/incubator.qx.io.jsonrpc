@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/node_modules/@qooxdoo/compiler/node_modules/@qooxdoo/framework/source/class/qx/test/event/GlobalEventMonitors.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "MRequirements",
+    "events",
+    "members",
+    "setUp",
+    "called",
+    "tearDown",
+    "event",
+    "Manager",
+    "resetGlobalEventMonitors",
+    "addGlobalEventMonitor",
+    "target",
+    "assertEquals",
+    "getType",
+    "fireEvent",
+    "assertTrue",
+    "value",
+    "fn1",
+    "fn2",
+    "assertFalse",
+    "removeGlobalEventMonitor",
+    "errorWasThrown",
+    "preventDefault",
+    "e",
+    "test",
+    "GlobalEventMonitors"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAEEC,IAAAA,OAAO,EAAGV,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYG,aAFxB;AAIEC,IAAAA,MAAM,EAAG;AACP,cAAS;AADF,KAJX;AAQEC,IAAAA,OAAO,EACP;AAGEC,MAAAA,KAAK,EAAG,iBACR;AACE,aAAKC,MAAL,GAAc,KAAd;AACD,OANH;AASEC,MAAAA,QAAQ,EAAG,oBACX;AACEhB,QAAAA,EAAE,CAACiB,KAAH,CAASC,OAAT,CAAiBC,wBAAjB;AACD,OAZH;AAeE,kDAA6C,6CAC7C;AACEnB,QAAAA,EAAE,CAACiB,KAAH,CAASC,OAAT,CAAiBE,qBAAjB,CAAuC,UAASC,MAAT,EAAiBJ,KAAjB,EAAuB;AAC5D,eAAKK,YAAL,CAAkB,IAAlB,EAAwBD,MAAxB;AACA,eAAKC,YAAL,CAAkB,MAAlB,EAA0BL,KAAK,CAACM,OAAN,EAA1B;AACA,eAAKR,MAAL,GAAc,IAAd;AACD,SAJD,EAIG,IAJH;AAKA,aAAKS,SAAL,CAAe,MAAf;AACA,aAAKC,UAAL,CAAgB,KAAKV,MAArB,EAA6B,iCAA7B;AACD,OAxBH;AA0BE,2CAAsC,wCACtC;AACE,aAAKW,KAAL,GAAa,KAAb;;AACA,YAAIC,GAAG,GAAG,SAANA,GAAM,GAAU;AAAE,eAAKD,KAAL,GAAa,IAAb;AAAkB,SAAxC;;AACA,YAAIE,GAAG,GAAG,SAANA,GAAM,GAAU;AAAE,eAAKF,KAAL,GAAa,KAAb;AAAmB,SAAzC;;AACA1B,QAAAA,EAAE,CAACiB,KAAH,CAASC,OAAT,CAAiBE,qBAAjB,CAAuCO,GAAvC,EAA4C,IAA5C;AACA,aAAKH,SAAL,CAAe,MAAf;AACA,aAAKC,UAAL,CAAgB,KAAKC,KAArB,EAA4B,uCAA5B;AACA1B,QAAAA,EAAE,CAACiB,KAAH,CAASC,OAAT,CAAiBE,qBAAjB,CAAuCQ,GAAvC,EAA4C,IAA5C;AACA,aAAKJ,SAAL,CAAe,MAAf;AACA,aAAKK,WAAL,CAAiB,KAAKH,KAAtB,EAA6B,wCAA7B;AACA1B,QAAAA,EAAE,CAACiB,KAAH,CAASC,OAAT,CAAiBY,wBAAjB,CAA0CF,GAA1C,EAA+C,IAA/C;AACA,aAAKJ,SAAL,CAAe,MAAf;AACA,aAAKC,UAAL,CAAgB,KAAKC,KAArB,EAA4B,yCAA5B;AACD,OAxCH;AA0CE,2CAAsC,yCAAW;AAC/C,YAAIK,cAAc,GAAG,KAArB;AACA/B,QAAAA,EAAE,CAACiB,KAAH,CAASC,OAAT,CAAiBE,qBAAjB,CAAuC,UAAUC,MAAV,EAAkBJ,KAAlB,EAAyB;AAC9DA,UAAAA,KAAK,CAACe,cAAN;AACD,SAFD,EAEG,IAFH;;AAGA,YAAI;AACF,eAAKR,SAAL,CAAe,MAAf;AACD,SAFD,CAEE,OAAOS,CAAP,EAAU;AACVF,UAAAA,cAAc,GAAG,IAAjB;AACD;;AACD,aAAKN,UAAL,CAAgBM,cAAhB,EAAgC,qDAAhC;AACD;AArDH;AATF,GADA;AAlBA/B,EAAAA,EAAE,CAACkC,IAAH,CAAQjB,KAAR,CAAckB,mBAAd,CAAkChC,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.event.GlobalEventMonitors\",\n{\n  extend : qx.dev.unit.TestCase,\n  include : qx.dev.unit.MRequirements,\n\n  events : {\n    \"test\" : \"qx.event.type.Event\"\n  },\n\n  members :\n  {\n\n\n    setUp : function()\n    {\n      this.called = false;\n    },\n\n\n    tearDown : function ()\n    {\n      qx.event.Manager.resetGlobalEventMonitors();\n    },\n\n\n    \"test: add and call global event monitors\" : function()\n    {\n      qx.event.Manager.addGlobalEventMonitor(function(target, event){\n        this.assertEquals(this, target);\n        this.assertEquals(\"test\", event.getType());\n        this.called = true;\n      }, this);\n      this.fireEvent(\"test\");\n      this.assertTrue(this.called, \"Monitor function was not called\");\n    },\n\n    \"test: remove global event monitor\" : function()\n    {\n      this.value = false;\n      var fn1 = function(){ this.value = true};\n      var fn2 = function(){ this.value = false};\n      qx.event.Manager.addGlobalEventMonitor(fn1, this);\n      this.fireEvent(\"test\");\n      this.assertTrue(this.value, \"Value should be true after adding fn1\");\n      qx.event.Manager.addGlobalEventMonitor(fn2, this);\n      this.fireEvent(\"test\");\n      this.assertFalse(this.value, \"Value should be false after adding fn2\");\n      qx.event.Manager.removeGlobalEventMonitor(fn2, this);\n      this.fireEvent(\"test\");\n      this.assertTrue(this.value, \"Value should be true after removing fn2\");\n    },\n\n    \"test: disallow event manipulation\" : function() {\n      var errorWasThrown = false;\n      qx.event.Manager.addGlobalEventMonitor(function (target, event) {\n        event.preventDefault();\n      }, this);\n      try {\n        this.fireEvent(\"test\");\n      } catch (e) {\n        errorWasThrown = true;\n      }\n      this.assertTrue(errorWasThrown, \"No error was thrown after manipulating event object\");\n    }\n  }\n});\n"
+  ]
+}

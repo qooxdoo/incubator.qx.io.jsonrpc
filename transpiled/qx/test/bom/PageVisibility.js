@@ -38,17 +38,17 @@
     include: [qx.dev.unit.MMock],
     members: {
       setUp: function setUp() {
-        this.__visibility = new qx.bom.PageVisibility();
+        this.__visibility__P_211_0 = new qx.bom.PageVisibility();
       },
       testVisibilityState: function testVisibilityState() {
         var possible = ["hidden", "visible", "prerender", "unloaded"];
 
-        var value = this.__visibility.getVisibilityState();
+        var value = this.__visibility__P_211_0.getVisibilityState();
 
         this.assertInArray(value, possible);
       },
       testHidden: function testHidden() {
-        this.assertBoolean(this.__visibility.isHidden());
+        this.assertBoolean(this.__visibility__P_211_0.isHidden());
       },
       testGetInstance: function testGetInstance() {
         this.assertEquals(qx.bom.PageVisibility.getInstance(), qx.bom.PageVisibility.getInstance());
@@ -58,4 +58,4 @@
   qx.test.bom.PageVisibility.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PageVisibility.js.map?dt=1589218254053
+//# sourceMappingURL=PageVisibility.js.map?dt=1591362974867

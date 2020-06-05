@@ -80,7 +80,7 @@
     */
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__manager = qx.event.Registration.getManager(window);
+      this.__manager__P_458_0 = qx.event.Registration.getManager(window);
     },
 
     /*
@@ -161,11 +161,11 @@
 
       /** @type {Integer} Whether the method "canHandleEvent" must be called */
       IGNORE_CAN_HANDLE: false,
-      __activeTarget: null,
-      __scrollLeft: null,
-      __scrollTop: null,
-      __startY: null,
-      __timer: null,
+      __activeTarget__P_458_1: null,
+      __scrollLeft__P_458_2: null,
+      __scrollTop__P_458_3: null,
+      __startY__P_458_4: null,
+      __timer__P_458_5: null,
 
       /**
        * Event handler. Called when the pointerdown event occurs.
@@ -174,17 +174,17 @@
        *
        * @param domEvent {qx.event.type.Pointer} The pointerdown event
        */
-      __onPointerDown: function __onPointerDown(domEvent) {
+      __onPointerDown__P_458_6: function __onPointerDown__P_458_6(domEvent) {
         if (!domEvent.isPrimary()) {
           return;
         }
 
         var EventHandler = qx.ui.mobile.core.EventHandler;
-        EventHandler.__scrollLeft = qx.bom.Viewport.getScrollLeft();
-        EventHandler.__scrollTop = qx.bom.Viewport.getScrollTop();
-        EventHandler.__startY = domEvent.getScreenTop();
+        EventHandler.__scrollLeft__P_458_2 = qx.bom.Viewport.getScrollLeft();
+        EventHandler.__scrollTop__P_458_3 = qx.bom.Viewport.getScrollTop();
+        EventHandler.__startY__P_458_4 = domEvent.getScreenTop();
 
-        EventHandler.__cancelActiveStateTimer();
+        EventHandler.__cancelActiveStateTimer__P_458_7();
 
         var target = domEvent.getTarget();
 
@@ -192,10 +192,10 @@
           target = target.parentNode;
         }
 
-        EventHandler.__activeTarget = target;
-        EventHandler.___timer = window.setTimeout(function () {
-          EventHandler.___timer = null;
-          var target = EventHandler.__activeTarget;
+        EventHandler.__activeTarget__P_458_1 = target;
+        EventHandler.___timer__P_458_8 = window.setTimeout(function () {
+          EventHandler.___timer__P_458_8 = null;
+          var target = EventHandler.__activeTarget__P_458_1;
 
           if (target && qx.bom.element.Attribute.get(target, "data-selectable") != "false") {
             qx.bom.element.Class.add(target, "active");
@@ -209,8 +209,8 @@
        *
        * @param domEvent {qx.event.type.Pointer} The pointerup event
        */
-      __onPointerUp: function __onPointerUp(domEvent) {
-        qx.ui.mobile.core.EventHandler.__removeActiveState();
+      __onPointerUp__P_458_9: function __onPointerUp__P_458_9(domEvent) {
+        qx.ui.mobile.core.EventHandler.__removeActiveState__P_458_10();
       },
 
       /**
@@ -220,51 +220,51 @@
        *
        * @param domEvent {qx.event.type.Pointer} The pointermove event
        */
-      __onPointerMove: function __onPointerMove(domEvent) {
+      __onPointerMove__P_458_11: function __onPointerMove__P_458_11(domEvent) {
         if (!domEvent.isPrimary()) {
           return;
         }
 
         var EventHandler = qx.ui.mobile.core.EventHandler;
 
-        var deltaY = domEvent.getScreenTop() - EventHandler.__startY;
+        var deltaY = domEvent.getScreenTop() - EventHandler.__startY__P_458_4;
 
-        if (EventHandler.__activeTarget && Math.abs(deltaY) >= qx.event.handler.GestureCore.TAP_MAX_DISTANCE[domEvent.getPointerType()]) {
-          EventHandler.__removeActiveState();
+        if (EventHandler.__activeTarget__P_458_1 && Math.abs(deltaY) >= qx.event.handler.GestureCore.TAP_MAX_DISTANCE[domEvent.getPointerType()]) {
+          EventHandler.__removeActiveState__P_458_10();
         }
 
-        if (EventHandler.__activeTarget && (EventHandler.__scrollLeft != qx.bom.Viewport.getScrollLeft() || EventHandler.__scrollTop != qx.bom.Viewport.getScrollTop())) {
-          EventHandler.__removeActiveState();
+        if (EventHandler.__activeTarget__P_458_1 && (EventHandler.__scrollLeft__P_458_2 != qx.bom.Viewport.getScrollLeft() || EventHandler.__scrollTop__P_458_3 != qx.bom.Viewport.getScrollTop())) {
+          EventHandler.__removeActiveState__P_458_10();
         }
       },
 
       /**
        * Cancels the active state timer.
        */
-      __cancelActiveStateTimer: function __cancelActiveStateTimer() {
+      __cancelActiveStateTimer__P_458_7: function __cancelActiveStateTimer__P_458_7() {
         var EventHandler = qx.ui.mobile.core.EventHandler;
 
-        if (EventHandler.___timer) {
-          window.clearTimeout(EventHandler.___timer);
-          EventHandler.___timer = null;
+        if (EventHandler.___timer__P_458_8) {
+          window.clearTimeout(EventHandler.___timer__P_458_8);
+          EventHandler.___timer__P_458_8 = null;
         }
       },
 
       /**
        * Removes the <code>active</class> class from the active target.
        */
-      __removeActiveState: function __removeActiveState() {
+      __removeActiveState__P_458_10: function __removeActiveState__P_458_10() {
         var EventHandler = qx.ui.mobile.core.EventHandler;
 
-        EventHandler.__cancelActiveStateTimer();
+        EventHandler.__cancelActiveStateTimer__P_458_7();
 
-        var activeTarget = EventHandler.__activeTarget;
+        var activeTarget = EventHandler.__activeTarget__P_458_1;
 
         if (activeTarget) {
           qx.bom.element.Class.remove(activeTarget, "active");
         }
 
-        EventHandler.__activeTarget = null;
+        EventHandler.__activeTarget__P_458_1 = null;
       }
     },
 
@@ -274,7 +274,7 @@
     *****************************************************************************
     */
     members: {
-      __manager: null,
+      __manager__P_458_0: null,
       // interface implementation
       canHandleEvent: function canHandleEvent(target, type) {
         return target instanceof qx.ui.mobile.core.Widget;
@@ -326,7 +326,7 @@
         var capture = domEvent.getEventPhase() == qx.event.type.Event.CAPTURING_PHASE;
         var type = domEvent.getType();
 
-        var listeners = this.__manager.getListeners(currentWidget, type, capture);
+        var listeners = this.__manager__P_458_0.getListeners(currentWidget, type, capture);
 
         if (!listeners || listeners.length === 0) {
           return;
@@ -374,7 +374,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__manager = null;
+      this.__manager__P_458_0 = null;
     },
 
     /*
@@ -384,13 +384,13 @@
     */
     defer: function defer(statics) {
       qx.event.Registration.addHandler(statics);
-      qx.event.Registration.addListener(document, "pointerdown", statics.__onPointerDown);
-      qx.event.Registration.addListener(document, "pointerup", statics.__onPointerUp);
-      qx.event.Registration.addListener(document, "pointercancel", statics.__onPointerUp);
-      qx.event.Registration.addListener(document, "pointermove", statics.__onPointerMove);
+      qx.event.Registration.addListener(document, "pointerdown", statics.__onPointerDown__P_458_6);
+      qx.event.Registration.addListener(document, "pointerup", statics.__onPointerUp__P_458_9);
+      qx.event.Registration.addListener(document, "pointercancel", statics.__onPointerUp__P_458_9);
+      qx.event.Registration.addListener(document, "pointermove", statics.__onPointerMove__P_458_11);
     }
   });
   qx.ui.mobile.core.EventHandler.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=EventHandler.js.map?dt=1589218277503
+//# sourceMappingURL=EventHandler.js.map?dt=1591363001473

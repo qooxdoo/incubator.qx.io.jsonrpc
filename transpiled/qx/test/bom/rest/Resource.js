@@ -68,9 +68,9 @@
 
         this.injectStub(qx.bom.request, "SimpleXhr", req); // Remember request for later disposal
 
-        this.__reqs = this.__reqs || [];
+        this.__reqs__P_221_0 = this.__reqs__P_221_0 || [];
 
-        this.__reqs.push(this.req);
+        this.__reqs__P_221_0.push(this.req);
 
         return req;
       },
@@ -85,7 +85,7 @@
         this.getSandbox().restore();
         this.res.dispose();
 
-        this.__reqs.forEach(function (req) {
+        this.__reqs__P_221_0.forEach(function (req) {
           req.dispose();
         });
       },
@@ -913,7 +913,7 @@
 
         var requests = "";
         Object.keys(this.res).forEach(function (propName) {
-          if (propName.indexOf("__") === 0 && "get" in this.res[propName] && qx.lang.Type.isArray(this.res[propName].get) && qx.lang.Type.isObject(this.res[propName].get[0]) && "$$hash" in this.res[propName].get[0]) {
+          if (propName.indexOf("____P_221_1") === 0 && "get" in this.res[propName] && qx.lang.Type.isArray(this.res[propName].get) && qx.lang.Type.isObject(this.res[propName].get[0]) && "$$hash" in this.res[propName].get[0]) {
             requests = propName;
           }
         }, this);
@@ -944,4 +944,4 @@
   qx.test.bom.rest.Resource.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resource.js.map?dt=1589218255181
+//# sourceMappingURL=Resource.js.map?dt=1591362976104

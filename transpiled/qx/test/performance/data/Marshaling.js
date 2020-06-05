@@ -38,15 +38,15 @@
     include: qx.dev.unit.MMeasure,
     members: {
       CREATE_ITERATIONS: 100000,
-      __objects: null,
-      __marshaler: null,
+      __objects__P_268_0: null,
+      __marshaler__P_268_1: null,
       setUp: function setUp() {
-        this.__marshaler = new qx.data.marshal.Json();
+        this.__marshaler__P_268_1 = new qx.data.marshal.Json();
       },
       tearDown: function tearDown() {
-        this.__marshaler.dispose();
+        this.__marshaler__P_268_1.dispose();
 
-        this.__marshaler = null;
+        this.__marshaler__P_268_1 = null;
       },
       testJsonSimpleToClass: function testJsonSimpleToClass() {
         var data = {
@@ -55,7 +55,7 @@
         var self = this;
         this.measure("simple json class creation", function () {
           for (var i = 0; i < self.CREATE_ITERATIONS; i++) {
-            self.__marshaler.toClass(data);
+            self.__marshaler__P_268_1.toClass(data);
           }
         }, function () {
           qx.Class.undefine("qx.data.model.a");
@@ -68,7 +68,7 @@
         var self = this;
         this.measure("simple json class creation with bubble events", function () {
           for (var i = 0; i < self.CREATE_ITERATIONS; i++) {
-            self.__marshaler.toClass(data, true);
+            self.__marshaler__P_268_1.toClass(data, true);
           }
         }, function () {
           qx.Class.undefine("qx.data.model.a");
@@ -79,17 +79,17 @@
           a: 10
         };
 
-        this.__marshaler.toClass(data);
+        this.__marshaler__P_268_1.toClass(data);
 
         var self = this;
-        this.__objects = [];
+        this.__objects__P_268_0 = [];
         this.measure("simple json object creation", function () {
           for (var i = 0; i < self.CREATE_ITERATIONS; i++) {
-            self.__objects.push(self.__marshaler.toModel(data));
+            self.__objects__P_268_0.push(self.__marshaler__P_268_1.toModel(data));
           }
         }, function () {
-          for (var i = 0; i < self.__objects.length; i++) {
-            self.__objects[i].dispose();
+          for (var i = 0; i < self.__objects__P_268_0.length; i++) {
+            self.__objects__P_268_0[i].dispose();
           }
 
           qx.Class.undefine("qx.data.model.a");
@@ -100,4 +100,4 @@
   qx.test.performance.data.Marshaling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Marshaling.js.map?dt=1589218261519
+//# sourceMappingURL=Marshaling.js.map?dt=1591362983407

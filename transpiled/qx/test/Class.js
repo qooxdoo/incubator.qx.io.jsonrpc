@@ -306,7 +306,7 @@
       testPatchWithConstructor: function testPatchWithConstructor() {
         qx.Mixin.define("qx.MyMixin", {
           construct: function construct() {
-            this.__p = "p";
+            this.__p__P_199_0 = "p";
           },
           properties: {
             "property": {
@@ -315,7 +315,7 @@
           },
           members: {
             getP: function getP() {
-              return this.__p;
+              return this.__p__P_199_0;
             }
           }
         });
@@ -361,7 +361,7 @@
       testIncludeWithConstructor: function testIncludeWithConstructor() {
         qx.Mixin.define("qx.MyMixin", {
           construct: function construct() {
-            this.__p = "p";
+            this.__p__P_199_0 = "p";
           },
           properties: {
             "property": {
@@ -370,7 +370,7 @@
           },
           members: {
             getP: function getP() {
-              return this.__p;
+              return this.__p__P_199_0;
             }
           }
         });
@@ -433,4 +433,4 @@
   qx.test.Class.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Class.js.map?dt=1589218252939
+//# sourceMappingURL=Class.js.map?dt=1591362973475

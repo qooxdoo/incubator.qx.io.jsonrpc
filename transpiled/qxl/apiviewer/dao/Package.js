@@ -116,7 +116,7 @@
       }
     },
     statics: {
-      __rootPackage: null,
+      __rootPackage__P_602_0: null,
 
       /**
        * Locates a package by name
@@ -125,10 +125,10 @@
        * @return {Package?}
        */
       getPackage: function getPackage(name, create) {
-        var root = qxl.apiviewer.dao.Package.__rootPackage;
+        var root = qxl.apiviewer.dao.Package.__rootPackage__P_602_0;
 
         if (!root) {
-          root = qxl.apiviewer.dao.Package.__rootPackage = new qxl.apiviewer.dao.Package("");
+          root = qxl.apiviewer.dao.Package.__rootPackage__P_602_0 = new qxl.apiviewer.dao.Package("");
         }
 
         if (!name) {
@@ -182,4 +182,4 @@
   qxl.apiviewer.dao.Package.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Package.js.map?dt=1589218288775
+//# sourceMappingURL=Package.js.map?dt=1591363014159

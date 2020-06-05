@@ -39,20 +39,20 @@
       tearDown: function tearDown() {
         qx.test.ui.virtual.layer.HtmlCellSpan.prototype.tearDown.base.call(this);
 
-        this.__cellRenderer.dispose();
+        this.__cellRenderer__P_348_0.dispose();
 
-        this.__rowConfig.dispose();
+        this.__rowConfig__P_348_1.dispose();
 
-        this.__columnConfig.dispose();
+        this.__columnConfig__P_348_2.dispose();
       },
       _createLayer: function _createLayer() {
-        this.__cellRenderer = new qx.ui.virtual.cell.Cell();
-        this.__rowConfig = new qx.ui.virtual.core.Axis(10, 100);
-        this.__columnConfig = new qx.ui.virtual.core.Axis(20, 100);
-        return new qx.ui.virtual.layer.HtmlCellSpan(this, this.__rowConfig, this.__columnConfig);
+        this.__cellRenderer__P_348_0 = new qx.ui.virtual.cell.Cell();
+        this.__rowConfig__P_348_1 = new qx.ui.virtual.core.Axis(10, 100);
+        this.__columnConfig__P_348_2 = new qx.ui.virtual.core.Axis(20, 100);
+        return new qx.ui.virtual.layer.HtmlCellSpan(this, this.__rowConfig__P_348_1, this.__columnConfig__P_348_2);
       },
       getCellProperties: function getCellProperties(row, column) {
-        return this.__cellRenderer.getCellProperties(row + " / " + column, {});
+        return this.__cellRenderer__P_348_0.getCellProperties(row + " / " + column, {});
       },
       _assertCells: function _assertCells(firstRow, firstColumn, rowCount, columnCount, msg) {
         var children = this.layer.getContentElement().getDomElement().childNodes;
@@ -69,10 +69,10 @@
       }
     },
     destruct: function destruct() {
-      this.__cellRenderer = null;
+      this.__cellRenderer__P_348_0 = null;
     }
   });
   qx.test.ui.virtual.layer.HtmlCellSpan.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlCellSpan.js.map?dt=1589218266962
+//# sourceMappingURL=HtmlCellSpan.js.map?dt=1591362989605

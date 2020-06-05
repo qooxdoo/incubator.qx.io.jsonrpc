@@ -110,7 +110,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/layout/flow.html'>
+   * <a href='http://qooxdoo.org/docs/#layout/flow.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Flow", {
@@ -249,7 +249,7 @@
         while (lineCalculator.hasMoreLines()) {
           var line = lineCalculator.computeNextLine(availWidth);
 
-          this.__renderLine(line, lineTop, availWidth, padding);
+          this.__renderLine__P_438_0(line, lineTop, availWidth, padding);
 
           lineTop += line.height + this.getSpacingY();
         }
@@ -265,7 +265,7 @@
        * @param padding {Map} Map containing the padding values. Keys:
        * <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>
        */
-      __renderLine: function __renderLine(line, lineTop, availWidth, padding) {
+      __renderLine__P_438_0: function __renderLine__P_438_0(line, lineTop, availWidth, padding) {
         var util = qx.ui.layout.Util;
         var left = padding.left;
 
@@ -295,7 +295,7 @@
       },
       // overridden
       _computeSizeHint: function _computeSizeHint() {
-        return this.__computeSize(Infinity);
+        return this.__computeSize__P_438_1(Infinity);
       },
       // overridden
       hasHeightForWidth: function hasHeightForWidth() {
@@ -303,7 +303,7 @@
       },
       // overridden
       getHeightForWidth: function getHeightForWidth(width) {
-        return this.__computeSize(width).height;
+        return this.__computeSize__P_438_1(width).height;
       },
 
       /**
@@ -328,7 +328,7 @@
        * @param availWidth {Integer} The available width
        * @return {Map} Map containing the preferred height and width of the layout
        */
-      __computeSize: function __computeSize(availWidth) {
+      __computeSize__P_438_1: function __computeSize__P_438_1(availWidth) {
         var lineCalculator = new qx.ui.layout.LineSizeIterator(this._getLayoutChildren(), this.getSpacingX());
         var height = 0;
         var width = 0;
@@ -351,4 +351,4 @@
   qx.ui.layout.Flow.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flow.js.map?dt=1589218275716
+//# sourceMappingURL=Flow.js.map?dt=1591362999473

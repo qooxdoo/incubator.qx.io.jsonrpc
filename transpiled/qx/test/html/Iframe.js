@@ -51,34 +51,34 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __doc: null,
-      __frame: null,
-      __origin: null,
-      __destSource: null,
-      __alredyRun: false,
+      __doc__P_248_0: null,
+      __frame__P_248_1: null,
+      __origin__P_248_2: null,
+      __destSource__P_248_3: null,
+      __alredyRun__P_248_4: false,
       setUp: function setUp() {
         var helper = document.createElement("div");
         document.body.appendChild(helper);
-        this.__doc = new qx.html.Root(helper);
+        this.__doc__P_248_0 = new qx.html.Root(helper);
 
-        this.__doc.setAttribute("id", "doc");
+        this.__doc__P_248_0.setAttribute("id", "doc");
 
-        var frame = this.__frame = new qx.html.Iframe();
+        var frame = this.__frame__P_248_1 = new qx.html.Iframe();
 
-        this.__doc.add(frame); // Source in parent directory is not of same origin
+        this.__doc__P_248_0.add(frame); // Source in parent directory is not of same origin
         // when using file protocol – use non-existing file
         // in same directory instead
 
 
         if (window.location.protocol === "file:") {
-          this.__destSource = "blank.html";
+          this.__destSource__P_248_3 = "blank.html";
         } else {
-          this.__destSource = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
+          this.__destSource__P_248_3 = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
         }
       },
       "test: set source to URL with same origin": function testSetSourceToURLWithSameOrigin() {
-        var frame = this.__frame;
-        var source = this.__destSource;
+        var frame = this.__frame__P_248_1;
+        var source = this.__destSource__P_248_3;
         frame.addListener("load", function () {
           this.resume(function () {
             var element = frame.getDomElement();
@@ -103,10 +103,10 @@
         this.wait();
       },
       "test: update source on navigate": function testUpdateSourceOnNavigate() {
-        var frame = this.__frame; // As soon as the original frame has loaded,
+        var frame = this.__frame__P_248_1; // As soon as the original frame has loaded,
         // fake user-action and browse
 
-        var source = this.__destSource;
+        var source = this.__destSource__P_248_3;
         frame.addListenerOnce("load", function () {
           qx.html.Element.flush();
           qx.bom.Iframe.setSource(frame.getDomElement(), source);
@@ -118,10 +118,10 @@
         }, this);
       },
       "test: skip setting source if frame is already on URL": function testSkipSettingSourceIfFrameIsAlreadyOnURL() {
-        var frame = this.__frame; // As soon as the original frame has loaded,
+        var frame = this.__frame__P_248_1; // As soon as the original frame has loaded,
         // fake user-action and browse
 
-        var source = this.__destSource;
+        var source = this.__destSource__P_248_3;
         frame.addListenerOnce("load", function () {
           qx.bom.Iframe.setSource(frame.getDomElement(), source);
         });
@@ -150,9 +150,9 @@
         this.wait();
       },
       "test: set null source if frame is cross-origin": function testSetNullSourceIfFrameIsCrossOrigin() {
-        var frame = this.__frame;
+        var frame = this.__frame__P_248_1;
 
-        if (this.__alredyRun) {
+        if (this.__alredyRun__P_248_4) {
           this.skip("This test can only run once. Reload to run again.");
         } // On cross origin
 
@@ -166,7 +166,7 @@
           });
         }, this);
         frame.setSource("http://example.com");
-        this.__alredyRun = true;
+        this.__alredyRun__P_248_4 = true;
         this.wait();
       },
       tearDown: function tearDown() {
@@ -175,13 +175,13 @@
         document.body.removeChild(div);
         this.getSandbox().restore();
 
-        this.__frame.dispose();
+        this.__frame__P_248_1.dispose();
 
-        this.__frame = null;
+        this.__frame__P_248_1 = null;
       }
     }
   });
   qx.test.html.Iframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Iframe.js.map?dt=1589218258890
+//# sourceMappingURL=Iframe.js.map?dt=1591362980484

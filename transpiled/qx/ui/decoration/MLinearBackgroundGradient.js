@@ -20,9 +20,6 @@
         "css.gradient.legacywebkit": {
           "className": "qx.bom.client.Css"
         },
-        "css.gradient.filter": {
-          "className": "qx.bom.client.Css"
-        },
         "css.gradient.linear": {
           "className": "qx.bom.client.Css"
         },
@@ -75,7 +72,7 @@
    * as background image. Due to restrictions in the <code>background-image</code>
    * css property, we can not allow negative start values in that case.
    *
-   * It is possible to define multiple background gradients by setting an 
+   * It is possible to define multiple background gradients by setting an
    * array containing the needed values as the property value.
    * In case multiple values are specified, the values of the properties
    * are repeated until all match in length. It is not possible to define
@@ -173,22 +170,22 @@
           return;
         }
 
-        var styleImpl = this.__styleLinearBackgroundGradientAccordingToSpec;
+        var styleImpl = this.__styleLinearBackgroundGradientAccordingToSpec__P_407_0;
 
         if (qx.core.Environment.get("css.gradient.legacywebkit")) {
-          styleImpl = this.__styleLinearBackgroundGradientForLegacyWebkit;
-        } else if (qx.core.Environment.get("css.gradient.filter") && !qx.core.Environment.get("css.gradient.linear") && qx.core.Environment.get("css.borderradius")) {
-          styleImpl = this.__styleLinearBackgroundGradientWithCanvas;
-        } else if (qx.core.Environment.get("css.gradient.filter") && !qx.core.Environment.get("css.gradient.linear")) {
-          styleImpl = this.__styleLinearBackgroundGradientWithMSFilter;
+          styleImpl = this.__styleLinearBackgroundGradientForLegacyWebkit__P_407_1;
+        } else if (!qx.core.Environment.get("css.gradient.linear") && qx.core.Environment.get("css.borderradius")) {
+          styleImpl = this.__styleLinearBackgroundGradientWithCanvas__P_407_2;
+        } else if (!qx.core.Environment.get("css.gradient.linear")) {
+          styleImpl = this.__styleLinearBackgroundGradientWithMSFilter__P_407_3;
         }
 
         var gradientProperties = ["startColor", "endColor", "colorPositionUnit", "orientation", "startColorPosition", "endColorPosition"];
         (function (startColors, endColors, units, orientations, startColorPositions, endColorPositions) {
           for (var i = 0; i < startColors.length; i++) {
-            var startColor = this.__getColor(startColors[i]);
+            var startColor = this.__getColor__P_407_4(startColors[i]);
 
-            var endColor = this.__getColor(endColors[i]);
+            var endColor = this.__getColor__P_407_4(endColors[i]);
 
             var unit = units[i];
             var orientation = orientations[i];
@@ -218,7 +215,7 @@
        * Compute CSS rules to style the background with gradients.
        * This can be called multiple times and SHOULD layer the gradients on top of each other and on top of existing backgrounds.
        * Legacy implementation for old WebKit browsers (Chrome < 10).
-       * 
+       *
        * @param startColor {Color} The color to start the gradient with
        * @param endColor {Color} The color to end the gradient with
        * @param unit {Color} The unit in which startColorPosition and endColorPosition are measured
@@ -230,7 +227,7 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (true).
        */
-      __styleLinearBackgroundGradientForLegacyWebkit: function __styleLinearBackgroundGradientForLegacyWebkit(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+      __styleLinearBackgroundGradientForLegacyWebkit__P_407_1: function __styleLinearBackgroundGradientForLegacyWebkit__P_407_1(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
         // webkit uses px values if non are given
         unit = unit === "px" ? "" : unit;
 
@@ -251,7 +248,7 @@
        * Compute CSS rules to style the background with gradients.
        * This can be called multiple times and SHOULD layer the gradients on top of each other and on top of existing backgrounds.
        * IE9 canvas solution.
-       * 
+       *
        * @param startColor {Color} The color to start the gradient with
        * @param endColor {Color} The color to end the gradient with
        * @param unit {Color} The unit in which startColorPosition and endColorPosition are measured
@@ -263,9 +260,9 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (true).
        */
-      __styleLinearBackgroundGradientWithCanvas: function me(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
-        if (!me.__canvas) {
-          me.__canvas = document.createElement("canvas");
+      __styleLinearBackgroundGradientWithCanvas__P_407_2: function me(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+        if (!me.__canvas__P_407_5) {
+          me.__canvas__P_407_5 = document.createElement("canvas");
         }
 
         var isVertical = orientation == "vertical";
@@ -287,10 +284,10 @@
           }
         }
 
-        me.__canvas.width = width;
-        me.__canvas.height = height;
+        me.__canvas__P_407_5.width = width;
+        me.__canvas__P_407_5.height = height;
 
-        var ctx = me.__canvas.getContext('2d');
+        var ctx = me.__canvas__P_407_5.getContext('2d');
 
         if (isVertical) {
           var lingrad = ctx.createLinearGradient(0, 0, 0, height);
@@ -320,7 +317,7 @@
           size = isVertical ? height + "px 100%" : "100% " + width + "px";
         }
 
-        backgroundStyle.push("url(" + me.__canvas.toDataURL() + ") " + size);
+        backgroundStyle.push("url(" + me.__canvas__P_407_5.toDataURL() + ") " + size);
         return true;
       },
 
@@ -328,7 +325,7 @@
        * Compute CSS rules to style the background with gradients.
        * This can be called multiple times and SHOULD layer the gradients on top of each other and on top of existing backgrounds.
        * Old IE filter fallback.
-       * 
+       *
        * @param startColor {Color} The color to start the gradient with
        * @param endColor {Color} The color to end the gradient with
        * @param unit {Color} The unit in which startColorPosition and endColorPosition are measured
@@ -340,7 +337,7 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (false).
        */
-      __styleLinearBackgroundGradientWithMSFilter: function __styleLinearBackgroundGradientWithMSFilter(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+      __styleLinearBackgroundGradientWithMSFilter__P_407_3: function __styleLinearBackgroundGradientWithMSFilter__P_407_3(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
         var type = orientation == "horizontal" ? 1 : 0; // convert rgb, hex3 and named colors to hex6
 
         if (!qx.util.ColorUtil.isHex6String(startColor)) {
@@ -379,7 +376,7 @@
        * Compute CSS rules to style the background with gradients.
        * This can be called multiple times and SHOULD layer the gradients on top of each other and on top of existing backgrounds.
        * Default implementation (uses spec-compliant syntax).
-       * 
+       *
        * @param startColor {Color} The color to start the gradient with
        * @param endColor {Color} The color to end the gradient with
        * @param unit {Color} The unit in which startColorPosition and endColorPosition are measured
@@ -391,7 +388,7 @@
        *
        * @return {Boolean} Whether this implementation supports multiple gradients atop each other (true).
        */
-      __styleLinearBackgroundGradientAccordingToSpec: function __styleLinearBackgroundGradientAccordingToSpec(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
+      __styleLinearBackgroundGradientAccordingToSpec__P_407_0: function __styleLinearBackgroundGradientAccordingToSpec__P_407_0(startColor, endColor, unit, orientation, startColorPosition, endColorPosition, styles, backgroundStyle) {
         // WebKit, Opera and Gecko interpret 0deg as "to right"
         var deg = orientation == "horizontal" ? 0 : 270;
         var start = startColor + " " + startColorPosition + unit;
@@ -412,7 +409,7 @@
        * @param color {String} The color name
        * @return {Map} The resolved color
        */
-      __getColor: function __getColor(color) {
+      __getColor__P_407_4: function __getColor__P_407_4(color) {
         return qx.core.Environment.get("qx.theme") ? qx.theme.manager.Color.getInstance().resolve(color) : color;
       },
       // property apply
@@ -428,4 +425,4 @@
   qx.ui.decoration.MLinearBackgroundGradient.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MLinearBackgroundGradient.js.map?dt=1589218272763
+//# sourceMappingURL=MLinearBackgroundGradient.js.map?dt=1591362996065

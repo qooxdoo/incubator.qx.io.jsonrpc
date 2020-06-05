@@ -88,10 +88,10 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/iframe.html' target='_blank'>
+   * <a href='http://qooxdoo.org/docs/#desktop/widget/iframe.md' target='_blank'>
    * Documentation of this widget in the qooxdoo manual.</a>
-   * 
-   * 
+   *
+   *
    * *Notes*
    * When modifying this file, note that the test qx.test.ui.embed.Iframe.testSyncSourceAfterDOMMove
    * has been disabled under Chrome because of problems with Travis and Github.  Changes to this file
@@ -112,14 +112,14 @@
      */
     construct: function construct(source) {
       if (source != null) {
-        this.__source = source;
+        this.__source__P_411_0 = source;
       }
 
       qx.ui.embed.AbstractIframe.constructor.call(this, source);
       qx.event.Registration.addListener(document.body, "pointerdown", this.block, this, true);
       qx.event.Registration.addListener(document.body, "pointerup", this.release, this, true);
       qx.event.Registration.addListener(document.body, "losecapture", this.release, this, true);
-      this.__blockerElement = this._createBlockerElement();
+      this.__blockerElement__P_411_1 = this._createBlockerElement();
 
       if (qx.core.Environment.get("ecmascript.mutationobserver")) {
         this.addListenerOnce("appear", function () {
@@ -218,15 +218,15 @@
     *****************************************************************************
     */
     members: {
-      __source: null,
-      __blockerElement: null,
+      __source__P_411_0: null,
+      __blockerElement__P_411_1: null,
       // overridden
       renderLayout: function renderLayout(left, top, width, height) {
         qx.ui.embed.Iframe.prototype.renderLayout.base.call(this, left, top, width, height);
         var pixel = "px";
         var insets = this.getInsets();
 
-        this.__blockerElement.setStyles({
+        this.__blockerElement__P_411_1.setStyles({
           "left": left + insets.left + pixel,
           "top": top + insets.top + pixel,
           "width": width - insets.left - insets.right + pixel,
@@ -235,7 +235,7 @@
       },
       // overridden
       _createContentElement: function _createContentElement() {
-        var iframe = new qx.html.Iframe(this.__source);
+        var iframe = new qx.html.Iframe(this.__source__P_411_0);
         iframe.addListener("load", this._onIframeLoad, this);
         return iframe;
       },
@@ -284,7 +284,7 @@
        *
        */
       block: function block() {
-        this.__blockerElement.setStyle("display", "block");
+        this.__blockerElement__P_411_1.setStyle("display", "block");
       },
 
       /**
@@ -292,7 +292,7 @@
        *
        */
       release: function release() {
-        this.__blockerElement.setStyle("display", "none");
+        this.__blockerElement__P_411_1.setStyle("display", "none");
       },
 
       /*
@@ -401,7 +401,7 @@
         qx.ui.embed.Iframe.prototype.setLayoutParent.base.call(this, parent);
 
         if (parent) {
-          this.getLayoutParent().getContentElement().add(this.__blockerElement);
+          this.getLayoutParent().getContentElement().add(this.__blockerElement__P_411_1);
         }
       }
     },
@@ -412,11 +412,11 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.getLayoutParent() && this.__blockerElement.getParent()) {
-        this.getLayoutParent().getContentElement().remove(this.__blockerElement);
+      if (this.getLayoutParent() && this.__blockerElement__P_411_1.getParent()) {
+        this.getLayoutParent().getContentElement().remove(this.__blockerElement__P_411_1);
       }
 
-      this._disposeObjects("__blockerElement");
+      this._disposeObjects("__blockerElement__P_411_1");
 
       qx.event.Registration.removeListener(document.body, "pointerdown", this.block, this, true);
       qx.event.Registration.removeListener(document.body, "pointerup", this.release, this, true);
@@ -426,4 +426,4 @@
   qx.ui.embed.Iframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Iframe.js.map?dt=1589218273030
+//# sourceMappingURL=Iframe.js.map?dt=1591362996380

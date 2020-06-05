@@ -60,7 +60,7 @@ var envinfo = {
   "qx.application": "qxl.testtapper.Application",
   "qx.revision": "",
   "qx.theme": "qx.theme.Simple",
-  "qx.version": "6.0.0-beta-20200418-1852",
+  "qx.version": "6.0.0-beta-20200515-0957",
   "qx.libraryInfoMap": {
     "qx": {
       "name": "qooxdoo framework",
@@ -141,7 +141,7 @@ var envinfo = {
           "email": "dietrich.streifert@visionet.de"
         }
       ],
-      "version": "6.0.0-beta-20200418-1852"
+      "version": "6.0.0-beta-20200515-0957"
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compilerVersion": "1.0.0-beta.20200507-1713",
+  "qx.compilerVersion": "1.0.0-beta.20200602-1225",
   "qx.icontheme": "Tango",
   "qx.buildType": "source",
   "qx.headless": false,
@@ -246,9 +246,11 @@ if (!qx.$$libraries)
   "qx.io",
   "qxl.testtapper",
   "qxl.logpane"
-].forEach(ns => qx.$$libraries[ns] = {
-   sourceUri: qx.$$appRoot + "../transpiled/",
-   resourceUri: qx.$$appRoot + "../resource"
+].forEach(function(ns) {
+   qx.$$libraries[ns] = {
+     sourceUri: qx.$$appRoot + "../transpiled/",
+     resourceUri: qx.$$appRoot + "../resource"
+   }
 });
 
 qx.$$resources = {};

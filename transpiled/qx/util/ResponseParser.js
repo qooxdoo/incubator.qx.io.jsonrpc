@@ -63,7 +63,7 @@
       }
     },
     members: {
-      __parser: null,
+      __parser__P_579_0: null,
 
       /**
        * Returns given response parsed with parser
@@ -115,14 +115,14 @@
       setParser: function setParser(parser) {
         // Symbolically given known parser
         if (typeof qx.util.ResponseParser.PARSER[parser] === "function") {
-          return this.__parser = qx.util.ResponseParser.PARSER[parser];
+          return this.__parser__P_579_0 = qx.util.ResponseParser.PARSER[parser];
         } // If parser is not a symbol, it must be a function
 
 
         {
           qx.core.Assert.assertFunction(parser);
         }
-        return this.__parser = parser;
+        return this.__parser__P_579_0 = parser;
       },
 
       /**
@@ -140,7 +140,7 @@
        *
        */
       _getParser: function _getParser(contentType) {
-        var parser = this.__parser,
+        var parser = this.__parser__P_579_0,
             contentTypeOrig = "",
             contentTypeNormalized = ""; // Use user-provided parser, if any
 
@@ -173,4 +173,4 @@
   qx.util.ResponseParser.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ResponseParser.js.map?dt=1589218286827
+//# sourceMappingURL=ResponseParser.js.map?dt=1591363011951

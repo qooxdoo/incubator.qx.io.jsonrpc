@@ -58,13 +58,13 @@
     construct: function construct(txt) {
       var txt = txt || ""; // no base call needed
 
-      this.__txt = txt;
+      this.__txt__P_367_0 = txt;
       this.length = txt.length;
     },
     members: {
       $$isString: true,
       length: 0,
-      __txt: null,
+      __txt__P_367_0: null,
 
       /**
        * Returns a string representing the specified object.
@@ -77,7 +77,7 @@
        * @return {String} A new string containing the string value.
        */
       toString: function toString() {
-        return this.__txt;
+        return this.__txt__P_367_0;
       },
 
       /**
@@ -383,4 +383,4 @@
   qx.type.BaseString.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BaseString.js.map?dt=1589218269579
+//# sourceMappingURL=BaseString.js.map?dt=1591362992462

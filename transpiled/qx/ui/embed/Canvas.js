@@ -83,7 +83,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/canvas.html' target='_blank'>
+   * <a href='http://qooxdoo.org/docs/#desktop/widget/canvas.md' target='_blank'>
    * Documentation of this widget in the qooxdoo manual.</a>
    */
   qx.Class.define("qx.ui.embed.Canvas", {
@@ -101,7 +101,7 @@
      */
     construct: function construct(canvasWidth, canvasHeight) {
       qx.ui.core.Widget.constructor.call(this);
-      this.__deferredDraw = new qx.util.DeferredCall(this.__redraw, this);
+      this.__deferredDraw__P_409_0 = new qx.util.DeferredCall(this.__redraw__P_409_1, this);
       this.addListener("resize", this._onResize, this);
 
       if (canvasWidth !== undefined) {
@@ -162,7 +162,7 @@
     */
     members: {
       /** @type {qx.util.DeferredCall} */
-      __deferredDraw: null,
+      __deferredDraw__P_409_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -177,7 +177,7 @@
       /**
        * This methods triggers the redraw of the canvas' content
        */
-      __redraw: function __redraw() {
+      __redraw__P_409_1: function __redraw__P_409_1() {
         var canvas = this.getContentElement();
         var height = canvas.getHeight();
         var width = canvas.getWidth();
@@ -195,20 +195,20 @@
       _applyCanvasWidth: function _applyCanvasWidth(value, old) {
         this.getContentElement().setWidth(value);
 
-        this.__deferredDraw.schedule();
+        this.__deferredDraw__P_409_0.schedule();
       },
       // property apply
       _applyCanvasHeight: function _applyCanvasHeight(value, old) {
         this.getContentElement().setHeight(value);
 
-        this.__deferredDraw.schedule();
+        this.__deferredDraw__P_409_0.schedule();
       },
 
       /**
        * Redraw the canvas
        */
       update: function update() {
-        this.__deferredDraw.schedule();
+        this.__deferredDraw__P_409_0.schedule();
       },
 
       /**
@@ -254,10 +254,10 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this._disposeObjects("__deferredDraw");
+      this._disposeObjects("__deferredDraw__P_409_0");
     }
   });
   qx.ui.embed.Canvas.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Canvas.js.map?dt=1589218272890
+//# sourceMappingURL=Canvas.js.map?dt=1591362996212

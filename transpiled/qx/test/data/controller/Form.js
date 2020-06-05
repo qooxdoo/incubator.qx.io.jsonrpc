@@ -42,86 +42,86 @@
   qx.Class.define("qx.test.data.controller.Form", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __form: null,
-      __tf1: null,
-      __tf2: null,
-      __cb: null,
-      __model: null,
+      __form__P_227_0: null,
+      __tf1__P_227_1: null,
+      __tf2__P_227_2: null,
+      __cb__P_227_3: null,
+      __model__P_227_4: null,
       setUp: function setUp() {
         // create the objects
-        this.__form = new qx.ui.form.Form();
-        this.__tf1 = new qx.ui.form.TextField();
-        this.__tf2 = new qx.ui.form.TextField("init");
-        this.__cb = new qx.ui.form.CheckBox();
-        this.__model = qx.data.marshal.Json.createModel({
+        this.__form__P_227_0 = new qx.ui.form.Form();
+        this.__tf1__P_227_1 = new qx.ui.form.TextField();
+        this.__tf2__P_227_2 = new qx.ui.form.TextField("init");
+        this.__cb__P_227_3 = new qx.ui.form.CheckBox();
+        this.__model__P_227_4 = qx.data.marshal.Json.createModel({
           tf1: null,
           tf2: null,
           cb: null
         }); // build the form
 
-        this.__form.add(this.__tf1, "label1", null, "tf1");
+        this.__form__P_227_0.add(this.__tf1__P_227_1, "label1", null, "tf1");
 
-        this.__form.add(this.__tf2, "label2", null, "tf2");
+        this.__form__P_227_0.add(this.__tf2__P_227_2, "label2", null, "tf2");
 
-        this.__form.add(this.__cb, "label3", null, "cb");
+        this.__form__P_227_0.add(this.__cb__P_227_3, "label3", null, "cb");
       },
       tearDown: function tearDown() {
-        this.__form.dispose();
+        this.__form__P_227_0.dispose();
 
-        this.__model.dispose();
+        this.__model__P_227_4.dispose();
 
-        this.__tf1.dispose();
+        this.__tf1__P_227_1.dispose();
 
-        this.__tf2.destroy();
+        this.__tf2__P_227_2.destroy();
 
-        this.__cb.destroy();
+        this.__cb__P_227_3.destroy();
       },
       testSetModelNull: function testSetModelNull() {
-        var c = new qx.data.controller.Form(this.__model, this.__form); // set some values
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // set some values
 
-        this.__tf1.setValue("1111");
+        this.__tf1__P_227_1.setValue("1111");
 
-        this.__tf2.setValue("2222");
+        this.__tf2__P_227_2.setValue("2222");
 
-        this.__cb.setValue(true); // set model to null
+        this.__cb__P_227_3.setValue(true); // set model to null
 
 
         c.setModel(null); // all values should be null as well
 
-        this.assertNull(this.__tf1.getValue());
-        this.assertNull(this.__tf2.getValue());
-        this.assertFalse(this.__cb.getValue());
+        this.assertNull(this.__tf1__P_227_1.getValue());
+        this.assertNull(this.__tf2__P_227_2.getValue());
+        this.assertFalse(this.__cb__P_227_3.getValue());
         c.dispose();
       },
       testInitialResetter: function testInitialResetter() {
         // create the controller which set the initial values and
         // saves them for resetting
-        var c = new qx.data.controller.Form(this.__model, this.__form);
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0);
 
-        this.__tf2.setValue("affe");
+        this.__tf2__P_227_2.setValue("affe");
 
-        this.__form.reset();
+        this.__form__P_227_0.reset();
 
-        this.assertEquals(null, this.__tf2.getValue());
+        this.assertEquals(null, this.__tf2__P_227_2.getValue());
         c.dispose();
       },
       testUnidirectionalDeep: function testUnidirectionalDeep() {
-        this.__form.dispose();
+        this.__form__P_227_0.dispose();
 
-        this.__form = new qx.ui.form.Form();
+        this.__form__P_227_0 = new qx.ui.form.Form();
 
-        this.__form.add(this.__tf1, "label1", null, "a.tf1");
+        this.__form__P_227_0.add(this.__tf1__P_227_1, "label1", null, "a.tf1");
 
-        this.__form.add(this.__tf2, "label2", null, "a.tf2"); // just create the controller
+        this.__form__P_227_0.add(this.__tf2__P_227_2, "label2", null, "a.tf2"); // just create the controller
 
 
-        var c = new qx.data.controller.Form(null, this.__form, true);
+        var c = new qx.data.controller.Form(null, this.__form__P_227_0, true);
         var model = c.createModel(); // check if the binding from the model to the view works
 
         model.getA().setTf1("affe");
-        this.assertEquals("affe", this.__tf1.getValue()); // check if the other direction does not work
+        this.assertEquals("affe", this.__tf1__P_227_1.getValue()); // check if the other direction does not work
 
-        this.__tf2.setValue("affee");
+        this.__tf2__P_227_2.setValue("affee");
 
         this.assertEquals("init", model.getA().getTf2()); // use the commit method
 
@@ -133,7 +133,7 @@
       },
       testUnidirectionalSelectionOptions: function testUnidirectionalSelectionOptions() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form, true);
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0, true);
         var sb = new qx.ui.form.SelectBox();
         var i1 = new qx.ui.form.ListItem("a").set({
           model: "a"
@@ -144,7 +144,7 @@
         sb.add(i1);
         sb.add(i2);
 
-        this.__form.add(sb, "Sb");
+        this.__form__P_227_0.add(sb, "Sb");
 
         c.setModel(null);
         c.addBindingOptions("Sb", {
@@ -170,7 +170,7 @@
       },
       testUnidirectionalOptions: function testUnidirectionalOptions() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form, true);
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0, true);
         c.addBindingOptions("tf1", {
           converter: function converter(data) {
             return data && data.substr(0, data.length - 1);
@@ -181,18 +181,18 @@
           }
         }); // check if the other direction does not work
 
-        this.__tf1.setValue("affe");
+        this.__tf1__P_227_1.setValue("affe");
 
-        this.assertEquals(null, this.__model.getTf1()); // use the commit method
+        this.assertEquals(null, this.__model__P_227_4.getTf1()); // use the commit method
 
         c.updateModel();
-        this.assertEquals("affea", this.__model.getTf1()); // destroy the controller
+        this.assertEquals("affea", this.__model__P_227_4.getTf1()); // destroy the controller
 
         c.dispose();
       },
       testUnidirectionalSelection: function testUnidirectionalSelection() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form, true);
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0, true);
         var sb = new qx.ui.form.SelectBox();
         var i1 = new qx.ui.form.ListItem("a").set({
           model: "a"
@@ -203,7 +203,7 @@
         sb.add(i1);
         sb.add(i2);
 
-        this.__form.add(sb, "Sb");
+        this.__form__P_227_0.add(sb, "Sb");
 
         var m = c.createModel(); // check that the init value is set
 
@@ -219,18 +219,18 @@
       },
       testUnidirectional: function testUnidirectional() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form, true); // check if the binding from the model to the view works
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0, true); // check if the binding from the model to the view works
 
-        this.__model.setTf1("affe");
+        this.__model__P_227_4.setTf1("affe");
 
-        this.assertEquals("affe", this.__tf1.getValue()); // check if the other direction does not work
+        this.assertEquals("affe", this.__tf1__P_227_1.getValue()); // check if the other direction does not work
 
-        this.__tf2.setValue("affee");
+        this.__tf2__P_227_2.setValue("affee");
 
-        this.assertEquals(null, this.__model.getTf2()); // use the commit method
+        this.assertEquals(null, this.__model__P_227_4.getTf2()); // use the commit method
 
         c.updateModel();
-        this.assertEquals("affee", this.__model.getTf2()); // destroy the controller
+        this.assertEquals("affee", this.__model__P_227_4.getTf2()); // destroy the controller
 
         c.dispose();
       },
@@ -245,84 +245,84 @@
       },
       testCreateWithModel: function testCreateWithModel() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model); // check for the properties
+        var c = new qx.data.controller.Form(this.__model__P_227_4); // check for the properties
 
-        this.assertEquals(this.__model, c.getModel());
+        this.assertEquals(this.__model__P_227_4, c.getModel());
         this.assertNull(c.getTarget()); // destroy the objects
 
         c.dispose();
       },
       testCreateWithForm: function testCreateWithForm() {
         // just create the controller
-        var c = new qx.data.controller.Form(null, this.__form); // check for the properties
+        var c = new qx.data.controller.Form(null, this.__form__P_227_0); // check for the properties
 
-        this.assertEquals(this.__form, c.getTarget());
+        this.assertEquals(this.__form__P_227_0, c.getTarget());
         this.assertNull(c.getModel()); // destroy the objects
 
         c.dispose();
       },
       testCreateWithBoth: function testCreateWithBoth() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form); // check for the properties
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // check for the properties
 
-        this.assertEquals(this.__form, c.getTarget());
-        this.assertEquals(this.__model, c.getModel()); // destroy the objects
+        this.assertEquals(this.__form__P_227_0, c.getTarget());
+        this.assertEquals(this.__model__P_227_4, c.getModel()); // destroy the objects
 
         c.dispose();
       },
       testBindingCreate: function testBindingCreate() {
         // create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form); // set values in the form
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // set values in the form
 
-        this.__tf1.setValue("1");
+        this.__tf1__P_227_1.setValue("1");
 
-        this.__tf2.setValue("2");
+        this.__tf2__P_227_2.setValue("2");
 
-        this.__cb.setValue(true); // check the binding
-
-
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(this.__cb.getValue(), this.__model.getCb()); // change the values
-
-        this.__tf1.setValue("11");
-
-        this.__tf2.setValue("21");
-
-        this.__cb.setValue(false); // check the binding
+        this.__cb__P_227_3.setValue(true); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(this.__cb.getValue(), this.__model.getCb()); // change the data in the model
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), this.__model__P_227_4.getCb()); // change the values
 
-        this.__model.setTf1("a");
+        this.__tf1__P_227_1.setValue("11");
 
-        this.__model.setTf2("b");
+        this.__tf2__P_227_2.setValue("21");
 
-        this.__model.setCb(true); // check the binding
+        this.__cb__P_227_3.setValue(false); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(this.__cb.getValue(), this.__model.getCb()); // destroy the objects
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), this.__model__P_227_4.getCb()); // change the data in the model
+
+        this.__model__P_227_4.setTf1("a");
+
+        this.__model__P_227_4.setTf2("b");
+
+        this.__model__P_227_4.setCb(true); // check the binding
+
+
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), this.__model__P_227_4.getCb()); // destroy the objects
 
         c.dispose();
       },
       testBindingChangeModel: function testBindingChangeModel() {
         // create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form); // set values in the form
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // set values in the form
 
-        this.__tf1.setValue("1");
+        this.__tf1__P_227_1.setValue("1");
 
-        this.__tf2.setValue("2");
+        this.__tf2__P_227_2.setValue("2");
 
-        this.__cb.setValue(true); // check the binding
+        this.__cb__P_227_3.setValue(true); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(this.__cb.getValue(), this.__model.getCb());
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), this.__model__P_227_4.getCb());
         var model2 = qx.data.marshal.Json.createModel({
           tf1: null,
           tf2: null,
@@ -330,37 +330,37 @@
         });
         c.setModel(model2); // set values in the form
 
-        this.__tf1.setValue("11");
+        this.__tf1__P_227_1.setValue("11");
 
-        this.__tf2.setValue("22");
+        this.__tf2__P_227_2.setValue("22");
 
-        this.__cb.setValue(false); // check the new model
+        this.__cb__P_227_3.setValue(false); // check the new model
 
 
-        this.assertEquals(this.__tf1.getValue(), model2.getTf1());
-        this.assertEquals(this.__tf2.getValue(), model2.getTf2());
-        this.assertEquals(this.__cb.getValue(), model2.getCb()); // check the old model
+        this.assertEquals(this.__tf1__P_227_1.getValue(), model2.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), model2.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), model2.getCb()); // check the old model
 
-        this.assertEquals("1", this.__model.getTf1());
-        this.assertEquals("2", this.__model.getTf2());
-        this.assertEquals(true, this.__model.getCb());
+        this.assertEquals("1", this.__model__P_227_4.getTf1());
+        this.assertEquals("2", this.__model__P_227_4.getTf2());
+        this.assertEquals(true, this.__model__P_227_4.getCb());
         model2.dispose();
         c.dispose();
       },
       testBindingChangeForm: function testBindingChangeForm() {
         // create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form); // set values in the form
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // set values in the form
 
-        this.__tf1.setValue("1");
+        this.__tf1__P_227_1.setValue("1");
 
-        this.__tf2.setValue("2");
+        this.__tf2__P_227_2.setValue("2");
 
-        this.__cb.setValue(true); // check the binding
+        this.__cb__P_227_3.setValue(true); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(this.__cb.getValue(), this.__model.getCb()); // create a new form
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), this.__model__P_227_4.getCb()); // create a new form
 
         var form = new qx.ui.form.Form();
         var tf1 = new qx.ui.form.TextField();
@@ -375,13 +375,13 @@
         tf2.setValue("22");
         cb.setValue(false); // check the binding
 
-        this.assertEquals(tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(cb.getValue(), this.__model.getCb()); // check the old from
+        this.assertEquals(tf1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(tf2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(cb.getValue(), this.__model__P_227_4.getCb()); // check the old from
 
-        this.assertEquals(this.__tf1.getValue(), "1");
-        this.assertEquals(this.__tf2.getValue(), "2");
-        this.assertEquals(this.__cb.getValue(), true);
+        this.assertEquals(this.__tf1__P_227_1.getValue(), "1");
+        this.assertEquals(this.__tf2__P_227_2.getValue(), "2");
+        this.assertEquals(this.__cb__P_227_3.getValue(), true);
         form.dispose();
         tf1.destroy();
         tf2.destroy();
@@ -450,7 +450,7 @@
         selectBox.add(i1);
         selectBox.add(i2); // add the selectBox to the form
 
-        this.__form.add(selectBox, "sb");
+        this.__form__P_227_0.add(selectBox, "sb");
 
         var model = qx.data.marshal.Json.createModel({
           tf1: null,
@@ -459,7 +459,7 @@
           sb: null
         }); // create the controller
 
-        var c = new qx.data.controller.Form(model, this.__form); // set the selection
+        var c = new qx.data.controller.Form(model, this.__form__P_227_0); // set the selection
 
         selectBox.setSelection([i1]); // check the selection
 
@@ -476,14 +476,14 @@
       },
       testModelCreation: function testModelCreation() {
         // set some initial values in the form
-        this.__tf1.setValue("A");
+        this.__tf1__P_227_1.setValue("A");
 
-        this.__tf2.setValue("B");
+        this.__tf2__P_227_2.setValue("B");
 
-        this.__cb.setValue(true); // create the controller
+        this.__cb__P_227_3.setValue(true); // create the controller
 
 
-        var c = new qx.data.controller.Form(null, this.__form);
+        var c = new qx.data.controller.Form(null, this.__form__P_227_0);
         c.addBindingOptions("tf1", {
           converter: function converter(data) {
             return data && data.substr(0, 1);
@@ -495,45 +495,45 @@
         });
         var model = c.createModel(); // check if the model and the form still have the initial value
 
-        this.assertEquals("A", this.__tf1.getValue());
-        this.assertEquals("B", this.__tf2.getValue());
-        this.assertTrue(this.__cb.getValue());
+        this.assertEquals("A", this.__tf1__P_227_1.getValue());
+        this.assertEquals("B", this.__tf2__P_227_2.getValue());
+        this.assertTrue(this.__cb__P_227_3.getValue());
         this.assertEquals("A-", model.getTf1());
         this.assertEquals("B", model.getTf2());
         this.assertTrue(model.getCb()); // set values in the form
 
-        this.__tf1.setValue("1");
+        this.__tf1__P_227_1.setValue("1");
 
-        this.__tf2.setValue("2");
+        this.__tf2__P_227_2.setValue("2");
 
-        this.__cb.setValue(true); // check the binding
-
-
-        this.assertEquals(this.__tf1.getValue() + "-", model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), model.getTf2());
-        this.assertEquals(this.__cb.getValue(), model.getCb()); // change the values
-
-        this.__tf1.setValue("11");
-
-        this.__tf2.setValue("21");
-
-        this.__cb.setValue(false); // check the binding
+        this.__cb__P_227_3.setValue(true); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue() + "-", model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), model.getTf2());
-        this.assertEquals(this.__cb.getValue(), model.getCb()); // change the data in the model
+        this.assertEquals(this.__tf1__P_227_1.getValue() + "-", model.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), model.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), model.getCb()); // change the values
 
-        this.__model.setTf1("a");
+        this.__tf1__P_227_1.setValue("11");
 
-        this.__model.setTf2("b");
+        this.__tf2__P_227_2.setValue("21");
 
-        this.__model.setCb(true); // check the binding
+        this.__cb__P_227_3.setValue(false); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue() + "-", model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), model.getTf2());
-        this.assertEquals(this.__cb.getValue(), model.getCb()); // destroy the objects
+        this.assertEquals(this.__tf1__P_227_1.getValue() + "-", model.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), model.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), model.getCb()); // change the data in the model
+
+        this.__model__P_227_4.setTf1("a");
+
+        this.__model__P_227_4.setTf2("b");
+
+        this.__model__P_227_4.setCb(true); // check the binding
+
+
+        this.assertEquals(this.__tf1__P_227_1.getValue() + "-", model.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), model.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), model.getCb()); // destroy the objects
 
         c.dispose();
         model.dispose();
@@ -602,12 +602,12 @@
         }]);
         var listController = new qx.data.controller.List(listModel, selectBox, "name"); // add the selectBox to the form
 
-        this.__form.add(selectBox, "sb"); // select something which is not the default selection
+        this.__form__P_227_0.add(selectBox, "sb"); // select something which is not the default selection
 
 
         listController.getSelection().setItem(0, listModel.getItem(1)); // create the controller
 
-        var c = new qx.data.controller.Form(null, this.__form);
+        var c = new qx.data.controller.Form(null, this.__form__P_227_0);
         var model = c.createModel(); // check the init value of the model selection
 
         this.assertEquals(listModel.getItem(1), model.getSb()); // set the selection
@@ -636,12 +636,12 @@
         selectBox.add(i2);
         selectBox.setSelection([i1]); // add the selectBox to the form
 
-        this.__form.add(selectBox, "sb"); // select something which is not the default selection
+        this.__form__P_227_0.add(selectBox, "sb"); // select something which is not the default selection
 
 
         selectBox.setSelection([i2]); // create the controller
 
-        var c = new qx.data.controller.Form(null, this.__form);
+        var c = new qx.data.controller.Form(null, this.__form__P_227_0);
         var model = c.createModel(); // check the init value of the model selection
 
         this.assertEquals("2", model.getSb()); // set the selection
@@ -669,9 +669,9 @@
         selectBox.add(i1);
         selectBox.add(i2); // add the selectBox to the form
 
-        this.__form.add(selectBox, "sb");
+        this.__form__P_227_0.add(selectBox, "sb");
 
-        this.__form.add(this.__tf1, "tf1");
+        this.__form__P_227_0.add(this.__tf1__P_227_1, "tf1");
 
         var model = qx.data.marshal.Json.createModel({
           tf1: null,
@@ -680,7 +680,7 @@
           sb: null
         }); // create the controller
 
-        var c = new qx.data.controller.Form(model, this.__form); // set the selection
+        var c = new qx.data.controller.Form(model, this.__form__P_227_0); // set the selection
 
         selectBox.setSelection([i1]); // check the selection
 
@@ -690,26 +690,26 @@
 
         this.assertEquals(selectBox.getSelection()[0].getModel(), model.getSb()); // check the textfield
 
-        this.assertEquals(this.__tf1.getValue(), model.getTf1()); // change the values
+        this.assertEquals(this.__tf1__P_227_1.getValue(), model.getTf1()); // change the values
 
-        this.__tf1.setValue("11"); // check the binding
+        this.__tf1__P_227_1.setValue("11"); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), model.getTf1()); // change the data in the model
+        this.assertEquals(this.__tf1__P_227_1.getValue(), model.getTf1()); // change the data in the model
 
         model.setTf1("a"); // check the binding
 
-        this.assertEquals(this.__tf1.getValue(), model.getTf1()); // remove the target
+        this.assertEquals(this.__tf1__P_227_1.getValue(), model.getTf1()); // remove the target
 
         c.setTarget(null); // change the values in the model
 
         model.setTf1("affe");
         model.setSb("1"); // check the form items
 
-        this.assertEquals("a", this.__tf1.getValue());
+        this.assertEquals("a", this.__tf1__P_227_1.getValue());
         this.assertEquals("2", selectBox.getSelection()[0].getModel()); // change the values in the items
 
-        this.__tf1.setValue("viele affen");
+        this.__tf1__P_227_1.setValue("viele affen");
 
         selectBox.setSelection([i1]); // check the model
 
@@ -723,7 +723,7 @@
       },
       testOptions: function testOptions() {
         // create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form); // add the options
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // add the options
 
         var tf2model = {
           converter: function converter(data) {
@@ -737,29 +737,29 @@
         };
         c.addBindingOptions("tf1", model2tf, tf2model); // set values in the form
 
-        this.__tf1.setValue("1");
+        this.__tf1__P_227_1.setValue("1");
 
-        this.__tf2.setValue("2"); // check the binding
-
-
-        this.assertEquals("X" + this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2()); // change the values
-
-        this.__tf1.setValue("11");
-
-        this.__tf2.setValue("21"); // check the binding
+        this.__tf2__P_227_2.setValue("2"); // check the binding
 
 
-        this.assertEquals("X" + this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2()); // change the data in the model
+        this.assertEquals("X" + this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2()); // change the values
 
-        this.__model.setTf1("Xa");
+        this.__tf1__P_227_1.setValue("11");
 
-        this.__model.setTf2("b"); // check the binding
+        this.__tf2__P_227_2.setValue("21"); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1().substring(1));
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2()); // destroy the objects
+        this.assertEquals("X" + this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2()); // change the data in the model
+
+        this.__model__P_227_4.setTf1("Xa");
+
+        this.__model__P_227_4.setTf2("b"); // check the binding
+
+
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1().substring(1));
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2()); // destroy the objects
 
         c.dispose();
       },
@@ -833,33 +833,33 @@
       },
       testDispose: function testDispose() {
         // just create the controller
-        var c = new qx.data.controller.Form(this.__model, this.__form); // destroy the objects
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // destroy the objects
 
         c.dispose(); // check if the bindings has been removed
 
-        this.__model.setTf1("AFFE");
+        this.__model__P_227_4.setTf1("AFFE");
 
-        this.assertNotEquals("AFFE", this.__tf1.getValue());
+        this.assertNotEquals("AFFE", this.__tf1__P_227_1.getValue());
       },
       testBindingCreateMissingOne: function testBindingCreateMissingOne() {
         // add an unknown item
         var tf = new qx.ui.form.TextField();
 
-        this.__form.add(tf, "Unknown"); // create the controller
+        this.__form__P_227_0.add(tf, "Unknown"); // create the controller
 
 
-        var c = new qx.data.controller.Form(this.__model, this.__form); // set values in the form
+        var c = new qx.data.controller.Form(this.__model__P_227_4, this.__form__P_227_0); // set values in the form
 
-        this.__tf1.setValue("1");
+        this.__tf1__P_227_1.setValue("1");
 
-        this.__tf2.setValue("2");
+        this.__tf2__P_227_2.setValue("2");
 
-        this.__cb.setValue(true); // check the binding
+        this.__cb__P_227_3.setValue(true); // check the binding
 
 
-        this.assertEquals(this.__tf1.getValue(), this.__model.getTf1());
-        this.assertEquals(this.__tf2.getValue(), this.__model.getTf2());
-        this.assertEquals(this.__cb.getValue(), this.__model.getCb()); // destroy the objects
+        this.assertEquals(this.__tf1__P_227_1.getValue(), this.__model__P_227_4.getTf1());
+        this.assertEquals(this.__tf2__P_227_2.getValue(), this.__model__P_227_4.getTf2());
+        this.assertEquals(this.__cb__P_227_3.getValue(), this.__model__P_227_4.getCb()); // destroy the objects
 
         tf.destroy();
         c.dispose();
@@ -869,4 +869,4 @@
   qx.test.data.controller.Form.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Form.js.map?dt=1589218256300
+//# sourceMappingURL=Form.js.map?dt=1591362977382

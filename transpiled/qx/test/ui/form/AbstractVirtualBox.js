@@ -36,54 +36,54 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__selectBox = new qx.ui.form.VirtualSelectBox();
-        this.getRoot().add(this.__selectBox);
-        this.__comboBox = new qx.ui.form.VirtualComboBox();
-        this.getRoot().add(this.__comboBox);
+        this.__selectBox__P_296_0 = new qx.ui.form.VirtualSelectBox();
+        this.getRoot().add(this.__selectBox__P_296_0);
+        this.__comboBox__P_296_1 = new qx.ui.form.VirtualComboBox();
+        this.getRoot().add(this.__comboBox__P_296_1);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.AbstractVirtualBox.prototype.tearDown.base.call(this);
 
-        this.__selectBox.dispose();
+        this.__selectBox__P_296_0.dispose();
 
-        this.__selectBox = null;
+        this.__selectBox__P_296_0 = null;
 
-        this.__comboBox.dispose();
+        this.__comboBox__P_296_1.dispose();
 
-        this.__comboBox = null;
+        this.__comboBox__P_296_1 = null;
       },
       testStatePopupOpen: function testStatePopupOpen() {
-        this.__selectBox.open();
+        this.__selectBox__P_296_0.open();
 
         this.flush();
-        this.assertTrue(this.__selectBox.hasState("popupOpen"));
+        this.assertTrue(this.__selectBox__P_296_0.hasState("popupOpen"));
 
-        this.__selectBox.close();
-
-        this.flush();
-        this.assertFalse(this.__selectBox.hasState("popupOpen"));
-
-        this.__comboBox.open();
+        this.__selectBox__P_296_0.close();
 
         this.flush();
-        this.assertTrue(this.__comboBox.hasState("popupOpen"));
+        this.assertFalse(this.__selectBox__P_296_0.hasState("popupOpen"));
 
-        this.__comboBox.close();
+        this.__comboBox__P_296_1.open();
 
         this.flush();
-        this.assertFalse(this.__comboBox.hasState("popupOpen"));
+        this.assertTrue(this.__comboBox__P_296_1.hasState("popupOpen"));
+
+        this.__comboBox__P_296_1.close();
+
+        this.flush();
+        this.assertFalse(this.__comboBox__P_296_1.hasState("popupOpen"));
       },
       testListLengthAfterModelChangeSelectBox: function testListLengthAfterModelChangeSelectBox() {
         var model = new qx.data.Array(["a", "b", "c"]);
 
-        this.__selectBox.setModel(model);
+        this.__selectBox__P_296_0.setModel(model);
 
-        this.__selectBox.open();
+        this.__selectBox__P_296_0.open();
 
         this.flush();
 
-        var dropDown = this.__selectBox.getChildControl("dropdown");
+        var dropDown = this.__selectBox__P_296_0.getChildControl("dropdown");
 
         var firstHeight = dropDown.getBounds().height;
         this.assertPositiveInteger(firstHeight);
@@ -94,20 +94,20 @@
         this.assertNotEquals(secondHeight, firstHeight);
         this.assertTrue(secondHeight > firstHeight);
 
-        this.__selectBox.close();
+        this.__selectBox__P_296_0.close();
 
-        this.__selectBox.resetModel();
+        this.__selectBox__P_296_0.resetModel();
       },
       testListLengthAfterModelChangeComboBox: function testListLengthAfterModelChangeComboBox() {
         var model = new qx.data.Array(["a", "b", "c"]);
 
-        this.__comboBox.setModel(model);
+        this.__comboBox__P_296_1.setModel(model);
 
-        this.__comboBox.open();
+        this.__comboBox__P_296_1.open();
 
         this.flush();
 
-        var dropDown = this.__comboBox.getChildControl("dropdown");
+        var dropDown = this.__comboBox__P_296_1.getChildControl("dropdown");
 
         var firstHeight = dropDown.getBounds().height;
         this.assertPositiveInteger(firstHeight);
@@ -118,13 +118,13 @@
         this.assertNotEquals(secondHeight, firstHeight);
         this.assertTrue(secondHeight > firstHeight);
 
-        this.__comboBox.close();
+        this.__comboBox__P_296_1.close();
 
-        this.__comboBox.resetModel();
+        this.__comboBox__P_296_1.resetModel();
       }
     }
   });
   qx.test.ui.form.AbstractVirtualBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractVirtualBox.js.map?dt=1589218263492
+//# sourceMappingURL=AbstractVirtualBox.js.map?dt=1591362985694

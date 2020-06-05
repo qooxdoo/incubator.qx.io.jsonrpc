@@ -34,58 +34,58 @@
   qx.Class.define("qx.test.type.Array", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __arr: null,
+      __arr__P_278_0: null,
       setUp: function setUp() {
-        this.__arr = new qx.type.Array("x");
+        this.__arr__P_278_0 = new qx.type.Array("x");
       },
       testConstruct: function testConstruct() {
-        this.assertEquals(this.__arr[0], "x");
+        this.assertEquals(this.__arr__P_278_0[0], "x");
       },
       testAppend: function testAppend() {
         // native array
-        this.__arr.append([1, 2]);
+        this.__arr__P_278_0.append([1, 2]);
 
-        this.assertEquals(this.__arr[1], 1);
-        this.assertEquals(this.__arr[2], 2); // type array
+        this.assertEquals(this.__arr__P_278_0[1], 1);
+        this.assertEquals(this.__arr__P_278_0[2], 2); // type array
 
         var a = new qx.type.Array(3, 4);
 
-        this.__arr.append(a);
+        this.__arr__P_278_0.append(a);
 
-        this.assertEquals(this.__arr[3], 3);
-        this.assertEquals(this.__arr[4], 4); // type base array
+        this.assertEquals(this.__arr__P_278_0[3], 3);
+        this.assertEquals(this.__arr__P_278_0[4], 4); // type base array
 
         var b = new qx.type.BaseArray(5, 6);
 
-        this.__arr.append(b);
+        this.__arr__P_278_0.append(b);
 
-        this.assertEquals(this.__arr[5], 5);
-        this.assertEquals(this.__arr[6], 6);
+        this.assertEquals(this.__arr__P_278_0[5], 5);
+        this.assertEquals(this.__arr__P_278_0[6], 6);
       },
       testPrepend: function testPrepend() {
         // native array
-        this.__arr.prepend([1, 2]);
+        this.__arr__P_278_0.prepend([1, 2]);
 
-        this.assertEquals(this.__arr[0], 1);
-        this.assertEquals(this.__arr[1], 2); // type array
+        this.assertEquals(this.__arr__P_278_0[0], 1);
+        this.assertEquals(this.__arr__P_278_0[1], 2); // type array
 
         var a = new qx.type.Array(3, 4);
 
-        this.__arr.prepend(a);
+        this.__arr__P_278_0.prepend(a);
 
-        this.assertEquals(this.__arr[0], 3);
-        this.assertEquals(this.__arr[1], 4); // type base array
+        this.assertEquals(this.__arr__P_278_0[0], 3);
+        this.assertEquals(this.__arr__P_278_0[1], 4); // type base array
 
         var b = new qx.type.BaseArray(5, 6);
 
-        this.__arr.prepend(b);
+        this.__arr__P_278_0.prepend(b);
 
-        this.assertEquals(this.__arr[0], 5);
-        this.assertEquals(this.__arr[1], 6);
+        this.assertEquals(this.__arr__P_278_0[0], 5);
+        this.assertEquals(this.__arr__P_278_0[1], 6);
       }
     }
   });
   qx.test.type.Array.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Array.js.map?dt=1589218262188
+//# sourceMappingURL=Array.js.map?dt=1591362984140

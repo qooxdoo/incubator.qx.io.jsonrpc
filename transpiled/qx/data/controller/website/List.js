@@ -122,18 +122,18 @@
       }
     },
     members: {
-      __changeModelListenerId: null,
-      __changeBubbleModelListenerId: null,
+      __changeModelListenerId__P_93_0: null,
+      __changeBubbleModelListenerId__P_93_1: null,
       // property apply
       _applyModel: function _applyModel(value, old) {
         // remove the old listener
         if (old != undefined) {
-          if (this.__changeModelListenerId != undefined) {
-            old.removeListenerById(this.__changeModelListenerId);
+          if (this.__changeModelListenerId__P_93_0 != undefined) {
+            old.removeListenerById(this.__changeModelListenerId__P_93_0);
           }
 
-          if (this.__changeBubbleModelListenerId != undefined) {
-            old.removeListenerById(this.__changeBubbleModelListenerId);
+          if (this.__changeBubbleModelListenerId__P_93_1 != undefined) {
+            old.removeListenerById(this.__changeBubbleModelListenerId__P_93_1);
           }
         } // if a model is set
 
@@ -142,14 +142,14 @@
           // only for qooxdoo models
           if (value instanceof qx.core.Object) {
             // add new listeners
-            this.__changeModelListenerId = value.addListener("change", this.update, this);
-            this.__changeBubbleModelListenerId = value.addListener("changeBubble", this.update, this);
+            this.__changeModelListenerId__P_93_0 = value.addListener("change", this.update, this);
+            this.__changeBubbleModelListenerId__P_93_1 = value.addListener("changeBubble", this.update, this);
           }
         } else {
           var target = this.getTarget(); // if the model is set to null, we should remove all items in the target
 
           if (target != null) {
-            this.__emptyTarget();
+            this.__emptyTarget__P_93_2();
           }
         }
 
@@ -171,7 +171,7 @@
       /**
        * Responsible for removing all items from the target element.
        */
-      __emptyTarget: function __emptyTarget() {
+      __emptyTarget__P_93_2: function __emptyTarget__P_93_2() {
         var target = this.getTarget();
 
         for (var i = target.children.length - 1; i >= 0; i--) {
@@ -209,7 +209,7 @@
         } // empty the target
 
 
-        this.__emptyTarget(); // delegate methods
+        this.__emptyTarget__P_93_2(); // delegate methods
 
 
         var configureItem = this.getDelegate() && this.getDelegate().configureItem;
@@ -262,4 +262,4 @@
   qx.data.controller.website.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1589218243260
+//# sourceMappingURL=List.js.map?dt=1591362963209

@@ -37,42 +37,42 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__radioGroup = new qx.ui.form.RadioGroup();
+        this.__radioGroup__P_314_0 = new qx.ui.form.RadioGroup();
 
-        this.__radioGroup.setAllowEmptySelection(true);
+        this.__radioGroup__P_314_0.setAllowEmptySelection(true);
 
-        this.__radioButtons = [];
+        this.__radioButtons__P_314_1 = [];
         var radioButton;
 
         for (var i = 0, j = 3; i < j; i++) {
           radioButton = new qx.ui.form.RadioButton("option " + i);
           radioButton.setModel("option" + i);
 
-          this.__radioButtons.push(radioButton);
+          this.__radioButtons__P_314_1.push(radioButton);
 
-          this.__radioGroup.add(radioButton);
+          this.__radioGroup__P_314_0.add(radioButton);
         }
       },
       tearDown: function tearDown() {
         qx.test.ui.form.RadioGroup.prototype.tearDown.base.call(this);
         var radioButton;
 
-        for (var i = 0, j = this.__radioButtons.length; i < j; i++) {
-          this.__radioGroup.remove(this.__radioButtons[i]);
+        for (var i = 0, j = this.__radioButtons__P_314_1.length; i < j; i++) {
+          this.__radioGroup__P_314_0.remove(this.__radioButtons__P_314_1[i]);
 
-          radioButton = this.__radioButtons.shift();
+          radioButton = this.__radioButtons__P_314_1.shift();
           radioButton.dispose();
         }
 
-        this.__radioGroup.dispose();
+        this.__radioGroup__P_314_0.dispose();
 
-        this.__radioButtons = null;
+        this.__radioButtons__P_314_1 = null;
       },
       testHiddenRadioButtons: function testHiddenRadioButtons() {
         var composite = new qx.ui.container.Composite();
 
-        for (var i = 0, j = this.__radioButtons.length; i < j; i++) {
-          composite.add(this.__radioButtons[i]);
+        for (var i = 0, j = this.__radioButtons__P_314_1.length; i < j; i++) {
+          composite.add(this.__radioButtons__P_314_1[i]);
         }
 
         this.getRoot().add(composite, {
@@ -80,19 +80,19 @@
           top: 50
         }); // check the 'modelSelection' with all radio buttons visible
 
-        this.__radioGroup.setModelSelection([this.__radioButtons[1].getModel()]);
+        this.__radioGroup__P_314_0.setModelSelection([this.__radioButtons__P_314_1[1].getModel()]);
 
-        this.assertEquals(this.__radioButtons[1].getModel(), this.__radioGroup.getModelSelection().getItem(0), "Model selection does not work correctly!");
-        this.assertTrue(this.__radioGroup.isSelected(this.__radioButtons[1]), "Wrong radio button selected!"); // now hide the radio group and check if the selection change still works
+        this.assertEquals(this.__radioButtons__P_314_1[1].getModel(), this.__radioGroup__P_314_0.getModelSelection().getItem(0), "Model selection does not work correctly!");
+        this.assertTrue(this.__radioGroup__P_314_0.isSelected(this.__radioButtons__P_314_1[1]), "Wrong radio button selected!"); // now hide the radio group and check if the selection change still works
 
-        for (var i = 0, j = this.__radioButtons.length; i < j; i++) {
-          this.__radioButtons[i].exclude();
+        for (var i = 0, j = this.__radioButtons__P_314_1.length; i < j; i++) {
+          this.__radioButtons__P_314_1[i].exclude();
         }
 
-        this.__radioGroup.setModelSelection([this.__radioButtons[0].getModel()]);
+        this.__radioGroup__P_314_0.setModelSelection([this.__radioButtons__P_314_1[0].getModel()]);
 
-        this.assertEquals(this.__radioButtons[0].getModel(), this.__radioGroup.getModelSelection().getItem(0), "Model selection does not work correctly!");
-        this.assertTrue(this.__radioGroup.isSelected(this.__radioButtons[0]), "Hidden radio button not selected!");
+        this.assertEquals(this.__radioButtons__P_314_1[0].getModel(), this.__radioGroup__P_314_0.getModelSelection().getItem(0), "Model selection does not work correctly!");
+        this.assertTrue(this.__radioGroup__P_314_0.isSelected(this.__radioButtons__P_314_1[0]), "Hidden radio button not selected!");
         composite.destroy();
       },
 
@@ -153,4 +153,4 @@
   qx.test.ui.form.RadioGroup.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RadioGroup.js.map?dt=1589218264311
+//# sourceMappingURL=RadioGroup.js.map?dt=1591362986613

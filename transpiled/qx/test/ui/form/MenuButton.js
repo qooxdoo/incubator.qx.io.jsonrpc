@@ -36,66 +36,66 @@
   qx.Class.define("qx.test.ui.form.MenuButton", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __menu: null,
-      __menuButton: null,
+      __menu__P_308_0: null,
+      __menuButton__P_308_1: null,
       setUp: function setUp() {
         qx.test.ui.form.MenuButton.prototype.setUp.base.call(this);
-        this.__menu = new qx.ui.menu.Menu();
+        this.__menu__P_308_0 = new qx.ui.menu.Menu();
 
-        this.__menu.add(new qx.ui.menu.Button("Undo"));
+        this.__menu__P_308_0.add(new qx.ui.menu.Button("Undo"));
 
-        this.__menu.add(new qx.ui.menu.Button("Redo"));
+        this.__menu__P_308_0.add(new qx.ui.menu.Button("Redo"));
 
-        this.__menu.add(new qx.ui.menu.Button("Cut"));
+        this.__menu__P_308_0.add(new qx.ui.menu.Button("Cut"));
 
-        this.__menuButton = new qx.ui.form.MenuButton("Menu Button", null, this.__menu);
-        this.getRoot().add(this.__menuButton);
+        this.__menuButton__P_308_1 = new qx.ui.form.MenuButton("Menu Button", null, this.__menu__P_308_0);
+        this.getRoot().add(this.__menuButton__P_308_1);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.MenuButton.prototype.tearDown.base.call(this);
 
-        var buttons = this.__menu.getChildren();
+        var buttons = this.__menu__P_308_0.getChildren();
 
         for (var i = 0; i < buttons.length; i++) {
           buttons[i].dispose();
         }
 
-        this.__menu.dispose();
+        this.__menu__P_308_0.dispose();
 
-        this.__menuButton.dispose();
+        this.__menuButton__P_308_1.dispose();
 
         this.flush();
       },
       testOpen: function testOpen() {
-        this.__menuButton.open();
+        this.__menuButton__P_308_1.open();
 
-        this.assertTrue(this.__menu.isVisible());
-        this.assertNull(this.__menu.getSelectedButton());
+        this.assertTrue(this.__menu__P_308_0.isVisible());
+        this.assertNull(this.__menu__P_308_0.getSelectedButton());
         qx.ui.menu.Manager.getInstance().hideAll();
-        this.assertFalse(this.__menu.isVisible());
+        this.assertFalse(this.__menu__P_308_0.isVisible());
       },
       testOpenSelectFirst: function testOpenSelectFirst() {
-        this.__menuButton.open(true);
+        this.__menuButton__P_308_1.open(true);
 
-        this.assertTrue(this.__menu.isVisible());
-        this.assertEquals(this.__menu.getChildren()[0], this.__menu.getSelectedButton());
+        this.assertTrue(this.__menu__P_308_0.isVisible());
+        this.assertEquals(this.__menu__P_308_0.getChildren()[0], this.__menu__P_308_0.getSelectedButton());
         qx.ui.menu.Manager.getInstance().hideAll();
-        this.assertFalse(this.__menu.isVisible());
+        this.assertFalse(this.__menu__P_308_0.isVisible());
       },
       testOpenSelectFirstWithDisabledElement: function testOpenSelectFirstWithDisabledElement() {
-        this.__menu.getChildren()[0].setEnabled(false);
+        this.__menu__P_308_0.getChildren()[0].setEnabled(false);
 
-        this.__menuButton.open(true);
+        this.__menuButton__P_308_1.open(true);
 
-        this.assertTrue(this.__menu.isVisible());
-        this.assertEquals(this.__menu.getChildren()[1], this.__menu.getSelectedButton());
+        this.assertTrue(this.__menu__P_308_0.isVisible());
+        this.assertEquals(this.__menu__P_308_0.getChildren()[1], this.__menu__P_308_0.getSelectedButton());
         qx.ui.menu.Manager.getInstance().hideAll();
-        this.assertFalse(this.__menu.isVisible());
+        this.assertFalse(this.__menu__P_308_0.isVisible());
       }
     }
   });
   qx.test.ui.form.MenuButton.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MenuButton.js.map?dt=1589218264112
+//# sourceMappingURL=MenuButton.js.map?dt=1591362986406

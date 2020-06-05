@@ -38,71 +38,71 @@
   qx.Class.define("qx.test.mobile.form.SingleRenderer", {
     extend: qx.test.mobile.MobileTestCase,
     members: {
-      __form: null,
-      __b: null,
-      __t: null,
-      __s: null,
+      __form__P_262_0: null,
+      __b__P_262_1: null,
+      __t__P_262_2: null,
+      __s__P_262_3: null,
       setUp: function setUp() {
         qx.test.mobile.form.SingleRenderer.prototype.setUp.base.call(this);
-        this.__form = new qx.ui.mobile.form.Form();
-        this.__b = new qx.ui.mobile.form.Button("a");
+        this.__form__P_262_0 = new qx.ui.mobile.form.Form();
+        this.__b__P_262_1 = new qx.ui.mobile.form.Button("a");
 
-        this.__form.addButton(this.__b);
+        this.__form__P_262_0.addButton(this.__b__P_262_1);
 
-        this.__t = new qx.ui.mobile.form.TextField("test");
+        this.__t__P_262_2 = new qx.ui.mobile.form.TextField("test");
 
-        this.__form.add(this.__t, "label");
+        this.__form__P_262_0.add(this.__t__P_262_2, "label");
 
         var dd = new qx.data.Array(["1"]);
-        this.__s = new qx.ui.mobile.form.SelectBox();
+        this.__s__P_262_3 = new qx.ui.mobile.form.SelectBox();
 
-        this.__s.setModel(dd);
+        this.__s__P_262_3.setModel(dd);
 
-        this.__form.add(this.__s, "select");
+        this.__form__P_262_0.add(this.__s__P_262_3, "select");
 
-        this.__renderer = new qx.ui.mobile.form.renderer.Single(this.__form);
-        this.getRoot().add(this.__renderer);
+        this.__renderer__P_262_4 = new qx.ui.mobile.form.renderer.Single(this.__form__P_262_0);
+        this.getRoot().add(this.__renderer__P_262_4);
       },
       tearDown: function tearDown() {
-        this.__b.dispose();
+        this.__b__P_262_1.dispose();
 
-        this.__t.dispose();
+        this.__t__P_262_2.dispose();
 
-        this.__s.dispose();
+        this.__s__P_262_3.dispose();
 
-        this.__form.dispose();
+        this.__form__P_262_0.dispose();
 
-        this.__renderer.dispose();
+        this.__renderer__P_262_4.dispose();
 
         qx.test.mobile.form.SingleRenderer.prototype.tearDown.base.call(this);
       },
       testShowHideRow: function testShowHideRow() {
-        this.__renderer.hideItem(this.__b);
+        this.__renderer__P_262_4.hideItem(this.__b__P_262_1);
 
-        var isHidden = this.__b.getLayoutParent().hasCssClass("exclude");
+        var isHidden = this.__b__P_262_1.getLayoutParent().hasCssClass("exclude");
 
         this.assertTrue(isHidden, "Buttons parent is expected to contain 'exclude' class");
 
-        this.__renderer.showItem(this.__b);
+        this.__renderer__P_262_4.showItem(this.__b__P_262_1);
 
-        isHidden = this.__b.getLayoutParent().hasCssClass("exclude");
+        isHidden = this.__b__P_262_1.getLayoutParent().hasCssClass("exclude");
         this.assertFalse(isHidden, "Button parent is expected to not contain 'exclude' class anymore");
       },
       testItemRow: function testItemRow() {
-        this.assertNotNull(this.__renderer._getChildren()[0]);
-        this.assertTrue(2 === this.__renderer._getChildren()[1]._getChildren().length); // we have a label and a form element in the row
+        this.assertNotNull(this.__renderer__P_262_4._getChildren()[0]);
+        this.assertTrue(2 === this.__renderer__P_262_4._getChildren()[1]._getChildren().length); // we have a label and a form element in the row
       },
       testButtonRow: function testButtonRow() {
-        this.assertNotNull(this.__renderer._getChildren()[5]);
+        this.assertNotNull(this.__renderer__P_262_4._getChildren()[5]);
 
-        var buttonRowLength = this.__renderer._getChildren()[5]._getChildren().length;
+        var buttonRowLength = this.__renderer__P_262_4._getChildren()[5]._getChildren().length;
 
         this.assertTrue(1 === buttonRowLength); // we have only the button in the row
       },
       testTwoLinesRow: function testTwoLinesRow() {
-        this.assertNotNull(this.__renderer._getChildren()[3]);
+        this.assertNotNull(this.__renderer__P_262_4._getChildren()[3]);
 
-        var rowLength = this.__renderer._getChildren()[3]._getChildren().length;
+        var rowLength = this.__renderer__P_262_4._getChildren()[3]._getChildren().length;
 
         this.assertTrue(2 === rowLength);
       }
@@ -111,4 +111,4 @@
   qx.test.mobile.form.SingleRenderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SingleRenderer.js.map?dt=1589218261117
+//# sourceMappingURL=SingleRenderer.js.map?dt=1591362982958

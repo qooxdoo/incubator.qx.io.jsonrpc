@@ -106,20 +106,20 @@
   qx.Bootstrap.define("qx.application.Routing", {
     implement: [qx.core.IDisposable],
     construct: function construct() {
-      this.__messaging = new qx.event.Messaging();
-      this.__navigationHandler = qx.bom.History.getInstance();
+      this.__messaging__P_12_0 = new qx.event.Messaging();
+      this.__navigationHandler__P_12_1 = qx.bom.History.getInstance();
 
-      this.__navigationHandler.addListener("changeState", this.__onChangeHash, this);
+      this.__navigationHandler__P_12_1.addListener("changeState", this.__onChangeHash__P_12_2, this);
     },
     statics: {
       DEFAULT_PATH: "/",
-      __back: [],
-      __forward: []
+      __back__P_12_3: [],
+      __forward__P_12_4: []
     },
     members: {
-      __navigationHandler: null,
-      __messaging: null,
-      __currentGetPath: null,
+      __navigationHandler__P_12_1: null,
+      __messaging__P_12_0: null,
+      __currentGetPath__P_12_5: null,
 
       /**
        * Initialization method used to execute the get route for the currently set history path.
@@ -150,7 +150,7 @@
        * @return {String} A valid path.
        */
       _getPathOrFallback: function _getPathOrFallback(path, defaultPath) {
-        if (path == "" || path == null || !this.__messaging.has("get", path)) {
+        if (path == "" || path == null || !this.__messaging__P_12_0.has("get", path)) {
           path = defaultPath || qx.application.Routing.DEFAULT_PATH;
         }
 
@@ -167,7 +167,7 @@
        * @return {String} Event listener ID
        */
       onGet: function onGet(route, handler, scope) {
-        return this.__messaging.on("get", route, handler, scope);
+        return this.__messaging__P_12_0.on("get", route, handler, scope);
       },
 
       /**
@@ -192,7 +192,7 @@
        * @return {String} Event listener ID
        */
       onPost: function onPost(route, handler, scope) {
-        return this.__messaging.on("post", route, handler, scope);
+        return this.__messaging__P_12_0.on("post", route, handler, scope);
       },
 
       /**
@@ -205,7 +205,7 @@
        * @return {String} Event listener ID
        */
       onPut: function onPut(route, handler, scope) {
-        return this.__messaging.on("put", route, handler, scope);
+        return this.__messaging__P_12_0.on("put", route, handler, scope);
       },
 
       /**
@@ -218,7 +218,7 @@
        * @return {String} Event listener ID
        */
       onDelete: function onDelete(route, handler, scope) {
-        return this.__messaging.on("delete", route, handler, scope);
+        return this.__messaging__P_12_0.on("delete", route, handler, scope);
       },
 
       /**
@@ -231,7 +231,7 @@
        * @return {String} Event listener ID
        */
       onAny: function onAny(route, handler, scope) {
-        return this.__messaging.onAny(route, handler, scope);
+        return this.__messaging__P_12_0.onAny(route, handler, scope);
       },
 
       /**
@@ -240,7 +240,7 @@
        * @param id {String} The id of the registered route
        */
       remove: function remove(id) {
-        this.__messaging.remove(id);
+        this.__messaging__P_12_0.remove(id);
       },
 
       /**
@@ -248,11 +248,11 @@
        *
        * @param evt {qx.event.type.Data} The changeHash event.
        */
-      __onChangeHash: function __onChangeHash(evt) {
+      __onChangeHash__P_12_2: function __onChangeHash__P_12_2(evt) {
         var path = evt.getData();
         path = this._getPathOrFallback(path);
 
-        if (path != this.__currentGetPath) {
+        if (path != this.__currentGetPath__P_12_5) {
           this._executeGet(path, null, true);
         }
       },
@@ -266,9 +266,9 @@
        *
        */
       _executeGet: function _executeGet(path, customData, fromEvent) {
-        this.__currentGetPath = path;
+        this.__currentGetPath__P_12_5 = path;
 
-        var history = this.__getFromHistory(path);
+        var history = this.__getFromHistory__P_12_6(path);
 
         if (history) {
           if (!customData) {
@@ -277,17 +277,17 @@
             customData.action = history.action;
             customData.fromEvent = fromEvent;
           } else {
-            this.__replaceCustomData(path, customData);
+            this.__replaceCustomData__P_12_7(path, customData);
           }
         } else {
-          this.__addToHistory(path, customData);
+          this.__addToHistory__P_12_8(path, customData);
 
-          qx.application.Routing.__forward = [];
+          qx.application.Routing.__forward__P_12_4 = [];
         }
 
-        this.__navigationHandler.setState(path);
+        this.__navigationHandler__P_12_1.setState(path);
 
-        this.__messaging.emit("get", path, null, customData);
+        this.__messaging__P_12_0.emit("get", path, null, customData);
       },
 
       /**
@@ -318,7 +318,7 @@
        * @param customData {var} The given custom data that should be propagated
        */
       executePost: function executePost(path, params, customData) {
-        this.__messaging.emit("post", path, params, customData);
+        this.__messaging__P_12_0.emit("post", path, params, customData);
       },
 
       /**
@@ -329,7 +329,7 @@
        * @param customData {var} The given custom data that should be propagated
        */
       executePut: function executePut(path, params, customData) {
-        this.__messaging.emit("put", path, params, customData);
+        this.__messaging__P_12_0.emit("put", path, params, customData);
       },
 
       /**
@@ -340,7 +340,7 @@
        * @param customData {var} The given custom data that should be propagated
        */
       executeDelete: function executeDelete(path, params, customData) {
-        this.__messaging.emit("delete", path, params, customData);
+        this.__messaging__P_12_0.emit("delete", path, params, customData);
       },
 
       /**
@@ -348,7 +348,7 @@
        * @return {String} State of history navigation handler
        */
       getState: function getState() {
-        return this.__navigationHandler.getState();
+        return this.__navigationHandler__P_12_1.getState();
       },
 
       /**
@@ -357,8 +357,8 @@
        * @param path {String} The path to store.
        * @param customData {var} The custom data to store
        */
-      __addToHistory: function __addToHistory(path, customData) {
-        qx.application.Routing.__back.unshift({
+      __addToHistory__P_12_8: function __addToHistory__P_12_8(path, customData) {
+        qx.application.Routing.__back__P_12_3.unshift({
           path: path,
           customData: customData
         });
@@ -369,8 +369,8 @@
        * @param path {String} The path to replace.
        * @param customData {var} The custom data to store.
        */
-      __replaceCustomData: function __replaceCustomData(path, customData) {
-        var register = [qx.application.Routing.__back, qx.application.Routing.__forward];
+      __replaceCustomData__P_12_7: function __replaceCustomData__P_12_7(path, customData) {
+        var register = [qx.application.Routing.__back__P_12_3, qx.application.Routing.__forward__P_12_4];
 
         for (var i = 0; i < register.length; i++) {
           for (var j = 0; j < register[i].length; j++) {
@@ -387,9 +387,9 @@
        * @param path {String} The path of the entry
        * @return {Map|null} The retrieved entry. <code>null</code> when no entry was found.
        */
-      __getFromHistory: function __getFromHistory(path) {
-        var back = qx.application.Routing.__back;
-        var forward = qx.application.Routing.__forward;
+      __getFromHistory__P_12_6: function __getFromHistory__P_12_6(path) {
+        var back = qx.application.Routing.__back__P_12_3;
+        var forward = qx.application.Routing.__forward__P_12_4;
         var found = false;
         var entry = null;
         var length = back.length;
@@ -463,7 +463,7 @@
         }
 
         var path,
-            back = qx.application.Routing.__back;
+            back = qx.application.Routing.__back__P_12_3;
 
         if (back.length > 0) {
           // Remove current state
@@ -489,11 +489,11 @@
        * Decouples the Routing from the navigation handler.
        */
       dispose: function dispose() {
-        this.__navigationHandler.removeListener("changeState", this.__onChangeHash, this);
+        this.__navigationHandler__P_12_1.removeListener("changeState", this.__onChangeHash__P_12_2, this);
       }
     }
   });
   qx.application.Routing.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Routing.js.map?dt=1589218236662
+//# sourceMappingURL=Routing.js.map?dt=1591362955847

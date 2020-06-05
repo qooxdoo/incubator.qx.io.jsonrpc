@@ -479,7 +479,7 @@
       "rendered": ""
     },
     members: {
-      __range: null,
+      __range__P_558_0: null,
       _value: null,
       _shownValue: null,
       // overridden
@@ -488,7 +488,7 @@
           return false;
         }
 
-        this.__range = [];
+        this.__range__P_558_0 = [];
         var today = new Date();
         today = this._getNormalizedDate(today);
         this.showValue(today);
@@ -559,8 +559,8 @@
             }
           }
         } else if (this.getConfig("selectionMode") == "range") {
-          if (!this.__range) {
-            this.__range = value.map(function (val) {
+          if (!this.__range__P_558_0) {
+            this.__range__P_558_0 = value.map(function (val) {
               return val.toDateString();
             });
           }
@@ -653,14 +653,14 @@
         var newValue = new Date(newStr);
 
         if (this.getConfig("selectionMode") == "range") {
-          var range = this.__range.slice(0);
+          var range = this.__range__P_558_0.slice(0);
 
           if (range.length == 2) {
             range = [];
           }
 
           range.push(newStr);
-          this.__range = range;
+          this.__range__P_558_0 = range;
           range = range.map(function (item) {
             return new Date(item);
           });
@@ -813,7 +813,7 @@
                 cssClasses += " " + cssPrefix + "-selected";
               }
             } else {
-              var range = this.__range;
+              var range = this.__range__P_558_0;
 
               if (this._value) {
                 value = this.getConfig("selectionMode") == "range" ? new Date(range[range.length - 1]) : this._value;
@@ -1177,14 +1177,14 @@
       qx.ui.website.Widget.constructor.call(this, selector, context);
     },
     members: {
-      __active: null,
-      __pageContainer: null,
-      __scrollContainer: null,
-      __paginationLabels: null,
-      __startPosLeft: null,
-      __pagination: null,
+      __active__P_559_0: null,
+      __pageContainer__P_559_1: null,
+      __scrollContainer__P_559_2: null,
+      __paginationLabels__P_559_3: null,
+      __startPosLeft__P_559_4: null,
+      __pagination__P_559_5: null,
       _ie9: false,
-      __blocked: false,
+      __blocked__P_559_6: false,
       // overridden
       init: function init() {
         if (!qx.ui.website.Carousel.prototype.init.base.call(this)) {
@@ -1201,15 +1201,15 @@
 
         qxWeb(window).on("resize", this._onResize, this);
         var prefix = this.getCssPrefix();
-        this.__scrollContainer = qxWeb.create("<div>").addClass(prefix + "-container").appendTo(this);
-        this.__pageContainer = qxWeb.create("<div>").addClass("qx-hbox").setStyle("height", "100%").appendTo(this.__scrollContainer);
-        this.__paginationLabels = [];
-        this.__pagination = qxWeb.create("<div>").addClasses([prefix + "-pagination", "qx-hbox", "qx-flex1"]).setStyle("visibility", "excluded").appendTo(this);
+        this.__scrollContainer__P_559_2 = qxWeb.create("<div>").addClass(prefix + "-container").appendTo(this);
+        this.__pageContainer__P_559_1 = qxWeb.create("<div>").addClass("qx-hbox").setStyle("height", "100%").appendTo(this.__scrollContainer__P_559_2);
+        this.__paginationLabels__P_559_3 = [];
+        this.__pagination__P_559_5 = qxWeb.create("<div>").addClasses([prefix + "-pagination", "qx-hbox", "qx-flex1"]).setStyle("visibility", "excluded").appendTo(this);
 
         if (this._ie9) {
-          this.__pageContainer.setStyle("display", "table");
+          this.__pageContainer__P_559_1.setStyle("display", "table");
 
-          this.__pagination.setStyle("textAlign", "center");
+          this.__pagination__P_559_5.setStyle("textAlign", "center");
         } else {
           this.on("trackstart", this._onTrackStart, this).on("track", this._onTrack, this).on("trackend", this._onTrackEnd, this);
         }
@@ -1238,8 +1238,8 @@
        * @param page {qxWeb} The page to be activated
        */
       setActive: function setActive(page) {
-        var old = this.__active;
-        this.__active = page;
+        var old = this.__active__P_559_0;
+        this.__active__P_559_0 = page;
 
         this._update();
 
@@ -1256,7 +1256,7 @@
        * @return {qxWeb} The active page
        */
       getActive: function getActive() {
-        return this.__active;
+        return this.__active__P_559_0;
       },
 
       /**
@@ -1319,14 +1319,14 @@
        * @param child {qxWeb} The added child.
        */
       addPage: function addPage(child) {
-        child.addClasses(["qx-flex1", this.getCssPrefix() + "-page"]).appendTo(this.__pageContainer);
+        child.addClasses(["qx-flex1", this.getCssPrefix() + "-page"]).appendTo(this.__pageContainer__P_559_1);
 
-        if (this.find("." + this.getCssPrefix() + "-page").length > this.__paginationLabels.length) {
+        if (this.find("." + this.getCssPrefix() + "-page").length > this.__paginationLabels__P_559_3.length) {
           var paginationLabel = this._createPaginationLabel();
 
-          this.__paginationLabels.push(paginationLabel);
+          this.__paginationLabels__P_559_3.push(paginationLabel);
 
-          this.__pagination.append(paginationLabel);
+          this.__pagination__P_559_5.append(paginationLabel);
         }
 
         this._updateWidth();
@@ -1344,7 +1344,7 @@
         this.find(".scroll").setStyle("touchAction", "pan-y"); // scroll as soon as we have the third page added
 
         if (this._getPages().length === 3 && !this._ie9) {
-          this.__scrollContainer.translate([-this.getWidth() + "px", 0, 0]);
+          this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
         }
 
         this._updatePagination();
@@ -1359,9 +1359,9 @@
         child.remove(); // reset the active page if we don't have any page at all
 
         if (this._getPages().length == 0) {
-          this.__pagination.empty();
+          this.__pagination__P_559_5.empty();
 
-          this.__paginationLabels = [];
+          this.__paginationLabels__P_559_3 = [];
           this.setActive(null);
           return;
         }
@@ -1377,10 +1377,10 @@
           this._setOrder(this._getPages(), 0);
         }
 
-        this.__paginationLabels.splice(child.priorPosition, 1)[0].remove();
+        this.__paginationLabels__P_559_3.splice(child.priorPosition, 1)[0].remove();
 
-        for (var i = 0; i < this.__paginationLabels.length; i++) {
-          this.__paginationLabels[i].getChildren(".label").setHtml(i + 1 + "");
+        for (var i = 0; i < this.__paginationLabels__P_559_3.length; i++) {
+          this.__paginationLabels__P_559_3[i].getChildren(".label").setHtml(i + 1 + "");
         }
 
         this._updatePagination();
@@ -1415,9 +1415,9 @@
           var direction = this._updateOrder();
 
           if (direction == "right") {
-            left = this._getPositionLeft() - this.__scrollContainer.getWidth();
+            left = this._getPositionLeft() - this.__scrollContainer__P_559_2.getWidth();
           } else if (direction == "left") {
-            left = this._getPositionLeft() + this.__scrollContainer.getWidth();
+            left = this._getPositionLeft() + this.__scrollContainer__P_559_2.getWidth();
           } else if (this._getPages().length >= 3) {
             // back snapping if the order has not changed
             this._translateTo(this.getWidth());
@@ -1430,7 +1430,7 @@
 
           if (left !== undefined) {
             // first, translate the old page into view
-            this.__scrollContainer.translate([-left + "px", 0, 0]); // animate to the new page
+            this.__scrollContainer__P_559_2.translate([-left + "px", 0, 0]); // animate to the new page
 
 
             this._translateTo(this.getWidth());
@@ -1517,13 +1517,13 @@
 
 
         if (this._getPositionLeft() === 0 && this._getPages().length > 2 && !this._ie9) {
-          this.__scrollContainer.translate([-this.getWidth() + "px", 0, 0]);
+          this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
         } // set the container width to total width of all pages
 
 
         var containerWidth = this.getWidth() * this._getPages().length;
 
-        this.__pageContainer.setStyle("width", containerWidth + "px"); // set the width of all pages to the carousel width
+        this.__pageContainer__P_559_1.setStyle("width", containerWidth + "px"); // set the width of all pages to the carousel width
 
 
         this._getPages().setStyle("width", this.getWidth() + "px");
@@ -1536,16 +1536,16 @@
        * cancels any running animation.
        */
       _onTrackStart: function _onTrackStart() {
-        if (this.__blocked) {
+        if (this.__blocked__P_559_6) {
           return;
         }
 
-        this.__startPosLeft = this._getPositionLeft();
+        this.__startPosLeft__P_559_4 = this._getPositionLeft();
 
-        this.__scrollContainer // stop the current scroll animation
+        this.__scrollContainer__P_559_2 // stop the current scroll animation
         .stop() // correct the scroll position as the stopped animation
         // resets to its initial value
-        .translate([-Math.round(this.__startPosLeft) + "px", 0, 0]);
+        .translate([-Math.round(this.__startPosLeft__P_559_4) + "px", 0, 0]);
       },
 
       /**
@@ -1553,12 +1553,12 @@
        * @param e {Event} The track event.
        */
       _onTrack: function _onTrack(e) {
-        if (this.__blocked) {
+        if (this.__blocked__P_559_6) {
           return;
         }
 
         if (e.delta.axis == "x" && this._getPages().length > 2) {
-          this.__scrollContainer.translate([-(this.__startPosLeft - e.delta.x) + "px", 0, 0]);
+          this.__scrollContainer__P_559_2.translate([-(this.__startPosLeft__P_559_4 - e.delta.x) + "px", 0, 0]);
         }
       },
 
@@ -1566,18 +1566,18 @@
        * TrackEnd handler for enabling the scroll events.
        */
       _onTrackEnd: function _onTrackEnd() {
-        if (this.__startPosLeft == null || this.__blocked) {
+        if (this.__startPosLeft__P_559_4 == null || this.__blocked__P_559_6) {
           // don't end if we didn't start
           return;
         } // make sure the trackend handling is done after the swipe handling
 
 
         window.setTimeout(function () {
-          if (this._getPages().length < 3 || this.__scrollContainer.isPlaying()) {
+          if (this._getPages().length < 3 || this.__scrollContainer__P_559_2.isPlaying()) {
             return;
           }
 
-          this.__startPosLeft = null;
+          this.__startPosLeft__P_559_4 = null;
           var width = this.getWidth();
 
           var pages = this._getPages();
@@ -1614,7 +1614,7 @@
        * @param e {Event} The swipe event.
        */
       _onSwipe: function _onSwipe(e) {
-        if (this.__blocked) {
+        if (this.__blocked__P_559_6) {
           return;
         }
 
@@ -1644,7 +1644,7 @@
        * @param e {Event} The tap event.
        */
       _onPaginationLabelTap: function _onPaginationLabelTap(e) {
-        this.__paginationLabels.forEach(function (label, index) {
+        this.__paginationLabels__P_559_3.forEach(function (label, index) {
           if (label[0] === e.currentTarget) {
             var pages = this._getPages(); // wo don't reorder with two pages there just set the active property
 
@@ -1660,16 +1660,16 @@
             this._setOrder(pages, 0); // get the active page into view
 
 
-            this.__scrollContainer.translate([-activeIndex * this.getWidth() + "px", 0, 0]);
+            this.__scrollContainer__P_559_2.translate([-activeIndex * this.getWidth() + "px", 0, 0]);
 
-            this.__blocked = true; // animate to the desired page
+            this.__blocked__P_559_6 = true; // animate to the desired page
 
             this._translateTo((activeIndex + distance) * this.getWidth());
 
-            this.__scrollContainer.once("animationEnd", function (page) {
-              this.__blocked = false; // set the viewport back to the default position
+            this.__scrollContainer__P_559_2.once("animationEnd", function (page) {
+              this.__blocked__P_559_6 = false; // set the viewport back to the default position
 
-              this.__scrollContainer.translate([-this.getWidth() + "px", 0, 0]);
+              this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
 
               this.setActive(page); // this also updates the order
 
@@ -1686,13 +1686,13 @@
        */
       _updatePagination: function _updatePagination() {
         // hide the pagination for one page
-        this._getPages().length < 2 ? this.__pagination.setStyle("visibility", "excluded") : this.__pagination.setStyle("visibility", "visible");
+        this._getPages().length < 2 ? this.__pagination__P_559_5.setStyle("visibility", "excluded") : this.__pagination__P_559_5.setStyle("visibility", "visible");
 
-        this.__pagination.find("." + this.getCssPrefix() + "-pagination-label").removeClass("active");
+        this.__pagination__P_559_5.find("." + this.getCssPrefix() + "-pagination-label").removeClass("active");
 
         var pages = this._getPages();
 
-        this.__paginationLabels[pages.indexOf(this.getActive())].addClass("active");
+        this.__paginationLabels__P_559_3[pages.indexOf(this.getActive())].addClass("active");
       },
 
       /**
@@ -1702,7 +1702,7 @@
         this._updateWidth();
 
         if (this._getPages().length > 2) {
-          this.__scrollContainer.translate([-this.getWidth() + "px", 0, 0]);
+          this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
         }
       },
 
@@ -1711,7 +1711,7 @@
        * @param left {Number} The new left position
        */
       _translateTo: function _translateTo(left) {
-        this.__scrollContainer.animate({
+        this.__scrollContainer__P_559_2.animate({
           duration: this.getConfig("pageSwitchDuration"),
           keep: 100,
           timing: "ease",
@@ -1756,7 +1756,7 @@
        * @return {qxWeb} All pages.
        */
       _getPages: function _getPages() {
-        return this.__pageContainer.find("." + this.getCssPrefix() + "-page");
+        return this.__pageContainer__P_559_1.find("." + this.getCssPrefix() + "-page");
       },
 
       /**
@@ -1764,7 +1764,7 @@
        * @return {Number} The position in px.
        */
       _getPositionLeft: function _getPositionLeft() {
-        var containerRect = this.__scrollContainer[0].getBoundingClientRect();
+        var containerRect = this.__scrollContainer__P_559_2[0].getBoundingClientRect();
 
         var parentRect = this[0].getBoundingClientRect();
         return -(containerRect.left - parentRect.left);
@@ -1863,7 +1863,7 @@
     extend: qx.ui.website.Widget,
     statics: {
       /** List of valid positions to check against */
-      __validPositions: null,
+      __validPositions__P_560_0: null,
 
       /**
        * *format*
@@ -1979,11 +1979,11 @@
         var uniqueId = Math.round(Math.random() * 10000);
         this._uniqueId = uniqueId;
 
-        this.__setReadOnly(this);
+        this.__setReadOnly__P_560_1(this);
 
-        this.__setIcon(this);
+        this.__setIcon__P_560_2(this);
 
-        this.__addInputListener(this);
+        this.__addInputListener__P_560_3(this);
 
         var calendarId = 'datepicker-calendar-' + uniqueId;
         var calendar = qxWeb.create('<div id="' + calendarId + '"></div>').calendar();
@@ -2008,11 +2008,11 @@
       render: function render() {
         this.getCalendar().render();
 
-        this.__setReadOnly(this);
+        this.__setReadOnly__P_560_1(this);
 
-        this.__setIcon(this);
+        this.__setIcon__P_560_2(this);
 
-        this.__addInputListener(this);
+        this.__addInputListener__P_560_3(this);
 
         this.setEnabled(this.getEnabled());
         return this;
@@ -2020,7 +2020,7 @@
       // overridden
       setConfig: function setConfig(name, config) {
         if (name === 'position') {
-          var validPositions = qx.ui.website.DatePicker.__validPositions;
+          var validPositions = qx.ui.website.DatePicker.__validPositions__P_560_0;
 
           if (validPositions.indexOf(config) === -1) {
             throw new Error("Wrong config value for \"position\"! Only the values \"" + validPositions.join('", "') + '" are supported!');
@@ -2113,7 +2113,7 @@
        *
        * @param collection {qxWeb} collection to work on
        */
-      __setReadOnly: function __setReadOnly(collection) {
+      __setReadOnly__P_560_1: function __setReadOnly__P_560_1(collection) {
         if (collection.getConfig('readonly')) {
           collection.setAttribute('readonly', 'readonly');
         } else {
@@ -2126,7 +2126,7 @@
        *
        * @param collection {qxWeb} collection to work on
        */
-      __setIcon: function __setIcon(collection) {
+      __setIcon__P_560_2: function __setIcon__P_560_2(collection) {
         var icon;
 
         if (collection.getConfig('icon') === null) {
@@ -2166,7 +2166,7 @@
        *
        * @param collection {qxWeb} collection to work on
        */
-      __addInputListener: function __addInputListener(collection) {
+      __addInputListener__P_560_3: function __addInputListener__P_560_3(collection) {
         if (collection.getConfig('mode') === 'icon') {
           collection.off('tap', collection._onTap);
         } else {
@@ -2193,7 +2193,7 @@
       qxWeb.$attach({
         datepicker: statics.datepicker
       });
-      statics.__validPositions = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right', 'left-top', 'left-middle', 'left-bottom', 'right-top', 'right-middle', 'right-bottom'];
+      statics.__validPositions__P_560_0 = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right', 'left-top', 'left-middle', 'left-bottom', 'right-top', 'right-middle', 'right-bottom'];
     }
   });
   qx.ui.website.DatePicker.$$dbClassInfo = $$dbClassInfo;
@@ -2674,7 +2674,7 @@
       "changePosition": "Number"
     },
     members: {
-      __dragMode: null,
+      __dragMode__P_561_0: null,
       _value: 0,
       init: function init() {
         if (!qx.ui.website.Slider.prototype.init.base.call(this)) {
@@ -2748,7 +2748,7 @@
         this._value = value;
 
         if (qxWeb.type.get(step) != "Array" || step.indexOf(value) != -1) {
-          this.__valueToPosition(value);
+          this.__valueToPosition__P_561_1(value);
 
           this.getChildren("." + this.getCssPrefix() + "-knob").setHtml(this._getKnobContent());
           this.emit("changeValue", value);
@@ -2921,11 +2921,11 @@
       _onPointerDown: function _onPointerDown(e) {
         // this can happen if the user releases the button while dragging outside
         // of the browser viewport
-        if (this.__dragMode) {
+        if (this.__dragMode__P_561_0) {
           return;
         }
 
-        this.__dragMode = true;
+        this.__dragMode__P_561_0 = true;
         qxWeb(document.documentElement).on("pointermove", this._onPointerMove, this).setStyle("cursor", "pointer");
         e.stopPropagation();
       },
@@ -2937,11 +2937,11 @@
        * @param e {qx.event.Emitter} Incoming event object
        */
       _onDocPointerUp: function _onDocPointerUp(e) {
-        if (this.__dragMode === true) {
+        if (this.__dragMode__P_561_0 === true) {
           // Cleanup status flags
-          delete this.__dragMode;
+          delete this.__dragMode__P_561_0;
 
-          this.__valueToPosition(this.getValue());
+          this.__valueToPosition__P_561_1(this.getValue());
 
           qxWeb(document.documentElement).off("pointermove", this._onPointerMove, this).setStyle("cursor", "auto");
           e.stopPropagation();
@@ -2956,7 +2956,7 @@
       _onPointerMove: function _onPointerMove(e) {
         e.preventDefault();
 
-        if (this.__dragMode) {
+        if (this.__dragMode__P_561_0) {
           var dragPosition = e.getDocumentLeft();
 
           var dragBoundaries = this._getDragBoundaries();
@@ -3077,7 +3077,7 @@
           this._getPixels();
         }
 
-        this.__valueToPosition(this._value);
+        this.__valueToPosition__P_561_1(this._value);
       },
 
       /**
@@ -3086,7 +3086,7 @@
        *
        * @param value {Integer} slider step value
        */
-      __valueToPosition: function __valueToPosition(value) {
+      __valueToPosition__P_561_1: function __valueToPosition__P_561_1(value) {
         var pixels = this._getPixels();
 
         var paddingLeft = Math.ceil(parseFloat(this.getStyle("paddingLeft")) || 0);
@@ -3309,7 +3309,7 @@
        */
       table: function table(model) {
         var table = new qx.ui.website.Table(this);
-        table.__model = model;
+        table.__model__P_562_0 = model;
         table.init();
         return table;
       },
@@ -3319,7 +3319,7 @@
        * @param n {String} The String to check the type for
        * @return {Boolean} The result of the check
        */
-      __isNumber: function __isNumber(n) {
+      __isNumber__P_562_1: function __isNumber__P_562_1(n) {
         return (Object.prototype.toString.call(n) === '[object Number]' || Object.prototype.toString.call(n) === '[object String]') && !isNaN(parseFloat(n)) && isFinite(n.toString().replace(/^-/, ''));
       },
 
@@ -3328,7 +3328,7 @@
        * @param val {String} The String to check the type for
        * @return {Boolean} The result of the check
        */
-      __isDate: function __isDate(val) {
+      __isDate__P_562_2: function __isDate__P_562_2(val) {
         var d = new Date(val);
         return !isNaN(d.valueOf());
       },
@@ -3339,7 +3339,7 @@
        * @param htmlElement {HTMLElement} The HTMLElement
        * @return {Integer} The position of the htmlElement or -1
        */
-      __getIndex: function __getIndex(htmlCollection, htmlElement) {
+      __getIndex__P_562_3: function __getIndex__P_562_3(htmlCollection, htmlElement) {
         var index = -1;
 
         for (var i = 0, l = htmlCollection.length; i < l; i++) {
@@ -3356,69 +3356,69 @@
       * Generates an unique id
       * @return {String} The generated id
       */
-      __getUID: function __getUID() {
+      __getUID__P_562_4: function __getUID__P_562_4() {
         return (new Date().getTime() + "" + Math.floor(Math.random() * 1000000)).substr(0, 18);
       },
 
       /** */
-      __selectionTypes: ["single", "multiple", "none"],
+      __selectionTypes__P_562_5: ["single", "multiple", "none"],
 
       /** */
-      __internalCellClass: "qx-table-cell",
+      __internalCellClass__P_562_6: "qx-table-cell",
 
       /** */
-      __internalHeaderClass: "qx-table-header",
+      __internalHeaderClass__P_562_7: "qx-table-header",
 
       /** */
-      __internalSelectionClass: "qx-table-row-selection",
+      __internalSelectionClass__P_562_8: "qx-table-row-selection",
 
       /** */
-      __internalInputClass: "qx-table-selection-input",
+      __internalInputClass__P_562_9: "qx-table-selection-input",
 
       /** */
-      __allColumnSelector: "qx-table-all-columns",
+      __allColumnSelector__P_562_10: "qx-table-all-columns",
 
       /** */
-      __dataColName: "data-qx-table-col-name",
+      __dataColName__P_562_11: "data-qx-table-col-name",
 
       /** */
-      __dataColType: "data-qx-table-col-type",
+      __dataColType__P_562_12: "data-qx-table-col-type",
 
       /** */
-      __dataSortingKey: "data-qx-table-cell-key",
+      __dataSortingKey__P_562_13: "data-qx-table-cell-key",
 
       /** */
-      __modelSortingKey: "cellKey",
+      __modelSortingKey__P_562_14: "cellKey",
 
       /** */
-      __inputLabelClass: "qx-table-input-label",
+      __inputLabelClass__P_562_15: "qx-table-input-label",
 
       /** */
-      __selectedRowClass: "qx-table-row-selected",
+      __selectedRowClass__P_562_16: "qx-table-row-selected",
 
       /** */
-      __ascSortingClass: "qx-table-sort-asc",
+      __ascSortingClass__P_562_17: "qx-table-sort-asc",
 
       /** */
-      __descSortingClass: "qqx-table-sort-desc"
+      __descSortingClass__P_562_18: "qqx-table-sort-desc"
     },
     members: {
-      __model: null,
-      __columnMeta: null,
-      __sortingFunction: null,
-      __filterFunction: null,
-      __filterFunc: null,
-      __filters: null,
-      __inputName: null,
-      __hovered: null,
-      __sortingData: null,
+      __model__P_562_0: null,
+      __columnMeta__P_562_19: null,
+      __sortingFunction__P_562_20: null,
+      __filterFunction__P_562_21: null,
+      __filterFunc__P_562_22: null,
+      __filters__P_562_23: null,
+      __inputName__P_562_24: null,
+      __hovered__P_562_25: null,
+      __sortingData__P_562_26: null,
       // overridden
       init: function init() {
         if (!qx.ui.website.Table.prototype.init.base.call(this)) {
           return false;
         }
 
-        var model = this.__model;
+        var model = this.__model__P_562_0;
 
         if (qxWeb.getNodeName(this).toUpperCase() !== "TABLE") {
           throw new Error("collection should contains only table elements !!");
@@ -3429,16 +3429,16 @@
         }
 
         this.find("tbody td").addClass("qx-table-cell");
-        this.__inputName = "input" + qx.ui.website.Table.__getUID();
+        this.__inputName__P_562_24 = "input" + qx.ui.website.Table.__getUID__P_562_4();
 
-        this.__getColumnMetaData(model);
+        this.__getColumnMetaData__P_562_27(model);
 
         this.setModel(model);
-        this.setSortingFunction(this.__defaultColumnSort);
+        this.setSortingFunction(this.__defaultColumnSort__P_562_28);
 
-        this.__registerEvents();
+        this.__registerEvents__P_562_29();
 
-        this.__hovered = null;
+        this.__hovered__P_562_25 = null;
         return true;
       },
 
@@ -3451,7 +3451,7 @@
       setModel: function setModel(model) {
         if (typeof model != "undefined") {
           if (qx.lang.Type.isArray(model)) {
-            this.__model = model;
+            this.__model__P_562_0 = model;
             this.emit("modelChange", model);
           } else {
             throw new Error("model must be an Array !!");
@@ -3468,9 +3468,9 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       setColumnType: function setColumnType(columnName, type) {
-        this.__checkColumnExistance(columnName);
+        this.__checkColumnExistance__P_562_30(columnName);
 
-        this.__columnMeta[columnName].type = type;
+        this.__columnMeta__P_562_19[columnName].type = type;
         return this;
       },
 
@@ -3480,9 +3480,9 @@
        * @return {String} The type of the specified column
        */
       getColumnType: function getColumnType(columnName) {
-        this.eq(0).__checkColumnExistance(columnName);
+        this.eq(0).__checkColumnExistance__P_562_30(columnName);
 
-        return this.eq(0).__columnMeta[columnName].type;
+        return this.eq(0).__columnMeta__P_562_19[columnName].type;
       },
 
       /**
@@ -3492,7 +3492,7 @@
        * @return {qxWeb} The cell found at the given position
        */
       getCell: function getCell(row, col) {
-        return qxWeb(this.eq(0).__getRoot().rows.item(row).cells.item(col));
+        return qxWeb(this.eq(0).__getRoot__P_562_31().rows.item(row).cells.item(col));
       },
 
       /**
@@ -3500,7 +3500,7 @@
       * @return {qxWeb} The collection containing the table rows
       */
       getRows: function getRows() {
-        return qxWeb(this.eq(0).__getRoot().rows);
+        return qxWeb(this.eq(0).__getRoot__P_562_31().rows);
       },
 
       /**
@@ -3546,7 +3546,7 @@
       setSortingFunction: function setSortingFunction(func) {
         func = func || function () {};
 
-        this.__sortingFunction = func;
+        this.__sortingFunction__P_562_20 = func;
         return this;
       },
 
@@ -3555,7 +3555,7 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       unsetSortingFunction: function unsetSortingFunction() {
-        this.__sortingFunction = this.__defaultColumnSort;
+        this.__sortingFunction__P_562_20 = this.__defaultColumnSort__P_562_28;
         return this;
       },
 
@@ -3565,7 +3565,7 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       setFilterFunction: function setFilterFunction(func) {
-        this.__filterFunction = func;
+        this.__filterFunction__P_562_21 = func;
         return this;
       },
 
@@ -3574,7 +3574,7 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       unsetFilterFunction: function unsetFilterFunction() {
-        this.__filterFunction = this.__defaultColumnFilter;
+        this.__filterFunction__P_562_21 = this.__defaultColumnFilter__P_562_32;
         return this;
       },
 
@@ -3586,13 +3586,13 @@
       *
       */
       setColumnFilter: function setColumnFilter(columnName, func) {
-        this.__checkColumnExistance(columnName);
+        this.__checkColumnExistance__P_562_30(columnName);
 
-        if (!this.__filterFunc) {
-          this.__filterFunc = {};
+        if (!this.__filterFunc__P_562_22) {
+          this.__filterFunc__P_562_22 = {};
         }
 
-        this.__filterFunc[columnName] = func;
+        this.__filterFunc__P_562_22[columnName] = func;
         return this;
       },
 
@@ -3604,8 +3604,8 @@
       *
       */
       getColumnFilter: function getColumnFilter(columnName) {
-        if (this.__filterFunc) {
-          return this.__filterFunc[columnName];
+        if (this.__filterFunc__P_562_22) {
+          return this.__filterFunc__P_562_22[columnName];
         }
 
         return null;
@@ -3617,11 +3617,11 @@
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
       setRowFilter: function setRowFilter(func) {
-        if (!this.__filterFunc) {
-          this.__filterFunc = {};
+        if (!this.__filterFunc__P_562_22) {
+          this.__filterFunc__P_562_22 = {};
         }
 
-        this.__filterFunc.row = func;
+        this.__filterFunc__P_562_22.row = func;
         return this;
       },
 
@@ -3631,8 +3631,8 @@
       *
       */
       getRowFilter: function getRowFilter() {
-        if (this.__filterFunc) {
-          return this.__filterFunc.row;
+        if (this.__filterFunc__P_562_22) {
+          return this.__filterFunc__P_562_22.row;
         }
 
         return null;
@@ -3645,11 +3645,11 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       sort: function sort(columnName, dir) {
-        this.__checkColumnExistance(columnName);
+        this.__checkColumnExistance__P_562_30(columnName);
 
         this.setSortingClass(columnName, dir);
 
-        this.__sortDOM(this.__sort(columnName, dir));
+        this.__sortDOM__P_562_33(this.__sort__P_562_34(columnName, dir));
 
         this.emit("sort", {
           columName: columnName,
@@ -3666,31 +3666,31 @@
       */
       filter: function filter(keyword, columnName) {
         if (columnName) {
-          this.__checkColumnExistance(columnName);
+          this.__checkColumnExistance__P_562_30(columnName);
 
           if (keyword == "") {
             this.resetFilter(columnName);
           }
         } else {
-          columnName = qx.ui.website.Table.__allColumnSelector;
+          columnName = qx.ui.website.Table.__allColumnSelector__P_562_10;
         }
 
-        if (!this.__filters) {
-          this.__filters = {};
+        if (!this.__filters__P_562_23) {
+          this.__filters__P_562_23 = {};
         }
 
-        if (this.__filters[columnName]) {
-          this.__filters[columnName].keyword = keyword;
+        if (this.__filters__P_562_23[columnName]) {
+          this.__filters__P_562_23[columnName].keyword = keyword;
 
-          this.__getRoot().appendChild(this.__filters[columnName].rows);
+          this.__getRoot__P_562_31().appendChild(this.__filters__P_562_23[columnName].rows);
         } else {
-          this.__filters[columnName] = {
+          this.__filters__P_562_23[columnName] = {
             keyword: keyword,
             rows: document.createDocumentFragment()
           };
         }
 
-        this.__filterDom(keyword, columnName);
+        this.__filterDom__P_562_35(keyword, columnName);
 
         this.emit("filter", {
           columName: columnName,
@@ -3706,14 +3706,14 @@
       */
       resetFilter: function resetFilter(columnName) {
         var filters = null;
-        filters = this.__filters;
+        filters = this.__filters__P_562_23;
 
         if (filters) {
           if (columnName) {
-            this.__getRoot().appendChild(filters[columnName].rows);
+            this.__getRoot__P_562_31().appendChild(filters[columnName].rows);
           } else {
             for (var col in filters) {
-              this.__getRoot().appendChild(filters[col].rows);
+              this.__getRoot__P_562_31().appendChild(filters[col].rows);
             }
           }
         }
@@ -3727,7 +3727,7 @@
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
       setContent: function setContent(tableData) {
-        var rows = this.__extractTableRows(tableData);
+        var rows = this.__extractTableRows__P_562_36(tableData);
 
         var tbody = this.find('tbody');
         tbody.empty();
@@ -3742,7 +3742,7 @@
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
       appendContent: function appendContent(tableData) {
-        var rows = this.__extractTableRows(tableData);
+        var rows = this.__extractTableRows__P_562_36(tableData);
 
         var tbody = this.find('tbody');
         rows.appendTo(tbody);
@@ -3755,7 +3755,7 @@
       * @param data {qxWeb|String} Data containing the rows to be extracted
       * @return {qxWeb} Collection containing extracted rows
       */
-      __extractTableRows: function __extractTableRows(data) {
+      __extractTableRows__P_562_36: function __extractTableRows__P_562_36(data) {
         var rows = qxWeb();
 
         if (typeof data == "string") {
@@ -3795,13 +3795,13 @@
       * @param columnName {String ?} The column name
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __filterDom: function __filterDom(keyword, columnName) {
-        var colIndex = this.__getColumnIndex(columnName);
+      __filterDom__P_562_35: function __filterDom__P_562_35(keyword, columnName) {
+        var colIndex = this.__getColumnIndex__P_562_37(columnName);
 
-        var filterFunc = columnName == qx.ui.website.Table.__allColumnSelector ? this.getRowFilter() : this.getColumnFilter(columnName);
-        filterFunc = filterFunc || this.__defaultColumnFilter;
+        var filterFunc = columnName == qx.ui.website.Table.__allColumnSelector__P_562_10 ? this.getRowFilter() : this.getColumnFilter(columnName);
+        filterFunc = filterFunc || this.__defaultColumnFilter__P_562_32;
 
-        var rows = this.__getDataRows(),
+        var rows = this.__getDataRows__P_562_38(),
             data = {};
 
         for (var i = 0; i < rows.length; i++) {
@@ -3814,7 +3814,7 @@
           };
 
           if (!filterFunc.bind(this)(data)) {
-            this.__filters[columnName].rows.appendChild(rows[i]);
+            this.__filters__P_562_23[columnName].rows.appendChild(rows[i]);
           }
         }
 
@@ -3826,21 +3826,21 @@
        * @return {Map} The map containing the current sorting information
        */
       getSortingData: function getSortingData() {
-        return this.__sortingData;
+        return this.__sortingData__P_562_26;
       },
       //overridden
       render: function render() {
         var sortingData = this.getSortingData();
         var rowSelection = this.getConfig("rowSelection");
 
-        this.__applyTemplate(this.__model);
+        this.__applyTemplate__P_562_39(this.__model__P_562_0);
 
-        if (qx.ui.website.Table.__selectionTypes.indexOf(rowSelection) != -1) {
-          this.__processSelectionInputs(rowSelection);
+        if (qx.ui.website.Table.__selectionTypes__P_562_5.indexOf(rowSelection) != -1) {
+          this.__processSelectionInputs__P_562_40(rowSelection);
         }
 
         if (sortingData) {
-          this.__sortDOM(this.__sort(sortingData.columnName, sortingData.direction));
+          this.__sortDOM__P_562_33(this.__sort__P_562_34(sortingData.columnName, sortingData.direction));
         }
 
         return this;
@@ -3852,20 +3852,20 @@
       * @param rowSelection {String} The selection mode
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __processSelectionInputs: function __processSelectionInputs(rowSelection) {
+      __processSelectionInputs__P_562_40: function __processSelectionInputs__P_562_40(rowSelection) {
         switch (rowSelection) {
           case "none":
-            qxWeb("." + qx.ui.website.Table.__internalSelectionClass).remove();
+            qxWeb("." + qx.ui.website.Table.__internalSelectionClass__P_562_8).remove();
             break;
 
           case "multiple":
           case "single":
-            this.__createInputs("checkbox");
+            this.__createInputs__P_562_41("checkbox");
 
             break;
 
           case "single":
-            this.__createInputs("radio");
+            this.__createInputs__P_562_41("radio");
 
             break;
         }
@@ -3878,13 +3878,13 @@
        * @param type {String} The type of the inputs to creates
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __createInputs: function __createInputs(type) {
-        this.__createInput(this.__getHeaderRow(), type);
+      __createInputs__P_562_41: function __createInputs__P_562_41(type) {
+        this.__createInput__P_562_42(this.__getHeaderRow__P_562_43(), type);
 
         var rows = this.find("tbody")[0].getElementsByTagName("tr");
 
         for (var i = 0; i < rows.length; i++) {
-          this.__createInput(rows.item(i), type);
+          this.__createInput__P_562_42(rows.item(i), type);
         }
 
         return this;
@@ -3896,10 +3896,10 @@
       * @param type {String} The type of the input tom create (radio or checkbox)
       * @param nodeName {String} The nodename of the table cell that will contain the input
       */
-      __createInput: function __createInput(row, type, nodeName) {
+      __createInput__P_562_42: function __createInput__P_562_42(row, type, nodeName) {
         var cssPrefix = this.getCssPrefix();
         var clazz = qx.ui.website.Table;
-        var headerInput = qxWeb("." + clazz.__internalHeaderClass + " input");
+        var headerInput = qxWeb("." + clazz.__internalHeaderClass__P_562_7 + " input");
         var selectionMode = this.getConfig("rowSelection");
         var checked = "";
 
@@ -3911,18 +3911,18 @@
           nodeName = qxWeb.getNodeName(qxWeb(row.cells.item(0)));
         }
 
-        var inputName = this.__inputName;
-        var className = nodeName == "th" ? clazz.__internalSelectionClass + " " + clazz.__internalHeaderClass : clazz.__internalSelectionClass;
-        var currentInput = qxWeb(row).find("." + clazz.__internalSelectionClass);
+        var inputName = this.__inputName__P_562_24;
+        var className = nodeName == "th" ? clazz.__internalSelectionClass__P_562_8 + " " + clazz.__internalHeaderClass__P_562_7 : clazz.__internalSelectionClass__P_562_8;
+        var currentInput = qxWeb(row).find("." + clazz.__internalSelectionClass__P_562_8);
 
         if (currentInput.length > 0) {
           if (currentInput[0].type != type) {
             currentInput[0].type = type;
           }
         } else {
-          var id = qx.ui.website.Table.__getUID();
+          var id = qx.ui.website.Table.__getUID__P_562_4();
 
-          var inputNode = qxWeb.create("<" + nodeName + " class='" + className + "'><input id='" + id + "' name='" + inputName + "' " + checked + " class='" + cssPrefix + "-" + type + " " + clazz.__internalInputClass + "' type='" + type + "' /><label class='" + clazz.__inputLabelClass + "' for='" + id + "'></label></" + nodeName + ">");
+          var inputNode = qxWeb.create("<" + nodeName + " class='" + className + "'><input id='" + id + "' name='" + inputName + "' " + checked + " class='" + cssPrefix + "-" + type + " " + clazz.__internalInputClass__P_562_9 + "' type='" + type + "' /><label class='" + clazz.__inputLabelClass__P_562_15 + "' for='" + id + "'></label></" + nodeName + ">");
 
           if (row.cells.item(0)) {
             inputNode.insertBefore(qxWeb(row.cells.item(0)));
@@ -3936,8 +3936,8 @@
       * Checks if a column with the specified name exists
       * @param columnName {String} The name of the column to check
       */
-      __checkColumnExistance: function __checkColumnExistance(columnName) {
-        var data = this.__columnMeta;
+      __checkColumnExistance__P_562_30: function __checkColumnExistance__P_562_30(columnName) {
+        var data = this.__columnMeta__P_562_19;
 
         if (data && !data[columnName]) {
           throw new Error("Column " + columnName + " does not exists !");
@@ -3948,7 +3948,7 @@
       * Returns the row containing the cells with the column names
       * @return {HTMLTableRowElement} The row with meta information
       */
-      __getHeaderRow: function __getHeaderRow() {
+      __getHeaderRow__P_562_43: function __getHeaderRow__P_562_43() {
         var tHeadOrFoot = this[0].tHead;
 
         if (!tHeadOrFoot) {
@@ -3975,35 +3975,35 @@
        * @param model {Array} The widget's model
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __getColumnMetaData: function __getColumnMetaData(model) {
-        this.__addClassToHeaderAndFooter(this[0].tHead);
+      __getColumnMetaData__P_562_27: function __getColumnMetaData__P_562_27(model) {
+        this.__addClassToHeaderAndFooter__P_562_44(this[0].tHead);
 
-        this.__addClassToHeaderAndFooter(this[0].tFoot);
+        this.__addClassToHeaderAndFooter__P_562_44(this[0].tFoot);
 
         var data = {},
             cells = null,
             colName = null,
             cell = null;
 
-        var headerRow = this.__getHeaderRow();
+        var headerRow = this.__getHeaderRow__P_562_43();
 
         cells = headerRow.cells;
 
         for (var i = 0, l = cells.length; i < l; i++) {
           cell = qxWeb(cells.item(i));
-          colName = this.__getColumName(cell[0]) || qx.ui.website.Table.__getUID();
+          colName = this.__getColumName__P_562_45(cell[0]) || qx.ui.website.Table.__getUID__P_562_4();
 
-          if (!cell[0].getAttribute(qx.ui.website.Table.__dataColName)) {
-            cell.setAttribute(qx.ui.website.Table.__dataColName, colName);
+          if (!cell[0].getAttribute(qx.ui.website.Table.__dataColName__P_562_11)) {
+            cell.setAttribute(qx.ui.website.Table.__dataColName__P_562_11, colName);
           }
 
           data[colName] = {
-            type: cell[0].getAttribute(qx.ui.website.Table.__dataColType) || "String",
+            type: cell[0].getAttribute(qx.ui.website.Table.__dataColType__P_562_12) || "String",
             name: colName
           };
         }
 
-        this.__columnMeta = data;
+        this.__columnMeta__P_562_19 = data;
         return this;
       },
 
@@ -4012,13 +4012,13 @@
        * @param footOrHead {HTMLElement} Html element representing the header or footer of the table
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __addClassToHeaderAndFooter: function __addClassToHeaderAndFooter(footOrHead) {
+      __addClassToHeaderAndFooter__P_562_44: function __addClassToHeaderAndFooter__P_562_44(footOrHead) {
         if (footOrHead && footOrHead.rows.length > 0) {
           if (footOrHead.rows.item(0).cells.length > 0) {
-            var row = this.__getHeaderRow();
+            var row = this.__getHeaderRow__P_562_43();
 
-            if (!qxWeb(row.cells.item(0)).hasClass(qx.ui.website.Table.__internalHeaderClass)) {
-              qxWeb(row.cells).addClass(qx.ui.website.Table.__internalHeaderClass);
+            if (!qxWeb(row.cells.item(0)).hasClass(qx.ui.website.Table.__internalHeaderClass__P_562_7)) {
+              qxWeb(row.cells).addClass(qx.ui.website.Table.__internalHeaderClass__P_562_7);
             }
           }
         }
@@ -4031,12 +4031,12 @@
        * @param dataRows {Array} Array containing the sorted rows
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __sortDOM: function __sortDOM(dataRows) {
+      __sortDOM__P_562_33: function __sortDOM__P_562_33(dataRows) {
         for (var i = 0, l = dataRows.length; i < l; i++) {
           if (i) {
             qxWeb(dataRows[i]).insertAfter(dataRows[i - 1]);
           } else {
-            qxWeb(dataRows[i]).insertBefore(qxWeb(this.__getRoot().rows.item(0)));
+            qxWeb(dataRows[i]).insertBefore(qxWeb(this.__getRoot__P_562_31().rows.item(0)));
           }
         }
 
@@ -4047,15 +4047,15 @@
        * registers global events
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __registerEvents: function __registerEvents() {
-        this.on("tap", this.__detectClickedCell);
+      __registerEvents__P_562_29: function __registerEvents__P_562_29() {
+        this.on("tap", this.__detectClickedCell__P_562_46);
         this.on("cellClick", function (data) {
-          if (data.cell && data.cell.hasClass(qx.ui.website.Table.__internalHeaderClass)) {
-            this.__sortingFunction.bind(this)(data);
+          if (data.cell && data.cell.hasClass(qx.ui.website.Table.__internalHeaderClass__P_562_7)) {
+            this.__sortingFunction__P_562_20.bind(this)(data);
           }
         }, this);
-        this.on("pointerover", this.__cellHover, this);
-        this.on("pointerout", this.__cellOut, this);
+        this.on("pointerover", this.__cellHover__P_562_47, this);
+        this.on("pointerout", this.__cellOut__P_562_48, this);
         return this;
       },
 
@@ -4063,8 +4063,8 @@
       * Checks if the selection inputs are already rendered
       * @return {Boolean} True if the inputs are rendered and false otherwise
       */
-      __selectionRendered: function __selectionRendered() {
-        return qxWeb("." + qx.ui.website.Table.__internalSelectionClass).length > 0;
+      __selectionRendered__P_562_49: function __selectionRendered__P_562_49() {
+        return qxWeb("." + qx.ui.website.Table.__internalSelectionClass__P_562_8).length > 0;
       },
 
       /**
@@ -4072,16 +4072,16 @@
       * @param cell {qxWeb} The table cell containing the clicked input
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __processSelection: function __processSelection(cell) {
+      __processSelection__P_562_50: function __processSelection__P_562_50(cell) {
         var clazz = qx.ui.website.Table;
-        var inputs = qxWeb("." + clazz.__internalInputClass);
+        var inputs = qxWeb("." + clazz.__internalInputClass__P_562_9);
         var clickedInput = cell.find("input");
         var selectionMode = this.getConfig("rowSelection");
-        var headerInput = qxWeb("." + clazz.__internalHeaderClass + " input");
+        var headerInput = qxWeb("." + clazz.__internalHeaderClass__P_562_7 + " input");
         var selection = [];
 
         if (selectionMode == "multiple") {
-          if (cell.hasClass(clazz.__internalHeaderClass)) {
+          if (cell.hasClass(clazz.__internalHeaderClass__P_562_7)) {
             inputs.setAttribute("checked", clickedInput[0].checked);
           }
 
@@ -4115,8 +4115,8 @@
           return elem.parentNode.parentNode;
         });
         selectedRows = qxWeb(selectedRows);
-        qxWeb("." + clazz.__selectedRowClass).removeClass(clazz.__selectedRowClass);
-        selectedRows.addClass(clazz.__selectedRowClass);
+        qxWeb("." + clazz.__selectedRowClass__P_562_16).removeClass(clazz.__selectedRowClass__P_562_16);
+        selectedRows.addClass(clazz.__selectedRowClass__P_562_16);
         this.emit("selectionChange", {
           rows: qxWeb(selectedRows)
         });
@@ -4130,19 +4130,19 @@
       * @param target {HTMLElement} The native event target
       * @return {Map} Map containing the event data
       */
-      __fireEvent: function __fireEvent(eventType, cell, target) {
+      __fireEvent__P_562_51: function __fireEvent__P_562_51(eventType, cell, target) {
         var row = cell[0].parentNode,
             cells = row.cells;
 
-        var colNumber = qx.ui.website.Table.__getIndex(cells, cell[0]);
+        var colNumber = qx.ui.website.Table.__getIndex__P_562_3(cells, cell[0]);
 
-        var tHead = this.__getHeaderRow();
+        var tHead = this.__getHeaderRow__P_562_43();
 
         var headCell = tHead.cells.item(colNumber);
 
-        var colName = this.__getColumName(headCell);
+        var colName = this.__getColumName__P_562_45(headCell);
 
-        var columnIndex = this.getConfig("rowSelection") != "none" ? this.__getColumnIndex(colName) - 1 : this.__getColumnIndex(colName);
+        var columnIndex = this.getConfig("rowSelection") != "none" ? this.__getColumnIndex__P_562_37(colName) - 1 : this.__getColumnIndex__P_562_37(colName);
         var data = {
           cell: qxWeb(cell),
           row: qxWeb(row),
@@ -4160,12 +4160,12 @@
        * @param e {Event} The native click event.
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __detectClickedCell: function __detectClickedCell(e) {
+      __detectClickedCell__P_562_46: function __detectClickedCell__P_562_46(e) {
         var target = e.getTarget();
         var cell = qxWeb(target);
         var clazz = qx.ui.website.Table;
 
-        while (!(cell.hasClass(clazz.__internalCellClass) || cell.hasClass(clazz.__internalHeaderClass) || cell.hasClass(clazz.__internalSelectionClass))) {
+        while (!(cell.hasClass(clazz.__internalCellClass__P_562_6) || cell.hasClass(clazz.__internalHeaderClass__P_562_7) || cell.hasClass(clazz.__internalSelectionClass__P_562_8))) {
           if (cell.hasClass(this.classname)) {
             cell = null;
             break;
@@ -4174,13 +4174,13 @@
           cell = cell.getParents().eq(0);
         }
 
-        if (cell.hasClass(clazz.__internalSelectionClass)) {
+        if (cell.hasClass(clazz.__internalSelectionClass__P_562_8)) {
           window.setTimeout(function () {
-            this.__processSelection(cell);
+            this.__processSelection__P_562_50(cell);
           }.bind(this), 5);
         } else {
           if (cell && cell.length > 0) {
-            this.__fireEvent("cellClick", cell, target);
+            this.__fireEvent__P_562_51("cellClick", cell, target);
           }
         }
 
@@ -4192,10 +4192,10 @@
       *
       * @param e {Event} The native over event.
       */
-      __cellHover: function __cellHover(e) {
+      __cellHover__P_562_47: function __cellHover__P_562_47(e) {
         var target = e.getTarget();
         var cell = qxWeb(target);
-        var hovered = this.__hovered;
+        var hovered = this.__hovered__P_562_25;
 
         if (!cell.hasClass("qx-table-cell") && !cell.hasClass("qx-table-header")) {
           cell = cell.getClosest(".qx-table-cell, .qx-table-header");
@@ -4206,7 +4206,7 @@
             this.emit("cellOut", hovered);
           }
 
-          this.__hovered = this.__fireEvent("cellHover", cell, target);
+          this.__hovered__P_562_25 = this.__fireEvent__P_562_51("cellHover", cell, target);
         }
       },
 
@@ -4215,21 +4215,21 @@
       *
       * @param e {Event} The native over event.
       */
-      __cellOut: function __cellOut(e) {
+      __cellOut__P_562_48: function __cellOut__P_562_48(e) {
         var relatedTarget = e.getRelatedTarget();
         var cell = qxWeb(relatedTarget);
 
-        if (this.__hovered) {
+        if (this.__hovered__P_562_25) {
           if (!cell.isChildOf(this)) {
-            this.emit("cellOut", this.__hovered);
-            this.__hovered = null;
+            this.emit("cellOut", this.__hovered__P_562_25);
+            this.__hovered__P_562_25 = null;
           } else {
             if (!cell.hasClass("qx-table-cell") && !cell.hasClass("qx-table-header")) {
               cell = cell.getClosest(".qx-table-cell, .qx-table-header");
 
               if (cell.hasClass("qx-table-row-selection")) {
-                this.emit("cellOut", this.__hovered);
-                this.__hovered = null;
+                this.emit("cellOut", this.__hovered__P_562_25);
+                this.__hovered__P_562_25 = null;
               }
             }
           }
@@ -4242,19 +4242,19 @@
        * @param model {Array} The model to apply
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __applyTemplate: function __applyTemplate(model) {
+      __applyTemplate__P_562_39: function __applyTemplate__P_562_39(model) {
         if (model && model.length > 0) {
           var cell, row;
 
-          var tHead = this.__getHeaderRow();
+          var tHead = this.__getHeaderRow__P_562_43();
 
           var createdRow = null,
               colMeta = null;
           var renderedRow = null;
           var inputType = this.getConfig("rowSelection") == "single" ? "radio" : "checkbox";
 
-          if (this.__getRoot().rows.length > model.length) {
-            this.__deleteRows(model.length);
+          if (this.__getRoot__P_562_31().rows.length > model.length) {
+            this.__deleteRows__P_562_52(model.length);
           }
 
           var renderedColIndex = 0,
@@ -4265,27 +4265,27 @@
           for (var i = 0, rowCount = model.length; i < rowCount; i++) {
             row = model[i];
 
-            if (!this.__isRowRendered(i)) {
-              createdRow = this.__getRoot().insertRow(i);
+            if (!this.__isRowRendered__P_562_53(i)) {
+              createdRow = this.__getRoot__P_562_31().insertRow(i);
 
-              if (this.__selectionRendered()) {
-                this.__createInput(createdRow, inputType, "td");
+              if (this.__selectionRendered__P_562_49()) {
+                this.__createInput__P_562_42(createdRow, inputType, "td");
               }
             }
 
             for (var j = 0, colCount = row.length; j < colCount; j++) {
-              renderedColIndex = this.__selectionRendered() ? j + 1 : j;
-              colName = this.__getColumName(tHead.cells.item(renderedColIndex));
-              colMeta = this.__getDataForColumn(colName);
+              renderedColIndex = this.__selectionRendered__P_562_49() ? j + 1 : j;
+              colName = this.__getColumName__P_562_45(tHead.cells.item(renderedColIndex));
+              colMeta = this.__getDataForColumn__P_562_54(colName);
               coltemplate = this.getTemplate(colName) || coltemplate;
-              renderedRow = this.__getRoot().rows.item(i);
+              renderedRow = this.__getRoot__P_562_31().rows.item(i);
               cell = qxWeb.create(qxWeb.template.render(coltemplate, model[i][j]))[0];
 
               if (cell.nodeName.toUpperCase() != "TD") {
                 break;
               }
 
-              if (!this.__isCellRendered(i, renderedColIndex)) {
+              if (!this.__isCellRendered__P_562_55(i, renderedColIndex)) {
                 renderedRow.appendChild(cell);
               } else {
                 renderedRow.replaceChild(cell, this.getCell(i, renderedColIndex)[0]);
@@ -4317,8 +4317,8 @@
       * @param  rowCount {Integer} The number of rows the kept
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __deleteRows: function __deleteRows(rowCount) {
-        var renderedRows = this.__getRoot().rows;
+      __deleteRows__P_562_52: function __deleteRows__P_562_52(rowCount) {
+        var renderedRows = this.__getRoot__P_562_31().rows;
 
         while (renderedRows.length > rowCount) {
           this[0].deleteRow(renderedRows.length);
@@ -4332,15 +4332,15 @@
       * @param columName {String} The name of the column to get the metadata for
       * @return {Map} Map containing the metadata
       */
-      __getDataForColumn: function __getDataForColumn(columName) {
-        return this.__columnMeta[columName];
+      __getDataForColumn__P_562_54: function __getDataForColumn__P_562_54(columName) {
+        return this.__columnMeta__P_562_19[columName];
       },
 
       /**
        * Gets the Root element containing the data rows
        * @return {HTMLElement} The element containing the data rows
        */
-      __getRoot: function __getRoot() {
+      __getRoot__P_562_31: function __getRoot__P_562_31() {
         return this[0].tBodies.item(0) || this[0];
       },
 
@@ -4349,8 +4349,8 @@
        * @param index {Integer} The index of the row to check
        * @return {Boolean} The result of the check
        */
-      __isRowRendered: function __isRowRendered(index) {
-        if (this.__getRoot().rows.item(index)) {
+      __isRowRendered__P_562_53: function __isRowRendered__P_562_53(index) {
+        if (this.__getRoot__P_562_31().rows.item(index)) {
           return true;
         }
 
@@ -4363,12 +4363,12 @@
        * @param colIndex {Integer} The index of the column
        * @return {Boolean} The result of the check
        */
-      __isCellRendered: function __isCellRendered(rowIndex, colIndex) {
-        if (!this.__isRowRendered(rowIndex)) {
+      __isCellRendered__P_562_55: function __isCellRendered__P_562_55(rowIndex, colIndex) {
+        if (!this.__isRowRendered__P_562_53(rowIndex)) {
           return false;
         }
 
-        if (this.__getRoot().rows.item(rowIndex).cells.item(colIndex)) {
+        if (this.__getRoot__P_562_31().rows.item(rowIndex).cells.item(colIndex)) {
           return true;
         }
 
@@ -4385,9 +4385,9 @@
           columnName: columnName,
           direction: dir
         };
-        this.__sortingData = data;
+        this.__sortingData__P_562_26 = data;
 
-        this.__addSortingClassToCol(this[0].tHead, columnName, dir);
+        this.__addSortingClassToCol__P_562_56(this[0].tHead, columnName, dir);
       },
 
       /**
@@ -4396,12 +4396,12 @@
        * @param columnName {String} The name of the sorted column
        * @param dir {String} The sorting direction
        */
-      __addSortingClassToCol: function __addSortingClassToCol(HeaderOrFooter, columnName, dir) {
-        var rows = this.__getHeaderRow();
+      __addSortingClassToCol__P_562_56: function __addSortingClassToCol__P_562_56(HeaderOrFooter, columnName, dir) {
+        var rows = this.__getHeaderRow__P_562_43();
 
         if (HeaderOrFooter && rows) {
           qxWeb(rows.cells).removeClasses(["qx-table-sort-asc", "qx-table-sort-desc"]);
-          var cell = qxWeb("[" + qx.ui.website.Table.__dataColName + "='" + columnName + "'], #" + columnName);
+          var cell = qxWeb("[" + qx.ui.website.Table.__dataColName__P_562_11 + "='" + columnName + "'], #" + columnName);
           cell.addClass("qx-table-sort-" + dir);
         }
       },
@@ -4412,8 +4412,8 @@
        * @param direction {String} The sorting direction
        * @return {Array} Array containing the sorted rows
        */
-      __sort: function __sort(columnName, direction) {
-        var meta = this.__getDataForColumn(columnName);
+      __sort__P_562_34: function __sort__P_562_34(columnName, direction) {
+        var meta = this.__getDataForColumn__P_562_54(columnName);
 
         var columnType = qxWeb.string.firstUp(meta.type);
 
@@ -4423,14 +4423,14 @@
 
         var compareFunc = this.getCompareFunction(columnType).bind(this);
 
-        var model = this.__getDataRows();
+        var model = this.__getDataRows__P_562_38();
 
-        var columnIndex = this.__getColumnIndex(columnName);
+        var columnIndex = this.__getColumnIndex__P_562_37(columnName);
 
         return model.sort(function (a, b) {
-          var x = this.__getSortingKey(qxWeb(a.cells.item(columnIndex)));
+          var x = this.__getSortingKey__P_562_57(qxWeb(a.cells.item(columnIndex)));
 
-          var y = this.__getSortingKey(qxWeb(b.cells.item(columnIndex)));
+          var y = this.__getSortingKey__P_562_57(qxWeb(b.cells.item(columnIndex)));
 
           return compareFunc(x, y, direction);
         }.bind(this));
@@ -4444,8 +4444,8 @@
        * @return {Integer} The result of the comparison
        */
       _compareNumber: function _compareNumber(x, y, direction) {
-        x = qx.ui.website.Table.__isNumber(x) ? Number(x) : 0;
-        y = qx.ui.website.Table.__isNumber(y) ? Number(y) : 0;
+        x = qx.ui.website.Table.__isNumber__P_562_1(x) ? Number(x) : 0;
+        y = qx.ui.website.Table.__isNumber__P_562_1(y) ? Number(y) : 0;
 
         if (direction == "asc") {
           return x - y;
@@ -4461,8 +4461,8 @@
       * @param headerCell {HTMLTableCellElement} The cell to get the column name for
       * @return {String} The column name
       */
-      __getColumName: function __getColumName(headerCell) {
-        return headerCell.getAttribute(qx.ui.website.Table.__dataColName) || headerCell.getAttribute("id");
+      __getColumName__P_562_45: function __getColumName__P_562_45(headerCell) {
+        return headerCell.getAttribute(qx.ui.website.Table.__dataColName__P_562_11) || headerCell.getAttribute("id");
       },
 
       /**
@@ -4473,8 +4473,8 @@
        * @return {Integer} The result of the comparison
        */
       _compareDate: function _compareDate(x, y, direction) {
-        x = qx.ui.website.Table.__isDate(x) ? new Date(x) : new Date(0);
-        y = qx.ui.website.Table.__isDate(y) ? new Date(y) : new Date(0);
+        x = qx.ui.website.Table.__isDate__P_562_2(x) ? new Date(x) : new Date(0);
+        y = qx.ui.website.Table.__isDate__P_562_2(y) ? new Date(y) : new Date(0);
 
         if (direction == "asc") {
           return x - y;
@@ -4512,8 +4512,8 @@
       * @param cell {qxWeb} The cell to get the value of.
       * @return {String} The sorting key
       */
-      __getSortingKey: function __getSortingKey(cell) {
-        return cell.getAttribute(qx.ui.website.Table.__dataSortingKey) || this.__getCellValue(cell);
+      __getSortingKey__P_562_57: function __getSortingKey__P_562_57(cell) {
+        return cell.getAttribute(qx.ui.website.Table.__dataSortingKey__P_562_13) || this.__getCellValue__P_562_58(cell);
       },
 
       /**
@@ -4521,7 +4521,7 @@
        * @param cell {qxWeb} The cell to get the value of
        * @return {String} The text content of the cell
        */
-      __getCellValue: function __getCellValue(cell) {
+      __getCellValue__P_562_58: function __getCellValue__P_562_58(cell) {
         return cell[0].textContent || cell[0].innerText || "";
       },
 
@@ -4529,7 +4529,7 @@
        * Gets the table's data rows from the DOM
        * @return {Array} Array containing the rows of the table
        */
-      __getDataRows: function __getDataRows() {
+      __getDataRows__P_562_38: function __getDataRows__P_562_38() {
         var rows = this.find("tbody")[0].rows,
             model = [],
             cell = null,
@@ -4545,8 +4545,8 @@
           for (var j = 0, len = cells.length; j < len; j++) {
             cell = qxWeb(cells[j]);
 
-            if (!cell.hasClass(qx.ui.website.Table.__internalCellClass)) {
-              cell.addClass(qx.ui.website.Table.__internalCellClass);
+            if (!cell.hasClass(qx.ui.website.Table.__internalCellClass__P_562_6)) {
+              cell.addClass(qx.ui.website.Table.__internalCellClass__P_562_6);
             }
           }
 
@@ -4560,7 +4560,7 @@
        * Default sorting processing
        * @param data {Map} Sorting data
        */
-      __defaultColumnSort: function __defaultColumnSort(data) {
+      __defaultColumnSort__P_562_28: function __defaultColumnSort__P_562_28(data) {
         var dir = "asc";
         var sortedData = this.getSortingData();
 
@@ -4582,11 +4582,11 @@
       * @param data {Map} Map containing the filter data
       * @return {Boolean} True wenn the row containing the current cell should be kept
       */
-      __defaultColumnFilter: function __defaultColumnFilter(data) {
+      __defaultColumnFilter__P_562_32: function __defaultColumnFilter__P_562_32(data) {
         var caseSensitive = this.getConfig("caseSensitive");
-        var cell = data.columnName == qx.ui.website.Table.__allColumnSelector ? data.row : data.cell;
+        var cell = data.columnName == qx.ui.website.Table.__allColumnSelector__P_562_10 ? data.row : data.cell;
 
-        var cellValue = this.__getCellValue(cell);
+        var cellValue = this.__getCellValue__P_562_58(cell);
 
         if (caseSensitive) {
           return cellValue.indexOf(data.keyword) != -1;
@@ -4600,13 +4600,13 @@
        * @param columnName {String} The colukn name
        * @return {Integer} The index of the column or -1 if the column doesn't exists
        */
-      __getColumnIndex: function __getColumnIndex(columnName) {
-        var tHead = this.__getHeaderRow();
+      __getColumnIndex__P_562_37: function __getColumnIndex__P_562_37(columnName) {
+        var tHead = this.__getHeaderRow__P_562_43();
 
         var cells = tHead.cells;
 
         for (var i = 0; i < cells.length; i++) {
-          if (columnName == this.__getColumName(cells.item(i))) {
+          if (columnName == this.__getColumName__P_562_45(cells.item(i))) {
             return i;
           }
         }
@@ -4984,8 +4984,8 @@
     members: {
       _cnt: null,
       _failed: null,
-      __tree: null,
-      __model: null,
+      __tree__P_591_0: null,
+      __model__P_591_1: null,
       log: function log(text) {
         console.log(text);
         qx.log.Logger.debug(text);
@@ -5000,7 +5000,7 @@
       },
       // add an item in the tree
       addTreeItem: function addTreeItem(status, testNumber, testClass, testName, message = "") {
-        let classNode = this.__model.getChildren().toArray().find(item => item.getLabel() === testClass);
+        let classNode = this.__model__P_591_1.getChildren().toArray().find(item => item.getLabel() === testClass);
 
         if (!classNode) {
           classNode = qx.data.marshal.Json.createModel({
@@ -5010,7 +5010,7 @@
             numberFailed: 0
           });
 
-          this.__model.getChildren().append(classNode);
+          this.__model__P_591_1.getChildren().append(classNode);
         }
 
         let modelItem = qx.data.marshal.Json.createModel({
@@ -5021,7 +5021,7 @@
         });
         classNode.getChildren().push(modelItem); // update parent nodes
 
-        [classNode, this.__model].forEach(node => {
+        [classNode, this.__model__P_591_1].forEach(node => {
           node.setNumberPassed(node.getChildren().reduce((acc, curr) => acc + curr.getNumberPassed(), 0));
           node.setNumberFailed(node.getChildren().reduce((acc, curr) => acc + curr.getNumberFailed(), 0));
         });
@@ -5071,7 +5071,7 @@
         //container.setAllowStretchX(false);
 
         scroller.add(container);
-        const tree = this.__tree = new qx.ui.tree.VirtualTree(null, "label", "children");
+        const tree = this.__tree__P_591_0 = new qx.ui.tree.VirtualTree(null, "label", "children");
         container.add(tree);
         const delegate = {
           bindItem(controller, item, id) {
@@ -5085,7 +5085,7 @@
 
         };
         tree.setDelegate(delegate);
-        let model = this.__model = qx.data.marshal.Json.createModel(this.getRootNodeData(), true);
+        let model = this.__model__P_591_1 = qx.data.marshal.Json.createModel(this.getRootNodeData(), true);
         tree.setModel(model); // log pane
 
         let logger = new qxl.logpane.LogPane();
@@ -5119,7 +5119,7 @@
         return pChain.then(() => {
           this.log(`1..${this._cnt}`);
 
-          this.__model.setLabel("Tests have finished:");
+          this.__model__P_591_1.setLabel("Tests have finished:");
         });
       },
       runAll: function runAll(cfg, clazz) {
@@ -5394,7 +5394,7 @@
   qx.Class.define("qxl.logpane.LogPane", {
     extend: qx.ui.container.Composite,
     construct: function construct() {
-      this.__logLevelData = [["debug", "Debug", "icon/16/categories/system.png"], ["info", "Info", "icon/16/status/dialog-information.png"], ["warn", "Warning", "icon/16/status/dialog-warning.png"], ["error", "Error", "icon/16/status/dialog-error.png"]];
+      this.__logLevelData__P_593_0 = [["debug", "Debug", "icon/16/categories/system.png"], ["info", "Info", "icon/16/status/dialog-information.png"], ["warn", "Warning", "icon/16/status/dialog-warning.png"], ["error", "Error", "icon/16/status/dialog-error.png"]];
       var layout = new qx.ui.layout.VBox();
       layout.setSeparator("separator-vertical");
       qx.ui.container.Composite.constructor.call(this, layout);
@@ -5409,22 +5409,22 @@
       }); //this.add(caption);
       //toolbar of the log pane
 
-      this.__toolbar = new qx.ui.toolbar.ToolBar();
+      this.__toolbar__P_593_1 = new qx.ui.toolbar.ToolBar();
 
-      this.__toolbar.add(caption);
+      this.__toolbar__P_593_1.add(caption);
 
-      this.__toolbar.addSpacer();
+      this.__toolbar__P_593_1.addSpacer();
 
-      this.__toolbar.setBackgroundColor("white");
+      this.__toolbar__P_593_1.setBackgroundColor("white");
 
       var clearButton = new qx.ui.toolbar.Button(this.tr("Clear"), "icon/16/actions/edit-clear.png");
       clearButton.addListener("execute", function (e) {
         this.clear();
       }, this);
 
-      this.__toolbar.add(clearButton);
+      this.__toolbar__P_593_1.add(clearButton);
 
-      this.add(this.__toolbar); // log pane
+      this.add(this.__toolbar__P_593_1); // log pane
 
       var logArea = new qx.ui.embed.Html('');
       logArea.set({
@@ -5444,15 +5444,15 @@
         flex: 1
       }); // log appender
 
-      this.__logAppender = new qx.log.appender.Element();
-      qx.log.Logger.unregister(this.__logAppender); // Directly create DOM element to use
+      this.__logAppender__P_593_2 = new qx.log.appender.Element();
+      qx.log.Logger.unregister(this.__logAppender__P_593_2); // Directly create DOM element to use
 
-      this.__logElem = document.createElement("DIV");
+      this.__logElem__P_593_3 = document.createElement("DIV");
 
-      this.__logAppender.setElement(this.__logElem);
+      this.__logAppender__P_593_2.setElement(this.__logElem__P_593_3);
 
       logArea.addListenerOnce("appear", function () {
-        logArea.getContentElement().getDomElement().appendChild(this.__logElem);
+        logArea.getContentElement().getDomElement().appendChild(this.__logElem__P_593_3);
       }, this);
     },
     properties: {
@@ -5473,17 +5473,17 @@
       }
     },
     members: {
-      __logElem: null,
-      __logAppender: null,
-      __logLevelData: null,
-      __logLevelButton: null,
-      __toolbar: null,
+      __logElem__P_593_3: null,
+      __logAppender__P_593_2: null,
+      __logLevelData__P_593_0: null,
+      __logLevelButton__P_593_4: null,
+      __toolbar__P_593_1: null,
 
       /**
        * Clears the log.
        */
       clear: function clear() {
-        this.__logAppender.clear();
+        this.__logAppender__P_593_2.clear();
       },
 
       /**
@@ -5498,7 +5498,7 @@
         } // Register to flush the log queue into the appender.
 
 
-        Logger.register(this.__logAppender); // Clear buffer
+        Logger.register(this.__logAppender__P_593_2); // Clear buffer
 
         Logger.clear();
       },
@@ -5508,27 +5508,27 @@
        * @return {DIV} The appender element.
        */
       getAppenderElement: function getAppenderElement() {
-        return this.__logElem;
+        return this.__logElem__P_593_3;
       },
       _applyShowToolBar: function _applyShowToolBar(value, old) {
         if (value) {
-          this.__toolbar.show();
+          this.__toolbar__P_593_1.show();
         } else {
-          this.__toolbar.exclude();
+          this.__toolbar__P_593_1.exclude();
         }
       },
       // property apply
       _applyShowLogLevel: function _applyShowLogLevel(value, old) {
-        if (!this.__logLevelButton) {
-          this.__logLevelButton = this.__createLogLevelMenu();
+        if (!this.__logLevelButton__P_593_4) {
+          this.__logLevelButton__P_593_4 = this.__createLogLevelMenu__P_593_5();
 
-          this.__toolbar.add(this.__logLevelButton);
+          this.__toolbar__P_593_1.add(this.__logLevelButton__P_593_4);
         }
 
         if (value) {
-          this.__logLevelButton.show();
+          this.__logLevelButton__P_593_4.show();
         } else {
-          this.__logLevelButton.exclude();
+          this.__logLevelButton__P_593_4.exclude();
         }
       },
 
@@ -5537,13 +5537,13 @@
        *
        * @return {qx.ui.toolbar.MenuButton}
        */
-      __createLogLevelMenu: function __createLogLevelMenu() {
+      __createLogLevelMenu__P_593_5: function __createLogLevelMenu__P_593_5() {
         var logLevelMenu = new qx.ui.menu.Menu();
         var logLevelMenuButton = new qx.ui.toolbar.MenuButton("Log Level", "icon/16/categories/system.png");
         logLevelMenuButton.setMenu(logLevelMenu);
 
-        for (var i = 0, l = this.__logLevelData.length; i < l; i++) {
-          var data = this.__logLevelData[i];
+        for (var i = 0, l = this.__logLevelData__P_593_0.length; i < l; i++) {
+          var data = this.__logLevelData__P_593_0[i];
           var button = new qx.ui.menu.Button(data[1], data[2]);
           button.setUserData("model", data[0]);
           button.addListener("execute", function (ev) {
@@ -5564,14 +5564,14 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this._disposeObjects("__logAppender");
+      this._disposeObjects("__logAppender__P_593_2");
 
-      this.__logElem = null;
+      this.__logElem__P_593_3 = null;
     }
   });
   qxl.logpane.LogPane.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-11.js.map?dt=1589218302790
+//# sourceMappingURL=package-11.js.map?dt=1591363029644
 qx.$$packageData['11'] = {
   "locales": {},
   "resources": {},

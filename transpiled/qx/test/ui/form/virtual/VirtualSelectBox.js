@@ -34,26 +34,26 @@
   qx.Class.define("qx.test.ui.form.virtual.VirtualSelectBox", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __selectBox: null,
+      __selectBox__P_326_0: null,
       setUp: function setUp() {
         qx.test.ui.form.virtual.VirtualSelectBox.prototype.setUp.base.call(this);
-        this.__model = this.__createModelData();
-        this.__selectBox = new qx.ui.form.VirtualSelectBox(this.__model);
-        this.getRoot().add(this.__selectBox);
+        this.__model__P_326_1 = this.__createModelData__P_326_2();
+        this.__selectBox__P_326_0 = new qx.ui.form.VirtualSelectBox(this.__model__P_326_1);
+        this.getRoot().add(this.__selectBox__P_326_0);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.virtual.VirtualSelectBox.prototype.tearDown.base.call(this);
 
-        this.__selectBox.destroy();
+        this.__selectBox__P_326_0.destroy();
 
-        this.__selectBox = null;
+        this.__selectBox__P_326_0 = null;
 
-        this.__model.dispose();
+        this.__model__P_326_1.dispose();
 
-        this.__model = null;
+        this.__model__P_326_1 = null;
       },
-      __createModelData: function __createModelData() {
+      __createModelData__P_326_2: function __createModelData__P_326_2() {
         var model = new qx.data.Array();
 
         for (var i = 0; i < 100; i++) {
@@ -63,15 +63,15 @@
         return model;
       },
       testCreation: function testCreation() {
-        this.assertEquals(this.__model.getLength(), this.__selectBox.getModel().getLength(), "Model length not equals!");
-        this.assertEquals(this.__model, this.__selectBox.getModel(), "Model instance not equals!");
-        this.assertEquals(this.__model, this.__selectBox.getChildControl("dropdown").getChildControl("list").getModel(), "Model instance on list not equals!");
-        this.assertEquals(1, this.__selectBox.getSelection().getLength(), "Selection length not equals!");
-        this.assertEquals(this.__model.getItem(0), this.__selectBox.getSelection().getItem(0), "Selection instance not equals!");
+        this.assertEquals(this.__model__P_326_1.getLength(), this.__selectBox__P_326_0.getModel().getLength(), "Model length not equals!");
+        this.assertEquals(this.__model__P_326_1, this.__selectBox__P_326_0.getModel(), "Model instance not equals!");
+        this.assertEquals(this.__model__P_326_1, this.__selectBox__P_326_0.getChildControl("dropdown").getChildControl("list").getModel(), "Model instance on list not equals!");
+        this.assertEquals(1, this.__selectBox__P_326_0.getSelection().getLength(), "Selection length not equals!");
+        this.assertEquals(this.__model__P_326_1.getItem(0), this.__selectBox__P_326_0.getSelection().getItem(0), "Selection instance not equals!");
       }
     }
   });
   qx.test.ui.form.virtual.VirtualSelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualSelectBox.js.map?dt=1589218264742
+//# sourceMappingURL=VirtualSelectBox.js.map?dt=1591362987086

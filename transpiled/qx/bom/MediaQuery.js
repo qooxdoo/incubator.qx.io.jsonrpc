@@ -73,11 +73,11 @@
      * @param query {String} the media query to evaluate
      */
     construct: function construct(query) {
-      this.__mql = window.matchMedia(query);
+      this.__mql__P_24_0 = window.matchMedia(query);
       this.query = query;
-      this.matches = this.__mql.matches;
+      this.matches = this.__mql__P_24_0.matches;
 
-      this.__init();
+      this.__init__P_24_1();
     },
     events: {
       /**
@@ -101,7 +101,7 @@
       /**
        * The mediaquery Listener
        */
-      __mql: null,
+      __mql__P_24_0: null,
 
       /**
        * Indicates if the document currently matches the media query list
@@ -132,15 +132,15 @@
       /**
        * Initialize the mediaquery listener
        */
-      __init: function __init() {
-        this.__mql.addListener(this.__changed.bind(this));
+      __init__P_24_1: function __init__P_24_1() {
+        this.__mql__P_24_0.addListener(this.__changed__P_24_2.bind(this));
       },
 
       /**
        * Callback for mediaqueries changes
        */
-      __changed: function __changed() {
-        this.matches = this.__mql.matches;
+      __changed__P_24_2: function __changed__P_24_2() {
+        this.matches = this.__mql__P_24_0.matches;
         this.emit("change", {
           matches: this.matches,
           query: this.query
@@ -467,4 +467,4 @@
   qx.bom.MediaQuery.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MediaQuery.js.map?dt=1589218237630
+//# sourceMappingURL=MediaQuery.js.map?dt=1591362956957

@@ -35,7 +35,7 @@
   qx.Class.define("qx.test.ui.form.NumberFormat", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __test: function __test(widget) {
+      __test__P_311_0: function __test__P_311_0(widget) {
         // check if the interface is implemented
         this.assertTrue(qx.Class.hasInterface(widget.constructor, qx.ui.form.INumberForm), "Interface not implemented"); // check for the init value
 
@@ -58,14 +58,14 @@
         widget.destroy();
       },
       testSpinner: function testSpinner() {
-        this.__test(new qx.ui.form.Spinner());
+        this.__test__P_311_0(new qx.ui.form.Spinner());
       },
       testSlider: function testSlider() {
-        this.__test(new qx.ui.form.Slider());
+        this.__test__P_311_0(new qx.ui.form.Slider());
       }
     }
   });
   qx.test.ui.form.NumberFormat.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NumberFormat.js.map?dt=1589218264203
+//# sourceMappingURL=NumberFormat.js.map?dt=1591362986505

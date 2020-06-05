@@ -25,7 +25,7 @@
         },
         {
           "name": "@description",
-          "body": "<p>The grid layout manager arranges the items in a two dimensional\n grid. Widgets can be placed into the grid's cells and may span multiple rows\n and columns.\n<em>Features</em></p>\n<ul>\n<li>Flex values for rows and columns</li>\n<li>Minimal and maximal column and row sizes</li>\n<li>Manually setting of column and row sizes</li>\n<li>Horizontal and vertical alignment</li>\n<li>Horizontal and vertical spacing</li>\n<li>Column and row spans</li>\n<li><p>Auto-sizing\n<em>Item Properties</em></p></li>\n</ul>\n<ul>\n <li><strong>row</strong> <em>(Integer)</em>: The row of the cell the\n   widget should occupy. Each cell can only containing one widget. This layout\n   property is mandatory.\n </li>\n <li><strong>column</strong> <em>(Integer)</em>: The column of the cell the\n   widget should occupy. Each cell can only containing one widget. This layout\n   property is mandatory.\n </li>\n <li><strong>rowSpan</strong> <em>(Integer)</em>: The number of rows, the\n   widget should span, starting from the row specified in the <code>row</code>\n   property. The cells in the spanned rows must be empty as well.\n </li>\n <li><strong>colSpan</strong> <em>(Integer)</em>: The number of columns, the\n   widget should span, starting from the column specified in the <code>column</code>\n   property. The cells in the spanned columns must be empty as well.\n </li>\n </ul>\n<p><em>Example</em>\n Here is a little example of how to use the grid layout.\n </p>\n<pre class=\"javascript\">\n var layout = new qx.ui.layout.Grid();\n layout.setRowFlex(0, 1);\n layout.setColumnWidth(1, 200);\n var container = new qx.ui.container.Composite(layout);\n container.add(new qx.ui.core.Widget(), {row: 0, column: 0});\n container.add(new qx.ui.core.Widget(), {row: 0, column: 1});\n container.add(new qx.ui.core.Widget(), {row: 1, column: 0, rowSpan: 2});\n </pre>\n<p><em>External Documentation</em>\n <a href='http://manual.qooxdoo.org/${qxversion}/pages/layout/grid.html'>\n Extended documentation</a> and links to demos of this layout in the qooxdoo manual.</p>"
+          "body": "<p>The grid layout manager arranges the items in a two dimensional\n grid. Widgets can be placed into the grid's cells and may span multiple rows\n and columns.\n<em>Features</em></p>\n<ul>\n<li>Flex values for rows and columns</li>\n<li>Minimal and maximal column and row sizes</li>\n<li>Manually setting of column and row sizes</li>\n<li>Horizontal and vertical alignment</li>\n<li>Horizontal and vertical spacing</li>\n<li>Column and row spans</li>\n<li><p>Auto-sizing\n<em>Item Properties</em></p></li>\n</ul>\n<ul>\n <li><strong>row</strong> <em>(Integer)</em>: The row of the cell the\n   widget should occupy. Each cell can only containing one widget. This layout\n   property is mandatory.\n </li>\n <li><strong>column</strong> <em>(Integer)</em>: The column of the cell the\n   widget should occupy. Each cell can only containing one widget. This layout\n   property is mandatory.\n </li>\n <li><strong>rowSpan</strong> <em>(Integer)</em>: The number of rows, the\n   widget should span, starting from the row specified in the <code>row</code>\n   property. The cells in the spanned rows must be empty as well.\n </li>\n <li><strong>colSpan</strong> <em>(Integer)</em>: The number of columns, the\n   widget should span, starting from the column specified in the <code>column</code>\n   property. The cells in the spanned columns must be empty as well.\n </li>\n </ul>\n<p><em>Example</em>\n Here is a little example of how to use the grid layout.\n </p>\n<pre class=\"javascript\">\n var layout = new qx.ui.layout.Grid();\n layout.setRowFlex(0, 1);\n layout.setColumnWidth(1, 200);\n var container = new qx.ui.container.Composite(layout);\n container.add(new qx.ui.core.Widget(), {row: 0, column: 0});\n container.add(new qx.ui.core.Widget(), {row: 0, column: 1});\n container.add(new qx.ui.core.Widget(), {row: 1, column: 0, rowSpan: 2});\n </pre>\n<p><em>External Documentation</em>\n <a href='http://qooxdoo.org/docs/#layout/grid.md'>\n Extended documentation</a> and links to demos of this layout in the qooxdoo manual.</p>"
         }
       ]
     }
@@ -160,7 +160,15 @@
       "abstract": false,
       "mixin": true,
       "access": "public",
-      "overriddenFrom": "qx.core.MObjectId"
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
     },
     "qxObjectId": {
       "type": "property",
@@ -168,7 +176,15 @@
       "abstract": false,
       "mixin": true,
       "access": "public",
-      "overriddenFrom": "qx.core.MObjectId"
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
     }
   },
   "members": {
@@ -356,29 +372,6 @@
           {
             "name": "@description",
             "body": "<p>overridden</p>"
-          }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "body": "item {Object} The affected layout item",
-            "paramName": "item",
-            "description": " The affected layout item",
-            "type": "Object"
-          },
-          {
-            "name": "@param",
-            "body": "name {Object} Name of the layout property",
-            "paramName": "name",
-            "description": " Name of the layout property",
-            "type": "Object"
-          },
-          {
-            "name": "@param",
-            "body": "value {Object} Value of the layout property",
-            "paramName": "value",
-            "description": " Value of the layout property",
-            "type": "Object"
           }
         ]
       },
@@ -1842,29 +1835,6 @@
             "name": "@description",
             "body": "<p>overridden</p>"
           }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "body": "availWidth {Integer} Final width available for the content (in pixel)",
-            "paramName": "availWidth",
-            "description": " Final width available for the content (in pixel)",
-            "type": "Integer"
-          },
-          {
-            "name": "@param",
-            "body": "availHeight {Integer} Final height available for the content (in pixel)",
-            "paramName": "availHeight",
-            "description": " Final height available for the content (in pixel)",
-            "type": "Integer"
-          },
-          {
-            "name": "@param",
-            "body": "padding {Map} Map containing the padding values. Keys:\n <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>",
-            "paramName": "padding",
-            "description": " Map containing the padding values. Keys:\n <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>",
-            "type": "Map"
-          }
         ]
       },
       "type": "function",
@@ -1916,14 +1886,6 @@
           {
             "name": "@description",
             "body": "<p>overridden</p>"
-          }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "body": "{Map} The size hint.",
-            "type": "Map",
-            "description": " The size hint."
           }
         ]
       },
@@ -1993,7 +1955,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.ui.layout.Abstract",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -2052,7 +2022,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.ui.layout.Abstract",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getSpacingX": {
       "type": "function",

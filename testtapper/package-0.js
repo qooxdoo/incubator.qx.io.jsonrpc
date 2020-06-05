@@ -2215,8 +2215,8 @@ qx.$$packageData['0'] = {
       "qx"
     ],
     "qx/test/bluebar.svg": [
-      null,
-      null,
+      192,
+      10,
       "svg",
       "qx"
     ],

@@ -54,18 +54,18 @@
       qx.core.Object.constructor.call(this); // If no pane was specified. Create one.
 
       if (!pane) {
-        this.__container = new qx.ui.core.Widget();
-        this.__pane = this.__container;
+        this.__container__P_497_0 = new qx.ui.core.Widget();
+        this.__pane__P_497_1 = this.__container__P_497_0;
       } else {
-        this.__container = null;
-        this.__pane = pane;
+        this.__container__P_497_0 = null;
+        this.__pane__P_497_1 = pane;
       }
 
-      this.__pane.getContentElement().setStyle("overflowY", "auto");
+      this.__pane__P_497_1.getContentElement().setStyle("overflowY", "auto");
     },
     members: {
-      __container: null,
-      __pane: null,
+      __container__P_497_0: null,
+      __pane__P_497_1: null,
 
       /**
        * Apply the structure typically defined in the constructor to the
@@ -84,18 +84,18 @@
        * @return {qx.ui.core.Widget}
        */
       getPane: function getPane() {
-        return this.__pane;
+        return this.__pane__P_497_1;
       }
     },
     destruct: function destruct() {
-      if (this.__container) {
-        this.__container.dispose();
+      if (this.__container__P_497_0) {
+        this.__container__P_497_0.dispose();
       }
 
-      this.__container = this.__pane = null;
+      this.__container__P_497_0 = this.__pane__P_497_1 = null;
     }
   });
   qx.ui.progressive.structure.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1589218279965
+//# sourceMappingURL=Abstract.js.map?dt=1591363004246

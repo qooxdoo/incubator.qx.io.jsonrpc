@@ -86,13 +86,13 @@
      * @param element {Element?} Optional element to show fullscreen.
      */
     construct: function construct(element) {
-      this.__doc = element || window.document;
+      this.__doc__P_17_0 = element || window.document;
 
-      this.__checkAttributeNames();
+      this.__checkAttributeNames__P_17_1();
 
       var self = this; // forward the event
 
-      qx.bom.Event.addNativeListener(this.__doc, this.__eventName, function (e) {
+      qx.bom.Event.addNativeListener(this.__doc__P_17_0, this.__eventName__P_17_2, function (e) {
         self.emit("change", e);
       });
     },
@@ -103,32 +103,32 @@
       "change": "Event"
     },
     members: {
-      __doc: null,
-      __fullscreenElementAttr: "fullscreenElement",
-      __requestMethodName: "requestFullscreen",
-      __cancelMethodName: "cancelFullscreen",
-      __eventName: "fullscreenchange",
+      __doc__P_17_0: null,
+      __fullscreenElementAttr__P_17_3: "fullscreenElement",
+      __requestMethodName__P_17_4: "requestFullscreen",
+      __cancelMethodName__P_17_5: "cancelFullscreen",
+      __eventName__P_17_2: "fullscreenchange",
 
       /**
        * Internal helper to feature check the attribute names and the event name.
        * As the event can not be detected using the on<name> attribute, we need
        * to guess the event name by checking for the hidden attribute.
        */
-      __checkAttributeNames: function __checkAttributeNames() {
+      __checkAttributeNames__P_17_1: function __checkAttributeNames__P_17_1() {
         var prefix = qx.bom.Style.VENDOR_PREFIXES; // check for the hidden attribute name
 
         for (var i = 0; i < prefix.length; i++) {
           var pfix = prefix[i].toLowerCase();
 
-          if (this.__doc[pfix + "FullScreenElement"] !== undefined || this.__doc[pfix + "FullscreenElement"] !== undefined) {
-            this.__eventName = pfix + "fullscreenchange";
+          if (this.__doc__P_17_0[pfix + "FullScreenElement"] !== undefined || this.__doc__P_17_0[pfix + "FullscreenElement"] !== undefined) {
+            this.__eventName__P_17_2 = pfix + "fullscreenchange";
 
             if (pfix == "moz") {
-              this.__fullscreenElementAttr = pfix + "FullScreenElement";
-              this.__requestMethodName = pfix + "RequestFullScreen";
+              this.__fullscreenElementAttr__P_17_3 = pfix + "FullScreenElement";
+              this.__requestMethodName__P_17_4 = pfix + "RequestFullScreen";
             } else {
-              this.__fullscreenElementAttr = pfix + "FullscreenElement";
-              this.__requestMethodName = pfix + "RequestFullscreen";
+              this.__fullscreenElementAttr__P_17_3 = pfix + "FullscreenElement";
+              this.__requestMethodName__P_17_4 = pfix + "RequestFullscreen";
             }
 
             break;
@@ -136,16 +136,16 @@
         } // Doh. This needs some upstream consistency though...
 
 
-        if (this.__doc[pfix + "CancelFullScreen"]) {
-          this.__cancelMethodName = pfix + "CancelFullScreen";
-        } else if (this.__doc[pfix + "CancelFullscreen"]) {
-          this.__cancelMethodName = pfix + "CancelFullscreen";
-        } else if (this.__doc[pfix + "ExitFullScreen"]) {
-          this.__cancelMethodName = pfix + "ExitFullScreen";
-        } else if (this.__doc[pfix + "ExitFullscreen"]) {
-          this.__cancelMethodName = pfix + "ExitFullscreen";
-        } else if (this.__doc["exitFullscreen"]) {
-          this.__cancelMethodName = "exitFullscreen";
+        if (this.__doc__P_17_0[pfix + "CancelFullScreen"]) {
+          this.__cancelMethodName__P_17_5 = pfix + "CancelFullScreen";
+        } else if (this.__doc__P_17_0[pfix + "CancelFullscreen"]) {
+          this.__cancelMethodName__P_17_5 = pfix + "CancelFullscreen";
+        } else if (this.__doc__P_17_0[pfix + "ExitFullScreen"]) {
+          this.__cancelMethodName__P_17_5 = pfix + "ExitFullScreen";
+        } else if (this.__doc__P_17_0[pfix + "ExitFullscreen"]) {
+          this.__cancelMethodName__P_17_5 = pfix + "ExitFullscreen";
+        } else if (this.__doc__P_17_0["exitFullscreen"]) {
+          this.__cancelMethodName__P_17_5 = "exitFullscreen";
         }
       },
 
@@ -156,7 +156,7 @@
        * @return {Boolean} <code>true</code>, if the page is shown fullscreen
        */
       isFullScreen: function isFullScreen() {
-        return this.__doc[this.__fullscreenElementAttr] !== undefined ? !!this.__doc[this.__fullscreenElementAttr] : false;
+        return this.__doc__P_17_0[this.__fullscreenElementAttr__P_17_3] !== undefined ? !!this.__doc__P_17_0[this.__fullscreenElementAttr__P_17_3] : false;
       },
 
       /**
@@ -168,8 +168,8 @@
        * so there is no guarantee that it really worked.
        */
       request: function request() {
-        if (this.__doc.documentElement[this.__requestMethodName]) {
-          this.__doc.documentElement[this.__requestMethodName]();
+        if (this.__doc__P_17_0.documentElement[this.__requestMethodName__P_17_4]) {
+          this.__doc__P_17_0.documentElement[this.__requestMethodName__P_17_4]();
         }
       },
 
@@ -177,8 +177,8 @@
        * End the fullscreen mode.
        */
       cancel: function cancel() {
-        if (this.__doc[this.__cancelMethodName]) {
-          this.__doc[this.__cancelMethodName]();
+        if (this.__doc__P_17_0[this.__cancelMethodName__P_17_5]) {
+          this.__doc__P_17_0[this.__cancelMethodName__P_17_5]();
         }
       }
     }
@@ -186,4 +186,4 @@
   qx.bom.FullScreen.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FullScreen.js.map?dt=1589218237150
+//# sourceMappingURL=FullScreen.js.map?dt=1591362956405

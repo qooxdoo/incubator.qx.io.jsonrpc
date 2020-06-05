@@ -23,7 +23,7 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2007-2008 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Alexander Steitz (aback)\n Tobias Oberrauch (toberrauch) <a href=\"&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x74;&#x6f;&#x62;&#105;&#97;&#x73;&#x2e;&#111;&#x62;&#x65;&#x72;&#114;&#97;&#x75;&#99;&#x68;&#x40;&#49;&#117;n&#100;&#x31;&#46;&#x64;&#101;\">&#116;&#x6f;b&#105;&#97;&#115;&#x2e;&#x6f;b&#x65;&#x72;&#x72;&#x61;&#117;&#99;&#x68;&#x40;1&#x75;&#x6e;&#100;&#49;&#46;&#100;&#x65;</a>\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2007-2008 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Alexander Steitz (aback)\n Tobias Oberrauch (toberrauch) <a href=\"&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#116;&#111;&#98;&#x69;&#97;&#115;&#x2e;&#x6f;&#98;&#101;&#x72;&#114;&#x61;&#x75;&#99;&#104;&#64;&#49;&#117;&#110;&#100;&#49;&#x2e;d&#x65;\">t&#x6f;&#98;i&#97;&#115;&#x2e;&#x6f;&#98;&#x65;&#x72;&#114;&#x61;&#x75;c&#x68;&#64;&#49;&#117;&#x6e;&#x64;&#49;&#x2e;&#x64;&#101;</a>\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
         }
       ]
     }
@@ -495,7 +495,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Verifies a list of infrastructure requirements by checking for\n corresponding \"has\" methods. If no such method was found,\n {@link qx.core.Environment} will be checked for a key matching the given\n feature name. Note that asynchronous environment checks are not supported!\n See the manual for further details:\n <a href=\"http://manual.qooxdoo.org/current/pages/development/frame_apps_testrunner.html#defining-test-requirements\">Defining Test Requirements</a></p>"
+            "body": "<p>Verifies a list of infrastructure requirements by checking for\n corresponding \"has\" methods. If no such method was found,\n {@link qx.core.Environment} will be checked for a key matching the given\n feature name. Note that asynchronous environment checks are not supported!</p>"
           }
         ],
         "@throws": [
@@ -588,7 +588,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -647,7 +655,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getTestResult": {
       "type": "function",
@@ -708,7 +724,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testResult</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testResult}."
+          }
+        ]
+      }
     },
     "getTestFunc": {
       "type": "function",
@@ -769,7 +793,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testFunc</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testFunc}."
+          }
+        ]
+      }
     }
   },
   "descendants": []

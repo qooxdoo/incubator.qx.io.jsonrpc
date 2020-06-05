@@ -38,41 +38,41 @@
   qx.Class.define("qx.test.ui.form.Renderer", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __form: null,
-      __b: null,
+      __form__P_316_0: null,
+      __b__P_316_1: null,
       setUp: function setUp() {
-        this.__form = new qx.ui.form.Form();
-        this.__b = new qx.ui.form.Button("a");
+        this.__form__P_316_0 = new qx.ui.form.Form();
+        this.__b__P_316_1 = new qx.ui.form.Button("a");
 
-        this.__form.addButton(this.__b);
+        this.__form__P_316_0.addButton(this.__b__P_316_1);
       },
       tearDown: function tearDown() {
-        this.__form.dispose();
+        this.__form__P_316_0.dispose();
 
-        this.__b.dispose();
+        this.__b__P_316_1.dispose();
       },
       testDisposeSingle: function testDisposeSingle() {
-        var renderer = new qx.ui.form.renderer.Single(this.__form);
+        var renderer = new qx.ui.form.renderer.Single(this.__form__P_316_0);
         renderer.dispose(); // check if the button container has been disposed
 
         this.assertNull(renderer._buttonRow);
-        this.assertNotNull(this.__b);
-        this.assertFalse(this.__b.isDisposed());
+        this.assertNotNull(this.__b__P_316_1);
+        this.assertFalse(this.__b__P_316_1.isDisposed());
       },
       testDisposeDouble: function testDisposeDouble() {
-        var renderer = new qx.ui.form.renderer.Double(this.__form);
+        var renderer = new qx.ui.form.renderer.Double(this.__form__P_316_0);
         renderer.dispose(); // check if the button container has been disposed
 
         this.assertNull(renderer._buttonRow);
-        this.assertNotNull(this.__b);
-        this.assertFalse(this.__b.isDisposed());
+        this.assertNotNull(this.__b__P_316_1);
+        this.assertFalse(this.__b__P_316_1.isDisposed());
       },
-      __testExclude: function __testExclude(clazz) {
+      __testExclude__P_316_2: function __testExclude__P_316_2(clazz) {
         var text = new qx.ui.form.TextField();
 
-        this.__form.add(text, "test");
+        this.__form__P_316_0.add(text, "test");
 
-        var renderer = new clazz(this.__form);
+        var renderer = new clazz(this.__form__P_316_0);
 
         var label = renderer._getChildren()[0];
 
@@ -82,18 +82,18 @@
         text.dispose();
       },
       testExcludeSingle: function testExcludeSingle() {
-        this.__testExclude(qx.ui.form.renderer.Single);
+        this.__testExclude__P_316_2(qx.ui.form.renderer.Single);
       },
       testExcludeDouble: function testExcludeDouble() {
-        this.__testExclude(qx.ui.form.renderer.Double);
+        this.__testExclude__P_316_2(qx.ui.form.renderer.Double);
       },
-      __testBindings: function __testBindings(clazz) {
+      __testBindings__P_316_3: function __testBindings__P_316_3(clazz) {
         // after adding the text field get length of bindings for text field, label, form and renderer
         var text = new qx.ui.form.TextField();
 
-        this.__form.add(text, "test");
+        this.__form__P_316_0.add(text, "test");
 
-        var renderer = new clazz(this.__form);
+        var renderer = new clazz(this.__form__P_316_0);
 
         var label = renderer._getChildren()[0]; // text field bindings
 
@@ -114,14 +114,14 @@
         this.assertEquals(0, label.getBindings().length, "Still bindings there!");
       },
       testBindingsSingle: function testBindingsSingle() {
-        this.__testBindings(qx.ui.form.renderer.Single);
+        this.__testBindings__P_316_3(qx.ui.form.renderer.Single);
       },
       testBindingsDouble: function testBindingsDouble() {
-        this.__testBindings(qx.ui.form.renderer.Double);
+        this.__testBindings__P_316_3(qx.ui.form.renderer.Double);
       }
     }
   });
   qx.test.ui.form.Renderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Renderer.js.map?dt=1589218264361
+//# sourceMappingURL=Renderer.js.map?dt=1591362986670

@@ -37,17 +37,17 @@
         this.fail("Executed code after calling skip()!");
       },
       testResumeHandler: function testResumeHandler() {
-        this.__do(this.resumeHandler(function (param) {
+        this.__do__P_241_0(this.resumeHandler(function (param) {
           this.assertEquals(param, "foo");
           return "bar";
         }, this));
 
         this.wait();
       },
-      __do: function __do(callback) {
-        window.setTimeout(this.__doSuccess.bind(this, callback), 0);
+      __do__P_241_0: function __do__P_241_0(callback) {
+        window.setTimeout(this.__doSuccess__P_241_1.bind(this, callback), 0);
       },
-      __doSuccess: function __doSuccess(callback) {
+      __doSuccess__P_241_1: function __doSuccess__P_241_1(callback) {
         var result = callback("foo");
         this.assertEquals(result, "bar");
       }
@@ -56,4 +56,4 @@
   qx.test.dev.unit.TestCase.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TestCase.js.map?dt=1589218258068
+//# sourceMappingURL=TestCase.js.map?dt=1591362979465

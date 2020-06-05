@@ -38,14 +38,14 @@
       tearDown: function tearDown() {
         qx.test.ui.virtual.layer.HtmlCell.prototype.tearDown.base.call(this);
 
-        this.__cellRenderer.dispose();
+        this.__cellRenderer__P_347_0.dispose();
       },
       _createLayer: function _createLayer() {
-        this.__cellRenderer = new qx.ui.virtual.cell.Cell();
+        this.__cellRenderer__P_347_0 = new qx.ui.virtual.cell.Cell();
         return new qx.ui.virtual.layer.HtmlCell(this);
       },
       getCellProperties: function getCellProperties(row, column) {
-        return this.__cellRenderer.getCellProperties(row + " / " + column, {});
+        return this.__cellRenderer__P_347_0.getCellProperties(row + " / " + column, {});
       },
       _assertCells: function _assertCells(firstRow, firstColumn, rowCount, columnCount, msg) {
         var children = this.layer.getContentElement().getDomElement().childNodes;
@@ -62,10 +62,10 @@
       }
     },
     destruct: function destruct() {
-      this.__cellRenderer = null;
+      this.__cellRenderer__P_347_0 = null;
     }
   });
   qx.test.ui.virtual.layer.HtmlCell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlCell.js.map?dt=1589218266943
+//# sourceMappingURL=HtmlCell.js.map?dt=1591362989583

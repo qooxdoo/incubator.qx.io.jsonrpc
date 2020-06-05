@@ -56,9 +56,9 @@
     implement: [qx.core.IDisposable],
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__timer = new qx.event.Timer(this.getInterval());
+      this.__timer__P_113_0 = new qx.event.Timer(this.getInterval());
 
-      this.__timer.addListener("interval", this._onInterval, this);
+      this.__timer__P_113_0.addListener("interval", this._onInterval, this);
     },
     events: {
       /** This event if fired each time the interval time has elapsed */
@@ -97,51 +97,51 @@
       }
     },
     members: {
-      __timer: null,
-      __currentInterval: null,
+      __timer__P_113_0: null,
+      __currentInterval__P_113_1: null,
 
       /**
        * Reset and start the timer.
        */
       start: function start() {
-        this.__timer.setInterval(this.getFirstInterval());
+        this.__timer__P_113_0.setInterval(this.getFirstInterval());
 
-        this.__timer.start();
+        this.__timer__P_113_0.start();
       },
 
       /**
        * Stop the timer
        */
       stop: function stop() {
-        this.__timer.stop();
+        this.__timer__P_113_0.stop();
 
-        this.__currentInterval = null;
+        this.__currentInterval__P_113_1 = null;
       },
 
       /**
        * Interval event handler
        */
       _onInterval: function _onInterval() {
-        this.__timer.stop();
+        this.__timer__P_113_0.stop();
 
-        if (this.__currentInterval == null) {
-          this.__currentInterval = this.getInterval();
+        if (this.__currentInterval__P_113_1 == null) {
+          this.__currentInterval__P_113_1 = this.getInterval();
         }
 
-        this.__currentInterval = Math.max(this.getMinimum(), this.__currentInterval - this.getDecrease());
+        this.__currentInterval__P_113_1 = Math.max(this.getMinimum(), this.__currentInterval__P_113_1 - this.getDecrease());
 
-        this.__timer.setInterval(this.__currentInterval);
+        this.__timer__P_113_0.setInterval(this.__currentInterval__P_113_1);
 
-        this.__timer.start();
+        this.__timer__P_113_0.start();
 
         this.fireEvent("interval");
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__timer");
+      this._disposeObjects("__timer__P_113_0");
     }
   });
   qx.event.AcceleratingTimer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AcceleratingTimer.js.map?dt=1589218245129
+//# sourceMappingURL=AcceleratingTimer.js.map?dt=1591362965268

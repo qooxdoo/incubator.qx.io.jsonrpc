@@ -183,10 +183,10 @@
       destroyContainer: function destroyContainer(container) {
         {
           if (qx.ui.mobile && container instanceof qx.ui.mobile.core.Widget) {
-            qx.core.Assert.assertTrue(this.__isChildrenContainer(container), "Container must be an instance of qx.ui.mobile.container.Composite.");
+            qx.core.Assert.assertTrue(this.__isChildrenContainer__P_573_0(container), "Container must be an instance of qx.ui.mobile.container.Composite.");
           } else {
             qx.core.Assert.assertQxWidget(container, "First argument must be a container widget!");
-            qx.core.Assert.assertTrue(this.__isChildrenContainer(container), "Container must be an instance of qx.ui.container.Composite or qx.ui.container.Scroll or qx.ui.container.Resizer or qx.ui.container.SlideBar or qx.ui.container.Stack!");
+            qx.core.Assert.assertTrue(this.__isChildrenContainer__P_573_0(container), "Container must be an instance of qx.ui.container.Composite or qx.ui.container.Scroll or qx.ui.container.Resizer or qx.ui.container.SlideBar or qx.ui.container.Stack!");
           }
         }
         var arr = [];
@@ -214,7 +214,7 @@
           var item = children[i];
           arr.push(item);
 
-          if (this.__isChildrenContainer(item)) {
+          if (this.__isChildrenContainer__P_573_0(item)) {
             this._collectContainerChildren(item, arr);
           }
         }
@@ -227,7 +227,7 @@
        * @return {Boolean} <code>true</code> if the object is a container for
        * child widgets
        */
-      __isChildrenContainer: function __isChildrenContainer(obj) {
+      __isChildrenContainer__P_573_0: function __isChildrenContainer__P_573_0(obj) {
         var classes = [];
 
         if (qx.ui.mobile && obj instanceof qx.ui.mobile.core.Widget) {
@@ -249,4 +249,4 @@
   qx.util.DisposeUtil.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DisposeUtil.js.map?dt=1589218286482
+//# sourceMappingURL=DisposeUtil.js.map?dt=1591363011573

@@ -93,9 +93,6 @@
    * (qx.io.remote.Rpc.callAsync) and async with results via an event listener
    * (qx.io.remote.Rpc.callAsyncListeners).
    * <p>
-   * You may also find the server writer's guide helpful:
-   *   http://manual.qooxdoo.org/${qxversion}/pages/communication/rpc_server_writer_guide.html
-   *
    * @ignore(qx.core.ServerSettings.*)
   */
   qx.Class.define("qx.io.remote.Rpc", {
@@ -136,7 +133,7 @@
       }
 
       if (qx.core.ServerSettings) {
-        this.__currentServerSuffix = qx.core.ServerSettings.serverPathSuffix;
+        this.__currentServerSuffix__P_167_0 = qx.core.ServerSettings.serverPathSuffix;
       }
     },
 
@@ -371,8 +368,8 @@
     *****************************************************************************
     */
     members: {
-      __previousServerSuffix: null,
-      __currentServerSuffix: null,
+      __previousServerSuffix__P_167_1: null,
+      __currentServerSuffix__P_167_0: null,
 
       /**
        * Factory method to create a request object. By default, a POST request
@@ -662,9 +659,9 @@
               result = eval("(" + result + ")");
               var newSuffix = qx.core.ServerSettings.serverPathSuffix;
 
-              if (self.__currentServerSuffix != newSuffix) {
-                self.__previousServerSuffix = self.__currentServerSuffix;
-                self.__currentServerSuffix = newSuffix;
+              if (self.__currentServerSuffix__P_167_0 != newSuffix) {
+                self.__previousServerSuffix__P_167_1 = self.__currentServerSuffix__P_167_0;
+                self.__currentServerSuffix__P_167_0 = newSuffix;
               }
 
               self.setUrl(self.fixUrl(self.getUrl()));
@@ -727,17 +724,17 @@
        * @return {String} the (possibly re-written) URL.
        */
       fixUrl: function fixUrl(url) {
-        if (this.__previousServerSuffix == null || this.__currentServerSuffix == null || this.__previousServerSuffix == "" || this.__previousServerSuffix == this.__currentServerSuffix) {
+        if (this.__previousServerSuffix__P_167_1 == null || this.__currentServerSuffix__P_167_0 == null || this.__previousServerSuffix__P_167_1 == "" || this.__previousServerSuffix__P_167_1 == this.__currentServerSuffix__P_167_0) {
           return url;
         }
 
-        var index = url.indexOf(this.__previousServerSuffix);
+        var index = url.indexOf(this.__previousServerSuffix__P_167_1);
 
         if (index == -1) {
           return url;
         }
 
-        return url.substring(0, index) + this.__currentServerSuffix + url.substring(index + this.__previousServerSuffix.length);
+        return url.substring(0, index) + this.__currentServerSuffix__P_167_0 + url.substring(index + this.__previousServerSuffix__P_167_1.length);
       },
 
       /**
@@ -927,4 +924,4 @@
   qx.io.remote.Rpc.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Rpc.js.map?dt=1589218249393
+//# sourceMappingURL=Rpc.js.map?dt=1591362969707

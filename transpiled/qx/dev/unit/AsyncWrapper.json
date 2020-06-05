@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 86,
+        "line": 93,
         "column": 3
       }
     },
@@ -38,7 +38,7 @@
         "column": 14
       },
       "end": {
-        "line": 59,
+        "line": 66,
         "column": 3
       }
     },
@@ -86,11 +86,11 @@
     "deferredFunction": {
       "location": {
         "start": {
-          "line": 64,
+          "line": 71,
           "column": 4
         },
         "end": {
-          "line": 68,
+          "line": 75,
           "column": 5
         }
       },
@@ -111,11 +111,11 @@
     "context": {
       "location": {
         "start": {
-          "line": 71,
+          "line": 78,
           "column": 4
         },
         "end": {
-          "line": 75,
+          "line": 82,
           "column": 5
         }
       },
@@ -134,11 +134,11 @@
     "delay": {
       "location": {
         "start": {
-          "line": 78,
+          "line": 85,
           "column": 4
         },
         "end": {
-          "line": 83,
+          "line": 90,
           "column": 5
         }
       },
@@ -164,7 +164,15 @@
       "abstract": false,
       "mixin": true,
       "access": "public",
-      "overriddenFrom": "qx.core.MObjectId"
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The owning object</p>"
+          }
+        ]
+      }
     },
     "qxObjectId": {
       "type": "property",
@@ -172,7 +180,15 @@
       "abstract": false,
       "mixin": true,
       "access": "public",
-      "overriddenFrom": "qx.core.MObjectId"
+      "overriddenFrom": "qx.core.MObjectId",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>{String} The ID of the object.</p>"
+          }
+        ]
+      }
     }
   },
   "members": {
@@ -235,7 +251,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -294,7 +318,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.core.Object",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getDeferredFunction": {
       "type": "function",

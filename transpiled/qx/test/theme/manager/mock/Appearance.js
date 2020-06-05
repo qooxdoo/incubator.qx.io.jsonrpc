@@ -36,4 +36,4 @@
   qx.test.theme.manager.mock.Appearance.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Appearance.js.map?dt=1589218261985
+//# sourceMappingURL=Appearance.js.map?dt=1591362983909

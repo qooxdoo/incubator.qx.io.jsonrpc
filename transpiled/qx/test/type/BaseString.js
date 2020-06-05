@@ -56,7 +56,7 @@
       },
       testPlusOperator: function testPlusOperator() {
         var s = new qx.type.BaseString("Juhu");
-        this.assertEquals("__Juhu__", ["__", s + "__"].join(""));
+        this.assertEquals("__Juhu____P_279_0", ["____P_279_1", s + "____P_279_1"].join(""));
       },
       testCharAt: function testCharAt() {
         var s = new qx.type.BaseString("Juhu");
@@ -121,4 +121,4 @@
   qx.test.type.BaseString.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BaseString.js.map?dt=1589218262263
+//# sourceMappingURL=BaseString.js.map?dt=1591362984228

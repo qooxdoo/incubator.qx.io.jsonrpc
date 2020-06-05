@@ -114,9 +114,9 @@
     *****************************************************************************
     */
     members: {
-      __oldValue: null,
-      __inputTimeoutHandle: null,
-      __hasFocus: null,
+      __oldValue__P_469_0: null,
+      __inputTimeoutHandle__P_469_1: null,
+      __hasFocus__P_469_2: null,
 
       /**
        * Converts the incoming value.
@@ -138,14 +138,14 @@
       * Handler for <code>focus</code> event.
       */
       _onFocus: function _onFocus() {
-        this.__hasFocus = true;
+        this.__hasFocus__P_469_2 = true;
       },
 
       /**
       * Handler for <code>blur</code> event.
       */
       _onBlur: function _onBlur() {
-        this.__hasFocus = false;
+        this.__hasFocus__P_469_2 = false;
       },
 
       /**
@@ -153,7 +153,7 @@
       * @return {Boolean} <code>true</code> or <code>false</code>
       */
       hasFocus: function hasFocus() {
-        return this.__hasFocus;
+        return this.__hasFocus__P_469_2;
       },
 
       /**
@@ -164,14 +164,14 @@
       setValue: function setValue(value) {
         value = this._convertValue(value);
 
-        if (this.__oldValue != value) {
+        if (this.__oldValue__P_469_0 != value) {
           if (this._setValue) {
             this._setValue(value);
           } else {
             this._setAttribute("value", value);
           }
 
-          this.__fireChangeValue(value);
+          this.__fireChangeValue__P_469_3(value);
         }
       },
 
@@ -197,7 +197,7 @@
        * @param evt {qx.event.type.Data} The event, containing the changed content.
        */
       _onChangeContent: function _onChangeContent(evt) {
-        this.__fireChangeValue(this._convertValue(evt.getData()));
+        this.__fireChangeValue__P_469_3(this._convertValue(evt.getData()));
       },
 
       /**
@@ -213,7 +213,7 @@
           if (this._setValue) {
             this._setValue(data);
           } else {
-            this.__fireChangeValue(this._convertValue(data));
+            this.__fireChangeValue__P_469_3(this._convertValue(data));
           }
         }
       },
@@ -249,9 +249,9 @@
        *
        * @param value {var} The current value to fire.
        */
-      __fireChangeValue: function __fireChangeValue(value) {
-        if (this.__oldValue != value) {
-          this.__oldValue = value;
+      __fireChangeValue__P_469_3: function __fireChangeValue__P_469_3(value) {
+        if (this.__oldValue__P_469_0 != value) {
+          this.__oldValue__P_469_0 = value;
           this.fireDataEvent("changeValue", value);
         }
       }
@@ -264,4 +264,4 @@
   qx.ui.mobile.form.MValue.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MValue.js.map?dt=1589218278212
+//# sourceMappingURL=MValue.js.map?dt=1591363002270

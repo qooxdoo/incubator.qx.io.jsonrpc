@@ -34,7 +34,7 @@
   qx.Class.define("qx.util.Base64", {
     statics: {
       /** Characters allowed in a Base 64 encoded string */
-      __base64Chars: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'],
+      __base64Chars__P_569_0: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'],
 
       /**
        * Encode a string using base64 encoding (http://en.wikipedia.org/wiki/Base64).
@@ -62,12 +62,12 @@
         }
 
         var padding = '=';
-        var base64Chars = this.__base64Chars;
+        var base64Chars = this.__base64Chars__P_569_0;
         var length = input.length;
         var output = [];
         var result = [];
         var i = 0;
-        var translateUTF8 = this.__translateUTF8;
+        var translateUTF8 = this.__translateUTF8__P_569_1;
 
         while (i < length) {
           translateUTF8(input.charCodeAt(i++), output, !isMultiByte);
@@ -105,7 +105,7 @@
        * @param output {Array} the array of bytes to be filled
        * @param is8bit {Boolean} specifies whether we should not treat the array as a multi byte string
        */
-      __translateUTF8: function __translateUTF8(characterCode, output, is8bit) {
+      __translateUTF8__P_569_1: function __translateUTF8__P_569_1(characterCode, output, is8bit) {
         if (characterCode < 128) {
           output.push(characterCode);
           return;
@@ -144,7 +144,7 @@
        * @param is8bit {Boolean} specifies whether we should not treat the array as a multi byte string
        * @return {String} the string backed by the byte array
        */
-      __getUTF8StringFromBytes: function __getUTF8StringFromBytes(bytes, is8bit) {
+      __getUTF8StringFromBytes__P_569_2: function __getUTF8StringFromBytes__P_569_2(bytes, is8bit) {
         var charString = '';
         var result = [];
 
@@ -194,7 +194,7 @@
        * @return {String} The decoded input string.
        */
       decode: function decode(input, is8bit) {
-        var base64Chars = this.__base64Chars;
+        var base64Chars = this.__base64Chars__P_569_0;
         var isMultiByte;
 
         if (typeof is8bit == "undefined") {
@@ -234,13 +234,13 @@
           }
         }
 
-        return this.__getUTF8StringFromBytes(stringBytes, !isMultiByte);
+        return this.__getUTF8StringFromBytes__P_569_2(stringBytes, !isMultiByte);
       }
     }
   });
   qx.util.Base64.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-5.js.map?dt=1589218299571
+//# sourceMappingURL=package-5.js.map?dt=1591363026295
 qx.$$packageData['5'] = {
   "locales": {},
   "resources": {},

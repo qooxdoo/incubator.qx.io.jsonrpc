@@ -171,11 +171,11 @@
       _infoPanelHash: null,
       _infoPanels: null,
       _init: function _init(pkg) {
-        this.__initHtml();
+        this.__initHtml__P_606_0();
 
         this.addListenerOnce("appear", () => this._syncHtml());
       },
-      __initHtml: function __initHtml() {
+      __initHtml__P_606_0: function __initHtml__P_606_0() {
         var html = new qx.util.StringBuilder();
         html.add("<div style=\"padding:24px;\">"); // Add title
 
@@ -400,4 +400,4 @@
   qxl.apiviewer.ui.AbstractViewer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractViewer.js.map?dt=1589218289284
+//# sourceMappingURL=AbstractViewer.js.map?dt=1591363014772

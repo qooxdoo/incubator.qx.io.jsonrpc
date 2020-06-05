@@ -302,7 +302,21 @@
       "mixin": true,
       "inherited": true,
       "access": "private",
-      "overriddenFrom": "qx.dev.unit.MMock"
+      "overriddenFrom": "qx.dev.unit.MMock",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Expose Sinon.JS assertions. Provides methods such\n as assertCalled(), assertCalledWith().\n (http://sinonjs.org/docs/#assert-expose)\n Does not override existing assertion methods.</p>"
+          }
+        ],
+        "@ignore": [
+          {
+            "name": "@ignore",
+            "body": "sinon.assert.expose"
+          }
+        ]
+      }
     },
     "__getSinon": {
       "type": "function",
@@ -1310,7 +1324,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Verifies a list of infrastructure requirements by checking for\n corresponding \"has\" methods. If no such method was found,\n {@link qx.core.Environment} will be checked for a key matching the given\n feature name. Note that asynchronous environment checks are not supported!\n See the manual for further details:\n <a href=\"http://manual.qooxdoo.org/current/pages/development/frame_apps_testrunner.html#defining-test-requirements\">Defining Test Requirements</a></p>"
+            "body": "<p>Verifies a list of infrastructure requirements by checking for\n corresponding \"has\" methods. If no such method was found,\n {@link qx.core.Environment} will be checked for a key matching the given\n feature name. Note that asynchronous environment checks are not supported!</p>"
           }
         ],
         "@throws": [
@@ -1403,7 +1417,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxOwner</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxOwner}."
+          }
+        ]
+      }
     },
     "getQxObjectId": {
       "type": "function",
@@ -1462,7 +1484,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>qxObjectId</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #qxObjectId}."
+          }
+        ]
+      }
     },
     "getTestResult": {
       "type": "function",
@@ -1523,7 +1553,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testResult</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testResult}."
+          }
+        ]
+      }
     },
     "getTestFunc": {
       "type": "function",
@@ -1584,7 +1622,15 @@
       "inherited": true,
       "access": "public",
       "overriddenFrom": "qx.dev.unit.TestCase",
-      "property": "reset"
+      "property": "reset",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the user value of the property <code>testFunc</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #testFunc}."
+          }
+        ]
+      }
     }
   },
   "descendants": []

@@ -47,32 +47,32 @@
     type: "singleton",
     extend: qx.core.Object,
     construct: function construct() {
-      this.__blocker = new qx.ui.core.Blocker(qxl.apiviewer.MWidgetRegistry.getWidgetById("tabView"));
+      this.__blocker__P_603_0 = new qx.ui.core.Blocker(qxl.apiviewer.MWidgetRegistry.getWidgetById("tabView"));
 
-      this.__blocker.setColor("#D5D5D5");
+      this.__blocker__P_603_0.setColor("#D5D5D5");
 
-      this.__blocker.setOpacity(0.5);
+      this.__blocker__P_603_0.setOpacity(0.5);
 
-      this.__blocker.getBlockerElement().setStyle("padding-top", "100px");
+      this.__blocker__P_603_0.getBlockerElement().setStyle("padding-top", "100px");
 
-      this.__blocker.getBlockerElement().setStyle("text-align", "center");
+      this.__blocker__P_603_0.getBlockerElement().setStyle("text-align", "center");
 
       var loadingImage = new qx.html.Element("img");
       loadingImage.setAttribute("src", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/loading66.gif"));
 
-      this.__blocker.getBlockerElement().add(loadingImage);
+      this.__blocker__P_603_0.getBlockerElement().add(loadingImage);
     },
     members: {
-      __blocker: null,
+      __blocker__P_603_0: null,
       show: function show() {
-        this.__blocker.block();
+        this.__blocker__P_603_0.block();
       },
       hide: function hide() {
-        this.__blocker.unblock();
+        this.__blocker__P_603_0.unblock();
       }
     }
   });
   qxl.apiviewer.LoadingIndicator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LoadingIndicator.js.map?dt=1589218288804
+//# sourceMappingURL=LoadingIndicator.js.map?dt=1591363014197

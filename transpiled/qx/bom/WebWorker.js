@@ -77,8 +77,8 @@
      */
     construct: function construct(src) {
       qx.core.Object.constructor.call(this);
-      this.__isNative = qx.core.Environment.get("html.webworker");
-      this.__isNative ? this.__initNative(src) : this.__initFake(src);
+      this.__isNative__P_33_0 = qx.core.Environment.get("html.webworker");
+      this.__isNative__P_33_0 ? this.__initNative__P_33_1(src) : this.__initFake__P_33_2(src);
     },
     events: {
       /** Fired when worker sends a message */
@@ -91,14 +91,14 @@
       _worker: null,
       _handleErrorBound: null,
       _handleMessageBound: null,
-      __isNative: true,
-      __fake: null,
+      __isNative__P_33_0: true,
+      __fake__P_33_3: null,
 
       /**
        * Initialize the native worker
        * @param src {String} The path to worker as an URL
        */
-      __initNative: function __initNative(src) {
+      __initNative__P_33_1: function __initNative__P_33_1(src) {
         this._worker = new window.Worker(src);
         this._handleMessageBound = qx.lang.Function.bind(this._handleMessage, this);
         this._handleErrorBound = qx.lang.Function.bind(this._handleError, this);
@@ -111,12 +111,12 @@
        * @param src {String} The path to worker as an URL
        * @lint ignoreDeprecated(eval)
        */
-      __initFake: function __initFake(src) {
+      __initFake__P_33_2: function __initFake__P_33_2(src) {
         var that = this;
         var req = new qx.bom.request.Xhr();
 
         req.onload = function () {
-          that.__fake = function () {
+          that.__fake__P_33_3 = function () {
             var postMessage = function postMessage(e) {
               that.fireDataEvent('message', e);
             }; //set up context vars before evaluating the code
@@ -142,12 +142,12 @@
       postMessage: function postMessage(msg) {
         var that = this;
 
-        if (this.__isNative) {
+        if (this.__isNative__P_33_0) {
           this._worker.postMessage(msg);
         } else {
           setTimeout(function () {
             try {
-              that.__fake.onmessage && that.__fake.onmessage({
+              that.__fake__P_33_3.onmessage && that.__fake__P_33_3.onmessage({
                 data: msg
               });
             } catch (ex) {
@@ -174,7 +174,7 @@
       }
     },
     destruct: function destruct() {
-      if (this.__isNative) {
+      if (this.__isNative__P_33_0) {
         qx.bom.Event.removeNativeListener(this._worker, "message", this._handleMessageBound);
         qx.bom.Event.removeNativeListener(this._worker, "error", this._handleErrorBound);
 
@@ -184,8 +184,8 @@
           this._worker = null;
         }
       } else {
-        if (this.__fake) {
-          this.__fake = null;
+        if (this.__fake__P_33_3) {
+          this.__fake__P_33_3 = null;
         }
       }
     }
@@ -193,4 +193,4 @@
   qx.bom.WebWorker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WebWorker.js.map?dt=1589218238690
+//# sourceMappingURL=WebWorker.js.map?dt=1591362958105

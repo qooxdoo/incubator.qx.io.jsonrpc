@@ -106,10 +106,10 @@
      * @see qx.io.rest
      */
     construct: function construct(description) {
-      this.__requests = {};
-      this.__routes = {};
-      this.__pollTimers = {};
-      this.__longPollHandlers = {};
+      this.__requests__P_64_0 = {};
+      this.__routes__P_64_1 = {};
+      this.__pollTimers__P_64_2 = {};
+      this.__longPollHandlers__P_64_3 = {};
 
       try {
         if (typeof description !== "undefined") {
@@ -117,7 +117,7 @@
             qx.core.Assert.assertMap(description);
           }
 
-          this.__mapFromDescription(description);
+          this.__mapFromDescription__P_64_4(description);
         }
       } catch (e) {
         this.dispose();
@@ -224,22 +224,22 @@
       }
     },
     members: {
-      __requests: null,
-      __routes: null,
-      __baseUrl: null,
-      __pollTimers: null,
-      __longPollHandlers: null,
-      __configureRequestCallback: null,
+      __requests__P_64_0: null,
+      __routes__P_64_1: null,
+      __baseUrl__P_64_5: null,
+      __pollTimers__P_64_2: null,
+      __longPollHandlers__P_64_3: null,
+      __configureRequestCallback__P_64_6: null,
 
       /**
        * @type {Map} Request callbacks for 'onsuccess', 'onfail' and 'onloadend' - see {@link #setRequestHandler}.
        */
-      __requestHandler: null,
+      __requestHandler__P_64_7: null,
 
       /**
        * @type {Function} Function which returns instances from {@link qx.io.request.AbstractRequest}.
        */
-      __begetRequest: null,
+      __begetRequest__P_64_8: null,
       //
       // Request
       //
@@ -253,7 +253,7 @@
        * @internal
        */
       setRequestFactory: function setRequestFactory(fn) {
-        this.__begetRequest = fn;
+        this.__begetRequest__P_64_8 = fn;
       },
 
       /**
@@ -264,7 +264,7 @@
        * @internal
        */
       setRequestHandler: function setRequestHandler(handler) {
-        this.__requestHandler = handler;
+        this.__requestHandler__P_64_7 = handler;
       },
 
       /**
@@ -273,7 +273,7 @@
        * @return {Map} Map defining callbacks and their context.
        */
       _getRequestHandler: function _getRequestHandler() {
-        return this.__requestHandler === null ? {
+        return this.__requestHandler__P_64_7 === null ? {
           onsuccess: {
             callback: function callback(req, action) {
               return function () {
@@ -360,7 +360,7 @@
             },
             context: this
           }
-        } : this.__requestHandler;
+        } : this.__requestHandler__P_64_7;
       },
 
       /**
@@ -372,8 +372,8 @@
        * @internal
        */
       getRequestsByAction: function getRequestsByAction(action) {
-        var hasRequests = this.__requests !== null && action in this.__requests;
-        return hasRequests ? this.__requests[action] : null;
+        var hasRequests = this.__requests__P_64_0 !== null && action in this.__requests__P_64_0;
+        return hasRequests ? this.__requests__P_64_0[action] : null;
       },
 
       /**
@@ -383,7 +383,7 @@
        *   Receives request, action, params and data.
        */
       configureRequest: function configureRequest(callback) {
-        this.__configureRequestCallback = callback;
+        this.__configureRequestCallback__P_64_6 = callback;
       },
 
       /**
@@ -393,7 +393,7 @@
        * @return {qx.bom.request.SimpleXhr|qx.io.request.AbstractRequest} Request object
        */
       _getRequest: function _getRequest() {
-        return this.__begetRequest === null ? new qx.bom.request.SimpleXhr() : this.__begetRequest();
+        return this.__begetRequest__P_64_8 === null ? new qx.bom.request.SimpleXhr() : this.__begetRequest__P_64_8();
       },
 
       /**
@@ -402,16 +402,16 @@
        * @param action {String} The action the created request is associated to.
        * @return {qx.bom.request.SimpleXhr|qx.io.request.AbstractRequest} Request object
        */
-      __createRequest: function __createRequest(action) {
+      __createRequest__P_64_9: function __createRequest__P_64_9(action) {
         var req = this._getRequest();
 
-        if (!qx.lang.Type.isArray(this.__requests[action])) {
-          this.__requests[action] = [];
+        if (!qx.lang.Type.isArray(this.__requests__P_64_0[action])) {
+          this.__requests__P_64_0[action] = [];
         }
 
         qx.core.ObjectRegistry.register(req);
 
-        this.__requests[action].push(req);
+        this.__requests__P_64_0[action].push(req);
 
         return req;
       },
@@ -433,9 +433,9 @@
        *   <code>qx.bom.rest.Resource.REQUIRED</code> (to verify existence).
        */
       map: function map(action, method, url, check) {
-        this.__routes[action] = [method, url, check]; // Track requests
+        this.__routes__P_64_1[action] = [method, url, check]; // Track requests
 
-        this.__requests[action] = []; // Undefine generic getter when action is named "get"
+        this.__requests__P_64_0[action] = []; // Undefine generic getter when action is named "get"
 
         if (action == "get") {
           this[action] = undefined;
@@ -447,9 +447,9 @@
           throw new Error("Method with name of action (" + action + ") already exists");
         }
 
-        this.__declareEvent(action + "Success");
+        this.__declareEvent__P_64_10(action + "Success");
 
-        this.__declareEvent(action + "Error");
+        this.__declareEvent__P_64_10(action + "Error");
 
         this[action] = qx.lang.Function.bind(function () {
           Array.prototype.unshift.call(arguments, action);
@@ -477,25 +477,25 @@
        * @return {Number} Id of the action's invocation.
        */
       invoke: function invoke(action, params, data) {
-        var req = this.__createRequest(action),
+        var req = this.__createRequest__P_64_9(action),
             params = params == null ? {} : params,
             config = this._getRequestConfig(action, params); // Cache parameters
 
 
-        this.__routes[action].params = params; // Check parameters
+        this.__routes__P_64_1[action].params = params; // Check parameters
 
-        this.__checkParameters(params, config.check); // Configure request
-
-
-        this.__configureRequest(req, config, data); // Run configuration callback, passing in pre-configured request
+        this.__checkParameters__P_64_11(params, config.check); // Configure request
 
 
-        if (this.__configureRequestCallback) {
-          this.__configureRequestCallback.call(this, req, action, params, data);
+        this.__configureRequest__P_64_12(req, config, data); // Run configuration callback, passing in pre-configured request
+
+
+        if (this.__configureRequestCallback__P_64_6) {
+          this.__configureRequestCallback__P_64_6.call(this, req, action, params, data);
         } // Configure JSON request (content type may have been set in configuration callback)
 
 
-        this.__configureJsonRequest(req, config, data);
+        this.__configureJsonRequest__P_64_13(req, config, data);
 
         var reqHandler = this._getRequestHandler(); // Handle successful request
 
@@ -528,7 +528,7 @@
        * @param baseUrl {String} Base URL.
        */
       setBaseUrl: function setBaseUrl(baseUrl) {
-        this.__baseUrl = baseUrl;
+        this.__baseUrl__P_64_5 = baseUrl;
       },
 
       /**
@@ -537,7 +537,7 @@
        * @param params {Map} Parameters.
        * @param check {Map} Checks.
        */
-      __checkParameters: function __checkParameters(params, check) {
+      __checkParameters__P_64_11: function __checkParameters__P_64_11(params, check) {
         if (typeof check !== "undefined") {
           {
             qx.core.Assert.assertObject(check, "Check must be object with params as keys");
@@ -576,7 +576,7 @@
        * @param config {Map} Configuration.
        * @param data {Map} Data.
        */
-      __configureRequest: function __configureRequest(req, config, data) {
+      __configureRequest__P_64_12: function __configureRequest__P_64_12(req, config, data) {
         req.setUrl(config.url);
 
         if (!req.setMethod && config.method !== "GET") {
@@ -599,7 +599,7 @@
        * @param config {Map} Configuration.
        * @param data {Map} Data.
        */
-      __configureJsonRequest: function __configureJsonRequest(req, config, data) {
+      __configureJsonRequest__P_64_13: function __configureJsonRequest__P_64_13(req, config, data) {
         if (data) {
           var contentType = req.getRequestHeader("Content-Type");
 
@@ -629,9 +629,9 @@
           }
         } else {
           var action = varargs;
-          var reqs = this.__requests[action];
+          var reqs = this.__requests__P_64_0[action];
 
-          if (this.__requests[action]) {
+          if (this.__requests__P_64_0[action]) {
             reqs.forEach(function (req) {
               req.abort();
             });
@@ -647,7 +647,7 @@
        * @param action {String} Action to refresh.
        */
       refresh: function refresh(action) {
-        this.invoke(action, this.__routes[action].params);
+        this.invoke(action, this.__routes__P_64_1[action].params);
       },
 
       /**
@@ -676,13 +676,13 @@
        */
       poll: function poll(action, interval, params, immediately) {
         // Dispose timer previously created for action
-        if (this.__pollTimers[action]) {
+        if (this.__pollTimers__P_64_2[action]) {
           this.stopPollByAction(action);
         } // Fallback to previous params
 
 
         if (typeof params == "undefined") {
-          params = this.__routes[action].params;
+          params = this.__routes__P_64_1[action].params;
         } // Invoke immediately
 
 
@@ -692,7 +692,7 @@
 
         var intervalListener = function (scope) {
           return function () {
-            var req = scope.__requests[action][0];
+            var req = scope.__requests__P_64_0[action][0];
 
             if (!immediately && !req) {
               scope.invoke(action, params);
@@ -716,7 +716,7 @@
        * @param interval {Number} Interval in ms.
        */
       _startPoll: function _startPoll(action, listener, interval) {
-        this.__pollTimers[action] = {
+        this.__pollTimers__P_64_2[action] = {
           "id": window.setInterval(listener, interval),
           "interval": interval,
           "listener": listener
@@ -729,8 +729,8 @@
        * @param action {String} Action to poll.
        */
       stopPollByAction: function stopPollByAction(action) {
-        if (action in this.__pollTimers) {
-          var intervalId = this.__pollTimers[action].id;
+        if (action in this.__pollTimers__P_64_2) {
+          var intervalId = this.__pollTimers__P_64_2[action].id;
           window.clearInterval(intervalId);
         }
       },
@@ -741,8 +741,8 @@
        * @param action {String} Action to poll.
        */
       restartPollByAction: function restartPollByAction(action) {
-        if (action in this.__pollTimers) {
-          var timer = this.__pollTimers[action];
+        if (action in this.__pollTimers__P_64_2) {
+          var timer = this.__pollTimers__P_64_2[action];
           this.stopPollByAction(action);
 
           this._startPoll(action, timer.listener, timer.interval);
@@ -800,7 +800,7 @@
           return false;
         }
 
-        var handlerId = this.__longPollHandlers[action] = this.addListener(action + "Success", function longPollHandler() {
+        var handlerId = this.__longPollHandlers__P_64_3[action] = this.addListener(action + "Success", function longPollHandler() {
           if (res.isDisposed()) {
             return;
           }
@@ -825,7 +825,7 @@
        *   <code>method</code>, <code>url</code> and <code>check</code>.
        */
       _getRequestConfig: function _getRequestConfig(action, params) {
-        var route = this.__routes[action]; // Not modify original params
+        var route = this.__routes__P_64_1[action]; // Not modify original params
 
         var params = qx.lang.Object.clone(params);
 
@@ -834,7 +834,7 @@
         }
 
         var method = route[0],
-            url = this.__baseUrl !== null ? this.__baseUrl + route[1] : route[1],
+            url = this.__baseUrl__P_64_5 !== null ? this.__baseUrl__P_64_5 + route[1] : route[1],
             check = route[2],
             placeholders = qx.bom.rest.Resource.placeholdersFromUrl(url);
         params = params || {};
@@ -883,7 +883,7 @@
        *
        * @param description {Map} Map that defines the routes.
        */
-      __mapFromDescription: function __mapFromDescription(description) {
+      __mapFromDescription__P_64_4: function __mapFromDescription__P_64_4(description) {
         Object.keys(description).forEach(function (action) {
           var route = description[action],
               method = route.method,
@@ -902,7 +902,7 @@
        *
        * @param type {String} Type of event.
        */
-      __declareEvent: function __declareEvent(type) {
+      __declareEvent__P_64_10: function __declareEvent__P_64_10(type) {
         if (!this.constructor.$$events) {
           this.constructor.$$events = {};
         }
@@ -990,32 +990,32 @@
       destruct: function destruct() {
         var action;
 
-        for (action in this.__requests) {
-          if (this.__requests[action]) {
-            this.__requests[action].forEach(function (req) {
+        for (action in this.__requests__P_64_0) {
+          if (this.__requests__P_64_0[action]) {
+            this.__requests__P_64_0[action].forEach(function (req) {
               req.dispose();
             });
           }
         }
 
-        if (this.__pollTimers) {
-          for (action in this.__pollTimers) {
+        if (this.__pollTimers__P_64_2) {
+          for (action in this.__pollTimers__P_64_2) {
             this.stopPollByAction(action);
           }
         }
 
-        if (this.__longPollHandlers) {
-          for (action in this.__longPollHandlers) {
-            var id = this.__longPollHandlers[action];
+        if (this.__longPollHandlers__P_64_3) {
+          for (action in this.__longPollHandlers__P_64_3) {
+            var id = this.__longPollHandlers__P_64_3[action];
             this.removeListenerById(id);
           }
         }
 
-        this.__requests = this.__routes = this.__pollTimers = null;
+        this.__requests__P_64_0 = this.__routes__P_64_1 = this.__pollTimers__P_64_2 = null;
       }
     }
   });
   qx.bom.rest.Resource.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resource.js.map?dt=1589218241158
+//# sourceMappingURL=Resource.js.map?dt=1591362960827

@@ -37,42 +37,42 @@
     extend: qx.dev.unit.TestCase,
     construct: function construct() {
       qx.dev.unit.TestCase.constructor.call(this);
-      this.__mgr = qx.util.LibraryManager.getInstance();
+      this.__mgr__P_355_0 = qx.util.LibraryManager.getInstance();
       this.libKeys = ["sourceUri", "resourceUri"];
-      this.__qxBackup = {};
+      this.__qxBackup__P_355_1 = {};
 
       for (var key in qx.$$libraries.qx) {
         if (qx.$$libraries.qx.hasOwnProperty(key)) {
-          this.__qxBackup[key] = qx.$$libraries.qx[key];
+          this.__qxBackup__P_355_1[key] = qx.$$libraries.qx[key];
         }
       }
     },
     members: {
-      __mgr: null,
-      __qxBackup: null,
+      __mgr__P_355_0: null,
+      __qxBackup__P_355_1: null,
       libKeys: null,
       testHas: function testHas() {
-        this.assert(this.__mgr.has("qx"));
-        this.assertFalse(this.__mgr.has("foo"));
+        this.assert(this.__mgr__P_355_0.has("qx"));
+        this.assertFalse(this.__mgr__P_355_0.has("foo"));
       },
       testGet: function testGet() {
         for (var i = 0, l = this.libKeys.length; i < l; i++) {
           var key = this.libKeys[i];
-          this.assertEquals(qx.$$libraries.qx[key], this.__mgr.get("qx", key));
+          this.assertEquals(qx.$$libraries.qx[key], this.__mgr__P_355_0.get("qx", key));
         }
       },
       testSet: function testSet() {
         for (var i = 0, l = this.libKeys.length; i < l; i++) {
           var key = this.libKeys[i];
 
-          this.__mgr.set("qx", key, "foo");
+          this.__mgr__P_355_0.set("qx", key, "foo");
 
           this.assertEquals("foo", qx.$$libraries.qx[key]);
         }
       },
       tearDownTestSet: function tearDownTestSet() {
-        for (var key in this.__qxBackup) {
-          qx.$$libraries.qx[key] = this.__qxBackup[key];
+        for (var key in this.__qxBackup__P_355_1) {
+          qx.$$libraries.qx[key] = this.__qxBackup__P_355_1[key];
         }
       }
     }
@@ -80,4 +80,4 @@
   qx.test.util.LibraryManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LibraryManager.js.map?dt=1589218267772
+//# sourceMappingURL=LibraryManager.js.map?dt=1591362990492

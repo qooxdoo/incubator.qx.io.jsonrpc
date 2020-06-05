@@ -46,16 +46,16 @@
     extend: qx.dev.unit.TestCase,
     members: {
       /** @type {qx.test.data.controller.fixture.ArrayField} */
-      __arrayField: null,
+      __arrayField__P_228_0: null,
 
       /** @type {qx.test.data.controller.fixture.ModelField} */
-      __modelField: null,
+      __modelField__P_228_1: null,
 
       /** @type {qx.ui.form.Form} */
-      __form: null,
+      __form__P_228_2: null,
 
       /** @type {qx.core.Object} */
-      __model: null,
+      __model__P_228_3: null,
       setUp: function setUp() {
         // imagine me being a table like widget containing two columns (e.g. an miniature todo-list)
         qx.Class.define("qx.test.data.controller.fixture.ArrayField", {
@@ -67,14 +67,14 @@
           },
           members: {
             /** @type {qx.data.Array|null} */
-            __value: null,
+            __value__P_228_4: null,
 
             /**
              * @param value {qx.data.Array|null}
              */
             setValue: function setValue(value) {
-              var oldValue = this.__value;
-              this.__value = value;
+              var oldValue = this.__value__P_228_4;
+              this.__value__P_228_4 = value;
               this.fireDataEvent("changeValue", value, oldValue);
             },
 
@@ -82,10 +82,10 @@
              * @return {qx.data.Array|null}
              */
             getValue: function getValue() {
-              return this.__value;
+              return this.__value__P_228_4;
             },
             resetValue: function resetValue() {
-              this.__value = null;
+              this.__value__P_228_4 = null;
             }
           }
         }); // imagine me being a multi-field widget (e.g. address form embedded in user form)
@@ -130,22 +130,22 @@
             }
           }
         });
-        this.__arrayField = new qx.test.data.controller.fixture.ArrayField();
-        this.__modelField = new qx.test.data.controller.fixture.ModelField();
-        this.__form = new qx.ui.form.Form();
+        this.__arrayField__P_228_0 = new qx.test.data.controller.fixture.ArrayField();
+        this.__modelField__P_228_1 = new qx.test.data.controller.fixture.ModelField();
+        this.__form__P_228_2 = new qx.ui.form.Form();
 
-        this.__form.add(this.__arrayField, "One", null, "f1");
+        this.__form__P_228_2.add(this.__arrayField__P_228_0, "One", null, "f1");
 
-        this.__form.add(this.__modelField, "Two", null, "f2");
+        this.__form__P_228_2.add(this.__modelField__P_228_1, "Two", null, "f2");
 
-        this.__model = qx.data.marshal.Json.createModel({
+        this.__model__P_228_3 = qx.data.marshal.Json.createModel({
           f1: null,
           f2: null,
           f3: null
         });
       },
       tearDown: function tearDown() {
-        this._disposeObjects("__arrayField", "__modelField", "__form", "__model");
+        this._disposeObjects("__arrayField__P_228_0", "__modelField__P_228_1", "__form__P_228_2", "__model__P_228_3");
 
         qx.Class.undefine("qx.test.data.controller.fixture.ArrayField");
         qx.Class.undefine("qx.test.data.controller.fixture.ModelField");
@@ -156,7 +156,7 @@
        *
        * @return {qx.ui.form.Form} Address form.
        */
-      __makeAddressForm: function __makeAddressForm() {
+      __makeAddressForm__P_228_5: function __makeAddressForm__P_228_5() {
         var houseNr = new qx.ui.form.TextField();
         var streetName = new qx.ui.form.TextField();
         var addressForm = new qx.ui.form.Form();
@@ -176,37 +176,37 @@
         }]);
         arr.setAutoDisposeItems(true);
 
-        this.__arrayField.setValue(arr); // sync form and model, model (null) takes preference over form (arr)
+        this.__arrayField__P_228_0.setValue(arr); // sync form and model, model (null) takes preference over form (arr)
 
 
-        var ctrl = new qx.data.controller.Form(this.__model, this.__form, true);
-        this.assertNull(this.__arrayField.getValue());
-        this.assertNull(this.__model.getF1()); // user changes field and hits ok button
+        var ctrl = new qx.data.controller.Form(this.__model__P_228_3, this.__form__P_228_2, true);
+        this.assertNull(this.__arrayField__P_228_0.getValue());
+        this.assertNull(this.__model__P_228_3.getF1()); // user changes field and hits ok button
 
-        this.__arrayField.setValue(arr);
+        this.__arrayField__P_228_0.setValue(arr);
 
         ctrl.updateModel();
-        this.assertIdentical(arr, this.__model.getF1());
+        this.assertIdentical(arr, this.__model__P_228_3.getF1());
         ctrl.dispose();
         arr.dispose();
       },
       "test self update: model": function testSelfUpdateModel() {
-        var addressForm = this.__makeAddressForm();
+        var addressForm = this.__makeAddressForm__P_228_5();
 
-        this.__modelField.setTarget(addressForm);
+        this.__modelField__P_228_1.setTarget(addressForm);
 
-        var ctrl = new qx.data.controller.Form(this.__model, this.__form, true);
-        this.assertNull(this.__arrayField.getValue());
-        this.assertNull(this.__modelField.getValue()); // let's make an address for this user (this.__model being a user now ;) )
+        var ctrl = new qx.data.controller.Form(this.__model__P_228_3, this.__form__P_228_2, true);
+        this.assertNull(this.__arrayField__P_228_0.getValue());
+        this.assertNull(this.__modelField__P_228_1.getValue()); // let's make an address for this user (this.__model being a user now ;) )
 
-        this.__modelField.createModel(false);
+        this.__modelField__P_228_1.createModel(false);
 
         addressForm.getItem("houseNr").setValue("42");
         addressForm.getItem("streetName").setValue("Nowhere Ln");
         ctrl.updateModel(); // imagine f2 now being a user address
 
-        this.assertIdentical("42", this.__model.getF2().getHouseNr());
-        this.assertIdentical("Nowhere Ln", this.__model.getF2().getStreetName());
+        this.assertIdentical("42", this.__model__P_228_3.getF2().getHouseNr());
+        this.assertIdentical("Nowhere Ln", this.__model__P_228_3.getF2().getStreetName());
         ctrl.dispose();
         addressForm.dispose();
       },
@@ -220,16 +220,16 @@
         }]);
         arr.setAutoDisposeItems(true);
 
-        this.__arrayField.setValue(arr); // sync form and model, model (null) takes preference over form (arr)
+        this.__arrayField__P_228_0.setValue(arr); // sync form and model, model (null) takes preference over form (arr)
 
 
-        var ctrl = new qx.data.controller.Form(this.__model, this.__form);
-        this.assertNull(this.__arrayField.getValue());
-        this.assertNull(this.__model.getF1()); // user changes field and hits ok button
+        var ctrl = new qx.data.controller.Form(this.__model__P_228_3, this.__form__P_228_2);
+        this.assertNull(this.__arrayField__P_228_0.getValue());
+        this.assertNull(this.__model__P_228_3.getF1()); // user changes field and hits ok button
 
-        this.__arrayField.setValue(arr);
+        this.__arrayField__P_228_0.setValue(arr);
 
-        this.assertIdentical(arr, this.__model.getF1());
+        this.assertIdentical(arr, this.__model__P_228_3.getF1());
         ctrl.dispose();
         arr.dispose();
       },
@@ -242,26 +242,26 @@
           c2: "2b2"
         }]);
         arr.setAutoDisposeItems(true);
-        var ctrl = new qx.data.controller.Form(this.__model, this.__form); // change model, view should follow
+        var ctrl = new qx.data.controller.Form(this.__model__P_228_3, this.__form__P_228_2); // change model, view should follow
 
-        this.__model.setF1(arr);
+        this.__model__P_228_3.setF1(arr);
 
-        this.assertIdentical(arr, this.__arrayField.getValue());
+        this.assertIdentical(arr, this.__arrayField__P_228_0.getValue());
         ctrl.dispose();
         arr.dispose();
       },
       "test updating model: model field": function testUpdatingModelModelField() {
-        var addressForm = this.__makeAddressForm();
+        var addressForm = this.__makeAddressForm__P_228_5();
 
-        this.__modelField.setTarget(addressForm);
+        this.__modelField__P_228_1.setTarget(addressForm);
 
-        var ctrl = new qx.data.controller.Form(this.__model, this.__form);
-        this.assertNull(this.__arrayField.getValue());
-        this.assertNull(this.__modelField.getValue());
+        var ctrl = new qx.data.controller.Form(this.__model__P_228_3, this.__form__P_228_2);
+        this.assertNull(this.__arrayField__P_228_0.getValue());
+        this.assertNull(this.__modelField__P_228_1.getValue());
 
-        this.__modelField.createModel(false);
+        this.__modelField__P_228_1.createModel(false);
 
-        this.assertIdentical(this.__modelField.getModel(), this.__model.getF2());
+        this.assertIdentical(this.__modelField__P_228_1.getModel(), this.__model__P_228_3.getF2());
         ctrl.dispose();
         addressForm.dispose();
       }
@@ -270,4 +270,4 @@
   qx.test.data.controller.FormWithArrayAndModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FormWithArrayAndModel.js.map?dt=1589218256344
+//# sourceMappingURL=FormWithArrayAndModel.js.map?dt=1591362977432

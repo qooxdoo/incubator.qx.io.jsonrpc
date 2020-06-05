@@ -419,7 +419,7 @@
       },
 
       /** Private list of classes which have a defer method that needs to be executed */
-      __pendingDefers: [],
+      __pendingDefers__P_3_0: [],
 
       /**
        * Adds a callback for a class so that it's defer method can be called, either after all classes
@@ -430,7 +430,7 @@
        */
       addPendingDefer: function addPendingDefer(clazz, cb) {
         if (qx.$$loader && qx.$$loader.delayDefer) {
-          this.__pendingDefers.push(clazz);
+          this.__pendingDefers__P_3_0.push(clazz);
 
           clazz.$$pendingDefer = cb;
         } else {
@@ -523,8 +523,8 @@
         };
 
         if (!dbClassInfo) {
-          var pendingDefers = this.__pendingDefers;
-          this.__pendingDefers = [];
+          var pendingDefers = this.__pendingDefers__P_3_0;
+          this.__pendingDefers__P_3_0 = [];
           pendingDefers.forEach(execute);
           return;
         }
@@ -592,7 +592,7 @@
        * @internal
        * @type {String[]}
        */
-      __shadowedKeys: ["isPrototypeOf", "hasOwnProperty", "toLocaleString", "toString", "valueOf", "propertyIsEnumerable", "constructor"],
+      __shadowedKeys__P_3_1: ["isPrototypeOf", "hasOwnProperty", "toLocaleString", "toString", "valueOf", "propertyIsEnumerable", "constructor"],
 
       /**
        * Get the keys of a map as array as returned by a "for ... in" statement.
@@ -621,7 +621,7 @@
           // This is why this checks are needed.
 
 
-          var shadowedKeys = qx.Bootstrap.__shadowedKeys;
+          var shadowedKeys = qx.Bootstrap.__shadowedKeys__P_3_1;
 
           for (var i = 0, a = shadowedKeys, l = a.length; i < l; i++) {
             if (hasOwnProperty.call(map, a[i])) {
@@ -660,7 +660,7 @@
        * @internal
        * @type {Map}
        */
-      __classToTypeMap: {
+      __classToTypeMap__P_3_2: {
         "[object String]": "String",
         "[object Array]": "Array",
         "[object Object]": "Object",
@@ -765,7 +765,7 @@
         }
 
         var classString = Object.prototype.toString.call(value);
-        return qx.Bootstrap.__classToTypeMap[classString] || classString.slice(8, -1);
+        return qx.Bootstrap.__classToTypeMap__P_3_2[classString] || classString.slice(8, -1);
       },
 
       /**
@@ -896,4 +896,4 @@
   qx.Bootstrap.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Bootstrap.js.map?dt=1589218234644
+//# sourceMappingURL=Bootstrap.js.map?dt=1591362953504

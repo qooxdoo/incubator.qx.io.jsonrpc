@@ -52,15 +52,15 @@
    */
   qx.Bootstrap.define("qx.event.GlobalError", {
     statics: {
-      __callback: null,
-      __originalOnError: null,
-      __context: null,
+      __callback__P_115_0: null,
+      __originalOnError__P_115_1: null,
+      __context__P_115_2: null,
 
       /**
        * Little helper to check if the global error handling is enabled.
        * @return {Boolean} <code>true</code>, if it is enabled.
        */
-      __isGlobaErrorHandlingEnabled: function __isGlobaErrorHandlingEnabled() {
+      __isGlobaErrorHandlingEnabled__P_115_3: function __isGlobaErrorHandlingEnabled__P_115_3() {
         if (qx.core && qx.core.Environment) {
           return qx.core.Environment.get("qx.globalErrorHandling");
         } else {
@@ -76,36 +76,36 @@
        * @param context {Object?window} The "this" context of the callback function
        */
       setErrorHandler: function setErrorHandler(callback, context) {
-        this.__callback = callback || null;
-        this.__context = context || window;
+        this.__callback__P_115_0 = callback || null;
+        this.__context__P_115_2 = context || window;
 
-        if (this.__isGlobaErrorHandlingEnabled()) {
+        if (this.__isGlobaErrorHandlingEnabled__P_115_3()) {
           // wrap the original onerror
           if (callback && window.onerror) {
-            var wrappedHandler = qx.Bootstrap.bind(this.__onErrorWindow, this);
+            var wrappedHandler = qx.Bootstrap.bind(this.__onErrorWindow__P_115_4, this);
 
-            if (this.__originalOnError == null) {
-              this.__originalOnError = window.onerror;
+            if (this.__originalOnError__P_115_1 == null) {
+              this.__originalOnError__P_115_1 = window.onerror;
             }
 
             var self = this;
 
             window.onerror = function (msg, uri, lineNumber) {
-              self.__originalOnError(msg, uri, lineNumber);
+              self.__originalOnError__P_115_1(msg, uri, lineNumber);
 
               wrappedHandler(msg, uri, lineNumber);
             };
           }
 
           if (callback && !window.onerror) {
-            window.onerror = qx.Bootstrap.bind(this.__onErrorWindow, this);
+            window.onerror = qx.Bootstrap.bind(this.__onErrorWindow__P_115_4, this);
           } // reset
 
 
-          if (this.__callback == null) {
-            if (this.__originalOnError != null) {
-              window.onerror = this.__originalOnError;
-              this.__originalOnError = null;
+          if (this.__callback__P_115_0 == null) {
+            if (this.__originalOnError__P_115_1 != null) {
+              window.onerror = this.__originalOnError__P_115_1;
+              this.__originalOnError__P_115_1 = null;
             } else {
               window.onerror = null;
             }
@@ -124,8 +124,8 @@
        * @param columnNumber {Integer} column number of error
        * @param exception {Error} orginal error
        */
-      __onErrorWindow: function __onErrorWindow(msg, uri, lineNumber, columnNumber, exception) {
-        if (this.__callback) {
+      __onErrorWindow__P_115_4: function __onErrorWindow__P_115_4(msg, uri, lineNumber, columnNumber, exception) {
+        if (this.__callback__P_115_0) {
           this.handleError(new qx.core.WindowError(msg, uri, lineNumber, columnNumber, exception));
         }
       },
@@ -138,10 +138,10 @@
        * @return {Function} The function wrapped with error handling code
        */
       observeMethod: function observeMethod(method) {
-        if (this.__isGlobaErrorHandlingEnabled()) {
+        if (this.__isGlobaErrorHandlingEnabled__P_115_3()) {
           var self = this;
           return function () {
-            if (!self.__callback) {
+            if (!self.__callback__P_115_0) {
               return method.apply(this, arguments);
             }
 
@@ -162,8 +162,8 @@
        * @param ex {qx.core.WindowError|Error} Exception to delegate
        */
       handleError: function handleError(ex) {
-        if (this.__callback) {
-          this.__callback.call(this.__context, ex);
+        if (this.__callback__P_115_0) {
+          this.__callback__P_115_0.call(this.__context__P_115_2, ex);
         }
       }
     },
@@ -181,4 +181,4 @@
   qx.event.GlobalError.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GlobalError.js.map?dt=1589218245196
+//# sourceMappingURL=GlobalError.js.map?dt=1591362965341

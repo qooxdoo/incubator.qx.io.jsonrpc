@@ -38,12 +38,12 @@
     members: {
       setUp: function setUp() {
         this.manager = qx.theme.manager.Icon.getInstance();
-        this.__formerTheme = this.manager.getTheme();
+        this.__formerTheme__P_274_0 = this.manager.getTheme();
       },
       tearDown: function tearDown() {
         qx.test.Theme.themes = null;
-        this.manager.setTheme(this.__formerTheme);
-        this.__formerTheme = null;
+        this.manager.setTheme(this.__formerTheme__P_274_0);
+        this.__formerTheme__P_274_0 = null;
       },
       testAlias: function testAlias() {
         qx.Theme.define("qx.test.Theme.themes.A", {
@@ -111,4 +111,4 @@
   qx.test.theme.manager.Icon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Icon.js.map?dt=1589218261929
+//# sourceMappingURL=Icon.js.map?dt=1591362983847

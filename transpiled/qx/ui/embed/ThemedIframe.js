@@ -70,7 +70,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/themediframe.html' target='_blank'>
+   * <a href='http://qooxdoo.org/docs/#desktop/widget/themediframe.md' target='_blank'>
    * Documentation of this widget in the qooxdoo manual.</a>
    */
   qx.Class.define("qx.ui.embed.ThemedIframe", {
@@ -132,8 +132,8 @@
       }
     },
     members: {
-      __iframeSize: null,
-      __iframeObserverId: null,
+      __iframeSize__P_412_0: null,
+      __iframeObserverId__P_412_1: null,
       // overridden
       _getIframeElement: function _getIframeElement() {
         return this.getChildControl("iframe").getContentElement();
@@ -259,26 +259,26 @@
        * Start observing size changes of the iframe document
        */
       _startIframeObserver: function _startIframeObserver() {
-        if (this.__iframeObserverId) {
+        if (this.__iframeObserverId__P_412_1) {
           this._stopIframeObserver();
         }
 
         var idle = qx.event.Idle.getInstance();
-        this.__iframeObserverId = idle.addListener("interval", this._onIframeObserverInterval, this);
+        this.__iframeObserverId__P_412_1 = idle.addListener("interval", this._onIframeObserverInterval, this);
       },
 
       /**
        * Stop observing size changes of the iframe document
        */
       _stopIframeObserver: function _stopIframeObserver() {
-        this.__iframeSize = null;
+        this.__iframeSize__P_412_0 = null;
 
-        if (!this.__iframeObserverId) {
+        if (!this.__iframeObserverId__P_412_1) {
           return;
         }
 
         var idle = qx.event.Idle.getInstance();
-        idle.removeListenerById(this.__iframeObserverId);
+        idle.removeListenerById(this.__iframeObserverId__P_412_1);
       },
 
       /**
@@ -293,11 +293,11 @@
           return;
         }
 
-        if (this.__iframeSize && iframeSize.width == this.__iframeSize.width && iframeSize.height == this.__iframeSize.height) {
+        if (this.__iframeSize__P_412_0 && iframeSize.width == this.__iframeSize__P_412_0.width && iframeSize.height == this.__iframeSize__P_412_0.height) {
           return;
         }
 
-        this.__iframeSize = iframeSize;
+        this.__iframeSize__P_412_0 = iframeSize;
 
         this._preventIframeScrolling();
 
@@ -328,7 +328,7 @@
        * document size
        */
       _updateScrollbars: function _updateScrollbars() {
-        var iframeSize = this.__iframeSize;
+        var iframeSize = this.__iframeSize__P_412_0;
         var paneSize = this.getChildControl("iframe").getBounds();
         var innerSize = this.getChildControl("iframe").getInnerSize();
 
@@ -497,10 +497,10 @@
     destruct: function destruct() {
       this._stopIframeObserver();
 
-      this.__iframeSize = null;
+      this.__iframeSize__P_412_0 = null;
     }
   });
   qx.ui.embed.ThemedIframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ThemedIframe.js.map?dt=1589218273088
+//# sourceMappingURL=ThemedIframe.js.map?dt=1591362996444

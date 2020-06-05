@@ -35,84 +35,84 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__w = new qx.ui.core.Widget();
+        this.__w__P_292_0 = new qx.ui.core.Widget();
 
-        this.__w.setHeight(100);
+        this.__w__P_292_0.setHeight(100);
 
-        this.__dec = new qx.ui.decoration.Decorator();
+        this.__dec__P_292_1 = new qx.ui.decoration.Decorator();
 
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColor: "red",
           endColor: "black"
         });
 
-        this.getRoot().add(this.__w);
+        this.getRoot().add(this.__w__P_292_0);
       },
       tearDown: function tearDown() {
-        this.__w.destroy();
+        this.__w__P_292_0.destroy();
 
-        this.__dec.dispose();
+        this.__dec__P_292_1.dispose();
       },
       testDefault: function testDefault() {
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColorPosition: 0,
           endColorPosition: 100
         });
 
-        this.__w.setDecorator(this.__dec);
+        this.__w__P_292_0.setDecorator(this.__dec__P_292_1);
 
         this.flush();
       },
       testDefaultPx: function testDefaultPx() {
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColorPosition: 0,
           endColorPosition: 200,
           colorPositionUnit: "px"
         });
 
-        this.__w.setDecorator(this.__dec);
+        this.__w__P_292_0.setDecorator(this.__dec__P_292_1);
 
         this.flush();
       },
       testNegativeStart: function testNegativeStart() {
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColorPosition: -100,
           endColorPosition: 100
         });
 
-        this.__w.setDecorator(this.__dec);
+        this.__w__P_292_0.setDecorator(this.__dec__P_292_1);
 
         this.flush();
       },
       testBigEnd: function testBigEnd() {
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColorPosition: 0,
           endColorPosition: 200
         });
 
-        this.__w.setDecorator(this.__dec);
+        this.__w__P_292_0.setDecorator(this.__dec__P_292_1);
 
         this.flush();
       },
       testBigEndPx: function testBigEndPx() {
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColorPosition: 0,
           endColorPosition: 200,
           colorPositionUnit: "px"
         });
 
-        this.__w.setDecorator(this.__dec);
+        this.__w__P_292_0.setDecorator(this.__dec__P_292_1);
 
         this.flush();
       },
       testNegativeStartPx: function testNegativeStartPx() {
-        this.__dec.set({
+        this.__dec__P_292_1.set({
           startColorPosition: 0,
           endColorPosition: 200,
           colorPositionUnit: "px"
         });
 
-        this.__w.setDecorator(this.__dec);
+        this.__w__P_292_0.setDecorator(this.__dec__P_292_1);
 
         this.flush();
       }
@@ -121,4 +121,4 @@
   qx.test.ui.decoration.LinearGradient.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LinearGradient.js.map?dt=1589218263319
+//# sourceMappingURL=LinearGradient.js.map?dt=1591362985382

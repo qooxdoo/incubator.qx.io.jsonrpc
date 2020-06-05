@@ -74,10 +74,10 @@
     */
     statics: {
       /** @type {RegExp} Regular expressions to split class names */
-      __splitter: /\s+/g,
+      __splitter__P_52_0: /\s+/g,
 
       /** @type {RegExp} String trim regular expression. */
-      __trim: /^\s+|\s+$/g,
+      __trim__P_52_1: /^\s+|\s+$/g,
 
       /**
        * Adds a className to the given element
@@ -129,7 +129,7 @@
           var old = element.className;
 
           if (old) {
-            result = old.split(this.__splitter);
+            result = old.split(this.__splitter__P_52_0);
 
             for (var i = 0, l = result.length; i < l; i++) {
               keys[result[i]] = true;
@@ -236,7 +236,7 @@
         },
         "default": function _default(element, classes) {
           var reg = new RegExp("\\b" + classes.join("\\b|\\b") + "\\b", "g");
-          return element.className = element.className.replace(reg, "").replace(this.__trim, "").replace(this.__splitter, " ");
+          return element.className = element.className.replace(reg, "").replace(this.__trim__P_52_1, "").replace(this.__splitter__P_52_0, " ");
         }
       }[qx.core.Environment.get("html.classlist") ? "native" : "default"],
 
@@ -291,4 +291,4 @@
   qx.bom.element.Class.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Class.js.map?dt=1589218240107
+//# sourceMappingURL=Class.js.map?dt=1591362959651

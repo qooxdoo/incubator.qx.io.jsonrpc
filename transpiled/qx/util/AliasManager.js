@@ -39,7 +39,7 @@
    * some pre-defined aliases, and you can register your own with {@link #add}.
    * The AliasManager is automatically invoked in various situations, e.g. when
    * resolving the icon image for a button, so it is common to register aliases for
-   * <a href="http://manual.qooxdoo.org/${qxversion}/pages/desktop/ui_resources.html">resource id's</a>.
+   * <a href="http://qooxdoo.org/docs/#desktop/gui/resources.md">resource id's</a>.
    * You can of course call the AliasManager's {@link #resolve}
    * explicitly to get an alias resolution in any situation, but keep that
    * automatic invocation of the AliasManager in mind when defining new aliases as
@@ -69,7 +69,7 @@
     construct: function construct() {
       qx.util.ValueManager.constructor.call(this); // Contains defined aliases (like icons/, widgets/, application/, ...)
 
-      this.__aliases = {}; // Define static alias from setting
+      this.__aliases__P_568_0 = {}; // Define static alias from setting
 
       this.add("static", "qx/static");
     },
@@ -80,7 +80,7 @@
     *****************************************************************************
     */
     members: {
-      __aliases: null,
+      __aliases__P_568_0: null,
 
       /**
        * pre-process incoming dynamic value
@@ -99,12 +99,12 @@
             return value;
           }
 
-          if (this.__aliases[value]) {
-            return this.__aliases[value];
+          if (this.__aliases__P_568_0[value]) {
+            return this.__aliases__P_568_0[value];
           }
 
           var alias = value.substring(0, value.indexOf("/"));
-          var resolved = this.__aliases[alias];
+          var resolved = this.__aliases__P_568_0[alias];
 
           if (resolved !== undefined) {
             dynamics[value] = resolved + value.substring(alias.length);
@@ -122,7 +122,7 @@
        */
       add: function add(alias, base) {
         // Store new alias value
-        this.__aliases[alias] = base; // Localify stores
+        this.__aliases__P_568_0[alias] = base; // Localify stores
 
         var dynamics = this._getDynamic(); // Update old entries which use this alias
 
@@ -140,7 +140,7 @@
        * @param alias {String} alias name for the resource path/url
        */
       remove: function remove(alias) {
-        delete this.__aliases[alias]; // No signal for depending objects here. These
+        delete this.__aliases__P_568_0[alias]; // No signal for depending objects here. These
         // will informed with the new value using add().
       },
 
@@ -168,8 +168,8 @@
       getAliases: function getAliases() {
         var res = {};
 
-        for (var key in this.__aliases) {
-          res[key] = this.__aliases[key];
+        for (var key in this.__aliases__P_568_0) {
+          res[key] = this.__aliases__P_568_0[key];
         }
 
         return res;
@@ -179,4 +179,4 @@
   qx.util.AliasManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AliasManager.js.map?dt=1589218286227
+//# sourceMappingURL=AliasManager.js.map?dt=1591363011265

@@ -34,42 +34,42 @@
     extend: qx.core.Object,
     construct: function construct(dateMap) {
       qx.core.Object.constructor.call(this);
-      this.__date = dateMap;
+      this.__date__P_353_0 = dateMap;
     },
     members: {
       getFullYear: function getFullYear() {
-        return this.__date.fullYear;
+        return this.__date__P_353_0.fullYear;
       },
       getMonth: function getMonth() {
-        return this.__date.month;
+        return this.__date__P_353_0.month;
       },
       getDate: function getDate() {
-        return this.__date.date;
+        return this.__date__P_353_0.date;
       },
       getDay: function getDay() {
-        return this.__date.day;
+        return this.__date__P_353_0.day;
       },
       getHours: function getHours() {
-        return this.__date.hours;
+        return this.__date__P_353_0.hours;
       },
       getSeconds: function getSeconds() {
-        return this.__date.seconds;
+        return this.__date__P_353_0.seconds;
       },
       getMinutes: function getMinutes() {
-        return this.__date.minutes;
+        return this.__date__P_353_0.minutes;
       },
       getMilliseconds: function getMilliseconds() {
-        return this.__date.milliseconds;
+        return this.__date__P_353_0.milliseconds;
       },
       getTimezoneOffset: function getTimezoneOffset() {
-        return this.__date.timezoneOffset;
+        return this.__date__P_353_0.timezoneOffset;
       },
       getTime: function getTime() {
-        return this.__date.time;
+        return this.__date__P_353_0.time;
       }
     }
   });
   qx.test.util.DateMock.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DateMock.js.map?dt=1589218267600
+//# sourceMappingURL=DateMock.js.map?dt=1591362990295

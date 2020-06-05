@@ -88,7 +88,7 @@
   qx.Class.define("qxl.logpane.LogPane", {
     extend: qx.ui.container.Composite,
     construct: function construct() {
-      this.__logLevelData = [["debug", "Debug", "icon/16/categories/system.png"], ["info", "Info", "icon/16/status/dialog-information.png"], ["warn", "Warning", "icon/16/status/dialog-warning.png"], ["error", "Error", "icon/16/status/dialog-error.png"]];
+      this.__logLevelData__P_593_0 = [["debug", "Debug", "icon/16/categories/system.png"], ["info", "Info", "icon/16/status/dialog-information.png"], ["warn", "Warning", "icon/16/status/dialog-warning.png"], ["error", "Error", "icon/16/status/dialog-error.png"]];
       var layout = new qx.ui.layout.VBox();
       layout.setSeparator("separator-vertical");
       qx.ui.container.Composite.constructor.call(this, layout);
@@ -103,22 +103,22 @@
       }); //this.add(caption);
       //toolbar of the log pane
 
-      this.__toolbar = new qx.ui.toolbar.ToolBar();
+      this.__toolbar__P_593_1 = new qx.ui.toolbar.ToolBar();
 
-      this.__toolbar.add(caption);
+      this.__toolbar__P_593_1.add(caption);
 
-      this.__toolbar.addSpacer();
+      this.__toolbar__P_593_1.addSpacer();
 
-      this.__toolbar.setBackgroundColor("white");
+      this.__toolbar__P_593_1.setBackgroundColor("white");
 
       var clearButton = new qx.ui.toolbar.Button(this.tr("Clear"), "icon/16/actions/edit-clear.png");
       clearButton.addListener("execute", function (e) {
         this.clear();
       }, this);
 
-      this.__toolbar.add(clearButton);
+      this.__toolbar__P_593_1.add(clearButton);
 
-      this.add(this.__toolbar); // log pane
+      this.add(this.__toolbar__P_593_1); // log pane
 
       var logArea = new qx.ui.embed.Html('');
       logArea.set({
@@ -138,15 +138,15 @@
         flex: 1
       }); // log appender
 
-      this.__logAppender = new qx.log.appender.Element();
-      qx.log.Logger.unregister(this.__logAppender); // Directly create DOM element to use
+      this.__logAppender__P_593_2 = new qx.log.appender.Element();
+      qx.log.Logger.unregister(this.__logAppender__P_593_2); // Directly create DOM element to use
 
-      this.__logElem = document.createElement("DIV");
+      this.__logElem__P_593_3 = document.createElement("DIV");
 
-      this.__logAppender.setElement(this.__logElem);
+      this.__logAppender__P_593_2.setElement(this.__logElem__P_593_3);
 
       logArea.addListenerOnce("appear", function () {
-        logArea.getContentElement().getDomElement().appendChild(this.__logElem);
+        logArea.getContentElement().getDomElement().appendChild(this.__logElem__P_593_3);
       }, this);
     },
     properties: {
@@ -167,17 +167,17 @@
       }
     },
     members: {
-      __logElem: null,
-      __logAppender: null,
-      __logLevelData: null,
-      __logLevelButton: null,
-      __toolbar: null,
+      __logElem__P_593_3: null,
+      __logAppender__P_593_2: null,
+      __logLevelData__P_593_0: null,
+      __logLevelButton__P_593_4: null,
+      __toolbar__P_593_1: null,
 
       /**
        * Clears the log.
        */
       clear: function clear() {
-        this.__logAppender.clear();
+        this.__logAppender__P_593_2.clear();
       },
 
       /**
@@ -192,7 +192,7 @@
         } // Register to flush the log queue into the appender.
 
 
-        Logger.register(this.__logAppender); // Clear buffer
+        Logger.register(this.__logAppender__P_593_2); // Clear buffer
 
         Logger.clear();
       },
@@ -202,27 +202,27 @@
        * @return {DIV} The appender element.
        */
       getAppenderElement: function getAppenderElement() {
-        return this.__logElem;
+        return this.__logElem__P_593_3;
       },
       _applyShowToolBar: function _applyShowToolBar(value, old) {
         if (value) {
-          this.__toolbar.show();
+          this.__toolbar__P_593_1.show();
         } else {
-          this.__toolbar.exclude();
+          this.__toolbar__P_593_1.exclude();
         }
       },
       // property apply
       _applyShowLogLevel: function _applyShowLogLevel(value, old) {
-        if (!this.__logLevelButton) {
-          this.__logLevelButton = this.__createLogLevelMenu();
+        if (!this.__logLevelButton__P_593_4) {
+          this.__logLevelButton__P_593_4 = this.__createLogLevelMenu__P_593_5();
 
-          this.__toolbar.add(this.__logLevelButton);
+          this.__toolbar__P_593_1.add(this.__logLevelButton__P_593_4);
         }
 
         if (value) {
-          this.__logLevelButton.show();
+          this.__logLevelButton__P_593_4.show();
         } else {
-          this.__logLevelButton.exclude();
+          this.__logLevelButton__P_593_4.exclude();
         }
       },
 
@@ -231,13 +231,13 @@
        *
        * @return {qx.ui.toolbar.MenuButton}
        */
-      __createLogLevelMenu: function __createLogLevelMenu() {
+      __createLogLevelMenu__P_593_5: function __createLogLevelMenu__P_593_5() {
         var logLevelMenu = new qx.ui.menu.Menu();
         var logLevelMenuButton = new qx.ui.toolbar.MenuButton("Log Level", "icon/16/categories/system.png");
         logLevelMenuButton.setMenu(logLevelMenu);
 
-        for (var i = 0, l = this.__logLevelData.length; i < l; i++) {
-          var data = this.__logLevelData[i];
+        for (var i = 0, l = this.__logLevelData__P_593_0.length; i < l; i++) {
+          var data = this.__logLevelData__P_593_0[i];
           var button = new qx.ui.menu.Button(data[1], data[2]);
           button.setUserData("model", data[0]);
           button.addListener("execute", function (ev) {
@@ -258,12 +258,12 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this._disposeObjects("__logAppender");
+      this._disposeObjects("__logAppender__P_593_2");
 
-      this.__logElem = null;
+      this.__logElem__P_593_3 = null;
     }
   });
   qxl.logpane.LogPane.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LogPane.js.map?dt=1589218288232
+//# sourceMappingURL=LogPane.js.map?dt=1591363013557

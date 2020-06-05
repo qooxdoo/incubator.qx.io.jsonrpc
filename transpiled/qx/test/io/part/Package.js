@@ -63,10 +63,10 @@
     extend: qx.dev.unit.TestCase,
     include: qx.test.io.MRemoteTest,
     members: {
-      __dummyLoader: null,
+      __dummyLoader__P_252_0: null,
       setUp: function setUp() {
         qx.test.PART_FILES = [];
-        this.__dummyLoader = new qx.test.io.part.MockLoader();
+        this.__dummyLoader__P_252_0 = new qx.test.io.part.MockLoader();
       },
       createPackage: function createPackage(urls, hash, loaded) {
         return new qx.io.part.Package(urls, hash, loaded);
@@ -132,7 +132,7 @@
       "test: loading a closure package with load() should execute the closure": function testLoadingAClosurePackageWithLoadShouldExecuteTheClosure() {
         var urls = [this.getUrl("qx/test/part/file1-closure.js")];
         var pkg = this.createPackage(urls, "p1", false);
-        var loader = new qx.Part(this.__dummyLoader);
+        var loader = new qx.Part(this.__dummyLoader__P_252_0);
         qx.Part.$$instance = loader;
         loader.addToPackage(pkg);
         pkg.load(function () {
@@ -145,7 +145,7 @@
       "test: loading a closure package with loadClosure() should not execute the closure": function testLoadingAClosurePackageWithLoadClosureShouldNotExecuteTheClosure() {
         var urls = [this.getUrl("qx/test/part/file1-closure.js")];
         var pkg = this.createPackage(urls, "p1", false);
-        var loader = new qx.Part(this.__dummyLoader);
+        var loader = new qx.Part(this.__dummyLoader__P_252_0);
         qx.Part.$$instance = loader;
         loader.addToPackage(pkg);
         pkg.loadClosure(function () {
@@ -160,7 +160,7 @@
       },
       "test: loading a non existing file with loadClosure() should timeout": function testLoadingANonExistingFileWithLoadClosureShouldTimeout() {
         var pkg = this.createPackage(["___foo.js"], "p1", false);
-        var loader = new qx.Part(this.__dummyLoader);
+        var loader = new qx.Part(this.__dummyLoader__P_252_0);
         qx.Part.$$instance = loader;
         loader.addToPackage(pkg);
         var oldTimeout = qx.Part.TIMEOUT;
@@ -179,4 +179,4 @@
   qx.test.io.part.Package.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Package.js.map?dt=1589218259154
+//# sourceMappingURL=Package.js.map?dt=1591362980768

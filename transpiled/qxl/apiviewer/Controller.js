@@ -84,30 +84,30 @@
       this._detailLoader = this._widgetRegistry.getWidgetById("detail_loader");
       this._tabViewController = new qxl.apiviewer.TabViewController(this._widgetRegistry);
 
-      this.__bindTabViewController();
+      this.__bindTabViewController__P_596_0();
 
       this._tree = this._widgetRegistry.getWidgetById("tree");
 
-      this.__bindTree();
+      this.__bindTree__P_596_1();
 
-      this.__bindToolbar();
+      this.__bindToolbar__P_596_2();
 
       var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
 
       var btn_included = this._widgetRegistry.getWidgetById("btn_included");
 
-      btn_inherited.addListener("changeValue", this.__syncMenuButton, this);
-      btn_included.addListener("changeValue", this.__syncMenuButton, this);
+      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_596_3, this);
+      btn_included.addListener("changeValue", this.__syncMenuButton__P_596_3, this);
       this._history = qx.bom.History.getInstance();
 
-      this.__bindHistory();
+      this.__bindHistory__P_596_4();
 
       qx.core.Init.getApplication().getRoot().addListener("pointerdown", function (e) {
-        this.__openInNewTab = e.isShiftPressed() || e.isCtrlOrCommandPressed();
+        this.__openInNewTab__P_596_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
       }, this, true);
     },
     members: {
-      __openInNewTab: false,
+      __openInNewTab__P_596_5: false,
       // overridden
       $$logCategory: "application",
 
@@ -143,9 +143,9 @@
             var state = this._history.getState();
 
             if (state) {
-              this.__selectItem(this.__decodeState(state));
+              this.__selectItem__P_596_6(this.__decodeState__P_596_7(state));
             } else {
-              this.__selectItem("");
+              this.__selectItem__P_596_6("");
             }
           });
         });
@@ -154,7 +154,7 @@
       /**
        * binds the events of the TabView controller
        */
-      __bindTabViewController: function __bindTabViewController() {
+      __bindTabViewController__P_596_0: function __bindTabViewController__P_596_0() {
         this._tabViewController.addListener("classLinkTapped", function (evt) {
           this._updateHistory(evt.getData());
         }, this);
@@ -184,7 +184,7 @@
       /**
        * binds the selection event of the package tree.
        */
-      __bindTree: function __bindTree() {
+      __bindTree__P_596_1: function __bindTree__P_596_1() {
         this._tree.addListener("changeSelection", function (evt) {
           var treeNode = evt.getData()[0];
 
@@ -199,7 +199,7 @@
       /**
        * binds the actions of the toolbar buttons.
        */
-      __bindToolbar: function __bindToolbar() {
+      __bindToolbar__P_596_2: function __bindToolbar__P_596_2() {
         var uiModel = qxl.apiviewer.UiModel.getInstance();
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -238,7 +238,7 @@
        * inherited and mixin includes.
        * 
        */
-      __syncMenuButton: function __syncMenuButton() {
+      __syncMenuButton__P_596_3: function __syncMenuButton__P_596_3() {
         var menuButton = this._widgetRegistry.getWidgetById("menubtn_includes");
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -268,12 +268,12 @@
       /**
        * bind history events
        */
-      __bindHistory: function __bindHistory() {
+      __bindHistory__P_596_4: function __bindHistory__P_596_4() {
         this._history.addListener("changeState", function (evt) {
-          var item = this.__decodeState(evt.getData());
+          var item = this.__decodeState__P_596_7(evt.getData());
 
           if (item) {
-            this.__selectItem(item);
+            this.__selectItem__P_596_6(item);
           }
         }, this);
       },
@@ -286,7 +286,7 @@
        */
       _updateHistory: function _updateHistory(className) {
         var newTitle = className + " - " + this._titlePrefix;
-        qx.bom.History.getInstance().addToHistory(this.__encodeState(className), newTitle);
+        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_596_8(className), newTitle);
       },
 
       /**
@@ -302,9 +302,9 @@
 
         return classNode.loadDependedClasses().then(() => {
           if (classNode instanceof qxl.apiviewer.dao.Class) {
-            return this._tabViewController.openClass(classNode, this.__openInNewTab);
+            return this._tabViewController.openClass(classNode, this.__openInNewTab__P_596_5);
           } else {
-            return this._tabViewController.openPackage(classNode, this.__openInNewTab);
+            return this._tabViewController.openPackage(classNode, this.__openInNewTab__P_596_5);
           }
         }).then(() => callback && callback.call(self));
       },
@@ -318,7 +318,7 @@
        * 
        * @lint ignoreDeprecated(alert)
        */
-      __selectItem: function __selectItem(fullItemName) {
+      __selectItem__P_596_6: function __selectItem__P_596_6(fullItemName) {
         qxl.apiviewer.LoadingIndicator.getInstance().show();
         var className = fullItemName;
         var itemName = null;
@@ -376,10 +376,10 @@
           });
         });
       },
-      __encodeState: function __encodeState(state) {
+      __encodeState__P_596_8: function __encodeState__P_596_8(state) {
         return state.replace(/(.*)#(.*)/g, "$1~$2");
       },
-      __decodeState: function __decodeState(encodedState) {
+      __decodeState__P_596_7: function __decodeState__P_596_7(encodedState) {
         return encodedState.replace(/(.*)~(.*)/g, "$1#$2");
       }
     },
@@ -398,4 +398,4 @@
   qxl.apiviewer.Controller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Controller.js.map?dt=1589218288391
+//# sourceMappingURL=Controller.js.map?dt=1591363013728
