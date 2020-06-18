@@ -21,7 +21,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
     this.base(arguments, url);
     this._tranportImpl = this._createTransportImpl();
   },
-
+  
   members: {
 
     /**
@@ -54,7 +54,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
       req.setRequestData(message);
       try {
         await req.sendWithPromise();
-      } catch(e) {
+      } catch (e) {
         if (e instanceof qx.type.BaseError) {
           switch (e.getComment()) {
             case "timeout":
@@ -94,14 +94,15 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
      * "application/json", but differently to the standard behavior,
      * the response will not be parsed into a javascript object.
      *
-     * Classes extending this one may override this
-     * method to obtain a Request object with different
-     * parameters and/or different authentication settings.
+     * Classes extending this one may override this method to obtain
+     * a Request object with different parameters and/or different
+     * authentication settings. The object must be a subclass of {@link
+     * qx.io.request.AbstractRequest} or implement its public API.
      *
      * @return {qx.io.jsonrpc.Request}
      */
-    _createTransportImpl: function() {
-      const req =  new qx.io.request.Xhr(this.getEndpoint(),"POST");
+    _createTransportImpl() {
+      const req = new qx.io.request.Xhr(this.getEndpoint(), "POST");
       req.setAccept("application/json");
       req.setCache(false);
       req.setRequestHeader("content-type", "application/json");

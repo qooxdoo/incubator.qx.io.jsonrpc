@@ -86,11 +86,13 @@ qx.Class.define("qx.io.jsonrpc.Client",
     if (qx.io.jsonrpc.Client.__transports === null) {
       qx.io.jsonrpc.Client.__transports = [];
     }
-    let transport, uri;
+    let transport;
+    let uri;
     if (qx.lang.Type.isString(transportOrUri)) {
       uri = transportOrUri;
       for (let registeredTransport of qx.io.jsonrpc.Client.__transports.reverse()) {
         if (uri.match(registeredTransport.uriRegExp)) {
+          // eslint-disable-next-line new-cap
           transport = new registeredTransport.transport(uri);
         }
       }
@@ -302,7 +304,8 @@ qx.Class.define("qx.io.jsonrpc.Client",
       }
       // handle individual message
       this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
-      let request, id;
+      let request;
+      let id;
       if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
         // handle results and errors, which are responses to sent requests
         id = message.getId();
@@ -338,9 +341,9 @@ qx.Class.define("qx.io.jsonrpc.Client",
         this.fireDataEvent("error", ex);
         // reject the individual promise
         request.getPromise().reject(ex);
-      } else if (message instanceof qx.io.jsonrpc.protocol.Request || message instanceof qx.io.jsonrpc.protocol.Notification ) {
+      } else if (message instanceof qx.io.jsonrpc.protocol.Request || message instanceof qx.io.jsonrpc.protocol.Notification) {
         // handle peer-originated requests and notifications
-        this.fireDataEvent("peerRequest", message)
+        this.fireDataEvent("peerRequest", message);
       } else {
         throw new Error("Unhandled message:" + message.toString());
       }
