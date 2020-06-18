@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compilerVersion": "1.0.0-beta.20200602-1225",
+  "qx.compilerVersion": "1.0.0-beta.20200613-2032",
   "qx.icontheme": "Tango",
   "qx.buildType": "source",
   "qx.headless": false,
@@ -423,7 +423,7 @@ qx.$$loader = {
   on: function(eventType, handler) {
     if (qx.$$loader.applicationHandlerReady) {
       if (window.qx && qx.event && qx.event.handler && qx.event.handler.Application) {
-        let Application = qx.event.handler.Application.$$instance;
+        var Application = qx.event.handler.Application.$$instance;
         if (eventType == "ready" && Application.isApplicationReady()) {
           handler(null);
           return;

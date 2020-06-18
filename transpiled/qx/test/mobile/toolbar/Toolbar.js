@@ -103,4 +103,4 @@
   qx.test.mobile.toolbar.Toolbar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Toolbar.js.map?dt=1591362983301
+//# sourceMappingURL=Toolbar.js.map?dt=1592520327224

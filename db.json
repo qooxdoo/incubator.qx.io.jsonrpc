@@ -7,8 +7,8 @@
     "qxl.versionlabel": "1.0.0-beta.3",
     "qx": "6.0.0-beta-20200515-0957"
   },
-  "environmentHash": "16072cae73d3232e8ef2d5585ec441efe1b5a1af",
-  "compilerVersion": "1.0.0-beta.20200602-1225",
+  "environmentHash": "65e2d3d6f0e304dc63360fbf58499a6039ff938b",
+  "compilerVersion": "1.0.0-beta.20200613-2032",
   "classInfo": {
     "qx.Annotation": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -7668,7 +7668,7 @@
       "hasDefer": null
     },
     "qx.io.Exception": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7737,7 +7737,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.Client": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7775,7 +7775,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.Cancel": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7799,7 +7799,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.JsonRpc": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7819,7 +7819,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.Transport": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7839,7 +7839,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Batch": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7863,7 +7863,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Error": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7884,7 +7884,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Message": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7902,7 +7902,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Notification": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7920,7 +7920,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Parser": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7944,7 +7944,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Request": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7969,7 +7969,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Result": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7987,7 +7987,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Abstract": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8005,7 +8005,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Http": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8038,7 +8038,7 @@
       "hasDefer": true
     },
     "qx.io.jsonrpc.transport.ITransport": {
-      "mtime": "2020-06-05T13:15:19.576Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Interface": {
@@ -8637,7 +8637,7 @@
       "hasDefer": null
     },
     "qx.io.request.authentication.Bearer": {
-      "mtime": "2020-06-05T13:15:19.580Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14658,7 +14658,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.HttpTransport": {
-      "mtime": "2020-06-05T13:15:19.580Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14696,7 +14696,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.MAssert": {
-      "mtime": "2020-06-05T13:15:19.580Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Mixin": {
@@ -14712,7 +14712,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.Protocol": {
-      "mtime": "2020-06-05T13:15:19.580Z",
+      "mtime": "2020-06-18T22:44:29.379Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {

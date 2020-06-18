@@ -125,13 +125,15 @@
         qx.io.jsonrpc.Client.__transports__P_158_0 = [];
       }
 
-      let transport, uri;
+      let transport;
+      let uri;
 
       if (qx.lang.Type.isString(transportOrUri)) {
         uri = transportOrUri;
 
         for (let registeredTransport of qx.io.jsonrpc.Client.__transports__P_158_0.reverse()) {
           if (uri.match(registeredTransport.uriRegExp)) {
+            // eslint-disable-next-line new-cap
             transport = new registeredTransport.transport(uri);
           }
         }
@@ -344,7 +346,8 @@
 
 
         this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
-        let request, id;
+        let request;
+        let id;
 
         if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
           // handle results and errors, which are responses to sent requests
@@ -394,4 +397,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1591362968866
+//# sourceMappingURL=Client.js.map?dt=1592520314701

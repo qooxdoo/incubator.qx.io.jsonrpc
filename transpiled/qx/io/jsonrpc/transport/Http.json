@@ -15,7 +15,7 @@
         "column": 0
       },
       "end": {
-        "line": 117,
+        "line": 118,
         "column": 3
       }
     },
@@ -164,11 +164,11 @@
     "_createTransportImpl": {
       "location": {
         "start": {
-          "line": 103,
+          "line": 104,
           "column": 4
         },
         "end": {
-          "line": 111,
+          "line": 112,
           "column": 5
         }
       },
@@ -176,7 +176,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Factory method to create a request object. By default, a POST\n request will be made, and the expected response type will be\n \"application/json\", but differently to the standard behavior,\n the response will not be parsed into a javascript object.\n Classes extending this one may override this\n method to obtain a Request object with different\n parameters and/or different authentication settings.</p>"
+            "body": "<p>Factory method to create a request object. By default, a POST\n request will be made, and the expected response type will be\n \"application/json\", but differently to the standard behavior,\n the response will not be parsed into a javascript object.\n Classes extending this one may override this method to obtain\n a Request object with different parameters and/or different\n authentication settings. The object must be a subclass of {@link\n qx.io.request.AbstractRequest} or implement its public API.</p>"
           }
         ],
         "@return": [
@@ -400,11 +400,11 @@
   "defer": {
     "location": {
       "start": {
-        "line": 114,
+        "line": 115,
         "column": 2
       },
       "end": {
-        "line": 116,
+        "line": 117,
         "column": 3
       }
     }

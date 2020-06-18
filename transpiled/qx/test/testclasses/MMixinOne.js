@@ -25,4 +25,4 @@
   qx.test.testclasses.MMixinOne.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MMixinOne.js.map?dt=1591362983721
+//# sourceMappingURL=MMixinOne.js.map?dt=1592520327592

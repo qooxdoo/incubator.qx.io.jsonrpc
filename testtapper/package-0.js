@@ -2583,7 +2583,7 @@ qx.$$packageData['0'] = {
   },
   "translations": {
     "en": {
-      "": "Project-Id-Version: 1.0\nReport-Msgid-Bugs-To: you@your.org\nPOT-Creation-Date: 2011-05-31 14:30+0100\nPO-Revision-Date: 2011-05-31 14:30+0100\nLast-Translator: you <you@your.org>\nLanguage-Team: Team <yourteam@your.org>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\n"
+      "": "Project-Id-Version: qooxdoo framework\\nReport-Msgid-Bugs-To: \\nPOT-Creation-Date: 2008-05-19 10:11+0200\\nPO-Revision-Date: 2007-01-23 17:53+0100\\nLast-Translator: Automatically generated\\nLanguage-Team: none\\nMIME-Version: 1.0\\nContent-Type: text/plain; charset=ASCII\\nContent-Transfer-Encoding: 8bit\\nPlural-Forms: nplurals=2; plural=(n != 1);\\n"
     }
   }
 };

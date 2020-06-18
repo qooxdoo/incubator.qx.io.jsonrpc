@@ -87,4 +87,4 @@
   qx.ui.style.Stylesheet.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Stylesheet.js.map?dt=1591363004718
+//# sourceMappingURL=Stylesheet.js.map?dt=1592520345551

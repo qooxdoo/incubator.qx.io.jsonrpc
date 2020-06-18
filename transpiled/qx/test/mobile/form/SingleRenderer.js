@@ -111,4 +111,4 @@
   qx.test.mobile.form.SingleRenderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SingleRenderer.js.map?dt=1591362982958
+//# sourceMappingURL=SingleRenderer.js.map?dt=1592520326915

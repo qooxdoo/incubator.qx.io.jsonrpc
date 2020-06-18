@@ -1013,4 +1013,4 @@
   qx.ui.treevirtual.SimpleTreeDataModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1591363008723
+//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1592520348979

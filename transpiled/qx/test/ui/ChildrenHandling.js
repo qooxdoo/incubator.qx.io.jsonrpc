@@ -308,4 +308,4 @@
   qx.test.ui.ChildrenHandling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ChildrenHandling.js.map?dt=1591362984318
+//# sourceMappingURL=ChildrenHandling.js.map?dt=1592520328106

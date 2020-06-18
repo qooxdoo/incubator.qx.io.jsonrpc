@@ -60,4 +60,4 @@
   qx.application.Inline.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Inline.js.map?dt=1591362955717
+//# sourceMappingURL=Inline.js.map?dt=1592520303086

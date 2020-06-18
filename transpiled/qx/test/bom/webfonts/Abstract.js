@@ -60,4 +60,4 @@
   qx.test.bom.webfonts.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1591362976206
+//# sourceMappingURL=Abstract.js.map?dt=1592520321129
