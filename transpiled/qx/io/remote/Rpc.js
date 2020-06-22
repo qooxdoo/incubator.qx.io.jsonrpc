@@ -133,7 +133,7 @@
       }
 
       if (qx.core.ServerSettings) {
-        this.__currentServerSuffix__P_167_0 = qx.core.ServerSettings.serverPathSuffix;
+        this.__currentServerSuffix__P_168_0 = qx.core.ServerSettings.serverPathSuffix;
       }
     },
 
@@ -368,8 +368,8 @@
     *****************************************************************************
     */
     members: {
-      __previousServerSuffix__P_167_1: null,
-      __currentServerSuffix__P_167_0: null,
+      __previousServerSuffix__P_168_1: null,
+      __currentServerSuffix__P_168_0: null,
 
       /**
        * Factory method to create a request object. By default, a POST request
@@ -659,9 +659,9 @@
               result = eval("(" + result + ")");
               var newSuffix = qx.core.ServerSettings.serverPathSuffix;
 
-              if (self.__currentServerSuffix__P_167_0 != newSuffix) {
-                self.__previousServerSuffix__P_167_1 = self.__currentServerSuffix__P_167_0;
-                self.__currentServerSuffix__P_167_0 = newSuffix;
+              if (self.__currentServerSuffix__P_168_0 != newSuffix) {
+                self.__previousServerSuffix__P_168_1 = self.__currentServerSuffix__P_168_0;
+                self.__currentServerSuffix__P_168_0 = newSuffix;
               }
 
               self.setUrl(self.fixUrl(self.getUrl()));
@@ -724,17 +724,17 @@
        * @return {String} the (possibly re-written) URL.
        */
       fixUrl: function fixUrl(url) {
-        if (this.__previousServerSuffix__P_167_1 == null || this.__currentServerSuffix__P_167_0 == null || this.__previousServerSuffix__P_167_1 == "" || this.__previousServerSuffix__P_167_1 == this.__currentServerSuffix__P_167_0) {
+        if (this.__previousServerSuffix__P_168_1 == null || this.__currentServerSuffix__P_168_0 == null || this.__previousServerSuffix__P_168_1 == "" || this.__previousServerSuffix__P_168_1 == this.__currentServerSuffix__P_168_0) {
           return url;
         }
 
-        var index = url.indexOf(this.__previousServerSuffix__P_167_1);
+        var index = url.indexOf(this.__previousServerSuffix__P_168_1);
 
         if (index == -1) {
           return url;
         }
 
-        return url.substring(0, index) + this.__currentServerSuffix__P_167_0 + url.substring(index + this.__previousServerSuffix__P_167_1.length);
+        return url.substring(0, index) + this.__currentServerSuffix__P_168_0 + url.substring(index + this.__previousServerSuffix__P_168_1.length);
       },
 
       /**
@@ -924,4 +924,4 @@
   qx.io.remote.Rpc.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Rpc.js.map?dt=1592520315428
+//# sourceMappingURL=Rpc.js.map?dt=1592866008132

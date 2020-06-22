@@ -51,15 +51,15 @@
     extend: qx.dev.unit.TestCase,
     include: qx.test.io.MRemoteTest,
     members: {
-      __loader__P_253_0: null,
+      __loader__P_254_0: null,
       setUp: function setUp() {
         qx.test.Part.LOAD_ORDER = [];
-        this.__dummyLoader__P_253_1 = new qx.test.io.part.MockLoader();
-        this.__loader__P_253_0 = new qx.Part(this.__dummyLoader__P_253_1);
-        qx.Part.$$instance = this.__loader__P_253_0;
+        this.__dummyLoader__P_254_1 = new qx.test.io.part.MockLoader();
+        this.__loader__P_254_0 = new qx.Part(this.__dummyLoader__P_254_1);
+        qx.Part.$$instance = this.__loader__P_254_0;
       },
       tearDown: function tearDown() {
-        this.__loader__P_253_0 = null;
+        this.__loader__P_254_0 = null;
         qx.Part.$$instance = undefined;
       },
       createPart: function createPart(name, pkgs, loader) {
@@ -67,7 +67,7 @@
       },
       "test: load part with one package": function testLoadPartWithOnePackage() {
         var pkg = new qx.test.io.part.MockPackage("1");
-        var part = this.createPart("1", [pkg], this.__loader__P_253_0);
+        var part = this.createPart("1", [pkg], this.__loader__P_254_0);
         this.assertEquals("initialized", part.getReadyState());
         var self = this;
         part.load(function (readyState) {
@@ -81,7 +81,7 @@
       },
       "test: load part with several packages": function testLoadPartWithSeveralPackages() {
         var packages = [new qx.test.io.part.MockPackage("a"), new qx.test.io.part.MockPackage("b"), new qx.test.io.part.MockPackage("c")];
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
           self.resume(function () {
@@ -92,7 +92,7 @@
       },
       "test: delay loading of second package should preserve order": function testDelayLoadingOfSecondPackageShouldPreserveOrder() {
         var packages = [new qx.test.io.part.MockPackage("a"), new qx.test.io.part.MockPackage("b", 100), new qx.test.io.part.MockPackage("c")];
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
           self.resume(function () {
@@ -105,9 +105,9 @@
         var packages = [new qx.test.io.part.MockPackage("a", 0, false, "complete"), new qx.test.io.part.MockPackage("b"), new qx.test.io.part.MockPackage("c")]; // fail if it is loaded again
 
         var self = this;
-        var oldLoadPackage = this.__loader__P_253_0.loadPackage;
+        var oldLoadPackage = this.__loader__P_254_0.loadPackage;
 
-        this.__loader__P_253_0.loadPackage = function (pkg) {
+        this.__loader__P_254_0.loadPackage = function (pkg) {
           if (pkg == packages[0]) {
             self.fail();
           } else {
@@ -115,7 +115,7 @@
           }
         };
 
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
           self.resume(function () {
@@ -127,9 +127,9 @@
       },
       "test: a currently loading package should not be loaded again and should preserve order": function testACurrentlyLoadingPackageShouldNotBeLoadedAgainAndShouldPreserveOrder() {
         var packages = [new qx.test.io.part.MockPackage("a", 0, false, "complete"), new qx.test.io.part.MockPackage("b"), new qx.test.io.part.MockPackage("c")];
-        packages[1].load(this.__loader__P_253_0.notifyPackageResult, this.__loader__P_253_0); // now in loading state
+        packages[1].load(this.__loader__P_254_0.notifyPackageResult, this.__loader__P_254_0); // now in loading state
 
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
           self.resume(function () {
@@ -141,7 +141,7 @@
       },
       "test: error loading second package should set 'error' status on callback": function testErrorLoadingSecondPackageShouldSetErrorStatusOnCallback() {
         var packages = [new qx.test.io.part.MockPackage("a"), new qx.test.io.part.MockPackage("b", 0, true), new qx.test.io.part.MockPackage("c")];
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
           self.resume(function () {
@@ -153,10 +153,10 @@
       },
       "test: loading a loaded part again should not reload the packages": function testLoadingALoadedPartAgainShouldNotReloadThePackages() {
         var packages = [new qx.test.io.part.MockPackage("a"), new qx.test.io.part.MockPackage("b"), new qx.test.io.part.MockPackage("c")];
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
-          self.__loader__P_253_0.loadPackage = function () {
+          self.__loader__P_254_0.loadPackage = function () {
             self.fail();
           };
 
@@ -170,10 +170,10 @@
       },
       "test: loading an error part again should not reload the packages": function testLoadingAnErrorPartAgainShouldNotReloadThePackages() {
         var packages = [new qx.test.io.part.MockPackage("a"), new qx.test.io.part.MockPackage("b", 0, true), new qx.test.io.part.MockPackage("c")];
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
-          self.__loader__P_253_0.loadPackage = function () {
+          self.__loader__P_254_0.loadPackage = function () {
             self.fail();
           };
 
@@ -188,13 +188,13 @@
       "test: load part with several packages including wrapped": function testLoadPartWithSeveralPackagesIncludingWrapped() {
         var packages = [new qx.test.io.part.MockPackage("a", null, null, null, true), new qx.test.io.part.MockPackage("b"), new qx.test.io.part.MockPackage("c", null, null, null, true)];
 
-        this.__loader__P_253_0.addToPackage(packages[0]);
+        this.__loader__P_254_0.addToPackage(packages[0]);
 
-        this.__loader__P_253_0.addToPackage(packages[1]);
+        this.__loader__P_254_0.addToPackage(packages[1]);
 
-        this.__loader__P_253_0.addToPackage(packages[2]);
+        this.__loader__P_254_0.addToPackage(packages[2]);
 
-        var part = this.createPart("1", packages, this.__loader__P_253_0);
+        var part = this.createPart("1", packages, this.__loader__P_254_0);
         var self = this;
         part.load(function (readyState) {
           self.resume(function () {
@@ -208,4 +208,4 @@
   qx.test.io.part.Part.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Part.js.map?dt=1592520325020
+//# sourceMappingURL=Part.js.map?dt=1592866017998

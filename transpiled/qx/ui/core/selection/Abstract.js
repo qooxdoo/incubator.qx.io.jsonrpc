@@ -65,7 +65,7 @@
     construct: function construct() {
       qx.core.Object.constructor.call(this); // {Map} Internal selection storage
 
-      this.__selection__P_401_0 = {};
+      this.__selection__P_402_0 = {};
     },
 
     /*
@@ -126,30 +126,30 @@
     *****************************************************************************
     */
     members: {
-      __scrollStepX__P_401_1: 0,
-      __scrollStepY__P_401_2: 0,
-      __scrollTimer__P_401_3: null,
-      __frameScroll__P_401_4: null,
-      __lastRelX__P_401_5: null,
-      __lastRelY__P_401_6: null,
-      __frameLocation__P_401_7: null,
-      __dragStartX__P_401_8: null,
-      __dragStartY__P_401_9: null,
-      __inCapture__P_401_10: null,
-      __pointerX__P_401_11: null,
-      __pointerY__P_401_12: null,
-      __moveDirectionX__P_401_13: null,
-      __moveDirectionY__P_401_14: null,
-      __selectionModified__P_401_15: null,
-      __selectionContext__P_401_16: null,
-      __leadItem__P_401_17: null,
-      __selection__P_401_0: null,
-      __anchorItem__P_401_18: null,
-      __pointerDownOnSelected__P_401_19: null,
+      __scrollStepX__P_402_1: 0,
+      __scrollStepY__P_402_2: 0,
+      __scrollTimer__P_402_3: null,
+      __frameScroll__P_402_4: null,
+      __lastRelX__P_402_5: null,
+      __lastRelY__P_402_6: null,
+      __frameLocation__P_402_7: null,
+      __dragStartX__P_402_8: null,
+      __dragStartY__P_402_9: null,
+      __inCapture__P_402_10: null,
+      __pointerX__P_402_11: null,
+      __pointerY__P_402_12: null,
+      __moveDirectionX__P_402_13: null,
+      __moveDirectionY__P_402_14: null,
+      __selectionModified__P_402_15: null,
+      __selectionContext__P_402_16: null,
+      __leadItem__P_402_17: null,
+      __selection__P_402_0: null,
+      __anchorItem__P_402_18: null,
+      __pointerDownOnSelected__P_402_19: null,
       // A flag that signals an user interaction, which means the selection change
       // was triggered by pointer or keyboard [BUG #3344]
       _userInteraction: false,
-      __oldScrollTop__P_401_20: null,
+      __oldScrollTop__P_402_20: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -166,7 +166,7 @@
        *    <code>drag</code> or <code>key</code> or <code>null</code>
        */
       getSelectionContext: function getSelectionContext() {
-        return this.__selectionContext__P_401_16;
+        return this.__selectionContext__P_402_16;
       },
 
       /**
@@ -372,7 +372,7 @@
        * @return {Object[]} List of items.
        */
       getSelection: function getSelection() {
-        return Object.values(this.__selection__P_401_0);
+        return Object.values(this.__selection__P_402_0);
       },
 
       /**
@@ -383,7 +383,7 @@
        */
       getSortedSelection: function getSortedSelection() {
         var children = this.getSelectables();
-        var sel = Object.values(this.__selection__P_401_0);
+        var sel = Object.values(this.__selection__P_402_0);
         sel.sort(function (a, b) {
           return children.indexOf(a) - children.indexOf(b);
         });
@@ -399,7 +399,7 @@
       isItemSelected: function isItemSelected(item) {
         var hash = this._selectableToHashCode(item);
 
-        return this.__selection__P_401_0[hash] !== undefined;
+        return this.__selection__P_402_0[hash] !== undefined;
       },
 
       /**
@@ -408,7 +408,7 @@
        * @return {Boolean} Whether the selection is empty
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return qx.lang.Object.isEmpty(this.__selection__P_401_0);
+        return qx.lang.Object.isEmpty(this.__selection__P_402_0);
       },
 
       /**
@@ -443,7 +443,7 @@
        * @param value {Object} Any valid item or <code>null</code>
        */
       _setLeadItem: function _setLeadItem(value) {
-        var old = this.__leadItem__P_401_17;
+        var old = this.__leadItem__P_402_17;
 
         if (old !== null) {
           this._styleSelectable(old, "lead", false);
@@ -453,7 +453,7 @@
           this._styleSelectable(value, "lead", true);
         }
 
-        this.__leadItem__P_401_17 = value;
+        this.__leadItem__P_402_17 = value;
       },
 
       /**
@@ -463,7 +463,7 @@
        * @return {Object} The lead item or <code>null</code>
        */
       getLeadItem: function getLeadItem() {
-        return this.__leadItem__P_401_17;
+        return this.__leadItem__P_402_17;
       },
 
       /**
@@ -474,7 +474,7 @@
        * @param value {Object} Any valid item or <code>null</code>
        */
       _setAnchorItem: function _setAnchorItem(value) {
-        var old = this.__anchorItem__P_401_18;
+        var old = this.__anchorItem__P_402_18;
 
         if (old != null) {
           this._styleSelectable(old, "anchor", false);
@@ -484,7 +484,7 @@
           this._styleSelectable(value, "anchor", true);
         }
 
-        this.__anchorItem__P_401_18 = value;
+        this.__anchorItem__P_402_18 = value;
       },
 
       /**
@@ -495,7 +495,7 @@
        * @return {Object} The anchor item or <code>null</code>
        */
       _getAnchorItem: function _getAnchorItem() {
-        return this.__anchorItem__P_401_18 !== null ? this.__anchorItem__P_401_18 : null;
+        return this.__anchorItem__P_402_18 !== null ? this.__anchorItem__P_402_18 : null;
       },
 
       /*
@@ -757,8 +757,8 @@
         // All browsers (except Opera) fire a native "mouseover" event when a scroll appears
         // by keyboard interaction. We have to ignore the event to avoid a selection for
         // "pointerover" (quick selection). For more details see [BUG #4225]
-        if (this.__oldScrollTop__P_401_20 != null && this.__oldScrollTop__P_401_20 != this._getScroll().top) {
-          this.__oldScrollTop__P_401_20 = null;
+        if (this.__oldScrollTop__P_402_20 != null && this.__oldScrollTop__P_402_20 != this._getScroll().top) {
+          this.__oldScrollTop__P_402_20 = null;
           return;
         } // quick select should only work on mouse events
 
@@ -824,11 +824,11 @@
         var isShiftPressed = event.isShiftPressed(); // tapping on selected items deselect on pointerup, not on pointerdown
 
         if (this.isItemSelected(item) && !isShiftPressed && !isCtrlPressed && !this.getDrag()) {
-          this.__pointerDownOnSelected__P_401_19 = item;
+          this.__pointerDownOnSelected__P_402_19 = item;
           this._userInteraction = false;
           return;
         } else {
-          this.__pointerDownOnSelected__P_401_19 = null;
+          this.__pointerDownOnSelected__P_402_19 = null;
         } // Be sure that item is in view
 
 
@@ -843,13 +843,13 @@
           this._setLeadItem(item); // Cache location/scroll data
 
 
-          this.__frameLocation__P_401_7 = this._getLocation();
-          this.__frameScroll__P_401_4 = this._getScroll(); // Store position at start
+          this.__frameLocation__P_402_7 = this._getLocation();
+          this.__frameScroll__P_402_4 = this._getScroll(); // Store position at start
 
-          this.__dragStartX__P_401_8 = event.getDocumentLeft() + this.__frameScroll__P_401_4.left;
-          this.__dragStartY__P_401_9 = event.getDocumentTop() + this.__frameScroll__P_401_4.top; // Switch to capture mode
+          this.__dragStartX__P_402_8 = event.getDocumentLeft() + this.__frameScroll__P_402_4.left;
+          this.__dragStartY__P_402_9 = event.getDocumentTop() + this.__frameScroll__P_402_4.top; // Switch to capture mode
 
-          this.__inCapture__P_401_10 = true;
+          this.__inCapture__P_402_10 = true;
 
           this._capture();
         } // Fire change event as needed
@@ -874,7 +874,7 @@
         var isCtrlPressed = event.isCtrlPressed() || qx.core.Environment.get("os.name") == "osx" && event.isMetaPressed();
         var isShiftPressed = event.isShiftPressed();
 
-        if (!isCtrlPressed && !isShiftPressed && this.__pointerDownOnSelected__P_401_19 != null) {
+        if (!isCtrlPressed && !isShiftPressed && this.__pointerDownOnSelected__P_402_19 != null) {
           this._userInteraction = false;
 
           var item = this._getSelectableFromPointerEvent(event);
@@ -962,65 +962,65 @@
        */
       handlePointerMove: function handlePointerMove(event) {
         // Only relevant when capturing is enabled
-        if (!this.__inCapture__P_401_10) {
+        if (!this.__inCapture__P_402_10) {
           return;
         } // Update pointer position cache
 
 
-        this.__pointerX__P_401_11 = event.getDocumentLeft();
-        this.__pointerY__P_401_12 = event.getDocumentTop(); // this is a method invoked by an user interaction, so be careful to
+        this.__pointerX__P_402_11 = event.getDocumentLeft();
+        this.__pointerY__P_402_12 = event.getDocumentTop(); // this is a method invoked by an user interaction, so be careful to
         // set / clear the mark this._userInteraction [BUG #3344]
 
         this._userInteraction = true; // Detect move directions
 
-        var dragX = this.__pointerX__P_401_11 + this.__frameScroll__P_401_4.left;
+        var dragX = this.__pointerX__P_402_11 + this.__frameScroll__P_402_4.left;
 
-        if (dragX > this.__dragStartX__P_401_8) {
-          this.__moveDirectionX__P_401_13 = 1;
-        } else if (dragX < this.__dragStartX__P_401_8) {
-          this.__moveDirectionX__P_401_13 = -1;
+        if (dragX > this.__dragStartX__P_402_8) {
+          this.__moveDirectionX__P_402_13 = 1;
+        } else if (dragX < this.__dragStartX__P_402_8) {
+          this.__moveDirectionX__P_402_13 = -1;
         } else {
-          this.__moveDirectionX__P_401_13 = 0;
+          this.__moveDirectionX__P_402_13 = 0;
         }
 
-        var dragY = this.__pointerY__P_401_12 + this.__frameScroll__P_401_4.top;
+        var dragY = this.__pointerY__P_402_12 + this.__frameScroll__P_402_4.top;
 
-        if (dragY > this.__dragStartY__P_401_9) {
-          this.__moveDirectionY__P_401_14 = 1;
-        } else if (dragY < this.__dragStartY__P_401_9) {
-          this.__moveDirectionY__P_401_14 = -1;
+        if (dragY > this.__dragStartY__P_402_9) {
+          this.__moveDirectionY__P_402_14 = 1;
+        } else if (dragY < this.__dragStartY__P_402_9) {
+          this.__moveDirectionY__P_402_14 = -1;
         } else {
-          this.__moveDirectionY__P_401_14 = 0;
+          this.__moveDirectionY__P_402_14 = 0;
         } // Update scroll steps
 
 
-        var location = this.__frameLocation__P_401_7;
+        var location = this.__frameLocation__P_402_7;
 
-        if (this.__pointerX__P_401_11 < location.left) {
-          this.__scrollStepX__P_401_1 = this.__pointerX__P_401_11 - location.left;
-        } else if (this.__pointerX__P_401_11 > location.right) {
-          this.__scrollStepX__P_401_1 = this.__pointerX__P_401_11 - location.right;
+        if (this.__pointerX__P_402_11 < location.left) {
+          this.__scrollStepX__P_402_1 = this.__pointerX__P_402_11 - location.left;
+        } else if (this.__pointerX__P_402_11 > location.right) {
+          this.__scrollStepX__P_402_1 = this.__pointerX__P_402_11 - location.right;
         } else {
-          this.__scrollStepX__P_401_1 = 0;
+          this.__scrollStepX__P_402_1 = 0;
         }
 
-        if (this.__pointerY__P_401_12 < location.top) {
-          this.__scrollStepY__P_401_2 = this.__pointerY__P_401_12 - location.top;
-        } else if (this.__pointerY__P_401_12 > location.bottom) {
-          this.__scrollStepY__P_401_2 = this.__pointerY__P_401_12 - location.bottom;
+        if (this.__pointerY__P_402_12 < location.top) {
+          this.__scrollStepY__P_402_2 = this.__pointerY__P_402_12 - location.top;
+        } else if (this.__pointerY__P_402_12 > location.bottom) {
+          this.__scrollStepY__P_402_2 = this.__pointerY__P_402_12 - location.bottom;
         } else {
-          this.__scrollStepY__P_401_2 = 0;
+          this.__scrollStepY__P_402_2 = 0;
         } // Dynamically create required timer instance
 
 
-        if (!this.__scrollTimer__P_401_3) {
-          this.__scrollTimer__P_401_3 = new qx.event.Timer(100);
+        if (!this.__scrollTimer__P_402_3) {
+          this.__scrollTimer__P_402_3 = new qx.event.Timer(100);
 
-          this.__scrollTimer__P_401_3.addListener("interval", this._onInterval, this);
+          this.__scrollTimer__P_402_3.addListener("interval", this._onInterval, this);
         } // Start interval
 
 
-        this.__scrollTimer__P_401_3.start(); // Auto select based on new cursor position
+        this.__scrollTimer__P_402_3.start(); // Auto select based on new cursor position
 
 
         this._autoSelect();
@@ -1063,25 +1063,25 @@
        * Stops all timers, release capture etc. to cleanup drag selection
        */
       _cleanup: function _cleanup() {
-        if (!this.getDrag() && this.__inCapture__P_401_10) {
+        if (!this.getDrag() && this.__inCapture__P_402_10) {
           return;
         } // Fire change event if needed
 
 
-        if (this.__selectionModified__P_401_15) {
+        if (this.__selectionModified__P_402_15) {
           this._fireChange("tap");
         } // Remove flags
 
 
-        delete this.__inCapture__P_401_10;
-        delete this.__lastRelX__P_401_5;
-        delete this.__lastRelY__P_401_6; // Stop capturing
+        delete this.__inCapture__P_402_10;
+        delete this.__lastRelX__P_402_5;
+        delete this.__lastRelY__P_402_6; // Stop capturing
 
         this._releaseCapture(); // Stop timer
 
 
-        if (this.__scrollTimer__P_401_3) {
-          this.__scrollTimer__P_401_3.stop();
+        if (this.__scrollTimer__P_402_3) {
+          this.__scrollTimer__P_402_3.stop();
         }
       },
 
@@ -1092,10 +1092,10 @@
        */
       _onInterval: function _onInterval(e) {
         // Scroll by defined block size
-        this._scrollBy(this.__scrollStepX__P_401_1, this.__scrollStepY__P_401_2); // Update scroll cache
+        this._scrollBy(this.__scrollStepX__P_402_1, this.__scrollStepY__P_402_2); // Update scroll cache
 
 
-        this.__frameScroll__P_401_4 = this._getScroll(); // Auto select based on new scroll position and cursor
+        this.__frameScroll__P_402_4 = this._getScroll(); // Auto select based on new scroll position and cursor
 
         this._autoSelect();
       },
@@ -1107,23 +1107,23 @@
         var inner = this._getDimension(); // Get current relative Y position and compare it with previous one
 
 
-        var relX = Math.max(0, Math.min(this.__pointerX__P_401_11 - this.__frameLocation__P_401_7.left, inner.width)) + this.__frameScroll__P_401_4.left;
+        var relX = Math.max(0, Math.min(this.__pointerX__P_402_11 - this.__frameLocation__P_402_7.left, inner.width)) + this.__frameScroll__P_402_4.left;
 
-        var relY = Math.max(0, Math.min(this.__pointerY__P_401_12 - this.__frameLocation__P_401_7.top, inner.height)) + this.__frameScroll__P_401_4.top; // Compare old and new relative coordinates (for performance reasons)
+        var relY = Math.max(0, Math.min(this.__pointerY__P_402_12 - this.__frameLocation__P_402_7.top, inner.height)) + this.__frameScroll__P_402_4.top; // Compare old and new relative coordinates (for performance reasons)
 
 
-        if (this.__lastRelX__P_401_5 === relX && this.__lastRelY__P_401_6 === relY) {
+        if (this.__lastRelX__P_402_5 === relX && this.__lastRelY__P_402_6 === relY) {
           return;
         }
 
-        this.__lastRelX__P_401_5 = relX;
-        this.__lastRelY__P_401_6 = relY; // Cache anchor
+        this.__lastRelX__P_402_5 = relX;
+        this.__lastRelY__P_402_6 = relY; // Cache anchor
 
         var anchor = this._getAnchorItem();
 
         var lead = anchor; // Process X-coordinate
 
-        var moveX = this.__moveDirectionX__P_401_13;
+        var moveX = this.__moveDirectionX__P_402_13;
         var nextX, locationX;
 
         while (moveX !== 0) {
@@ -1144,7 +1144,7 @@
         } // Process Y-coordinate
 
 
-        var moveY = this.__moveDirectionY__P_401_14;
+        var moveY = this.__moveDirectionY__P_402_14;
         var nextY, locationY;
 
         while (moveY !== 0) {
@@ -1200,7 +1200,7 @@
        *
        * @lint ignoreReferenceField(__navigationKeys)
        */
-      __navigationKeys__P_401_21: {
+      __navigationKeys__P_402_21: {
         Home: 1,
         Down: 1,
         Right: 1,
@@ -1253,7 +1253,7 @@
 
             consumed = true;
           }
-        } else if (this.__navigationKeys__P_401_21[key]) {
+        } else if (this.__navigationKeys__P_402_21[key]) {
           consumed = true;
 
           if (mode === "single" || mode == "one") {
@@ -1352,7 +1352,7 @@
                 break;
             }
 
-            this.__oldScrollTop__P_401_20 = this._getScroll().top;
+            this.__oldScrollTop__P_402_20 = this._getScroll().top;
 
             this._scrollItemIntoView(next);
           }
@@ -1389,13 +1389,13 @@
        * Clears current selection
        */
       _clearSelection: function _clearSelection() {
-        var selection = this.__selection__P_401_0;
+        var selection = this.__selection__P_402_0;
 
         for (var hash in selection) {
           this._removeFromSelection(selection[hash]);
         }
 
-        this.__selection__P_401_0 = {};
+        this.__selection__P_402_0 = {};
       },
 
       /**
@@ -1411,9 +1411,9 @@
 
 
         if (!extend) {
-          var selected = this.__selection__P_401_0;
+          var selected = this.__selection__P_402_0;
 
-          var mapped = this.__rangeToMap__P_401_22(range);
+          var mapped = this.__rangeToMap__P_402_22(range);
 
           for (var hash in selected) {
             if (!mapped[hash]) {
@@ -1448,7 +1448,7 @@
        *
        * @param range {Array} List of selectable items
        */
-      __rangeToMap__P_401_22: function __rangeToMap__P_401_22(range) {
+      __rangeToMap__P_402_22: function __rangeToMap__P_402_22(range) {
         var mapped = {};
         var item;
 
@@ -1473,8 +1473,8 @@
        * @return {var} The selected item (or <code>null</code>)
        */
       _getSelectedItem: function _getSelectedItem() {
-        for (var hash in this.__selection__P_401_0) {
-          return this.__selection__P_401_0[hash];
+        for (var hash in this.__selection__P_402_0) {
+          return this.__selection__P_402_0[hash];
         }
 
         return null;
@@ -1488,7 +1488,7 @@
       _setSelectedItem: function _setSelectedItem(item) {
         if (this._isSelectable(item)) {
           // If already selected try to find out if this is the only item
-          var current = this.__selection__P_401_0;
+          var current = this.__selection__P_402_0;
 
           var hash = this._selectableToHashCode(item);
 
@@ -1514,12 +1514,12 @@
       _addToSelection: function _addToSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_401_0[hash] == null && this._isSelectable(item)) {
-          this.__selection__P_401_0[hash] = item;
+        if (this.__selection__P_402_0[hash] == null && this._isSelectable(item)) {
+          this.__selection__P_402_0[hash] = item;
 
           this._styleSelectable(item, "selected", true);
 
-          this.__selectionModified__P_401_15 = true;
+          this.__selectionModified__P_402_15 = true;
         }
       },
 
@@ -1532,17 +1532,17 @@
       _toggleInSelection: function _toggleInSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_401_0[hash] == null) {
-          this.__selection__P_401_0[hash] = item;
+        if (this.__selection__P_402_0[hash] == null) {
+          this.__selection__P_402_0[hash] = item;
 
           this._styleSelectable(item, "selected", true);
         } else {
-          delete this.__selection__P_401_0[hash];
+          delete this.__selection__P_402_0[hash];
 
           this._styleSelectable(item, "selected", false);
         }
 
-        this.__selectionModified__P_401_15 = true;
+        this.__selectionModified__P_402_15 = true;
       },
 
       /**
@@ -1553,12 +1553,12 @@
       _removeFromSelection: function _removeFromSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_401_0[hash] != null) {
-          delete this.__selection__P_401_0[hash];
+        if (this.__selection__P_402_0[hash] != null) {
+          delete this.__selection__P_402_0[hash];
 
           this._styleSelectable(item, "selected", false);
 
-          this.__selectionModified__P_401_15 = true;
+          this.__selectionModified__P_402_15 = true;
         }
       },
 
@@ -1591,7 +1591,7 @@
         var first = items[0];
         var last = selectable; // Clear old entries from map
 
-        var current = this.__selection__P_401_0;
+        var current = this.__selection__P_402_0;
 
         for (var hash in current) {
           if (incoming[hash]) {
@@ -1634,7 +1634,7 @@
         this._setAnchorItem(first); // Finally fire change event
 
 
-        this.__selectionModified__P_401_15 = true;
+        this.__selectionModified__P_402_15 = true;
 
         this._fireChange();
       },
@@ -1647,12 +1647,12 @@
        *    <code>drag</code> or <code>key</code> or <code>null</code>
        */
       _fireChange: function _fireChange(context) {
-        if (this.__selectionModified__P_401_15) {
+        if (this.__selectionModified__P_402_15) {
           // Store context
-          this.__selectionContext__P_401_16 = context || null; // Fire data event which contains the current selection
+          this.__selectionContext__P_402_16 = context || null; // Fire data event which contains the current selection
 
           this.fireDataEvent("changeSelection", this.getSelection());
-          delete this.__selectionModified__P_401_15;
+          delete this.__selectionModified__P_402_15;
         }
       },
 
@@ -1684,13 +1684,13 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__scrollTimer__P_401_3");
+      this._disposeObjects("__scrollTimer__P_402_3");
 
-      this.__selection__P_401_0 = this.__pointerDownOnSelected__P_401_19 = this.__anchorItem__P_401_18 = null;
-      this.__leadItem__P_401_17 = null;
+      this.__selection__P_402_0 = this.__pointerDownOnSelected__P_402_19 = this.__anchorItem__P_402_18 = null;
+      this.__leadItem__P_402_17 = null;
     }
   });
   qx.ui.core.selection.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1592520337948
+//# sourceMappingURL=Abstract.js.map?dt=1592866031551

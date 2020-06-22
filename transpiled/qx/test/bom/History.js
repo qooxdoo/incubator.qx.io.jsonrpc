@@ -62,12 +62,12 @@
     extend: qx.dev.unit.TestCase,
     include: [qx.dev.unit.MRequirements],
     members: {
-      __history__P_207_0: null,
+      __history__P_208_0: null,
       hasNoIe: function hasNoIe() {
         return qx.core.Environment.get("engine.name") !== "mshtml";
       },
       setUp: function setUp() {
-        this.__history__P_207_0 = qx.bom.History.getInstance();
+        this.__history__P_208_0 = qx.bom.History.getInstance();
       },
       testInstance: function testInstance() {
         var runsInIframe = !(window == window.top);
@@ -75,113 +75,113 @@
         if (!this.$$instance) {
           // in iframe + IE9
           if (runsInIframe && qx.core.Environment.get("browser.documentmode") == 9) {
-            this.assertInstance(this.__history__P_207_0, qx.bom.HashHistory);
+            this.assertInstance(this.__history__P_208_0, qx.bom.HashHistory);
           } // in iframe + IE<9
           else if (runsInIframe && qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9) {
-              this.assertInstance(this.__history__P_207_0, qx.bom.IframeHistory);
+              this.assertInstance(this.__history__P_208_0, qx.bom.IframeHistory);
             } // browser with hashChange event
             else if (qx.core.Environment.get("event.hashchange")) {
-                this.assertInstance(this.__history__P_207_0, qx.bom.NativeHistory);
+                this.assertInstance(this.__history__P_208_0, qx.bom.NativeHistory);
               } // IE without hashChange event
               else if (qx.core.Environment.get("engine.name") == "mshtml") {
-                  this.assertInstance(this.__history__P_207_0, qx.bom.IframeHistory);
+                  this.assertInstance(this.__history__P_208_0, qx.bom.IframeHistory);
                 }
         }
       },
       testAddState: function testAddState() {
-        this.__history__P_207_0.addToHistory("foo", "Title Foo");
+        this.__history__P_208_0.addToHistory("foo", "Title Foo");
 
         var self = this;
         window.setTimeout(function () {
           self.resume(function () {
-            this.__checkState__P_207_1();
+            this.__checkState__P_208_1();
           }, self);
         }, 200);
         this.wait();
       },
       testNavigateBack: function testNavigateBack() {
-        this.__history__P_207_0.addToHistory("foo", "Title Foo");
+        this.__history__P_208_0.addToHistory("foo", "Title Foo");
 
         var self = this;
         window.setTimeout(function () {
           self.resume(function () {
-            this.__checkFooAndSetBar__P_207_2();
+            this.__checkFooAndSetBar__P_208_2();
           }, self);
         }, 200);
         this.wait();
       },
-      __checkFooAndSetBar__P_207_2: function __checkFooAndSetBar__P_207_2() {
+      __checkFooAndSetBar__P_208_2: function __checkFooAndSetBar__P_208_2() {
         var self = this;
-        this.assertEquals("foo", this.__history__P_207_0._readState(), "check1");
+        this.assertEquals("foo", this.__history__P_208_0._readState(), "check1");
 
-        this.__history__P_207_0.addToHistory("bar", "Title Bar");
+        this.__history__P_208_0.addToHistory("bar", "Title Bar");
 
         window.setTimeout(function () {
           self.resume(function () {
-            this.__checkBarAndGoBack__P_207_3();
+            this.__checkBarAndGoBack__P_208_3();
           }, self);
         }, 200);
         this.wait();
       },
-      __checkBarAndGoBack__P_207_3: function __checkBarAndGoBack__P_207_3() {
+      __checkBarAndGoBack__P_208_3: function __checkBarAndGoBack__P_208_3() {
         var self = this;
-        this.assertEquals("bar", this.__history__P_207_0._readState(), "check2");
+        this.assertEquals("bar", this.__history__P_208_0._readState(), "check2");
         history.back();
         window.setTimeout(function () {
           self.resume(function () {
-            this.__checkState__P_207_1();
+            this.__checkState__P_208_1();
           }, self);
         }, 200);
         this.wait();
       },
-      __checkState__P_207_1: function __checkState__P_207_1() {
-        this.assertEquals("foo", this.__history__P_207_0._readState(), "check3");
-        this.assertEquals("Title Foo", this.__history__P_207_0.getTitle());
+      __checkState__P_208_1: function __checkState__P_208_1() {
+        this.assertEquals("foo", this.__history__P_208_0._readState(), "check3");
+        this.assertEquals("Title Foo", this.__history__P_208_0.getTitle());
       },
       testNavigateBackAfterSetState: function testNavigateBackAfterSetState() {
-        this.__history__P_207_0.setState("affe");
+        this.__history__P_208_0.setState("affe");
 
         var self = this;
         window.setTimeout(function () {
           self.resume(function () {
-            this.__setState_checkAffeAndSetFoo__P_207_4();
+            this.__setState_checkAffeAndSetFoo__P_208_4();
           }, self);
         }, 200);
         this.wait();
       },
-      __setState_checkAffeAndSetFoo__P_207_4: function __setState_checkAffeAndSetFoo__P_207_4() {
+      __setState_checkAffeAndSetFoo__P_208_4: function __setState_checkAffeAndSetFoo__P_208_4() {
         var self = this;
-        this.assertEquals("affe", this.__history__P_207_0._readState(), "check0");
+        this.assertEquals("affe", this.__history__P_208_0._readState(), "check0");
 
-        this.__history__P_207_0.setState("foo");
+        this.__history__P_208_0.setState("foo");
 
         window.setTimeout(function () {
           self.resume(function () {
-            this.__setState_checkFooAndSetBar__P_207_5();
+            this.__setState_checkFooAndSetBar__P_208_5();
           }, self);
         }, 200);
         this.wait();
       },
-      __setState_checkFooAndSetBar__P_207_5: function __setState_checkFooAndSetBar__P_207_5() {
+      __setState_checkFooAndSetBar__P_208_5: function __setState_checkFooAndSetBar__P_208_5() {
         var self = this;
-        this.assertEquals("foo", this.__history__P_207_0._readState(), "check1");
+        this.assertEquals("foo", this.__history__P_208_0._readState(), "check1");
 
-        this.__history__P_207_0.setState("bar");
+        this.__history__P_208_0.setState("bar");
 
         window.setTimeout(function () {
           self.resume(function () {
-            this.__setState_checkBarAndGoBack__P_207_6();
+            this.__setState_checkBarAndGoBack__P_208_6();
           }, self);
         }, 300);
         this.wait();
       },
-      __setState_checkBarAndGoBack__P_207_6: function __setState_checkBarAndGoBack__P_207_6() {
+      __setState_checkBarAndGoBack__P_208_6: function __setState_checkBarAndGoBack__P_208_6() {
         var self = this;
-        this.assertEquals("bar", this.__history__P_207_0._readState(), "check2");
+        this.assertEquals("bar", this.__history__P_208_0._readState(), "check2");
         history.back();
         window.setTimeout(function () {
           self.resume(function () {
-            this.assertEquals("foo", this.__history__P_207_0._readState(), "check3");
+            this.assertEquals("foo", this.__history__P_208_0._readState(), "check3");
           }, self);
         }, 200);
         this.wait();
@@ -191,20 +191,20 @@
         // the history
         var self = this;
 
-        this.__history__P_207_0.addListenerOnce("request", function () {
+        this.__history__P_208_0.addListenerOnce("request", function () {
           self.resume(function () {
             // "request" event has been fired
             this.assertTrue(true);
           }, self);
         }, this);
 
-        this.__history__P_207_0.setState("bar");
+        this.__history__P_208_0.setState("bar");
 
         history.back();
         this.wait();
       },
       testRequestEventAddHistory: function testRequestEventAddHistory() {
-        this.__history__P_207_0.addListenerOnce("request", function (ev) {
+        this.__history__P_208_0.addListenerOnce("request", function (ev) {
           this.resume(function () {
             this.assertEquals("baz", ev.getData());
           }, this);
@@ -212,7 +212,7 @@
 
         var self = this;
         window.setTimeout(function () {
-          self.__history__P_207_0.addToHistory("baz");
+          self.__history__P_208_0.addToHistory("baz");
         }, 250);
         this.wait(500);
       }
@@ -221,4 +221,4 @@
   qx.test.bom.History.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=History.js.map?dt=1592520319657
+//# sourceMappingURL=History.js.map?dt=1592866012397

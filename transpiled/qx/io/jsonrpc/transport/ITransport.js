@@ -39,6 +39,7 @@
       /**
        * Returns the object which implements the transport on the underlying
        * level, so that transport-specific configuration can be done on it.
+       * The object might be a new one for each request.
        * @return {qx.core.Object}
        */
       getTransportImpl() {}
@@ -48,4 +49,4 @@
   qx.io.jsonrpc.transport.ITransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ITransport.js.map?dt=1592520314939
+//# sourceMappingURL=ITransport.js.map?dt=1592866007625

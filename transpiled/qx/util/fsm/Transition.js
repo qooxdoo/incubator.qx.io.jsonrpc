@@ -160,7 +160,7 @@
         // If we find one of our properties, call its setter.
         switch (field) {
           case "predicate":
-            this.setPredicate(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setPredicate(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "nextState":
@@ -168,15 +168,15 @@
             break;
 
           case "autoActionsBeforeOntransition":
-            this.setAutoActionsBeforeOntransition(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setAutoActionsBeforeOntransition(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "autoActionsAfterOntransition":
-            this.setAutoActionsAfterOntransition(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setAutoActionsAfterOntransition(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "ontransition":
-            this.setOntransition(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setOntransition(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "context":
@@ -211,7 +211,7 @@
         init: function init(fsm, event) {
           return true;
         },
-        transform: "__transformPredicate__P_588_1"
+        transform: "__transformPredicate__P_589_1"
       },
 
       /**
@@ -223,7 +223,7 @@
        */
       nextState: {
         init: qx.util.fsm.FiniteStateMachine.StateChange.CURRENT_STATE,
-        transform: "__transformNextState__P_588_2"
+        transform: "__transformNextState__P_589_2"
       },
 
       /**
@@ -235,7 +235,7 @@
        */
       autoActionsBeforeOntransition: {
         init: function init(fsm, event) {},
-        transform: "__transformAutoActionsBeforeOntransition__P_588_3"
+        transform: "__transformAutoActionsBeforeOntransition__P_589_3"
       },
 
       /**
@@ -247,7 +247,7 @@
        */
       autoActionsAfterOntransition: {
         init: function init(fsm, event) {},
-        transform: "__transformAutoActionsAfterOntransition__P_588_4"
+        transform: "__transformAutoActionsAfterOntransition__P_589_4"
       },
 
       /**
@@ -258,7 +258,7 @@
        */
       ontransition: {
         init: function init(fsm, event) {},
-        transform: "__transformOntransition__P_588_5"
+        transform: "__transformOntransition__P_589_5"
       }
     },
     members: {
@@ -268,7 +268,7 @@
        * @param value {var} incoming value
        * @return {Function} predicate function
        */
-      __transformPredicate__P_588_1: function __transformPredicate__P_588_1(value) {
+      __transformPredicate__P_589_1: function __transformPredicate__P_589_1(value) {
         // Validate the predicate.  Convert all valid types to function.
         switch (typeof value) {
           case "undefined":
@@ -298,7 +298,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformNextState__P_588_2: function __transformNextState__P_588_2(value) {
+      __transformNextState__P_589_2: function __transformNextState__P_589_2(value) {
         // Validate nextState.  It must be a string or a number.
         switch (typeof value) {
           case "string":
@@ -329,7 +329,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformAutoActionsBeforeOntransition__P_588_3: function __transformAutoActionsBeforeOntransition__P_588_3(value) {
+      __transformAutoActionsBeforeOntransition__P_589_3: function __transformAutoActionsBeforeOntransition__P_589_3(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsBeforeOntransition", value, this.getUserData("context"));
       },
 
@@ -339,7 +339,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformAutoActionsAfterOntransition__P_588_4: function __transformAutoActionsAfterOntransition__P_588_4(value) {
+      __transformAutoActionsAfterOntransition__P_589_4: function __transformAutoActionsAfterOntransition__P_589_4(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsAfterOntransition", value, this.getUserData("context"));
       },
 
@@ -349,7 +349,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformOntransition__P_588_5: function __transformOntransition__P_588_5(value) {
+      __transformOntransition__P_589_5: function __transformOntransition__P_589_5(value) {
         // Validate the ontransition function.  Convert undefined to function.
         switch (typeof value) {
           case "undefined":
@@ -380,7 +380,7 @@
        *   be called in the specified context. Otherwise, f is returned
        *   unaltered.
        */
-      __bindIfFunction__P_588_0: function __bindIfFunction__P_588_0(f, context) {
+      __bindIfFunction__P_589_0: function __bindIfFunction__P_589_0(f, context) {
         // Is the first parameter a function?
         if (typeof f == "function") {
           // Yup. Bind it to the specified context.
@@ -394,4 +394,4 @@
   qx.util.fsm.Transition.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Transition.js.map?dt=1592520352716
+//# sourceMappingURL=Transition.js.map?dt=1592866047023

@@ -34,9 +34,9 @@
   qx.Class.define("qx.test.ui.form.ToggleButton", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __button__P_322_0: null,
+      __button__P_323_0: null,
       setUp: function setUp() {
-        var button = this.__button__P_322_0 = new qx.ui.form.ToggleButton();
+        var button = this.__button__P_323_0 = new qx.ui.form.ToggleButton();
         this.getRoot().add(button);
         this.flush();
       },
@@ -44,16 +44,16 @@
       // 2-state button
       //
       testInitial: function testInitial() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         this.assertNotState(button, "checked");
       },
       testCheck: function testCheck() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         button.setValue(true);
         this.assertState(button, "checked");
       },
       testUncheck: function testUncheck() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         button.setValue(false);
         this.assertNotState(button, "checked");
       },
@@ -61,7 +61,7 @@
       // 3-state button
       //
       testImplicitCheckTri: function testImplicitCheckTri() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         button.setTriState(true);
         button.setValue(null); // [x] checked
         // [v] undetermined
@@ -70,7 +70,7 @@
         this.assertState(button, "undetermined");
       },
       testImplicitCheckTriLater: function testImplicitCheckTriLater() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         button.setValue(null);
         button.setTriState(true); // [x] checked
         // [v] undetermined
@@ -79,7 +79,7 @@
         this.assertState(button, "undetermined");
       },
       testCheckTri: function testCheckTri() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         button.setTriState(true);
         button.setValue(null);
         button.setValue(true); // [v] checked
@@ -89,7 +89,7 @@
         this.assertNotState(button, "undetermined");
       },
       testUncheckTri: function testUncheckTri() {
-        var button = this.__button__P_322_0;
+        var button = this.__button__P_323_0;
         button.setTriState(true);
         button.setValue(null);
         button.setValue(false); // [x] checked
@@ -119,11 +119,11 @@
       tearDown: function tearDown() {
         qx.test.ui.form.ToggleButton.prototype.tearDown.base.call(this);
 
-        this.__button__P_322_0.destroy();
+        this.__button__P_323_0.destroy();
       }
     }
   });
   qx.test.ui.form.ToggleButton.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ToggleButton.js.map?dt=1592520330382
+//# sourceMappingURL=ToggleButton.js.map?dt=1592866023617

@@ -60,8 +60,8 @@
         this.setColorOdd(colorOdd);
       }
 
-      this.__customColors__P_550_0 = {};
-      this.__decorators__P_550_1 = {};
+      this.__customColors__P_551_0 = {};
+      this.__decorators__P_551_1 = {};
     },
 
     /*
@@ -93,10 +93,10 @@
     *****************************************************************************
     */
     members: {
-      __colorEven__P_550_2: null,
-      __colorOdd__P_550_3: null,
-      __customColors__P_550_0: null,
-      __decorators__P_550_1: null,
+      __colorEven__P_551_2: null,
+      __colorOdd__P_551_3: null,
+      __customColors__P_551_0: null,
+      __decorators__P_551_1: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -113,9 +113,9 @@
        */
       setColor: function setColor(index, color) {
         if (color) {
-          this.__customColors__P_550_0[index] = qx.theme.manager.Color.getInstance().resolve(color);
+          this.__customColors__P_551_0[index] = qx.theme.manager.Color.getInstance().resolve(color);
         } else {
-          delete this.__customColors__P_550_0[index];
+          delete this.__customColors__P_551_0[index];
         }
       },
 
@@ -123,7 +123,7 @@
        * Clear all colors set using {@link #setColor}.
        */
       clearCustomColors: function clearCustomColors() {
-        this.__customColors__P_550_0 = {};
+        this.__customColors__P_551_0 = {};
         this.updateLayerData();
       },
 
@@ -134,20 +134,20 @@
        * @return {Color} The color at the given index
        */
       getColor: function getColor(index) {
-        var customColor = this.__customColors__P_550_0[index];
+        var customColor = this.__customColors__P_551_0[index];
 
         if (customColor) {
           return customColor;
         } else {
-          return index % 2 == 0 ? this.__colorEven__P_550_2 : this.__colorOdd__P_550_3;
+          return index % 2 == 0 ? this.__colorEven__P_551_2 : this.__colorOdd__P_551_3;
         }
       },
       // property apply
       _applyColorEven: function _applyColorEven(value, old) {
         if (value) {
-          this.__colorEven__P_550_2 = qx.theme.manager.Color.getInstance().resolve(value);
+          this.__colorEven__P_551_2 = qx.theme.manager.Color.getInstance().resolve(value);
         } else {
-          this.__colorEven__P_550_2 = null;
+          this.__colorEven__P_551_2 = null;
         }
 
         this.updateLayerData();
@@ -155,9 +155,9 @@
       // property apply
       _applyColorOdd: function _applyColorOdd(value, old) {
         if (value) {
-          this.__colorOdd__P_550_3 = qx.theme.manager.Color.getInstance().resolve(value);
+          this.__colorOdd__P_551_3 = qx.theme.manager.Color.getInstance().resolve(value);
         } else {
-          this.__colorOdd__P_550_3 = null;
+          this.__colorOdd__P_551_3 = null;
         }
 
         this.updateLayerData();
@@ -172,9 +172,9 @@
        */
       setBackground: function setBackground(index, decorator) {
         if (decorator) {
-          this.__decorators__P_550_1[index] = qx.theme.manager.Decoration.getInstance().resolve(decorator);
+          this.__decorators__P_551_1[index] = qx.theme.manager.Decoration.getInstance().resolve(decorator);
         } else {
-          delete this.__decorators__P_550_1[index];
+          delete this.__decorators__P_551_1[index];
         }
 
         this.updateLayerData();
@@ -187,7 +187,7 @@
        * @return {qx.ui.decoration.IDecorator} The decorator at the given index
        */
       getBackground: function getBackground(index) {
-        return this.__decorators__P_550_1[index];
+        return this.__decorators__P_551_1[index];
       }
     },
 
@@ -197,10 +197,10 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this.__customColors__P_550_0 = this.__decorators__P_550_1 = null;
+      this.__customColors__P_551_0 = this.__decorators__P_551_1 = null;
     }
   });
   qx.ui.virtual.layer.AbstractBackground.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractBackground.js.map?dt=1592520349765
+//# sourceMappingURL=AbstractBackground.js.map?dt=1592866044054

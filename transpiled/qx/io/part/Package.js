@@ -45,18 +45,18 @@
      * @param loaded {Boolean?false} Whether the package is already loaded
      */
     construct: function construct(urls, id, loaded) {
-      this.__readyState__P_161_0 = loaded ? "complete" : "initialized";
-      this.__urls__P_161_1 = urls;
-      this.__id__P_161_2 = id;
+      this.__readyState__P_162_0 = loaded ? "complete" : "initialized";
+      this.__urls__P_162_1 = urls;
+      this.__id__P_162_2 = id;
     },
     members: {
-      __readyState__P_161_0: null,
-      __urls__P_161_1: null,
-      __id__P_161_2: null,
-      __closure__P_161_3: null,
-      __loadWithClosure__P_161_4: null,
-      __timeoutId__P_161_5: null,
-      __notifyPackageResult__P_161_6: null,
+      __readyState__P_162_0: null,
+      __urls__P_162_1: null,
+      __id__P_162_2: null,
+      __closure__P_162_3: null,
+      __loadWithClosure__P_162_4: null,
+      __timeoutId__P_162_5: null,
+      __notifyPackageResult__P_162_6: null,
 
       /**
        * Get the package ID.
@@ -64,7 +64,7 @@
        * @return {String} The package id
        */
       getId: function getId() {
-        return this.__id__P_161_2;
+        return this.__id__P_162_2;
       },
 
       /**
@@ -83,7 +83,7 @@
        * @return {String} The ready state.
        */
       getReadyState: function getReadyState() {
-        return this.__readyState__P_161_0;
+        return this.__readyState__P_162_0;
       },
 
       /**
@@ -93,7 +93,7 @@
        * @return {String[]} An array of urls of this package.
        */
       getUrls: function getUrls() {
-        return this.__urls__P_161_1;
+        return this.__urls__P_162_1;
       },
 
       /**
@@ -103,19 +103,19 @@
        * @param closure {Function} The code of this package wrapped in a closure.
        */
       saveClosure: function saveClosure(closure) {
-        if (this.__readyState__P_161_0 == "error") {
+        if (this.__readyState__P_162_0 == "error") {
           return;
         }
 
-        this.__closure__P_161_3 = closure;
+        this.__closure__P_162_3 = closure;
 
-        if (!this.__loadWithClosure__P_161_4) {
+        if (!this.__loadWithClosure__P_162_4) {
           this.execute();
         } else {
-          clearTimeout(this.__timeoutId__P_161_5);
-          this.__readyState__P_161_0 = "cached";
+          clearTimeout(this.__timeoutId__P_162_5);
+          this.__readyState__P_162_0 = "cached";
 
-          this.__notifyPackageResult__P_161_6(this);
+          this.__notifyPackageResult__P_162_6(this);
         }
       },
 
@@ -124,19 +124,19 @@
        * {@link qx.io.part.ClosurePart} is used.
        */
       execute: function execute() {
-        if (this.__closure__P_161_3) {
-          this.__closure__P_161_3();
+        if (this.__closure__P_162_3) {
+          this.__closure__P_162_3();
 
-          delete this.__closure__P_161_3;
+          delete this.__closure__P_162_3;
         }
 
-        if (qx.$$packageData[this.__id__P_161_2]) {
-          this.__importPackageData__P_161_7(qx.$$packageData[this.__id__P_161_2]);
+        if (qx.$$packageData[this.__id__P_162_2]) {
+          this.__importPackageData__P_162_7(qx.$$packageData[this.__id__P_162_2]);
 
-          delete qx.$$packageData[this.__id__P_161_2];
+          delete qx.$$packageData[this.__id__P_162_2];
         }
 
-        this.__readyState__P_161_0 = "complete";
+        this.__readyState__P_162_0 = "complete";
       },
 
       /**
@@ -148,22 +148,22 @@
        * @param self {Object?} The context of the callback.
        */
       loadClosure: function loadClosure(notifyPackageResult, self) {
-        if (this.__readyState__P_161_0 !== "initialized") {
+        if (this.__readyState__P_162_0 !== "initialized") {
           return;
         }
 
-        this.__loadWithClosure__P_161_4 = true;
-        this.__readyState__P_161_0 = "loading";
-        this.__notifyPackageResult__P_161_6 = qx.Bootstrap.bind(notifyPackageResult, self);
+        this.__loadWithClosure__P_162_4 = true;
+        this.__readyState__P_162_0 = "loading";
+        this.__notifyPackageResult__P_162_6 = qx.Bootstrap.bind(notifyPackageResult, self);
 
-        this.__loadScriptList__P_161_8(this.__urls__P_161_1, function () {}, function () {
-          this.__readyState__P_161_0 = "error";
+        this.__loadScriptList__P_162_8(this.__urls__P_162_1, function () {}, function () {
+          this.__readyState__P_162_0 = "error";
           notifyPackageResult.call(self, this);
         }, this);
 
         var pkg = this;
-        this.__timeoutId__P_161_5 = setTimeout(function () {
-          pkg.__readyState__P_161_0 = "error";
+        this.__timeoutId__P_162_5 = setTimeout(function () {
+          pkg.__readyState__P_162_0 = "error";
           notifyPackageResult.call(self, pkg);
         }, qx.Part.TIMEOUT);
       },
@@ -176,19 +176,19 @@
        * @param self {Object?} The context of the callback.
        */
       load: function load(notifyPackageResult, self) {
-        if (this.__readyState__P_161_0 !== "initialized") {
+        if (this.__readyState__P_162_0 !== "initialized") {
           return;
         }
 
-        this.__loadWithClosure__P_161_4 = false;
-        this.__readyState__P_161_0 = "loading";
+        this.__loadWithClosure__P_162_4 = false;
+        this.__readyState__P_162_0 = "loading";
 
-        this.__loadScriptList__P_161_8(this.__urls__P_161_1, function () {
-          this.__readyState__P_161_0 = "complete";
+        this.__loadScriptList__P_162_8(this.__urls__P_162_1, function () {
+          this.__readyState__P_162_0 = "complete";
           this.execute();
           notifyPackageResult.call(self, this);
         }, function () {
-          this.__readyState__P_161_0 = "error";
+          this.__readyState__P_162_0 = "error";
           notifyPackageResult.call(self, this);
         }, this);
       },
@@ -201,7 +201,7 @@
        * @param errBack {Function} Function to execute on error
        * @param self {Object?window} Context to execute the given function in
        */
-      __loadScriptList__P_161_8: function __loadScriptList__P_161_8(urlList, callback, errBack, self) {
+      __loadScriptList__P_162_8: function __loadScriptList__P_162_8(urlList, callback, errBack, self) {
         if (urlList.length == 0) {
           callback.call(self);
           return;
@@ -237,8 +237,8 @@
           };
 
           loader.onerror = function () {
-            if (self.__readyState__P_161_0 == "loading") {
-              clearTimeout(self.__timeoutId__P_161_5);
+            if (self.__readyState__P_162_0 == "loading") {
+              clearTimeout(self.__timeoutId__P_162_5);
               loader.dispose();
               return errBack.call(self);
             }
@@ -260,10 +260,10 @@
        * @signature function(packageData)
        * @param packageData {Map} Map of package data categories ("resources",...)
        */
-      __importPackageData__P_161_7: qx.$$loader.importPackageData
+      __importPackageData__P_162_7: qx.$$loader.importPackageData
     }
   });
   qx.io.part.Package.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Package.js.map?dt=1592520315004
+//# sourceMappingURL=Package.js.map?dt=1592866007695

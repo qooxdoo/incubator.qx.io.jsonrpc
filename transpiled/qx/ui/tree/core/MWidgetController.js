@@ -39,7 +39,7 @@
    */
   qx.Mixin.define("qx.ui.tree.core.MWidgetController", {
     construct: function construct() {
-      this.__boundItems__P_535_0 = [];
+      this.__boundItems__P_536_0 = [];
     },
     properties: {
       /**
@@ -98,7 +98,7 @@
     },
     members: {
       /** @type {Array} which contains the bounded items */
-      __boundItems__P_535_0: null,
+      __boundItems__P_536_0: null,
 
       /**
        * Helper-Method for binding the default properties from the model to the
@@ -116,7 +116,7 @@
         this.bindProperty("", "model", null, item, index);
         this.bindProperty(this.getLabelPath(), "label", this.getLabelOptions(), item, index);
 
-        var bindPath = this.__getBindPath__P_535_1(index);
+        var bindPath = this.__getBindPath__P_536_1(index);
 
         var bindTarget = this._tree.getLookupTable();
 
@@ -152,13 +152,13 @@
        * @param index {Integer} The index of the current binding.
        */
       bindProperty: function bindProperty(sourcePath, targetProperty, options, targetWidget, index) {
-        var bindPath = this.__getBindPath__P_535_1(index, sourcePath);
+        var bindPath = this.__getBindPath__P_536_1(index, sourcePath);
 
         var bindTarget = this._tree.getLookupTable();
 
         var id = bindTarget.bind(bindPath, targetWidget, targetProperty, options);
 
-        this.__addBinding__P_535_2(targetWidget, id);
+        this.__addBinding__P_536_2(targetWidget, id);
       },
 
       /**
@@ -175,21 +175,21 @@
        * @param index {Integer} The index of the current binding.
        */
       bindPropertyReverse: function bindPropertyReverse(targetPath, sourceProperty, options, sourceWidget, index) {
-        var bindPath = this.__getBindPath__P_535_1(index, targetPath);
+        var bindPath = this.__getBindPath__P_536_1(index, targetPath);
 
         var bindTarget = this._tree.getLookupTable();
 
         var id = sourceWidget.bind(sourceProperty, bindTarget, bindPath, options);
 
-        this.__addBinding__P_535_2(sourceWidget, id);
+        this.__addBinding__P_536_2(sourceWidget, id);
       },
 
       /**
        * Remove all bindings from all bounded items.
        */
       removeBindings: function removeBindings() {
-        while (this.__boundItems__P_535_0.length > 0) {
-          var item = this.__boundItems__P_535_0.pop();
+        while (this.__boundItems__P_536_0.length > 0) {
+          var item = this.__boundItems__P_536_0.pop();
 
           this._removeBindingsFrom(item);
         }
@@ -218,7 +218,7 @@
        *   removed.
        */
       _removeBindingsFrom: function _removeBindingsFrom(item) {
-        var bindings = this.__getBindings__P_535_3(item);
+        var bindings = this.__getBindings__P_536_3(item);
 
         while (bindings.length > 0) {
           var id = bindings.pop();
@@ -230,8 +230,8 @@
           }
         }
 
-        if (this.__boundItems__P_535_0.includes(item)) {
-          qx.lang.Array.remove(this.__boundItems__P_535_0, item);
+        if (this.__boundItems__P_536_0.includes(item)) {
+          qx.lang.Array.remove(this.__boundItems__P_536_0, item);
         }
       },
 
@@ -242,7 +242,7 @@
        * @param path {String|null} The path to the property.
        * @return {String} The binding path
        */
-      __getBindPath__P_535_1: function __getBindPath__P_535_1(index, path) {
+      __getBindPath__P_536_1: function __getBindPath__P_536_1(index, path) {
         var bindPath = "[" + index + "]";
 
         if (path != null && path != "") {
@@ -258,15 +258,15 @@
        * @param widget {qx.ui.core.Widget} widget to save binding.
        * @param id {var} the id from the binding.
        */
-      __addBinding__P_535_2: function __addBinding__P_535_2(widget, id) {
-        var bindings = this.__getBindings__P_535_3(widget);
+      __addBinding__P_536_2: function __addBinding__P_536_2(widget, id) {
+        var bindings = this.__getBindings__P_536_3(widget);
 
         if (!bindings.includes(id)) {
           bindings.push(id);
         }
 
-        if (!this.__boundItems__P_535_0.includes(widget)) {
-          this.__boundItems__P_535_0.push(widget);
+        if (!this.__boundItems__P_536_0.includes(widget)) {
+          this.__boundItems__P_536_0.push(widget);
         }
       },
 
@@ -276,7 +276,7 @@
        * @param widget {qx.ui.core.Widget} widget to get all binding.
        * @return {Array} all bound id's.
        */
-      __getBindings__P_535_3: function __getBindings__P_535_3(widget) {
+      __getBindings__P_536_3: function __getBindings__P_536_3(widget) {
         var bindings = widget.getUserData("BindingIds");
 
         if (bindings == null) {
@@ -288,10 +288,10 @@
       }
     },
     destruct: function destruct() {
-      this.__boundItems__P_535_0 = null;
+      this.__boundItems__P_536_0 = null;
     }
   });
   qx.ui.tree.core.MWidgetController.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MWidgetController.js.map?dt=1592520348496
+//# sourceMappingURL=MWidgetController.js.map?dt=1592866042809

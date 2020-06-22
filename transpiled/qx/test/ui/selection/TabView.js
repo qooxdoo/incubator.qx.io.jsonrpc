@@ -34,7 +34,7 @@
   qx.Class.define("qx.test.ui.selection.TabView", {
     extend: qx.test.ui.selection.AbstractSingleSelectonTest,
     members: {
-      __radioButtons__P_335_0: null,
+      __radioButtons__P_336_0: null,
       setUp: function setUp() {
         var length = 10;
         this._notInSelection = [];
@@ -108,4 +108,4 @@
   qx.test.ui.selection.TabView.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TabView.js.map?dt=1592520331289
+//# sourceMappingURL=TabView.js.map?dt=1592866024578

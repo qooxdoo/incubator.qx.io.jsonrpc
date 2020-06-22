@@ -48,7 +48,7 @@
   qx.Class.define("qx.test.ui.form.Executable", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __test__P_302_0: function __test__P_302_0(widget) {
+      __test__P_303_0: function __test__P_303_0(widget) {
         // check if the interface is implemented
         this.assertTrue(qx.Class.hasInterface(widget.constructor, qx.ui.form.IExecutable), "Interface is not implemented.");
         var command = new qx.ui.command.Command(); // check if the setter works
@@ -83,50 +83,50 @@
         widget.destroy();
       },
       testToggleButton: function testToggleButton() {
-        this.__test__P_302_0(new qx.ui.form.ToggleButton());
+        this.__test__P_303_0(new qx.ui.form.ToggleButton());
       },
       testCheckBox: function testCheckBox() {
-        this.__test__P_302_0(new qx.ui.form.CheckBox());
+        this.__test__P_303_0(new qx.ui.form.CheckBox());
       },
       testButton: function testButton() {
-        this.__test__P_302_0(new qx.ui.form.Button());
+        this.__test__P_303_0(new qx.ui.form.Button());
       },
       testRepeatButton: function testRepeatButton() {
-        this.__test__P_302_0(new qx.ui.form.RepeatButton());
+        this.__test__P_303_0(new qx.ui.form.RepeatButton());
       },
       testMenuButton: function testMenuButton() {
-        this.__test__P_302_0(new qx.ui.form.MenuButton());
+        this.__test__P_303_0(new qx.ui.form.MenuButton());
       },
       testRadioButton: function testRadioButton() {
-        this.__test__P_302_0(new qx.ui.form.RadioButton());
+        this.__test__P_303_0(new qx.ui.form.RadioButton());
       },
       testToolbarButton: function testToolbarButton() {
-        this.__test__P_302_0(new qx.ui.toolbar.Button());
+        this.__test__P_303_0(new qx.ui.toolbar.Button());
       },
       testSplitButton: function testSplitButton() {
-        this.__test__P_302_0(new qx.ui.toolbar.SplitButton());
+        this.__test__P_303_0(new qx.ui.toolbar.SplitButton());
       },
       testMenuCheckBox: function testMenuCheckBox() {
-        this.__test__P_302_0(new qx.ui.menu.CheckBox());
+        this.__test__P_303_0(new qx.ui.menu.CheckBox());
       },
       testMenuRadioButton: function testMenuRadioButton() {
-        this.__test__P_302_0(new qx.ui.menu.RadioButton());
+        this.__test__P_303_0(new qx.ui.menu.RadioButton());
       },
       testButtonInMenu: function testButtonInMenu() {
-        this.__test__P_302_0(new qx.ui.menu.Button());
+        this.__test__P_303_0(new qx.ui.menu.Button());
       },
       testCheckGroupBox: function testCheckGroupBox() {
-        this.__test__P_302_0(new qx.ui.groupbox.CheckGroupBox());
+        this.__test__P_303_0(new qx.ui.groupbox.CheckGroupBox());
       },
       testRadioGroupBox: function testRadioGroupBox() {
-        this.__test__P_302_0(new qx.ui.groupbox.RadioGroupBox());
+        this.__test__P_303_0(new qx.ui.groupbox.RadioGroupBox());
       },
       testDateChooser: function testDateChooser() {
-        this.__test__P_302_0(new qx.ui.control.DateChooser());
+        this.__test__P_303_0(new qx.ui.control.DateChooser());
       }
     }
   });
   qx.test.ui.form.Executable.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Executable.js.map?dt=1592520329298
+//# sourceMappingURL=Executable.js.map?dt=1592866022420

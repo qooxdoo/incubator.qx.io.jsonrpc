@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 352,
+        "line": 377,
         "column": 3
       }
     },
@@ -86,7 +86,7 @@
     }
   },
   "events": {
-    "error": {
+    "outgoingRequest": {
       "location": {
         "start": {
           "line": 63,
@@ -94,6 +94,28 @@
         },
         "end": {
           "line": 63,
+          "column": 43
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Event fired before a request message is sent to the server.\n Event data is the {@link qx.io.jsonrpc.protocol.Message} to\n be sent. This also allows listeners to configure the transport\n object beforehand.</p>"
+          }
+        ]
+      },
+      "name": "outgoingRequest",
+      "type": "qx.event.type.Data"
+    },
+    "error": {
+      "location": {
+        "start": {
+          "line": 72,
+          "column": 4
+        },
+        "end": {
+          "line": 72,
           "column": 34
         }
       },
@@ -108,37 +130,37 @@
       "name": "error",
       "type": "qx.event.type.Data"
     },
-    "peerRequest": {
+    "incomingRequest": {
       "location": {
         "start": {
-          "line": 71,
+          "line": 80,
           "column": 4
         },
         "end": {
-          "line": 71,
-          "column": 40
+          "line": 80,
+          "column": 44
         }
       },
       "jsdoc": {
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Event fired when a peer-originated JSON-RPC message has been\n received from the peer endpoint. Event data is an instance of {@link\n qx.io.jsonrpc.message.Batch}, {@link qx.io.jsonrpc.message.Request}\n or {@link qx.io.jsonrpc.message.Notification}.</p>"
+            "body": "<p>Event fired when a peer-originated JSON-RPC message has been\n received from the peer endpoint. Event data is an instance of {@link\n qx.io.jsonrpc.message.Batch}, {@link qx.io.jsonrpc.message.Request}\n or {@link qx.io.jsonrpc.protocol.Notification}.</p>"
           }
         ]
       },
-      "name": "peerRequest",
+      "name": "incomingRequest",
       "type": "qx.event.type.Data"
     }
   },
   "construct": {
     "location": {
       "start": {
-        "line": 84,
+        "line": 93,
         "column": 14
       },
       "end": {
-        "line": 124,
+        "line": 130,
         "column": 3
       }
     },
@@ -183,11 +205,11 @@
     "methodPrefix": {
       "location": {
         "start": {
-          "line": 133,
+          "line": 139,
           "column": 4
         },
         "end": {
-          "line": 137,
+          "line": 143,
           "column": 5
         }
       },
@@ -208,11 +230,11 @@
     "transport": {
       "location": {
         "start": {
-          "line": 142,
+          "line": 148,
           "column": 4
         },
         "end": {
-          "line": 145,
+          "line": 151,
           "column": 5
         }
       },
@@ -231,11 +253,11 @@
     "parser": {
       "location": {
         "start": {
-          "line": 150,
+          "line": 156,
           "column": 4
         },
         "end": {
-          "line": 152,
+          "line": 158,
           "column": 5
         }
       },
@@ -288,11 +310,11 @@
     "__requests": {
       "location": {
         "start": {
-          "line": 161,
+          "line": 167,
           "column": 4
         },
         "end": {
-          "line": 161,
+          "line": 167,
           "column": 21
         }
       },
@@ -310,11 +332,11 @@
     "_prependMethodPrefix": {
       "location": {
         "start": {
-          "line": 169,
+          "line": 175,
           "column": 4
         },
         "end": {
-          "line": 175,
+          "line": 181,
           "column": 5
         }
       },
@@ -352,11 +374,11 @@
     "_throwTransportException": {
       "location": {
         "start": {
-          "line": 183,
+          "line": 189,
           "column": 4
         },
         "end": {
-          "line": 187,
+          "line": 197,
           "column": 5
         }
       },
@@ -388,11 +410,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 197,
+          "line": 207,
           "column": 4
         },
         "end": {
-          "line": 217,
+          "line": 235,
           "column": 5
         }
       },
@@ -424,11 +446,11 @@
     "sendRequest": {
       "location": {
         "start": {
-          "line": 227,
+          "line": 245,
           "column": 4
         },
         "end": {
-          "line": 231,
+          "line": 249,
           "column": 5
         }
       },
@@ -464,11 +486,11 @@
     "sendNotification": {
       "location": {
         "start": {
-          "line": 239,
+          "line": 257,
           "column": 4
         },
         "end": {
-          "line": 242,
+          "line": 260,
           "column": 5
         }
       },
@@ -496,11 +518,11 @@
     "sendBatch": {
       "location": {
         "start": {
-          "line": 251,
+          "line": 269,
           "column": 4
         },
         "end": {
-          "line": 258,
+          "line": 276,
           "column": 5
         }
       },
@@ -532,11 +554,11 @@
     "handleIncoming": {
       "location": {
         "start": {
-          "line": 264,
+          "line": 282,
           "column": 4
         },
         "end": {
-          "line": 280,
+          "line": 301,
           "column": 5
         }
       },
@@ -563,11 +585,11 @@
     "_cleanup": {
       "location": {
         "start": {
-          "line": 287,
+          "line": 308,
           "column": 4
         },
         "end": {
-          "line": 293,
+          "line": 310,
           "column": 5
         }
       },
@@ -597,11 +619,11 @@
     "handleMessage": {
       "location": {
         "start": {
-          "line": 299,
+          "line": 316,
           "column": 4
         },
         "end": {
-          "line": 350,
+          "line": 371,
           "column": 5
         }
       },

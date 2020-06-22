@@ -114,41 +114,41 @@
       });
     },
     members: {
-      __formerTheme__P_275_0: null,
-      __linerGradientRegExp__P_275_1: /(orange.*yellow|rgb\(255, 165, 0\).*rgb\(255, 255, 0\)|data:image\/png;base64,iVBORw0K)/,
+      __formerTheme__P_276_0: null,
+      __linerGradientRegExp__P_276_1: /(orange.*yellow|rgb\(255, 165, 0\).*rgb\(255, 255, 0\)|data:image\/png;base64,iVBORw0K)/,
       setUp: function setUp() {
         if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9) {
           this.skip("Skipped in IE 8.");
         }
 
         this.manager = qx.theme.manager.Meta.getInstance();
-        this.__formerTheme__P_275_0 = this.manager.getTheme(); // add a theme able widget
+        this.__formerTheme__P_276_0 = this.manager.getTheme(); // add a theme able widget
 
-        this.__button__P_275_2 = new qx.ui.form.Button("Foo");
-        this.getRoot().add(this.__button__P_275_2);
+        this.__button__P_276_2 = new qx.ui.form.Button("Foo");
+        this.getRoot().add(this.__button__P_276_2);
         qx.ui.core.queue.Manager.flush();
       },
       tearDown: function tearDown() {
-        this.__button__P_275_2.destroy();
+        this.__button__P_276_2.destroy();
 
-        this.manager.setTheme(this.__formerTheme__P_275_0);
-        this.__formerTheme__P_275_0 = null;
+        this.manager.setTheme(this.__formerTheme__P_276_0);
+        this.__formerTheme__P_276_0 = null;
       },
       testAllThemeManagerChanged: function testAllThemeManagerChanged() {
         qx.theme.manager.Meta.getInstance().setTheme(qx.test.theme.manager.MockAll);
         qx.ui.core.queue.Manager.flush(); // button element
 
-        var elem = this.__button__P_275_2.getContentElement().getDomElement(); // mocked appearance theme defines a padding with 30px 80px
+        var elem = this.__button__P_276_2.getContentElement().getDomElement(); // mocked appearance theme defines a padding with 30px 80px
 
 
         this.assertEquals(qx.bom.element.Style.get(elem, "padding"), "30px 80px"); // mocked color theme defines a gradient with 'orange' and 'yellow';
         // also check for corresponding rgb values (need for FireFox)
 
-        this.assertNotNull(qx.bom.element.Style.get(elem, "backgroundImage").match(this.__linerGradientRegExp__P_275_1)); // mocked decoration theme defines a border radius of 10 pixel
+        this.assertNotNull(qx.bom.element.Style.get(elem, "backgroundImage").match(this.__linerGradientRegExp__P_276_1)); // mocked decoration theme defines a border radius of 10 pixel
 
         this.assertEquals(qx.bom.element.Style.get(elem, "borderTopLeftRadius"), "10px"); // button label element
 
-        elem = this.__button__P_275_2.getChildControl("label").getContentElement().getDomElement(); // mocked color theme defines red text color for button labels
+        elem = this.__button__P_276_2.getChildControl("label").getContentElement().getDomElement(); // mocked color theme defines red text color for button labels
 
         this.assertEquals(qx.bom.element.Style.get(elem, "color"), "rgb(255, 0, 0)");
       },
@@ -156,17 +156,17 @@
         qx.theme.manager.Meta.getInstance().setTheme(qx.test.theme.manager.MockColor);
         qx.ui.core.queue.Manager.flush();
 
-        var elem = this.__button__P_275_2.getContentElement().getDomElement(); // mocked color theme defines a gradient with 'orange' and 'yellow';
+        var elem = this.__button__P_276_2.getContentElement().getDomElement(); // mocked color theme defines a gradient with 'orange' and 'yellow';
         // also check for corresponding rgb values (need for FireFox)
 
 
-        this.assertNotNull(qx.bom.element.Style.get(elem, "backgroundImage").match(this.__linerGradientRegExp__P_275_1));
+        this.assertNotNull(qx.bom.element.Style.get(elem, "backgroundImage").match(this.__linerGradientRegExp__P_276_1));
       },
       testDecoratorThemeManagerChanged: function testDecoratorThemeManagerChanged() {
         qx.theme.manager.Meta.getInstance().setTheme(qx.test.theme.manager.MockDecoration);
         qx.ui.core.queue.Manager.flush(); // mocked decoration theme defines a border radius of 10 pixel
 
-        var elem = this.__button__P_275_2.getContentElement().getDomElement();
+        var elem = this.__button__P_276_2.getContentElement().getDomElement();
 
         this.assertEquals(qx.bom.element.Style.get(elem, "borderTopLeftRadius"), "10px");
       },
@@ -174,7 +174,7 @@
         qx.theme.manager.Meta.getInstance().setTheme(qx.test.theme.manager.MockAppearance);
         qx.ui.core.queue.Manager.flush(); // mocked appearance theme defines a padding with 30px 80px
 
-        var elem = this.__button__P_275_2.getContentElement().getDomElement();
+        var elem = this.__button__P_276_2.getContentElement().getDomElement();
 
         this.assertEquals(qx.bom.element.Style.get(elem, "padding"), "30px 80px");
       },
@@ -182,11 +182,11 @@
         qx.theme.manager.Color.getInstance().setTheme(qx.test.theme.manager.mock.Color);
         qx.ui.core.queue.Manager.flush();
 
-        var elem = this.__button__P_275_2.getContentElement().getDomElement(); // mocked color theme defines a gradient with 'orange' and 'yellow';
+        var elem = this.__button__P_276_2.getContentElement().getDomElement(); // mocked color theme defines a gradient with 'orange' and 'yellow';
         // also check for corresponding rgb values (need for FireFox)
 
 
-        this.assertNotNull(qx.bom.element.Style.get(elem, "backgroundImage").match(this.__linerGradientRegExp__P_275_1));
+        this.assertNotNull(qx.bom.element.Style.get(elem, "backgroundImage").match(this.__linerGradientRegExp__P_276_1));
       }
     },
     destruct: function destruct() {}
@@ -194,4 +194,4 @@
   qx.test.theme.manager.Meta.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Meta.js.map?dt=1592520327741
+//# sourceMappingURL=Meta.js.map?dt=1592866020769

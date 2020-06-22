@@ -71,8 +71,8 @@
     *****************************************************************************
     */
     members: {
-      __lastHeight__P_459_0: null,
-      __lastWidth__P_459_1: null,
+      __lastHeight__P_460_0: null,
+      __lastWidth__P_460_1: null,
 
       /**
        * Removes fixed size from container.
@@ -105,13 +105,13 @@
             this._setHeight(height);
 
             this._setWidth(width);
-          } else if (this.__lastHeight__P_459_0 != height && this.__lastWidth__P_459_1 != width) {
+          } else if (this.__lastHeight__P_460_0 != height && this.__lastWidth__P_460_1 != width) {
             this._setHeight(height);
 
             this._setWidth(width);
 
-            this.__lastWidth__P_459_1 = width;
-            this.__lastHeight__P_459_0 = height;
+            this.__lastWidth__P_460_1 = width;
+            this.__lastHeight__P_460_0 = height;
 
             this._domUpdated();
           }
@@ -152,4 +152,4 @@
   qx.ui.mobile.core.MResize.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MResize.js.map?dt=1592520342879
+//# sourceMappingURL=MResize.js.map?dt=1592866036783

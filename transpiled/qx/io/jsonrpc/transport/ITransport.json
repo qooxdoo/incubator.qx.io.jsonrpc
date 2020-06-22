@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 36,
+        "line": 37,
         "column": 3
       }
     }
@@ -106,11 +106,11 @@
     "getTransportImpl": {
       "location": {
         "start": {
-          "line": 34,
+          "line": 35,
           "column": 4
         },
         "end": {
-          "line": 34,
+          "line": 35,
           "column": 25
         }
       },
@@ -118,7 +118,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Returns the object which implements the transport on the underlying\n level, so that transport-specific configuration can be done on it.</p>"
+            "body": "<p>Returns the object which implements the transport on the underlying\n level, so that transport-specific configuration can be done on it.\n The object might be a new one for each request.</p>"
           }
         ],
         "@return": [

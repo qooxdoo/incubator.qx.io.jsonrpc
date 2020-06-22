@@ -67,15 +67,15 @@
     */
     construct: function construct() {
       qx.ui.mobile.container.Composite.constructor.call(this, new qx.ui.mobile.layout.VBox());
-      this.__navigationBar__P_455_0 = this._createNavigationBar();
+      this.__navigationBar__P_456_0 = this._createNavigationBar();
 
-      if (this.__navigationBar__P_455_0) {
-        this._add(this.__navigationBar__P_455_0);
+      if (this.__navigationBar__P_456_0) {
+        this._add(this.__navigationBar__P_456_0);
       }
 
-      this.__content__P_455_1 = this._createContent();
+      this.__content__P_456_1 = this._createContent();
 
-      this._add(this.__content__P_455_1, {
+      this._add(this.__content__P_456_1, {
         flex: 1
       });
     },
@@ -109,9 +109,9 @@
     *****************************************************************************
     */
     members: {
-      __navigationBar__P_455_0: null,
-      __content__P_455_1: null,
-      __layout__P_455_2: null,
+      __navigationBar__P_456_0: null,
+      __content__P_456_1: null,
+      __layout__P_456_2: null,
       // overridden
       add: function add(widget) {
         {
@@ -133,7 +133,7 @@
        * @return {qx.ui.mobile.container.Composite} The content container
        */
       getContent: function getContent() {
-        return this.__content__P_455_1;
+        return this.__content__P_456_1;
       },
 
       /**
@@ -141,7 +141,7 @@
        * @return {qx.ui.mobile.layout.Card} assigned Card Layout.
        */
       getLayout: function getLayout() {
-        return this.__layout__P_455_2;
+        return this.__layout__P_456_2;
       },
 
       /**
@@ -150,7 +150,7 @@
        * @return {qx.ui.mobile.navigationbar.NavigationBar} The navigation bar.
        */
       getNavigationBar: function getNavigationBar() {
-        return this.__navigationBar__P_455_0;
+        return this.__navigationBar__P_456_0;
       },
 
       /**
@@ -159,15 +159,15 @@
        * @return {qx.ui.mobile.container.Composite} The created content container
        */
       _createContent: function _createContent() {
-        this.__layout__P_455_2 = new qx.ui.mobile.layout.Card();
+        this.__layout__P_456_2 = new qx.ui.mobile.layout.Card();
 
-        this.__layout__P_455_2.addListener("updateLayout", this._onUpdateLayout, this);
+        this.__layout__P_456_2.addListener("updateLayout", this._onUpdateLayout, this);
 
-        this.__layout__P_455_2.addListener("animationStart", this._onAnimationStart, this);
+        this.__layout__P_456_2.addListener("animationStart", this._onAnimationStart, this);
 
-        this.__layout__P_455_2.addListener("animationEnd", this._onAnimationEnd, this);
+        this.__layout__P_456_2.addListener("animationEnd", this._onAnimationEnd, this);
 
-        return new qx.ui.mobile.container.Composite(this.__layout__P_455_2);
+        return new qx.ui.mobile.container.Composite(this.__layout__P_456_2);
       },
 
       /**
@@ -258,12 +258,12 @@
       this.getLayout().removeListener("animationStart", this._onAnimationStart, this);
       this.getLayout().removeListener("animationEnd", this._onAnimationEnd, this);
 
-      this._disposeObjects("__navigationBar__P_455_0", "__content__P_455_1", "__layout__P_455_2");
+      this._disposeObjects("__navigationBar__P_456_0", "__content__P_456_1", "__layout__P_456_2");
 
-      this.__navigationBar__P_455_0 = this.__content__P_455_1 = this.__layout__P_455_2 = null;
+      this.__navigationBar__P_456_0 = this.__content__P_456_1 = this.__layout__P_456_2 = null;
     }
   });
   qx.ui.mobile.container.Navigation.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Navigation.js.map?dt=1592520342597
+//# sourceMappingURL=Navigation.js.map?dt=1592866036460

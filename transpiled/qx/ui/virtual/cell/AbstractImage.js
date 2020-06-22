@@ -63,8 +63,8 @@
     *****************************************************************************
     */
     members: {
-      __defaultWidth__P_541_0: 16,
-      __defaultHeight__P_541_1: 16,
+      __defaultWidth__P_542_0: 16,
+      __defaultHeight__P_542_1: 16,
       _aliasManager: null,
 
       /**
@@ -74,7 +74,7 @@
        * @return {Map} A map containing the image's <code>width</code> and
        *    <code>height</code>
        */
-      __getImageSize__P_541_2: function __getImageSize__P_541_2(source) {
+      __getImageSize__P_542_2: function __getImageSize__P_542_2(source) {
         var ResourceManager = qx.util.ResourceManager.getInstance();
         var ImageLoader = qx.io.ImageLoader;
         var width, height; // Detect if the image registry knows this image
@@ -85,8 +85,8 @@
           width = ImageLoader.getWidth(source);
           height = ImageLoader.getHeight(source);
         } else {
-          width = this.__defaultWidth__P_541_0;
-          height = this.__defaultHeight__P_541_1;
+          width = this.__defaultWidth__P_542_0;
+          height = this.__defaultHeight__P_542_1;
         }
 
         return {
@@ -114,7 +114,7 @@
        *     <li>tooltip (optional)</li>
        *   </ul>
        */
-      __createImage__P_541_3: function __createImage__P_541_3(imageData) {
+      __createImage__P_542_3: function __createImage__P_542_3(imageData) {
         if (typeof imageData == "string") {
           imageData = {
             url: imageData
@@ -131,7 +131,7 @@
             height: imageData.height
           };
         } else {
-          sizes = this.__getImageSize__P_541_2(url);
+          sizes = this.__getImageSize__P_542_2(url);
         }
 
         return {
@@ -167,7 +167,7 @@
 
         var content = "";
 
-        var imageData = this.__createImage__P_541_3(this._identifyImage(value));
+        var imageData = this.__createImage__P_542_3(this._identifyImage(value));
 
         var tooltip = imageData.tooltip ? 'title="' + imageData.tooltip + '"' : "";
         var styles = {
@@ -196,4 +196,4 @@
   qx.ui.virtual.cell.AbstractImage.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractImage.js.map?dt=1592520349178
+//# sourceMappingURL=AbstractImage.js.map?dt=1592866043474

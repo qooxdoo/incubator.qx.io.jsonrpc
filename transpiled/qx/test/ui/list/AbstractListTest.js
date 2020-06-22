@@ -68,4 +68,4 @@
   qx.test.ui.list.AbstractListTest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractListTest.js.map?dt=1592520330831
+//# sourceMappingURL=AbstractListTest.js.map?dt=1592866024088

@@ -44,16 +44,17 @@
  </p>
 <pre class="javascript">
  const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
- const auth = new qx.io.request.authentication.Bearer("TOKEN");
- client.getTransport().getTransportImpl().setAuthentication(auth);
+ client.addListener("outgoingRequest", () => {
+   const auth = new qx.io.request.authentication.Bearer("TOKEN");
+   client.getTransport().getTransportImpl().setAuthentication(auth);
+ });
  client.sendRequest("method-needing-authentication", [1,2,3]);
  </pre>
-<p>If you need a client with a customized transport often, we recommend
- to create a class that inherits from the client class, override
- the methods which are needed to produce that custom behavior (such
- as {@link qx.io.jsonrpc.transport.Http#_createTransportImpl},
- and provide a <code>defer</code> section which registers
- the behavior for your particular class of URIs:
+<p>Instead, you can also to create a class that inherits from
+ {@link qx.io.jsonrpc.transport.Http} and overrides  {@link
+ qx.io.jsonrpc.transport.Http#_createTransportImpl}. To make
+ the client use this transport, and provide a <code>defer</code> section
+ which registers the behavior for your particular class of URIs:
  </p>
 <pre class="javascript">
  defer() {
@@ -62,4 +63,9 @@
  </pre>
 <p>The client will always use the transport that was last registered for
  a certain endpoint pattern, i.e. from then on, all clients created
- with urls that start with "http" will use that custom behavior.</p>
+ with urls that start with "http" will use that custom behavior.
+ The client also supports <em>incoming</em> requests as part of the server
+ response. To receive them, register a listener for the <code>incomingRequest</code>
+ event. For the HTTP transport, notifications can be sent by the server
+ as part of the response to client requests. Once a WebSocket transport
+ has been added, the duplex JSON-RPC traffic can be implemented this way.</p>

@@ -40,11 +40,11 @@
   qx.Mixin.define("qx.ui.form.MModelSelection", {
     construct: function construct() {
       // create the selection array
-      this.__modelSelection__P_420_0 = new qx.data.Array(); // listen to the changes
+      this.__modelSelection__P_421_0 = new qx.data.Array(); // listen to the changes
 
-      this.__modelSelection__P_420_0.addListener("change", this.__onModelSelectionArrayChange__P_420_1, this);
+      this.__modelSelection__P_421_0.addListener("change", this.__onModelSelectionArrayChange__P_421_1, this);
 
-      this.addListener("changeSelection", this.__onModelSelectionChange__P_420_2, this);
+      this.addListener("changeSelection", this.__onModelSelectionChange__P_421_2, this);
     },
     events: {
       /**
@@ -54,16 +54,16 @@
       changeModelSelection: "qx.event.type.Data"
     },
     members: {
-      __modelSelection__P_420_0: null,
-      __inSelectionChange__P_420_3: false,
+      __modelSelection__P_421_0: null,
+      __inSelectionChange__P_421_3: false,
 
       /**
        * Handler for the selection change of the including class e.g. SelectBox,
        * List, ...
        * It sets the new modelSelection via {@link #setModelSelection}.
        */
-      __onModelSelectionChange__P_420_2: function __onModelSelectionChange__P_420_2() {
-        if (this.__inSelectionChange__P_420_3) {
+      __onModelSelectionChange__P_421_2: function __onModelSelectionChange__P_421_2() {
+        if (this.__inSelectionChange__P_421_3) {
           return;
         }
 
@@ -91,12 +91,12 @@
       /**
        * Listener for the change of the internal model selection data array.
        */
-      __onModelSelectionArrayChange__P_420_1: function __onModelSelectionArrayChange__P_420_1() {
-        this.__inSelectionChange__P_420_3 = true;
+      __onModelSelectionArrayChange__P_421_1: function __onModelSelectionArrayChange__P_421_1() {
+        this.__inSelectionChange__P_421_3 = true;
         var selectables = this.getSelectables(true);
         var itemSelection = [];
 
-        var modelSelection = this.__modelSelection__P_420_0.toArray();
+        var modelSelection = this.__modelSelection__P_421_0.toArray();
 
         for (var i = 0; i < modelSelection.length; i++) {
           var model = modelSelection[i];
@@ -114,13 +114,13 @@
         }
 
         this.setSelection(itemSelection);
-        this.__inSelectionChange__P_420_3 = false; // check if the setting has worked
+        this.__inSelectionChange__P_421_3 = false; // check if the setting has worked
 
         var currentSelection = this.getSelection();
 
         if (!qx.lang.Array.equals(currentSelection, itemSelection)) {
           // if not, set the actual selection
-          this.__onModelSelectionChange__P_420_2();
+          this.__onModelSelectionChange__P_421_2();
         }
       },
 
@@ -134,7 +134,7 @@
        * @return {qx.data.Array} An array of the models of the selected items.
        */
       getModelSelection: function getModelSelection() {
-        return this.__modelSelection__P_420_0;
+        return this.__modelSelection__P_421_0;
       },
 
       /**
@@ -153,7 +153,7 @@
       setModelSelection: function setModelSelection(modelSelection) {
         // check for null values
         if (!modelSelection) {
-          this.__modelSelection__P_420_0.removeAll();
+          this.__modelSelection__P_421_0.removeAll();
 
           return;
         }
@@ -162,20 +162,20 @@
           this.assertArray(modelSelection, "Please use an array as parameter.");
         } // add the first two parameter
 
-        modelSelection.unshift(this.__modelSelection__P_420_0.getLength()); // remove index
+        modelSelection.unshift(this.__modelSelection__P_421_0.getLength()); // remove index
 
         modelSelection.unshift(0); // start index
 
-        var returnArray = this.__modelSelection__P_420_0.splice.apply(this.__modelSelection__P_420_0, modelSelection);
+        var returnArray = this.__modelSelection__P_421_0.splice.apply(this.__modelSelection__P_421_0, modelSelection);
 
         returnArray.dispose();
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__modelSelection__P_420_0");
+      this._disposeObjects("__modelSelection__P_421_0");
     }
   });
   qx.ui.form.MModelSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MModelSelection.js.map?dt=1592520339422
+//# sourceMappingURL=MModelSelection.js.map?dt=1592866033132

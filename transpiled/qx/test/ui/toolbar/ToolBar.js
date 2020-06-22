@@ -37,156 +37,156 @@
     members: {
       setUp: function setUp() {
         qx.test.ui.toolbar.ToolBar.prototype.setUp.base.call(this);
-        this.__toolbar__P_337_0 = new qx.ui.toolbar.ToolBar();
-        this.__b1__P_337_1 = new qx.ui.toolbar.Button("b1");
-        this.__b2__P_337_2 = new qx.ui.toolbar.Button("b2");
-        this.__b3__P_337_3 = new qx.ui.toolbar.Button("b3");
+        this.__toolbar__P_338_0 = new qx.ui.toolbar.ToolBar();
+        this.__b1__P_338_1 = new qx.ui.toolbar.Button("b1");
+        this.__b2__P_338_2 = new qx.ui.toolbar.Button("b2");
+        this.__b3__P_338_3 = new qx.ui.toolbar.Button("b3");
       },
       tearDown: function tearDown() {
         qx.test.ui.toolbar.ToolBar.prototype.tearDown.base.call(this);
 
-        this.__b1__P_337_1.dispose();
+        this.__b1__P_338_1.dispose();
 
-        this.__b2__P_337_2.dispose();
+        this.__b2__P_338_2.dispose();
 
-        this.__b3__P_337_3.dispose();
+        this.__b3__P_338_3.dispose();
 
-        this.__toolbar__P_337_0.dispose();
+        this.__toolbar__P_338_0.dispose();
       },
       testShowSyncing: function testShowSyncing() {
         // setup toolbar with two buttons
-        this.__toolbar__P_337_0.add(this.__b1__P_337_1);
+        this.__toolbar__P_338_0.add(this.__b1__P_338_1);
 
-        this.__toolbar__P_337_0.add(this.__b2__P_337_2); // set a value and check if the buttons get synced
+        this.__toolbar__P_338_0.add(this.__b2__P_338_2); // set a value and check if the buttons get synced
 
 
-        this.__toolbar__P_337_0.setShow("label");
+        this.__toolbar__P_338_0.setShow("label");
 
-        this.assertEquals("label", this.__b1__P_337_1.getShow());
-        this.assertEquals("label", this.__b2__P_337_2.getShow()); // add another button and check if the value has been applied
+        this.assertEquals("label", this.__b1__P_338_1.getShow());
+        this.assertEquals("label", this.__b2__P_338_2.getShow()); // add another button and check if the value has been applied
 
-        this.__toolbar__P_337_0.add(this.__b3__P_337_3);
+        this.__toolbar__P_338_0.add(this.__b3__P_338_3);
 
-        this.assertEquals("label", this.__b3__P_337_3.getShow());
+        this.assertEquals("label", this.__b3__P_338_3.getShow());
       },
       testPositionStates: function testPositionStates() {
         var part = new qx.ui.toolbar.Part();
-        part.add(this.__b1__P_337_1);
-        part.add(this.__b2__P_337_2);
-        part.add(this.__b3__P_337_3);
+        part.add(this.__b1__P_338_1);
+        part.add(this.__b2__P_338_2);
+        part.add(this.__b3__P_338_3);
 
-        this.__toolbar__P_337_0.add(part);
+        this.__toolbar__P_338_0.add(part);
 
-        this.getRoot().add(this.__toolbar__P_337_0);
+        this.getRoot().add(this.__toolbar__P_338_0);
         this.flush();
-        this.assertTrue(this.__b1__P_337_1.hasState("left"));
-        this.assertTrue(this.__b2__P_337_2.hasState("middle"));
-        this.assertTrue(this.__b3__P_337_3.hasState("right"));
+        this.assertTrue(this.__b1__P_338_1.hasState("left"));
+        this.assertTrue(this.__b2__P_338_2.hasState("middle"));
+        this.assertTrue(this.__b3__P_338_3.hasState("right"));
         part.dispose();
       },
       testPositionStatesAdd: function testPositionStatesAdd() {
         var part = new qx.ui.toolbar.Part();
-        part.add(this.__b1__P_337_1);
-        part.add(this.__b3__P_337_3);
+        part.add(this.__b1__P_338_1);
+        part.add(this.__b3__P_338_3);
 
-        this.__toolbar__P_337_0.add(part);
+        this.__toolbar__P_338_0.add(part);
 
-        this.getRoot().add(this.__toolbar__P_337_0);
+        this.getRoot().add(this.__toolbar__P_338_0);
         this.flush();
-        this.assertTrue(this.__b1__P_337_1.hasState("left"));
-        this.assertTrue(this.__b3__P_337_3.hasState("right"));
-        part.addAt(this.__b2__P_337_2, 1);
+        this.assertTrue(this.__b1__P_338_1.hasState("left"));
+        this.assertTrue(this.__b3__P_338_3.hasState("right"));
+        part.addAt(this.__b2__P_338_2, 1);
         this.flush();
-        this.assertTrue(this.__b1__P_337_1.hasState("left"));
-        this.assertTrue(this.__b2__P_337_2.hasState("middle"));
-        this.assertTrue(this.__b3__P_337_3.hasState("right"));
+        this.assertTrue(this.__b1__P_338_1.hasState("left"));
+        this.assertTrue(this.__b2__P_338_2.hasState("middle"));
+        this.assertTrue(this.__b3__P_338_3.hasState("right"));
         part.dispose();
       },
       testPositionStatesRemove: function testPositionStatesRemove() {
         var part = new qx.ui.toolbar.Part();
-        part.add(this.__b1__P_337_1);
-        part.add(this.__b2__P_337_2);
-        part.add(this.__b3__P_337_3);
+        part.add(this.__b1__P_338_1);
+        part.add(this.__b2__P_338_2);
+        part.add(this.__b3__P_338_3);
 
-        this.__toolbar__P_337_0.add(part);
+        this.__toolbar__P_338_0.add(part);
 
-        this.getRoot().add(this.__toolbar__P_337_0);
+        this.getRoot().add(this.__toolbar__P_338_0);
         this.flush();
-        this.assertTrue(this.__b1__P_337_1.hasState("left"));
-        this.assertTrue(this.__b2__P_337_2.hasState("middle"));
-        this.assertTrue(this.__b3__P_337_3.hasState("right"));
-        part.remove(this.__b1__P_337_1);
+        this.assertTrue(this.__b1__P_338_1.hasState("left"));
+        this.assertTrue(this.__b2__P_338_2.hasState("middle"));
+        this.assertTrue(this.__b3__P_338_3.hasState("right"));
+        part.remove(this.__b1__P_338_1);
         this.flush();
-        this.assertTrue(this.__b2__P_337_2.hasState("left"));
-        this.assertTrue(this.__b3__P_337_3.hasState("right"));
+        this.assertTrue(this.__b2__P_338_2.hasState("left"));
+        this.assertTrue(this.__b3__P_338_3.hasState("right"));
         part.dispose();
       },
       testShowUserValueShouldTakePrecedence: function testShowUserValueShouldTakePrecedence() {
         // setup toolbar with two buttons
-        this.__toolbar__P_337_0.add(this.__b1__P_337_1);
+        this.__toolbar__P_338_0.add(this.__b1__P_338_1);
 
-        this.__toolbar__P_337_0.add(this.__b2__P_337_2); // assert 'label' isn't default show val
-
-
-        this.assertNotEquals("label", this.__b1__P_337_1.getShow());
-        this.assertNotEquals("label", this.__b2__P_337_2.getShow()); // initialize toolbar with 'label'
-
-        this.__toolbar__P_337_0.setShow("label");
-
-        this.assertEquals("label", this.__b1__P_337_1.getShow());
-        this.assertEquals("label", this.__b2__P_337_2.getShow()); // override it for button1
-
-        this.__b1__P_337_1.setShow("icon");
-
-        this.assertEquals("icon", this.__b1__P_337_1.getShow());
-        this.assertEquals("label", this.__b2__P_337_2.getShow()); // change it afterwards
-
-        this.__toolbar__P_337_0.setShow("both");
-
-        this.__toolbar__P_337_0.add(this.__b3__P_337_3); // assert all 'both'
+        this.__toolbar__P_338_0.add(this.__b2__P_338_2); // assert 'label' isn't default show val
 
 
-        this.assertEquals("both", this.__b1__P_337_1.getShow());
-        this.assertEquals("both", this.__b2__P_337_2.getShow());
-        this.assertEquals("both", this.__b3__P_337_3.getShow());
+        this.assertNotEquals("label", this.__b1__P_338_1.getShow());
+        this.assertNotEquals("label", this.__b2__P_338_2.getShow()); // initialize toolbar with 'label'
+
+        this.__toolbar__P_338_0.setShow("label");
+
+        this.assertEquals("label", this.__b1__P_338_1.getShow());
+        this.assertEquals("label", this.__b2__P_338_2.getShow()); // override it for button1
+
+        this.__b1__P_338_1.setShow("icon");
+
+        this.assertEquals("icon", this.__b1__P_338_1.getShow());
+        this.assertEquals("label", this.__b2__P_338_2.getShow()); // change it afterwards
+
+        this.__toolbar__P_338_0.setShow("both");
+
+        this.__toolbar__P_338_0.add(this.__b3__P_338_3); // assert all 'both'
+
+
+        this.assertEquals("both", this.__b1__P_338_1.getShow());
+        this.assertEquals("both", this.__b2__P_338_2.getShow());
+        this.assertEquals("both", this.__b3__P_338_3.getShow());
       },
       testRemoveChildByIndex: function testRemoveChildByIndex() {
-        this.__toolbar__P_337_0.removeAll(); // setup toolbar with three buttons
+        this.__toolbar__P_338_0.removeAll(); // setup toolbar with three buttons
 
 
-        this.__toolbar__P_337_0.add(this.__b1__P_337_1);
+        this.__toolbar__P_338_0.add(this.__b1__P_338_1);
 
-        this.__toolbar__P_337_0.add(this.__b2__P_337_2);
+        this.__toolbar__P_338_0.add(this.__b2__P_338_2);
 
-        this.__toolbar__P_337_0.add(this.__b3__P_337_3); // assert finding child __b2 on index 1
+        this.__toolbar__P_338_0.add(this.__b3__P_338_3); // assert finding child __b2 on index 1
 
 
-        var indexB2 = this.__toolbar__P_337_0.indexOf(this.__b2__P_337_2);
+        var indexB2 = this.__toolbar__P_338_0.indexOf(this.__b2__P_338_2);
 
         this.assertEquals(1, indexB2); // assert removing child at index 1
 
-        var childB2 = this.__toolbar__P_337_0.removeAt(1);
+        var childB2 = this.__toolbar__P_338_0.removeAt(1);
 
-        this.assertEquals(childB2, this.__b2__P_337_2); // assert length of remaining and removed children array being now 2
+        this.assertEquals(childB2, this.__b2__P_338_2); // assert length of remaining and removed children array being now 2
 
-        var children = this.__toolbar__P_337_0.removeAll();
+        var children = this.__toolbar__P_338_0.removeAll();
 
         this.assertEquals(2, children.length);
       },
       testRemoveAllChildren: function testRemoveAllChildren() {
-        this.__toolbar__P_337_0.removeAll(); // setup toolbar with two buttons
+        this.__toolbar__P_338_0.removeAll(); // setup toolbar with two buttons
 
 
-        this.__toolbar__P_337_0.add(this.__b1__P_337_1);
+        this.__toolbar__P_338_0.add(this.__b1__P_338_1);
 
-        this.__toolbar__P_337_0.add(this.__b2__P_337_2); // assert length of removed children array
+        this.__toolbar__P_338_0.add(this.__b2__P_338_2); // assert length of removed children array
 
 
-        var children = this.__toolbar__P_337_0.removeAll();
+        var children = this.__toolbar__P_338_0.removeAll();
 
         this.assertEquals(2, children.length); // assert empty children array
 
-        children = this.__toolbar__P_337_0.removeAll();
+        children = this.__toolbar__P_338_0.removeAll();
         this.assertEquals(0, children.length);
       }
     }
@@ -194,4 +194,4 @@
   qx.test.ui.toolbar.ToolBar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ToolBar.js.map?dt=1592520331711
+//# sourceMappingURL=ToolBar.js.map?dt=1592866025031

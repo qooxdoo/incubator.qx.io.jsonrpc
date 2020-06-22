@@ -39,4 +39,4 @@
   qx.io.jsonrpc.exception.JsonRpc.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=JsonRpc.js.map?dt=1592520314732
+//# sourceMappingURL=JsonRpc.js.map?dt=1592866007398

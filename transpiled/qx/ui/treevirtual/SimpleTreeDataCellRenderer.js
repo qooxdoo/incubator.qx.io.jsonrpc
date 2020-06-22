@@ -80,30 +80,30 @@
     construct: function construct() {
       var STDCR = qx.ui.treevirtual.SimpleTreeDataCellRenderer; // Begin preloading of the tree images, if not already requested.
 
-      if (STDCR.__bVirgin__P_538_0) {
-        STDCR.__preloadImages__P_538_1();
+      if (STDCR.__bVirgin__P_539_0) {
+        STDCR.__preloadImages__P_539_1();
 
-        STDCR.__bVirgin__P_538_0 = false;
+        STDCR.__bVirgin__P_539_0 = false;
       }
 
       qx.ui.table.cellrenderer.Abstract.constructor.call(this);
-      this.__am__P_538_2 = qx.util.AliasManager.getInstance();
-      this.__rm__P_538_3 = qx.util.ResourceManager.getInstance();
-      this.__tm__P_538_4 = qx.theme.manager.Appearance.getInstance(); // Base URL used for indentation
+      this.__am__P_539_2 = qx.util.AliasManager.getInstance();
+      this.__rm__P_539_3 = qx.util.ResourceManager.getInstance();
+      this.__tm__P_539_4 = qx.theme.manager.Appearance.getInstance(); // Base URL used for indentation
 
-      this.BLANK = this.__rm__P_538_3.toUri(this.__am__P_538_2.resolve("static/blank.gif"));
+      this.BLANK = this.__rm__P_539_3.toUri(this.__am__P_539_2.resolve("static/blank.gif"));
     },
     statics: {
       /** File names of each of the tree icons */
-      __icon__P_538_5: {},
+      __icon__P_539_5: {},
 
       /** Whether we have not yet requested pre-loading of images */
-      __bVirgin__P_538_0: true,
+      __bVirgin__P_539_0: true,
 
       /**
        * Request preloading of images so they appear immediately upon rendering
        */
-      __preloadImages__P_538_1: function __preloadImages__P_538_1() {
+      __preloadImages__P_539_1: function __preloadImages__P_539_1() {
         var STDCR = qx.ui.treevirtual.SimpleTreeDataCellRenderer;
         var ImageLoader = qx.io.ImageLoader;
         var am = qx.util.AliasManager.getInstance();
@@ -114,32 +114,32 @@
           ImageLoader.load(rm.toUri(am.resolve(f)));
         };
 
-        STDCR.__icon__P_538_5.line = tm.styleFrom("treevirtual-line");
-        loadImage(STDCR.__icon__P_538_5.line.icon);
-        STDCR.__icon__P_538_5.contract = tm.styleFrom("treevirtual-contract");
-        loadImage(STDCR.__icon__P_538_5.contract.icon);
-        STDCR.__icon__P_538_5.expand = tm.styleFrom("treevirtual-expand");
-        loadImage(STDCR.__icon__P_538_5.expand.icon);
-        STDCR.__icon__P_538_5.onlyContract = tm.styleFrom("treevirtual-only-contract");
-        loadImage(STDCR.__icon__P_538_5.onlyContract.icon);
-        STDCR.__icon__P_538_5.onlyExpand = tm.styleFrom("treevirtual-only-expand");
-        loadImage(STDCR.__icon__P_538_5.onlyExpand.icon);
-        STDCR.__icon__P_538_5.startContract = tm.styleFrom("treevirtual-start-contract");
-        loadImage(STDCR.__icon__P_538_5.startContract.icon);
-        STDCR.__icon__P_538_5.startExpand = tm.styleFrom("treevirtual-start-expand");
-        loadImage(STDCR.__icon__P_538_5.startExpand.icon);
-        STDCR.__icon__P_538_5.endContract = tm.styleFrom("treevirtual-end-contract");
-        loadImage(STDCR.__icon__P_538_5.endContract.icon);
-        STDCR.__icon__P_538_5.endExpand = tm.styleFrom("treevirtual-end-expand");
-        loadImage(STDCR.__icon__P_538_5.endExpand.icon);
-        STDCR.__icon__P_538_5.crossContract = tm.styleFrom("treevirtual-cross-contract");
-        loadImage(STDCR.__icon__P_538_5.crossContract.icon);
-        STDCR.__icon__P_538_5.crossExpand = tm.styleFrom("treevirtual-cross-expand");
-        loadImage(STDCR.__icon__P_538_5.crossExpand.icon);
-        STDCR.__icon__P_538_5.end = tm.styleFrom("treevirtual-end");
-        loadImage(STDCR.__icon__P_538_5.end.icon);
-        STDCR.__icon__P_538_5.cross = tm.styleFrom("treevirtual-cross");
-        loadImage(STDCR.__icon__P_538_5.cross.icon);
+        STDCR.__icon__P_539_5.line = tm.styleFrom("treevirtual-line");
+        loadImage(STDCR.__icon__P_539_5.line.icon);
+        STDCR.__icon__P_539_5.contract = tm.styleFrom("treevirtual-contract");
+        loadImage(STDCR.__icon__P_539_5.contract.icon);
+        STDCR.__icon__P_539_5.expand = tm.styleFrom("treevirtual-expand");
+        loadImage(STDCR.__icon__P_539_5.expand.icon);
+        STDCR.__icon__P_539_5.onlyContract = tm.styleFrom("treevirtual-only-contract");
+        loadImage(STDCR.__icon__P_539_5.onlyContract.icon);
+        STDCR.__icon__P_539_5.onlyExpand = tm.styleFrom("treevirtual-only-expand");
+        loadImage(STDCR.__icon__P_539_5.onlyExpand.icon);
+        STDCR.__icon__P_539_5.startContract = tm.styleFrom("treevirtual-start-contract");
+        loadImage(STDCR.__icon__P_539_5.startContract.icon);
+        STDCR.__icon__P_539_5.startExpand = tm.styleFrom("treevirtual-start-expand");
+        loadImage(STDCR.__icon__P_539_5.startExpand.icon);
+        STDCR.__icon__P_539_5.endContract = tm.styleFrom("treevirtual-end-contract");
+        loadImage(STDCR.__icon__P_539_5.endContract.icon);
+        STDCR.__icon__P_539_5.endExpand = tm.styleFrom("treevirtual-end-expand");
+        loadImage(STDCR.__icon__P_539_5.endExpand.icon);
+        STDCR.__icon__P_539_5.crossContract = tm.styleFrom("treevirtual-cross-contract");
+        loadImage(STDCR.__icon__P_539_5.crossContract.icon);
+        STDCR.__icon__P_539_5.crossExpand = tm.styleFrom("treevirtual-cross-expand");
+        loadImage(STDCR.__icon__P_539_5.crossExpand.icon);
+        STDCR.__icon__P_539_5.end = tm.styleFrom("treevirtual-end");
+        loadImage(STDCR.__icon__P_539_5.end.icon);
+        STDCR.__icon__P_539_5.cross = tm.styleFrom("treevirtual-cross");
+        loadImage(STDCR.__icon__P_539_5.cross.icon);
       }
     },
     properties: {
@@ -177,14 +177,14 @@
     *****************************************************************************
     */
     members: {
-      __am__P_538_2: null,
-      __tm__P_538_4: null,
-      __rm__P_538_3: null,
+      __am__P_539_2: null,
+      __tm__P_539_4: null,
+      __rm__P_539_3: null,
       // overridden
       _onChangeTheme: function _onChangeTheme() {
         qx.ui.treevirtual.SimpleTreeDataCellRenderer.prototype._onChangeTheme.base.call(this);
 
-        qx.ui.treevirtual.SimpleTreeDataCellRenderer.__preloadImages__P_538_1();
+        qx.ui.treevirtual.SimpleTreeDataCellRenderer.__preloadImages__P_539_1();
       },
       // overridden
       _getCellStyle: function _getCellStyle(cellInfo) {
@@ -255,7 +255,7 @@
       _addImage: function _addImage(imageInfo) {
         var html = []; // Resolve the URI
 
-        var source = this.__rm__P_538_3.toUri(this.__am__P_538_2.resolve(imageInfo.url)); // If we've been given positioning attributes, enclose image in a div
+        var source = this.__rm__P_539_3.toUri(this.__am__P_539_2.resolve(imageInfo.url)); // If we've been given positioning attributes, enclose image in a div
 
 
         if (imageInfo.position) {
@@ -394,13 +394,13 @@
 
         if (!imageUrl) {
           if (node.type == qx.ui.treevirtual.SimpleTreeDataModel.Type.LEAF) {
-            var o = this.__tm__P_538_4.styleFrom("treevirtual-file");
+            var o = this.__tm__P_539_4.styleFrom("treevirtual-file");
           } else {
             var states = {
               opened: node.bOpened
             };
 
-            var o = this.__tm__P_538_4.styleFrom("treevirtual-folder", states);
+            var o = this.__tm__P_539_4.styleFrom("treevirtual-folder", states);
           }
 
           imageUrl = o.icon;
@@ -566,7 +566,7 @@
         if (column < node.level - 1) {
           // then return either a line or a blank icon, depending on
           // bUseTreeLines
-          return bUseTreeLines && !node.lastChild[column] ? STDCR.__icon__P_538_5.line : {
+          return bUseTreeLines && !node.lastChild[column] ? STDCR.__icon__P_539_5.line : {
             icon: this.BLANK
           };
         }
@@ -580,7 +580,7 @@
             // If we're not showing tree lines...
             if (!bUseTreeLines) {
               // ... then just use an expand or contract
-              return node.bOpened ? STDCR.__icon__P_538_5.contract : STDCR.__icon__P_538_5.expand;
+              return node.bOpened ? STDCR.__icon__P_539_5.contract : STDCR.__icon__P_539_5.expand;
             } // Are we looking at a top-level, first child of its parent?
 
 
@@ -588,10 +588,10 @@
               // Yup.  If it's also a last child...
               if (bLastChild) {
                 // ... then use no tree lines.
-                return node.bOpened ? STDCR.__icon__P_538_5.onlyContract : STDCR.__icon__P_538_5.onlyExpand;
+                return node.bOpened ? STDCR.__icon__P_539_5.onlyContract : STDCR.__icon__P_539_5.onlyExpand;
               } else {
                 // otherwise, use descender lines but no ascender.
-                return node.bOpened ? STDCR.__icon__P_538_5.startContract : STDCR.__icon__P_538_5.startExpand;
+                return node.bOpened ? STDCR.__icon__P_539_5.startContract : STDCR.__icon__P_539_5.startExpand;
               }
             } // It's not a top-level, first child.  Is this the last child of its
             // parent?
@@ -599,11 +599,11 @@
 
             if (bLastChild) {
               // Yup.  Return an ending expand or contract.
-              return node.bOpened ? STDCR.__icon__P_538_5.endContract : STDCR.__icon__P_538_5.endExpand;
+              return node.bOpened ? STDCR.__icon__P_539_5.endContract : STDCR.__icon__P_539_5.endExpand;
             } // Otherwise, return a crossing expand or contract.
 
 
-            return node.bOpened ? STDCR.__icon__P_538_5.crossContract : STDCR.__icon__P_538_5.crossExpand;
+            return node.bOpened ? STDCR.__icon__P_539_5.crossContract : STDCR.__icon__P_539_5.crossExpand;
           }
         } // This node does not have any children.  Return an end or cross, if
         // we're using tree lines.
@@ -623,18 +623,18 @@
 
             if (bLastChild) {
               // ... then return an end line.
-              return STDCR.__icon__P_538_5.end;
+              return STDCR.__icon__P_539_5.end;
             } // Otherwise if this is the first child and is a branch...
 
 
             if (node.bFirstChild && node.type == qx.ui.treevirtual.SimpleTreeDataModel.Type.BRANCH) {
               // ... then return a start line.
-              return node.bOpened ? STDCR.__icon__P_538_5.startContract : STDCR.__icon__P_538_5.startExpand;
+              return node.bOpened ? STDCR.__icon__P_539_5.startContract : STDCR.__icon__P_539_5.startExpand;
             }
           } // If this is a last child, return and ending line; otherwise cross.
 
 
-          return bLastChild ? STDCR.__icon__P_538_5.end : STDCR.__icon__P_538_5.cross;
+          return bLastChild ? STDCR.__icon__P_539_5.end : STDCR.__icon__P_539_5.cross;
         }
 
         return {
@@ -643,10 +643,10 @@
       }
     },
     destruct: function destruct() {
-      this.__am__P_538_2 = this.__rm__P_538_3 = this.__tm__P_538_4 = null;
+      this.__am__P_539_2 = this.__rm__P_539_3 = this.__tm__P_539_4 = null;
     }
   });
   qx.ui.treevirtual.SimpleTreeDataCellRenderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataCellRenderer.js.map?dt=1592520348844
+//# sourceMappingURL=SimpleTreeDataCellRenderer.js.map?dt=1592866043149

@@ -479,7 +479,7 @@
       "rendered": ""
     },
     members: {
-      __range__P_558_0: null,
+      __range__P_559_0: null,
       _value: null,
       _shownValue: null,
       // overridden
@@ -488,7 +488,7 @@
           return false;
         }
 
-        this.__range__P_558_0 = [];
+        this.__range__P_559_0 = [];
         var today = new Date();
         today = this._getNormalizedDate(today);
         this.showValue(today);
@@ -559,8 +559,8 @@
             }
           }
         } else if (this.getConfig("selectionMode") == "range") {
-          if (!this.__range__P_558_0) {
-            this.__range__P_558_0 = value.map(function (val) {
+          if (!this.__range__P_559_0) {
+            this.__range__P_559_0 = value.map(function (val) {
               return val.toDateString();
             });
           }
@@ -653,14 +653,14 @@
         var newValue = new Date(newStr);
 
         if (this.getConfig("selectionMode") == "range") {
-          var range = this.__range__P_558_0.slice(0);
+          var range = this.__range__P_559_0.slice(0);
 
           if (range.length == 2) {
             range = [];
           }
 
           range.push(newStr);
-          this.__range__P_558_0 = range;
+          this.__range__P_559_0 = range;
           range = range.map(function (item) {
             return new Date(item);
           });
@@ -813,7 +813,7 @@
                 cssClasses += " " + cssPrefix + "-selected";
               }
             } else {
-              var range = this.__range__P_558_0;
+              var range = this.__range__P_559_0;
 
               if (this._value) {
                 value = this.getConfig("selectionMode") == "range" ? new Date(range[range.length - 1]) : this._value;
@@ -1177,14 +1177,14 @@
       qx.ui.website.Widget.constructor.call(this, selector, context);
     },
     members: {
-      __active__P_559_0: null,
-      __pageContainer__P_559_1: null,
-      __scrollContainer__P_559_2: null,
-      __paginationLabels__P_559_3: null,
-      __startPosLeft__P_559_4: null,
-      __pagination__P_559_5: null,
+      __active__P_560_0: null,
+      __pageContainer__P_560_1: null,
+      __scrollContainer__P_560_2: null,
+      __paginationLabels__P_560_3: null,
+      __startPosLeft__P_560_4: null,
+      __pagination__P_560_5: null,
       _ie9: false,
-      __blocked__P_559_6: false,
+      __blocked__P_560_6: false,
       // overridden
       init: function init() {
         if (!qx.ui.website.Carousel.prototype.init.base.call(this)) {
@@ -1201,15 +1201,15 @@
 
         qxWeb(window).on("resize", this._onResize, this);
         var prefix = this.getCssPrefix();
-        this.__scrollContainer__P_559_2 = qxWeb.create("<div>").addClass(prefix + "-container").appendTo(this);
-        this.__pageContainer__P_559_1 = qxWeb.create("<div>").addClass("qx-hbox").setStyle("height", "100%").appendTo(this.__scrollContainer__P_559_2);
-        this.__paginationLabels__P_559_3 = [];
-        this.__pagination__P_559_5 = qxWeb.create("<div>").addClasses([prefix + "-pagination", "qx-hbox", "qx-flex1"]).setStyle("visibility", "excluded").appendTo(this);
+        this.__scrollContainer__P_560_2 = qxWeb.create("<div>").addClass(prefix + "-container").appendTo(this);
+        this.__pageContainer__P_560_1 = qxWeb.create("<div>").addClass("qx-hbox").setStyle("height", "100%").appendTo(this.__scrollContainer__P_560_2);
+        this.__paginationLabels__P_560_3 = [];
+        this.__pagination__P_560_5 = qxWeb.create("<div>").addClasses([prefix + "-pagination", "qx-hbox", "qx-flex1"]).setStyle("visibility", "excluded").appendTo(this);
 
         if (this._ie9) {
-          this.__pageContainer__P_559_1.setStyle("display", "table");
+          this.__pageContainer__P_560_1.setStyle("display", "table");
 
-          this.__pagination__P_559_5.setStyle("textAlign", "center");
+          this.__pagination__P_560_5.setStyle("textAlign", "center");
         } else {
           this.on("trackstart", this._onTrackStart, this).on("track", this._onTrack, this).on("trackend", this._onTrackEnd, this);
         }
@@ -1238,8 +1238,8 @@
        * @param page {qxWeb} The page to be activated
        */
       setActive: function setActive(page) {
-        var old = this.__active__P_559_0;
-        this.__active__P_559_0 = page;
+        var old = this.__active__P_560_0;
+        this.__active__P_560_0 = page;
 
         this._update();
 
@@ -1256,7 +1256,7 @@
        * @return {qxWeb} The active page
        */
       getActive: function getActive() {
-        return this.__active__P_559_0;
+        return this.__active__P_560_0;
       },
 
       /**
@@ -1319,14 +1319,14 @@
        * @param child {qxWeb} The added child.
        */
       addPage: function addPage(child) {
-        child.addClasses(["qx-flex1", this.getCssPrefix() + "-page"]).appendTo(this.__pageContainer__P_559_1);
+        child.addClasses(["qx-flex1", this.getCssPrefix() + "-page"]).appendTo(this.__pageContainer__P_560_1);
 
-        if (this.find("." + this.getCssPrefix() + "-page").length > this.__paginationLabels__P_559_3.length) {
+        if (this.find("." + this.getCssPrefix() + "-page").length > this.__paginationLabels__P_560_3.length) {
           var paginationLabel = this._createPaginationLabel();
 
-          this.__paginationLabels__P_559_3.push(paginationLabel);
+          this.__paginationLabels__P_560_3.push(paginationLabel);
 
-          this.__pagination__P_559_5.append(paginationLabel);
+          this.__pagination__P_560_5.append(paginationLabel);
         }
 
         this._updateWidth();
@@ -1344,7 +1344,7 @@
         this.find(".scroll").setStyle("touchAction", "pan-y"); // scroll as soon as we have the third page added
 
         if (this._getPages().length === 3 && !this._ie9) {
-          this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
+          this.__scrollContainer__P_560_2.translate([-this.getWidth() + "px", 0, 0]);
         }
 
         this._updatePagination();
@@ -1359,9 +1359,9 @@
         child.remove(); // reset the active page if we don't have any page at all
 
         if (this._getPages().length == 0) {
-          this.__pagination__P_559_5.empty();
+          this.__pagination__P_560_5.empty();
 
-          this.__paginationLabels__P_559_3 = [];
+          this.__paginationLabels__P_560_3 = [];
           this.setActive(null);
           return;
         }
@@ -1377,10 +1377,10 @@
           this._setOrder(this._getPages(), 0);
         }
 
-        this.__paginationLabels__P_559_3.splice(child.priorPosition, 1)[0].remove();
+        this.__paginationLabels__P_560_3.splice(child.priorPosition, 1)[0].remove();
 
-        for (var i = 0; i < this.__paginationLabels__P_559_3.length; i++) {
-          this.__paginationLabels__P_559_3[i].getChildren(".label").setHtml(i + 1 + "");
+        for (var i = 0; i < this.__paginationLabels__P_560_3.length; i++) {
+          this.__paginationLabels__P_560_3[i].getChildren(".label").setHtml(i + 1 + "");
         }
 
         this._updatePagination();
@@ -1415,9 +1415,9 @@
           var direction = this._updateOrder();
 
           if (direction == "right") {
-            left = this._getPositionLeft() - this.__scrollContainer__P_559_2.getWidth();
+            left = this._getPositionLeft() - this.__scrollContainer__P_560_2.getWidth();
           } else if (direction == "left") {
-            left = this._getPositionLeft() + this.__scrollContainer__P_559_2.getWidth();
+            left = this._getPositionLeft() + this.__scrollContainer__P_560_2.getWidth();
           } else if (this._getPages().length >= 3) {
             // back snapping if the order has not changed
             this._translateTo(this.getWidth());
@@ -1430,7 +1430,7 @@
 
           if (left !== undefined) {
             // first, translate the old page into view
-            this.__scrollContainer__P_559_2.translate([-left + "px", 0, 0]); // animate to the new page
+            this.__scrollContainer__P_560_2.translate([-left + "px", 0, 0]); // animate to the new page
 
 
             this._translateTo(this.getWidth());
@@ -1517,13 +1517,13 @@
 
 
         if (this._getPositionLeft() === 0 && this._getPages().length > 2 && !this._ie9) {
-          this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
+          this.__scrollContainer__P_560_2.translate([-this.getWidth() + "px", 0, 0]);
         } // set the container width to total width of all pages
 
 
         var containerWidth = this.getWidth() * this._getPages().length;
 
-        this.__pageContainer__P_559_1.setStyle("width", containerWidth + "px"); // set the width of all pages to the carousel width
+        this.__pageContainer__P_560_1.setStyle("width", containerWidth + "px"); // set the width of all pages to the carousel width
 
 
         this._getPages().setStyle("width", this.getWidth() + "px");
@@ -1536,16 +1536,16 @@
        * cancels any running animation.
        */
       _onTrackStart: function _onTrackStart() {
-        if (this.__blocked__P_559_6) {
+        if (this.__blocked__P_560_6) {
           return;
         }
 
-        this.__startPosLeft__P_559_4 = this._getPositionLeft();
+        this.__startPosLeft__P_560_4 = this._getPositionLeft();
 
-        this.__scrollContainer__P_559_2 // stop the current scroll animation
+        this.__scrollContainer__P_560_2 // stop the current scroll animation
         .stop() // correct the scroll position as the stopped animation
         // resets to its initial value
-        .translate([-Math.round(this.__startPosLeft__P_559_4) + "px", 0, 0]);
+        .translate([-Math.round(this.__startPosLeft__P_560_4) + "px", 0, 0]);
       },
 
       /**
@@ -1553,12 +1553,12 @@
        * @param e {Event} The track event.
        */
       _onTrack: function _onTrack(e) {
-        if (this.__blocked__P_559_6) {
+        if (this.__blocked__P_560_6) {
           return;
         }
 
         if (e.delta.axis == "x" && this._getPages().length > 2) {
-          this.__scrollContainer__P_559_2.translate([-(this.__startPosLeft__P_559_4 - e.delta.x) + "px", 0, 0]);
+          this.__scrollContainer__P_560_2.translate([-(this.__startPosLeft__P_560_4 - e.delta.x) + "px", 0, 0]);
         }
       },
 
@@ -1566,18 +1566,18 @@
        * TrackEnd handler for enabling the scroll events.
        */
       _onTrackEnd: function _onTrackEnd() {
-        if (this.__startPosLeft__P_559_4 == null || this.__blocked__P_559_6) {
+        if (this.__startPosLeft__P_560_4 == null || this.__blocked__P_560_6) {
           // don't end if we didn't start
           return;
         } // make sure the trackend handling is done after the swipe handling
 
 
         window.setTimeout(function () {
-          if (this._getPages().length < 3 || this.__scrollContainer__P_559_2.isPlaying()) {
+          if (this._getPages().length < 3 || this.__scrollContainer__P_560_2.isPlaying()) {
             return;
           }
 
-          this.__startPosLeft__P_559_4 = null;
+          this.__startPosLeft__P_560_4 = null;
           var width = this.getWidth();
 
           var pages = this._getPages();
@@ -1614,7 +1614,7 @@
        * @param e {Event} The swipe event.
        */
       _onSwipe: function _onSwipe(e) {
-        if (this.__blocked__P_559_6) {
+        if (this.__blocked__P_560_6) {
           return;
         }
 
@@ -1644,7 +1644,7 @@
        * @param e {Event} The tap event.
        */
       _onPaginationLabelTap: function _onPaginationLabelTap(e) {
-        this.__paginationLabels__P_559_3.forEach(function (label, index) {
+        this.__paginationLabels__P_560_3.forEach(function (label, index) {
           if (label[0] === e.currentTarget) {
             var pages = this._getPages(); // wo don't reorder with two pages there just set the active property
 
@@ -1660,16 +1660,16 @@
             this._setOrder(pages, 0); // get the active page into view
 
 
-            this.__scrollContainer__P_559_2.translate([-activeIndex * this.getWidth() + "px", 0, 0]);
+            this.__scrollContainer__P_560_2.translate([-activeIndex * this.getWidth() + "px", 0, 0]);
 
-            this.__blocked__P_559_6 = true; // animate to the desired page
+            this.__blocked__P_560_6 = true; // animate to the desired page
 
             this._translateTo((activeIndex + distance) * this.getWidth());
 
-            this.__scrollContainer__P_559_2.once("animationEnd", function (page) {
-              this.__blocked__P_559_6 = false; // set the viewport back to the default position
+            this.__scrollContainer__P_560_2.once("animationEnd", function (page) {
+              this.__blocked__P_560_6 = false; // set the viewport back to the default position
 
-              this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
+              this.__scrollContainer__P_560_2.translate([-this.getWidth() + "px", 0, 0]);
 
               this.setActive(page); // this also updates the order
 
@@ -1686,13 +1686,13 @@
        */
       _updatePagination: function _updatePagination() {
         // hide the pagination for one page
-        this._getPages().length < 2 ? this.__pagination__P_559_5.setStyle("visibility", "excluded") : this.__pagination__P_559_5.setStyle("visibility", "visible");
+        this._getPages().length < 2 ? this.__pagination__P_560_5.setStyle("visibility", "excluded") : this.__pagination__P_560_5.setStyle("visibility", "visible");
 
-        this.__pagination__P_559_5.find("." + this.getCssPrefix() + "-pagination-label").removeClass("active");
+        this.__pagination__P_560_5.find("." + this.getCssPrefix() + "-pagination-label").removeClass("active");
 
         var pages = this._getPages();
 
-        this.__paginationLabels__P_559_3[pages.indexOf(this.getActive())].addClass("active");
+        this.__paginationLabels__P_560_3[pages.indexOf(this.getActive())].addClass("active");
       },
 
       /**
@@ -1702,7 +1702,7 @@
         this._updateWidth();
 
         if (this._getPages().length > 2) {
-          this.__scrollContainer__P_559_2.translate([-this.getWidth() + "px", 0, 0]);
+          this.__scrollContainer__P_560_2.translate([-this.getWidth() + "px", 0, 0]);
         }
       },
 
@@ -1711,7 +1711,7 @@
        * @param left {Number} The new left position
        */
       _translateTo: function _translateTo(left) {
-        this.__scrollContainer__P_559_2.animate({
+        this.__scrollContainer__P_560_2.animate({
           duration: this.getConfig("pageSwitchDuration"),
           keep: 100,
           timing: "ease",
@@ -1756,7 +1756,7 @@
        * @return {qxWeb} All pages.
        */
       _getPages: function _getPages() {
-        return this.__pageContainer__P_559_1.find("." + this.getCssPrefix() + "-page");
+        return this.__pageContainer__P_560_1.find("." + this.getCssPrefix() + "-page");
       },
 
       /**
@@ -1764,7 +1764,7 @@
        * @return {Number} The position in px.
        */
       _getPositionLeft: function _getPositionLeft() {
-        var containerRect = this.__scrollContainer__P_559_2[0].getBoundingClientRect();
+        var containerRect = this.__scrollContainer__P_560_2[0].getBoundingClientRect();
 
         var parentRect = this[0].getBoundingClientRect();
         return -(containerRect.left - parentRect.left);
@@ -1863,7 +1863,7 @@
     extend: qx.ui.website.Widget,
     statics: {
       /** List of valid positions to check against */
-      __validPositions__P_560_0: null,
+      __validPositions__P_561_0: null,
 
       /**
        * *format*
@@ -1979,11 +1979,11 @@
         var uniqueId = Math.round(Math.random() * 10000);
         this._uniqueId = uniqueId;
 
-        this.__setReadOnly__P_560_1(this);
+        this.__setReadOnly__P_561_1(this);
 
-        this.__setIcon__P_560_2(this);
+        this.__setIcon__P_561_2(this);
 
-        this.__addInputListener__P_560_3(this);
+        this.__addInputListener__P_561_3(this);
 
         var calendarId = 'datepicker-calendar-' + uniqueId;
         var calendar = qxWeb.create('<div id="' + calendarId + '"></div>').calendar();
@@ -2008,11 +2008,11 @@
       render: function render() {
         this.getCalendar().render();
 
-        this.__setReadOnly__P_560_1(this);
+        this.__setReadOnly__P_561_1(this);
 
-        this.__setIcon__P_560_2(this);
+        this.__setIcon__P_561_2(this);
 
-        this.__addInputListener__P_560_3(this);
+        this.__addInputListener__P_561_3(this);
 
         this.setEnabled(this.getEnabled());
         return this;
@@ -2020,7 +2020,7 @@
       // overridden
       setConfig: function setConfig(name, config) {
         if (name === 'position') {
-          var validPositions = qx.ui.website.DatePicker.__validPositions__P_560_0;
+          var validPositions = qx.ui.website.DatePicker.__validPositions__P_561_0;
 
           if (validPositions.indexOf(config) === -1) {
             throw new Error("Wrong config value for \"position\"! Only the values \"" + validPositions.join('", "') + '" are supported!');
@@ -2113,7 +2113,7 @@
        *
        * @param collection {qxWeb} collection to work on
        */
-      __setReadOnly__P_560_1: function __setReadOnly__P_560_1(collection) {
+      __setReadOnly__P_561_1: function __setReadOnly__P_561_1(collection) {
         if (collection.getConfig('readonly')) {
           collection.setAttribute('readonly', 'readonly');
         } else {
@@ -2126,7 +2126,7 @@
        *
        * @param collection {qxWeb} collection to work on
        */
-      __setIcon__P_560_2: function __setIcon__P_560_2(collection) {
+      __setIcon__P_561_2: function __setIcon__P_561_2(collection) {
         var icon;
 
         if (collection.getConfig('icon') === null) {
@@ -2166,7 +2166,7 @@
        *
        * @param collection {qxWeb} collection to work on
        */
-      __addInputListener__P_560_3: function __addInputListener__P_560_3(collection) {
+      __addInputListener__P_561_3: function __addInputListener__P_561_3(collection) {
         if (collection.getConfig('mode') === 'icon') {
           collection.off('tap', collection._onTap);
         } else {
@@ -2193,7 +2193,7 @@
       qxWeb.$attach({
         datepicker: statics.datepicker
       });
-      statics.__validPositions__P_560_0 = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right', 'left-top', 'left-middle', 'left-bottom', 'right-top', 'right-middle', 'right-bottom'];
+      statics.__validPositions__P_561_0 = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right', 'left-top', 'left-middle', 'left-bottom', 'right-top', 'right-middle', 'right-bottom'];
     }
   });
   qx.ui.website.DatePicker.$$dbClassInfo = $$dbClassInfo;
@@ -2674,7 +2674,7 @@
       "changePosition": "Number"
     },
     members: {
-      __dragMode__P_561_0: null,
+      __dragMode__P_562_0: null,
       _value: 0,
       init: function init() {
         if (!qx.ui.website.Slider.prototype.init.base.call(this)) {
@@ -2748,7 +2748,7 @@
         this._value = value;
 
         if (qxWeb.type.get(step) != "Array" || step.indexOf(value) != -1) {
-          this.__valueToPosition__P_561_1(value);
+          this.__valueToPosition__P_562_1(value);
 
           this.getChildren("." + this.getCssPrefix() + "-knob").setHtml(this._getKnobContent());
           this.emit("changeValue", value);
@@ -2921,11 +2921,11 @@
       _onPointerDown: function _onPointerDown(e) {
         // this can happen if the user releases the button while dragging outside
         // of the browser viewport
-        if (this.__dragMode__P_561_0) {
+        if (this.__dragMode__P_562_0) {
           return;
         }
 
-        this.__dragMode__P_561_0 = true;
+        this.__dragMode__P_562_0 = true;
         qxWeb(document.documentElement).on("pointermove", this._onPointerMove, this).setStyle("cursor", "pointer");
         e.stopPropagation();
       },
@@ -2937,11 +2937,11 @@
        * @param e {qx.event.Emitter} Incoming event object
        */
       _onDocPointerUp: function _onDocPointerUp(e) {
-        if (this.__dragMode__P_561_0 === true) {
+        if (this.__dragMode__P_562_0 === true) {
           // Cleanup status flags
-          delete this.__dragMode__P_561_0;
+          delete this.__dragMode__P_562_0;
 
-          this.__valueToPosition__P_561_1(this.getValue());
+          this.__valueToPosition__P_562_1(this.getValue());
 
           qxWeb(document.documentElement).off("pointermove", this._onPointerMove, this).setStyle("cursor", "auto");
           e.stopPropagation();
@@ -2956,7 +2956,7 @@
       _onPointerMove: function _onPointerMove(e) {
         e.preventDefault();
 
-        if (this.__dragMode__P_561_0) {
+        if (this.__dragMode__P_562_0) {
           var dragPosition = e.getDocumentLeft();
 
           var dragBoundaries = this._getDragBoundaries();
@@ -3077,7 +3077,7 @@
           this._getPixels();
         }
 
-        this.__valueToPosition__P_561_1(this._value);
+        this.__valueToPosition__P_562_1(this._value);
       },
 
       /**
@@ -3086,7 +3086,7 @@
        *
        * @param value {Integer} slider step value
        */
-      __valueToPosition__P_561_1: function __valueToPosition__P_561_1(value) {
+      __valueToPosition__P_562_1: function __valueToPosition__P_562_1(value) {
         var pixels = this._getPixels();
 
         var paddingLeft = Math.ceil(parseFloat(this.getStyle("paddingLeft")) || 0);
@@ -3309,7 +3309,7 @@
        */
       table: function table(model) {
         var table = new qx.ui.website.Table(this);
-        table.__model__P_562_0 = model;
+        table.__model__P_563_0 = model;
         table.init();
         return table;
       },
@@ -3319,7 +3319,7 @@
        * @param n {String} The String to check the type for
        * @return {Boolean} The result of the check
        */
-      __isNumber__P_562_1: function __isNumber__P_562_1(n) {
+      __isNumber__P_563_1: function __isNumber__P_563_1(n) {
         return (Object.prototype.toString.call(n) === '[object Number]' || Object.prototype.toString.call(n) === '[object String]') && !isNaN(parseFloat(n)) && isFinite(n.toString().replace(/^-/, ''));
       },
 
@@ -3328,7 +3328,7 @@
        * @param val {String} The String to check the type for
        * @return {Boolean} The result of the check
        */
-      __isDate__P_562_2: function __isDate__P_562_2(val) {
+      __isDate__P_563_2: function __isDate__P_563_2(val) {
         var d = new Date(val);
         return !isNaN(d.valueOf());
       },
@@ -3339,7 +3339,7 @@
        * @param htmlElement {HTMLElement} The HTMLElement
        * @return {Integer} The position of the htmlElement or -1
        */
-      __getIndex__P_562_3: function __getIndex__P_562_3(htmlCollection, htmlElement) {
+      __getIndex__P_563_3: function __getIndex__P_563_3(htmlCollection, htmlElement) {
         var index = -1;
 
         for (var i = 0, l = htmlCollection.length; i < l; i++) {
@@ -3356,69 +3356,69 @@
       * Generates an unique id
       * @return {String} The generated id
       */
-      __getUID__P_562_4: function __getUID__P_562_4() {
+      __getUID__P_563_4: function __getUID__P_563_4() {
         return (new Date().getTime() + "" + Math.floor(Math.random() * 1000000)).substr(0, 18);
       },
 
       /** */
-      __selectionTypes__P_562_5: ["single", "multiple", "none"],
+      __selectionTypes__P_563_5: ["single", "multiple", "none"],
 
       /** */
-      __internalCellClass__P_562_6: "qx-table-cell",
+      __internalCellClass__P_563_6: "qx-table-cell",
 
       /** */
-      __internalHeaderClass__P_562_7: "qx-table-header",
+      __internalHeaderClass__P_563_7: "qx-table-header",
 
       /** */
-      __internalSelectionClass__P_562_8: "qx-table-row-selection",
+      __internalSelectionClass__P_563_8: "qx-table-row-selection",
 
       /** */
-      __internalInputClass__P_562_9: "qx-table-selection-input",
+      __internalInputClass__P_563_9: "qx-table-selection-input",
 
       /** */
-      __allColumnSelector__P_562_10: "qx-table-all-columns",
+      __allColumnSelector__P_563_10: "qx-table-all-columns",
 
       /** */
-      __dataColName__P_562_11: "data-qx-table-col-name",
+      __dataColName__P_563_11: "data-qx-table-col-name",
 
       /** */
-      __dataColType__P_562_12: "data-qx-table-col-type",
+      __dataColType__P_563_12: "data-qx-table-col-type",
 
       /** */
-      __dataSortingKey__P_562_13: "data-qx-table-cell-key",
+      __dataSortingKey__P_563_13: "data-qx-table-cell-key",
 
       /** */
-      __modelSortingKey__P_562_14: "cellKey",
+      __modelSortingKey__P_563_14: "cellKey",
 
       /** */
-      __inputLabelClass__P_562_15: "qx-table-input-label",
+      __inputLabelClass__P_563_15: "qx-table-input-label",
 
       /** */
-      __selectedRowClass__P_562_16: "qx-table-row-selected",
+      __selectedRowClass__P_563_16: "qx-table-row-selected",
 
       /** */
-      __ascSortingClass__P_562_17: "qx-table-sort-asc",
+      __ascSortingClass__P_563_17: "qx-table-sort-asc",
 
       /** */
-      __descSortingClass__P_562_18: "qqx-table-sort-desc"
+      __descSortingClass__P_563_18: "qqx-table-sort-desc"
     },
     members: {
-      __model__P_562_0: null,
-      __columnMeta__P_562_19: null,
-      __sortingFunction__P_562_20: null,
-      __filterFunction__P_562_21: null,
-      __filterFunc__P_562_22: null,
-      __filters__P_562_23: null,
-      __inputName__P_562_24: null,
-      __hovered__P_562_25: null,
-      __sortingData__P_562_26: null,
+      __model__P_563_0: null,
+      __columnMeta__P_563_19: null,
+      __sortingFunction__P_563_20: null,
+      __filterFunction__P_563_21: null,
+      __filterFunc__P_563_22: null,
+      __filters__P_563_23: null,
+      __inputName__P_563_24: null,
+      __hovered__P_563_25: null,
+      __sortingData__P_563_26: null,
       // overridden
       init: function init() {
         if (!qx.ui.website.Table.prototype.init.base.call(this)) {
           return false;
         }
 
-        var model = this.__model__P_562_0;
+        var model = this.__model__P_563_0;
 
         if (qxWeb.getNodeName(this).toUpperCase() !== "TABLE") {
           throw new Error("collection should contains only table elements !!");
@@ -3429,16 +3429,16 @@
         }
 
         this.find("tbody td").addClass("qx-table-cell");
-        this.__inputName__P_562_24 = "input" + qx.ui.website.Table.__getUID__P_562_4();
+        this.__inputName__P_563_24 = "input" + qx.ui.website.Table.__getUID__P_563_4();
 
-        this.__getColumnMetaData__P_562_27(model);
+        this.__getColumnMetaData__P_563_27(model);
 
         this.setModel(model);
-        this.setSortingFunction(this.__defaultColumnSort__P_562_28);
+        this.setSortingFunction(this.__defaultColumnSort__P_563_28);
 
-        this.__registerEvents__P_562_29();
+        this.__registerEvents__P_563_29();
 
-        this.__hovered__P_562_25 = null;
+        this.__hovered__P_563_25 = null;
         return true;
       },
 
@@ -3451,7 +3451,7 @@
       setModel: function setModel(model) {
         if (typeof model != "undefined") {
           if (qx.lang.Type.isArray(model)) {
-            this.__model__P_562_0 = model;
+            this.__model__P_563_0 = model;
             this.emit("modelChange", model);
           } else {
             throw new Error("model must be an Array !!");
@@ -3468,9 +3468,9 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       setColumnType: function setColumnType(columnName, type) {
-        this.__checkColumnExistance__P_562_30(columnName);
+        this.__checkColumnExistance__P_563_30(columnName);
 
-        this.__columnMeta__P_562_19[columnName].type = type;
+        this.__columnMeta__P_563_19[columnName].type = type;
         return this;
       },
 
@@ -3480,9 +3480,9 @@
        * @return {String} The type of the specified column
        */
       getColumnType: function getColumnType(columnName) {
-        this.eq(0).__checkColumnExistance__P_562_30(columnName);
+        this.eq(0).__checkColumnExistance__P_563_30(columnName);
 
-        return this.eq(0).__columnMeta__P_562_19[columnName].type;
+        return this.eq(0).__columnMeta__P_563_19[columnName].type;
       },
 
       /**
@@ -3492,7 +3492,7 @@
        * @return {qxWeb} The cell found at the given position
        */
       getCell: function getCell(row, col) {
-        return qxWeb(this.eq(0).__getRoot__P_562_31().rows.item(row).cells.item(col));
+        return qxWeb(this.eq(0).__getRoot__P_563_31().rows.item(row).cells.item(col));
       },
 
       /**
@@ -3500,7 +3500,7 @@
       * @return {qxWeb} The collection containing the table rows
       */
       getRows: function getRows() {
-        return qxWeb(this.eq(0).__getRoot__P_562_31().rows);
+        return qxWeb(this.eq(0).__getRoot__P_563_31().rows);
       },
 
       /**
@@ -3546,7 +3546,7 @@
       setSortingFunction: function setSortingFunction(func) {
         func = func || function () {};
 
-        this.__sortingFunction__P_562_20 = func;
+        this.__sortingFunction__P_563_20 = func;
         return this;
       },
 
@@ -3555,7 +3555,7 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       unsetSortingFunction: function unsetSortingFunction() {
-        this.__sortingFunction__P_562_20 = this.__defaultColumnSort__P_562_28;
+        this.__sortingFunction__P_563_20 = this.__defaultColumnSort__P_563_28;
         return this;
       },
 
@@ -3565,7 +3565,7 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       setFilterFunction: function setFilterFunction(func) {
-        this.__filterFunction__P_562_21 = func;
+        this.__filterFunction__P_563_21 = func;
         return this;
       },
 
@@ -3574,7 +3574,7 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       unsetFilterFunction: function unsetFilterFunction() {
-        this.__filterFunction__P_562_21 = this.__defaultColumnFilter__P_562_32;
+        this.__filterFunction__P_563_21 = this.__defaultColumnFilter__P_563_32;
         return this;
       },
 
@@ -3586,13 +3586,13 @@
       *
       */
       setColumnFilter: function setColumnFilter(columnName, func) {
-        this.__checkColumnExistance__P_562_30(columnName);
+        this.__checkColumnExistance__P_563_30(columnName);
 
-        if (!this.__filterFunc__P_562_22) {
-          this.__filterFunc__P_562_22 = {};
+        if (!this.__filterFunc__P_563_22) {
+          this.__filterFunc__P_563_22 = {};
         }
 
-        this.__filterFunc__P_562_22[columnName] = func;
+        this.__filterFunc__P_563_22[columnName] = func;
         return this;
       },
 
@@ -3604,8 +3604,8 @@
       *
       */
       getColumnFilter: function getColumnFilter(columnName) {
-        if (this.__filterFunc__P_562_22) {
-          return this.__filterFunc__P_562_22[columnName];
+        if (this.__filterFunc__P_563_22) {
+          return this.__filterFunc__P_563_22[columnName];
         }
 
         return null;
@@ -3617,11 +3617,11 @@
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
       setRowFilter: function setRowFilter(func) {
-        if (!this.__filterFunc__P_562_22) {
-          this.__filterFunc__P_562_22 = {};
+        if (!this.__filterFunc__P_563_22) {
+          this.__filterFunc__P_563_22 = {};
         }
 
-        this.__filterFunc__P_562_22.row = func;
+        this.__filterFunc__P_563_22.row = func;
         return this;
       },
 
@@ -3631,8 +3631,8 @@
       *
       */
       getRowFilter: function getRowFilter() {
-        if (this.__filterFunc__P_562_22) {
-          return this.__filterFunc__P_562_22.row;
+        if (this.__filterFunc__P_563_22) {
+          return this.__filterFunc__P_563_22.row;
         }
 
         return null;
@@ -3645,11 +3645,11 @@
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
       sort: function sort(columnName, dir) {
-        this.__checkColumnExistance__P_562_30(columnName);
+        this.__checkColumnExistance__P_563_30(columnName);
 
         this.setSortingClass(columnName, dir);
 
-        this.__sortDOM__P_562_33(this.__sort__P_562_34(columnName, dir));
+        this.__sortDOM__P_563_33(this.__sort__P_563_34(columnName, dir));
 
         this.emit("sort", {
           columName: columnName,
@@ -3666,31 +3666,31 @@
       */
       filter: function filter(keyword, columnName) {
         if (columnName) {
-          this.__checkColumnExistance__P_562_30(columnName);
+          this.__checkColumnExistance__P_563_30(columnName);
 
           if (keyword == "") {
             this.resetFilter(columnName);
           }
         } else {
-          columnName = qx.ui.website.Table.__allColumnSelector__P_562_10;
+          columnName = qx.ui.website.Table.__allColumnSelector__P_563_10;
         }
 
-        if (!this.__filters__P_562_23) {
-          this.__filters__P_562_23 = {};
+        if (!this.__filters__P_563_23) {
+          this.__filters__P_563_23 = {};
         }
 
-        if (this.__filters__P_562_23[columnName]) {
-          this.__filters__P_562_23[columnName].keyword = keyword;
+        if (this.__filters__P_563_23[columnName]) {
+          this.__filters__P_563_23[columnName].keyword = keyword;
 
-          this.__getRoot__P_562_31().appendChild(this.__filters__P_562_23[columnName].rows);
+          this.__getRoot__P_563_31().appendChild(this.__filters__P_563_23[columnName].rows);
         } else {
-          this.__filters__P_562_23[columnName] = {
+          this.__filters__P_563_23[columnName] = {
             keyword: keyword,
             rows: document.createDocumentFragment()
           };
         }
 
-        this.__filterDom__P_562_35(keyword, columnName);
+        this.__filterDom__P_563_35(keyword, columnName);
 
         this.emit("filter", {
           columName: columnName,
@@ -3706,14 +3706,14 @@
       */
       resetFilter: function resetFilter(columnName) {
         var filters = null;
-        filters = this.__filters__P_562_23;
+        filters = this.__filters__P_563_23;
 
         if (filters) {
           if (columnName) {
-            this.__getRoot__P_562_31().appendChild(filters[columnName].rows);
+            this.__getRoot__P_563_31().appendChild(filters[columnName].rows);
           } else {
             for (var col in filters) {
-              this.__getRoot__P_562_31().appendChild(filters[col].rows);
+              this.__getRoot__P_563_31().appendChild(filters[col].rows);
             }
           }
         }
@@ -3727,7 +3727,7 @@
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
       setContent: function setContent(tableData) {
-        var rows = this.__extractTableRows__P_562_36(tableData);
+        var rows = this.__extractTableRows__P_563_36(tableData);
 
         var tbody = this.find('tbody');
         tbody.empty();
@@ -3742,7 +3742,7 @@
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
       appendContent: function appendContent(tableData) {
-        var rows = this.__extractTableRows__P_562_36(tableData);
+        var rows = this.__extractTableRows__P_563_36(tableData);
 
         var tbody = this.find('tbody');
         rows.appendTo(tbody);
@@ -3755,7 +3755,7 @@
       * @param data {qxWeb|String} Data containing the rows to be extracted
       * @return {qxWeb} Collection containing extracted rows
       */
-      __extractTableRows__P_562_36: function __extractTableRows__P_562_36(data) {
+      __extractTableRows__P_563_36: function __extractTableRows__P_563_36(data) {
         var rows = qxWeb();
 
         if (typeof data == "string") {
@@ -3795,13 +3795,13 @@
       * @param columnName {String ?} The column name
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __filterDom__P_562_35: function __filterDom__P_562_35(keyword, columnName) {
-        var colIndex = this.__getColumnIndex__P_562_37(columnName);
+      __filterDom__P_563_35: function __filterDom__P_563_35(keyword, columnName) {
+        var colIndex = this.__getColumnIndex__P_563_37(columnName);
 
-        var filterFunc = columnName == qx.ui.website.Table.__allColumnSelector__P_562_10 ? this.getRowFilter() : this.getColumnFilter(columnName);
-        filterFunc = filterFunc || this.__defaultColumnFilter__P_562_32;
+        var filterFunc = columnName == qx.ui.website.Table.__allColumnSelector__P_563_10 ? this.getRowFilter() : this.getColumnFilter(columnName);
+        filterFunc = filterFunc || this.__defaultColumnFilter__P_563_32;
 
-        var rows = this.__getDataRows__P_562_38(),
+        var rows = this.__getDataRows__P_563_38(),
             data = {};
 
         for (var i = 0; i < rows.length; i++) {
@@ -3814,7 +3814,7 @@
           };
 
           if (!filterFunc.bind(this)(data)) {
-            this.__filters__P_562_23[columnName].rows.appendChild(rows[i]);
+            this.__filters__P_563_23[columnName].rows.appendChild(rows[i]);
           }
         }
 
@@ -3826,21 +3826,21 @@
        * @return {Map} The map containing the current sorting information
        */
       getSortingData: function getSortingData() {
-        return this.__sortingData__P_562_26;
+        return this.__sortingData__P_563_26;
       },
       //overridden
       render: function render() {
         var sortingData = this.getSortingData();
         var rowSelection = this.getConfig("rowSelection");
 
-        this.__applyTemplate__P_562_39(this.__model__P_562_0);
+        this.__applyTemplate__P_563_39(this.__model__P_563_0);
 
-        if (qx.ui.website.Table.__selectionTypes__P_562_5.indexOf(rowSelection) != -1) {
-          this.__processSelectionInputs__P_562_40(rowSelection);
+        if (qx.ui.website.Table.__selectionTypes__P_563_5.indexOf(rowSelection) != -1) {
+          this.__processSelectionInputs__P_563_40(rowSelection);
         }
 
         if (sortingData) {
-          this.__sortDOM__P_562_33(this.__sort__P_562_34(sortingData.columnName, sortingData.direction));
+          this.__sortDOM__P_563_33(this.__sort__P_563_34(sortingData.columnName, sortingData.direction));
         }
 
         return this;
@@ -3852,20 +3852,20 @@
       * @param rowSelection {String} The selection mode
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __processSelectionInputs__P_562_40: function __processSelectionInputs__P_562_40(rowSelection) {
+      __processSelectionInputs__P_563_40: function __processSelectionInputs__P_563_40(rowSelection) {
         switch (rowSelection) {
           case "none":
-            qxWeb("." + qx.ui.website.Table.__internalSelectionClass__P_562_8).remove();
+            qxWeb("." + qx.ui.website.Table.__internalSelectionClass__P_563_8).remove();
             break;
 
           case "multiple":
           case "single":
-            this.__createInputs__P_562_41("checkbox");
+            this.__createInputs__P_563_41("checkbox");
 
             break;
 
           case "single":
-            this.__createInputs__P_562_41("radio");
+            this.__createInputs__P_563_41("radio");
 
             break;
         }
@@ -3878,13 +3878,13 @@
        * @param type {String} The type of the inputs to creates
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __createInputs__P_562_41: function __createInputs__P_562_41(type) {
-        this.__createInput__P_562_42(this.__getHeaderRow__P_562_43(), type);
+      __createInputs__P_563_41: function __createInputs__P_563_41(type) {
+        this.__createInput__P_563_42(this.__getHeaderRow__P_563_43(), type);
 
         var rows = this.find("tbody")[0].getElementsByTagName("tr");
 
         for (var i = 0; i < rows.length; i++) {
-          this.__createInput__P_562_42(rows.item(i), type);
+          this.__createInput__P_563_42(rows.item(i), type);
         }
 
         return this;
@@ -3896,10 +3896,10 @@
       * @param type {String} The type of the input tom create (radio or checkbox)
       * @param nodeName {String} The nodename of the table cell that will contain the input
       */
-      __createInput__P_562_42: function __createInput__P_562_42(row, type, nodeName) {
+      __createInput__P_563_42: function __createInput__P_563_42(row, type, nodeName) {
         var cssPrefix = this.getCssPrefix();
         var clazz = qx.ui.website.Table;
-        var headerInput = qxWeb("." + clazz.__internalHeaderClass__P_562_7 + " input");
+        var headerInput = qxWeb("." + clazz.__internalHeaderClass__P_563_7 + " input");
         var selectionMode = this.getConfig("rowSelection");
         var checked = "";
 
@@ -3911,18 +3911,18 @@
           nodeName = qxWeb.getNodeName(qxWeb(row.cells.item(0)));
         }
 
-        var inputName = this.__inputName__P_562_24;
-        var className = nodeName == "th" ? clazz.__internalSelectionClass__P_562_8 + " " + clazz.__internalHeaderClass__P_562_7 : clazz.__internalSelectionClass__P_562_8;
-        var currentInput = qxWeb(row).find("." + clazz.__internalSelectionClass__P_562_8);
+        var inputName = this.__inputName__P_563_24;
+        var className = nodeName == "th" ? clazz.__internalSelectionClass__P_563_8 + " " + clazz.__internalHeaderClass__P_563_7 : clazz.__internalSelectionClass__P_563_8;
+        var currentInput = qxWeb(row).find("." + clazz.__internalSelectionClass__P_563_8);
 
         if (currentInput.length > 0) {
           if (currentInput[0].type != type) {
             currentInput[0].type = type;
           }
         } else {
-          var id = qx.ui.website.Table.__getUID__P_562_4();
+          var id = qx.ui.website.Table.__getUID__P_563_4();
 
-          var inputNode = qxWeb.create("<" + nodeName + " class='" + className + "'><input id='" + id + "' name='" + inputName + "' " + checked + " class='" + cssPrefix + "-" + type + " " + clazz.__internalInputClass__P_562_9 + "' type='" + type + "' /><label class='" + clazz.__inputLabelClass__P_562_15 + "' for='" + id + "'></label></" + nodeName + ">");
+          var inputNode = qxWeb.create("<" + nodeName + " class='" + className + "'><input id='" + id + "' name='" + inputName + "' " + checked + " class='" + cssPrefix + "-" + type + " " + clazz.__internalInputClass__P_563_9 + "' type='" + type + "' /><label class='" + clazz.__inputLabelClass__P_563_15 + "' for='" + id + "'></label></" + nodeName + ">");
 
           if (row.cells.item(0)) {
             inputNode.insertBefore(qxWeb(row.cells.item(0)));
@@ -3936,8 +3936,8 @@
       * Checks if a column with the specified name exists
       * @param columnName {String} The name of the column to check
       */
-      __checkColumnExistance__P_562_30: function __checkColumnExistance__P_562_30(columnName) {
-        var data = this.__columnMeta__P_562_19;
+      __checkColumnExistance__P_563_30: function __checkColumnExistance__P_563_30(columnName) {
+        var data = this.__columnMeta__P_563_19;
 
         if (data && !data[columnName]) {
           throw new Error("Column " + columnName + " does not exists !");
@@ -3948,7 +3948,7 @@
       * Returns the row containing the cells with the column names
       * @return {HTMLTableRowElement} The row with meta information
       */
-      __getHeaderRow__P_562_43: function __getHeaderRow__P_562_43() {
+      __getHeaderRow__P_563_43: function __getHeaderRow__P_563_43() {
         var tHeadOrFoot = this[0].tHead;
 
         if (!tHeadOrFoot) {
@@ -3975,35 +3975,35 @@
        * @param model {Array} The widget's model
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __getColumnMetaData__P_562_27: function __getColumnMetaData__P_562_27(model) {
-        this.__addClassToHeaderAndFooter__P_562_44(this[0].tHead);
+      __getColumnMetaData__P_563_27: function __getColumnMetaData__P_563_27(model) {
+        this.__addClassToHeaderAndFooter__P_563_44(this[0].tHead);
 
-        this.__addClassToHeaderAndFooter__P_562_44(this[0].tFoot);
+        this.__addClassToHeaderAndFooter__P_563_44(this[0].tFoot);
 
         var data = {},
             cells = null,
             colName = null,
             cell = null;
 
-        var headerRow = this.__getHeaderRow__P_562_43();
+        var headerRow = this.__getHeaderRow__P_563_43();
 
         cells = headerRow.cells;
 
         for (var i = 0, l = cells.length; i < l; i++) {
           cell = qxWeb(cells.item(i));
-          colName = this.__getColumName__P_562_45(cell[0]) || qx.ui.website.Table.__getUID__P_562_4();
+          colName = this.__getColumName__P_563_45(cell[0]) || qx.ui.website.Table.__getUID__P_563_4();
 
-          if (!cell[0].getAttribute(qx.ui.website.Table.__dataColName__P_562_11)) {
-            cell.setAttribute(qx.ui.website.Table.__dataColName__P_562_11, colName);
+          if (!cell[0].getAttribute(qx.ui.website.Table.__dataColName__P_563_11)) {
+            cell.setAttribute(qx.ui.website.Table.__dataColName__P_563_11, colName);
           }
 
           data[colName] = {
-            type: cell[0].getAttribute(qx.ui.website.Table.__dataColType__P_562_12) || "String",
+            type: cell[0].getAttribute(qx.ui.website.Table.__dataColType__P_563_12) || "String",
             name: colName
           };
         }
 
-        this.__columnMeta__P_562_19 = data;
+        this.__columnMeta__P_563_19 = data;
         return this;
       },
 
@@ -4012,13 +4012,13 @@
        * @param footOrHead {HTMLElement} Html element representing the header or footer of the table
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __addClassToHeaderAndFooter__P_562_44: function __addClassToHeaderAndFooter__P_562_44(footOrHead) {
+      __addClassToHeaderAndFooter__P_563_44: function __addClassToHeaderAndFooter__P_563_44(footOrHead) {
         if (footOrHead && footOrHead.rows.length > 0) {
           if (footOrHead.rows.item(0).cells.length > 0) {
-            var row = this.__getHeaderRow__P_562_43();
+            var row = this.__getHeaderRow__P_563_43();
 
-            if (!qxWeb(row.cells.item(0)).hasClass(qx.ui.website.Table.__internalHeaderClass__P_562_7)) {
-              qxWeb(row.cells).addClass(qx.ui.website.Table.__internalHeaderClass__P_562_7);
+            if (!qxWeb(row.cells.item(0)).hasClass(qx.ui.website.Table.__internalHeaderClass__P_563_7)) {
+              qxWeb(row.cells).addClass(qx.ui.website.Table.__internalHeaderClass__P_563_7);
             }
           }
         }
@@ -4031,12 +4031,12 @@
        * @param dataRows {Array} Array containing the sorted rows
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __sortDOM__P_562_33: function __sortDOM__P_562_33(dataRows) {
+      __sortDOM__P_563_33: function __sortDOM__P_563_33(dataRows) {
         for (var i = 0, l = dataRows.length; i < l; i++) {
           if (i) {
             qxWeb(dataRows[i]).insertAfter(dataRows[i - 1]);
           } else {
-            qxWeb(dataRows[i]).insertBefore(qxWeb(this.__getRoot__P_562_31().rows.item(0)));
+            qxWeb(dataRows[i]).insertBefore(qxWeb(this.__getRoot__P_563_31().rows.item(0)));
           }
         }
 
@@ -4047,15 +4047,15 @@
        * registers global events
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __registerEvents__P_562_29: function __registerEvents__P_562_29() {
-        this.on("tap", this.__detectClickedCell__P_562_46);
+      __registerEvents__P_563_29: function __registerEvents__P_563_29() {
+        this.on("tap", this.__detectClickedCell__P_563_46);
         this.on("cellClick", function (data) {
-          if (data.cell && data.cell.hasClass(qx.ui.website.Table.__internalHeaderClass__P_562_7)) {
-            this.__sortingFunction__P_562_20.bind(this)(data);
+          if (data.cell && data.cell.hasClass(qx.ui.website.Table.__internalHeaderClass__P_563_7)) {
+            this.__sortingFunction__P_563_20.bind(this)(data);
           }
         }, this);
-        this.on("pointerover", this.__cellHover__P_562_47, this);
-        this.on("pointerout", this.__cellOut__P_562_48, this);
+        this.on("pointerover", this.__cellHover__P_563_47, this);
+        this.on("pointerout", this.__cellOut__P_563_48, this);
         return this;
       },
 
@@ -4063,8 +4063,8 @@
       * Checks if the selection inputs are already rendered
       * @return {Boolean} True if the inputs are rendered and false otherwise
       */
-      __selectionRendered__P_562_49: function __selectionRendered__P_562_49() {
-        return qxWeb("." + qx.ui.website.Table.__internalSelectionClass__P_562_8).length > 0;
+      __selectionRendered__P_563_49: function __selectionRendered__P_563_49() {
+        return qxWeb("." + qx.ui.website.Table.__internalSelectionClass__P_563_8).length > 0;
       },
 
       /**
@@ -4072,16 +4072,16 @@
       * @param cell {qxWeb} The table cell containing the clicked input
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __processSelection__P_562_50: function __processSelection__P_562_50(cell) {
+      __processSelection__P_563_50: function __processSelection__P_563_50(cell) {
         var clazz = qx.ui.website.Table;
-        var inputs = qxWeb("." + clazz.__internalInputClass__P_562_9);
+        var inputs = qxWeb("." + clazz.__internalInputClass__P_563_9);
         var clickedInput = cell.find("input");
         var selectionMode = this.getConfig("rowSelection");
-        var headerInput = qxWeb("." + clazz.__internalHeaderClass__P_562_7 + " input");
+        var headerInput = qxWeb("." + clazz.__internalHeaderClass__P_563_7 + " input");
         var selection = [];
 
         if (selectionMode == "multiple") {
-          if (cell.hasClass(clazz.__internalHeaderClass__P_562_7)) {
+          if (cell.hasClass(clazz.__internalHeaderClass__P_563_7)) {
             inputs.setAttribute("checked", clickedInput[0].checked);
           }
 
@@ -4115,8 +4115,8 @@
           return elem.parentNode.parentNode;
         });
         selectedRows = qxWeb(selectedRows);
-        qxWeb("." + clazz.__selectedRowClass__P_562_16).removeClass(clazz.__selectedRowClass__P_562_16);
-        selectedRows.addClass(clazz.__selectedRowClass__P_562_16);
+        qxWeb("." + clazz.__selectedRowClass__P_563_16).removeClass(clazz.__selectedRowClass__P_563_16);
+        selectedRows.addClass(clazz.__selectedRowClass__P_563_16);
         this.emit("selectionChange", {
           rows: qxWeb(selectedRows)
         });
@@ -4130,19 +4130,19 @@
       * @param target {HTMLElement} The native event target
       * @return {Map} Map containing the event data
       */
-      __fireEvent__P_562_51: function __fireEvent__P_562_51(eventType, cell, target) {
+      __fireEvent__P_563_51: function __fireEvent__P_563_51(eventType, cell, target) {
         var row = cell[0].parentNode,
             cells = row.cells;
 
-        var colNumber = qx.ui.website.Table.__getIndex__P_562_3(cells, cell[0]);
+        var colNumber = qx.ui.website.Table.__getIndex__P_563_3(cells, cell[0]);
 
-        var tHead = this.__getHeaderRow__P_562_43();
+        var tHead = this.__getHeaderRow__P_563_43();
 
         var headCell = tHead.cells.item(colNumber);
 
-        var colName = this.__getColumName__P_562_45(headCell);
+        var colName = this.__getColumName__P_563_45(headCell);
 
-        var columnIndex = this.getConfig("rowSelection") != "none" ? this.__getColumnIndex__P_562_37(colName) - 1 : this.__getColumnIndex__P_562_37(colName);
+        var columnIndex = this.getConfig("rowSelection") != "none" ? this.__getColumnIndex__P_563_37(colName) - 1 : this.__getColumnIndex__P_563_37(colName);
         var data = {
           cell: qxWeb(cell),
           row: qxWeb(row),
@@ -4160,12 +4160,12 @@
        * @param e {Event} The native click event.
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __detectClickedCell__P_562_46: function __detectClickedCell__P_562_46(e) {
+      __detectClickedCell__P_563_46: function __detectClickedCell__P_563_46(e) {
         var target = e.getTarget();
         var cell = qxWeb(target);
         var clazz = qx.ui.website.Table;
 
-        while (!(cell.hasClass(clazz.__internalCellClass__P_562_6) || cell.hasClass(clazz.__internalHeaderClass__P_562_7) || cell.hasClass(clazz.__internalSelectionClass__P_562_8))) {
+        while (!(cell.hasClass(clazz.__internalCellClass__P_563_6) || cell.hasClass(clazz.__internalHeaderClass__P_563_7) || cell.hasClass(clazz.__internalSelectionClass__P_563_8))) {
           if (cell.hasClass(this.classname)) {
             cell = null;
             break;
@@ -4174,13 +4174,13 @@
           cell = cell.getParents().eq(0);
         }
 
-        if (cell.hasClass(clazz.__internalSelectionClass__P_562_8)) {
+        if (cell.hasClass(clazz.__internalSelectionClass__P_563_8)) {
           window.setTimeout(function () {
-            this.__processSelection__P_562_50(cell);
+            this.__processSelection__P_563_50(cell);
           }.bind(this), 5);
         } else {
           if (cell && cell.length > 0) {
-            this.__fireEvent__P_562_51("cellClick", cell, target);
+            this.__fireEvent__P_563_51("cellClick", cell, target);
           }
         }
 
@@ -4192,10 +4192,10 @@
       *
       * @param e {Event} The native over event.
       */
-      __cellHover__P_562_47: function __cellHover__P_562_47(e) {
+      __cellHover__P_563_47: function __cellHover__P_563_47(e) {
         var target = e.getTarget();
         var cell = qxWeb(target);
-        var hovered = this.__hovered__P_562_25;
+        var hovered = this.__hovered__P_563_25;
 
         if (!cell.hasClass("qx-table-cell") && !cell.hasClass("qx-table-header")) {
           cell = cell.getClosest(".qx-table-cell, .qx-table-header");
@@ -4206,7 +4206,7 @@
             this.emit("cellOut", hovered);
           }
 
-          this.__hovered__P_562_25 = this.__fireEvent__P_562_51("cellHover", cell, target);
+          this.__hovered__P_563_25 = this.__fireEvent__P_563_51("cellHover", cell, target);
         }
       },
 
@@ -4215,21 +4215,21 @@
       *
       * @param e {Event} The native over event.
       */
-      __cellOut__P_562_48: function __cellOut__P_562_48(e) {
+      __cellOut__P_563_48: function __cellOut__P_563_48(e) {
         var relatedTarget = e.getRelatedTarget();
         var cell = qxWeb(relatedTarget);
 
-        if (this.__hovered__P_562_25) {
+        if (this.__hovered__P_563_25) {
           if (!cell.isChildOf(this)) {
-            this.emit("cellOut", this.__hovered__P_562_25);
-            this.__hovered__P_562_25 = null;
+            this.emit("cellOut", this.__hovered__P_563_25);
+            this.__hovered__P_563_25 = null;
           } else {
             if (!cell.hasClass("qx-table-cell") && !cell.hasClass("qx-table-header")) {
               cell = cell.getClosest(".qx-table-cell, .qx-table-header");
 
               if (cell.hasClass("qx-table-row-selection")) {
-                this.emit("cellOut", this.__hovered__P_562_25);
-                this.__hovered__P_562_25 = null;
+                this.emit("cellOut", this.__hovered__P_563_25);
+                this.__hovered__P_563_25 = null;
               }
             }
           }
@@ -4242,19 +4242,19 @@
        * @param model {Array} The model to apply
        * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
        */
-      __applyTemplate__P_562_39: function __applyTemplate__P_562_39(model) {
+      __applyTemplate__P_563_39: function __applyTemplate__P_563_39(model) {
         if (model && model.length > 0) {
           var cell, row;
 
-          var tHead = this.__getHeaderRow__P_562_43();
+          var tHead = this.__getHeaderRow__P_563_43();
 
           var createdRow = null,
               colMeta = null;
           var renderedRow = null;
           var inputType = this.getConfig("rowSelection") == "single" ? "radio" : "checkbox";
 
-          if (this.__getRoot__P_562_31().rows.length > model.length) {
-            this.__deleteRows__P_562_52(model.length);
+          if (this.__getRoot__P_563_31().rows.length > model.length) {
+            this.__deleteRows__P_563_52(model.length);
           }
 
           var renderedColIndex = 0,
@@ -4265,27 +4265,27 @@
           for (var i = 0, rowCount = model.length; i < rowCount; i++) {
             row = model[i];
 
-            if (!this.__isRowRendered__P_562_53(i)) {
-              createdRow = this.__getRoot__P_562_31().insertRow(i);
+            if (!this.__isRowRendered__P_563_53(i)) {
+              createdRow = this.__getRoot__P_563_31().insertRow(i);
 
-              if (this.__selectionRendered__P_562_49()) {
-                this.__createInput__P_562_42(createdRow, inputType, "td");
+              if (this.__selectionRendered__P_563_49()) {
+                this.__createInput__P_563_42(createdRow, inputType, "td");
               }
             }
 
             for (var j = 0, colCount = row.length; j < colCount; j++) {
-              renderedColIndex = this.__selectionRendered__P_562_49() ? j + 1 : j;
-              colName = this.__getColumName__P_562_45(tHead.cells.item(renderedColIndex));
-              colMeta = this.__getDataForColumn__P_562_54(colName);
+              renderedColIndex = this.__selectionRendered__P_563_49() ? j + 1 : j;
+              colName = this.__getColumName__P_563_45(tHead.cells.item(renderedColIndex));
+              colMeta = this.__getDataForColumn__P_563_54(colName);
               coltemplate = this.getTemplate(colName) || coltemplate;
-              renderedRow = this.__getRoot__P_562_31().rows.item(i);
+              renderedRow = this.__getRoot__P_563_31().rows.item(i);
               cell = qxWeb.create(qxWeb.template.render(coltemplate, model[i][j]))[0];
 
               if (cell.nodeName.toUpperCase() != "TD") {
                 break;
               }
 
-              if (!this.__isCellRendered__P_562_55(i, renderedColIndex)) {
+              if (!this.__isCellRendered__P_563_55(i, renderedColIndex)) {
                 renderedRow.appendChild(cell);
               } else {
                 renderedRow.replaceChild(cell, this.getCell(i, renderedColIndex)[0]);
@@ -4317,8 +4317,8 @@
       * @param  rowCount {Integer} The number of rows the kept
       * @return {qx.ui.website.Table} <code>this</code> reference for chaining.
       */
-      __deleteRows__P_562_52: function __deleteRows__P_562_52(rowCount) {
-        var renderedRows = this.__getRoot__P_562_31().rows;
+      __deleteRows__P_563_52: function __deleteRows__P_563_52(rowCount) {
+        var renderedRows = this.__getRoot__P_563_31().rows;
 
         while (renderedRows.length > rowCount) {
           this[0].deleteRow(renderedRows.length);
@@ -4332,15 +4332,15 @@
       * @param columName {String} The name of the column to get the metadata for
       * @return {Map} Map containing the metadata
       */
-      __getDataForColumn__P_562_54: function __getDataForColumn__P_562_54(columName) {
-        return this.__columnMeta__P_562_19[columName];
+      __getDataForColumn__P_563_54: function __getDataForColumn__P_563_54(columName) {
+        return this.__columnMeta__P_563_19[columName];
       },
 
       /**
        * Gets the Root element containing the data rows
        * @return {HTMLElement} The element containing the data rows
        */
-      __getRoot__P_562_31: function __getRoot__P_562_31() {
+      __getRoot__P_563_31: function __getRoot__P_563_31() {
         return this[0].tBodies.item(0) || this[0];
       },
 
@@ -4349,8 +4349,8 @@
        * @param index {Integer} The index of the row to check
        * @return {Boolean} The result of the check
        */
-      __isRowRendered__P_562_53: function __isRowRendered__P_562_53(index) {
-        if (this.__getRoot__P_562_31().rows.item(index)) {
+      __isRowRendered__P_563_53: function __isRowRendered__P_563_53(index) {
+        if (this.__getRoot__P_563_31().rows.item(index)) {
           return true;
         }
 
@@ -4363,12 +4363,12 @@
        * @param colIndex {Integer} The index of the column
        * @return {Boolean} The result of the check
        */
-      __isCellRendered__P_562_55: function __isCellRendered__P_562_55(rowIndex, colIndex) {
-        if (!this.__isRowRendered__P_562_53(rowIndex)) {
+      __isCellRendered__P_563_55: function __isCellRendered__P_563_55(rowIndex, colIndex) {
+        if (!this.__isRowRendered__P_563_53(rowIndex)) {
           return false;
         }
 
-        if (this.__getRoot__P_562_31().rows.item(rowIndex).cells.item(colIndex)) {
+        if (this.__getRoot__P_563_31().rows.item(rowIndex).cells.item(colIndex)) {
           return true;
         }
 
@@ -4385,9 +4385,9 @@
           columnName: columnName,
           direction: dir
         };
-        this.__sortingData__P_562_26 = data;
+        this.__sortingData__P_563_26 = data;
 
-        this.__addSortingClassToCol__P_562_56(this[0].tHead, columnName, dir);
+        this.__addSortingClassToCol__P_563_56(this[0].tHead, columnName, dir);
       },
 
       /**
@@ -4396,12 +4396,12 @@
        * @param columnName {String} The name of the sorted column
        * @param dir {String} The sorting direction
        */
-      __addSortingClassToCol__P_562_56: function __addSortingClassToCol__P_562_56(HeaderOrFooter, columnName, dir) {
-        var rows = this.__getHeaderRow__P_562_43();
+      __addSortingClassToCol__P_563_56: function __addSortingClassToCol__P_563_56(HeaderOrFooter, columnName, dir) {
+        var rows = this.__getHeaderRow__P_563_43();
 
         if (HeaderOrFooter && rows) {
           qxWeb(rows.cells).removeClasses(["qx-table-sort-asc", "qx-table-sort-desc"]);
-          var cell = qxWeb("[" + qx.ui.website.Table.__dataColName__P_562_11 + "='" + columnName + "'], #" + columnName);
+          var cell = qxWeb("[" + qx.ui.website.Table.__dataColName__P_563_11 + "='" + columnName + "'], #" + columnName);
           cell.addClass("qx-table-sort-" + dir);
         }
       },
@@ -4412,8 +4412,8 @@
        * @param direction {String} The sorting direction
        * @return {Array} Array containing the sorted rows
        */
-      __sort__P_562_34: function __sort__P_562_34(columnName, direction) {
-        var meta = this.__getDataForColumn__P_562_54(columnName);
+      __sort__P_563_34: function __sort__P_563_34(columnName, direction) {
+        var meta = this.__getDataForColumn__P_563_54(columnName);
 
         var columnType = qxWeb.string.firstUp(meta.type);
 
@@ -4423,14 +4423,14 @@
 
         var compareFunc = this.getCompareFunction(columnType).bind(this);
 
-        var model = this.__getDataRows__P_562_38();
+        var model = this.__getDataRows__P_563_38();
 
-        var columnIndex = this.__getColumnIndex__P_562_37(columnName);
+        var columnIndex = this.__getColumnIndex__P_563_37(columnName);
 
         return model.sort(function (a, b) {
-          var x = this.__getSortingKey__P_562_57(qxWeb(a.cells.item(columnIndex)));
+          var x = this.__getSortingKey__P_563_57(qxWeb(a.cells.item(columnIndex)));
 
-          var y = this.__getSortingKey__P_562_57(qxWeb(b.cells.item(columnIndex)));
+          var y = this.__getSortingKey__P_563_57(qxWeb(b.cells.item(columnIndex)));
 
           return compareFunc(x, y, direction);
         }.bind(this));
@@ -4444,8 +4444,8 @@
        * @return {Integer} The result of the comparison
        */
       _compareNumber: function _compareNumber(x, y, direction) {
-        x = qx.ui.website.Table.__isNumber__P_562_1(x) ? Number(x) : 0;
-        y = qx.ui.website.Table.__isNumber__P_562_1(y) ? Number(y) : 0;
+        x = qx.ui.website.Table.__isNumber__P_563_1(x) ? Number(x) : 0;
+        y = qx.ui.website.Table.__isNumber__P_563_1(y) ? Number(y) : 0;
 
         if (direction == "asc") {
           return x - y;
@@ -4461,8 +4461,8 @@
       * @param headerCell {HTMLTableCellElement} The cell to get the column name for
       * @return {String} The column name
       */
-      __getColumName__P_562_45: function __getColumName__P_562_45(headerCell) {
-        return headerCell.getAttribute(qx.ui.website.Table.__dataColName__P_562_11) || headerCell.getAttribute("id");
+      __getColumName__P_563_45: function __getColumName__P_563_45(headerCell) {
+        return headerCell.getAttribute(qx.ui.website.Table.__dataColName__P_563_11) || headerCell.getAttribute("id");
       },
 
       /**
@@ -4473,8 +4473,8 @@
        * @return {Integer} The result of the comparison
        */
       _compareDate: function _compareDate(x, y, direction) {
-        x = qx.ui.website.Table.__isDate__P_562_2(x) ? new Date(x) : new Date(0);
-        y = qx.ui.website.Table.__isDate__P_562_2(y) ? new Date(y) : new Date(0);
+        x = qx.ui.website.Table.__isDate__P_563_2(x) ? new Date(x) : new Date(0);
+        y = qx.ui.website.Table.__isDate__P_563_2(y) ? new Date(y) : new Date(0);
 
         if (direction == "asc") {
           return x - y;
@@ -4512,8 +4512,8 @@
       * @param cell {qxWeb} The cell to get the value of.
       * @return {String} The sorting key
       */
-      __getSortingKey__P_562_57: function __getSortingKey__P_562_57(cell) {
-        return cell.getAttribute(qx.ui.website.Table.__dataSortingKey__P_562_13) || this.__getCellValue__P_562_58(cell);
+      __getSortingKey__P_563_57: function __getSortingKey__P_563_57(cell) {
+        return cell.getAttribute(qx.ui.website.Table.__dataSortingKey__P_563_13) || this.__getCellValue__P_563_58(cell);
       },
 
       /**
@@ -4521,7 +4521,7 @@
        * @param cell {qxWeb} The cell to get the value of
        * @return {String} The text content of the cell
        */
-      __getCellValue__P_562_58: function __getCellValue__P_562_58(cell) {
+      __getCellValue__P_563_58: function __getCellValue__P_563_58(cell) {
         return cell[0].textContent || cell[0].innerText || "";
       },
 
@@ -4529,7 +4529,7 @@
        * Gets the table's data rows from the DOM
        * @return {Array} Array containing the rows of the table
        */
-      __getDataRows__P_562_38: function __getDataRows__P_562_38() {
+      __getDataRows__P_563_38: function __getDataRows__P_563_38() {
         var rows = this.find("tbody")[0].rows,
             model = [],
             cell = null,
@@ -4545,8 +4545,8 @@
           for (var j = 0, len = cells.length; j < len; j++) {
             cell = qxWeb(cells[j]);
 
-            if (!cell.hasClass(qx.ui.website.Table.__internalCellClass__P_562_6)) {
-              cell.addClass(qx.ui.website.Table.__internalCellClass__P_562_6);
+            if (!cell.hasClass(qx.ui.website.Table.__internalCellClass__P_563_6)) {
+              cell.addClass(qx.ui.website.Table.__internalCellClass__P_563_6);
             }
           }
 
@@ -4560,7 +4560,7 @@
        * Default sorting processing
        * @param data {Map} Sorting data
        */
-      __defaultColumnSort__P_562_28: function __defaultColumnSort__P_562_28(data) {
+      __defaultColumnSort__P_563_28: function __defaultColumnSort__P_563_28(data) {
         var dir = "asc";
         var sortedData = this.getSortingData();
 
@@ -4582,11 +4582,11 @@
       * @param data {Map} Map containing the filter data
       * @return {Boolean} True wenn the row containing the current cell should be kept
       */
-      __defaultColumnFilter__P_562_32: function __defaultColumnFilter__P_562_32(data) {
+      __defaultColumnFilter__P_563_32: function __defaultColumnFilter__P_563_32(data) {
         var caseSensitive = this.getConfig("caseSensitive");
-        var cell = data.columnName == qx.ui.website.Table.__allColumnSelector__P_562_10 ? data.row : data.cell;
+        var cell = data.columnName == qx.ui.website.Table.__allColumnSelector__P_563_10 ? data.row : data.cell;
 
-        var cellValue = this.__getCellValue__P_562_58(cell);
+        var cellValue = this.__getCellValue__P_563_58(cell);
 
         if (caseSensitive) {
           return cellValue.indexOf(data.keyword) != -1;
@@ -4600,13 +4600,13 @@
        * @param columnName {String} The colukn name
        * @return {Integer} The index of the column or -1 if the column doesn't exists
        */
-      __getColumnIndex__P_562_37: function __getColumnIndex__P_562_37(columnName) {
-        var tHead = this.__getHeaderRow__P_562_43();
+      __getColumnIndex__P_563_37: function __getColumnIndex__P_563_37(columnName) {
+        var tHead = this.__getHeaderRow__P_563_43();
 
         var cells = tHead.cells;
 
         for (var i = 0; i < cells.length; i++) {
-          if (columnName == this.__getColumName__P_562_45(cells.item(i))) {
+          if (columnName == this.__getColumName__P_563_45(cells.item(i))) {
             return i;
           }
         }
@@ -4806,8 +4806,8 @@
      */
     construct: function construct(scriptArr) {
       qx.core.Object.constructor.call(this);
-      this.__started__P_574_0 = false;
-      this.__QUEUE__P_574_1 = qx.lang.Type.isString(scriptArr) ? [scriptArr] : qx.lang.Array.clone(scriptArr);
+      this.__started__P_575_0 = false;
+      this.__QUEUE__P_575_1 = qx.lang.Type.isString(scriptArr) ? [scriptArr] : qx.lang.Array.clone(scriptArr);
     },
 
     /*
@@ -4836,12 +4836,12 @@
        * Map of scripts being added at the present time. Key is script name; value is instance of this class which
        * is loading it.
        */
-      __IN_PROGRESS__P_574_2: {},
+      __IN_PROGRESS__P_575_2: {},
 
       /**
        * Map of scripts that have fully loaded. Key is script name; value is true
        */
-      __LOADED__P_574_3: {}
+      __LOADED__P_575_3: {}
     },
 
     /*
@@ -4853,12 +4853,12 @@
       /**
        * Array of the scripts to be loaded
        */
-      __QUEUE__P_574_1: null,
+      __QUEUE__P_575_1: null,
 
       /**
        * True if start has been called.
        */
-      __started__P_574_0: null,
+      __started__P_575_0: null,
 
       /**
        * Start loading scripts. This may only be called once!
@@ -4875,13 +4875,13 @@
             reject(new Error('disposed'));
           }
 
-          if (this.__started__P_574_0) {
+          if (this.__started__P_575_0) {
             reject(new Error('you can only call start once per instance'));
           }
 
-          this.__started__P_574_0 = true;
+          this.__started__P_575_0 = true;
 
-          this.__loadScripts__P_574_4();
+          this.__loadScripts__P_575_4();
         }, this);
       },
 
@@ -4891,32 +4891,32 @@
        * Recursively called until the array of scripts is consumed
        *
        */
-      __loadScripts__P_574_4: function __loadScripts__P_574_4() {
+      __loadScripts__P_575_4: function __loadScripts__P_575_4() {
         var DynamicScriptLoader = qx.util.DynamicScriptLoader;
         var script;
         var dynLoader;
         var id1, id2;
         var uri;
         var loader;
-        script = this.__QUEUE__P_574_1.shift();
+        script = this.__QUEUE__P_575_1.shift();
 
         if (!script) {
           this.fireEvent("ready");
           return;
         }
 
-        if (DynamicScriptLoader.__LOADED__P_574_3[script]) {
+        if (DynamicScriptLoader.__LOADED__P_575_3[script]) {
           this.fireDataEvent('loaded', {
             script: script,
             status: 'preloaded'
           });
 
-          this.__loadScripts__P_574_4();
+          this.__loadScripts__P_575_4();
 
           return;
         }
 
-        dynLoader = DynamicScriptLoader.__IN_PROGRESS__P_574_2[script];
+        dynLoader = DynamicScriptLoader.__IN_PROGRESS__P_575_2[script];
 
         if (dynLoader) {
           id1 = dynLoader.addListener('loaded', function (e) {
@@ -4931,7 +4931,7 @@
               dynLoader.removeListenerById(id1);
               this.fireDataEvent('loaded', data);
 
-              this.__loadScripts__P_574_4();
+              this.__loadScripts__P_575_4();
             }
           }, this);
           id2 = dynLoader.addListener('failed', function (e) {
@@ -4957,14 +4957,14 @@
             return;
           }
 
-          DynamicScriptLoader.__LOADED__P_574_3[script] = true;
-          delete DynamicScriptLoader.__IN_PROGRESS__P_574_2[script];
+          DynamicScriptLoader.__LOADED__P_575_3[script] = true;
+          delete DynamicScriptLoader.__IN_PROGRESS__P_575_2[script];
           this.fireDataEvent('loaded', {
             script: script,
             status: request.status
           });
 
-          this.__loadScripts__P_574_4();
+          this.__loadScripts__P_575_4();
         }, this);
 
         var onError = function onError(request) {
@@ -4972,7 +4972,7 @@
             return;
           }
 
-          delete DynamicScriptLoader.__IN_PROGRESS__P_574_2[script];
+          delete DynamicScriptLoader.__IN_PROGRESS__P_575_2[script];
           this.fireDataEvent('failed', {
             script: script,
             status: request.status
@@ -4983,20 +4983,20 @@
         loader.on("timeout", onError, this); // this.debug("Loading " + script + " started");
 
         loader.open("GET", uri);
-        DynamicScriptLoader.__IN_PROGRESS__P_574_2[script] = this;
+        DynamicScriptLoader.__IN_PROGRESS__P_575_2[script] = this;
         loader.send();
       }
     },
     destruct: function destruct() {
       var DynamicScriptLoader = qx.util.DynamicScriptLoader;
 
-      for (var key in DynamicScriptLoader.__IN_PROGRESS__P_574_2) {
-        if (DynamicScriptLoader.__IN_PROGRESS__P_574_2[key] === this) {
-          delete DynamicScriptLoader.__IN_PROGRESS__P_574_2[key];
+      for (var key in DynamicScriptLoader.__IN_PROGRESS__P_575_2) {
+        if (DynamicScriptLoader.__IN_PROGRESS__P_575_2[key] === this) {
+          delete DynamicScriptLoader.__IN_PROGRESS__P_575_2[key];
         }
       }
 
-      this.__QUEUE__P_574_1 = undefined;
+      this.__QUEUE__P_575_1 = undefined;
     }
   });
   qx.util.DynamicScriptLoader.$$dbClassInfo = $$dbClassInfo;
@@ -5052,7 +5052,7 @@
        * @param dataB {Array} incoming target data
        * @return {Integer[][]} outgoing matrix
        */
-      __computeLevenshteinDistance__P_575_0: function __computeLevenshteinDistance__P_575_0(dataA, dataB) {
+      __computeLevenshteinDistance__P_576_0: function __computeLevenshteinDistance__P_576_0(dataA, dataB) {
         // distance is dataA table with dataA.length+1 rows and dataB.length+1 columns
         var distance = []; // posA and posB are used to iterate over str1 and str2
 
@@ -5093,7 +5093,7 @@
        * @param dataB {Array} incoming target data
        * @return {Map[]} Array of maps describing the operations needed
        */
-      __computeEditOperations__P_575_1: function __computeEditOperations__P_575_1(distance, dataA, dataB) {
+      __computeEditOperations__P_576_1: function __computeEditOperations__P_576_1(distance, dataA, dataB) {
         var operations = [];
         var posA = dataA.length;
         var posB = dataB.length;
@@ -5170,9 +5170,9 @@
        * @return {Map[]} Array of maps describing the operations needed
        */
       getEditOperations: function getEditOperations(dataA, dataB) {
-        var distance = this.__computeLevenshteinDistance__P_575_0(dataA, dataB);
+        var distance = this.__computeLevenshteinDistance__P_576_0(dataA, dataB);
 
-        var operations = this.__computeEditOperations__P_575_1(distance, dataA, dataB);
+        var operations = this.__computeEditOperations__P_576_1(distance, dataA, dataB);
 
         return operations;
       }
@@ -5852,34 +5852,34 @@
 
       this.setName(machineName); // Initialize the states object
 
-      this.__states__P_586_0 = {}; // The first state added will become the start state
+      this.__states__P_587_0 = {}; // The first state added will become the start state
 
-      this.__startState__P_586_1 = null; // Initialize the saved-states stack
+      this.__startState__P_587_1 = null; // Initialize the saved-states stack
 
-      this.__savedStates__P_586_2 = []; // Initialize the pending event queue
+      this.__savedStates__P_587_2 = []; // Initialize the pending event queue
 
-      this.__eventQueue__P_586_3 = []; // Initialize the blocked events queue
+      this.__eventQueue__P_587_3 = []; // Initialize the blocked events queue
 
-      this.__blockedEvents__P_586_4 = []; // Create the friendlyToObject" object.  Each object has as its property
+      this.__blockedEvents__P_587_4 = []; // Create the friendlyToObject" object.  Each object has as its property
       // name, the friendly name of the object; and as its property value, the
       // object itself.
 
-      this.__friendlyToObject__P_586_5 = {}; // Create the "friendlyToHash" object.  Each object has as its property
+      this.__friendlyToObject__P_587_5 = {}; // Create the "friendlyToHash" object.  Each object has as its property
       // name, the friendly name of the object; and as its property value, the
       // hash code of the object.
 
-      this.__friendlyToHash__P_586_6 = {}; // Create the "hashToFriendly" object.  Each object has as its property
+      this.__friendlyToHash__P_587_6 = {}; // Create the "hashToFriendly" object.  Each object has as its property
       // name, the hash code of the object; and as its property value, the
       // friendly name of the object.
 
-      this.__hashToFriendly__P_586_7 = {}; // Friendly names can be added to groups, for easy manipulation of
+      this.__hashToFriendly__P_587_7 = {}; // Friendly names can be added to groups, for easy manipulation of
       // enabling and disabling groups of widgets.  Track which friendly names
       // are in which group.
 
-      this.__groupToFriendly__P_586_8 = {}; // We also need to be able to map back from friendly name to the groups it
+      this.__groupToFriendly__P_587_8 = {}; // We also need to be able to map back from friendly name to the groups it
       // is in.
 
-      this.__friendlyToGroups__P_586_9 = {};
+      this.__friendlyToGroups__P_587_9 = {};
     },
     statics: {
       /**
@@ -6014,18 +6014,18 @@
       }
     },
     members: {
-      __states__P_586_0: null,
-      __startState__P_586_1: null,
-      __eventQueue__P_586_3: null,
-      __blockedEvents__P_586_4: null,
-      __savedStates__P_586_2: null,
-      __friendlyToObject__P_586_5: null,
-      __friendlyToHash__P_586_6: null,
-      __hashToFriendly__P_586_7: null,
-      __groupToFriendly__P_586_8: null,
-      __friendlyToGroups__P_586_9: null,
-      __bEventProcessingInProgress__P_586_10: false,
-      __bTerminated__P_586_11: true,
+      __states__P_587_0: null,
+      __startState__P_587_1: null,
+      __eventQueue__P_587_3: null,
+      __blockedEvents__P_587_4: null,
+      __savedStates__P_587_2: null,
+      __friendlyToObject__P_587_5: null,
+      __friendlyToHash__P_587_6: null,
+      __hashToFriendly__P_587_7: null,
+      __groupToFriendly__P_587_8: null,
+      __friendlyToGroups__P_587_9: null,
+      __bEventProcessingInProgress__P_587_10: false,
+      __bTerminated__P_587_11: true,
 
       /**
        * Checks whether the finite state machine is terminated or not.
@@ -6033,7 +6033,7 @@
        * @return {Boolean} If the finite state machine is terminated.
        */
       isTerminated: function isTerminated() {
-        return this.__bTerminated__P_586_11;
+        return this.__bTerminated__P_587_11;
       },
 
       /**
@@ -6057,18 +6057,18 @@
 
         var stateName = state.getName(); // Ensure that the state name doesn't already exist
 
-        if (stateName in this.__states__P_586_0) {
+        if (stateName in this.__states__P_587_0) {
           throw new Error("State " + stateName + " already exists");
         } // Is this the first state being added?
 
 
-        if (this.__startState__P_586_1 == null) {
+        if (this.__startState__P_587_1 == null) {
           // Yup.  Save this state as the start state.
-          this.__startState__P_586_1 = stateName;
+          this.__startState__P_587_1 = stateName;
         } // Add the new state object to the finite state machine
 
 
-        this.__states__P_586_0[stateName] = state;
+        this.__states__P_587_0[stateName] = state;
       },
 
       /**
@@ -6102,9 +6102,9 @@
 
         var stateName = state.getName(); // Save the old state object, so we can return it to be disposed
 
-        var oldState = this.__states__P_586_0[stateName]; // Replace the old state with the new state object.
+        var oldState = this.__states__P_587_0[stateName]; // Replace the old state with the new state object.
 
-        this.__states__P_586_0[stateName] = state; // Did they request that the old state be disposed?
+        this.__states__P_587_0[stateName] = state; // Did they request that the old state be disposed?
 
         if (bDispose) {
           // Yup.  Mark it to be disposed.
@@ -6131,9 +6131,9 @@
        */
       addObject: function addObject(friendlyName, obj, groupNames) {
         var hash = qx.core.ObjectRegistry.toHashCode(obj);
-        this.__friendlyToHash__P_586_6[friendlyName] = hash;
-        this.__hashToFriendly__P_586_7[hash] = friendlyName;
-        this.__friendlyToObject__P_586_5[friendlyName] = obj; // If no groupNames are specified, we're done.
+        this.__friendlyToHash__P_587_6[friendlyName] = hash;
+        this.__hashToFriendly__P_587_7[hash] = friendlyName;
+        this.__friendlyToObject__P_587_5[friendlyName] = obj; // If no groupNames are specified, we're done.
 
         if (!groupNames) {
           return;
@@ -6150,22 +6150,22 @@
         for (var i = 0; i < groupNames.length; i++) {
           var groupName = groupNames[i]; // If the group name doesn't yet exist...
 
-          if (!this.__groupToFriendly__P_586_8[groupName]) {
+          if (!this.__groupToFriendly__P_587_8[groupName]) {
             // ... then create it.
-            this.__groupToFriendly__P_586_8[groupName] = {};
+            this.__groupToFriendly__P_587_8[groupName] = {};
           } // Add the friendly name to the list of names in this group
 
 
-          this.__groupToFriendly__P_586_8[groupName][friendlyName] = true; // If the friendly name group mapping doesn't yet exist...
+          this.__groupToFriendly__P_587_8[groupName][friendlyName] = true; // If the friendly name group mapping doesn't yet exist...
 
-          if (!this.__friendlyToGroups__P_586_9[friendlyName]) {
+          if (!this.__friendlyToGroups__P_587_9[friendlyName]) {
             // ... then create it.
-            this.__friendlyToGroups__P_586_9[friendlyName] = [];
+            this.__friendlyToGroups__P_587_9[friendlyName] = [];
           } // Append this group name to the list of groups this friendly name is
           // in
 
 
-          this.__friendlyToGroups__P_586_9[friendlyName].push(groupName);
+          this.__friendlyToGroups__P_587_9[friendlyName].push(groupName);
         }
       },
 
@@ -6183,16 +6183,16 @@
         var groupName;
         var objName;
         var bGroupEmpty;
-        hash = this.__friendlyToHash__P_586_6[friendlyName]; // Delete references to any groups this friendly name was in
+        hash = this.__friendlyToHash__P_587_6[friendlyName]; // Delete references to any groups this friendly name was in
 
-        if (this.__friendlyToGroups__P_586_9[friendlyName]) {
-          for (var i = 0; i < this.__friendlyToGroups__P_586_9[friendlyName].length; i++) {
-            groupName = this.__friendlyToGroups__P_586_9[friendlyName][i];
-            delete this.__groupToFriendly__P_586_8[groupName][friendlyName]; // Is the group empty now?
+        if (this.__friendlyToGroups__P_587_9[friendlyName]) {
+          for (var i = 0; i < this.__friendlyToGroups__P_587_9[friendlyName].length; i++) {
+            groupName = this.__friendlyToGroups__P_587_9[friendlyName][i];
+            delete this.__groupToFriendly__P_587_8[groupName][friendlyName]; // Is the group empty now?
 
             bGroupEmpty = true;
 
-            for (objName in this.__groupToFriendly__P_586_8[groupName]) {
+            for (objName in this.__groupToFriendly__P_587_8[groupName]) {
               // The group is not empty. That's all we wanted to know.
               bGroupEmpty = false;
               break;
@@ -6201,17 +6201,17 @@
 
             if (bGroupEmpty) {
               // ... then we can delete the entire entry
-              delete this.__groupToFriendly__P_586_8[groupName];
+              delete this.__groupToFriendly__P_587_8[groupName];
             }
           }
 
-          delete this.__friendlyToGroups__P_586_9[friendlyName];
+          delete this.__friendlyToGroups__P_587_9[friendlyName];
         } // Delete the friendly name
 
 
-        delete this.__hashToFriendly__P_586_7[hash];
-        delete this.__friendlyToHash__P_586_6[friendlyName];
-        delete this.__friendlyToObject__P_586_5[friendlyName];
+        delete this.__hashToFriendly__P_587_7[hash];
+        delete this.__friendlyToHash__P_587_6[friendlyName];
+        delete this.__friendlyToObject__P_587_5[friendlyName];
       },
 
       /**
@@ -6227,7 +6227,7 @@
        *   object has been associated with that name.
        */
       getObject: function getObject(friendlyName) {
-        return this.__friendlyToObject__P_586_5[friendlyName];
+        return this.__friendlyToObject__P_587_5[friendlyName];
       },
 
       /**
@@ -6243,7 +6243,7 @@
        */
       getFriendlyName: function getFriendlyName(obj) {
         var hash = obj ? qx.core.ObjectRegistry.toHashCode(obj) : null;
-        return hash ? this.__hashToFriendly__P_586_7[hash] : null;
+        return hash ? this.__hashToFriendly__P_587_7[hash] : null;
       },
 
       /**
@@ -6261,7 +6261,7 @@
       getGroupObjects: function getGroupObjects(groupName) {
         var a = [];
 
-        for (var name in this.__groupToFriendly__P_586_8[groupName]) {
+        for (var name in this.__groupToFriendly__P_587_8[groupName]) {
           a.push(name);
         }
 
@@ -6273,11 +6273,11 @@
        *
        */
       displayAllObjects: function displayAllObjects() {
-        for (var friendlyName in this.__friendlyToHash__P_586_6) {
-          var hash = this.__friendlyToHash__P_586_6[friendlyName];
+        for (var friendlyName in this.__friendlyToHash__P_587_6) {
+          var hash = this.__friendlyToHash__P_587_6[friendlyName];
           var obj = this.getObject(friendlyName);
           this.debug(friendlyName + " => " + hash);
-          this.debug("  " + hash + " => " + this.__hashToFriendly__P_586_7[hash]);
+          this.debug("  " + hash + " => " + this.__hashToFriendly__P_587_7[hash]);
           this.debug("  " + friendlyName + " => " + this.getObject(friendlyName));
           this.debug("  " + this.getObject(friendlyName) + " => " + this.getFriendlyName(obj));
         }
@@ -6302,16 +6302,16 @@
        */
       _getInternalData: function _getInternalData() {
         return {
-          "states": this.__states__P_586_0,
-          "startState": this.__startState__P_586_1,
-          "eventQueue": this.__eventQueue__P_586_3,
-          "blockedEvents": this.__blockedEvents__P_586_4,
-          "savedStates": this.__savedStates__P_586_2,
-          "friendlyToObject": this.__friendlyToObject__P_586_5,
-          "friendlyToHash": this.__friendlyToHash__P_586_6,
-          "hashToFriendly": this.__hashToFriendly__P_586_7,
-          "groupToFriendly": this.__groupToFriendly__P_586_8,
-          "friendlyToGroups": this.__friendlyToGroups__P_586_9
+          "states": this.__states__P_587_0,
+          "startState": this.__startState__P_587_1,
+          "eventQueue": this.__eventQueue__P_587_3,
+          "blockedEvents": this.__blockedEvents__P_587_4,
+          "savedStates": this.__savedStates__P_587_2,
+          "friendlyToObject": this.__friendlyToObject__P_587_5,
+          "friendlyToHash": this.__friendlyToHash__P_587_6,
+          "hashToFriendly": this.__hashToFriendly__P_587_7,
+          "groupToFriendly": this.__groupToFriendly__P_587_8,
+          "friendlyToGroups": this.__friendlyToGroups__P_587_9
         };
       },
 
@@ -6323,8 +6323,8 @@
        * @throws {Error} If the machine stared with not available state.
        */
       start: function start() {
-        this.__bTerminated__P_586_11 = false;
-        var stateName = this.__startState__P_586_1;
+        this.__bTerminated__P_587_11 = false;
+        var stateName = this.__startState__P_587_1;
 
         if (stateName == null) {
           throw new Error("Machine started with no available states");
@@ -6341,21 +6341,21 @@
           this.debug(this.getName() + "#" + stateName + "#actionsBeforeOnentry");
         }
 
-        this.__states__P_586_0[stateName].getAutoActionsBeforeOnentry()(this); // Run the entry function for the new state, if one is specified
+        this.__states__P_587_0[stateName].getAutoActionsBeforeOnentry()(this); // Run the entry function for the new state, if one is specified
 
 
         if (debugFunctions) {
           this.debug(this.getName() + "#" + stateName + "#entry");
         }
 
-        this.__states__P_586_0[stateName].getOnentry()(this, null); // Run the actionsAfterOnentry actions for the initial state
+        this.__states__P_587_0[stateName].getOnentry()(this, null); // Run the actionsAfterOnentry actions for the initial state
 
 
         if (debugFunctions) {
           this.debug(this.getName() + "#" + stateName + "#actionsAfterOnentry");
         }
 
-        this.__states__P_586_0[stateName].getAutoActionsAfterOnentry()(this);
+        this.__states__P_587_0[stateName].getAutoActionsAfterOnentry()(this);
       },
 
       /**
@@ -6385,19 +6385,19 @@
        */
       pushState: function pushState(state) {
         // See if there's room on the state stack for a new state
-        if (this.__savedStates__P_586_2.length >= this.getMaxSavedStates()) {
+        if (this.__savedStates__P_587_2.length >= this.getMaxSavedStates()) {
           // Nope.  Programmer error.
           throw new Error("Saved-state stack is full");
         }
 
         if (state === true) {
           // Push the current state onto the saved-state stack
-          this.__savedStates__P_586_2.push(this.getState());
+          this.__savedStates__P_587_2.push(this.getState());
         } else if (state) {
-          this.__savedStates__P_586_2.push(state);
+          this.__savedStates__P_587_2.push(state);
         } else {
           // Push the previous state onto the saved-state stack
-          this.__savedStates__P_586_2.push(this.getPreviousState());
+          this.__savedStates__P_587_2.push(this.getPreviousState());
         }
       },
 
@@ -6410,12 +6410,12 @@
        */
       popState: function popState() {
         // Is there anything on the saved-state stack?
-        if (this.__savedStates__P_586_2.length == 0) {
+        if (this.__savedStates__P_587_2.length == 0) {
           // Nope. Programmer error.
           throw new Error("Saved-state stack is empty");
         }
 
-        return this.__savedStates__P_586_2.pop();
+        return this.__savedStates__P_587_2.pop();
       },
 
       /**
@@ -6430,7 +6430,7 @@
       postponeEvent: function postponeEvent(event) {
         // Add this event to the blocked event queue, so it will be passed to the
         // next state upon transition.
-        this.__blockedEvents__P_586_4.unshift(event);
+        this.__blockedEvents__P_587_4.unshift(event);
       },
 
       /**
@@ -6450,10 +6450,10 @@
         // Add the event to the event queue
         if (bAddAtHead) {
           // Put event at the head of the queue
-          this.__eventQueue__P_586_3.push(event);
+          this.__eventQueue__P_587_3.push(event);
         } else {
           // Put event at the tail of the queue
-          this.__eventQueue__P_586_3.unshift(event);
+          this.__eventQueue__P_587_3.unshift(event);
         }
 
         if (this.getDebugFlags() & qx.util.fsm.FiniteStateMachine.DebugFlags.EVENTS) {
@@ -6474,7 +6474,7 @@
        * @param event {qx.event.type.Event} The event that was dispatched.
        */
       eventListener: function eventListener(event) {
-        if (this.__bTerminated__P_586_11) {
+        if (this.__bTerminated__P_587_11) {
           this.debug(this.getName() + ": Cannot listen to event '" + event.getType() + "', because the finite state machine is not running.");
           return;
         } // Events are enqueued upon receipt.  Some events are then processed
@@ -6488,7 +6488,7 @@
 
         this.enqueueEvent(e, false); // Process events
 
-        this.__processEvents__P_586_12();
+        this.__processEvents__P_587_12();
       },
 
       /**
@@ -6508,7 +6508,7 @@
        *
        */
       fireImmediateEvent: function fireImmediateEvent(type, target, data) {
-        if (this.__bTerminated__P_586_11) {
+        if (this.__bTerminated__P_587_11) {
           this.debug(this.getName() + ": Cannot listen to event '" + type + "', because the finite state machine is not running.");
           return;
         }
@@ -6553,23 +6553,23 @@
        * Process all of the events on the event queue.
        *
        */
-      __processEvents__P_586_12: function __processEvents__P_586_12() {
+      __processEvents__P_587_12: function __processEvents__P_587_12() {
         // eventListener() can potentially be called while we're processing
         // events
-        if (this.__bEventProcessingInProgress__P_586_10) {
+        if (this.__bEventProcessingInProgress__P_587_10) {
           // We were processing already, so don't process concurrently.
           return;
         } // Track that we're processing events
 
 
-        this.__bEventProcessingInProgress__P_586_10 = true; // Process each of the events on the event queue
+        this.__bEventProcessingInProgress__P_587_10 = true; // Process each of the events on the event queue
 
-        while (this.__eventQueue__P_586_3.length > 0) {
+        while (this.__eventQueue__P_587_3.length > 0) {
           // Pull the next event from the pending event queue
-          var event = this.__eventQueue__P_586_3.pop(); // Run the finite state machine with this event
+          var event = this.__eventQueue__P_587_3.pop(); // Run the finite state machine with this event
 
 
-          var bDispose = this.__run__P_586_13(event); // If we didn't block (and re-queue) the event, dispose it.
+          var bDispose = this.__run__P_587_13(event); // If we didn't block (and re-queue) the event, dispose it.
 
 
           if (bDispose) {
@@ -6578,7 +6578,7 @@
         } // We're no longer processing events
 
 
-        this.__bEventProcessingInProgress__P_586_10 = false;
+        this.__bEventProcessingInProgress__P_587_10 = false;
       },
 
       /**
@@ -6601,7 +6601,7 @@
        * @throws {Error} If the state stack is empty and the next state is POP_STATE_STACK
        * @throws {Error} If the next state is invalid.
        */
-      __run__P_586_13: function __run__P_586_13(event) {
+      __run__P_587_13: function __run__P_587_13(event) {
         // For use in generated functions...
         // State name variables
         var thisState;
@@ -6632,7 +6632,7 @@
 
         thisState = this.getState(); // Get the current State object
 
-        currentState = this.__states__P_586_0[thisState]; // Get a list of the transitions available from this state
+        currentState = this.__states__P_587_0[thisState]; // Get a list of the transitions available from this state
 
         transitions = currentState.transitions; // Determine how to handle this event
 
@@ -6686,7 +6686,7 @@
               this.debug(this.getName() + ": Event '" + event.getType() + "'" + " blocked.  Re-queuing.");
             }
 
-            this.__blockedEvents__P_586_4.unshift(event);
+            this.__blockedEvents__P_587_4.unshift(event);
 
             return false;
 
@@ -6736,7 +6736,7 @@
 
           if (typeof nextState == "string") {
             // We found a literal state name.  Ensure it exists.
-            if (!nextState in this.__states__P_586_0) {
+            if (!nextState in this.__states__P_587_0) {
               throw new Error("Attempt to transition to nonexistent state " + nextState);
             } // It exists.  Track it being the next state.
 
@@ -6753,18 +6753,18 @@
 
               case qx.util.fsm.FiniteStateMachine.StateChange.POP_STATE_STACK:
                 // Switch to the state at the top of the state stack.
-                if (this.__savedStates__P_586_2.length == 0) {
+                if (this.__savedStates__P_587_2.length == 0) {
                   throw new Error("Attempt to transition to POP_STATE_STACK while state stack is empty.");
                 } // Pop the state stack to retrieve the state to transition to
 
 
-                nextState = this.__savedStates__P_586_2.pop();
+                nextState = this.__savedStates__P_587_2.pop();
                 this.setNextState(nextState);
                 break;
 
               case qx.util.fsm.FiniteStateMachine.StateChange.TERMINATE:
                 // Terminate fsm
-                this.__bTerminated__P_586_11 = true;
+                this.__bTerminated__P_587_11 = true;
                 this.setNextState(null);
                 break;
 
@@ -6816,7 +6816,7 @@
           } // It the fsm has terminated, stop right here
 
 
-          if (this.__bTerminated__P_586_11) {
+          if (this.__bTerminated__P_587_11) {
             if (debugFunctions) {
               this.debug(this.getName() + "#" + "TERMINATED");
             }
@@ -6826,7 +6826,7 @@
           } // Reset currentState to the new state object
 
 
-          currentState = this.__states__P_586_0[this.getNextState()]; // set previousState and state, and clear nextState, for transition
+          currentState = this.__states__P_587_0[this.getNextState()]; // set previousState and state, and clear nextState, for transition
 
           this.setPreviousState(thisState);
           this.setState(this.getNextState());
@@ -6853,10 +6853,10 @@
 
           currentState.getAutoActionsAfterOnentry()(this); // Add any blocked events back onto the pending event queue
 
-          for (var i = 0; i < this.__blockedEvents__P_586_4.length; i++) {
-            e = this.__blockedEvents__P_586_4.pop();
+          for (var i = 0; i < this.__blockedEvents__P_587_4.length; i++) {
+            e = this.__blockedEvents__P_587_4.pop();
 
-            this.__eventQueue__P_586_3.unshift(e);
+            this.__eventQueue__P_587_3.unshift(e);
           }
 
           if (debugTransitions) {
@@ -6875,11 +6875,11 @@
       }
     },
     destruct: function destruct() {
-      this._disposeArray("__eventQueue__P_586_3");
+      this._disposeArray("__eventQueue__P_587_3");
 
-      this._disposeArray("__blockedEvents__P_586_4");
+      this._disposeArray("__blockedEvents__P_587_4");
 
-      this.__savedStates__P_586_2 = this.__states__P_586_0 = null;
+      this.__savedStates__P_587_2 = this.__states__P_587_0 = null;
     }
   });
   qx.util.fsm.FiniteStateMachine.$$dbClassInfo = $$dbClassInfo;
@@ -7067,11 +7067,11 @@
         // If we find one of our properties, call its setter.
         switch (field) {
           case "onentry":
-            this.setOnentry(this.__bindIfFunction__P_587_0(stateInfo[field], context));
+            this.setOnentry(this.__bindIfFunction__P_588_0(stateInfo[field], context));
             break;
 
           case "onexit":
-            this.setOnexit(this.__bindIfFunction__P_587_0(stateInfo[field], context));
+            this.setOnexit(this.__bindIfFunction__P_588_0(stateInfo[field], context));
             break;
 
           case "autoActionsBeforeOnentry":
@@ -7311,7 +7311,7 @@
        * list in a State.
        */
       name: {
-        transform: "__transformName__P_587_1",
+        transform: "__transformName__P_588_1",
         nullable: true
       },
 
@@ -7322,7 +7322,7 @@
        * to change this dynamically.
        */
       onentry: {
-        transform: "__transformOnentry__P_587_2",
+        transform: "__transformOnentry__P_588_2",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -7334,7 +7334,7 @@
        * to change this dynamically.
        */
       onexit: {
-        transform: "__transformOnexit__P_587_3",
+        transform: "__transformOnexit__P_588_3",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -7368,7 +7368,7 @@
        *     </pre>
        */
       autoActionsBeforeOnentry: {
-        transform: "__transformAutoActionsBeforeOnentry__P_587_4",
+        transform: "__transformAutoActionsBeforeOnentry__P_588_4",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -7403,7 +7403,7 @@
        *     </pre>
        */
       autoActionsAfterOnentry: {
-        transform: "__transformAutoActionsAfterOnentry__P_587_5",
+        transform: "__transformAutoActionsAfterOnentry__P_588_5",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -7437,7 +7437,7 @@
        *     </pre>
        */
       autoActionsBeforeOnexit: {
-        transform: "__transformAutoActionsBeforeOnexit__P_587_6",
+        transform: "__transformAutoActionsBeforeOnexit__P_588_6",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -7472,7 +7472,7 @@
        *     </pre>
        */
       autoActionsAfterOnexit: {
-        transform: "__transformAutoActionsAfterOnexit__P_587_7",
+        transform: "__transformAutoActionsAfterOnexit__P_588_7",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -7484,7 +7484,7 @@
        * (but highly NOT recommended) to change this dynamically.
        */
       events: {
-        transform: "__transformEvents__P_587_8",
+        transform: "__transformEvents__P_588_8",
         nullable: true
       }
     },
@@ -7496,7 +7496,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformName__P_587_1: function __transformName__P_587_1(value) {
+      __transformName__P_588_1: function __transformName__P_588_1(value) {
         // Ensure that we got a valid state name
         if (typeof value != "string" || value.length < 1) {
           throw new Error("Invalid state name");
@@ -7512,7 +7512,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformOnentry__P_587_2: function __transformOnentry__P_587_2(value) {
+      __transformOnentry__P_588_2: function __transformOnentry__P_588_2(value) {
         // Validate the onentry function
         switch (typeof value) {
           case "undefined":
@@ -7535,7 +7535,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformOnexit__P_587_3: function __transformOnexit__P_587_3(value) {
+      __transformOnexit__P_588_3: function __transformOnexit__P_588_3(value) {
         // Validate the onexit function
         switch (typeof value) {
           case "undefined":
@@ -7558,7 +7558,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformEvents__P_587_8: function __transformEvents__P_587_8(value) {
+      __transformEvents__P_588_8: function __transformEvents__P_588_8(value) {
         // Validate that events is an object
         if (typeof value != "object") {
           throw new Error("events must be an object");
@@ -7605,7 +7605,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsBeforeOnentry__P_587_4: function __transformAutoActionsBeforeOnentry__P_587_4(value) {
+      __transformAutoActionsBeforeOnentry__P_588_4: function __transformAutoActionsBeforeOnentry__P_588_4(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsBeforeOnentry", value, this.getUserData("context"));
       },
 
@@ -7615,7 +7615,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsAfterOnentry__P_587_5: function __transformAutoActionsAfterOnentry__P_587_5(value) {
+      __transformAutoActionsAfterOnentry__P_588_5: function __transformAutoActionsAfterOnentry__P_588_5(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsAfterOnentry", value, this.getUserData("context"));
       },
 
@@ -7625,7 +7625,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsBeforeOnexit__P_587_6: function __transformAutoActionsBeforeOnexit__P_587_6(value) {
+      __transformAutoActionsBeforeOnexit__P_588_6: function __transformAutoActionsBeforeOnexit__P_588_6(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsBeforeOnexit", value, this.getUserData("context"));
       },
 
@@ -7635,7 +7635,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsAfterOnexit__P_587_7: function __transformAutoActionsAfterOnexit__P_587_7(value) {
+      __transformAutoActionsAfterOnexit__P_588_7: function __transformAutoActionsAfterOnexit__P_588_7(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsAfterOnexit", value, this.getUserData("context"));
       },
 
@@ -7653,7 +7653,7 @@
        *   be called in the specified context. Otherwise, f is returned
        *   unaltered.
        */
-      __bindIfFunction__P_587_0: function __bindIfFunction__P_587_0(f, context) {
+      __bindIfFunction__P_588_0: function __bindIfFunction__P_588_0(f, context) {
         // Is the first parameter a function?
         if (typeof f == "function") {
           // Yup. Bind it to the specified context.
@@ -7848,7 +7848,7 @@
         // If we find one of our properties, call its setter.
         switch (field) {
           case "predicate":
-            this.setPredicate(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setPredicate(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "nextState":
@@ -7856,15 +7856,15 @@
             break;
 
           case "autoActionsBeforeOntransition":
-            this.setAutoActionsBeforeOntransition(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setAutoActionsBeforeOntransition(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "autoActionsAfterOntransition":
-            this.setAutoActionsAfterOntransition(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setAutoActionsAfterOntransition(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "ontransition":
-            this.setOntransition(this.__bindIfFunction__P_588_0(transitionInfo[field], context));
+            this.setOntransition(this.__bindIfFunction__P_589_0(transitionInfo[field], context));
             break;
 
           case "context":
@@ -7899,7 +7899,7 @@
         init: function init(fsm, event) {
           return true;
         },
-        transform: "__transformPredicate__P_588_1"
+        transform: "__transformPredicate__P_589_1"
       },
 
       /**
@@ -7911,7 +7911,7 @@
        */
       nextState: {
         init: qx.util.fsm.FiniteStateMachine.StateChange.CURRENT_STATE,
-        transform: "__transformNextState__P_588_2"
+        transform: "__transformNextState__P_589_2"
       },
 
       /**
@@ -7923,7 +7923,7 @@
        */
       autoActionsBeforeOntransition: {
         init: function init(fsm, event) {},
-        transform: "__transformAutoActionsBeforeOntransition__P_588_3"
+        transform: "__transformAutoActionsBeforeOntransition__P_589_3"
       },
 
       /**
@@ -7935,7 +7935,7 @@
        */
       autoActionsAfterOntransition: {
         init: function init(fsm, event) {},
-        transform: "__transformAutoActionsAfterOntransition__P_588_4"
+        transform: "__transformAutoActionsAfterOntransition__P_589_4"
       },
 
       /**
@@ -7946,7 +7946,7 @@
        */
       ontransition: {
         init: function init(fsm, event) {},
-        transform: "__transformOntransition__P_588_5"
+        transform: "__transformOntransition__P_589_5"
       }
     },
     members: {
@@ -7956,7 +7956,7 @@
        * @param value {var} incoming value
        * @return {Function} predicate function
        */
-      __transformPredicate__P_588_1: function __transformPredicate__P_588_1(value) {
+      __transformPredicate__P_589_1: function __transformPredicate__P_589_1(value) {
         // Validate the predicate.  Convert all valid types to function.
         switch (typeof value) {
           case "undefined":
@@ -7986,7 +7986,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformNextState__P_588_2: function __transformNextState__P_588_2(value) {
+      __transformNextState__P_589_2: function __transformNextState__P_589_2(value) {
         // Validate nextState.  It must be a string or a number.
         switch (typeof value) {
           case "string":
@@ -8017,7 +8017,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformAutoActionsBeforeOntransition__P_588_3: function __transformAutoActionsBeforeOntransition__P_588_3(value) {
+      __transformAutoActionsBeforeOntransition__P_589_3: function __transformAutoActionsBeforeOntransition__P_589_3(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsBeforeOntransition", value, this.getUserData("context"));
       },
 
@@ -8027,7 +8027,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformAutoActionsAfterOntransition__P_588_4: function __transformAutoActionsAfterOntransition__P_588_4(value) {
+      __transformAutoActionsAfterOntransition__P_589_4: function __transformAutoActionsAfterOntransition__P_589_4(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsAfterOntransition", value, this.getUserData("context"));
       },
 
@@ -8037,7 +8037,7 @@
        * @param value {var} Current value
        * @return {Function} the final value
        */
-      __transformOntransition__P_588_5: function __transformOntransition__P_588_5(value) {
+      __transformOntransition__P_589_5: function __transformOntransition__P_589_5(value) {
         // Validate the ontransition function.  Convert undefined to function.
         switch (typeof value) {
           case "undefined":
@@ -8068,7 +8068,7 @@
        *   be called in the specified context. Otherwise, f is returned
        *   unaltered.
        */
-      __bindIfFunction__P_588_0: function __bindIfFunction__P_588_0(f, context) {
+      __bindIfFunction__P_589_0: function __bindIfFunction__P_589_0(f, context) {
         // Is the first parameter a function?
         if (typeof f == "function") {
           // Yup. Bind it to the specified context.
@@ -8187,7 +8187,7 @@
    */
   qx.Class.define("qx.xml.Element", {
     statics: {
-      __xpe__P_590_0: null,
+      __xpe__P_591_0: null,
 
       /**
        * @type {Boolean} <code>true</code> if the native XMLSerializer should be used,
@@ -8223,11 +8223,11 @@
        */
       selectSingleNode: function selectSingleNode(element, query, namespaces) {
         if (qx.core.Environment.get("html.xpath")) {
-          if (!this.__xpe__P_590_0) {
-            this.__xpe__P_590_0 = new XPathEvaluator();
+          if (!this.__xpe__P_591_0) {
+            this.__xpe__P_591_0 = new XPathEvaluator();
           }
 
-          var xpe = this.__xpe__P_590_0;
+          var xpe = this.__xpe__P_591_0;
           var resolver;
 
           if (namespaces) {
@@ -8278,10 +8278,10 @@
        */
       selectNodes: function selectNodes(element, query, namespaces) {
         if (qx.core.Environment.get("html.xpath")) {
-          var xpe = this.__xpe__P_590_0;
+          var xpe = this.__xpe__P_591_0;
 
           if (!xpe) {
-            this.__xpe__P_590_0 = xpe = new XPathEvaluator();
+            this.__xpe__P_591_0 = xpe = new XPathEvaluator();
           }
 
           var resolver;
@@ -8751,7 +8751,7 @@
       }
     },
     statics: {
-      __objectDb__P_594_0: {},
+      __objectDb__P_595_0: {},
 
       /**
        * Returns the widget registered under the given id by {@link #register}
@@ -8760,7 +8760,7 @@
        * @return {qx.ui.core.Widget} the widget.
        */
       getWidgetById: function getWidgetById(id) {
-        return this.__objectDb__P_594_0[id];
+        return this.__objectDb__P_595_0[id];
       },
 
       /**
@@ -8771,18 +8771,18 @@
        * @param id {String} the id of the widget.
        */
       register: function register(object, id) {
-        if (this.__objectDb__P_594_0[id]) {
+        if (this.__objectDb__P_595_0[id]) {
           throw new Error("An object with the id '" + id + "' already exists.");
         }
 
-        this.__objectDb__P_594_0[id] = object;
+        this.__objectDb__P_595_0[id] = object;
       },
       unregister: function unregister(object, id) {
-        if (this.__objectDb__P_594_0[id] !== object) {
+        if (this.__objectDb__P_595_0[id] !== object) {
           throw new Error("The object is not registered with the id '" + id + "'.");
         }
 
-        delete this.__objectDb__P_594_0[id];
+        delete this.__objectDb__P_595_0[id];
       }
     }
   });
@@ -8891,21 +8891,21 @@
     */
     construct: function construct() {
       qx.ui.container.Composite.constructor.call(this);
-      this.__menuItemStore__P_595_0 = {};
+      this.__menuItemStore__P_596_0 = {};
       var layout = new qx.ui.layout.VBox();
       this.setLayout(layout);
-      this.add(this.__createHeader__P_595_1());
-      this.add(this.__createToolbar__P_595_2());
+      this.add(this.__createHeader__P_596_1());
+      this.add(this.__createToolbar__P_596_2());
       var tree = new qxl.apiviewer.ui.PackageTree();
       tree.setId("tree");
       this._searchView = new qxl.apiviewer.ui.SearchView();
       var legend = new qxl.apiviewer.ui.LegendView();
 
-      var toggleView = this.__createToggleView__P_595_3(tree, this._searchView, legend);
+      var toggleView = this.__createToggleView__P_596_3(tree, this._searchView, legend);
 
-      var mainFrame = this.__createDetailFrame__P_595_4();
+      var mainFrame = this.__createDetailFrame__P_596_4();
 
-      this.add(this.__createSplitPane__P_595_5(toggleView, mainFrame), {
+      this.add(this.__createSplitPane__P_596_5(toggleView, mainFrame), {
         flex: 1
       }); // Search for the value of the "search" URL query key.
 
@@ -8916,7 +8916,7 @@
 
         toggleView.setSelection([this._searchView]);
 
-        this.__toggleGroup__P_595_6.setSelection([this.__toggleGroup__P_595_6.getChildren()[1]]);
+        this.__toggleGroup__P_596_6.setSelection([this.__toggleGroup__P_596_6.getChildren()[1]]);
       }
     },
 
@@ -8926,10 +8926,10 @@
     *****************************************************************************
     */
     members: {
-      __firstPartHash__P_595_7: null,
-      __overflowMenu__P_595_8: null,
-      __menuItemStore__P_595_0: null,
-      __toggleGroup__P_595_6: null,
+      __firstPartHash__P_596_7: null,
+      __overflowMenu__P_596_8: null,
+      __menuItemStore__P_596_0: null,
+      __toggleGroup__P_596_6: null,
 
       /**
        * Creates the button view widget on the left
@@ -8938,14 +8938,14 @@
        * @param infoWidget {qx.ui.core.Widget} The widget for the "legend" pane
        * @return {qx.ui.tabview.TabView} The configured button view widget
        */
-      __createToggleView__P_595_3: function __createToggleView__P_595_3(treeWidget, searchWidget, infoWidget) {
+      __createToggleView__P_596_3: function __createToggleView__P_596_3(treeWidget, searchWidget, infoWidget) {
         var stack = new qx.ui.container.Stack();
         stack.setAppearance("toggleview");
         stack.add(treeWidget);
         stack.add(searchWidget);
         stack.add(infoWidget);
 
-        this.__toggleGroup__P_595_6.addListener("changeSelection", function (e) {
+        this.__toggleGroup__P_596_6.addListener("changeSelection", function (e) {
           var selected = e.getData()[0];
           var show = selected != null ? selected.getUserData("value") : null;
 
@@ -8984,11 +8984,11 @@
        *
        * @return {qx.ui.toolbar.ToolBar} The configured tool bar
        */
-      __createToolbar__P_595_2: function __createToolbar__P_595_2() {
+      __createToolbar__P_596_2: function __createToolbar__P_596_2() {
         var toolbar = new qx.ui.toolbar.ToolBar();
         var part = new qx.ui.toolbar.Part();
         toolbar.add(part);
-        this.__firstPartHash__P_595_7 = part.toHashCode();
+        this.__firstPartHash__P_596_7 = part.toHashCode();
         var showPackages = new qx.ui.toolbar.RadioButton(this.tr("Content"), "icon/22/apps/utilities-dictionary.png");
         showPackages.setUserData("value", "packages");
         showPackages.setValue(true);
@@ -9004,7 +9004,7 @@
         part.add(showLegend);
         var group = new qx.ui.form.RadioGroup(showPackages, showSearch, showLegend);
         group.setAllowEmptySelection(true);
-        this.__toggleGroup__P_595_6 = group;
+        this.__toggleGroup__P_596_6 = group;
         toolbar.addSpacer();
         var part = new qx.ui.toolbar.Part();
         toolbar.add(part);
@@ -9049,8 +9049,8 @@
         toolbar.add(chevron);
         toolbar.setOverflowIndicator(chevron); // add the overflow menu
 
-        this.__overflowMenu__P_595_8 = new qx.ui.menu.Menu();
-        chevron.setMenu(this.__overflowMenu__P_595_8); // add the listener
+        this.__overflowMenu__P_596_8 = new qx.ui.menu.Menu();
+        chevron.setMenu(this.__overflowMenu__P_596_8); // add the listener
 
         toolbar.addListener("hideItem", function (e) {
           var item = e.getData();
@@ -9092,15 +9092,15 @@
         var partChildren = toolbarPart.getChildren();
         var menuItems = []; // only add a separator if the first part pops in
 
-        if (toolbarPart.toHashCode() === this.__firstPartHash__P_595_7) {
-          var cachedItem = this.__menuItemStore__P_595_0[toolbarPart.toHashCode()];
+        if (toolbarPart.toHashCode() === this.__firstPartHash__P_596_7) {
+          var cachedItem = this.__menuItemStore__P_596_0[toolbarPart.toHashCode()];
 
           if (!cachedItem) {
             cachedItem = new qx.ui.menu.Separator();
 
-            this.__overflowMenu__P_595_8.addAt(cachedItem, 0);
+            this.__overflowMenu__P_596_8.addAt(cachedItem, 0);
 
-            this.__menuItemStore__P_595_0[toolbarPart.toHashCode()] = cachedItem;
+            this.__menuItemStore__P_596_0[toolbarPart.toHashCode()] = cachedItem;
           }
 
           menuItems.push(cachedItem);
@@ -9109,7 +9109,7 @@
 
         for (var i = partChildren.length - 1; i >= 0; i--) {
           var toolbarItem = partChildren[i];
-          cachedItem = this.__menuItemStore__P_595_0[toolbarItem.toHashCode()];
+          cachedItem = this.__menuItemStore__P_596_0[toolbarItem.toHashCode()];
 
           if (!cachedItem) {
             if (toolbarItem instanceof qx.ui.toolbar.RadioButton) {
@@ -9129,9 +9129,9 @@
               cachedItem.bind("value", toolbarItem, "value");
             }
 
-            this.__overflowMenu__P_595_8.addAt(cachedItem, 0);
+            this.__overflowMenu__P_596_8.addAt(cachedItem, 0);
 
-            this.__menuItemStore__P_595_0[toolbarItem.toHashCode()] = cachedItem;
+            this.__menuItemStore__P_596_0[toolbarItem.toHashCode()] = cachedItem;
           }
 
           menuItems.push(cachedItem);
@@ -9145,7 +9145,7 @@
        *
        * @return {qx.ui.layout.CanvasLayout} The detail Frame
        */
-      __createDetailFrame__P_595_4: function __createDetailFrame__P_595_4() {
+      __createDetailFrame__P_596_4: function __createDetailFrame__P_596_4() {
         var detailFrame = new qx.ui.container.Composite(new qx.ui.layout.Canvas());
         detailFrame.getContentElement().setAttribute("class", "content");
         this._detailLoader = new qx.ui.embed.Html("<div style=\"padding:10px;\"><h1><small>please wait</small>Loading data...</h1></div>");
@@ -9178,7 +9178,7 @@
        * @param detailFrame {qx.ui.core.Widget} the detail widget
        * @return {qx.ui.layout.VBox} the main frame
        */
-      __createMainFrame__P_595_9: function __createMainFrame__P_595_9(toolbar, detailFrame) {
+      __createMainFrame__P_596_9: function __createMainFrame__P_596_9(toolbar, detailFrame) {
         var mainFrame = new qx.ui.container.Composite();
         mainFrame.setLayout(new qx.ui.layout.VBox());
         mainFrame.add(toolbar);
@@ -9195,7 +9195,7 @@
        * @param rightWidget {qx.ui.core.Widget} the widget on the right of the splitter
        * @return {qx.ui.splitpane.SplitPane} the split pane
        */
-      __createSplitPane__P_595_5: function __createSplitPane__P_595_5(leftWidget, rightWidget) {
+      __createSplitPane__P_596_5: function __createSplitPane__P_596_5(leftWidget, rightWidget) {
         var mainSplitPane = new qx.ui.splitpane.Pane("horizontal");
         mainSplitPane.setAppearance("app-splitpane");
         mainSplitPane.add(leftWidget, 0);
@@ -9206,7 +9206,7 @@
       /**
        * Creates the application header.
        */
-      __createHeader__P_595_1: function __createHeader__P_595_1() {
+      __createHeader__P_596_1: function __createHeader__P_596_1() {
         var layout = new qx.ui.layout.HBox();
         var header = new qx.ui.container.Composite(layout);
         header.setAppearance("app-header");
@@ -9245,7 +9245,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._classTreeNodeHash = this.__toggleGroup__P_595_6 = null;
+      this._classTreeNodeHash = this.__toggleGroup__P_596_6 = null;
 
       this._disposeObjects("_tree", "_detailLoader", "_classViewer", "_packageViewer", "_searchView", "_tabView");
     }
@@ -9339,30 +9339,30 @@
       this._detailLoader = this._widgetRegistry.getWidgetById("detail_loader");
       this._tabViewController = new qxl.apiviewer.TabViewController(this._widgetRegistry);
 
-      this.__bindTabViewController__P_596_0();
+      this.__bindTabViewController__P_597_0();
 
       this._tree = this._widgetRegistry.getWidgetById("tree");
 
-      this.__bindTree__P_596_1();
+      this.__bindTree__P_597_1();
 
-      this.__bindToolbar__P_596_2();
+      this.__bindToolbar__P_597_2();
 
       var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
 
       var btn_included = this._widgetRegistry.getWidgetById("btn_included");
 
-      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_596_3, this);
-      btn_included.addListener("changeValue", this.__syncMenuButton__P_596_3, this);
+      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_597_3, this);
+      btn_included.addListener("changeValue", this.__syncMenuButton__P_597_3, this);
       this._history = qx.bom.History.getInstance();
 
-      this.__bindHistory__P_596_4();
+      this.__bindHistory__P_597_4();
 
       qx.core.Init.getApplication().getRoot().addListener("pointerdown", function (e) {
-        this.__openInNewTab__P_596_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
+        this.__openInNewTab__P_597_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
       }, this, true);
     },
     members: {
-      __openInNewTab__P_596_5: false,
+      __openInNewTab__P_597_5: false,
       // overridden
       $$logCategory: "application",
 
@@ -9398,9 +9398,9 @@
             var state = this._history.getState();
 
             if (state) {
-              this.__selectItem__P_596_6(this.__decodeState__P_596_7(state));
+              this.__selectItem__P_597_6(this.__decodeState__P_597_7(state));
             } else {
-              this.__selectItem__P_596_6("");
+              this.__selectItem__P_597_6("");
             }
           });
         });
@@ -9409,7 +9409,7 @@
       /**
        * binds the events of the TabView controller
        */
-      __bindTabViewController__P_596_0: function __bindTabViewController__P_596_0() {
+      __bindTabViewController__P_597_0: function __bindTabViewController__P_597_0() {
         this._tabViewController.addListener("classLinkTapped", function (evt) {
           this._updateHistory(evt.getData());
         }, this);
@@ -9439,7 +9439,7 @@
       /**
        * binds the selection event of the package tree.
        */
-      __bindTree__P_596_1: function __bindTree__P_596_1() {
+      __bindTree__P_597_1: function __bindTree__P_597_1() {
         this._tree.addListener("changeSelection", function (evt) {
           var treeNode = evt.getData()[0];
 
@@ -9454,7 +9454,7 @@
       /**
        * binds the actions of the toolbar buttons.
        */
-      __bindToolbar__P_596_2: function __bindToolbar__P_596_2() {
+      __bindToolbar__P_597_2: function __bindToolbar__P_597_2() {
         var uiModel = qxl.apiviewer.UiModel.getInstance();
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -9493,7 +9493,7 @@
        * inherited and mixin includes.
        * 
        */
-      __syncMenuButton__P_596_3: function __syncMenuButton__P_596_3() {
+      __syncMenuButton__P_597_3: function __syncMenuButton__P_597_3() {
         var menuButton = this._widgetRegistry.getWidgetById("menubtn_includes");
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -9523,12 +9523,12 @@
       /**
        * bind history events
        */
-      __bindHistory__P_596_4: function __bindHistory__P_596_4() {
+      __bindHistory__P_597_4: function __bindHistory__P_597_4() {
         this._history.addListener("changeState", function (evt) {
-          var item = this.__decodeState__P_596_7(evt.getData());
+          var item = this.__decodeState__P_597_7(evt.getData());
 
           if (item) {
-            this.__selectItem__P_596_6(item);
+            this.__selectItem__P_597_6(item);
           }
         }, this);
       },
@@ -9541,7 +9541,7 @@
        */
       _updateHistory: function _updateHistory(className) {
         var newTitle = className + " - " + this._titlePrefix;
-        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_596_8(className), newTitle);
+        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_597_8(className), newTitle);
       },
 
       /**
@@ -9557,9 +9557,9 @@
 
         return classNode.loadDependedClasses().then(() => {
           if (classNode instanceof qxl.apiviewer.dao.Class) {
-            return this._tabViewController.openClass(classNode, this.__openInNewTab__P_596_5);
+            return this._tabViewController.openClass(classNode, this.__openInNewTab__P_597_5);
           } else {
-            return this._tabViewController.openPackage(classNode, this.__openInNewTab__P_596_5);
+            return this._tabViewController.openPackage(classNode, this.__openInNewTab__P_597_5);
           }
         }).then(() => callback && callback.call(self));
       },
@@ -9573,7 +9573,7 @@
        * 
        * @lint ignoreDeprecated(alert)
        */
-      __selectItem__P_596_6: function __selectItem__P_596_6(fullItemName) {
+      __selectItem__P_597_6: function __selectItem__P_597_6(fullItemName) {
         qxl.apiviewer.LoadingIndicator.getInstance().show();
         var className = fullItemName;
         var itemName = null;
@@ -9631,10 +9631,10 @@
           });
         });
       },
-      __encodeState__P_596_8: function __encodeState__P_596_8(state) {
+      __encodeState__P_597_8: function __encodeState__P_597_8(state) {
         return state.replace(/(.*)#(.*)/g, "$1~$2");
       },
-      __decodeState__P_596_7: function __decodeState__P_596_7(encodedState) {
+      __decodeState__P_597_7: function __decodeState__P_597_7(encodedState) {
         return encodedState.replace(/(.*)~(.*)/g, "$1#$2");
       }
     },
@@ -9707,12 +9707,12 @@
       qx.ui.tree.Tree.constructor.call(this, "Documentation");
       this.setDecorator(null);
       this.setPadding(0);
-      this.__root__P_597_0 = new qx.ui.tree.TreeFolder("Packages");
+      this.__root__P_598_0 = new qx.ui.tree.TreeFolder("Packages");
 
-      this.__root__P_597_0.setOpen(true);
+      this.__root__P_598_0.setOpen(true);
 
-      this.setRoot(this.__root__P_597_0);
-      this.setSelection([this.__root__P_597_0]); // TODO: Is this workaround still needed?
+      this.setRoot(this.__root__P_598_0);
+      this.setSelection([this.__root__P_598_0]); // TODO: Is this workaround still needed?
       // Workaround: Since navigating in qx.ui.tree.Tree doesn't work, we've to
       // maintain a hash that keeps the tree nodes for class names
 
@@ -9725,7 +9725,7 @@
     * ****************************************************************************
     */
     members: {
-      __root__P_597_0: null,
+      __root__P_598_0: null,
 
       /**
        * Updates the tree on the left.
@@ -9738,7 +9738,7 @@
       setTreeData: function setTreeData(docTree) {
         this._docTree = docTree; // Fill the packages tree
 
-        this.__fillPackageNode__P_597_1(this.__root__P_597_0, docTree, 0);
+        this.__fillPackageNode__P_598_1(this.__root__P_598_0, docTree, 0);
 
         if (this._wantedClassName) {
           this.selectTreeNodeByClassName(this._wantedClassName);
@@ -9762,10 +9762,10 @@
         }
 
         if (!className) {
-          this.__root__P_597_0.setOpen(true);
+          this.__root__P_598_0.setOpen(true);
 
-          this.setSelection([this.__root__P_597_0]);
-          this.scrollChildIntoView(this.__root__P_597_0);
+          this.setSelection([this.__root__P_598_0]);
+          this.scrollChildIntoView(this.__root__P_598_0);
           return qx.Promise.resolve(true);
         }
 
@@ -9820,13 +9820,13 @@
        *          {var} current depth in the tree
        * @return {Function} the opener callback function
        */
-      __getPackageNodeOpener__P_597_2: function __getPackageNodeOpener__P_597_2(packageTreeNode, packageDoc, depth) {
+      __getPackageNodeOpener__P_598_2: function __getPackageNodeOpener__P_598_2(packageTreeNode, packageDoc, depth) {
         var self = this;
         return function () {
           if (!packageTreeNode.loaded) {
             packageTreeNode.loaded = true;
 
-            self.__fillPackageNode__P_597_1(packageTreeNode, packageDoc, depth + 1);
+            self.__fillPackageNode__P_598_1(packageTreeNode, packageDoc, depth + 1);
 
             packageTreeNode.setOpenSymbolMode("always");
           }
@@ -9844,7 +9844,7 @@
        * @param depth
        *          {var} current depth in the tree
        */
-      __fillPackageNode__P_597_1: function __fillPackageNode__P_597_1(treeNode, docNode, depth) {
+      __fillPackageNode__P_598_1: function __fillPackageNode__P_598_1(treeNode, docNode, depth) {
         var PackageTree = qxl.apiviewer.ui.PackageTree;
         var packagesDoc = docNode.getPackages();
         packagesDoc.sort((l, r) => {
@@ -9861,7 +9861,7 @@
           packageTreeNode.setUserData("nodeName", packageDoc.getFullName());
           treeNode.add(packageTreeNode); // defer adding of child nodes
 
-          packageTreeNode.addListener("changeOpen", this.__getPackageNodeOpener__P_597_2(packageTreeNode, packageDoc, depth + 1), this); // Register the tree node
+          packageTreeNode.addListener("changeOpen", this.__getPackageNodeOpener__P_598_2(packageTreeNode, packageDoc, depth + 1), this); // Register the tree node
 
           this._classTreeNodeHash[packageDoc.getFullName()] = packageTreeNode;
           return packageDoc.load();
@@ -9898,7 +9898,7 @@
     destruct: function destruct() {
       this._docTree = this._classTreeNodeHash = null;
 
-      this._disposeObjects("__root__P_597_0");
+      this._disposeObjects("__root__P_598_0");
     }
   });
   qxl.apiviewer.ui.PackageTree.$$dbClassInfo = $$dbClassInfo;
@@ -9975,7 +9975,7 @@
       var layout = new qx.ui.layout.VBox();
       this.setLayout(layout);
       this.setBackgroundColor("white");
-      this.__initresult__P_598_0 = false;
+      this.__initresult__P_599_0 = false;
       this.listdata = [];
       this.apiindex = {};
 
@@ -10000,12 +10000,12 @@
     *****************************************************************************
     */
     members: {
-      __note__P_598_1: null,
-      __initresult__P_598_0: null,
-      __table__P_598_2: null,
-      __typeFilter__P_598_3: null,
-      __typesIndex__P_598_4: null,
-      __searchTerm__P_598_5: null,
+      __note__P_599_1: null,
+      __initresult__P_599_0: null,
+      __table__P_599_2: null,
+      __typeFilter__P_599_3: null,
+      __typesIndex__P_599_4: null,
+      __searchTerm__P_599_5: null,
 
       /**
        * Enters a term into the search box and selects the
@@ -10026,9 +10026,9 @@
 
         if (qx.lang.Object.getLength(this.apiindex) == 0) {
           // Index not ready yet, defer search
-          this.__searchTerm__P_598_5 = term;
+          this.__searchTerm__P_599_5 = term;
         } else {
-          this.__searchTerm__P_598_5 = null; // Set search box value
+          this.__searchTerm__P_599_5 = null; // Set search box value
 
           this.sinput.setValue(term);
         }
@@ -10057,7 +10057,7 @@
           column: 0,
           colSpan: 2
         });
-        this.__typesIndex__P_598_4 = {
+        this.__typesIndex__P_599_4 = {
           "PACKAGE": 0,
           "ENTRY": 4,
           "CLASS": 1,
@@ -10070,7 +10070,7 @@
           "CONSTANT": 3,
           "CHILDCONTROL": 6
         };
-        this.__typeFilter__P_598_3 = new qx.data.Array([true, true, true, true, true, true, true]);
+        this.__typeFilter__P_599_3 = new qx.data.Array([true, true, true, true, true, true, true]);
         var types = ["Packages", "Classes, Mixins, Interfaces", "Methods", "Constants", "Properties", "Events", "Child Controls"];
         var iconNameParts = ["package", "class", "method_public", "constant", "property", "event", "childcontrol"];
         var typeContainer = new qx.ui.container.Composite(new qx.ui.layout.HBox());
@@ -10103,7 +10103,7 @@
           typeToggleButton.setGap(0);
           typeToggleButton.setIconPosition("top");
           typeToggleButton.setShow("icon");
-          typeToggleButton.bind("value", this.__typeFilter__P_598_3, "[" + i + "]");
+          typeToggleButton.bind("value", this.__typeFilter__P_599_3, "[" + i + "]");
           typeToggleButton.setKeepFocus(true);
           typeToggleButton.setValue(true);
           typeContainer.add(typeToggleButton);
@@ -10111,7 +10111,7 @@
             this._searchResult(this.sinput.getValue() || "");
           }, this);
 
-          this.__typeFilter__P_598_3.bind("[" + i + "]", typeToggleButton, "value");
+          this.__typeFilter__P_599_3.bind("[" + i + "]", typeToggleButton, "value");
         }
 
         var typeToggleButtonAll = new qx.ui.form.ToggleButton("Toggle Filters");
@@ -10125,8 +10125,8 @@
         typeToggleButtonAll.setMarginLeft(10);
         typeContainer.add(typeToggleButtonAll);
         typeToggleButtonAll.addListener("changeValue", function (e) {
-          for (var i = 0; i < this.__typeFilter__P_598_3.length; i++) {
-            this.__typeFilter__P_598_3.setItem(i, e.getData());
+          for (var i = 0; i < this.__typeFilter__P_599_3.length; i++) {
+            this.__typeFilter__P_599_3.setItem(i, e.getData());
           }
 
           this._searchResult(this.sinput.getValue() || "");
@@ -10187,8 +10187,8 @@
           width: "1*"
         });
         tcm.setDataCellRenderer(0, new qx.ui.table.cellrenderer.Image(20, 20));
-        this.__initresult__P_598_0 = true;
-        this.__table__P_598_2 = table; // table.addListener("appear", this.__handleNote, this);
+        this.__initresult__P_599_0 = true;
+        this.__table__P_599_2 = table; // table.addListener("appear", this.__handleNote, this);
         // table.addListener("disappear", function(e) {
         //  this.__note.hide();
         // }, this);
@@ -10223,8 +10223,8 @@
 
         var allFiltersDisabled = true;
 
-        for (var i = 0; i < this.__typeFilter__P_598_3.length; i++) {
-          if (this.__typeFilter__P_598_3.getItem(i) === true) {
+        for (var i = 0; i < this.__typeFilter__P_599_3.length; i++) {
+          if (this.__typeFilter__P_599_3.getItem(i) === true) {
             allFiltersDisabled = false;
             break;
           }
@@ -10233,7 +10233,7 @@
 
         if (svalue.length < 3 || allFiltersDisabled) {
           // Reset the result list
-          if (this.__initresult__P_598_0) {
+          if (this.__initresult__P_599_0) {
             this.listdata.splice(0, this.listdata.length);
           }
 
@@ -10250,7 +10250,7 @@
           new RegExp(search[0]);
         } catch (ex) {
           // Reset the result list
-          if (this.__initresult__P_598_0) {
+          if (this.__initresult__P_599_0) {
             this.listdata.splice(0, this.listdata.length);
           }
 
@@ -10310,9 +10310,9 @@
         var sresult = []; // Match object
 
         var mo = new RegExp(svalue, /^.*[A-Z].*$/.test(svalue) ? "" : "i");
-        var index = this.apiindex.__index____P_598_6;
-        var fullNames = this.apiindex.__fullNames____P_598_7;
-        var types = this.apiindex.__types____P_598_8;
+        var index = this.apiindex.__index____P_599_6;
+        var fullNames = this.apiindex.__fullNames____P_599_7;
+        var types = this.apiindex.__types____P_599_8;
         var namespaceFilter = this.namespaceTextField.getValue() != null ? this.namespaceTextField.getValue().trim() : "";
         var namespaceRegexp = new RegExp(".*");
 
@@ -10382,7 +10382,7 @@
        * @param type {String} the type in uppercase
        */
       _isTypeFilteredIn: function _isTypeFilteredIn(type) {
-        return this.__typeFilter__P_598_3.getItem(this.__typesIndex__P_598_4[type]);
+        return this.__typeFilter__P_599_3.getItem(this.__typesIndex__P_599_4[type]);
       },
 
       /**
@@ -10490,10 +10490,10 @@
         req.addListener("completed", function (evt) {
           this.apiindex = eval("(" + evt.getContent() + ")");
 
-          if (this.__searchTerm__P_598_5) {
+          if (this.__searchTerm__P_599_5) {
             setTimeout(function () {
-              this.sinput.setValue(this.__searchTerm__P_598_5);
-              this.__searchTerm__P_598_5 = null;
+              this.sinput.setValue(this.__searchTerm__P_599_5);
+              this.__searchTerm__P_599_5 = null;
             }.bind(this), 0);
           }
         }, this);
@@ -10543,8 +10543,8 @@
 
         this._tableModel.setColumns(["", ""]);
       },
-      __initNote__P_598_9: function __initNote__P_598_9(table) {
-        this.__note__P_598_1 = new qx.ui.popup.Popup(new qx.ui.layout.Canvas()).set({
+      __initNote__P_599_9: function __initNote__P_599_9(table) {
+        this.__note__P_599_1 = new qx.ui.popup.Popup(new qx.ui.layout.Canvas()).set({
           autoHide: false,
           width: 170
         });
@@ -10552,23 +10552,23 @@
         var hint = new qx.ui.basic.Label(hintText);
         hint.setRich(true);
 
-        this.__note__P_598_1.add(hint, {
+        this.__note__P_599_1.add(hint, {
           edge: 3
         });
 
-        this.__note__P_598_1.setPosition("bottom-left");
+        this.__note__P_599_1.setPosition("bottom-left");
 
-        this.__note__P_598_1.placeToWidget(this.sinput, false);
+        this.__note__P_599_1.placeToWidget(this.sinput, false);
 
-        this.__note__P_598_1.show();
+        this.__note__P_599_1.show();
       },
-      __handleNote__P_598_10: function __handleNote__P_598_10(e) {
-        if (this.__note__P_598_1) {
+      __handleNote__P_599_10: function __handleNote__P_599_10(e) {
+        if (this.__note__P_599_1) {
           if ((this.sinput.getValue() || "").trim().length == 0) {
-            this.__note__P_598_1.show();
+            this.__note__P_599_1.show();
           }
         } else {
-          this.__initNote__P_598_9();
+          this.__initNote__P_599_9();
         }
       }
     },
@@ -10579,9 +10579,9 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.apiindex = this._table = this.__table__P_598_2 = this._tableModel = this.__typeFilter__P_598_3 = this.__typesIndex__P_598_4 = this._selectionModel = null;
+      this.apiindex = this._table = this.__table__P_599_2 = this._tableModel = this.__typeFilter__P_599_3 = this.__typesIndex__P_599_4 = this._selectionModel = null;
 
-      this._disposeObjects("sinput", "__note__P_598_1");
+      this._disposeObjects("sinput", "__note__P_599_1");
 
       this._disposeArray("listdata");
     }
@@ -10661,7 +10661,7 @@
       layout.setColumnWidth(1, 150);
       layout.setColumnFlex(1, 1);
       var content = new qx.ui.container.Composite(layout);
-      this.__legend__P_599_0 = [{
+      this.__legend__P_600_0 = [{
         icon: "ICON_PACKAGE",
         desc: "Package"
       }, {
@@ -10731,11 +10731,11 @@
         icon: "OVERLAY_OVERRIDDEN",
         desc: "Method/Property overrides the Method/Property of the super class"
       }];
-      var length = this.__legend__P_599_0.length;
+      var length = this.__legend__P_600_0.length;
       var entry, imageUrl;
 
       for (var i = 0; i < length; i++) {
-        entry = this.__legend__P_599_0[i];
+        entry = this.__legend__P_600_0[i];
         imageUrl = qxl.apiviewer.TreeUtil.iconNameToIconPath(entry.icon);
 
         if (typeof imageUrl != "string") {
@@ -10767,7 +10767,7 @@
     *****************************************************************************
     */
     members: {
-      __legend__P_599_0: null
+      __legend__P_600_0: null
     },
 
     /*
@@ -10776,7 +10776,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeMap("__legend__P_599_0");
+      this._disposeMap("__legend__P_600_0");
     }
   });
   qxl.apiviewer.ui.LegendView.$$dbClassInfo = $$dbClassInfo;
@@ -10992,12 +10992,12 @@
   qx.Class.define("qxl.apiviewer.ClassLoader", {
     extend: qx.core.Object,
     statics: {
-      __baseUri__P_600_0: null,
+      __baseUri__P_601_0: null,
       setBaseUri: function setBaseUri(baseUri) {
-        this.__baseUri__P_600_0 = baseUri;
+        this.__baseUri__P_601_0 = baseUri;
       },
       getBaseUri: function getBaseUri() {
-        return this.__baseUri__P_600_0;
+        return this.__baseUri__P_601_0;
       },
       loadClassList: function loadClassList(classes, callback, self) {
         if (!classes.length) {
@@ -11070,7 +11070,7 @@
       qxl.apiviewer.TabViewController.instance = this;
       this._tabView = widgetRegistry.getWidgetById("tabView");
 
-      this._tabView.addListener("changeSelection", this.__onChangeSelection__P_601_0, this);
+      this._tabView.addListener("changeSelection", this.__onChangeSelection__P_602_0, this);
     },
     events: {
       /** This event if dispatched if one of the internal links is tapped */
@@ -11099,12 +11099,12 @@
         return page.getChildren()[0].showItem(itemName);
       },
       openPackage: function openPackage(classNode, newTab) {
-        return this.__open__P_601_1(classNode, qxl.apiviewer.ui.tabview.PackagePage, newTab);
+        return this.__open__P_602_1(classNode, qxl.apiviewer.ui.tabview.PackagePage, newTab);
       },
       openClass: function openClass(classNode, newTab) {
-        return this.__open__P_601_1(classNode, qxl.apiviewer.ui.tabview.ClassPage, newTab);
+        return this.__open__P_602_1(classNode, qxl.apiviewer.ui.tabview.ClassPage, newTab);
       },
-      __open__P_601_1: function __open__P_601_1(classNode, clazz, newTab) {
+      __open__P_602_1: function __open__P_602_1(classNode, clazz, newTab) {
         var currentPage = this._tabView.getSelection()[0] || null;
 
         if (currentPage && (!(currentPage instanceof clazz) || newTab)) {
@@ -11125,7 +11125,7 @@
         currentPage.setUserData("itemName", null);
         return currentPage.setClassNodeAsync(classNode).then(() => qxl.apiviewer.LoadingIndicator.getInstance().hide());
       },
-      __onChangeSelection__P_601_0: function __onChangeSelection__P_601_0(event) {
+      __onChangeSelection__P_602_0: function __onChangeSelection__P_602_0(event) {
         var oldData = event.getOldData();
         var data = event.getData();
         this.fireDataEvent("changeSelection", data, oldData);
@@ -12190,7 +12190,7 @@
       }
     },
     statics: {
-      __rootPackage__P_602_0: null,
+      __rootPackage__P_603_0: null,
 
       /**
        * Locates a package by name
@@ -12199,10 +12199,10 @@
        * @return {Package?}
        */
       getPackage: function getPackage(name, create) {
-        var root = qxl.apiviewer.dao.Package.__rootPackage__P_602_0;
+        var root = qxl.apiviewer.dao.Package.__rootPackage__P_603_0;
 
         if (!root) {
-          root = qxl.apiviewer.dao.Package.__rootPackage__P_602_0 = new qxl.apiviewer.dao.Package("");
+          root = qxl.apiviewer.dao.Package.__rootPackage__P_603_0 = new qxl.apiviewer.dao.Package("");
         }
 
         if (!name) {
@@ -12368,28 +12368,28 @@
     type: "singleton",
     extend: qx.core.Object,
     construct: function construct() {
-      this.__blocker__P_603_0 = new qx.ui.core.Blocker(qxl.apiviewer.MWidgetRegistry.getWidgetById("tabView"));
+      this.__blocker__P_604_0 = new qx.ui.core.Blocker(qxl.apiviewer.MWidgetRegistry.getWidgetById("tabView"));
 
-      this.__blocker__P_603_0.setColor("#D5D5D5");
+      this.__blocker__P_604_0.setColor("#D5D5D5");
 
-      this.__blocker__P_603_0.setOpacity(0.5);
+      this.__blocker__P_604_0.setOpacity(0.5);
 
-      this.__blocker__P_603_0.getBlockerElement().setStyle("padding-top", "100px");
+      this.__blocker__P_604_0.getBlockerElement().setStyle("padding-top", "100px");
 
-      this.__blocker__P_603_0.getBlockerElement().setStyle("text-align", "center");
+      this.__blocker__P_604_0.getBlockerElement().setStyle("text-align", "center");
 
       var loadingImage = new qx.html.Element("img");
       loadingImage.setAttribute("src", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/loading66.gif"));
 
-      this.__blocker__P_603_0.getBlockerElement().add(loadingImage);
+      this.__blocker__P_604_0.getBlockerElement().add(loadingImage);
     },
     members: {
-      __blocker__P_603_0: null,
+      __blocker__P_604_0: null,
       show: function show() {
-        this.__blocker__P_603_0.block();
+        this.__blocker__P_604_0.block();
       },
       hide: function hide() {
-        this.__blocker__P_603_0.unblock();
+        this.__blocker__P_604_0.unblock();
       }
     }
   });
@@ -12845,7 +12845,7 @@
       });
       this.setPadding(0);
 
-      this.__bindViewer__P_604_0(this._viewer);
+      this.__bindViewer__P_605_0(this._viewer);
     },
     properties: {
       classNode: {
@@ -12869,7 +12869,7 @@
           }, this, 0);
         });
       },
-      __bindViewer__P_604_0: function __bindViewer__P_604_0(viewer) {
+      __bindViewer__P_605_0: function __bindViewer__P_605_0(viewer) {
         var uiModel = qxl.apiviewer.UiModel.getInstance();
         var bindings = this._bindings;
         bindings.push(uiModel.bind("showInherited", viewer, "showInherited"));
@@ -12879,7 +12879,7 @@
         bindings.push(uiModel.bind("showPrivate", viewer, "showPrivate"));
         bindings.push(uiModel.bind("showInternal", viewer, "showInternal"));
       },
-      __removeBinding__P_604_1: function __removeBinding__P_604_1() {
+      __removeBinding__P_605_1: function __removeBinding__P_605_1() {
         var uiModel = qxl.apiviewer.UiModel.getInstance();
         var bindings = this._bindings;
 
@@ -12890,7 +12890,7 @@
       }
     },
     destruct: function destruct() {
-      this.__removeBinding__P_604_1();
+      this.__removeBinding__P_605_1();
 
       this._viewer.destroy();
 
@@ -13837,11 +13837,11 @@
       _infoPanelHash: null,
       _infoPanels: null,
       _init: function _init(pkg) {
-        this.__initHtml__P_606_0();
+        this.__initHtml__P_607_0();
 
         this.addListenerOnce("appear", () => this._syncHtml());
       },
-      __initHtml__P_606_0: function __initHtml__P_606_0() {
+      __initHtml__P_607_0: function __initHtml__P_607_0() {
         var html = new qx.util.StringBuilder();
         html.add("<div style=\"padding:24px;\">"); // Add title
 
@@ -14099,13 +14099,13 @@
   ************************************************************************ */
   qx.Class.define("qxl.apiviewer.ObjectRegistry", {
     statics: {
-      __objectDb__P_610_0: {},
+      __objectDb__P_611_0: {},
       register: function register(object) {
         var hash = qx.core.ObjectRegistry.toHashCode(object);
-        this.__objectDb__P_610_0[hash] = object;
+        this.__objectDb__P_611_0[hash] = object;
       },
       getObjectFromHashCode: function getObjectFromHashCode(hashCode) {
-        return this.__objectDb__P_610_0[hashCode];
+        return this.__objectDb__P_611_0[hashCode];
       }
     }
   });
@@ -14621,7 +14621,7 @@
           tocItem.innerHTML = qxl.apiviewer.ui.ClassViewer.createImageHtml(panel.getPanelIcon(), panel.getPanelTitle()) + " ";
           q(tocItem).on("tap", function (firstItem) {
             return function () {
-              this.__enableSection__P_605_0(firstItem, firstItem.getName());
+              this.__enableSection__P_606_0(firstItem, firstItem.getName());
 
               qx.bom.element.Scroll.intoView(panel.getTitleElement(), null, "left", "top");
 
@@ -14684,21 +14684,21 @@
 
 
         if (classNode.getType() === "interface") {
-          classHtml.add(this.__getInterfaceHierarchyHtml__P_605_1(classNode));
+          classHtml.add(this.__getInterfaceHierarchyHtml__P_606_1(classNode));
         } else {
-          classHtml.add(this.__getClassHierarchyHtml__P_605_2(classNode));
+          classHtml.add(this.__getClassHierarchyHtml__P_606_2(classNode));
         }
 
         return classNode.getChildClasses().then(childClasses => {
-          classHtml.add(this.__getDependentClassesHtml__P_605_3(childClasses, "Direct " + subObjectsName + ":"));
-          classHtml.add(this.__getDependentClassesHtml__P_605_3(classNode.getInterfaces(), "Implemented interfaces:"));
-          classHtml.add(this.__getDependentClassesHtml__P_605_3(classNode.getMixins(), "Included mixins:"));
+          classHtml.add(this.__getDependentClassesHtml__P_606_3(childClasses, "Direct " + subObjectsName + ":"));
+          classHtml.add(this.__getDependentClassesHtml__P_606_3(classNode.getInterfaces(), "Implemented interfaces:"));
+          classHtml.add(this.__getDependentClassesHtml__P_606_3(classNode.getMixins(), "Included mixins:"));
           return classNode.getImplementations();
         }).then(classes => {
-          classHtml.add(this.__getDependentClassesHtml__P_605_3(classes, "Implementations of this interface:"));
+          classHtml.add(this.__getDependentClassesHtml__P_606_3(classes, "Implementations of this interface:"));
           return classNode.getIncluder();
         }).then(classes => {
-          classHtml.add(this.__getDependentClassesHtml__P_605_3(classes, "Classes including this mixin:"));
+          classHtml.add(this.__getDependentClassesHtml__P_606_3(classes, "Classes including this mixin:"));
 
           if (classNode.isDeprecated()) {
             classHtml.add("<h2 class=\"warning\">", "Deprecated:", "</h2>");
@@ -14739,7 +14739,7 @@
        * @param title {String} headline
        * @return {String} HTML Fragement
        */
-      __getDependentClassesHtml__P_605_3: function __getDependentClassesHtml__P_605_3(dependentClasses, title) {
+      __getDependentClassesHtml__P_606_3: function __getDependentClassesHtml__P_606_3(dependentClasses, title) {
         var result = "";
 
         if (dependentClasses.length > 0) {
@@ -14765,7 +14765,7 @@
        * @param classNode {qxl.apiviewer.dao.Class} class node
        * @return {String} HTML fragemnt
        */
-      __getClassHierarchyHtml__P_605_2: function __getClassHierarchyHtml__P_605_2(classNode) {
+      __getClassHierarchyHtml__P_606_2: function __getClassHierarchyHtml__P_606_2(classNode) {
         var ClassViewer = qxl.apiviewer.ui.ClassViewer; // Create the class hierarchy
 
         var classHtml = new qx.util.StringBuilder("<h2>", "Inheritance hierarchy:", "</h2>");
@@ -14807,7 +14807,7 @@
        * @param classNode {qxl.apiviewer.dao.Class} class node
        * @return {String} HTML fragemnt
        */
-      __getInterfaceHierarchyHtml__P_605_1: function __getInterfaceHierarchyHtml__P_605_1(classNode) {
+      __getInterfaceHierarchyHtml__P_606_1: function __getInterfaceHierarchyHtml__P_606_1(classNode) {
         var ClassViewer = qxl.apiviewer.ui.ClassViewer;
         var TreeUtil = qxl.apiviewer.TreeUtil;
         var InfoPanel = qxl.apiviewer.ui.panels.InfoPanel;
@@ -14882,7 +14882,7 @@
         } // Show properties, private or protected methods if they are hidden
 
 
-        this.__enableSection__P_605_0(itemNode, itemName);
+        this.__enableSection__P_606_0(itemNode, itemName);
 
         var panel = this._getPanelForItemNode(itemNode);
 
@@ -14921,7 +14921,7 @@
        * @param itemName {String} the name of the item to highlight.
        * @param itemName {String} The doc node of the item
        */
-      __enableSection__P_605_0: function __enableSection__P_605_0(itemNode, itemName) {
+      __enableSection__P_606_0: function __enableSection__P_606_0(itemNode, itemName) {
         var uiModel = qxl.apiviewer.UiModel.getInstance(); // Check for property
 
         if (itemNode.isFromProperty && itemNode.isFromProperty()) {
@@ -15361,7 +15361,7 @@
 
         if (this.itemHasDetails(node, currentDocNode)) {
           // This node has details -> Show the detail button
-          html.add("<img src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/open.gif"), "\" onclick=\"", this.__encodeObject__P_607_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\"/>");
+          html.add("<img src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/open.gif"), "\" onclick=\"", this.__encodeObject__P_608_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\"/>");
         } else {
           html.add("&#160;");
         }
@@ -15372,7 +15372,7 @@
         html.add("<h3");
 
         if (this.itemHasDetails(node, currentDocNode)) {
-          html.add(" onclick=\"", this.__encodeObject__P_607_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\">");
+          html.add(" onclick=\"", this.__encodeObject__P_608_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\">");
         } else {
           html.add(">");
         }
@@ -15403,7 +15403,7 @@
       itemHasDetails: function itemHasDetails(node, currentClassDocNode) {
         return true;
       },
-      __encodeObject__P_607_0: function __encodeObject__P_607_0(object) {
+      __encodeObject__P_608_0: function __encodeObject__P_608_0(object) {
         return "qxl.apiviewer.ObjectRegistry.getObjectFromHashCode('" + object.toHashCode() + "')";
       },
 
@@ -15416,7 +15416,7 @@
         var uppercaseLabelText = this._labelText.charAt(0).toUpperCase() + this._labelText.substring(1);
 
         var html = new qx.util.StringBuilder("<div class=\"info-panel\"><h2>");
-        html.add("<img class=\"openclose\" src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/" + (this.getIsOpen() ? "close.gif" : "open.gif")), "\" onclick=\"", this.__encodeObject__P_607_0(viewer), ".togglePanelVisibility(" + this.__encodeObject__P_607_0(this), ")\"/> ", "<span onclick=\"", this.__encodeObject__P_607_0(viewer), ".togglePanelVisibility(", this.__encodeObject__P_607_0(this), ")\">", uppercaseLabelText, "</span>");
+        html.add("<img class=\"openclose\" src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/" + (this.getIsOpen() ? "close.gif" : "open.gif")), "\" onclick=\"", this.__encodeObject__P_608_0(viewer), ".togglePanelVisibility(" + this.__encodeObject__P_608_0(this), ")\"/> ", "<span onclick=\"", this.__encodeObject__P_608_0(viewer), ".togglePanelVisibility(", this.__encodeObject__P_608_0(this), ")\">", uppercaseLabelText, "</span>");
         html.add("</h2><div></div></div>");
         return html.get();
       },
@@ -15484,7 +15484,7 @@
        *          {Boolean} whether to show internal items
        * @return {qxl.apiviewer.dao.ClassItem[]} filtered list of items
        */
-      __filterItems__P_607_1: function __filterItems__P_607_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal) {
+      __filterItems__P_608_1: function __filterItems__P_608_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal) {
         var copyArr = nodeArr.concat();
 
         for (var i = nodeArr.length - 1; i >= 0; i--) {
@@ -15551,7 +15551,7 @@
             var showProtected = classViewer.getShowProtected();
             var showPrivate = classViewer.getShowPrivate();
             var showInternal = classViewer.getShowInternal();
-            nodeArr = this.__filterItems__P_607_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal);
+            nodeArr = this.__filterItems__P_608_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal);
             classViewer.sortItems(nodeArr);
           }
 
@@ -15843,7 +15843,7 @@
                   cleanItemName = cleanItemName.substring(0, parenPos).trim();
                 }
 
-                itemNode = this.__getItemFromClassHierarchy__P_607_2(cleanItemName, classNode);
+                itemNode = this.__getItemFromClassHierarchy__P_608_2(cleanItemName, classNode);
 
                 if (!itemNode && qxl.apiviewer.UiModel.getInstance().getShowIncluded()) {
                   if (qxl.apiviewer.UiModel.getInstance().getShowInherited()) {
@@ -16025,7 +16025,7 @@
        * @return {qxl.apiviewer.dao.ClassItem} the classItem
        *
        */
-      __getItemFromClassHierarchy__P_607_2: function __getItemFromClassHierarchy__P_607_2(itemName, baseClassNode) {
+      __getItemFromClassHierarchy__P_608_2: function __getItemFromClassHierarchy__P_608_2(itemName, baseClassNode) {
         var itemNode = baseClassNode.getItem(itemName);
 
         if (itemNode) {
@@ -16064,7 +16064,7 @@
 
         if (desc) {
           if (!showDetails) {
-            desc = this.__extractFirstSentence__P_607_3(desc);
+            desc = this.__extractFirstSentence__P_608_3(desc);
           }
 
           return "<div class=\"item-desc\">" + this.resolveLinkAttributes(desc, packageBaseClass) + "</div>";
@@ -16080,7 +16080,7 @@
        *          {String} the text.
        * @return {String} the first sentence from the text.
        */
-      __extractFirstSentence__P_607_3: function __extractFirstSentence__P_607_3(text) {
+      __extractFirstSentence__P_608_3: function __extractFirstSentence__P_608_3(text) {
         var ret = text; // Extract first block
 
         var pos = ret.indexOf("</p>");
@@ -16109,7 +16109,7 @@
         var desc = node.getDescription();
 
         if (desc) {
-          return this.__extractFirstSentence__P_607_3(desc) != desc;
+          return this.__extractFirstSentence__P_608_3(desc) != desc;
         }
 
         return false;
@@ -17195,7 +17195,7 @@
        * @return {Boolean} whether the constant has details.
        */
       itemHasDetails: function itemHasDetails(node, currentClassDocNode) {
-        return node.getSee().length > 0 || node.getErrors().length > 0 || qxl.apiviewer.ui.panels.InfoPanel.descriptionHasDetails(node) || this.__hasConstantValueHtml__P_608_0(node);
+        return node.getSee().length > 0 || node.getErrors().length > 0 || qxl.apiviewer.ui.panels.InfoPanel.descriptionHasDetails(node) || this.__hasConstantValueHtml__P_609_0(node);
       },
       getItemTypeHtml: function getItemTypeHtml(node) {
         return qxl.apiviewer.ui.panels.InfoPanel.createTypeHtml(node, "var");
@@ -17216,7 +17216,7 @@
         var textHtml = qxl.apiviewer.ui.panels.InfoPanel.createDescriptionHtml(node, node.getClass(), showDetails);
 
         if (showDetails) {
-          textHtml += this.__createConstantValueHtml__P_608_1(node);
+          textHtml += this.__createConstantValueHtml__P_609_1(node);
           textHtml += qxl.apiviewer.ui.panels.InfoPanel.createSeeAlsoHtml(node);
           textHtml += qxl.apiviewer.ui.panels.InfoPanel.createErrorHtml(node, currentClassDocNode);
           textHtml += qxl.apiviewer.ui.panels.InfoPanel.createDeprecationHtml(node, "constant");
@@ -17231,7 +17231,7 @@
        * @param node {Map} the doc node of the item.
        * @return {Boolean} whether the constant provides a value
        */
-      __hasConstantValueHtml__P_608_0: function __hasConstantValueHtml__P_608_0(node) {
+      __hasConstantValueHtml__P_609_0: function __hasConstantValueHtml__P_609_0(node) {
         return Boolean(node.getValue());
       },
 
@@ -17241,8 +17241,8 @@
        * @param node {Map} the doc node of the item.
        * @return {String} the HTML showing the value of the constant
        */
-      __createConstantValueHtml__P_608_1: function __createConstantValueHtml__P_608_1(node) {
-        if (this.__hasConstantValueHtml__P_608_0(node)) {
+      __createConstantValueHtml__P_609_1: function __createConstantValueHtml__P_609_1(node) {
+        if (this.__hasConstantValueHtml__P_609_0(node)) {
           var value = node.getValue();
 
           if (typeof value !== "string") {
@@ -17327,13 +17327,13 @@
 
         return arr;
       },
-      __createGeneratedMethodsHtml__P_609_0: function __createGeneratedMethodsHtml__P_609_0(node, currentClassDocNode) {
+      __createGeneratedMethodsHtml__P_610_0: function __createGeneratedMethodsHtml__P_610_0(node, currentClassDocNode) {
         if (node.isRefined()) {
           return "";
         }
 
         if (node.isPrivate()) {
-          var access = "____P_609_1";
+          var access = "____P_610_1";
           var name = node.getName().substring(2);
         } else if (node.isProtected()) {
           access = "_";
@@ -17367,7 +17367,7 @@
         textHtml.add("</div>");
         return qxl.apiviewer.ui.panels.InfoPanel.resolveLinkAttributes(textHtml.get(), currentClassDocNode);
       },
-      __createAttributesHtml__P_609_2: function __createAttributesHtml__P_609_2(node) {
+      __createAttributesHtml__P_610_2: function __createAttributesHtml__P_610_2(node) {
         var attributes = [];
 
         if (node.isNullable()) {
@@ -17409,7 +17409,7 @@
        * @param node {qxl.apiviewer.dao.ClassItem} item to get the the information from
        * @return {String} HTML fragment
        */
-      __createRefinedFromHtml__P_609_3: function __createRefinedFromHtml__P_609_3(node) {
+      __createRefinedFromHtml__P_610_3: function __createRefinedFromHtml__P_610_3(node) {
         if (node.isRefined()) {
           var html = new qx.util.StringBuilder("<div class=\"item-detail-headline\">", "Refined property:", "</div>", "<div class=\"item-detail-text\">", qxl.apiviewer.ui.panels.InfoPanel.createItemLinkHtml(node.getOverriddenFrom().getFullName() + "#" + node.getName()), "</div>");
           return html.get();
@@ -17480,10 +17480,10 @@
             textHtml.add("<div class=\"item-detail-headline\">", "Apply method:", "</div>", "<div class=\"item-detail-text\">", qxl.apiviewer.ui.panels.InfoPanel.createItemLinkHtml("#" + node.getApplyMethod(), node.getClass(), true, true), "</div>");
           }
 
-          textHtml.add(this.__createAttributesHtml__P_609_2(node));
-          textHtml.add(this.__createGeneratedMethodsHtml__P_609_0(node, currentClassDocNode));
+          textHtml.add(this.__createAttributesHtml__P_610_2(node));
+          textHtml.add(this.__createGeneratedMethodsHtml__P_610_0(node, currentClassDocNode));
           textHtml.add(qxl.apiviewer.ui.panels.InfoPanel.createIncludedFromHtml(node, currentClassDocNode));
-          textHtml.add(this.__createRefinedFromHtml__P_609_3(node));
+          textHtml.add(this.__createRefinedFromHtml__P_610_3(node));
           textHtml.add(qxl.apiviewer.ui.panels.InfoPanel.createInheritedFromHtml(node, currentClassDocNode));
           textHtml.add(qxl.apiviewer.ui.panels.InfoPanel.createInfoRequiredByHtml(node));
           textHtml.add(qxl.apiviewer.ui.panels.InfoPanel.createSeeAlsoHtml(node));
@@ -17795,7 +17795,7 @@
   });
   qxl.apiviewer.Theme.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-9.js.map?dt=1592520367358
+//# sourceMappingURL=package-9.js.map?dt=1592866061598
 qx.$$packageData['9'] = {
   "locales": {},
   "resources": {},

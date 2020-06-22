@@ -34,42 +34,42 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__sb__P_359_0 = new qx.util.StringBuilder();
+        this.__sb__P_360_0 = new qx.util.StringBuilder();
       },
       testAddGet: function testAddGet() {
-        this.__sb__P_359_0.add("1");
+        this.__sb__P_360_0.add("1");
 
-        this.__sb__P_359_0.add("2");
+        this.__sb__P_360_0.add("2");
 
-        this.assertEquals("12", this.__sb__P_359_0.get());
+        this.assertEquals("12", this.__sb__P_360_0.get());
 
-        this.__sb__P_359_0.add("3");
+        this.__sb__P_360_0.add("3");
 
-        this.assertEquals("123", this.__sb__P_359_0.get());
+        this.assertEquals("123", this.__sb__P_360_0.get());
       },
       testSize: function testSize() {
-        this.__sb__P_359_0.add("123");
+        this.__sb__P_360_0.add("123");
 
-        this.assertEquals(3, this.__sb__P_359_0.size());
+        this.assertEquals(3, this.__sb__P_360_0.size());
 
-        this.__sb__P_359_0.add("4567");
+        this.__sb__P_360_0.add("4567");
 
-        this.assertEquals(7, this.__sb__P_359_0.size());
+        this.assertEquals(7, this.__sb__P_360_0.size());
       },
       testEmptyClear: function testEmptyClear() {
-        this.assertTrue(this.__sb__P_359_0.isEmpty());
+        this.assertTrue(this.__sb__P_360_0.isEmpty());
 
-        this.__sb__P_359_0.add("123");
+        this.__sb__P_360_0.add("123");
 
-        this.assertFalse(this.__sb__P_359_0.isEmpty());
+        this.assertFalse(this.__sb__P_360_0.isEmpty());
 
-        this.__sb__P_359_0.clear();
+        this.__sb__P_360_0.clear();
 
-        this.assertTrue(this.__sb__P_359_0.isEmpty());
+        this.assertTrue(this.__sb__P_360_0.isEmpty());
       }
     }
   });
   qx.test.util.StringBuilder.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=StringBuilder.js.map?dt=1592520333800
+//# sourceMappingURL=StringBuilder.js.map?dt=1592866027145

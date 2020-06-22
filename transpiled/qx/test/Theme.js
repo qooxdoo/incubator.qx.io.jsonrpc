@@ -40,12 +40,12 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__formerTheme__P_201_0 = qx.theme.manager.Decoration.getInstance().getTheme();
+        this.__formerTheme__P_202_0 = qx.theme.manager.Decoration.getInstance().getTheme();
       },
       tearDown: function tearDown() {
         qx.test.Theme.themes = null;
-        qx.theme.manager.Decoration.getInstance().setTheme(this.__formerTheme__P_201_0);
-        this.__formerTheme__P_201_0 = null;
+        qx.theme.manager.Decoration.getInstance().setTheme(this.__formerTheme__P_202_0);
+        this.__formerTheme__P_202_0 = null;
       },
       testExtendTheme: function testExtendTheme() {
         qx.Theme.define("qx.test.Theme.themes.A", {
@@ -202,4 +202,4 @@
   qx.test.Theme.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Theme.js.map?dt=1592520319209
+//# sourceMappingURL=Theme.js.map?dt=1592866011928

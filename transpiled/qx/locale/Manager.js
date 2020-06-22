@@ -85,10 +85,10 @@
     */
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__translations__P_179_0 = qx.$$translations || {};
-      this.__locales__P_179_1 = qx.$$locales || {};
+      this.__translations__P_180_0 = qx.$$translations || {};
+      this.__locales__P_180_1 = qx.$$locales || {};
       this.initLocale();
-      this.__clientLocale__P_179_2 = this.getLocale();
+      this.__clientLocale__P_180_2 = this.getLocale();
     },
 
     /*
@@ -220,12 +220,12 @@
     *****************************************************************************
     */
     members: {
-      __defaultLocale__P_179_3: qx.core.Environment.get("locale.default"),
-      __locale__P_179_4: null,
-      __language__P_179_5: null,
-      __translations__P_179_0: null,
-      __locales__P_179_1: null,
-      __clientLocale__P_179_2: null,
+      __defaultLocale__P_180_3: qx.core.Environment.get("locale.default"),
+      __locale__P_180_4: null,
+      __language__P_180_5: null,
+      __translations__P_180_0: null,
+      __locales__P_180_1: null,
+      __clientLocale__P_180_2: null,
 
       /**
        * Get the language code of the current locale
@@ -235,7 +235,7 @@
        * @return {String} language code
        */
       getLanguage: function getLanguage() {
-        return this.__language__P_179_5;
+        return this.__language__P_180_5;
       },
 
       /**
@@ -264,9 +264,9 @@
       getAvailableLocales: function getAvailableLocales(includeNonloaded) {
         var locales = [];
 
-        for (var locale in this.__locales__P_179_1) {
-          if (locale != this.__defaultLocale__P_179_3) {
-            if (this.__locales__P_179_1[locale] === null && !includeNonloaded) {
+        for (var locale in this.__locales__P_180_1) {
+          if (locale != this.__defaultLocale__P_180_3) {
+            if (this.__locales__P_180_1[locale] === null && !includeNonloaded) {
               continue; // skip not yet loaded locales
             }
 
@@ -283,7 +283,7 @@
        * @param locale {String} locale to be used
        * @return {String} language
        */
-      __extractLanguage__P_179_6: function __extractLanguage__P_179_6(locale) {
+      __extractLanguage__P_180_6: function __extractLanguage__P_180_6(locale) {
         var language;
 
         if (locale == null) {
@@ -303,12 +303,12 @@
       // property apply
       _applyLocale: function _applyLocale(value, old) {
         {
-          if (!(value in this.__locales__P_179_1 || value == this.__clientLocale__P_179_2)) {
+          if (!(value in this.__locales__P_180_1 || value == this.__clientLocale__P_180_2)) {
             qx.log.Logger.warn("Locale: " + value + " not available.");
           }
         }
-        this.__locale__P_179_4 = value;
-        this.__language__P_179_5 = this.__extractLanguage__P_179_6(value);
+        this.__locale__P_180_4 = value;
+        this.__language__P_180_5 = this.__extractLanguage__P_180_6(value);
       },
 
       /**
@@ -324,7 +324,7 @@
        *                             are separate keys.
        */
       addTranslation: function addTranslation(languageCode, translationMap) {
-        var catalog = this.__translations__P_179_0;
+        var catalog = this.__translations__P_180_0;
 
         if (catalog[languageCode]) {
           for (var key in translationMap) {
@@ -346,7 +346,7 @@
        *                        <i>{"cldr_date_format_short" : "M/d/yy"}</i>.
        */
       addLocale: function addLocale(localeCode, localeMap) {
-        var catalog = this.__locales__P_179_1;
+        var catalog = this.__locales__P_180_1;
 
         if (catalog[localeCode]) {
           for (var key in localeMap) {
@@ -371,8 +371,8 @@
        * @return {String | LocalizedString} translated message or localized string
        */
       translate: function translate(messageId, args, locale) {
-        var catalog = this.__translations__P_179_0;
-        return this.__lookupAndExpand__P_179_7(catalog, messageId, args, locale);
+        var catalog = this.__translations__P_180_0;
+        return this.__lookupAndExpand__P_180_7(catalog, messageId, args, locale);
       },
 
       /**
@@ -389,8 +389,8 @@
        * @return {String | LocalizedString} translated message or localized string
        */
       localize: function localize(messageId, args, locale) {
-        var catalog = this.__locales__P_179_1;
-        return this.__lookupAndExpand__P_179_7(catalog, messageId, args, locale);
+        var catalog = this.__locales__P_180_1;
+        return this.__lookupAndExpand__P_180_7(catalog, messageId, args, locale);
       },
 
       /**
@@ -407,7 +407,7 @@
        * @param locale {String ? #locale} locale to be used; if not given, defaults to the value of {@link #locale}
        * @return {String | LocalizedString} translated message or localized string
        */
-      __lookupAndExpand__P_179_7: function __lookupAndExpand__P_179_7(catalog, messageId, args, locale) {
+      __lookupAndExpand__P_180_7: function __lookupAndExpand__P_180_7(catalog, messageId, args, locale) {
         {
           this.assertObject(catalog);
           this.assertString(messageId);
@@ -420,10 +420,10 @@
         }
 
         if (locale) {
-          var language = this.__extractLanguage__P_179_6(locale);
+          var language = this.__extractLanguage__P_180_6(locale);
         } else {
-          locale = this.__locale__P_179_4;
-          language = this.__language__P_179_5;
+          locale = this.__locale__P_180_4;
+          language = this.__language__P_180_5;
         } // e.g. DE_at
 
 
@@ -437,8 +437,8 @@
         } // C
 
 
-        if (!txt && catalog[this.__defaultLocale__P_179_3]) {
-          txt = catalog[this.__defaultLocale__P_179_3][messageId];
+        if (!txt && catalog[this.__defaultLocale__P_180_3]) {
+          txt = catalog[this.__defaultLocale__P_180_3][messageId];
         }
 
         if (!txt) {
@@ -462,7 +462,7 @@
         }
 
         {
-          txt = new qx.locale.LocalizedString(txt, messageId, args, catalog === this.__locales__P_179_1);
+          txt = new qx.locale.LocalizedString(txt, messageId, args, catalog === this.__locales__P_180_1);
         }
         return txt;
       }
@@ -471,4 +471,4 @@
   qx.locale.Manager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Manager.js.map?dt=1592520316958
+//# sourceMappingURL=Manager.js.map?dt=1592866009605

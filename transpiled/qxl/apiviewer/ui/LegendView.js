@@ -70,7 +70,7 @@
       layout.setColumnWidth(1, 150);
       layout.setColumnFlex(1, 1);
       var content = new qx.ui.container.Composite(layout);
-      this.__legend__P_599_0 = [{
+      this.__legend__P_600_0 = [{
         icon: "ICON_PACKAGE",
         desc: "Package"
       }, {
@@ -140,11 +140,11 @@
         icon: "OVERLAY_OVERRIDDEN",
         desc: "Method/Property overrides the Method/Property of the super class"
       }];
-      var length = this.__legend__P_599_0.length;
+      var length = this.__legend__P_600_0.length;
       var entry, imageUrl;
 
       for (var i = 0; i < length; i++) {
-        entry = this.__legend__P_599_0[i];
+        entry = this.__legend__P_600_0[i];
         imageUrl = qxl.apiviewer.TreeUtil.iconNameToIconPath(entry.icon);
 
         if (typeof imageUrl != "string") {
@@ -176,7 +176,7 @@
     *****************************************************************************
     */
     members: {
-      __legend__P_599_0: null
+      __legend__P_600_0: null
     },
 
     /*
@@ -185,10 +185,10 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeMap("__legend__P_599_0");
+      this._disposeMap("__legend__P_600_0");
     }
   });
   qxl.apiviewer.ui.LegendView.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LegendView.js.map?dt=1592520353517
+//# sourceMappingURL=LegendView.js.map?dt=1592866047841

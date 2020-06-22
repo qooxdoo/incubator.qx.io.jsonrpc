@@ -45,7 +45,7 @@
     implement: [qx.ui.decoration.IDecorator],
     type: "abstract",
     members: {
-      __insets__P_403_0: null,
+      __insets__P_404_0: null,
 
       /**
        * Abstract method. Should return a map containing the default insets of
@@ -77,15 +77,15 @@
        * Resets the insets.
        */
       _resetInsets: function _resetInsets() {
-        this.__insets__P_403_0 = null;
+        this.__insets__P_404_0 = null;
       },
       // interface implementation
       getInsets: function getInsets() {
-        if (!this.__insets__P_403_0) {
-          this.__insets__P_403_0 = this._getDefaultInsets();
+        if (!this.__insets__P_404_0) {
+          this.__insets__P_404_0 = this._getDefaultInsets();
         }
 
-        return this.__insets__P_403_0;
+        return this.__insets__P_404_0;
       }
     },
 
@@ -95,10 +95,10 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this.__insets__P_403_0 = null;
+      this.__insets__P_404_0 = null;
     }
   });
   qx.ui.decoration.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1592520338045
+//# sourceMappingURL=Abstract.js.map?dt=1592866031657

@@ -15,7 +15,7 @@
         "column": 0
       },
       "end": {
-        "line": 118,
+        "line": 125,
         "column": 3
       }
     },
@@ -36,7 +36,7 @@
         "column": 2
       },
       "end": {
-        "line": 23,
+        "line": 22,
         "column": 3
       }
     },
@@ -59,15 +59,15 @@
     }
   },
   "members": {
-    "_tranportImpl": {
+    "__tranportImpl": {
       "location": {
         "start": {
-          "line": 31,
+          "line": 30,
           "column": 4
         },
         "end": {
-          "line": 31,
-          "column": 24
+          "line": 30,
+          "column": 25
         }
       },
       "jsdoc": {
@@ -85,16 +85,16 @@
         ]
       },
       "type": "variable",
-      "access": "protected"
+      "access": "private"
     },
     "getTransportImpl": {
       "location": {
         "start": {
-          "line": 38,
+          "line": 41,
           "column": 4
         },
         "end": {
-          "line": 40,
+          "line": 44,
           "column": 5
         }
       },
@@ -102,7 +102,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Returns the object which implements the transport on the underlying\n level, so that transport-specific configuration can be done on it.</p>"
+            "body": "<p>Returns the object which implements the transport on the\n underlying level, so that transport-specific configuration\n can be done on it. Note that since in the HTTP transport,\n this object cannot be reused, it will return a new object\n each time which will be used in the immediately next request.</p>"
           }
         ],
         "@return": [
@@ -124,11 +124,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 51,
+          "line": 55,
           "column": 4
         },
         "end": {
-          "line": 89,
+          "line": 96,
           "column": 5
         }
       },
@@ -164,11 +164,11 @@
     "_createTransportImpl": {
       "location": {
         "start": {
-          "line": 104,
+          "line": 111,
           "column": 4
         },
         "end": {
-          "line": 112,
+          "line": 119,
           "column": 5
         }
       },
@@ -400,11 +400,11 @@
   "defer": {
     "location": {
       "start": {
-        "line": 115,
+        "line": 122,
         "column": 2
       },
       "end": {
-        "line": 117,
+        "line": 124,
         "column": 3
       }
     }

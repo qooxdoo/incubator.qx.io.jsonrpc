@@ -60,11 +60,11 @@
     construct: function construct() {
       qx.ui.progressive.renderer.table.cell.Icon.constructor.call(this);
 
-      this.__resolveImages__P_493_0(); // dynamic theme switch
+      this.__resolveImages__P_494_0(); // dynamic theme switch
 
 
       {
-        qx.theme.manager.Meta.getInstance().addListener("changeTheme", this.__resolveImages__P_493_0, this);
+        qx.theme.manager.Meta.getInstance().addListener("changeTheme", this.__resolveImages__P_494_0, this);
       }
     },
     properties: {
@@ -79,25 +79,25 @@
       }
     },
     members: {
-      __iconUrlTrue__P_493_1: null,
-      __iconUrlFalse__P_493_2: null,
-      __numericAllowed__P_493_3: null,
-      __conditions__P_493_4: null,
-      __defaultTextAlign__P_493_5: null,
-      __defaultColor__P_493_6: null,
-      __defaultFontStyle__P_493_7: null,
-      __defaultFontWeight__P_493_8: null,
+      __iconUrlTrue__P_494_1: null,
+      __iconUrlFalse__P_494_2: null,
+      __numericAllowed__P_494_3: null,
+      __conditions__P_494_4: null,
+      __defaultTextAlign__P_494_5: null,
+      __defaultColor__P_494_6: null,
+      __defaultFontStyle__P_494_7: null,
+      __defaultFontWeight__P_494_8: null,
 
       /**
        * Resolve the boolean images using the alias and resource manager.
        */
-      __resolveImages__P_493_0: function __resolveImages__P_493_0() {
+      __resolveImages__P_494_0: function __resolveImages__P_494_0() {
         var aliasManager = qx.util.AliasManager.getInstance();
         var resourceManager = qx.util.ResourceManager.getInstance();
         var boolTrueImg = aliasManager.resolve("decoration/table/boolean-true.png");
         var boolFalseImg = aliasManager.resolve("decoration/table/boolean-false.png");
-        this.__iconUrlTrue__P_493_1 = resourceManager.toUri(boolTrueImg);
-        this.__iconUrlFalse__P_493_2 = resourceManager.toUri(boolFalseImg);
+        this.__iconUrlTrue__P_494_1 = resourceManager.toUri(boolTrueImg);
+        this.__iconUrlFalse__P_494_2 = resourceManager.toUri(boolFalseImg);
       },
       // overridden
       _identifyImage: function _identifyImage(cellInfo) {
@@ -108,12 +108,12 @@
 
         switch (cellInfo.cellData) {
           case true:
-            imageData.url = this.__iconUrlTrue__P_493_1;
+            imageData.url = this.__iconUrlTrue__P_494_1;
             imageData.extras = "celldata='1' ";
             break;
 
           case false:
-            imageData.url = this.__iconUrlFalse__P_493_2;
+            imageData.url = this.__iconUrlFalse__P_494_2;
             imageData.extras = "celldata='0' ";
             break;
 
@@ -126,18 +126,18 @@
           // Toggle the boolean value if clicked
           imageData.extras += "onclick=\"var node = this.attributes.getNamedItem('celldata'); var value = node.nodeValue; var src; if (value == '0') {";
 
-          if (qx.core.Environment.get("css.alphaimageloaderneeded") && /\.png$/i.test(this.__iconUrlTrue__P_493_1)) {
-            imageData.extras += "  this.src='" + this.getBlankImage() + "'; " + "  var loader = 'DXImageTransform.Microsoft.AlphaImageLoader'; " + "  var filters = this.filters.item(loader); " + "  filters.src='" + this.__iconUrlTrue__P_493_1 + "'; " + "  filters.sizingMethod = 'scale'; ";
+          if (qx.core.Environment.get("css.alphaimageloaderneeded") && /\.png$/i.test(this.__iconUrlTrue__P_494_1)) {
+            imageData.extras += "  this.src='" + this.getBlankImage() + "'; " + "  var loader = 'DXImageTransform.Microsoft.AlphaImageLoader'; " + "  var filters = this.filters.item(loader); " + "  filters.src='" + this.__iconUrlTrue__P_494_1 + "'; " + "  filters.sizingMethod = 'scale'; ";
           } else {
-            imageData.extras += "  this.src='" + this.__iconUrlTrue__P_493_1 + "'; ";
+            imageData.extras += "  this.src='" + this.__iconUrlTrue__P_494_1 + "'; ";
           }
 
           imageData.extras += "  node.nodeValue='1'; } else {";
 
-          if (qx.core.Environment.get("css.alphaimageloaderneeded") && /\.png$/i.test(this.__iconUrlFalse__P_493_2)) {
-            imageData.extras += "  this.src='" + this.getBlankImage() + "'; " + "  var loader = 'DXImageTransform.Microsoft.AlphaImageLoader'; " + "  var filters = this.filters.item(loader); " + "  filters.src='" + this.__iconUrlFalse__P_493_2 + "'; " + "  filters.sizingMethod = 'scale'; ";
+          if (qx.core.Environment.get("css.alphaimageloaderneeded") && /\.png$/i.test(this.__iconUrlFalse__P_494_2)) {
+            imageData.extras += "  this.src='" + this.getBlankImage() + "'; " + "  var loader = 'DXImageTransform.Microsoft.AlphaImageLoader'; " + "  var filters = this.filters.item(loader); " + "  filters.src='" + this.__iconUrlFalse__P_494_2 + "'; " + "  filters.sizingMethod = 'scale'; ";
           } else {
-            imageData.extras += "  this.src='" + this.__iconUrlFalse__P_493_2 + "'; ";
+            imageData.extras += "  this.src='" + this.__iconUrlFalse__P_494_2 + "'; ";
           }
 
           imageData.extras += "  node.nodeValue='0'; }";
@@ -155,14 +155,14 @@
       }
     },
     destruct: function destruct() {
-      this.__iconUrlTrue__P_493_1 = this.__iconUrlFalse__P_493_2 = null; // remove dynamic theme listener
+      this.__iconUrlTrue__P_494_1 = this.__iconUrlFalse__P_494_2 = null; // remove dynamic theme listener
 
       {
-        qx.theme.manager.Meta.getInstance().removeListener("changeTheme", this.__resolveImages__P_493_0, this);
+        qx.theme.manager.Meta.getInstance().removeListener("changeTheme", this.__resolveImages__P_494_0, this);
       }
     }
   });
   qx.ui.progressive.renderer.table.cell.Boolean.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Boolean.js.map?dt=1592520344978
+//# sourceMappingURL=Boolean.js.map?dt=1592866039079

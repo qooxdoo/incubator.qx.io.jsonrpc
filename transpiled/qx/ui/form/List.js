@@ -87,14 +87,14 @@
     construct: function construct(horizontal) {
       qx.ui.core.scroll.AbstractScrollArea.constructor.call(this); // Create content
 
-      this.__content__P_418_0 = this._createListItemContainer(); // Used to fire item add/remove events
+      this.__content__P_419_0 = this._createListItemContainer(); // Used to fire item add/remove events
 
-      this.__content__P_418_0.addListener("addChildWidget", this._onAddChild, this);
+      this.__content__P_419_0.addListener("addChildWidget", this._onAddChild, this);
 
-      this.__content__P_418_0.addListener("removeChildWidget", this._onRemoveChild, this); // Add to scrollpane
+      this.__content__P_419_0.addListener("removeChildWidget", this._onRemoveChild, this); // Add to scrollpane
 
 
-      this.getChildControl("pane").add(this.__content__P_418_0); // Apply orientation
+      this.getChildControl("pane").add(this.__content__P_419_0); // Apply orientation
 
       if (horizontal) {
         this.setOrientation("horizontal");
@@ -106,7 +106,7 @@
       this.addListener("keypress", this._onKeyPress);
       this.addListener("keyinput", this._onKeyInput); // initialize the search string
 
-      this.__pressedString__P_418_1 = "";
+      this.__pressedString__P_419_1 = "";
     },
 
     /*
@@ -187,11 +187,11 @@
     *****************************************************************************
     */
     members: {
-      __pressedString__P_418_1: null,
-      __lastKeyPress__P_418_2: null,
+      __pressedString__P_419_1: null,
+      __lastKeyPress__P_419_2: null,
 
       /** @type {qx.ui.core.Widget} The children container */
-      __content__P_418_0: null,
+      __content__P_419_0: null,
 
       /** @type {Class} Pointer to the selection manager to use */
       SELECTION_MANAGER: qx.ui.core.selection.ScrollArea,
@@ -203,7 +203,7 @@
       */
       // overridden
       getChildrenContainer: function getChildrenContainer() {
-        return this.__content__P_418_0;
+        return this.__content__P_419_0;
       },
 
       /**
@@ -264,7 +264,7 @@
       */
       // property apply
       _applyOrientation: function _applyOrientation(value, old) {
-        var content = this.__content__P_418_0; // save old layout for disposal
+        var content = this.__content__P_419_0; // save old layout for disposal
 
         var oldLayout = content.getLayout(); // Create new layout
 
@@ -284,7 +284,7 @@
       },
       // property apply
       _applySpacing: function _applySpacing(value, old) {
-        this.__content__P_418_0.getLayout().setSpacing(value);
+        this.__content__P_419_0.getLayout().setSpacing(value);
       },
 
       /*
@@ -339,21 +339,21 @@
         } // Reset string after a second of non pressed key
 
 
-        if (new Date().valueOf() - this.__lastKeyPress__P_418_2 > 1000) {
-          this.__pressedString__P_418_1 = "";
+        if (new Date().valueOf() - this.__lastKeyPress__P_419_2 > 1000) {
+          this.__pressedString__P_419_1 = "";
         } // Combine keys the user pressed to a string
 
 
-        this.__pressedString__P_418_1 += e.getChar(); // Find matching item
+        this.__pressedString__P_419_1 += e.getChar(); // Find matching item
 
-        var matchedItem = this.findItemByLabelFuzzy(this.__pressedString__P_418_1); // if an item was found, select it
+        var matchedItem = this.findItemByLabelFuzzy(this.__pressedString__P_419_1); // if an item was found, select it
 
         if (matchedItem) {
           this.setSelection([matchedItem]);
         } // Store timestamp
 
 
-        this.__lastKeyPress__P_418_2 = new Date().valueOf();
+        this.__lastKeyPress__P_419_2 = new Date().valueOf();
       },
 
       /**
@@ -447,10 +447,10 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__content__P_418_0");
+      this._disposeObjects("__content__P_419_0");
     }
   });
   qx.ui.form.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1592520339340
+//# sourceMappingURL=List.js.map?dt=1592866033043

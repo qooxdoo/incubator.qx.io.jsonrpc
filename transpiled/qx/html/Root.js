@@ -90,4 +90,4 @@
   qx.html.Root.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Root.js.map?dt=1592520314554
+//# sourceMappingURL=Root.js.map?dt=1592866007218

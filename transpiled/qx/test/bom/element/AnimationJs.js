@@ -54,7 +54,7 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __el__P_215_0: null,
+      __el__P_216_0: null,
       testStop: function testStop() {
         var el = qx.dom.Element.create("div");
         var handle = qx.bom.element.AnimationJs.animate(el, {
@@ -77,16 +77,16 @@
         }, this);
       },
       setUp: function setUp() {
-        this.__el__P_215_0 = qx.dom.Element.create("img");
-        qx.bom.element.Style.setStyles(this.__el__P_215_0, {
+        this.__el__P_216_0 = qx.dom.Element.create("img");
+        qx.bom.element.Style.setStyles(this.__el__P_216_0, {
           width: "200px",
           height: "200px"
         });
-        document.body.appendChild(this.__el__P_215_0);
+        document.body.appendChild(this.__el__P_216_0);
       },
       tearDown: function tearDown() {
-        document.body.removeChild(this.__el__P_215_0);
-        this.__el__P_215_0 = null;
+        document.body.removeChild(this.__el__P_216_0);
+        this.__el__P_216_0 = null;
       },
       "test animate properties which are CSS properties and element attributes": function testAnimatePropertiesWhichAreCSSPropertiesAndElementAttributes() {
         // known to fail in chrome
@@ -94,7 +94,7 @@
           throw new qx.dev.unit.RequirementError();
         }
 
-        var handle = qx.bom.element.Animation.animate(this.__el__P_215_0, {
+        var handle = qx.bom.element.Animation.animate(this.__el__P_216_0, {
           "duration": 100,
           "keyFrames": {
             0: {
@@ -109,8 +109,8 @@
           "keep": 100
         });
         this.wait(500, function () {
-          this.assertEquals("400px", qx.bom.element.Style.get(this.__el__P_215_0, "width"));
-          this.assertEquals("400px", qx.bom.element.Style.get(this.__el__P_215_0, "height"));
+          this.assertEquals("400px", qx.bom.element.Style.get(this.__el__P_216_0, "width"));
+          this.assertEquals("400px", qx.bom.element.Style.get(this.__el__P_216_0, "height"));
         }, this);
       }
     }
@@ -118,4 +118,4 @@
   qx.test.bom.element.AnimationJs.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AnimationJs.js.map?dt=1592520320235
+//# sourceMappingURL=AnimationJs.js.map?dt=1592866012942

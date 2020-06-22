@@ -56,45 +56,45 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__boldStyle__P_209_0 = {
+        this.__boldStyle__P_210_0 = {
           fontWeight: "bold"
         };
-        this.__italicStyle__P_209_1 = {
+        this.__italicStyle__P_210_1 = {
           fontStyle: "italic"
         };
-        this.__boldItalicStyle__P_209_2 = {
+        this.__boldItalicStyle__P_210_2 = {
           fontWeight: "bold",
           fontStyle: "italic"
         };
-        this.__familyStyle__P_209_3 = {
+        this.__familyStyle__P_210_3 = {
           fontFamily: ["Verdana"]
         };
-        this.__fontSizeStyle__P_209_4 = {
+        this.__fontSizeStyle__P_210_4 = {
           fontSize: "20px"
         };
-        this.__paddingStyle__P_209_5 = {
+        this.__paddingStyle__P_210_5 = {
           padding: "10px"
         };
-        this.__marginStyle__P_209_6 = {
+        this.__marginStyle__P_210_6 = {
           margin: "10px"
         };
-        this.__allTogetherStyle__P_209_7 = {};
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__boldStyle__P_209_0);
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__italicStyle__P_209_1);
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__boldItalicStyle__P_209_2);
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__familyStyle__P_209_3);
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__fontSizeStyle__P_209_4);
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__paddingStyle__P_209_5);
-        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_209_7, this.__marginStyle__P_209_6);
+        this.__allTogetherStyle__P_210_7 = {};
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__boldStyle__P_210_0);
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__italicStyle__P_210_1);
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__boldItalicStyle__P_210_2);
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__familyStyle__P_210_3);
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__fontSizeStyle__P_210_4);
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__paddingStyle__P_210_5);
+        qx.lang.Object.mergeWith(this.__allTogetherStyle__P_210_7, this.__marginStyle__P_210_6);
       },
       tearDown: function tearDown() {
-        this.__boldStyle__P_209_0 = null;
-        this.__italicStyle__P_209_1 = null;
-        this.__familyStyle__P_209_3 = null;
-        this.__fontSizeStyle__P_209_4 = null;
-        this.__paddingStyle__P_209_5 = null;
-        this.__marginStyle__P_209_6 = null;
-        this.__allTogetherStyle__P_209_7 = null;
+        this.__boldStyle__P_210_0 = null;
+        this.__italicStyle__P_210_1 = null;
+        this.__familyStyle__P_210_3 = null;
+        this.__fontSizeStyle__P_210_4 = null;
+        this.__paddingStyle__P_210_5 = null;
+        this.__marginStyle__P_210_6 = null;
+        this.__allTogetherStyle__P_210_7 = null;
       },
       // test only XUL labels under windows to get comparable results
       // to ensure the change of bug #5011 does not break anything
@@ -105,19 +105,19 @@
           size = qx.bom.Label.getTextSize(text);
           this.assertEquals(53, size.width);
           this.assertEquals(14, size.height);
-          size = qx.bom.Label.getTextSize(text, this.__fontSizeStyle__P_209_4);
+          size = qx.bom.Label.getTextSize(text, this.__fontSizeStyle__P_210_4);
           this.assertEquals(94, size.width);
           this.assertEquals(24, size.height);
-          size = qx.bom.Label.getTextSize(text, this.__familyStyle__P_209_3);
+          size = qx.bom.Label.getTextSize(text, this.__familyStyle__P_210_3);
           this.assertEquals(64, size.width);
           this.assertEquals(13, size.height);
-          size = qx.bom.Label.getTextSize(text, this.__paddingStyle__P_209_5);
+          size = qx.bom.Label.getTextSize(text, this.__paddingStyle__P_210_5);
           this.assertEquals(53, size.width);
           this.assertEquals(14, size.height);
-          size = qx.bom.Label.getTextSize(text, this.__marginStyle__P_209_6);
+          size = qx.bom.Label.getTextSize(text, this.__marginStyle__P_210_6);
           this.assertEquals(53, size.width);
           this.assertEquals(14, size.height);
-          size = qx.bom.Label.getTextSize(text, this.__allTogetherStyle__P_209_7);
+          size = qx.bom.Label.getTextSize(text, this.__allTogetherStyle__P_210_7);
           this.assertEquals(125, size.width);
           this.assertEquals(25, size.height);
         } else {
@@ -128,7 +128,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__boldStyle__P_209_0);
+          size = qx.bom.Label.getTextSize(text, this.__boldStyle__P_210_0);
           this.assertEquals(61, size.width);
           this.assertEquals(14, size.height);
         } else {
@@ -139,7 +139,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__italicStyle__P_209_1);
+          size = qx.bom.Label.getTextSize(text, this.__italicStyle__P_210_1);
           this.assertEquals(56, size.width);
           this.assertEquals(14, size.height);
         } else {
@@ -150,7 +150,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__boldItalicStyle__P_209_2);
+          size = qx.bom.Label.getTextSize(text, this.__boldItalicStyle__P_210_2);
           this.assertEquals(64, size.width);
           this.assertEquals(13, size.height);
         } else {
@@ -161,7 +161,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__fontSize__P_209_8);
+          size = qx.bom.Label.getTextSize(text, this.__fontSize__P_210_8);
           this.assertEquals(53, size.width);
           this.assertEquals(14, size.height);
         } else {
@@ -172,7 +172,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__familyStyle__P_209_3);
+          size = qx.bom.Label.getTextSize(text, this.__familyStyle__P_210_3);
           this.assertEquals(64, size.width);
           this.assertEquals(13, size.height);
         } else {
@@ -183,7 +183,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__paddingStyle__P_209_5);
+          size = qx.bom.Label.getTextSize(text, this.__paddingStyle__P_210_5);
           this.assertEquals(53, size.width);
           this.assertEquals(14, size.height);
         } else {
@@ -194,7 +194,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__marginStyle__P_209_6);
+          size = qx.bom.Label.getTextSize(text, this.__marginStyle__P_210_6);
           this.assertEquals(53, size.width);
           this.assertEquals(14, size.height);
         } else {
@@ -205,7 +205,7 @@
         if (!qx.core.Environment.get("css.textoverflow") && qx.core.Environment.get("html.xul") && qx.core.Environment.get("os.name") == "win") {
           var text = "vanillebaer";
           var size = null;
-          size = qx.bom.Label.getTextSize(text, this.__allTogetherStyle__P_209_7);
+          size = qx.bom.Label.getTextSize(text, this.__allTogetherStyle__P_210_7);
           this.assertEquals(125, size.width);
           this.assertEquals(25, size.height);
         } else {
@@ -239,4 +239,4 @@
   qx.test.bom.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1592520319749
+//# sourceMappingURL=Label.js.map?dt=1592866012493

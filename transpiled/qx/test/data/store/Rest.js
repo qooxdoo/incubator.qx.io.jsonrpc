@@ -222,4 +222,4 @@
   qx.test.data.store.Rest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Rest.js.map?dt=1592520323730
+//# sourceMappingURL=Rest.js.map?dt=1592866016526

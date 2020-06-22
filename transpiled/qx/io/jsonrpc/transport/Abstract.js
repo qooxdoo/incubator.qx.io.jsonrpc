@@ -53,4 +53,4 @@
   qx.io.jsonrpc.transport.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1592520314903
+//# sourceMappingURL=Abstract.js.map?dt=1592866007582
