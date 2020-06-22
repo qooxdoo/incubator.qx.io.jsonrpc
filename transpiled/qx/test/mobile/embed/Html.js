@@ -51,4 +51,4 @@
   qx.test.mobile.embed.Html.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Html.js.map?dt=1592867902373
+//# sourceMappingURL=Html.js.map?dt=1592867950833

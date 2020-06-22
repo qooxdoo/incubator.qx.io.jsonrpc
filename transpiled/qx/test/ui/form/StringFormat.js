@@ -86,4 +86,4 @@
   qx.test.ui.form.StringFormat.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=StringFormat.js.map?dt=1592867905950
+//# sourceMappingURL=StringFormat.js.map?dt=1592867954200

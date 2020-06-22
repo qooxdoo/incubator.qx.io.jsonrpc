@@ -60,4 +60,4 @@
   qx.test.event.MockBubblingHandler.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MockBubblingHandler.js.map?dt=1592867899837
+//# sourceMappingURL=MockBubblingHandler.js.map?dt=1592867948389

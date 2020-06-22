@@ -68,4 +68,4 @@
   qx.test.ui.form.NumberFormat.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NumberFormat.js.map?dt=1592867905652
+//# sourceMappingURL=NumberFormat.js.map?dt=1592867953915

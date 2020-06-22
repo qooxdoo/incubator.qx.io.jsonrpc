@@ -94,4 +94,4 @@
   qx.test.log.DeprecationMethodOverriding.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DeprecationMethodOverriding.js.map?dt=1592867901861
+//# sourceMappingURL=DeprecationMethodOverriding.js.map?dt=1592867950357

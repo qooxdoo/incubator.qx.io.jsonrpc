@@ -101,4 +101,4 @@
   qx.test.ui.layout.Box.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Box.js.map?dt=1592867906259
+//# sourceMappingURL=Box.js.map?dt=1592867954475
