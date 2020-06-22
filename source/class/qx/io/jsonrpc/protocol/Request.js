@@ -21,7 +21,7 @@
  *
  * @see https://www.jsonrpc.org/specification#request_object
  */
-qx.Class.define("qx.io.jsonrpc.protocol.Request",{
+qx.Class.define("qx.io.jsonrpc.protocol.Request", {
   extend: qx.io.jsonrpc.protocol.Notification,
   statics: {
     /**
@@ -85,7 +85,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Request",{
     handleTransportException(exception) {
       try {
         this.getPromise().reject(exception);
-      } catch(e) {
+      } catch (e) {
         this.warn("Promise has already been rejected");
       }
     }

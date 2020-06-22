@@ -19,7 +19,6 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
    */
   construct(url) {
     this.base(arguments, url);
-    this._tranportImpl = this._createTransportImpl();
   },
   
   members: {
@@ -28,15 +27,20 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
      * Internal implementation of the transport
      * @var {qx.io.request.Xhr}
      */
-    _tranportImpl : null,
+    __tranportImpl : null,
 
     /**
-     * Returns the object which implements the transport on the underlying
-     * level, so that transport-specific configuration can be done on it.
+     * Returns the object which implements the transport on the
+     * underlying level, so that transport-specific configuration
+     * can be done on it. Note that since in the HTTP transport,
+     * this object cannot be reused, it will return a new object
+     * each time which will be used in the immediately next request.
+     *
      * @return {qx.core.Object}
      */
     getTransportImpl() {
-      return this._tranportImpl;
+      this.__tranportImpl = this._createTransportImpl();
+      return this.__tranportImpl;
     },
 
     /**
@@ -50,8 +54,9 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
      */
     async send(message) {
       this.assertString(message);
-      const req = this._tranportImpl;
+      const req = this.__tranportImpl || this.getTransportImpl();
       req.setRequestData(message);
+      this.__tranportImpl = null; // free the internal reference for the next request
       try {
         await req.sendWithPromise();
       } catch (e) {
@@ -84,8 +89,10 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
           }
         }
       }
-      // handle responses
+      // notify listeners
       this.fireDataEvent("message", req.getResponse());
+      // discard old object
+      req.dispose();
     },
 
     /**

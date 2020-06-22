@@ -46,19 +46,21 @@
  * The high-level Client API does not handle transport-specific issues like
  * authentication - this needs to be done in the transport layer. For example,
  * to use HTTP Bearer authentication, do this:
+ *
  * <pre class="javascript">
  * const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
- * const auth = new qx.io.request.authentication.Bearer("TOKEN");
- * client.getTransport().getTransportImpl().setAuthentication(auth);
+ * client.addListener("outgoingRequest", () => {
+ *   const auth = new qx.io.request.authentication.Bearer("TOKEN");
+ *   client.getTransport().getTransportImpl().setAuthentication(auth);
+ * });
  * client.sendRequest("method-needing-authentication", [1,2,3]);
  * </pre>
  *
- * If you need a client with a customized transport often, we recommend
- * to create a class that inherits from the client class, override
- * the methods which are needed to produce that custom behavior (such
- * as {@link qx.io.jsonrpc.transport.Http#_createTransportImpl},
- * and provide a `defer` section which registers
- * the behavior for your particular class of URIs:
+ * Instead, you can also to create a class that inherits from
+ * {@link qx.io.jsonrpc.transport.Http} and overrides  {@link
+ * qx.io.jsonrpc.transport.Http#_createTransportImpl}. To make
+ * the client use this transport, and provide a `defer` section
+ * which registers the behavior for your particular class of URIs:
  *
  * <pre class="javascript">
  * defer() {
@@ -69,5 +71,11 @@
  * The client will always use the transport that was last registered for
  * a certain endpoint pattern, i.e. from then on, all clients created
  * with urls that start with "http" will use that custom behavior.
+ *
+ * The client also supports *incoming* requests as part of the server
+ * response. To receive them, register a listener for the `incomingRequest`
+ * event. For the HTTP transport, notifications can be sent by the server
+ * as part of the response to client requests. Once a WebSocket transport
+ * has been added, the duplex JSON-RPC traffic can be implemented this way.
  *
  */

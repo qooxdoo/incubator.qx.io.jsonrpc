@@ -53,6 +53,15 @@ qx.Class.define("qx.io.jsonrpc.Client",
   },
 
   events : {
+  
+    /**
+     * Event fired before a request message is sent to the server.
+     * Event data is the {@link qx.io.jsonrpc.protocol.Message} to
+     * be sent. This also allows listeners to configure the transport
+     * object beforehand.
+     */
+    "outgoingRequest": "qx.event.type.Data",
+    
     /**
      * Event fired when a request results in an error. Event data is an instance of
      * {@link qx.io.jsonrpc.exception.Transport}, {@link qx.io.jsonrpc.exception.JsonRpc},
@@ -66,9 +75,9 @@ qx.Class.define("qx.io.jsonrpc.Client",
      * Event fired when a peer-originated JSON-RPC message has been
      * received from the peer endpoint. Event data is an instance of {@link
      * qx.io.jsonrpc.message.Batch}, {@link qx.io.jsonrpc.message.Request}
-     * or {@link qx.io.jsonrpc.message.Notification}.
+     * or {@link qx.io.jsonrpc.protocol.Notification}.
      */
-    "peerRequest" : "qx.event.type.Data"
+    "incomingRequest" : "qx.event.type.Data"
   },
 
   /**
@@ -83,9 +92,6 @@ qx.Class.define("qx.io.jsonrpc.Client",
    */
   construct : function(transportOrUri, methodPrefix, parser) {
     this.base(arguments);
-    if (qx.io.jsonrpc.Client.__transports === null) {
-      qx.io.jsonrpc.Client.__transports = [];
-    }
     let transport;
     let uri;
     if (qx.lang.Type.isString(transportOrUri)) {
@@ -182,7 +188,11 @@ qx.Class.define("qx.io.jsonrpc.Client",
      */
     _throwTransportException(exception) {
       this.fireDataEvent("error", exception);
-      this.__requests.forEach(request => request.handleTransportException(exception));
+      this.__requests.forEach(request => {
+        if (request instanceof qx.io.jsonrpc.protocol.Request) {
+          request.handleTransportException(exception);
+        }
+      });
       throw exception;
     },
 
@@ -211,7 +221,15 @@ qx.Class.define("qx.io.jsonrpc.Client",
         }
         this.__requests[id] = request;
       });
-
+      
+      // inform listeners
+      this.fireDataEvent("outgoingRequest", message);
+  
+      // debugging
+      if (qx.core.Environment.get("qx.io.jsonrpc.debug")) {
+        this.debug(">>> Outgoing json-rpc message: " + message);
+      }
+      
       // send it async, using transport-specific implementation
       return this.getTransport().send(message.toString());
     },
@@ -262,6 +280,9 @@ qx.Class.define("qx.io.jsonrpc.Client",
      * @param {String} json JSON data
      */
     handleIncoming(json) {
+      if (qx.core.Environment.get("qx.io.jsonrpc.debug")) {
+        this.debug("<<< Incoming json-rpc message: " + json);
+      }
       let message;
       try {
         message = this.getParser().parse(json);
@@ -285,10 +306,6 @@ qx.Class.define("qx.io.jsonrpc.Client",
      * @private
      */
     _cleanup(message) {
-      if (message instanceof qx.io.jsonrpc.protocol.Request) {
-        let id = message.getId();
-        delete this.__requests[id];
-      }
       message.dispose();
     },
 
@@ -306,23 +323,27 @@ qx.Class.define("qx.io.jsonrpc.Client",
       this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
       let request;
       let id;
+      
       if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
         // handle results and errors, which are responses to sent requests
         id = message.getId();
         request = this.__requests[id];
         if (request === undefined) {
+          // no request with this id exists
           throw new qx.io.jsonrpc.exception.Transport(
             `Invalid jsonrpc response data: Unknown id ${id}.`,
             qx.io.jsonrpc.exception.Transport.UNKNOWN_ID,
-            {response: message.toObject()});
+            message.toObject()
+          );
         }
-        if (request.response) {
+        if (request === true) {
+          // the request has already been responded to
           throw new qx.io.jsonrpc.exception.Transport(
               `Invalid jsonrpc response data: multiple responses with same id ${id}.`,
               qx.io.jsonrpc.exception.Transport.DUPLICATE_ID,
-              {request: request.toObject(), response: message.toObject()});
+              message.toObject()
+          );
         }
-        request.response = message.toObject();
       }
       // handle the different message types
       if (message instanceof qx.io.jsonrpc.protocol.Result) {
@@ -333,20 +354,24 @@ qx.Class.define("qx.io.jsonrpc.Client",
         let ex = new qx.io.jsonrpc.exception.JsonRpc(
           error.message,
           error.code,
-          {
-            request: request.toObject(),
-            response: message.toObject()
-          });
+          message.toObject()
+        );
         // inform listeners
         this.fireDataEvent("error", ex);
         // reject the individual promise
         request.getPromise().reject(ex);
       } else if (message instanceof qx.io.jsonrpc.protocol.Request || message instanceof qx.io.jsonrpc.protocol.Notification) {
         // handle peer-originated requests and notifications
-        this.fireDataEvent("peerRequest", message);
+        this.fireDataEvent("incomingRequest", message);
       } else {
         throw new Error("Unhandled message:" + message.toString());
       }
+      // mark request as handled (and remove reference so it can be gc'ed)
+      this.__requests[id] = true;
     }
+  },
+  
+  environment: {
+    "qx.io.jsonrpc.debug" : false
   }
 });

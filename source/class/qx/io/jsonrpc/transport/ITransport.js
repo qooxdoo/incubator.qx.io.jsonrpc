@@ -29,6 +29,7 @@ qx.Interface.define("qx.io.jsonrpc.transport.ITransport", {
     /**
      * Returns the object which implements the transport on the underlying
      * level, so that transport-specific configuration can be done on it.
+     * The object might be a new one for each request.
      * @return {qx.core.Object}
      */
     getTransportImpl() {}
