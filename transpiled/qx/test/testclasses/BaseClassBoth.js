@@ -33,4 +33,4 @@
   qx.test.testclasses.BaseClassBoth.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BaseClassBoth.js.map?dt=1592866020540
+//# sourceMappingURL=BaseClassBoth.js.map?dt=1592867903253

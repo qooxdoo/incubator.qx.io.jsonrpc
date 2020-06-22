@@ -95,4 +95,4 @@
   qx.ui.core.scroll.MWheelHandling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MWheelHandling.js.map?dt=1592866031155
+//# sourceMappingURL=MWheelHandling.js.map?dt=1592867913708

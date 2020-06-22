@@ -1,11 +1,11 @@
 <p>This namespace provides an API implementing the <a
  href="https://www.jsonrpc.org/specification">JSON Remote
- Procedure Call (JSON-RPC) version 2 specification</a>
- JSON-RPC v2 is transport-agnostic. We provide a high-level
+ Procedure Call (JSON-RPC) version 2 specification</a></p>
+<p>JSON-RPC v2 is transport-agnostic. We provide a high-level
  API interface (qx.io.jsonrpc.Client), a transport interface
  (qx.io.jsonrpc.transport.ITransport) and an HTTP transport implementation.
- Other transports based on websockets or other mechanisms can be added later.
- Here is an example:
+ Other transports based on websockets or other mechanisms can be added later.</p>
+<p>Here is an example:
  </p>
 <pre class="javascript">
  (async()=>{
@@ -64,7 +64,9 @@
 <p>The client will always use the transport that was last registered for
  a certain endpoint pattern, i.e. from then on, all clients created
  with urls that start with "http" will use that custom behavior.
- The client also supports <em>incoming</em> requests as part of the server
+ </p>
+<p>Incoming requests</p>
+<p>The client also supports <em>incoming</em> requests as part of the server
  response. To receive them, register a listener for the <code>incomingRequest</code>
  event. For the HTTP transport, notifications can be sent by the server
  as part of the response to client requests. Once a WebSocket transport

@@ -312,7 +312,7 @@
         this.setUpFakeServer(qx.lang.Json.stringify(response));
         var client = new qx.io.jsonrpc.Client("http://jsonrpc");
         var spy = this.spy();
-        client.addListener("peerRequest", evt => {
+        client.addListener("incomingRequest", evt => {
           let message = evt.getData().toObject();
           this.assertDeepEquals(response.shift(), message);
           spy(message);
@@ -327,4 +327,4 @@
   qx.test.io.jsonrpc.HttpTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HttpTransport.js.map?dt=1592866017814
+//# sourceMappingURL=HttpTransport.js.map?dt=1592867900502

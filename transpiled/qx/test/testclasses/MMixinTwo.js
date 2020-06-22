@@ -20,4 +20,4 @@
   qx.test.testclasses.MMixinTwo.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MMixinTwo.js.map?dt=1592866020617
+//# sourceMappingURL=MMixinTwo.js.map?dt=1592867903328

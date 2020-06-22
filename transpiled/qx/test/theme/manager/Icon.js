@@ -111,4 +111,4 @@
   qx.test.theme.manager.Icon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Icon.js.map?dt=1592866020727
+//# sourceMappingURL=Icon.js.map?dt=1592867903429

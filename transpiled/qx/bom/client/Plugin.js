@@ -430,4 +430,4 @@
   qx.bom.client.Plugin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Plugin.js.map?dt=1592865998678
+//# sourceMappingURL=Plugin.js.map?dt=1592867881483

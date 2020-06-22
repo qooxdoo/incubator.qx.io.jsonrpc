@@ -264,4 +264,4 @@
   qx.test.ui.layout.LayoutItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LayoutItem.js.map?dt=1592866024032
+//# sourceMappingURL=LayoutItem.js.map?dt=1592867906482

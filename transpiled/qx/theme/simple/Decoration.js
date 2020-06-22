@@ -888,4 +888,4 @@
   qx.theme.simple.Decoration.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Decoration.js.map?dt=1592866028531
+//# sourceMappingURL=Decoration.js.map?dt=1592867911078

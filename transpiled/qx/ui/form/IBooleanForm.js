@@ -84,4 +84,4 @@
   qx.ui.form.IBooleanForm.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=IBooleanForm.js.map?dt=1592866032788
+//# sourceMappingURL=IBooleanForm.js.map?dt=1592867915354

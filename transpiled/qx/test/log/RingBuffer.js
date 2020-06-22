@@ -99,4 +99,4 @@
   qx.test.log.RingBuffer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RingBuffer.js.map?dt=1592866019235
+//# sourceMappingURL=RingBuffer.js.map?dt=1592867901947

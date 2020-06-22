@@ -29,4 +29,4 @@
   qx.test.testclasses.BaseClassIncluded.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BaseClassIncluded.js.map?dt=1592866020550
+//# sourceMappingURL=BaseClassIncluded.js.map?dt=1592867903263

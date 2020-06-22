@@ -126,4 +126,4 @@
   qx.bom.client.Scroll.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Scroll.js.map?dt=1592865998725
+//# sourceMappingURL=Scroll.js.map?dt=1592867881520

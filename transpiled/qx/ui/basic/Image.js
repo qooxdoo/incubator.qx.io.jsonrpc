@@ -1027,4 +1027,4 @@
   qx.ui.basic.Image.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Image.js.map?dt=1592866028885
+//# sourceMappingURL=Image.js.map?dt=1592867911445

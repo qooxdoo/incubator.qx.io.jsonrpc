@@ -111,4 +111,4 @@
   qx.ui.form.CheckBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=CheckBox.js.map?dt=1592866032537
+//# sourceMappingURL=CheckBox.js.map?dt=1592867915087

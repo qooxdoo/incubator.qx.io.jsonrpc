@@ -97,4 +97,4 @@
   qx.test.mobile.layout.HBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HBox.js.map?dt=1592866020007
+//# sourceMappingURL=HBox.js.map?dt=1592867902695

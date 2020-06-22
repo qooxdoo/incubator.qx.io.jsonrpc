@@ -79,4 +79,4 @@
   qx.ui.virtual.cell.Number.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Number.js.map?dt=1592866043717
+//# sourceMappingURL=Number.js.map?dt=1592867926125

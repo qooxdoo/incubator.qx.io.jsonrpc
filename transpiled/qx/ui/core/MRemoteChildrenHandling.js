@@ -198,4 +198,4 @@
   qx.ui.core.MRemoteChildrenHandling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MRemoteChildrenHandling.js.map?dt=1592866030238
+//# sourceMappingURL=MRemoteChildrenHandling.js.map?dt=1592867912787

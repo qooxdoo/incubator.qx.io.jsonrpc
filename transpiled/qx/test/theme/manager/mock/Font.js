@@ -23,4 +23,4 @@
   qx.test.theme.manager.mock.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1592866020812
+//# sourceMappingURL=Font.js.map?dt=1592867903512

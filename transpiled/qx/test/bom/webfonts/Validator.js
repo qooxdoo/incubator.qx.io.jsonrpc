@@ -90,4 +90,4 @@
   qx.test.bom.webfonts.Validator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Validator.js.map?dt=1592866013941
+//# sourceMappingURL=Validator.js.map?dt=1592867896704

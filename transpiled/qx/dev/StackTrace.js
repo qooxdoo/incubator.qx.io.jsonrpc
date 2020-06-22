@@ -422,4 +422,4 @@
   qx.dev.StackTrace.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=StackTrace.js.map?dt=1592866002786
+//# sourceMappingURL=StackTrace.js.map?dt=1592867885485

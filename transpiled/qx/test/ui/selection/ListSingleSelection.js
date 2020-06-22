@@ -88,4 +88,4 @@
   qx.test.ui.selection.ListSingleSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ListSingleSelection.js.map?dt=1592866024493
+//# sourceMappingURL=ListSingleSelection.js.map?dt=1592867906959

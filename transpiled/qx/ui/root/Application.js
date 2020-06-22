@@ -280,4 +280,4 @@
   qx.ui.root.Application.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Application.js.map?dt=1592866039357
+//# sourceMappingURL=Application.js.map?dt=1592867921689

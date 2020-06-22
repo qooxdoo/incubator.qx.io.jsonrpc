@@ -348,4 +348,4 @@
   qx.ui.mobile.container.MNativeScroll.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MNativeScroll.js.map?dt=1592866036409
+//# sourceMappingURL=MNativeScroll.js.map?dt=1592867918870

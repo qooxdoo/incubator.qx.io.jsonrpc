@@ -82,4 +82,4 @@
   qx.test.event.dispatch.MouseEventOnDocument.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MouseEventOnDocument.js.map?dt=1592866017309
+//# sourceMappingURL=MouseEventOnDocument.js.map?dt=1592867900034

@@ -396,4 +396,4 @@
   qx.test.ui.tree.virtual.WidgetProvider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WidgetProvider.js.map?dt=1592866025589
+//# sourceMappingURL=WidgetProvider.js.map?dt=1592867908005

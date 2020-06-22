@@ -125,4 +125,4 @@
   qx.ui.form.ListItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ListItem.js.map?dt=1592866033069
+//# sourceMappingURL=ListItem.js.map?dt=1592867915626

@@ -319,4 +319,4 @@
   qx.ui.list.provider.WidgetProvider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WidgetProvider.js.map?dt=1592866035517
+//# sourceMappingURL=WidgetProvider.js.map?dt=1592867917971

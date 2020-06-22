@@ -155,7 +155,7 @@ var envinfo = {
           "email": "info@bibliograph.org"
         }
       ],
-      "version": "0.0.1"
+      "version": "1.0.0-beta"
     },
     "qxl.testtapper": {
       "name": "Commandline Testrunner for Qooxdoo Apps",
@@ -233,7 +233,9 @@ var envinfo = {
   "qx.headless": false,
   "testtapper.testNameSpace": "qx.test.io.jsonrpc",
   "excludeFromAPIViewer": [
-    "qxl.apiviewer.*"
+    "qxl.*",
+    "q",
+    "qxWeb"
   ]
 };
 for (var k in envinfo)

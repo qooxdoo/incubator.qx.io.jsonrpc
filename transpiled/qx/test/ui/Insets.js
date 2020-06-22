@@ -99,4 +99,4 @@
   qx.test.ui.Insets.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Insets.js.map?dt=1592866021281
+//# sourceMappingURL=Insets.js.map?dt=1592867903985

@@ -76,4 +76,4 @@
   qx.test.theme.manager.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1592866020695
+//# sourceMappingURL=Font.js.map?dt=1592867903408

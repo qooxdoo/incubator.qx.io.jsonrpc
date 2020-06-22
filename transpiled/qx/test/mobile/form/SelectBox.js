@@ -139,4 +139,4 @@
   qx.test.mobile.form.SelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SelectBox.js.map?dt=1592866019857
+//# sourceMappingURL=SelectBox.js.map?dt=1592867902548

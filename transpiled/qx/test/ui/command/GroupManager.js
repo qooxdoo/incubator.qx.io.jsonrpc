@@ -88,4 +88,4 @@
   qx.test.ui.command.GroupManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GroupManager.js.map?dt=1592866021709
+//# sourceMappingURL=GroupManager.js.map?dt=1592867904378

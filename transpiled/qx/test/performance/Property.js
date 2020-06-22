@@ -77,4 +77,4 @@
   qx.test.performance.Property.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Property.js.map?dt=1592866020289
+//# sourceMappingURL=Property.js.map?dt=1592867902980
