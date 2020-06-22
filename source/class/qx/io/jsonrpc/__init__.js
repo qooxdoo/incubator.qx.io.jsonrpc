@@ -1,12 +1,12 @@
 /**
- * This namespace provides an API implementing the <a
+ * <p>This namespace provides an API implementing the <a
  * href="https://www.jsonrpc.org/specification">JSON Remote
- * Procedure Call (JSON-RPC) version 2 specification</a>
+ * Procedure Call (JSON-RPC) version 2 specification</a></p>
  *
- * JSON-RPC v2 is transport-agnostic. We provide a high-level
+ * <p>JSON-RPC v2 is transport-agnostic. We provide a high-level
  * API interface (qx.io.jsonrpc.Client), a transport interface
  * (qx.io.jsonrpc.transport.ITransport) and an HTTP transport implementation.
- * Other transports based on websockets or other mechanisms can be added later.
+ * Other transports based on websockets or other mechanisms can be added later.</p>
  *
  * Here is an example:
  *
@@ -72,6 +72,7 @@
  * a certain endpoint pattern, i.e. from then on, all clients created
  * with urls that start with "http" will use that custom behavior.
  *
+ * <p>Incoming requests</p>
  * The client also supports *incoming* requests as part of the server
  * response. To receive them, register a listener for the `incomingRequest`
  * event. For the HTTP transport, notifications can be sent by the server

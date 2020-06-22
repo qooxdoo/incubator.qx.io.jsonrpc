@@ -254,7 +254,7 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
       this.setUpFakeServer(qx.lang.Json.stringify(response));
       var client = new qx.io.jsonrpc.Client("http://jsonrpc");
       var spy = this.spy();
-      client.addListener("peerRequest", (evt) => {
+      client.addListener("incomingRequest", (evt) => {
         let message = evt.getData().toObject();
         this.assertDeepEquals(response.shift(), message);
         spy(message);

@@ -47,7 +47,9 @@ API interface (qx.io.jsonrpc.Client), a transport interface
 (qx.io.jsonrpc.transport.ITransport) and an HTTP transport implementation.
 Other transports based on websockets or other mechanisms can be added later.
 
-Here is an example:
+### Outgoing requests
+
+Here is an example for making a JSON-RPC request to a server endpoint: 
 
 ```javascript
 (async()=>{
@@ -86,7 +88,6 @@ The high-level Client API does not handle transport-specific issues like
 authentication - this needs to be done in the transport layer. For example,
 to use HTTP Bearer authentication, do this:
 
-
 ```javascript
 const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
 client.addListener("outgoingRequest", () => {
@@ -99,18 +100,20 @@ client.sendRequest("method-needing-authentication", [1,2,3]);
 Instead, you can also to create a class that inherits
 from `qx.io.jsonrpc.transport.Http` and overrides
 `qx.io.jsonrpc.transport.Http#_createTransportImpl`. To make
-the client use this transport, and provide a `defer` section
+the client use this transport, provide a `defer` section
 which registers the behavior for your particular class of URIs:
 
 ```javascript 
-    defer() {
-      qx.io.jsonrpc.Client.registerTransport(/^http/, my.custom.Transport); 
-    } 
+  defer() {
+    qx.io.jsonrpc.Client.registerTransport(/^http/, my.custom.Transport); 
+  } 
 ```
 
 `qx.io.jsonrpc.Client` will always use the transport that was last
 registered for a certain endpoint pattern, i.e. from then on, all clients
 created with urls that start with "http" will use that custom behavior.
+
+### Incoming requests
 
 The client also supports *incoming* requests as part of the server
 response. To receive them, register a listener for the `incomingRequest`
