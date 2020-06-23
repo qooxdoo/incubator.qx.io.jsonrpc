@@ -106,8 +106,8 @@ async function doSomethingWithPromise(promise) {
   const request1 = new qx.io.jsonrpc.protocol.Request("some-method", [1,2,3]);
   const request2 = new qx.io.jsonrpc.protocol.Request("other-method", ["foo"]);
   batch.add(request1).add(request2);
-  doSomethingWithPromise(request1.getPromise());
-  doSomethingWithPromise(reques2.getPromise());
+  doSomethingWithPromise(request1.getPromise()); // no await here, the batch needs to be sent first
+  doSomethingWithPromise(request2.getPromise());
   try {
     await client.sendBatch(batch);
   } catch(e) {
