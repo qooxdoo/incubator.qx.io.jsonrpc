@@ -180,4 +180,4 @@
   qx.data.marshal.MEventBubbling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MEventBubbling.js.map?dt=1592867934655
+//# sourceMappingURL=MEventBubbling.js.map?dt=1592908438532

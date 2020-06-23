@@ -88,4 +88,4 @@
   qx.test.ui.table.Dispose.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Dispose.js.map?dt=1592867955224
+//# sourceMappingURL=Dispose.js.map?dt=1592908460153

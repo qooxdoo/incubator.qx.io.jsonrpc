@@ -172,4 +172,4 @@
   qx.ui.mobile.core.MChildrenHandling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MChildrenHandling.js.map?dt=1592867966041
+//# sourceMappingURL=MChildrenHandling.js.map?dt=1592908472012

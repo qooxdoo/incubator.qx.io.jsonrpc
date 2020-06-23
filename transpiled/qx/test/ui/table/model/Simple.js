@@ -176,4 +176,4 @@
   qx.test.ui.table.model.Simple.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Simple.js.map?dt=1592867955450
+//# sourceMappingURL=Simple.js.map?dt=1592908460425

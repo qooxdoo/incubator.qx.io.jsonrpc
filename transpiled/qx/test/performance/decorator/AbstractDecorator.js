@@ -88,4 +88,4 @@
   qx.test.performance.decorator.AbstractDecorator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractDecorator.js.map?dt=1592867951405
+//# sourceMappingURL=AbstractDecorator.js.map?dt=1592908456085

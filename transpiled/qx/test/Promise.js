@@ -779,4 +779,4 @@
   qx.test.Promise.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Promise.js.map?dt=1592867943597
+//# sourceMappingURL=Promise.js.map?dt=1592908447915
