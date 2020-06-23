@@ -86,4 +86,4 @@
   qx.test.bom.Class.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Class.js.map?dt=1592908448207
+//# sourceMappingURL=Class.js.map?dt=1592908577271

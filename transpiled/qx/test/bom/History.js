@@ -221,4 +221,4 @@
   qx.test.bom.History.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=History.js.map?dt=1592908448430
+//# sourceMappingURL=History.js.map?dt=1592908577452

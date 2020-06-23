@@ -364,4 +364,4 @@
   qx.ui.decoration.MDoubleBorder.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MDoubleBorder.js.map?dt=1592908467195
+//# sourceMappingURL=MDoubleBorder.js.map?dt=1592908592662

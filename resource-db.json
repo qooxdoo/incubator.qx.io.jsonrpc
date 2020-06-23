@@ -79,12 +79,12 @@
         "width": 18,
         "height": 18
       },
-      "qxl/apiviewer/image/cross.gif": {
+      "qxl/apiviewer/image/constructor18.gif": {
         "resourcePath": "resourcePath",
         "width": 18,
         "height": 18
       },
-      "qxl/apiviewer/image/constructor18.gif": {
+      "qxl/apiviewer/image/cross.gif": {
         "resourcePath": "resourcePath",
         "width": 18,
         "height": 18
@@ -5126,12 +5126,6 @@
       "qx/test/webfonts/yanonekaffeesatz-regular-webfont.woff": {
         "resourcePath": "resourcePath"
       },
-      "qx/website/scss/.npmignore": {
-        "resourcePath": "resourcePath"
-      },
-      "qx/website/scss/indigo.scss": {
-        "resourcePath": "resourcePath"
-      },
       "qx/test/xmlhttp/404.php": {
         "resourcePath": "resourcePath"
       },
@@ -5187,6 +5181,12 @@
         "resourcePath": "resourcePath"
       },
       "qx/test/xmlhttp/xml.php": {
+        "resourcePath": "resourcePath"
+      },
+      "qx/website/scss/.npmignore": {
+        "resourcePath": "resourcePath"
+      },
+      "qx/website/scss/indigo.scss": {
         "resourcePath": "resourcePath"
       },
       "qx/decoration/Classic/arrows/down-invert.gif": {
@@ -6938,11 +6938,6 @@
         "width": 15,
         "height": 382
       },
-      "qx/decoration/Modern/shadow/shadow-r.png": {
-        "resourcePath": "resourcePath",
-        "width": 15,
-        "height": 382
-      },
       "qx/decoration/Modern/shadow/shadow-small-b.png": {
         "resourcePath": "resourcePath",
         "width": 5,
@@ -7002,6 +6997,11 @@
         "resourcePath": "resourcePath",
         "width": 15,
         "height": 15
+      },
+      "qx/decoration/Modern/shadow/shadow-r.png": {
+        "resourcePath": "resourcePath",
+        "width": 15,
+        "height": 382
       },
       "qx/decoration/Modern/shadow/shadow-tr.png": {
         "resourcePath": "resourcePath",
@@ -8783,12 +8783,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/office-writer.png": {
+      "qx/icon/Oxygen/128/apps/office-web.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/office-web.png": {
+      "qx/icon/Oxygen/128/apps/office-writer.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -15833,16 +15833,6 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/emblems/emblem-favorite.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/emblems/emblem-important.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Tango/128/emotes/face-angel.png": {
         "resourcePath": "resourcePath",
         "width": 128,
@@ -15889,6 +15879,71 @@
         "height": 128
       },
       "qx/icon/Tango/128/emotes/face-surprise.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/archive.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/executable.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/media-audio.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/media-image.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/media-video.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/office-calendar.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/office-contact.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/office-document.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/office-illustration.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/office-presentation.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/office-spreadsheet.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/text-html.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Tango/128/mimetypes/text-plain.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -16828,6 +16883,11 @@
         "width": 16,
         "height": 16
       },
+      "qx/icon/Tango/16/devices/drive-optical.png": {
+        "resourcePath": "resourcePath",
+        "width": 16,
+        "height": 16
+      },
       "qx/icon/Tango/16/devices/input-keyboard.png": {
         "resourcePath": "resourcePath",
         "width": 16,
@@ -16874,11 +16934,6 @@
         "height": 16
       },
       "qx/icon/Tango/16/devices/printer.png": {
-        "resourcePath": "resourcePath",
-        "width": 16,
-        "height": 16
-      },
-      "qx/icon/Tango/16/devices/drive-optical.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -18823,11 +18878,6 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Tango/32/apps/office-presentation.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
       "qx/icon/Tango/32/apps/office-project.png": {
         "resourcePath": "resourcePath",
         "width": 32,
@@ -19138,6 +19188,16 @@
         "width": 32,
         "height": 32
       },
+      "qx/icon/Tango/32/emblems/emblem-favorite.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
+      "qx/icon/Tango/32/emblems/emblem-important.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
       "qx/icon/Tango/32/emotes/face-angel.png": {
         "resourcePath": "resourcePath",
         "width": 32,
@@ -19188,17 +19248,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Tango/32/mimetypes/archive.png": {
+      "qx/icon/Tango/32/apps/office-presentation.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
       "qx/icon/Tango/32/mimetypes/executable.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
-      "qx/icon/Tango/32/mimetypes/media-audio.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -19219,6 +19274,11 @@
         "height": 32
       },
       "qx/icon/Tango/32/mimetypes/office-contact.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
+      "qx/icon/Tango/32/mimetypes/media-audio.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -20098,6 +20158,11 @@
         "width": 48,
         "height": 48
       },
+      "qx/icon/Tango/32/mimetypes/archive.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
       "qx/icon/Tango/48/categories/accessories.png": {
         "resourcePath": "resourcePath",
         "width": 48,
@@ -20123,12 +20188,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Tango/48/categories/internet.png": {
+      "qx/icon/Tango/48/categories/multimedia.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Tango/48/categories/multimedia.png": {
+      "qx/icon/Tango/48/categories/internet.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -20378,6 +20443,11 @@
         "width": 48,
         "height": 48
       },
+      "qx/icon/Tango/48/places/folder-open.png": {
+        "resourcePath": "resourcePath",
+        "width": 48,
+        "height": 48
+      },
       "qx/icon/Tango/48/places/folder-remote.png": {
         "resourcePath": "resourcePath",
         "width": 48,
@@ -20468,12 +20538,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Tango/48/status/security-low.png": {
+      "qx/icon/Tango/48/status/security-medium.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Tango/48/status/security-medium.png": {
+      "qx/icon/Tango/48/status/security-low.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -20773,12 +20843,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/actions/mail-forward.png": {
+      "qx/icon/Tango/64/actions/mail-mark-important.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/actions/mail-mark-important.png": {
+      "qx/icon/Tango/64/actions/mail-forward.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -21543,12 +21613,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/status/dialog-error.png": {
+      "qx/icon/Tango/64/status/dialog-information.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/status/dialog-information.png": {
+      "qx/icon/Tango/64/status/dialog-error.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -21609,85 +21679,15 @@
       "qx/mobile/scss/theme/indigo/_styles.scss": {
         "resourcePath": "resourcePath"
       },
-      "qx/icon/Tango/32/emblems/emblem-favorite.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
-      "qx/icon/Tango/32/emblems/emblem-important.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
-      "qx/icon/Tango/128/mimetypes/archive.png": {
+      "qx/icon/Tango/128/emblems/emblem-favorite.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/mimetypes/executable.png": {
+      "qx/icon/Tango/128/emblems/emblem-important.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/media-audio.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/media-image.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/media-video.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/office-calendar.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/office-contact.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/office-document.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/office-illustration.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/office-presentation.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/office-spreadsheet.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/text-html.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/text-plain.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/48/places/folder-open.png": {
-        "resourcePath": "resourcePath",
-        "width": 48,
-        "height": 48
       }
     }
   }

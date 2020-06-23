@@ -164,4 +164,4 @@
   qx.module.event.Tap.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Tap.js.map?dt=1592908447212
+//# sourceMappingURL=Tap.js.map?dt=1592908576472

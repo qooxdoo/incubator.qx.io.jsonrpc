@@ -589,4 +589,4 @@
   qx.test.ui.form.FormManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FormManager.js.map?dt=1592908458262
+//# sourceMappingURL=FormManager.js.map?dt=1592908585397

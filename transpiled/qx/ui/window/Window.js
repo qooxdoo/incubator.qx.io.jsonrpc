@@ -1089,4 +1089,4 @@
   qx.ui.window.Window.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Window.js.map?dt=1592908480642
+//# sourceMappingURL=Window.js.map?dt=1592908603442

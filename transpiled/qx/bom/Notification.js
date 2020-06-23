@@ -327,4 +327,4 @@
   qx.bom.Notification.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Notification.js.map?dt=1592908432980
+//# sourceMappingURL=Notification.js.map?dt=1592908564813

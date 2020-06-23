@@ -84,4 +84,4 @@
   qx.ui.form.IStringForm.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=IStringForm.js.map?dt=1592908468279
+//# sourceMappingURL=IStringForm.js.map?dt=1592908593534
