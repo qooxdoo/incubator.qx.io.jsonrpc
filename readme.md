@@ -56,8 +56,8 @@ Here is an example for making a JSON-RPC request to a server endpoint:
   const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
   let result;
   try {
-    client.sendNotification("other_method", [1,2,3]); // notifications are "fire & forget"
-    result = await client.sendRequest("other_method", [1,2,3]);
+    client.sendNotification("some-method", [1,2,3]); // notifications are "fire & forget"
+    result = await client.sendRequest("other-method", [1,2,3]);
   } catch(e) {
     // handle exceptions
   }
@@ -83,6 +83,40 @@ or using a batch:
   }
 })();
 ```
+
+### Request promises
+
+It is possible to resolve the promises of batched JSON-RPC requests individually,
+i.e., the promises can be passed to other parts of the code to be `await`ed 
+there. This works only with `qx.io.jsonrpc.protocol.Request`.
+
+```javascript
+async function doSomethingWithPromise(promise) {
+  let result;
+  try {
+    result = await promise;
+  } catch (e) {
+    // handle error  
+  }
+  // do something with the result
+}
+(async () => {
+  const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
+  const batch = new qx.io.jsonrpc.protocol.Batch();
+  const request1 = new qx.io.jsonrpc.protocol.Request("some-method", [1,2,3]);
+  const request2 = new qx.io.jsonrpc.protocol.Request("other-method", ["foo"]);
+  batch.add(request1).add(request2);
+  doSomethingWithPromise(request1.getPromise());
+  doSomethingWithPromise(reques2.getPromise());
+  try {
+    await client.sendBatch(batch);
+  } catch(e) {
+    // handle exceptions
+  }
+})();
+``` 
+
+### Customizing the transport / Authentication
 
 The high-level Client API does not handle transport-specific issues like
 authentication - this needs to be done in the transport layer. For example,
