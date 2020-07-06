@@ -251,4 +251,4 @@
   qx.test.ui.form.virtual.VirtualDropDownList.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualDropDownList.js.map?dt=1592908586228
+//# sourceMappingURL=VirtualDropDownList.js.map?dt=1594065625975

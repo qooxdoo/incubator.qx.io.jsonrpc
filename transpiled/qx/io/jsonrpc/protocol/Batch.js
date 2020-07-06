@@ -12,6 +12,7 @@
       "qx.data.Array": {
         "construct": true
       },
+      "qx.core.Assert": {},
       "qx.io.jsonrpc.protocol.Message": {},
       "qx.io.jsonrpc.protocol.Request": {},
       "qx.io.jsonrpc.protocol.Notification": {}
@@ -66,7 +67,7 @@
        * @return {qx.io.jsonrpc.protocol.Batch}
        */
       add(message) {
-        this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
+        qx.core.Assert.assertInstance(message, qx.io.jsonrpc.protocol.Message);
         this.getBatch().push(message); // return the instance for chaining
 
         return this;
@@ -121,4 +122,4 @@
   qx.io.jsonrpc.protocol.Batch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Batch.js.map?dt=1592908573472
+//# sourceMappingURL=Batch.js.map?dt=1594065610087

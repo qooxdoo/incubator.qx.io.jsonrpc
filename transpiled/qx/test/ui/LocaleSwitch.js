@@ -122,4 +122,4 @@
   qx.test.ui.LocaleSwitch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LocaleSwitch.js.map?dt=1592908584404
+//# sourceMappingURL=LocaleSwitch.js.map?dt=1594065623692

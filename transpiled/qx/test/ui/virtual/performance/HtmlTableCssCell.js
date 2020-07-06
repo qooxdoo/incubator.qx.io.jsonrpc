@@ -47,4 +47,4 @@
   qx.test.ui.virtual.performance.HtmlTableCssCell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlTableCssCell.js.map?dt=1592908588268
+//# sourceMappingURL=HtmlTableCssCell.js.map?dt=1594065628671

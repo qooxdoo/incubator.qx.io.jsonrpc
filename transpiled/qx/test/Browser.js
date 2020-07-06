@@ -87,4 +87,4 @@
   qx.test.Browser.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Browser.js.map?dt=1592908576678
+//# sourceMappingURL=Browser.js.map?dt=1594065614036

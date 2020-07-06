@@ -2124,12 +2124,6 @@ qx.$$packageData['0'] = {
       "php",
       "qx"
     ],
-    "qxl/apiviewer/css/apiviewer.css": [
-      null,
-      null,
-      "css",
-      "qxl.apiviewer"
-    ],
     "qxl/apiviewer/image/blank.gif": [
       1,
       1,
@@ -2428,6 +2422,12 @@ qx.$$packageData['0'] = {
       null,
       null,
       "meta",
+      "qxl.apiviewer"
+    ],
+    "qxl/apiviewer/css/apiviewer.css": [
+      null,
+      null,
+      "css",
       "qxl.apiviewer"
     ]
   },

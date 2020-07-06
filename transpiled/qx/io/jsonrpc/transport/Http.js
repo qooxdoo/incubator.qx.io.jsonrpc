@@ -12,6 +12,7 @@
       "qx.io.jsonrpc.transport.ITransport": {
         "require": true
       },
+      "qx.core.Assert": {},
       "qx.type.BaseError": {},
       "qx.io.jsonrpc.exception.Transport": {},
       "qx.io.jsonrpc.exception.Cancel": {},
@@ -77,7 +78,7 @@
        * when there is an error or a cancellation up to that point.
        */
       async send(message) {
-        this.assertString(message);
+        qx.core.Assert.assertString(message);
         const req = this.__tranportImpl__P_160_0 || this.getTransportImpl();
         req.setRequestData(message);
         this.__tranportImpl__P_160_0 = null; // free the internal reference for the next request
@@ -150,4 +151,4 @@
   qx.io.jsonrpc.transport.Http.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Http.js.map?dt=1592908573618
+//# sourceMappingURL=Http.js.map?dt=1594065610272

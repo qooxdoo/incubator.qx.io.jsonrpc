@@ -368,7 +368,7 @@
         } // handle individual message
 
 
-        this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
+        qx.core.Assert.assertInstance(message, qx.io.jsonrpc.protocol.Message);
         let request;
         let id;
 
@@ -418,4 +418,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1592908573417
+//# sourceMappingURL=Client.js.map?dt=1594065610020

@@ -264,4 +264,4 @@
   qx.ui.mobile.layout.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1592908597446
+//# sourceMappingURL=Abstract.js.map?dt=1594065640007
