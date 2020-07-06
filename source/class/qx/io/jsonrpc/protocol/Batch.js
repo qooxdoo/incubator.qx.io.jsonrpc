@@ -44,7 +44,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Batch",{
      * @return {qx.io.jsonrpc.protocol.Batch}
      */
     add(message) {
-      this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
+      qx.core.Assert.assertInstance(message, qx.io.jsonrpc.protocol.Message);
       this.getBatch().push(message);
       // return the instance for chaining
       return this;

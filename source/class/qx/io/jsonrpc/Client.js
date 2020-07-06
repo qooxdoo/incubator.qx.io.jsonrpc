@@ -320,7 +320,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
         return;
       }
       // handle individual message
-      this.assertInstance(message, qx.io.jsonrpc.protocol.Message);
+      qx.core.Assert.assertInstance(message, qx.io.jsonrpc.protocol.Message);
       let request;
       let id;
       

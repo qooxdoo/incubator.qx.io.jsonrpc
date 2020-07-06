@@ -53,7 +53,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
      * when there is an error or a cancellation up to that point.
      */
     async send(message) {
-      this.assertString(message);
+      qx.core.Assert.assertString(message);
       const req = this.__tranportImpl || this.getTransportImpl();
       req.setRequestData(message);
       this.__tranportImpl = null; // free the internal reference for the next request
