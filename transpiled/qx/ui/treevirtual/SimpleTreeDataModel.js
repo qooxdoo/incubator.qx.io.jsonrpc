@@ -14,6 +14,7 @@
         "defer": "runtime",
         "require": true
       },
+      "qx.lang.Object": {},
       "qx.lang.Array": {},
       "qx.ui.treevirtual.TreeVirtual": {}
     }
@@ -96,6 +97,7 @@
    *   children       : [ ],  // each value is an index into _nodeArr
    *
    *   level          : 2,    // The indentation level of this tree node
+   *   labelPos       : 40,   // The left position of the label text - stored when the cell is rendered
    *
    *   bFirstChild    : true,
    *   lastChild      : [ false ],  // Array where the index is the column of
@@ -239,9 +241,8 @@
       },
       // overridden
       isColumnEditable: function isColumnEditable(columnIndex) {
-        // The tree column is not editable
         if (columnIndex == this._treeColumn) {
-          return false;
+          return this.__tree__P_540_1.getAllowNodeEdit();
         }
 
         return this.__editableColArr__P_540_0 ? this.__editableColArr__P_540_0[columnIndex] == true : false;
@@ -338,27 +339,36 @@
       },
       // overridden
       setValue: function setValue(columnIndex, rowIndex, value) {
-        if (columnIndex == this._treeColumn) {
-          // Ignore requests to set the tree column data using this method
-          return;
-        } // convert from rowArr to nodeArr, and get the requested node
-
-
+        // convert from rowArr to nodeArr, and get the requested node
         var node = this.getNodeFromRow(rowIndex);
 
-        if (node.columnData[columnIndex] != value) {
-          node.columnData[columnIndex] = value;
-          this.setData(); // Inform the listeners
+        if (columnIndex === this._treeColumn) {
+          if (!this.__tree__P_540_1.getAllowNodeEdit() || value["label"] === undefined) {
+            return;
+          } // only allow to set the node label via this method, clone the original node
 
-          if (this.hasListener("dataChanged")) {
-            var data = {
-              firstRow: rowIndex,
-              lastRow: rowIndex,
-              firstColumn: columnIndex,
-              lastColumn: columnIndex
-            };
-            this.fireDataEvent("dataChanged", data);
+
+          var updatedNode = qx.lang.Object.clone(node);
+          updatedNode.label = value.label;
+          this._nodeArr[node.nodeId] = updatedNode;
+        } else {
+          if (node.columnData[columnIndex] == value) {
+            return;
           }
+
+          node.columnData[columnIndex] = value;
+        }
+
+        this.setData(); // Inform the listeners
+
+        if (this.hasListener("dataChanged")) {
+          var data = {
+            firstRow: rowIndex,
+            lastRow: rowIndex,
+            firstColumn: columnIndex,
+            lastColumn: columnIndex
+          };
+          this.fireDataEvent("dataChanged", data);
         }
       },
 
@@ -1013,4 +1023,4 @@
   qx.ui.treevirtual.SimpleTreeDataModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1594065645084
+//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1596696249076

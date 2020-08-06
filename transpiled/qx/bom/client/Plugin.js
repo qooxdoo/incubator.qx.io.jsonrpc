@@ -382,7 +382,7 @@
           }
 
           try {
-            new ActiveXObject(activeXName);
+            new window.ActiveXObject(activeXName);
           } catch (ex) {
             return false;
           }
@@ -430,4 +430,4 @@
   qx.bom.client.Plugin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Plugin.js.map?dt=1594065600883
+//# sourceMappingURL=Plugin.js.map?dt=1596696206904

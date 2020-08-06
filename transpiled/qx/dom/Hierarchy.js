@@ -466,4 +466,4 @@
   qx.dom.Hierarchy.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Hierarchy.js.map?dt=1594065606588
+//# sourceMappingURL=Hierarchy.js.map?dt=1596696212042

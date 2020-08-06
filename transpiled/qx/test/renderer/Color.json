@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 90,
+        "line": 93,
         "column": 3
       }
     },
@@ -35,7 +35,7 @@
           "column": 4
         },
         "end": {
-          "line": 40,
+          "line": 43,
           "column": 5
         }
       },
@@ -45,11 +45,11 @@
     "testInvalidColors": {
       "location": {
         "start": {
-          "line": 42,
+          "line": 45,
           "column": 4
         },
         "end": {
-          "line": 70,
+          "line": 73,
           "column": 5
         }
       },

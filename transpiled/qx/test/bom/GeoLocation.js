@@ -157,4 +157,4 @@
   qx.test.bom.GeoLocation.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GeoLocation.js.map?dt=1594065614918
+//# sourceMappingURL=GeoLocation.js.map?dt=1596696220073

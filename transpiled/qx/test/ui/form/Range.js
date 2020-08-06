@@ -75,4 +75,4 @@
   qx.test.ui.form.Range.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Range.js.map?dt=1594065625465
+//# sourceMappingURL=Range.js.map?dt=1596696230483

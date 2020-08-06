@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 377,
+        "line": 379,
         "column": 3
       }
     },
@@ -486,11 +486,11 @@
     "sendNotification": {
       "location": {
         "start": {
-          "line": 257,
+          "line": 259,
           "column": 4
         },
         "end": {
-          "line": 260,
+          "line": 262,
           "column": 5
         }
       },
@@ -510,6 +510,14 @@
             "name": "@param",
             "body": "{Array|Object?} params"
           }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.Promise} Promise that resolves immediately, (i.e. when the\n notification has been sent out (which is synchronous)",
+            "type": "qx.Promise",
+            "description": " Promise that resolves immediately, (i.e. when the\n notification has been sent out (which is synchronous)"
+          }
         ]
       },
       "type": "function",
@@ -518,11 +526,11 @@
     "sendBatch": {
       "location": {
         "start": {
-          "line": 269,
+          "line": 271,
           "column": 4
         },
         "end": {
-          "line": 276,
+          "line": 278,
           "column": 5
         }
       },
@@ -554,11 +562,11 @@
     "handleIncoming": {
       "location": {
         "start": {
-          "line": 282,
+          "line": 284,
           "column": 4
         },
         "end": {
-          "line": 301,
+          "line": 303,
           "column": 5
         }
       },
@@ -585,11 +593,11 @@
     "_cleanup": {
       "location": {
         "start": {
-          "line": 308,
+          "line": 310,
           "column": 4
         },
         "end": {
-          "line": 310,
+          "line": 312,
           "column": 5
         }
       },
@@ -619,11 +627,11 @@
     "handleMessage": {
       "location": {
         "start": {
-          "line": 316,
+          "line": 318,
           "column": 4
         },
         "end": {
-          "line": 371,
+          "line": 373,
           "column": 5
         }
       },

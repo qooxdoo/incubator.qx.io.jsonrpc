@@ -379,6 +379,15 @@
       },
 
       /**
+       * Whether to reset the selection when the unpopulated table area is tapped.
+       * The default is false which keeps the behaviour as before
+       */
+      resetSelectionOnTapBelowRows: {
+        check: "Boolean",
+        init: false
+      },
+
+      /**
        * Interval time (in milliseconds) for the table update timer.
        * Setting this to 0 clears the timer.
        */
@@ -1459,6 +1468,10 @@
             this.fireEvent("cellTap", qx.ui.table.pane.CellEvent, [this, e, row, col], true);
             this.__firedTapEvent__P_525_19 = true;
           }
+        } else {
+          if (row == null && this.getResetSelectionOnTapBelowRows()) {
+            table.getSelectionModel().resetSelection();
+          }
         }
       },
 
@@ -2292,4 +2305,4 @@
   qx.ui.table.pane.Scroller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Scroller.js.map?dt=1594065643532
+//# sourceMappingURL=Scroller.js.map?dt=1596696247637

@@ -348,4 +348,4 @@
   qx.test.Bootstrap.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Bootstrap.js.map?dt=1594065614017
+//# sourceMappingURL=Bootstrap.js.map?dt=1596696219228

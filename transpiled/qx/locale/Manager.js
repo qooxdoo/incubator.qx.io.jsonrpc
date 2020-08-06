@@ -72,6 +72,9 @@
    * @require(qx.event.dispatch.Direct)
    * @require(qx.locale.LocalizedString)
    *
+   * Note: "translating" the empty string, e.g. tr("") will return the header
+   * of the respective .po file. See also https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html#PO-Files
+   *
    * @cldr()
    */
   qx.Class.define("qx.locale.Manager", {
@@ -471,4 +474,4 @@
   qx.locale.Manager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Manager.js.map?dt=1594065612314
+//# sourceMappingURL=Manager.js.map?dt=1596696217606

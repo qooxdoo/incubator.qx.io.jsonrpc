@@ -41,11 +41,17 @@
           //named
           "#FFF": [255, 255, 255],
           //hex3
+          "#fffa": [255, 255, 255, 0.667],
+          //hex4
           "#Ff1": [255, 255, 17],
           //hex3
           "#0101FF": [1, 1, 255],
           //hex6
-          "rgb(123,11,1)": [123, 11, 1] //rgb
+          "#0101FFef": [1, 1, 255, 0.937],
+          //hex8
+          "rgb(123,11,1)": [123, 11, 1],
+          //rgb
+          "rgba(123,11,1,0.4)": [123, 11, 1, 0.4] //rgba
 
         };
 
@@ -54,7 +60,7 @@
         }
       },
       testInvalidColors: function testInvalidColors() {
-        var invalidColors = ["blau", "1234", "#ff", "#ffff", "rgb(12,13)"];
+        var invalidColors = ["blau", "1234", "#ff", "#fffff", "rgb(12,13)"];
 
         for (var i = 0; i < invalidColors.length; i++) {
           this.assertException(function () {
@@ -87,4 +93,4 @@
   qx.test.renderer.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1594065622884
+//# sourceMappingURL=Color.js.map?dt=1596696228044

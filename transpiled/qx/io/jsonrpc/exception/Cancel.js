@@ -52,4 +52,4 @@
   qx.io.jsonrpc.exception.Cancel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Cancel.js.map?dt=1594065610035
+//# sourceMappingURL=Cancel.js.map?dt=1596696215449

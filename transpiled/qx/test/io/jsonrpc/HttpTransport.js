@@ -327,4 +327,4 @@
   qx.test.io.jsonrpc.HttpTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HttpTransport.js.map?dt=1594065620199
+//# sourceMappingURL=HttpTransport.js.map?dt=1596696225350

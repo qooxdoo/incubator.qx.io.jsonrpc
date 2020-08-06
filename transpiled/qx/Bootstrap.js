@@ -72,7 +72,7 @@
         var value = functionMap[name];
 
         if (value instanceof Function) {
-          value.displayName = classname + "." + name + "()";
+          value.displayName = classname + "." + (value.name || name) + "()";
         }
       }
     },
@@ -896,4 +896,4 @@
   qx.Bootstrap.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Bootstrap.js.map?dt=1594065595599
+//# sourceMappingURL=Bootstrap.js.map?dt=1596696201971

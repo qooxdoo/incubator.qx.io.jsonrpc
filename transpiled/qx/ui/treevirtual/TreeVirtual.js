@@ -30,6 +30,9 @@
       "qx.lang.Type": {
         "construct": true
       },
+      "qx.ui.treevirtual.celleditor.NodeEditor": {
+        "construct": true
+      },
       "qx.ui.table.selection.Model": {
         "require": true
       },
@@ -210,7 +213,9 @@
       } // Set the data row renderer.
 
 
-      this.setDataRowRenderer(custom.dataRowRenderer); // Move the focus with the mouse.  This controls the ROW focus indicator.
+      this.setDataRowRenderer(custom.dataRowRenderer); // Set the editor for the tree column, for use if allowNodeEdit is true
+
+      tcm.setCellEditorFactory(treeCol, new qx.ui.treevirtual.celleditor.NodeEditor()); // Move the focus with the mouse.  This controls the ROW focus indicator.
 
       this.setFocusCellOnPointerMove(true); // In a tree we don't typically want a visible cell focus indicator
 
@@ -319,6 +324,10 @@
       appearance: {
         refine: true,
         init: "treevirtual"
+      },
+      allowNodeEdit: {
+        check: "Boolean",
+        init: false
       }
     },
 
@@ -783,4 +792,4 @@
   qx.ui.treevirtual.TreeVirtual.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TreeVirtual.js.map?dt=1594065645201
+//# sourceMappingURL=TreeVirtual.js.map?dt=1596696249179

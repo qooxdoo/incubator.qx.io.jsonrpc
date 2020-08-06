@@ -12,7 +12,7 @@ if (!qx.$$appRoot) {
   if (!bootScriptElement) {
     var scripts = document.getElementsByTagName('script');
     for (var i = 0; i < scripts.length; i++) {
-      if (scripts[i].src && scripts[i].src.match(/boot\.js/)) {
+      if (scripts[i].src && scripts[i].src.match(/index\.js/)) {
         bootScriptElement = scripts[i];
         break;
       }
@@ -60,7 +60,7 @@ var envinfo = {
   "qx.application": "qxl.testtapper.Application",
   "qx.revision": "",
   "qx.theme": "qx.theme.Simple",
-  "qx.version": "6.0.0-beta-20200515-0957",
+  "qx.version": "6.0.0-beta-20200609-0430",
   "qx.libraryInfoMap": {
     "qx": {
       "name": "qooxdoo framework",
@@ -141,7 +141,7 @@ var envinfo = {
           "email": "dietrich.streifert@visionet.de"
         }
       ],
-      "version": "6.0.0-beta-20200515-0957"
+      "version": "6.0.0-beta-20200609-0430"
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compilerVersion": "1.0.0-beta.20200613-2032",
+  "qx.compiler.version": "1.0.0-beta",
   "qx.icontheme": "Tango",
   "qx.buildType": "source",
   "qx.headless": false,

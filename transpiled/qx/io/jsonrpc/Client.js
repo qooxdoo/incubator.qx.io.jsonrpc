@@ -287,7 +287,8 @@
        */
       async sendRequest(method, params) {
         const request = new qx.io.jsonrpc.protocol.Request(this._prependMethodPrefix(method), params);
-        this.send(request);
+        this.send(request); // not awaited because we await the request's promise
+
         return await request.getPromise();
       },
 
@@ -296,10 +297,12 @@
        * it is prepended to the method name with a dot.
        * @param {String} method
        * @param {Array|Object?} params
+       * @return {qx.Promise} Promise that resolves immediately, (i.e. when the
+       * notification has been sent out (which is synchronous)
        */
-      sendNotification(method, params) {
+      async sendNotification(method, params) {
         const notification = new qx.io.jsonrpc.protocol.Notification(this._prependMethodPrefix(method), params);
-        this.send(notification);
+        await this.send(notification);
       },
 
       /**
@@ -418,4 +421,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1594065610020
+//# sourceMappingURL=Client.js.map?dt=1596696215430

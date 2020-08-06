@@ -116,10 +116,6 @@
       // overridden
       _insetY: 5,
       // overridden
-      _getCellStyle: function _getCellStyle(cellInfo) {
-        return qx.ui.table.cellrenderer.Boolean.prototype._getCellStyle.base.call(this, cellInfo) + ";padding-top:4px;";
-      },
-      // overridden
       _identifyImage: function _identifyImage(cellInfo) {
         var w;
         var h;
@@ -182,4 +178,4 @@
   qx.ui.table.cellrenderer.Boolean.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Boolean.js.map?dt=1594065642269
+//# sourceMappingURL=Boolean.js.map?dt=1596696246402

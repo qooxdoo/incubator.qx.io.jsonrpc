@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 64,
+        "line": 89,
         "column": 3
       }
     },
@@ -63,7 +63,7 @@
           "column": 4
         },
         "end": {
-          "line": 49,
+          "line": 52,
           "column": 5
         }
       },
@@ -73,11 +73,11 @@
     "testRgbToHexString": {
       "location": {
         "start": {
-          "line": 52,
+          "line": 55,
           "column": 4
         },
         "end": {
-          "line": 56,
+          "line": 61,
           "column": 5
         }
       },
@@ -87,11 +87,39 @@
     "testStringToRgbString": {
       "location": {
         "start": {
-          "line": 58,
+          "line": 63,
           "column": 4
         },
         "end": {
-          "line": 62,
+          "line": 68,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "testScale": {
+      "location": {
+        "start": {
+          "line": 70,
+          "column": 4
+        },
+        "end": {
+          "line": 77,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "testAdjust": {
+      "location": {
+        "start": {
+          "line": 78,
+          "column": 4
+        },
+        "end": {
+          "line": 86,
           "column": 5
         }
       },

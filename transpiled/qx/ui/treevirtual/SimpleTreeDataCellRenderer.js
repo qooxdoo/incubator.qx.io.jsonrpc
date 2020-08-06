@@ -221,7 +221,9 @@
 
         extra = this._addExtraContentBeforeLabel(cellInfo, pos);
         html += extra.html;
-        pos = extra.pos; // Add the node's label
+        pos = extra.pos; // store this position on the node so we can use it for the NodeEditor without recalculation
+
+        cellInfo.value.labelPos = pos; // Add the node's label
 
         html += this._addLabel(cellInfo, pos);
         return html;
@@ -649,4 +651,4 @@
   qx.ui.treevirtual.SimpleTreeDataCellRenderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataCellRenderer.js.map?dt=1594065644972
+//# sourceMappingURL=SimpleTreeDataCellRenderer.js.map?dt=1596696248963

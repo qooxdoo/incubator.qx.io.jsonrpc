@@ -46,4 +46,4 @@
   qx.test.performance.decorator.Beveled.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Beveled.js.map?dt=1594065622731
+//# sourceMappingURL=Beveled.js.map?dt=1596696227894

@@ -240,7 +240,7 @@
   });
   qx.util.Base64.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-5.js.map?dt=1594065660447
+//# sourceMappingURL=package-5.js.map?dt=1596696263183
 qx.$$packageData['5'] = {
   "locales": {},
   "resources": {},

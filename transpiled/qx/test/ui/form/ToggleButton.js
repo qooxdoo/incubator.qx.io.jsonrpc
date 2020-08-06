@@ -126,4 +126,4 @@
   qx.test.ui.form.ToggleButton.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ToggleButton.js.map?dt=1594065625763
+//# sourceMappingURL=ToggleButton.js.map?dt=1596696230760

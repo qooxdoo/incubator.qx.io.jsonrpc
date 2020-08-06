@@ -59,4 +59,4 @@
   qx.ui.mobile.form.RadioGroup.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RadioGroup.js.map?dt=1594065639680
+//# sourceMappingURL=RadioGroup.js.map?dt=1596696243808

@@ -509,4 +509,4 @@
   qx.test.bom.request.SimpleXhr.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleXhr.js.map?dt=1594065615970
+//# sourceMappingURL=SimpleXhr.js.map?dt=1596696220980

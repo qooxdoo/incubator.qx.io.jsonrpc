@@ -69,7 +69,7 @@
       var clazz = qx.ui.table.cellrenderer.AbstractImage;
 
       if (!clazz.stylesheet) {
-        clazz.stylesheet = qx.bom.Stylesheet.createElement(".qooxdoo-table-cell-icon {  text-align:center;  padding-top:1px;}");
+        clazz.stylesheet = qx.bom.Stylesheet.createElement(".qooxdoo-table-cell-icon {  text-align:center;}");
       }
     },
 
@@ -232,7 +232,7 @@
             width: this.__imageData__P_510_2.width + "px",
             height: this.__imageData__P_510_2.height + "px",
             display: qx.core.Environment.get("css.inlineblock"),
-            verticalAlign: "top",
+            verticalAlign: "middle",
             position: "static"
           };
 
@@ -270,4 +270,4 @@
   qx.ui.table.cellrenderer.AbstractImage.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractImage.js.map?dt=1594065642240
+//# sourceMappingURL=AbstractImage.js.map?dt=1596696246375

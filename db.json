@@ -5,10 +5,10 @@
     "qxl.logpane": "1.0.0-beta.3",
     "qxl.apiviewer": "1.0.0-beta.9",
     "qxl.versionlabel": "1.0.0-beta.3",
-    "qx": "6.0.0-beta-20200515-0957"
+    "qx": "6.0.0-beta-20200609-0430"
   },
-  "environmentHash": "ffabae75fd528d03ea0f05c3385ac379723b4430",
-  "compilerVersion": "1.0.0-beta.20200613-2032",
+  "environmentHash": "2f4fceda8b9f913c8c1559956c5239a088f36592",
+  "compilerVersion": "1.0.0-beta",
   "classInfo": {
     "qx.Annotation": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -3678,6 +3678,7 @@
         "qx.event.Registration": {
           "load": true
         },
+        "qx.Promise": {},
         "qx.event.type.Data": {}
       },
       "extends": null,
@@ -5574,6 +5575,7 @@
         "qx.lang.Function": {},
         "qx.bom.client.Browser": {},
         "qx.bom.Event": {},
+        "qx.bom.client.Runtime": {},
         "qx.event.GlobalError": {}
       },
       "extends": "qx.core.Object",
@@ -5590,6 +5592,9 @@
           },
           "browser.documentmode": {
             "className": "qx.bom.client.Browser"
+          },
+          "runtime.name": {
+            "className": "qx.bom.client.Runtime"
           },
           "qx.globalErrorHandling": {
             "className": "qx.event.GlobalError"
@@ -7668,7 +7673,7 @@
       "hasDefer": null
     },
     "qx.io.Exception": {
-      "mtime": "2020-07-06T19:59:19.611Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7737,7 +7742,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.Client": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.core.Environment": {
@@ -7785,7 +7790,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.Cancel": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7809,7 +7814,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.JsonRpc": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7829,7 +7834,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.Transport": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7849,7 +7854,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Batch": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7874,7 +7879,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Error": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7895,7 +7900,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Message": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7913,7 +7918,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Notification": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7931,7 +7936,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Parser": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7955,7 +7960,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Request": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7980,7 +7985,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Result": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7998,7 +8003,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Abstract": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8016,7 +8021,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Http": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8050,7 +8055,7 @@
       "hasDefer": true
     },
     "qx.io.jsonrpc.transport.ITransport": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Interface": {
@@ -8649,7 +8654,7 @@
       "hasDefer": null
     },
     "qx.io.request.authentication.Bearer": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14670,7 +14675,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.HttpTransport": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14708,7 +14713,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.MAssert": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Mixin": {
@@ -14724,7 +14729,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.Protocol": {
-      "mtime": "2020-07-06T19:59:19.615Z",
+      "mtime": "2020-08-06T06:42:51.695Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -25233,8 +25238,8 @@
         "qx.html.Element": {},
         "qx.bom.Label": {},
         "qx.ui.core.queue.Layout": {},
-        "qx.event.type.Data": {},
         "qx.lang.Type": {},
+        "qx.event.type.Data": {},
         "qx.html.Label": {},
         "qx.bom.Stylesheet": {},
         "qx.ui.core.LayoutItem": {
@@ -31352,12 +31357,12 @@
         {
           "msgid": "one row",
           "msgid_plural": "%1 rows",
-          "lineNo": 1987
+          "lineNo": 2010
         },
         {
           "msgid": "one of one row",
           "msgid_plural": "%1 of %2 rows",
-          "lineNo": 1989
+          "lineNo": 2012
         }
       ]
     },
@@ -33478,6 +33483,7 @@
           "construct": true,
           "defer": "runtime"
         },
+        "qx.lang.Object": {},
         "qx.lang.Array": {},
         "qx.ui.treevirtual.TreeVirtual": {},
         "qx.core.Object": {
@@ -33548,6 +33554,9 @@
         "qx.lang.Type": {
           "construct": true
         },
+        "qx.ui.treevirtual.celleditor.NodeEditor": {
+          "construct": true
+        },
         "qx.ui.table.selection.Model": {
           "load": true
         },
@@ -33575,6 +33584,25 @@
         }
       },
       "extends": "qx.ui.table.Table",
+      "include": [],
+      "implement": [],
+      "hasDefer": null
+    },
+    "qx.ui.treevirtual.celleditor.NodeEditor": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.ui.table.celleditor.TextField": {
+          "load": true
+        },
+        "qx.lang.Object": {},
+        "qx.ui.form.TextField": {}
+      },
+      "extends": "qx.ui.table.celleditor.TextField",
       "include": [],
       "implement": [],
       "hasDefer": null

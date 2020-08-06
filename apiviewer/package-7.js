@@ -12329,6 +12329,15 @@
           };
         }
       },
+      "treevirtual-node-editor-textfield": {
+        include: "textfield",
+        style: function style(states) {
+          return {
+            decorator: undefined,
+            padding: [2, 2]
+          };
+        }
+      },
 
       /*
       ---------------------------------------------------------------------------
@@ -30960,8 +30969,8 @@
       "qx.html.Element": {},
       "qx.bom.Label": {},
       "qx.ui.core.queue.Layout": {},
-      "qx.event.type.Data": {},
       "qx.lang.Type": {},
+      "qx.event.type.Data": {},
       "qx.html.Label": {},
       "qx.bom.Stylesheet": {}
     },
@@ -31173,6 +31182,17 @@
       liveUpdate: {
         check: "Boolean",
         init: false
+      },
+
+      /**
+       * Fire a {@link #changeValue} event whenever the content of the
+       * field matches the given regular expression. Accepts both regular
+       * expression objects as well as strings for input.
+       */
+      liveUpdateOnRxMatch: {
+        check: "RegExp",
+        transform: "_string2RegExp",
+        init: null
       },
 
       /**
@@ -31440,6 +31460,14 @@
           this.getContentElement().removeAttribute("maxLength");
         }
       },
+      // property transform
+      _string2RegExp: function _string2RegExp(value, old) {
+        if (qx.lang.Type.isString(value)) {
+          value = new RegExp(value);
+        }
+
+        return value;
+      },
       // overridden
       tabFocus: function tabFocus() {
         qx.ui.form.AbstractField.prototype.tabFocus.base.call(this);
@@ -31494,7 +31522,14 @@
 
           if (this.getLiveUpdate()) {
             this.__fireChangeValueEvent__P_414_9(value);
-          }
+          } // check for the liveUpdateOnRxMatch change event
+          else {
+              var fireRx = this.getLiveUpdateOnRxMatch();
+
+              if (fireRx && value.match(fireRx)) {
+                this.__fireChangeValueEvent__P_414_9(value);
+              }
+            }
         }
       },
 
@@ -83389,6 +83424,16 @@
         apply: "_applyResetSelectionOnHeaderTap"
       },
 
+      /**
+       * Whether to reset the selection when the unpopulated table area is tapped.
+       * The default is false which keeps the behaviour as before
+       */
+      resetSelectionOnTapBelowRows: {
+        check: "Boolean",
+        init: false,
+        apply: "_applyResetSelectionOnTapBelowRows"
+      },
+
       /** The renderer to use for styling the rows. */
       dataRowRenderer: {
         check: "qx.ui.table.IRowRenderer",
@@ -83879,6 +83924,14 @@
 
         for (var i = 0; i < scrollerArr.length; i++) {
           scrollerArr[i].setResetSelectionOnHeaderTap(value);
+        }
+      },
+      // property modifier
+      _applyResetSelectionOnTapBelowRows: function _applyResetSelectionOnTapBelowRows(value, old) {
+        var scrollerArr = this._getPaneScrollerArr();
+
+        for (var i = 0; i < scrollerArr.length; i++) {
+          scrollerArr[i].setResetSelectionOnTapBelowRows(value);
         }
       },
 
@@ -88815,6 +88868,15 @@
       },
 
       /**
+       * Whether to reset the selection when the unpopulated table area is tapped.
+       * The default is false which keeps the behaviour as before
+       */
+      resetSelectionOnTapBelowRows: {
+        check: "Boolean",
+        init: false
+      },
+
+      /**
        * Interval time (in milliseconds) for the table update timer.
        * Setting this to 0 clears the timer.
        */
@@ -89894,6 +89956,10 @@
           if (this.__focusIndicator__P_525_7.isHidden() || this.__lastPointerDownCell__P_525_18 && !this.__firedTapEvent__P_525_19 && !this.isEditing() && row == this.__lastPointerDownCell__P_525_18.row && col == this.__lastPointerDownCell__P_525_18.col) {
             this.fireEvent("cellTap", qx.ui.table.pane.CellEvent, [this, e, row, col], true);
             this.__firedTapEvent__P_525_19 = true;
+          }
+        } else {
+          if (row == null && this.getResetSelectionOnTapBelowRows()) {
+            table.getSelectionModel().resetSelection();
           }
         }
       },
@@ -93184,7 +93250,7 @@
       var clazz = qx.ui.table.cellrenderer.AbstractImage;
 
       if (!clazz.stylesheet) {
-        clazz.stylesheet = qx.bom.Stylesheet.createElement(".qooxdoo-table-cell-icon {  text-align:center;  padding-top:1px;}");
+        clazz.stylesheet = qx.bom.Stylesheet.createElement(".qooxdoo-table-cell-icon {  text-align:center;}");
       }
     },
 
@@ -93347,7 +93413,7 @@
             width: this.__imageData__P_510_2.width + "px",
             height: this.__imageData__P_510_2.height + "px",
             display: qx.core.Environment.get("css.inlineblock"),
-            verticalAlign: "top",
+            verticalAlign: "middle",
             position: "static"
           };
 
@@ -93502,10 +93568,6 @@
       },
       // overridden
       _insetY: 5,
-      // overridden
-      _getCellStyle: function _getCellStyle(cellInfo) {
-        return qx.ui.table.cellrenderer.Boolean.prototype._getCellStyle.base.call(this, cellInfo) + ";padding-top:4px;";
-      },
       // overridden
       _identifyImage: function _identifyImage(cellInfo) {
         var w;
@@ -103092,6 +103154,7 @@
         "defer": "runtime",
         "require": true
       },
+      "qx.lang.Object": {},
       "qx.lang.Array": {},
       "qx.ui.treevirtual.TreeVirtual": {}
     }
@@ -103174,6 +103237,7 @@
    *   children       : [ ],  // each value is an index into _nodeArr
    *
    *   level          : 2,    // The indentation level of this tree node
+   *   labelPos       : 40,   // The left position of the label text - stored when the cell is rendered
    *
    *   bFirstChild    : true,
    *   lastChild      : [ false ],  // Array where the index is the column of
@@ -103317,9 +103381,8 @@
       },
       // overridden
       isColumnEditable: function isColumnEditable(columnIndex) {
-        // The tree column is not editable
         if (columnIndex == this._treeColumn) {
-          return false;
+          return this.__tree__P_540_1.getAllowNodeEdit();
         }
 
         return this.__editableColArr__P_540_0 ? this.__editableColArr__P_540_0[columnIndex] == true : false;
@@ -103416,27 +103479,36 @@
       },
       // overridden
       setValue: function setValue(columnIndex, rowIndex, value) {
-        if (columnIndex == this._treeColumn) {
-          // Ignore requests to set the tree column data using this method
-          return;
-        } // convert from rowArr to nodeArr, and get the requested node
-
-
+        // convert from rowArr to nodeArr, and get the requested node
         var node = this.getNodeFromRow(rowIndex);
 
-        if (node.columnData[columnIndex] != value) {
-          node.columnData[columnIndex] = value;
-          this.setData(); // Inform the listeners
+        if (columnIndex === this._treeColumn) {
+          if (!this.__tree__P_540_1.getAllowNodeEdit() || value["label"] === undefined) {
+            return;
+          } // only allow to set the node label via this method, clone the original node
 
-          if (this.hasListener("dataChanged")) {
-            var data = {
-              firstRow: rowIndex,
-              lastRow: rowIndex,
-              firstColumn: columnIndex,
-              lastColumn: columnIndex
-            };
-            this.fireDataEvent("dataChanged", data);
+
+          var updatedNode = qx.lang.Object.clone(node);
+          updatedNode.label = value.label;
+          this._nodeArr[node.nodeId] = updatedNode;
+        } else {
+          if (node.columnData[columnIndex] == value) {
+            return;
           }
+
+          node.columnData[columnIndex] = value;
+        }
+
+        this.setData(); // Inform the listeners
+
+        if (this.hasListener("dataChanged")) {
+          var data = {
+            firstRow: rowIndex,
+            lastRow: rowIndex,
+            firstColumn: columnIndex,
+            lastColumn: columnIndex
+          };
+          this.fireDataEvent("dataChanged", data);
         }
       },
 
@@ -104123,6 +104195,9 @@
       "qx.lang.Type": {
         "construct": true
       },
+      "qx.ui.treevirtual.celleditor.NodeEditor": {
+        "construct": true
+      },
       "qx.ui.table.selection.Model": {
         "require": true
       },
@@ -104303,7 +104378,9 @@
       } // Set the data row renderer.
 
 
-      this.setDataRowRenderer(custom.dataRowRenderer); // Move the focus with the mouse.  This controls the ROW focus indicator.
+      this.setDataRowRenderer(custom.dataRowRenderer); // Set the editor for the tree column, for use if allowNodeEdit is true
+
+      tcm.setCellEditorFactory(treeCol, new qx.ui.treevirtual.celleditor.NodeEditor()); // Move the focus with the mouse.  This controls the ROW focus indicator.
 
       this.setFocusCellOnPointerMove(true); // In a tree we don't typically want a visible cell focus indicator
 
@@ -104412,6 +104489,10 @@
       appearance: {
         refine: true,
         init: "treevirtual"
+      },
+      allowNodeEdit: {
+        check: "Boolean",
+        init: false
       }
     },
 
@@ -105099,7 +105180,9 @@
 
         extra = this._addExtraContentBeforeLabel(cellInfo, pos);
         html += extra.html;
-        pos = extra.pos; // Add the node's label
+        pos = extra.pos; // store this position on the node so we can use it for the NodeEditor without recalculation
+
+        cellInfo.value.labelPos = pos; // Add the node's label
 
         html += this._addLabel(cellInfo, pos);
         return html;
@@ -105605,6 +105688,94 @@
     }
   });
   qx.ui.treevirtual.SimpleTreeDataRowRenderer.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.ui.table.celleditor.TextField": {
+        "require": true
+      },
+      "qx.lang.Object": {},
+      "qx.ui.form.TextField": {}
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 Patrick Buxton
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Pat Buxton (rad-pat)
+  
+  ************************************************************************ */
+
+  /**
+   * A cell editor factory for editing a virtualtree node label
+   */
+  qx.Class.define("qx.ui.treevirtual.celleditor.NodeEditor", {
+    extend: qx.ui.table.celleditor.TextField,
+    members: {
+      // overridden
+      getCellEditorValue: function getCellEditorValue(cellEditor) {
+        var label = cellEditor.getValue(); // This will be the new label for the Tree Node
+        // validation function will be called with new and old label
+
+        var validationFunc = this.getValidationFunction();
+
+        if (validationFunc) {
+          label = validationFunc(label, cellEditor.originalLabel);
+        }
+
+        var newValue = qx.lang.Object.clone(cellEditor.originalValue);
+        newValue.label = label;
+        return newValue;
+      },
+      // interface implementation
+      createCellEditor: function createCellEditor(cellInfo) {
+        var cellEditor = this._createEditor(); // The value in the case of a Tree is a Node and we want the label
+
+
+        if (cellInfo.value === null || typeof cellInfo.value != "object") {
+          cellInfo.value = {
+            label: "",
+            labelPos: 0
+          };
+        }
+
+        var label = cellInfo.value.label;
+        cellEditor.originalValue = cellInfo.value;
+        cellEditor.originalLabel = label;
+        cellEditor.setValue("" + label); // dynamically pad to the position of the node label - calculated in CellRenderer
+
+        cellEditor.setPaddingLeft(cellInfo.value.labelPos);
+        cellEditor.addListener("appear", function () {
+          cellEditor.selectAllText();
+        });
+        return cellEditor;
+      },
+      _createEditor: function _createEditor() {
+        var cellEditor = new qx.ui.form.TextField();
+        cellEditor.setAppearance("treevirtual-node-editor-textfield");
+        return cellEditor;
+      }
+    }
+  });
+  qx.ui.treevirtual.celleditor.NodeEditor.$$dbClassInfo = $$dbClassInfo;
 })();
 
 (function () {
@@ -110690,7 +110861,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1594065660841
+//# sourceMappingURL=package-7.js.map?dt=1596696263580
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

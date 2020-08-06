@@ -493,4 +493,4 @@
   qx.test.Interface.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Interface.js.map?dt=1594065614226
+//# sourceMappingURL=Interface.js.map?dt=1596696219415

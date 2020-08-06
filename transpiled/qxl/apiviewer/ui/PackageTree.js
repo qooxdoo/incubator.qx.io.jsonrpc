@@ -249,4 +249,4 @@
   qxl.apiviewer.ui.PackageTree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PackageTree.js.map?dt=1594065649527
+//# sourceMappingURL=PackageTree.js.map?dt=1596696253209

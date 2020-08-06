@@ -12582,8 +12582,8 @@
           constName = "ICON_CONSTANT";
         } else if (node instanceof dao.ChildControl) {
           constName = "ICON_CHILDCONTROL";
-        } else {} //        throw new Error("Unknown node type: " + (node.type || node.name));
-
+        } else {//        throw new Error("Unknown node type: " + (node.type || node.name));
+        }
         /*
         if (node.attributes.isMixin) {
           constName += "_MIXIN";
@@ -17795,7 +17795,7 @@
   });
   qxl.apiviewer.Theme.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-9.js.map?dt=1594065662245
+//# sourceMappingURL=package-9.js.map?dt=1596696264844
 qx.$$packageData['9'] = {
   "locales": {},
   "resources": {},

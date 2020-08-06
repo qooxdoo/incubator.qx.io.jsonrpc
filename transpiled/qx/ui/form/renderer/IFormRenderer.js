@@ -61,4 +61,4 @@
   qx.ui.form.renderer.IFormRenderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=IFormRenderer.js.map?dt=1594065636488
+//# sourceMappingURL=IFormRenderer.js.map?dt=1596696240846

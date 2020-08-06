@@ -135,4 +135,4 @@
   qx.test.io.rest.ResourceWithRemote.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ResourceWithRemote.js.map?dt=1594065620975
+//# sourceMappingURL=ResourceWithRemote.js.map?dt=1596696226113
