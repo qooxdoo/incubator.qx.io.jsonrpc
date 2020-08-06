@@ -244,7 +244,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
      */
     async sendRequest(method, params) {
       const request = new qx.io.jsonrpc.protocol.Request(this._prependMethodPrefix(method), params);
-      this.send(request);
+      this.send(request); // not awaited because we await the request's promise
       return await request.getPromise();
     },
 
@@ -253,10 +253,12 @@ qx.Class.define("qx.io.jsonrpc.Client",
      * it is prepended to the method name with a dot.
      * @param {String} method
      * @param {Array|Object?} params
+     * @return {qx.Promise} Promise that resolves immediately, (i.e. when the
+     * notification has been sent out (which is synchronous)
      */
-    sendNotification(method, params) {
+    async sendNotification(method, params) {
       const notification = new qx.io.jsonrpc.protocol.Notification(this._prependMethodPrefix(method), params);
-      this.send(notification);
+      await this.send(notification);
     },
 
     /**
@@ -323,7 +325,6 @@ qx.Class.define("qx.io.jsonrpc.Client",
       qx.core.Assert.assertInstance(message, qx.io.jsonrpc.protocol.Message);
       let request;
       let id;
-      
       if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
         // handle results and errors, which are responses to sent requests
         id = message.getId();
@@ -350,6 +351,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
         // resolve the individual promise
         request.getPromise().resolve(message.getResult());
       } else if (message instanceof qx.io.jsonrpc.protocol.Error) {
+        
         let error = message.getError();
         let ex = new qx.io.jsonrpc.exception.JsonRpc(
           error.message,
