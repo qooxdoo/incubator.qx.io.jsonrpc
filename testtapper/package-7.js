@@ -10114,6 +10114,7 @@
           };
         }
       },
+      "toggle-button": "button",
       "hover-button": {
         alias: "atom",
         include: "atom",
@@ -36060,7 +36061,7 @@
       // overridden
       appearance: {
         refine: true,
-        init: "button"
+        init: "toggle-button"
       },
       // overridden
       focusable: {
@@ -41750,7 +41751,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://qooxdoo.org/docs/#layout/grid.md'>
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/grid.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Grid", {
@@ -61410,7 +61411,7 @@
   });
   qx.test.io.ImageLoader.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1596696263324
+//# sourceMappingURL=package-7.js.map?dt=1598908911012
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

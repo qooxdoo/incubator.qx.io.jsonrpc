@@ -114,8 +114,6 @@
         this.__iconUrlFalse__P_511_2 = this.__aliasManager__P_511_0.resolve(value);
       },
       // overridden
-      _insetY: 5,
-      // overridden
       _identifyImage: function _identifyImage(cellInfo) {
         var w;
         var h;
@@ -178,4 +176,4 @@
   qx.ui.table.cellrenderer.Boolean.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Boolean.js.map?dt=1596696246402
+//# sourceMappingURL=Boolean.js.map?dt=1598908892415

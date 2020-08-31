@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 905,
+        "line": 935,
         "column": 3
       }
     },
@@ -1433,7 +1433,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Adjust\n Increases or decreases one or more properties of the input color\n by fixed amounts according to the configuration given in the\n <code>adjustMap</code>. The value of the corresponding key is added to the\n original value and the final result is adjusted to stay within legal\n bounds. Hue values can go full circle.a1\n Supported keys are:\n <code>red</code>, <code>green</code>, <code>blue</code>, <code>alpha</code>, <code>hue</code>, <code>saturation</code>, <code>brightness</code>,\n <code>value</code>, <code>lightness</code></p>"
+            "body": "<p>Adjust\n Increases or decreases one or more properties of the input color\n by fixed amounts according to the configuration given in the\n <code>adjustMap</code>. The value of the corresponding key is added to the\n original value and the final result is adjusted to stay within legal\n bounds. Hue values can go full circle.a1\n Supported keys are:\n <code>red</code>, <code>green</code>, <code>blue</code>, <code>alpha</code>, <code>hue</code>, <code>saturation</code>, <code>brightness</code>,\n <code>lightness</code></p>"
           }
         ],
         "@param": [
@@ -1458,6 +1458,91 @@
             "body": "{String} a valid CSS rgb color string.",
             "type": "String",
             "description": " a valid CSS rgb color string."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "luminance": {
+      "location": {
+        "start": {
+          "line": 912,
+          "column": 4
+        },
+        "end": {
+          "line": 919,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>RgbToLuminance\n Calculate the <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">luminance</a> of the given rgb color.</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "color {String} a valid qooxdoo/CSS rgb color string",
+            "paramName": "color",
+            "description": " a valid qooxdoo/CSS rgb color string",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Number} luminance",
+            "type": "Number",
+            "description": " luminance"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "contrast": {
+      "location": {
+        "start": {
+          "line": 929,
+          "column": 4
+        },
+        "end": {
+          "line": 933,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>contrast\n Calculate the contrast of two given rgb colors.</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "back {String} a valid qooxdoo/CSS rgb color string",
+            "paramName": "back",
+            "description": " a valid qooxdoo/CSS rgb color string",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "front {String} a valid qooxdoo/CSS rgb color string",
+            "paramName": "front",
+            "description": " a valid qooxdoo/CSS rgb color string",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Number} contrast",
+            "type": "Number",
+            "description": " contrast"
           }
         ]
       },

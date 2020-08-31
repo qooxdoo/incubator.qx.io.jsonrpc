@@ -87,7 +87,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://qooxdoo.org/docs/#layout/grid.md'>
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/grid.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Grid", {
@@ -1334,4 +1334,4 @@
   qx.ui.layout.Grid.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Grid.js.map?dt=1596696241539
+//# sourceMappingURL=Grid.js.map?dt=1598908886904

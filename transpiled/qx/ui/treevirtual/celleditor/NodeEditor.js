@@ -55,6 +55,10 @@
       },
       // interface implementation
       createCellEditor: function createCellEditor(cellInfo) {
+        if (!cellInfo.table.getTableModel().isNodeEditable(cellInfo.row)) {
+          return null;
+        }
+
         var cellEditor = this._createEditor(); // The value in the case of a Tree is a Node and we want the label
 
 
@@ -86,4 +90,4 @@
   qx.ui.treevirtual.celleditor.NodeEditor.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NodeEditor.js.map?dt=1596696249197
+//# sourceMappingURL=NodeEditor.js.map?dt=1598908895545

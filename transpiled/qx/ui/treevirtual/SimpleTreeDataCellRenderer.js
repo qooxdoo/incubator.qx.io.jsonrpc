@@ -91,7 +91,7 @@
       this.__rm__P_539_3 = qx.util.ResourceManager.getInstance();
       this.__tm__P_539_4 = qx.theme.manager.Appearance.getInstance(); // Base URL used for indentation
 
-      this.BLANK = this.__rm__P_539_3.toUri(this.__am__P_539_2.resolve("static/blank.gif"));
+      this.BLANK = this.__rm__P_539_3.toUri(this.__am__P_539_2.resolve("static/blank.png"));
     },
     statics: {
       /** File names of each of the tree icons */
@@ -642,6 +642,29 @@
         return {
           icon: this.BLANK
         };
+      },
+
+      /**
+       * Determine the position in the cell of the open/close button image
+       *
+       * @param table {Table}
+       *   The column of indentation being requested, zero-relative
+       *
+       * @param node {Node}
+       *   The node being displayed in the row.  The properties of a node are
+       *   described in {@link qx.ui.treevirtual.SimpleTreeDataModel}
+       *
+       * @return {Object} Position of the Open/Close Button
+       */
+      getOpenCloseButtonPosition: function getOpenCloseButtonPosition(table, node) {
+        var padding = 2;
+        var width = table.getRowHeight() + 3;
+        return {
+          top: 0,
+          left: (node.level - 1) * width + padding,
+          width: width,
+          height: table.getRowHeight()
+        };
       }
     },
     destruct: function destruct() {
@@ -651,4 +674,4 @@
   qx.ui.treevirtual.SimpleTreeDataCellRenderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataCellRenderer.js.map?dt=1596696248963
+//# sourceMappingURL=SimpleTreeDataCellRenderer.js.map?dt=1598908895281

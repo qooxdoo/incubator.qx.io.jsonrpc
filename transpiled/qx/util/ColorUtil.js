@@ -822,7 +822,7 @@
        *
        * Supported keys are:
        * `red`, `green`, `blue`, `alpha`, `hue`, `saturation`, `brightness`,
-       * `value`, `lightness`
+       * `lightness`
        *
        * @param color {String} a valid qooxdoo/CSS rgb color string
        * @param scaleMap {Map} as described above
@@ -854,10 +854,44 @@
 
           return value;
         });
+      },
+
+      /**
+       * RgbToLuminance
+       *
+       * Calculate the [luminance](https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests) of the given rgb color.
+       *
+       * @param color {String} a valid qooxdoo/CSS rgb color string
+       * @return {Number} luminance
+       */
+      luminance: function luminance(color) {
+        var rgb = this.stringToRgb(color);
+
+        var lum = function lum(i) {
+          var c = rgb[i] / 255;
+          return c < 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+        };
+
+        return .2126 * lum(0) + .7152 * lum(1) + .0722 * lum(2);
+      },
+
+      /**
+       * contrast
+       *
+       * Calculate the contrast of two given rgb colors.
+       *
+       * @param back {String} a valid qooxdoo/CSS rgb color string
+       * @param front {String} a valid qooxdoo/CSS rgb color string
+       * @return {Number} contrast
+       */
+      contrast: function contrast(back, front) {
+        var bl = this.luminance(back) + .05;
+        var fl = this.luminance(front) + 0.5;
+        return Math.max(bl, fl) / Math.min(bl, fl);
       }
     }
   });
   qx.util.ColorUtil.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ColorUtil.js.map?dt=1596696251406
+//# sourceMappingURL=ColorUtil.js.map?dt=1598908898100

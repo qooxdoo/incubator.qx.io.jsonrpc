@@ -55,6 +55,7 @@
    *   bSelected      : true,  // true if node is selected; false otherwise.
    *   bOpened        : true,  // true (-), false (+)
    *   bHideOpenClose : false, // whether to hide the open/close button
+   *   bCanEdit       : true,  // true if the node label can be edited, false to prevent edit
    *   icon           : "images/folder.gif",
    *   iconSelected   : "images/folder_selected.gif",
    *
@@ -890,8 +891,13 @@
               break;
 
             case "bOpened":
-              // Don't do anything if the requested state is the same as the
+              // Don't do anything if this is a leaf, leaf has no opened/closed
+              if (node.type === qx.ui.treevirtual.MTreePrimitive.Type.LEAF) {
+                break;
+              } // Don't do anything if the requested state is the same as the
               // current state.
+
+
               if (attributes[attribute] == node.bOpened) {
                 break;
               } // Get the tree to which this data model is attached
@@ -1009,6 +1015,17 @@
       // property apply
       _applyFilter: function _applyFilter(value, old) {
         this.setData();
+      },
+
+      /**
+       * This checks whether a node label is editable
+       * Used in the NodeEditor to check if edit is permitted
+       *
+       * @param rowIndex {Integer} zero-based row index.
+       * @return {Boolean} If the node has edit permitted
+       */
+      isNodeEditable: function isNodeEditable(rowIndex) {
+        return this.__tree__P_540_1.getAllowNodeEdit() && this.getNodeFromRow(rowIndex).bCanEdit;
       }
     },
     destruct: function destruct() {
@@ -1023,4 +1040,4 @@
   qx.ui.treevirtual.SimpleTreeDataModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1596696249076
+//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1598908895403

@@ -8738,6 +8738,7 @@
           };
         }
       },
+      "toggle-button": "button",
       "hover-button": {
         alias: "atom",
         include: "atom",
@@ -13136,6 +13137,7 @@
           };
         }
       },
+      "toggle-button": "button",
       "hover-button": {
         alias: "button",
         include: "button",
@@ -15960,6 +15962,7 @@
           };
         }
       },
+      "toggle-button": "button",
       "hover-button": {
         alias: "atom",
         include: "atom",
@@ -18295,6 +18298,4164 @@
     }
   });
   qx.theme.Simple.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.util.ColorUtil": {},
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is inspired by ideas from Material design.
+  ************************************************************************ */
+
+  /**
+   * Simple color theme
+   */
+  var helper = {
+    tone: function tone(color) {
+      if (color == "dark" || color == "light") {
+        return color;
+      }
+
+      var minimumContrast = 3.1;
+      var lightContrast = qx.util.ColorUtil.contrast(color, "#fff");
+      var darkContrast = qx.util.ColorUtil.contrast(color, "rgba(0,0,0,0.87)");
+
+      if (lightContrast < minimumContrast && darkContrast > lightContrast) {
+        return "light";
+      } else {
+        return "dark";
+      }
+    },
+
+    /**
+     * contrastTone
+     *
+     * Should dark or light text be used on top of the given
+     * color to get readable text.
+     *
+     * @param color {String} a valid qooxdoo/CSS rgb color string
+     * @return {String} "dark" if color is light and vise versa
+     */
+    contrastTone: function contrastTone(color) {
+      return helper.tone(color) === "dark" ? "light" : "dark";
+    },
+
+    /**
+     * inkColorForFill
+     *
+     * @param textStyle {String}  primary|secondary|hint|disabled|icon
+     * @param fillColor {String} a valid qooxdoo/CSS rgb color string
+     * @return {String} a CSS rgba color string
+     */
+    inkColorForFill: function inkColorForFill(textStyle, fillColor) {
+      var textColor = {
+        dark: {
+          primary: "rgba(0,0,0,0.87)",
+          secondary: "rgba(0,0,0,0.54)",
+          hint: "rgba(0,0,0,0.38)",
+          disabled: "rgba(0,0,0,0,0.38)",
+          icon: "rgba(0,0,0,0.38)"
+        },
+        light: {
+          primary: "#fff",
+          secondary: "rgba(255,255,255,0.7)",
+          hint: "rgba(255,255,255,0.5)",
+          disabled: "rgba(255,255,255,0.5)",
+          icon: "rgba(255,255,255,0.5)"
+        }
+      };
+      var contrastTone = helper.contrastTone(fillColor);
+      return textColor[contrastTone][textStyle];
+    },
+    // helpers
+    onX: function onX(key) {
+      var baseColor = key.split('-')[2];
+      return helper.contrastTone(baseColor) === "dark" ? "#000000" : "#ffffff";
+    },
+    // helpers
+    xState: function xState(key) {
+      var d = key.split('-');
+      var color = d[0];
+      var state = d[1];
+
+      switch (state) {
+        case 'focussed':
+          return qx.util.ColorUtil.scale(color, {
+            lightness: 10,
+            saturation: 10
+          });
+
+        case 'hovered':
+          return qx.util.ColorUtil.scale(color, {
+            lightness: 10
+          });
+
+        case 'disabled':
+          return qx.util.ColorUtil.scale(color, {
+            lightness: -10,
+            saturation: -70
+          });
+
+        case 'selected':
+          return qx.util.ColorUtil.scale(color, {
+            lightness: 30
+          });
+
+        case 'selected_disabled':
+          return qx.util.ColorUtil.scale(color, {
+            lightness: 30,
+            saturation: -70
+          });
+
+        default:
+          return color;
+      }
+    },
+    textXonY: function textXonY(key) {
+      var splitKey = key.split('-');
+      var textStyle = splitKey[1];
+      var fillColor = splitKey[3];
+      return helper.inkColorForFill(textStyle, fillColor);
+    },
+    setAlpha: function setAlpha(key) {
+      var splitKey = key.split('-');
+      var baseColor = splitKey[0];
+      var alphaPercent = splitKey[2];
+      var rgba = qx.util.ColorUtil.stringToRgb(baseColor);
+      rgba[3] = alphaPercent / 100;
+      return qx.util.ColorUtil.rgbToRgbString(rgba);
+    }
+  };
+  qx.Theme.define("qx.theme.tangible.ColorEngine", {
+    colors: {
+      // actual implementations must supply these 4 colors
+      // at least
+      //"primary": "#6200ee",
+      //"secondary": "#018786",
+      //"surface": "#ffffff",
+      //"error": "#b00020",
+      // automatic colors
+      "text-on-primary": helper.onX,
+      "text-on-secondary": helper.onX,
+      "text-on-surface": helper.onX,
+      "text-on-error": helper.onX,
+      "primary-hovered": helper.xState,
+      "primary-disabled": helper.xState,
+      "primary-focussed": helper.xState,
+      "primary-selected": helper.xState,
+      "primary-selected_disabled": helper.xState,
+      "error-focussed": helper.xState,
+      // alpha colors
+      "primary-alpha-5": helper.setAlpha,
+      "primary-alpha-10": helper.setAlpha,
+      "primary-alpha-30": helper.setAlpha,
+      "secondary-alpha-5": helper.setAlpha,
+      "primary-disabled-alpha-20": helper.setAlpha,
+      // Text-primary on "surface" background
+      "text-primary-on-surface": helper.textXonY,
+      "text-hint-on-surface": helper.textXonY,
+      "text-disabled-on-surface": helper.textXonY,
+      "text-icon-on-surface": helper.textXonY,
+      "text-disabled-on-primary": helper.textXonY,
+      "text-icon-on-primary": helper.textXonY,
+      // the following colors are used directly in table code
+      "table-header-cell": "surface",
+      "table-row-background-focused-selected": "primary-alpha-10",
+      "table-row-background-focused": "primary-alpha-5",
+      "table-row-background-selected": "secondary-alpha-5",
+      "table-row-background-even": "surface",
+      "table-row-background-odd": "surface",
+      // foreground
+      "table-row-selected": "text-primary-on-surface",
+      "table-row": "text-primary-on-surface",
+      // table grid color
+      "table-row-line": "text-hint-on-surface",
+      "table-column-line": "transparent",
+      // used in the widget-browser-app
+      "text-disabled": "text-disabled-on-surface",
+      // used in progressive code
+      "progressive-table-header": "table-header-cell",
+      "progressive-table-row-background-even": "primary-alpha-5",
+      "progressive-table-row-background-odd": "surface",
+      "progressive-progressbar-background": "surface",
+      "progressive-progressbar-indicator-done": "primary",
+      "progressive-progressbar-indicator-undone": "surface",
+      "progressive-progressbar-percent-background": "surface",
+      "progressive-progressbar-percent-text": "text-primary-on-surface"
+    }
+  });
+  qx.theme.tangible.ColorEngine.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.theme.tangible.ColorEngine": {
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Dark Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is based in large parts on the osparc.theme
+  ************************************************************************ */
+
+  /**
+   * Simple color theme
+   */
+  qx.Theme.define("qx.theme.tangible.ColorDark", {
+    extend: qx.theme.tangible.ColorEngine,
+    colors: {
+      // theme colors
+      "primary": "#26a69a",
+      "secondary": "#26c6da",
+      "surface": "#455a64",
+      "error": "#b00020"
+    }
+  });
+  qx.theme.tangible.ColorDark.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+     This theme is based in large parts on the osparc.theme
+  ************************************************************************ */
+
+  /**
+   * The simple qooxdoo decoration theme.
+   */
+  qx.Theme.define("qx.theme.tangible.Decoration", {
+    aliases: {
+      decoration: "qx/decoration/Simple"
+    },
+    decorations: {
+      /*
+        ---------------------------------------------------------------------------
+          MATERIAL TEXT FIELD
+        ---------------------------------------------------------------------------
+        */
+      "material-textfield": {
+        style: {
+          styleBottom: "solid",
+          widthBottom: 1,
+          colorBottom: "primary"
+        }
+      },
+      "material-textfield-focused": {
+        include: "material-textfield",
+        style: {
+          widthBottom: 2,
+          colorBottom: "primary-focussed"
+        }
+      },
+      "material-textfield-invalid": {
+        include: "material-textfield",
+        style: {
+          widthBottom: 1,
+          colorBottom: "error"
+        }
+      },
+      "material-textfield-focused-invalid": {
+        include: "material-textfield",
+        style: {
+          widthBottom: 2,
+          colorBottom: "error-focussed"
+        }
+      },
+      "material-textfield-disabled": {
+        include: "material-textfield",
+        style: {
+          widthBottom: 1,
+          colorBottom: "primary-disabled"
+        }
+      },
+      "material-textfield-readonly": {
+        style: {}
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON
+        ---------------------------------------------------------------------------
+        */
+      "material-button": {
+        style: {
+          radius: 2,
+          backgroundColor: "primary",
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: [3, 2, 1],
+          shadowBlurRadius: [1, 2, 5],
+          shadowSpreadRadius: [-2, 0, 0],
+          shadowColor: ["rgba(0, 0, 0, 0.2)", "rgba(0, 0, 0, 0.14)", "rgba(0, 0, 0, 0.12)"],
+          transitionProperty: ["all"],
+          transitionDuration: "0s"
+        }
+      },
+      "material-button-hovered": {
+        include: "material-button",
+        style: {
+          backgroundColor: "primary-hovered",
+          shadowVerticalLength: [2, 4, 1],
+          shadowBlurRadius: [4, 5, 10],
+          shadowSpreadRadius: [-1, 0, 0],
+          transitionDuration: "0.1s"
+        }
+      },
+      "material-button-pressed": {
+        include: "material-button",
+        style: {
+          backgroundColor: "primary-hovered",
+          shadowVerticalLength: [5, 8, 3],
+          shadowBlurRadius: [5, 10, 14],
+          shadowSpreadRadius: [-3, 1, 2],
+          transitionDuration: "0.1s"
+        }
+      },
+      "material-button-disabled": {
+        include: "material-button",
+        style: {
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0,
+          backgroundColor: "primary-disabled"
+        }
+      },
+      "material-button-left": {
+        include: "material-button",
+        style: {
+          radius: [2, 0, 0, 2]
+        }
+      },
+      "material-button-right": {
+        include: "material-button",
+        style: {
+          radius: [0, 2, 2, 0]
+        }
+      },
+      "material-button-hovered-left": {
+        include: "material-button-hovered",
+        style: {
+          radius: [2, 0, 0, 2]
+        }
+      },
+      "material-button-focused-left": {
+        include: "material-button-hovered",
+        style: {
+          radius: [2, 0, 0, 2]
+        }
+      },
+      "material-button-hovered-right": {
+        include: "material-button-hovered",
+        style: {
+          radius: [0, 2, 2, 0]
+        }
+      },
+      "material-button-focused-right": {
+        include: "material-button-hovered",
+        style: {
+          radius: [0, 2, 2, 0]
+        }
+      },
+      "material-button-pressed-left": {
+        include: "material-button-pressed",
+        style: {
+          radius: [2, 0, 0, 2]
+        }
+      },
+      "material-button-pressed-right": {
+        include: "material-button-pressed",
+        style: {
+          radius: [0, 2, 2, 0]
+        }
+      },
+      "material-button-disabled-left": {
+        include: "material-button-disabled",
+        style: {
+          radius: [2, 0, 0, 2]
+        }
+      },
+      "material-button-disabled-right": {
+        include: "material-button-disabled",
+        style: {
+          radius: [0, 2, 2, 0]
+        }
+      },
+      "toggle-button": {
+        include: "material-button"
+      },
+      "toggle-button-hovered": {
+        include: "material-button-hovered"
+      },
+      "toggle-button-checked": {
+        include: "toggle-button",
+        style: {
+          backgroundColor: "primary-selected"
+        }
+      },
+      "toggle-button-checked-hovered": {
+        include: "toggle-button-hovered",
+        style: {
+          backgroundColor: "primary-selected"
+        }
+      },
+      "toggle-button-disabled": {
+        include: "material-button-disabled"
+      },
+      "toggle-button-checked-disabled": {
+        include: "toggle-button-checked",
+        style: {
+          backgroundColor: "primary-selected_disabled"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          CORE
+        ---------------------------------------------------------------------------
+        */
+      "border-blue": {
+        style: {
+          width: 4,
+          color: "surface"
+        }
+      },
+      "main": {
+        style: {
+          width: 1,
+          color: "text-hint-on-surface"
+        }
+      },
+      "main-top": {
+        include: "main",
+        style: {
+          width: [1, 0, 0, 0]
+        }
+      },
+      "main-right": {
+        include: "main",
+        style: {
+          width: [0, 1, 0, 0]
+        }
+      },
+      // eslint-disable-next-line no-dupe-keys
+      "main-bottom": {
+        include: "main",
+        style: {
+          width: [0, 0, 1, 0]
+        }
+      },
+      "main-left": {
+        include: "main",
+        style: {
+          width: [0, 0, 0, 1]
+        }
+      },
+      "popup": {
+        style: {
+          width: 1,
+          color: "text-hint-on-surface",
+          shadowLength: 2,
+          shadowBlurRadius: 5,
+          shadowColor: "shadow"
+        }
+      },
+      "dragover": {
+        style: {
+          bottom: [2, "solid", "dark-blue"]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON
+        ---------------------------------------------------------------------------
+        */
+      "button-box": {
+        style: {
+          radius: 0,
+          width: 0,
+          color: "text-on-primary",
+          backgroundColor: "primary"
+        }
+      },
+      "button-box-pressed": {
+        include: "button-box",
+        style: {
+          backgroundColor: "primary-focussed"
+        }
+      },
+      "button-box-pressed-hovered": {
+        include: "button-box",
+        style: {
+          backgroundColor: "primary-selected"
+        }
+      },
+      "button-box-hovered": {
+        include: "button-box",
+        style: {
+          backgroundColor: "button-hovered"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON INVALID
+        ---------------------------------------------------------------------------
+        */
+      "button-box-invalid": {
+        include: "button-box",
+        style: {
+          color: "error"
+        }
+      },
+      "button-box-pressed-invalid": {
+        include: "button-box-pressed",
+        style: {
+          color: "error"
+        }
+      },
+      "button-box-hovered-invalid": {
+        include: "button-box-invalid"
+      },
+      "button-box-pressed-hovered-invalid": {
+        include: "button-box-pressed-invalid"
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON FOCUSED
+        ---------------------------------------------------------------------------
+        */
+      "button-box-focused": {
+        include: "button-box",
+        style: {
+          color: "surface"
+        }
+      },
+      "button-box-pressed-focused": {
+        include: "button-box-pressed",
+        style: {
+          color: "surface"
+        }
+      },
+      "button-box-hovered-focused": {
+        include: "button-box-focused"
+      },
+      "button-box-pressed-hovered-focused": {
+        include: "button-box-pressed-focused"
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON RIGHT
+        ---------------------------------------------------------------------------
+        */
+      "button-box-right": {
+        include: "button-box",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-pressed-right": {
+        include: "button-box-pressed",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-pressed-hovered-right": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-hovered-right": {
+        include: "button-box-hovered",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-focused-right": {
+        include: "button-box-focused",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-hovered-focused-right": {
+        include: "button-box-hovered-focused",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-pressed-focused-right": {
+        include: "button-box-pressed-focused",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+      "button-box-pressed-hovered-focused-right": {
+        include: "button-box-pressed-hovered-focused",
+        style: {
+          radius: [0, 1, 1, 0]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON BORDERLESS RIGHT
+        ---------------------------------------------------------------------------
+       "button-box-right-borderless":
+          {
+            include: "button-box",
+             style:
+              {
+                radius: [0, 1, 1, 0],
+                width: [1, 1, 1, 0]
+              }
+          },
+       "button-box-pressed-right-borderless":
+          {
+            include: "button-box-pressed",
+             style:
+              {
+                radius: [0, 1, 1, 0],
+                width: [1, 1, 1, 0]
+              }
+          },
+       "button-box-pressed-hovered-right-borderless":
+          {
+            include: "button-box-pressed-hovered",
+             style:
+              {
+                radius: [0, 1, 1, 0],
+                width: [1, 1, 1, 0]
+              }
+          },
+       "button-box-hovered-right-borderless":
+          {
+            include: "button-box-hovered",
+             style:
+              {
+                radius: [0, 1, 1, 0],
+                width: [1, 1, 1, 0]
+              }
+          },
+      */
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON TOP RIGHT
+        ---------------------------------------------------------------------------
+        */
+      "button-box-top-right": {
+        include: "button-box",
+        style: {
+          radius: [0, 1, 0, 0]
+        }
+      },
+      "button-box-pressed-top-right": {
+        include: "button-box-pressed",
+        style: {
+          radius: [0, 1, 0, 0]
+        }
+      },
+      "button-box-pressed-hovered-top-right": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: [0, 1, 0, 0]
+        }
+      },
+      "button-box-hovered-top-right": {
+        include: "button-box-hovered",
+        style: {
+          radius: [0, 1, 0, 0]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON BOTOM RIGHT
+        ---------------------------------------------------------------------------
+        */
+      "button-box-bottom-right": {
+        include: "button-box",
+        style: {
+          radius: [0, 0, 1, 0],
+          width: [0, 1, 1, 0]
+        }
+      },
+      "button-box-pressed-bottom-right": {
+        include: "button-box-pressed",
+        style: {
+          radius: [0, 0, 1, 0],
+          width: [0, 1, 1, 0]
+        }
+      },
+      "button-box-pressed-hovered-bottom-right": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: [0, 0, 1, 0],
+          width: [0, 1, 1, 0]
+        }
+      },
+      "button-box-hovered-bottom-right": {
+        include: "button-box-hovered",
+        style: {
+          radius: [0, 0, 1, 0],
+          width: [0, 1, 1, 0]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON BOTOM LEFT
+        ---------------------------------------------------------------------------
+        */
+      "button-box-bottom-left": {
+        include: "button-box",
+        style: {
+          radius: [0, 0, 0, 1],
+          width: [0, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-bottom-left": {
+        include: "button-box-pressed",
+        style: {
+          radius: [0, 0, 0, 1],
+          width: [0, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-hovered-bottom-left": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: [0, 0, 0, 1],
+          width: [0, 0, 1, 1]
+        }
+      },
+      "button-box-hovered-bottom-left": {
+        include: "button-box-hovered",
+        style: {
+          radius: [0, 0, 0, 1],
+          width: [0, 0, 1, 1]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON TOP LEFT
+        ---------------------------------------------------------------------------
+        */
+      "button-box-top-left": {
+        include: "button-box",
+        style: {
+          radius: [1, 0, 0, 0],
+          width: [1, 0, 0, 1]
+        }
+      },
+      "button-box-pressed-top-left": {
+        include: "button-box-pressed",
+        style: {
+          radius: [1, 0, 0, 0],
+          width: [1, 0, 0, 1]
+        }
+      },
+      "button-box-pressed-hovered-top-left": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: [1, 0, 0, 0],
+          width: [1, 0, 0, 1]
+        }
+      },
+      "button-box-hovered-top-left": {
+        include: "button-box-hovered",
+        style: {
+          radius: [1, 0, 0, 0],
+          width: [1, 0, 0, 1]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON MIDDLE
+        ---------------------------------------------------------------------------
+        */
+      "button-box-middle": {
+        include: "button-box",
+        style: {
+          radius: 0,
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-middle": {
+        include: "button-box-pressed",
+        style: {
+          radius: 0,
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-hovered-middle": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: 0,
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-hovered-middle": {
+        include: "button-box-hovered",
+        style: {
+          radius: 0,
+          width: [1, 0, 1, 1]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          BUTTON LEFT
+        ---------------------------------------------------------------------------
+        */
+      "button-box-left": {
+        include: "button-box",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-left": {
+        include: "button-box-pressed",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-hovered-left": {
+        include: "button-box-pressed-hovered",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-hovered-left": {
+        include: "button-box-hovered",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-focused-left": {
+        include: "button-box-focused",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-hovered-focused-left": {
+        include: "button-box-hovered-focused",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-hovered-focused-left": {
+        include: "button-box-pressed-hovered-focused",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+      "button-box-pressed-focused-left": {
+        include: "button-box-pressed-focused",
+        style: {
+          radius: [1, 0, 0, 1],
+          width: [1, 0, 1, 1]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          SEPARATOR
+        ---------------------------------------------------------------------------
+        */
+      "separator-horizontal": {
+        style: {
+          widthLeft: 1,
+          colorLeft: "text-hint-on-surface"
+        }
+      },
+      "separator-vertical": {
+        style: {
+          widthTop: 1,
+          colorTop: "text-hint-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          SCROLL KNOB
+        ---------------------------------------------------------------------------
+        */
+      "scroll-knob": {
+        style: {
+          radius: 4,
+          width: 0,
+          backgroundColor: "text-hint-on-surface"
+        }
+      },
+      "scroll-knob-pressed": {
+        include: "scroll-knob",
+        style: {
+          backgroundColor: "text-primary-on-surface"
+        }
+      },
+      "scroll-knob-hovered": {
+        include: "scroll-knob"
+      },
+      "scroll-knob-pressed-hovered": {
+        include: "scroll-knob-pressed"
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          HOVER BUTTON
+        ---------------------------------------------------------------------------
+        */
+      "button-hover": {
+        style: {
+          backgroundColor: "primary-hovered",
+          radius: 1
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          WINDOW
+        ---------------------------------------------------------------------------
+        */
+      "window": {
+        style: {
+          width: 1,
+          color: "text-hint-on-surface",
+          shadowLength: 1,
+          shadowBlurRadius: 3,
+          shadowColor: "rgba(0,0,0,0.2)",
+          backgroundColor: "surface"
+        }
+      },
+      "window-active": {
+        include: "window",
+        style: {
+          shadowLength: 2,
+          shadowBlurRadius: 5
+        }
+      },
+      "window-caption": {
+        style: {
+          width: [0, 0, 1, 0],
+          color: "text-hint-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          GROUP BOX
+        ---------------------------------------------------------------------------
+        */
+      "box": {
+        style: {
+          width: 1,
+          radius: 2,
+          color: "text-hint-on-surface",
+          backgroundColor: "surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          FRAME BOX
+        ---------------------------------------------------------------------------
+        */
+      "border": {
+        style: {
+          width: 1,
+          color: "text-hint-on-surface"
+        }
+      },
+      "border-disabled": {
+        style: {
+          width: 1,
+          color: "text-disabled-on-surface"
+        }
+      },
+      "border-focused": {
+        style: {
+          width: 1,
+          color: "primary"
+        }
+      },
+      "border-invalid": {
+        style: {
+          width: 1,
+          color: "error"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          LIST ITEM
+        ---------------------------------------------------------------------------
+        */
+      "lead-item": {
+        style: {
+          width: 1,
+          style: "dotted",
+          color: "text-disabled-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          TOOL TIP
+        ---------------------------------------------------------------------------
+        */
+      "tooltip": {
+        style: {
+          width: 1,
+          color: "text-on-secondary",
+          shadowLength: 1,
+          shadowBlurRadius: 2,
+          shadowColor: "rgba(0,0,0,0.2)"
+        }
+      },
+      "tooltip-error": {
+        style: {
+          radius: 5,
+          backgroundColor: "error"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          TOOLBAR
+        ---------------------------------------------------------------------------
+        */
+      "toolbar-separator": {
+        style: {
+          widthLeft: 1,
+          colorLeft: "text-hint-on-surface"
+        }
+      },
+      "toolbar-button": {
+        include: "material-button",
+        style: {
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0
+        }
+      },
+      "toolbar-button-hovered": {
+        include: "material-button-hovered"
+      },
+      "toolbar-button-left": {
+        include: "material-button-left",
+        style: {
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0
+        }
+      },
+      "toolbar-button-hovered-left": {
+        include: "material-button-hovered-left"
+      },
+      "toolbar-button-right": {
+        include: "material-button-right",
+        style: {
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0
+        }
+      },
+      "toolbar-button-hovered-right": {
+        include: "material-button-hovered-right"
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          MENU
+        ---------------------------------------------------------------------------
+        */
+      "menu-separator": {
+        style: {
+          widthTop: 1,
+          colorTop: "text-hint-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          MENU BAR
+        ---------------------------------------------------------------------------
+        */
+      "menubar-button-hovered": {
+        style: {
+          backgroundColor: "primary-hovered"
+        }
+      },
+      "menubar-button-pressed": {
+        include: "menubar-button-hovered",
+        style: {
+          backgroundColor: "primary-selected"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          DATE CHOOSER
+        ---------------------------------------------------------------------------
+        */
+      "datechooser-date-pane": {
+        style: {
+          widthTop: 1,
+          colorTop: "text-hint-on-surface",
+          style: "solid"
+        }
+      },
+      "datechooser-weekday": {
+        style: {
+          widthBottom: 1,
+          colorBottom: "text-hint-on-surface",
+          style: "solid"
+        }
+      },
+      "datechooser-week": {
+        style: {
+          widthRight: 1,
+          colorRight: "text-hint-on-surface",
+          style: "solid"
+        }
+      },
+      "datechooser-week-header": {
+        style: {
+          widthBottom: 1,
+          colorBottom: "text-hint-on-surface",
+          widthRight: 1,
+          colorRight: "text-hint-on-surface",
+          style: "solid"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          TAB VIEW
+        ---------------------------------------------------------------------------
+        */
+      "tabview-page-button-top": {
+        style: {
+          width: [0, 0, 2, 0],
+          backgroundColor: "surface",
+          color: "primary"
+        }
+      },
+      "tabview-page-button-bottom": {
+        include: "tabview-page-button-top",
+        style: {
+          width: [2, 0, 0, 0]
+        }
+      },
+      "tabview-page-button-left": {
+        include: "tabview-page-button-top",
+        style: {
+          width: [0, 2, 0, 0]
+        }
+      },
+      "tabview-page-button-right": {
+        include: "tabview-page-button-top",
+        style: {
+          width: [0, 0, 0, 2]
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          TABLE
+        ---------------------------------------------------------------------------
+        */
+      "statusbar": {
+        style: {
+          widthTop: 1,
+          colorTop: "text-hint-on-surface",
+          styleTop: "solid"
+        }
+      },
+      // attention hackerery in the qx.ui.table.pane.Scroller
+      // decorator: "table-scroller-focus-indicator"
+      // gets applied hardcoded! So do not try to change its
+      // name here!
+      "table-scroller-focus-indicator": {
+        style: {
+          width: 1,
+          style: 'dotted',
+          color: "text-hint-on-surface"
+        }
+      },
+      "table-header": {
+        include: "button-box",
+        style: {
+          radius: 0,
+          color: "text-hint-on-surface",
+          width: [0, 0, 2, 0]
+        }
+      },
+      "table-header-column-button": {
+        include: "table-header"
+      },
+      "table-header-cell": {
+        style: {}
+      },
+      "table-header-cell-first": {
+        include: "table-header-cell"
+      },
+      "progressive-table-header": {
+        include: "button-box",
+        style: {
+          radius: 0,
+          width: [1, 0, 1, 1]
+        }
+      },
+      "progressive-table-header-cell": {
+        style: {
+          widthRight: 1,
+          color: "text-hint-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          PROGRESSBAR
+        ---------------------------------------------------------------------------
+        */
+      "progressbar": {
+        style: {
+          width: 1,
+          color: "text-hint-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          RADIO BUTTON
+        ---------------------------------------------------------------------------
+        */
+      "radiobutton": {
+        style: {
+          color: "text-primary-on-surface"
+        }
+      },
+
+      /*
+        ---------------------------------------------------------------------------
+          CHECK BOX
+        ---------------------------------------------------------------------------
+        */
+      "checkbox": {
+        style: {
+          color: "text-primary-on-surface"
+        }
+      }
+    }
+  });
+  qx.theme.tangible.Decoration.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is based in large parts on the osparc.theme
+  
+  ************************************************************************ */
+
+  /**
+   * @asset(qx/font/Roboto/*.woff)
+   * @asset(qx/font/Roboto/*.woff2)
+   * @asset(qx/font/Roboto/*.eot)
+   * @asset(qx/font/Roboto/*.ttf)
+   */
+
+  /**
+   * The simple qooxdoo font theme.
+   */
+  qx.Theme.define("qx.theme.tangible.Font", {
+    fonts: {
+      "default": {
+        size: 14,
+        family: ["sans-serif"],
+        color: "text-primary-on-surface",
+        sources: [{
+          family: "Roboto",
+          source: ["qx/font/Roboto/roboto-v18-latin_latin-ext-regular.eot", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff2", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.ttf"]
+        }]
+      },
+      "bold": {
+        size: 14,
+        family: ["sans-serif"],
+        bold: true,
+        color: "text-primary-on-surface",
+        sources: [{
+          family: "Roboto",
+          source: ["qx/font/Roboto/roboto-v18-latin_latin-ext-700.eot", "qx/font/Roboto/roboto-v18-latin_latin-ext-700.woff2", "qx/font/Roboto/roboto-v18-latin_latin-ext-700.woff", "qx/font/Roboto/roboto-v18-latin_latin-ext-700.ttf"]
+        }]
+      },
+      "headline": {
+        size: 24,
+        family: ["sans-serif"],
+        color: "text-primary-on-surface",
+        sources: [{
+          family: "Roboto",
+          source: ["qx/font/Roboto/roboto-v18-latin_latin-ext-regular.eot", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff2", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.ttf"]
+        }]
+      },
+      "small": {
+        size: 12,
+        family: ["sans-serif"],
+        color: "text-primary-on-surface",
+        sources: [{
+          family: "Roboto",
+          source: ["qx/font/Roboto/roboto-v18-latin_latin-ext-regular.eot", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff2", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff", "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.ttf"]
+        }]
+      },
+      "monospace": {
+        size: 14,
+        family: ["monospace"],
+        color: "text-primary-on-surface",
+        sources: [{
+          family: "Roboto Mono",
+          source: ["qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.eot", "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.woff2", "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.woff", "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.ttf"]
+        }]
+      }
+    }
+  });
+  qx.theme.tangible.Font.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.theme.tangible.Image": {}
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is based in large parts on the osparc.theme
+  
+  ************************************************************************ */
+
+  /* eslint no-negated-condition: "off", no-nested-ternary: "off" */
+
+  /* ************************************************************************
+  
+  
+  ************************************************************************* */
+
+  /**
+   * The simple qooxdoo appearance theme.
+   *
+   * @asset(qx/icon/Tango/16/apps/office-calendar.png)
+   * @asset(qx/icon/Tango/16/places/folder-open.png)
+   * @asset(qx/icon/Tango/16/places/folder.png)
+   * @asset(qx/icon/Tango/16/mimetypes/text-plain.png)
+   * @asset(qx/icon/Tango/16/actions/view-refresh.png)
+   * @asset(qx/icon/Tango/16/actions/window-close.png)
+   * @asset(qx/icon/Tango/16/actions/dialog-cancel.png)
+   * @asset(qx/icon/Tango/16/actions/dialog-ok.png)
+   */
+  qx.Theme.define("qx.theme.tangible.Appearance", {
+    appearances: {
+      /*
+      ---------------------------------------------------------------------------
+        CORE
+      ---------------------------------------------------------------------------
+      */
+      "widget": {},
+      "label": {
+        style: function style(states) {
+          return {
+            textColor: states.disabled ? "text-disabled-on-surface" : undefined
+          };
+        }
+      },
+      "image": {
+        style: function style(states) {
+          return {
+            opacity: !states.replacement && states.disabled ? 0.3 : undefined
+          };
+        }
+      },
+      "atom": {},
+      "atom/label": "label",
+      "atom/icon": "image",
+      "root": {
+        style: function style(states) {
+          return {
+            backgroundColor: "surface",
+            textColor: "text-primary-on-surface",
+            font: "default"
+          };
+        }
+      },
+      "popup": {
+        style: function style(states) {
+          return {
+            decorator: "popup",
+            backgroundColor: "surface"
+          };
+        }
+      },
+      "tooltip": {
+        include: "popup",
+        style: function style(states) {
+          return {
+            backgroundColor: "secondary",
+            textColor: "text-on-secondary",
+            decorator: "tooltip",
+            padding: [1, 3, 2, 3],
+            offset: [10, 5, 5, 5]
+          };
+        }
+      },
+      "tooltip/atom": "atom",
+      "tooltip-error": {
+        include: "tooltip",
+        style: function style(states) {
+          return {
+            textColor: "text-on-error",
+            showTimeout: 100,
+            hideTimeout: 10000,
+            decorator: "tooltip-error",
+            font: "bold",
+            backgroundColor: undefined
+          };
+        }
+      },
+      "tooltip-error/atom": "atom",
+      "iframe": {
+        style: function style(states) {
+          return {
+            backgroundColor: "surface",
+            decorator: "main"
+          };
+        }
+      },
+      "move-frame": {
+        style: function style(states) {
+          return {
+            decorator: "main"
+          };
+        }
+      },
+      "resize-frame": "move-frame",
+      "dragdrop-cursor": {
+        style: function style(states) {
+          var icon = "nodrop";
+
+          if (states.copy) {
+            icon = "copy";
+          } else if (states.move) {
+            icon = "move";
+          } else if (states.alias) {
+            icon = "alias";
+          }
+
+          return {
+            source: qx.theme.tangible.Image.URLS["cursor-" + icon],
+            position: "right-top",
+            offset: [2, 16, 2, 6]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        BUTTON
+      ---------------------------------------------------------------------------
+      */
+      "button": {
+        /* qx.ui.form.Button */
+        alias: "material-button",
+        include: "material-button",
+        style: function style(states) {
+          return {
+            center: true
+          };
+        }
+      },
+      "toggle-button": {
+        include: "button",
+        style: function style(states) {
+          return {
+            decorator: "toggle-button" + (states.checked ? "-checked" : "") + (states.disabled ? "-disabled" : "") + (!states.disabled && states.hovered ? "-hovered" : ""),
+            textColor: states.disabled ? "text-disabled-on-primary" : "text-on-primary"
+          };
+        }
+      },
+      "toggle-button/label": {
+        include: "button/label",
+        style: function style(states) {
+          if (states.checked) {
+            return {
+              textColor: undefined
+            };
+          }
+
+          ;
+          return {
+            textColor: undefined
+          };
+        }
+      },
+      "material-button": {
+        alias: "atom",
+        style: function style(states) {
+          var decorator = "material-button";
+
+          if (!states.disabled) {
+            if (states.pressed || states.checked) {
+              decorator += "-pressed";
+            } else if (states.hovered || states.focused) {
+              decorator += "-hovered";
+            }
+          } else {
+            decorator += "-disabled";
+          }
+
+          if (states.invalid && !states.disabled) {
+            decorator += "-invalid";
+          }
+
+          return {
+            decorator: decorator,
+            padding: [6, 15],
+            margin: [2, 4],
+            cursor: states.disabled ? undefined : "pointer",
+            minWidth: 5,
+            minHeight: 5
+          };
+        }
+      },
+      "material-button/label": {
+        alias: "atom/label",
+        style: function style(states) {
+          return {
+            textColor: states.disabled ? "text-disabled-on-primary" : "text-on-primary"
+          };
+        }
+      },
+      "button-frame": {
+        alias: "atom",
+        style: function style(states) {
+          var decorator = "button-box";
+
+          if (!states.disabled) {
+            if (states.hovered && !states.pressed && !states.checked) {
+              decorator = "button-box-hovered";
+            } else if (states.hovered && (states.pressed || states.checked)) {
+              decorator = "button-box-pressed-hovered";
+            } else if (states.pressed || states.checked) {
+              decorator = "button-box-pressed";
+            }
+          }
+
+          if (states.invalid && !states.disabled) {
+            decorator += "-invalid";
+          } else if (states.focused) {
+            decorator += "-focused";
+          }
+
+          return {
+            decorator: decorator,
+            padding: [3, 8],
+            cursor: states.disabled ? undefined : "pointer",
+            minWidth: 5,
+            minHeight: 5
+          };
+        }
+      },
+      "button-frame/label": {
+        alias: "atom/label",
+        style: function style(states) {
+          return {
+            textColor: states.disabled ? "text-disabled-on-primary" : "text-on-primary"
+          };
+        }
+      },
+      "hover-button": {
+        alias: "button",
+        include: "button",
+        style: function style(states) {
+          return {
+            decorator: states.hovered ? "button-hover" : undefined
+          };
+        }
+      },
+      "menubutton": {
+        include: "button",
+        alias: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-down"],
+            iconPosition: "right"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        TEXT FIELD
+      ---------------------------------------------------------------------------
+      */
+      "material-textfield": {
+        style: function style(states) {
+          var decorator;
+          var padding;
+          decorator = "material-textfield";
+          padding = [3, 0, 4, 0];
+
+          if (states.readonly) {
+            decorator += "-readonly";
+            padding = [3, 0, 5, 0];
+          } else if (states.disabled) {
+            decorator += "-disabled";
+          } else if (states.focused) {
+            decorator += "-focused";
+
+            if (states.invalid) {
+              decorator += "-invalid";
+            }
+
+            padding = [3, 0, 3, 0];
+          } else if (states.invalid) {
+            decorator += "-invalid";
+          }
+
+          return {
+            decorator: decorator,
+            padding: padding,
+            textColor: states.disabled ? "text-disabled-on-surface" : states.showingPlaceholder ? "text-hint-on-surface" : undefined
+          };
+        }
+      },
+      "textfield": "material-textfield",
+      "textarea": "textfield",
+      "framebox": {
+        style: function style(states) {
+          var decorator;
+          var padding;
+
+          if (states.disabled) {
+            decorator = "border-disabled";
+            padding = [1, 2];
+          } else if (states.invalid) {
+            decorator = "border-invalid";
+            padding = [1, 2];
+          } else if (states.focused) {
+            decorator = "border-focused";
+            padding = [1, 2];
+          } else {
+            padding = [1, 2];
+            decorator = "border";
+          }
+
+          return {
+            decorator: decorator,
+            padding: padding,
+            textColor: states.disabled ? "text-disabled-on-surface" : states.showingPlaceholder ? "text-hint-on-surface" : undefined
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        SPLIT BUTTON
+      ---------------------------------------------------------------------------
+      */
+      "splitbutton": {},
+      "splitbutton/button": {
+        alias: "material-button",
+        style: function style(states) {
+          var decorator = "material-button";
+
+          if (!states.disabled) {
+            if (states.pressed || states.checked) {
+              decorator += "-pressed";
+            } else if (states.hovered) {
+              decorator += "-hovered";
+            } else if (states.focused) {
+              decorator += "-focused";
+            }
+          } else {
+            decorator += "-disabled";
+          }
+
+          decorator += "-left";
+          return {
+            decorator: decorator,
+            padding: [6, 15, 6, 15],
+            margin: [2, 0, 2, 4],
+            cursor: states.disabled ? undefined : "pointer",
+            textColor: "text-primary-on-surface"
+          };
+        }
+      },
+      "splitbutton/arrow": {
+        alias: "material-button",
+        style: function style(states) {
+          var decorator = "material-button";
+
+          if (!states.disabled) {
+            if (states.pressed || states.checked) {
+              decorator += "-pressed";
+            } else if (states.focused) {
+              decorator += "-focused";
+            } else if (states.hovered) {
+              decorator += "-hovered";
+            }
+          } else {
+            decorator += "-disabled";
+          }
+
+          decorator += "-right";
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-down"],
+            decorator: decorator,
+            cursor: states.disabled ? undefined : "pointer",
+            padding: [6, 10, 6, 10],
+            margin: [2, 4, 2, 0],
+            textColor: "text-on-primary"
+          };
+        }
+      },
+      "splitbutton/arrow/icon": {
+        style: function style(states) {
+          return {
+            textColor: "text-icon-on-primary"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        SLIDEBAR
+      ---------------------------------------------------------------------------
+      */
+      "slidebar": {},
+      "slidebar/scrollpane": {},
+      "slidebar/content": {},
+      "slidebar/button-forward": {
+        alias: "button",
+        include: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-" + (states.vertical ? "down" : "right")]
+          };
+        }
+      },
+      "slidebar/button-backward": {
+        alias: "button",
+        include: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-" + (states.vertical ? "up" : "left")]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        TABLE
+      ---------------------------------------------------------------------------
+      */
+      "table": {
+        style: function style(states) {
+          return {
+            rowHeight: 30
+          };
+        }
+      },
+      "table/statusbar": {
+        style: function style(states) {
+          return {
+            decorator: "statusbar",
+            padding: [2, 5]
+          };
+        }
+      },
+      "table/column-button": {
+        alias: "button",
+        style: function style(states) {
+          return {
+            decorator: "table-header-column-button",
+            textColor: "text-primary-on-surface",
+            backgroundColor: "surface",
+            padding: 3,
+            icon: qx.theme.tangible.Image.URLS["select-column-order"]
+          };
+        }
+      },
+      "table-column-reset-button": {
+        include: "menu-button",
+        alias: "menu-button",
+        style: function style() {
+          return {
+            decorator: "table-header-column-button",
+            icon: "icon/16/actions/view-refresh.png"
+          };
+        }
+      },
+      "table-scroller/scrollbar-x": "scrollbar",
+      "table-scroller/scrollbar-y": "scrollbar",
+      "table-scroller": "widget",
+      "table-scroller/header": {
+        style: function style() {
+          return {
+            textColor: "text-primary-on-surface",
+            backgroundColor: "surface",
+            decorator: "table-header"
+          };
+        }
+      },
+      "table-scroller/pane": {},
+      "table-scroller/focus-indicator": {
+        style: function style(states) {
+          return {// attention hackerery in the qx.ui.table.pane.Scroller
+            // decorator: "table-scroller-focus-indicator"
+            // gets applied hardcoded! So do not try to change its
+            // name here!
+          };
+        }
+      },
+      "table-scroller/resize-line": {
+        style: function style(states) {
+          return {
+            backgroundColor: "text-hint-on-surface",
+            width: 3
+          };
+        }
+      },
+      "table-header-cell": {
+        alias: "atom",
+        style: function style(states) {
+          return {
+            decorator: states.first ? "table-header-cell-first" : "table-header-cell",
+            minWidth: 13,
+            font: "bold",
+            paddingTop: 3,
+            paddingLeft: 5,
+            cursor: states.disabled ? undefined : "pointer",
+            sortIcon: states.sorted ? qx.theme.tangible.Image.URLS["table-" + (states.sortedAscending ? "ascending" : "descending")] : undefined
+          };
+        }
+      },
+      "table-header-cell/icon": {
+        include: "atom/icon",
+        style: function style(states) {
+          return {
+            paddingRight: 5
+          };
+        }
+      },
+      "table-header-cell/sort-icon": {
+        style: function style(states) {
+          return {
+            alignY: "middle",
+            alignX: "right",
+            paddingRight: 5
+          };
+        }
+      },
+      "table-editor-textfield": {
+        include: "framebox",
+        style: function style(states) {
+          return {
+            decorator: undefined,
+            padding: [2, 2]
+          };
+        }
+      },
+      "table-editor-selectbox": {
+        include: "selectbox",
+        alias: "selectbox",
+        style: function style(states) {
+          return {
+            padding: [0, 2]
+          };
+        }
+      },
+      "table-editor-combobox": {
+        include: "combobox",
+        alias: "combobox",
+        style: function style(states) {
+          return {
+            decorator: undefined
+          };
+        }
+      },
+      "progressive-table-header": {
+        style: function style(states) {
+          return {
+            decorator: "progressive-table-header"
+          };
+        }
+      },
+      "progressive-table-header-cell": {
+        style: function style(states) {
+          return {
+            decorator: "progressive-table-header-cell",
+            padding: [5, 6, 5, 6]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        TREEVIRTUAL
+      ---------------------------------------------------------------------------
+      */
+      "treevirtual": {
+        include: "framebox",
+        alias: "table",
+        style: function style(states, superStyles) {
+          return {
+            padding: [superStyles.padding[0] + 2, superStyles.padding[1] + 1]
+          };
+        }
+      },
+      "treevirtual-folder": {
+        style: function style(states) {
+          return {
+            icon: states.opened ? // the old treevirtual code can not use fonticons
+            "icon/16/places/folder-open.png" : "icon/16/places/folder.png",
+            opacity: states.drag ? 0.5 : undefined
+          };
+        }
+      },
+      "treevirtual-file": {
+        include: "treevirtual-folder",
+        alias: "treevirtual-folder",
+        style: function style(states) {
+          return {
+            icon: "icon/16/mimetypes/text-plain.png",
+            opacity: states.drag ? 0.5 : undefined
+          };
+        }
+      },
+      "treevirtual-line": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-line"]
+          };
+        }
+      },
+      "treevirtual-contract": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["tree-minus"]
+          };
+        }
+      },
+      "treevirtual-expand": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["tree-plus"]
+          };
+        }
+      },
+      "treevirtual-only-contract": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-minus-only"]
+          };
+        }
+      },
+      "treevirtual-only-expand": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-plus-only"]
+          };
+        }
+      },
+      "treevirtual-start-contract": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-minus-start"]
+          };
+        }
+      },
+      "treevirtual-start-expand": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-plus-start"]
+          };
+        }
+      },
+      "treevirtual-end-contract": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-minus-end"]
+          };
+        }
+      },
+      "treevirtual-end-expand": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-plus-end"]
+          };
+        }
+      },
+      "treevirtual-cross-contract": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-minus-cross"]
+          };
+        }
+      },
+      "treevirtual-cross-expand": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-plus-cross"]
+          };
+        }
+      },
+      "treevirtual-end": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-end"]
+          };
+        }
+      },
+      "treevirtual-cross": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["treevirtual-cross"]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        RESIZER
+      ---------------------------------------------------------------------------
+      */
+      "resizer": {
+        style: function style(states) {
+          return {
+            decorator: "main"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        SPLITPANE
+      ---------------------------------------------------------------------------
+      */
+      "splitpane": {},
+      "splitpane/splitter": {
+        style: function style(states) {
+          return {
+            backgroundColor: "text-hint-on-surface"
+          };
+        }
+      },
+      "splitpane/splitter/knob": {
+        style: function style(states) {
+          return {
+            source: qx.theme.tangible.Image.URLS["knob-" + (states.horizontal ? "horizontal" : "vertical")],
+            padding: 0
+          };
+        }
+      },
+      "splitpane/slider": {
+        style: function style(states) {
+          return {
+            backgroundColor: "text-hint-on-surface",
+            opacity: 0.3
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        MENU
+      ---------------------------------------------------------------------------
+      */
+      "menu": {
+        style: function style(states) {
+          var result = {
+            backgroundColor: "surface",
+            decorator: "main",
+            spacingX: 6,
+            spacingY: 1,
+            iconColumnWidth: 16,
+            arrowColumnWidth: 4,
+            padding: 1,
+            placementModeY: states.submenu || states.contextmenu ? "best-fit" : "keep-align"
+          };
+
+          if (states.submenu) {
+            result.position = "right-top";
+            result.offset = [-2, -3];
+          }
+
+          if (states.contextmenu) {
+            result.offset = 4;
+          }
+
+          return result;
+        }
+      },
+      "menu/slidebar": "menu-slidebar",
+      "menu-slidebar": "widget",
+      "menu-slidebar-button": {
+        style: function style(states) {
+          return {
+            backgroundColor: states.hovered ? "primary-hovered" : undefined,
+            padding: 6,
+            center: true
+          };
+        }
+      },
+      "menu-slidebar/button-backward": {
+        include: "menu-slidebar-button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-up" + (states.hovered ? "-invert" : "")]
+          };
+        }
+      },
+      "menu-slidebar/button-forward": {
+        include: "menu-slidebar-button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-down" + (states.hovered ? "-invert" : "")]
+          };
+        }
+      },
+      "menu-separator": {
+        style: function style(states) {
+          return {
+            height: 0,
+            decorator: "menu-separator",
+            marginTop: 4,
+            marginBottom: 4,
+            marginLeft: 2,
+            marginRight: 2
+          };
+        }
+      },
+      "menu-button": {
+        alias: "atom",
+        style: function style(states) {
+          return {
+            backgroundColor: states.selected ? "primary-selected" : undefined,
+            textColor: states.selected ? "text-on-primary" : "text-primary-on-surface",
+            padding: [2, 6]
+          };
+        }
+      },
+      "menu-button/icon": {
+        include: "image",
+        style: function style(states) {
+          return {
+            alignY: "middle",
+            textColor: states.selected ? "text-icon-on-primary" : "text-icon-on-surface"
+          };
+        }
+      },
+      "menu-button/label": {
+        include: "label",
+        style: function style(states) {
+          return {
+            alignY: "middle",
+            padding: 1
+          };
+        }
+      },
+      "menu-button/shortcut": {
+        include: "label",
+        style: function style(states) {
+          return {
+            alignY: "middle",
+            marginLeft: 14,
+            padding: 1
+          };
+        }
+      },
+      "menu-button/arrow": {
+        include: "image",
+        style: function style(states) {
+          return {
+            source: qx.theme.tangible.Image.URLS["arrow-right" + (states.selected ? "-invert" : "")],
+            alignY: "middle"
+          };
+        }
+      },
+      "menu-checkbox": {
+        alias: "menu-button",
+        include: "menu-button",
+        style: function style(states) {
+          var icon = "menu-checkbox";
+
+          if (states.checked) {
+            icon += "-checked";
+          }
+
+          return {
+            icon: qx.theme.tangible.Image.URLS[icon]
+          };
+        }
+      },
+      "menu-radiobutton": {
+        alias: "menu-button",
+        include: "menu-button",
+        style: function style(states) {
+          var icon = "menu-radiobutton";
+
+          if (states.checked) {
+            icon += "-checked";
+          }
+
+          return {
+            icon: qx.theme.tangible.Image.URLS[icon]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        MENU BAR
+      ---------------------------------------------------------------------------
+      */
+      "menubar": {
+        style: function style(states) {
+          return {
+            backgroundColor: "surface",
+            padding: [4, 2]
+          };
+        }
+      },
+      "menubar-button": {
+        style: function style(states) {
+          var decorator;
+          var padding = [2, 6];
+
+          if (!states.disabled) {
+            if (states.pressed) {
+              decorator = "menubar-button-pressed";
+            } else if (states.hovered) {
+              decorator = "menubar-button-hovered";
+            }
+          }
+
+          return {
+            padding: padding,
+            cursor: states.disabled ? undefined : "pointer",
+            textColor: "text-on-primary",
+            decorator: decorator
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        VIRTUAL WIDGETS
+      ---------------------------------------------------------------------------
+      */
+      "virtual-list": "list",
+      "virtual-list/row-layer": "row-layer",
+      "row-layer": "widget",
+      "column-layer": "widget",
+      "group-item": {
+        include: "label",
+        alias: "label",
+        style: function style(states) {
+          return {
+            padding: 4,
+            backgroundColor: "primary",
+            textColor: "text-on-primary",
+            font: "bold"
+          };
+        }
+      },
+      "virtual-selectbox": "selectbox",
+      "virtual-selectbox/dropdown": "popup",
+      "virtual-selectbox/dropdown/list": {
+        alias: "virtual-list"
+      },
+      "virtual-combobox": "combobox",
+      "virtual-combobox/dropdown": "popup",
+      "virtual-combobox/dropdown/list": {
+        alias: "virtual-list"
+      },
+      "virtual-tree": {
+        include: "tree",
+        alias: "tree",
+        style: function style(states) {
+          return {
+            itemHeight: 21
+          };
+        }
+      },
+      "virtual-tree-folder": "tree-folder",
+      "virtual-tree-file": "tree-file",
+      "cell": {
+        style: function style(states) {
+          return {
+            backgroundColor: states.selected ? "primary-selected" : "surface",
+            textColor: states.selected ? "text-on-primary" : "text-primary-on-surface",
+            padding: [3, 6]
+          };
+        }
+      },
+      "cell-string": "cell",
+      "cell-number": {
+        include: "cell",
+        style: function style(states) {
+          return {
+            textAlign: "right"
+          };
+        }
+      },
+      "cell-image": "cell",
+      "cell-boolean": "cell",
+      "cell-atom": "cell",
+      "cell-date": "cell",
+      "cell-html": "cell",
+
+      /*
+      ---------------------------------------------------------------------------
+        SCROLLBAR
+      ---------------------------------------------------------------------------
+      */
+      "scrollbar": {},
+      "scrollbar/slider": {},
+      "scrollbar/slider/knob": {
+        style: function style(states) {
+          var decorator = "scroll-knob";
+
+          if (!states.disabled) {
+            if (states.hovered && !states.pressed && !states.checked) {
+              decorator = "scroll-knob-hovered";
+            } else if (states.hovered && (states.pressed || states.checked)) {
+              decorator = "scroll-knob-pressed-hovered";
+            } else if (states.pressed || states.checked) {
+              decorator = "scroll-knob-pressed";
+            }
+          }
+
+          return {
+            height: 8,
+            width: 8,
+            marginLeft: 2,
+            marginTop: 2,
+            cursor: states.disabled ? undefined : "pointer",
+            decorator: decorator,
+            minHeight: states.horizontal ? undefined : 30,
+            minWidth: states.horizontal ? 30 : undefined
+          };
+        }
+      },
+      "scrollbar/button": {
+        style: function style(states) {
+          return {
+            height: 0,
+            width: 0,
+            margin: [2, 2]
+          };
+        }
+      },
+      "scrollbar/button-begin": "scrollbar/button",
+      "scrollbar/button-end": "scrollbar/button",
+
+      /*
+      ---------------------------------------------------------------------------
+        SCROLLAREA
+      ---------------------------------------------------------------------------
+      */
+      "scrollarea/corner": {
+        style: function style(states) {
+          return {
+            backgroundColor: "surface"
+          };
+        }
+      },
+      "scrollarea": "widget",
+      "scrollarea/pane": "widget",
+      "scrollarea/scrollbar-x": "scrollbar",
+      "scrollarea/scrollbar-y": "scrollbar",
+
+      /*
+      ---------------------------------------------------------------------------
+        RADIO BUTTON
+      ---------------------------------------------------------------------------
+      */
+      "radiobutton": {
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS[states.checked ? "radiobutton-checked" : "radiobutton-unchecked"],
+            paddingTop: 2,
+            textColor: states.disabled ? "text-disabled-on-surface" : states.invalid ? "error" : states.checked ? "primary" : "text-primary-on-surface",
+            gap: 6
+          };
+        }
+      },
+      "radiobutton/icon": {
+        style: function style(states) {
+          return {
+            decorator: "radiobutton",
+            padding: [2, 0, 0, 0]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        FORM
+      ---------------------------------------------------------------------------
+      */
+      "form-renderer-label": {
+        include: "label",
+        style: function style() {
+          return {
+            paddingTop: 3
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        CHECK BOX
+      ---------------------------------------------------------------------------
+      */
+      "checkbox": {
+        alias: "atom",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS[states.checked ? "checkbox-checked" : states.undetermined ? "checkbox-undetermined" : "checkbox-blank"],
+            textColor: states.disabled ? "text-disabled-on-surface" : states.invalid ? "error" : states.checked ? "primary" : "text-primary-on-surface",
+            gap: 6
+          };
+        }
+      },
+      "checkbox/icon": {
+        style: function style(states) {
+          return {
+            decorator: "checkbox",
+            padding: 0
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        SPINNER
+      ---------------------------------------------------------------------------
+      */
+      "spinner": {
+        style: function style(states) {
+          return {
+            textColor: states.disabled ? "text-disabled-on-surface" : undefined
+          };
+        }
+      },
+      "spinner/textfield": "textfield",
+      "spinner/upbutton": {
+        alias: "combobox/button",
+        include: "combobox/button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-up-small"],
+            decorator: undefined,
+            width: 12,
+            height: 6,
+            padding: [-1, 0, 0, 0]
+          };
+        }
+      },
+      "spinner/downbutton": {
+        alias: "combobox/button",
+        include: "combobox/button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-down-small"],
+            decorator: undefined,
+            width: 12,
+            height: 6,
+            padding: [-1, 0, 0, 0]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        SELECTBOX
+      ---------------------------------------------------------------------------
+      */
+      "selectbox": "textfield",
+      "selectbox/atom": "atom",
+      "selectbox/popup": "popup",
+      "selectbox/list": {
+        alias: "list",
+        include: "list",
+        style: function style() {
+          return {
+            decorator: undefined
+          };
+        }
+      },
+      "selectbox/arrow": {
+        include: "image",
+        style: function style(states) {
+          return {
+            source: qx.theme.tangible.Image.URLS["arrow-down"],
+            paddingRight: 0,
+            paddingLeft: 2,
+            paddingTop: -3
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        COMBO BOX
+      ---------------------------------------------------------------------------
+      */
+      "combobox": {},
+      "combobox/button": {
+        alias: "button-frame",
+        include: "button-frame",
+        style: function style(states) {
+          var decorator = "material-textfield";
+
+          if (states.focused) {
+            decorator += "-focused";
+
+            if (states.invalid) {
+              decorator += "-invalid";
+            }
+          } else if (states.invalid) {
+            decorator += "-invalid";
+          } else if (states.disabled) {
+            decorator += "-disabled";
+          }
+
+          return {
+            backgroundColor: undefined,
+            icon: qx.theme.tangible.Image.URLS["arrow-down"],
+            decorator: decorator,
+            padding: [0, 0, 0, 0]
+          };
+        }
+      },
+      "combobox/popup": "popup",
+      "combobox/list": {
+        alias: "list",
+        style: function style(states) {
+          return {
+            paddingRight: 2
+          };
+        }
+      },
+      "combobox/textfield": "textfield",
+
+      /*
+      ---------------------------------------------------------------------------
+        DATEFIELD
+      ---------------------------------------------------------------------------
+      */
+      "datefield": "textfield",
+      "datefield/button": {
+        alias: "combobox/button",
+        include: "combobox/button",
+        style: function style(states) {
+          return {
+            icon: "@MaterialIcons/calendar_today/14",
+            padding: [0, 0, 0, 0],
+            backgroundColor: undefined,
+            decorator: undefined,
+            width: 16
+          };
+        }
+      },
+      "datefield/textfield": {
+        alias: "textfield",
+        include: "textfield",
+        style: function style(states) {
+          return {
+            decorator: undefined,
+            padding: 0
+          };
+        }
+      },
+      "datefield/list": {
+        alias: "datechooser",
+        include: "datechooser",
+        style: function style(states) {
+          return {
+            decorator: undefined
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        LIST
+      ---------------------------------------------------------------------------
+      */
+      "list": {
+        alias: "scrollarea",
+        include: "framebox"
+      },
+      "listitem": {
+        alias: "atom",
+        style: function style(states) {
+          var padding = [3, 5, 3, 5];
+
+          if (states.lead) {
+            padding = [2, 4, 2, 4];
+          }
+
+          if (states.dragover) {
+            padding[2] -= 2;
+          }
+
+          return {
+            gap: 4,
+            padding: padding,
+            backgroundColor: states.selected ? states.disabled ? "primary-disabled" : "primary" : "transparent",
+            textColor: states.selected ? "text-on-primary" : "text-primary-on-surface",
+            decorator: states.lead ? "lead-item" : states.dragover ? "dragover" : undefined,
+            opacity: states.drag ? 0.5 : undefined
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        SLIDER
+      ---------------------------------------------------------------------------
+      */
+      "slider": {
+        style: function style(states) {
+          var decorator;
+          var padding;
+
+          if (states.disabled) {
+            decorator = "border-disabled";
+            padding = [1, 2];
+          } else if (states.invalid) {
+            decorator = "border-invalid";
+            padding = [1, 2];
+          } else if (states.focused) {
+            decorator = "border-focused";
+            padding = [1, 2];
+          } else {
+            padding = [1, 2];
+            decorator = "border";
+          }
+
+          return {
+            decorator: decorator,
+            padding: padding
+          };
+        }
+      },
+      "slider/knob": "scrollbar/slider/knob",
+
+      /*
+      ---------------------------------------------------------------------------
+        GROUP BOX
+      ---------------------------------------------------------------------------
+      */
+      "groupbox": {},
+      "groupbox/legend": {
+        alias: "atom",
+        style: function style(states) {
+          return {
+            textColor: states.invalid ? "error" : undefined,
+            padding: 5,
+            margin: 4,
+            font: "bold"
+          };
+        }
+      },
+      "groupbox/frame": {
+        style: function style(states) {
+          return {
+            backgroundColor: "surface",
+            padding: [6, 9],
+            margin: [18, 2, 2, 2],
+            decorator: "box"
+          };
+        }
+      },
+      "check-groupbox": "groupbox",
+      "check-groupbox/legend": {
+        alias: "checkbox",
+        include: "checkbox",
+        style: function style(states) {
+          return {
+            textColor: states.invalid ? "error" : undefined,
+            padding: 5,
+            margin: 4,
+            font: "bold"
+          };
+        }
+      },
+      "radio-groupbox": "groupbox",
+      "radio-groupbox/legend": {
+        alias: "radiobutton",
+        include: "radiobutton",
+        style: function style(states) {
+          return {
+            textColor: states.invalid ? "error" : undefined,
+            padding: 5,
+            margin: 4,
+            font: "bold"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        TREE
+      ---------------------------------------------------------------------------
+      */
+      "tree-folder/open": {
+        include: "image",
+        style: function style(states) {
+          return {
+            source: states.opened ? qx.theme.tangible.Image.URLS["tree-minus"] : qx.theme.tangible.Image.URLS["tree-plus"],
+            textColor: states.selected ? "text-on-primary" : "text-primary-on-surface"
+          };
+        }
+      },
+      "tree-folder": {
+        style: function style(states) {
+          return {
+            padding: [2, 8, 2, 5],
+            icon: states.opened ? qx.theme.tangible.Image.URLS["folder-open"] : qx.theme.tangible.Image.URLS["folder"],
+            backgroundColor: states.selected ? states.disables ? "primary-disabled" : "primary-selected" : "surface",
+            textColor: states.selected ? "text-on-primary" : "text-disabled-on-primary",
+            iconOpened: qx.theme.tangible.Image.URLS["folder-open"],
+            opacity: states.drag ? 0.5 : undefined
+          };
+        }
+      },
+      "tree-folder/icon": {
+        include: "image",
+        style: function style(states) {
+          return {
+            padding: [0, 4, 0, 0],
+            textColor: states.selected ? "text-icon-on-primary" : "text-primary-on-surface"
+          };
+        }
+      },
+      "tree-folder/label": {
+        style: function style(states) {
+          return {
+            padding: [1, 2],
+            textColor: states.selected ? "text-on-primary" : "text-primary-on-surface"
+          };
+        }
+      },
+      "tree-file": {
+        include: "tree-folder",
+        alias: "tree-folder",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["file"]
+          };
+        }
+      },
+      "tree": {
+        include: "list",
+        alias: "list",
+        style: function style(states) {
+          return {
+            contentPadding: [4, 1],
+            padding: 1
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        WINDOW
+      ---------------------------------------------------------------------------
+      */
+      "window": {
+        style: function style(states) {
+          return {
+            contentPadding: [10, 10, 10, 10],
+            backgroundColor: "surface",
+            decorator: states.maximized ? undefined : states.active ? "window-active" : "window"
+          };
+        }
+      },
+      "window-resize-frame": "resize-frame",
+      "window/pane": {
+        style: function style(states) {
+          return {
+            padding: 10
+          };
+        }
+      },
+      "window/captionbar": {
+        style: function style(states) {
+          return {
+            backgroundColor: states.active ? "primary-selected" : "primary",
+            margin: 0,
+            padding: 8,
+            decorator: "window-caption"
+          };
+        }
+      },
+      "window/icon": {
+        style: function style(states) {
+          return {
+            marginRight: 4,
+            marginTop: 2
+          };
+        }
+      },
+      "window/title": {
+        style: function style(states) {
+          return {
+            cursor: "default",
+            font: states.active ? "bold" : "default",
+            textColor: states.active ? "text-on-primary" : "text-on-primary",
+            marginRight: 20,
+            marginLeft: 4,
+            alignY: "middle"
+          };
+        }
+      },
+      "window/minimize-button": {
+        alias: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["window-minimize"] + "/18",
+            padding: 0,
+            cursor: states.disabled ? undefined : "pointer",
+            textColor: "text-on-primary"
+          };
+        }
+      },
+      "window/restore-button": {
+        alias: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["window-restore"] + "/18",
+            padding: 0,
+            cursor: states.disabled ? undefined : "pointer",
+            textColor: "text-on-primary"
+          };
+        }
+      },
+      "window/maximize-button": {
+        alias: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["window-maximize"] + "/18",
+            padding: 0,
+            cursor: states.disabled ? undefined : "pointer",
+            textColor: "text-on-primary"
+          };
+        }
+      },
+      "window/close-button": {
+        alias: "button",
+        style: function style(states) {
+          return {
+            icon: qx.theme.tangible.Image.URLS["window-close"] + "/18",
+            padding: 0,
+            cursor: states.disabled ? undefined : "pointer",
+            textColor: "text-on-primary"
+          };
+        }
+      },
+      "window/statusbar": {
+        style: function style(states) {
+          return {
+            decorator: "statusbar",
+            padding: [2, 6]
+          };
+        }
+      },
+      "window/statusbar-text": "label",
+
+      /*
+      ---------------------------------------------------------------------------
+        DATE CHOOSER
+      ---------------------------------------------------------------------------
+      */
+      "datechooser": {
+        style: function style(states) {
+          return {
+            decorator: "main",
+            minWidth: 220
+          };
+        }
+      },
+      "datechooser/navigation-bar": {
+        style: function style(states) {
+          return {
+            backgroundColor: "surface",
+            textColor: states.disabled ? "text-disabled-on-surface" : states.invalid ? "error" : undefined,
+            padding: [2, 10]
+          };
+        }
+      },
+      "datechooser/last-year-button-tooltip": "tooltip",
+      "datechooser/last-month-button-tooltip": "tooltip",
+      "datechooser/next-year-button-tooltip": "tooltip",
+      "datechooser/next-month-button-tooltip": "tooltip",
+      "datechooser/last-year-button": "datechooser/button",
+      "datechooser/last-month-button": "datechooser/button",
+      "datechooser/next-year-button": "datechooser/button",
+      "datechooser/next-month-button": "datechooser/button",
+      "datechooser/button/icon": {},
+      "datechooser/button": {
+        style: function style(states) {
+          var result = {
+            width: 17,
+            show: "icon",
+            cursor: states.disabled ? undefined : "pointer"
+          };
+
+          if (states.lastYear) {
+            result.icon = qx.theme.tangible.Image.URLS["arrow-rewind"];
+          } else if (states.lastMonth) {
+            result.icon = qx.theme.tangible.Image.URLS["arrow-left"];
+          } else if (states.nextYear) {
+            result.icon = qx.theme.tangible.Image.URLS["arrow-forward"];
+          } else if (states.nextMonth) {
+            result.icon = qx.theme.tangible.Image.URLS["arrow-right"];
+          }
+
+          return result;
+        }
+      },
+      "datechooser/month-year-label": {
+        style: function style(states) {
+          return {
+            font: "bold",
+            textAlign: "center"
+          };
+        }
+      },
+      "datechooser/date-pane": {
+        style: function style(states) {
+          return {
+            decorator: "datechooser-date-pane",
+            backgroundColor: "surface"
+          };
+        }
+      },
+      "datechooser/weekday": {
+        style: function style(states) {
+          return {
+            decorator: "datechooser-weekday",
+            font: states.weekend ? "bold" : "default",
+            textAlign: "center",
+            textColor: states.disabled ? "text-disabled-on-surface" : "text-primary-on-surface",
+            backgroundColor: "surface",
+            paddingTop: 2
+          };
+        }
+      },
+      "datechooser/day": {
+        style: function style(states) {
+          return {
+            textAlign: "center",
+            decorator: states.today ? "main" : undefined,
+            textColor: states.disabled ? "text-disabled-on-surface" : states.selected ? "text-on-primary" : states.otherMonth ? "text-disabled-on-surface" : undefined,
+            backgroundColor: states.selected ? states.disabled ? "primary-disabled" : "primary" : undefined,
+            padding: states.today ? [1, 3] : [2, 4]
+          };
+        }
+      },
+      "datechooser/week": {
+        style: function style(states) {
+          return {
+            textAlign: "center",
+            textColor: "text-primary-on-surface",
+            padding: [2, 4],
+            decorator: states.header ? "datechooser-week-header" : "datechooser-week"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        PROGRESSBAR
+      ---------------------------------------------------------------------------
+      */
+      "progressbar": {
+        style: function style(states) {
+          return {
+            decorator: "progressbar",
+            padding: 1,
+            backgroundColor: "surface",
+            width: 200,
+            height: 20
+          };
+        }
+      },
+      "progressbar/progress": {
+        style: function style(states) {
+          return {
+            backgroundColor: states.disabled ? "primary-disabled" : "primary"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        TOOLBAR
+      ---------------------------------------------------------------------------
+      */
+      "toolbar": {
+        style: function style(states) {
+          return {
+            backgroundColor: "primary",
+            padding: 0
+          };
+        }
+      },
+      "toolbar/part": {
+        style: function style(states) {
+          return {
+            margin: [0, 15]
+          };
+        }
+      },
+      "toolbar/part/container": {},
+      "toolbar/part/handle": {},
+      "toolbar-separator": {
+        style: function style(states) {
+          return {
+            decorator: undefined,
+            margin: [7, 0],
+            width: 4
+          };
+        }
+      },
+      "toolbar-button": {
+        alias: "atom",
+        style: function style(states) {
+          // set the margin
+          var margin = [7, 10];
+
+          if (states.left || states.middle || states.right) {
+            margin = [7, 3];
+          }
+
+          var decorator = "toolbar-button";
+
+          if (states.hovered || states.pressed || states.checked) {
+            decorator += "-hovered";
+          }
+
+          return {
+            cursor: states.disabled ? undefined : "pointer",
+            decorator: decorator,
+            textColor: "text-on-primary",
+            margin: margin,
+            padding: [3, 5]
+          };
+        }
+      },
+      "toolbar-menubutton": {
+        alias: "toolbar-button",
+        include: "toolbar-button",
+        style: function style(states) {
+          return {
+            showArrow: true
+          };
+        }
+      },
+      "toolbar-menubutton/arrow": {
+        alias: "image",
+        include: "image",
+        style: function style(states) {
+          return {
+            source: qx.theme.tangible.Image.URLS["arrow-down"],
+            cursor: states.disabled ? undefined : "pointer",
+            padding: 0,
+            textColor: "text-on-primary",
+            marginLeft: 2
+          };
+        }
+      },
+      "toolbar-splitbutton": {},
+      "toolbar-splitbutton/button": {
+        alias: "toolbar-button",
+        include: "toolbar-button",
+        style: function style(states) {
+          // set the margin
+          var margin = [7, 0, 7, 10];
+
+          if (states.left || states.middle || states.right) {
+            margin = [7, 0, 7, 3];
+          }
+
+          var decorator = "toolbar-button";
+
+          if (states.hovered || states.pressed || states.focused || states.checked) {
+            decorator += "-hovered";
+          }
+
+          decorator += "-left";
+          return {
+            decorator: decorator,
+            margin: margin
+          };
+        }
+      },
+      "toolbar-splitbutton/arrow": {
+        alias: "toolbar-button",
+        include: "toolbar-button",
+        style: function style(states) {
+          // set the margin
+          var margin = [7, 10, 7, 0];
+
+          if (states.left || states.middle || states.right) {
+            margin = [7, 3, 7, 0];
+          }
+
+          var decorator = "toolbar-button";
+
+          if (states.hovered || states.pressed || states.focused || states.checked) {
+            decorator += "-hovered";
+          }
+
+          decorator += "-right";
+          return {
+            icon: qx.theme.tangible.Image.URLS["arrow-down"],
+            decorator: decorator,
+            margin: margin
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        TABVIEW
+      ---------------------------------------------------------------------------
+      */
+      "tabview": {},
+      "tabview/bar": {
+        alias: "slidebar",
+        style: function style(states) {
+          var marginTop = 0;
+          var marginRight = 0;
+          var marginBottom = 0;
+          var marginLeft = 0;
+
+          if (states.barTop) {
+            marginBottom -= 1;
+          } else if (states.barBottom) {
+            marginTop -= 1;
+          } else if (states.barRight) {
+            marginLeft -= 1;
+          } else {
+            marginRight -= 1;
+          }
+
+          return {
+            marginBottom: marginBottom,
+            marginTop: marginTop,
+            marginLeft: marginLeft,
+            marginRight: marginRight
+          };
+        }
+      },
+      "tabview/bar/button-forward": {
+        include: "slidebar/button-forward",
+        alias: "slidebar/button-forward",
+        style: function style(states) {
+          if (states.barTop) {
+            return {
+              marginTop: 4,
+              marginBottom: 2,
+              decorator: null
+            };
+          } else if (states.barBottom) {
+            return {
+              marginTop: 2,
+              marginBottom: 4,
+              decorator: null
+            };
+          } else if (states.barLeft) {
+            return {
+              marginLeft: 4,
+              marginRight: 2,
+              decorator: null
+            };
+          }
+
+          return {
+            marginLeft: 2,
+            marginRight: 4,
+            decorator: null
+          };
+        }
+      },
+      "tabview/bar/button-backward": {
+        include: "slidebar/button-backward",
+        alias: "slidebar/button-backward",
+        style: function style(states) {
+          if (states.barTop) {
+            return {
+              marginTop: 4,
+              marginBottom: 2,
+              decorator: null
+            };
+          } else if (states.barBottom) {
+            return {
+              marginTop: 2,
+              marginBottom: 4,
+              decorator: null
+            };
+          } else if (states.barLeft) {
+            return {
+              marginLeft: 4,
+              marginRight: 2,
+              decorator: null
+            };
+          }
+
+          return {
+            marginLeft: 2,
+            marginRight: 4,
+            decorator: null
+          };
+        }
+      },
+      "tabview/pane": {
+        style: function style(states) {
+          var marginTop = 0;
+          var marginBottom = 0;
+          var marginLeft = 0;
+          var marginRight = 0;
+          var decorator;
+
+          if (states.barTop) {
+            marginTop = -1;
+            decorator = "main-top";
+          } else if (states.barBottom) {
+            marginBottom = -1;
+            decorator = "main-bottom";
+          } else if (states.barLeft) {
+            marginLeft = -1;
+            decorator = "main-left";
+          } else {
+            marginRight = -1;
+            decorator = "main-right";
+          }
+
+          return {
+            marginLeft: marginLeft,
+            marginRight: marginRight,
+            marginTop: marginTop,
+            marginBottom: marginBottom,
+            padding: 10,
+            decorator: decorator,
+            backgroundColor: "surface"
+          };
+        }
+      },
+      "tabview-page": "widget",
+      "tabview-page/button": {
+        style: function style(states) {
+          var decorator;
+          var padding; // default padding
+
+          if (states.barTop || states.barBottom) {
+            padding = [8, 16, 8, 13];
+          } else if (states.barRight) {
+            padding = [8, 8, 8, 12];
+          } else if (states.barLeft) {
+            padding = [8, 8, 8, 8];
+          } // decorator
+
+
+          if (states.checked) {
+            if (states.barTop) {
+              decorator = "tabview-page-button-top";
+              padding[2] -= 2;
+            } else if (states.barBottom) {
+              decorator = "tabview-page-button-bottom";
+              padding[0] -= 2;
+            } else if (states.barRight) {
+              decorator = "tabview-page-button-right";
+              padding[3] -= 2;
+            } else if (states.barLeft) {
+              decorator = "tabview-page-button-left";
+              padding[1] -= 2;
+            }
+          }
+
+          return {
+            zIndex: states.checked ? 10 : 5,
+            decorator: decorator,
+            textColor: states.disabled ? "text-disabled-on-surface" : "text-primary-on-surface",
+            font: states.checked ? "bold" : undefined,
+            padding: padding,
+            cursor: "pointer"
+          };
+        }
+      },
+      "tabview-page/button/label": {
+        alias: "label",
+        style: function style(states) {
+          return {
+            padding: [0, 1, 0, 1]
+          };
+        }
+      },
+      "tabview-page/button/icon": "image",
+      "tabview-page/button/close-button": {
+        alias: "atom",
+        style: function style(states) {
+          return {
+            cursor: states.disabled ? undefined : "pointer",
+            icon: qx.theme.tangible.Image.URLS["tabview-close"]
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        COLOR POPUP
+      ---------------------------------------------------------------------------
+      */
+      "colorpopup": {
+        alias: "popup",
+        include: "popup",
+        style: function style(states) {
+          return {
+            padding: 5
+          };
+        }
+      },
+      "colorpopup/field": {
+        style: function style(states) {
+          return {
+            margin: 2,
+            width: 14,
+            height: 14,
+            backgroundColor: "surface",
+            decorator: "main"
+          };
+        }
+      },
+      "colorpopup/selector-button": "button",
+      "colorpopup/auto-button": "button",
+      "colorpopup/preview-pane": "groupbox",
+      "colorpopup/current-preview": {
+        style: function style(state) {
+          return {
+            height: 20,
+            padding: 4,
+            marginLeft: 4,
+            decorator: "main",
+            allowGrowX: true
+          };
+        }
+      },
+      "colorpopup/selected-preview": {
+        style: function style(state) {
+          return {
+            height: 20,
+            padding: 4,
+            marginRight: 4,
+            decorator: "main",
+            allowGrowX: true
+          };
+        }
+      },
+      "colorpopup/colorselector-okbutton": {
+        alias: "button",
+        include: "button",
+        style: function style(states) {
+          return {
+            icon: "icon/16/actions/dialog-ok.png"
+          };
+        }
+      },
+      "colorpopup/colorselector-cancelbutton": {
+        alias: "button",
+        include: "button",
+        style: function style(states) {
+          return {
+            icon: "icon/16/actions/dialog-cancel.png"
+          };
+        }
+      },
+
+      /*
+      ---------------------------------------------------------------------------
+        COLOR SELECTOR
+      ---------------------------------------------------------------------------
+      */
+      "colorselector": "widget",
+      "colorselector/control-bar": "widget",
+      "colorselector/visual-pane": "groupbox",
+      "colorselector/control-pane": "widget",
+      "colorselector/preset-grid": "widget",
+      "colorselector/colorbucket": {
+        style: function style(states) {
+          return {
+            decorator: "main",
+            width: 16,
+            height: 16
+          };
+        }
+      },
+      "colorselector/preset-field-set": "groupbox",
+      "colorselector/input-field-set": {
+        include: "groupbox",
+        alias: "groupbox",
+        style: function style() {
+          return {
+            paddingTop: 12
+          };
+        }
+      },
+      "colorselector/preview-field-set": {
+        include: "groupbox",
+        alias: "groupbox",
+        style: function style() {
+          return {
+            paddingTop: 12
+          };
+        }
+      },
+      "colorselector/hex-field-composite": "widget",
+      "colorselector/hex-field": "textfield",
+      "colorselector/rgb-spinner-composite": "widget",
+      "colorselector/rgb-spinner-red": "spinner",
+      "colorselector/rgb-spinner-green": "spinner",
+      "colorselector/rgb-spinner-blue": "spinner",
+      "colorselector/hsb-spinner-composite": "widget",
+      "colorselector/hsb-spinner-hue": "spinner",
+      "colorselector/hsb-spinner-saturation": "spinner",
+      "colorselector/hsb-spinner-brightness": "spinner",
+      "colorselector/preview-content-old": {
+        style: function style(states) {
+          return {
+            decorator: "main",
+            width: 50,
+            height: 25
+          };
+        }
+      },
+      "colorselector/preview-content-new": {
+        style: function style(states) {
+          return {
+            decorator: "main",
+            backgroundColor: "surface",
+            width: 50,
+            height: 25
+          };
+        }
+      },
+      "colorselector/hue-saturation-field": {
+        style: function style(states) {
+          return {
+            decorator: "main",
+            margin: 5
+          };
+        }
+      },
+      "colorselector/brightness-field": {
+        style: function style(states) {
+          return {
+            decorator: "main",
+            margin: [5, 7]
+          };
+        }
+      },
+      "colorselector/hue-saturation-pane": "widget",
+      "colorselector/hue-saturation-handle": "widget",
+      "colorselector/brightness-pane": "widget",
+      "colorselector/brightness-handle": "widget",
+
+      /*
+      ---------------------------------------------------------------------------
+        APPLICATION
+      ---------------------------------------------------------------------------
+      */
+      "app-header": {
+        style: function style(states) {
+          return {
+            font: "headline",
+            textColor: "text-on-primary",
+            backgroundColor: "primary",
+            padding: [8, 12]
+          };
+        }
+      },
+      "app-header-label": {
+        style: function style(states) {
+          return {
+            paddingTop: 5
+          };
+        }
+      },
+      "app-splitpane": {
+        alias: "splitpane",
+        style: function style(states) {
+          return {
+            padding: [0, 10, 10, 10]
+          };
+        }
+      }
+    }
+  });
+  qx.theme.tangible.Appearance.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.theme.tangible.ColorDark": {
+        "require": true
+      },
+      "qx.theme.tangible.Decoration": {
+        "require": true
+      },
+      "qx.theme.tangible.Font": {
+        "require": true
+      },
+      "qx.theme.tangible.Appearance": {
+        "require": true
+      },
+      "qx.theme.icon.Tango": {
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    OSparc Dark Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is based in large parts on the osparc.theme
+  ************************************************************************ */
+
+  /**
+   * Tangible Theme (Dark)
+   *
+   * The tangible theme is inspired by ideas from material design. A lot of work went into designing a higly automated color
+   * system. In order to customize the theme to your taste, simply create your own color system. Use qx.theme.tangible.ColorDark for inspiration.
+   *
+   * The Tangible Theme is very new and still in a state of flux. PRs highly welcome. Use https://material.io as a visual guide.
+   * 
+   */
+  qx.Theme.define("qx.theme.TangibleDark", {
+    title: "Tangible Dark Theme",
+    meta: {
+      color: qx.theme.tangible.ColorDark,
+      decoration: qx.theme.tangible.Decoration,
+      font: qx.theme.tangible.Font,
+      appearance: qx.theme.tangible.Appearance,
+      icon: qx.theme.icon.Tango
+    }
+  });
+  qx.theme.TangibleDark.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.core.Object": {
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is based in large parts on the osparc.theme
+  ************************************************************************ */
+
+  /* ************************************************************************
+  
+  
+  ************************************************************************* */
+
+  /**
+   * Mapping class for all images used in the tangible theme.
+   *
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.ttf)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.eot)
+   * @asset(qx/static/blank.png)
+   */
+  qx.Class.define("qx.theme.tangible.Image", {
+    extend: qx.core.Object,
+    statics: {
+      /**
+       * Holds a map containing all the URL to the images.
+       * @internal
+       */
+      URLS: {
+        "blank": "qx/static/blank.png",
+        // checkbox
+        "checkbox-checked": "@MaterialIcons/check_box/15",
+        "checkbox-blank": "@MaterialIcons/check_box_outline_blank/15",
+        "checkbox-undetermined": "@MaterialIcons/indeterminate_check_box/15",
+        "radiobutton-checked": "@MaterialIcons/radio_button_on/15",
+        "radiobutton-unchecked": "@MaterialIcons/radio_button_off/15",
+        // window
+        "window-minimize": "@MaterialIcons/keyboard_arrow_down",
+        "window-maximize": "@MaterialIcons/fullscreen",
+        "window-restore": "@MaterialIcons/fullscreen_exit",
+        "window-close": "@MaterialIcons/close",
+        // cursor
+        "cursor-copy": "decoration/cursors/copy.gif",
+        "cursor-move": "decoration/cursors/move.gif",
+        "cursor-alias": "decoration/cursors/alias.gif",
+        "cursor-nodrop": "decoration/cursors/nodrop.gif",
+        // arrows
+        "arrow-right": "@MaterialIcons/keyboard_arrow_right/18",
+        "arrow-left": "@MaterialIcons/keyboard_arrow_left/18",
+        "arrow-up": "@MaterialIcons/keyboard_arrow_up/18",
+        "arrow-down": "@MaterialIcons/keyboard_arrow_down/18",
+        "arrow-forward": "@MaterialIcons/fast_forward/18",
+        "arrow-rewind": "@MaterialIcons/fast_rewind/18",
+        "arrow-down-small": "@MaterialIcons/keyboard_arrow_down/13",
+        "arrow-up-small": "@MaterialIcons/keyboard_arrow_up/13",
+        "arrow-up-invert": "@MaterialIcons/keyboard_arrow_up/18",
+        "arrow-down-invert": "@MaterialIcons/keyboard_arrow_down/18",
+        "arrow-right-invert": "@MaterialIcons/keyboard_arrow_right/18",
+        // split pane
+        "knob-horizontal": "@MaterialIcons/drag_indicator/12",
+        "knob-vertical": "@MaterialIcons/drag_handle/12",
+        // tree (someone is using this without fonticon support)
+        "tree-minus": "@MaterialIcons/arrow_drop_down/16",
+        "tree-plus": "@MaterialIcons/arrow_right/16",
+        // table
+        "select-column-order": "@MaterialIcons/reorder/15",
+        "table-ascending": "@MaterialIcons/keyboard_arrow_up/14",
+        "table-descending": "@MaterialIcons/keyboard_arrow_down/14",
+        // tree virtual
+        "treevirtual-line": "decoration/treevirtual/line.gif",
+        "treevirtual-minus-only": "decoration/treevirtual/only_minus.gif",
+        "treevirtual-plus-only": "decoration/treevirtual/only_plus.gif",
+        "treevirtual-minus-start": "decoration/treevirtual/start_minus.gif",
+        "treevirtual-plus-start": "decoration/treevirtual/start_plus.gif",
+        "treevirtual-minus-end": "decoration/treevirtual/end_minus.gif",
+        "treevirtual-plus-end": "decoration/treevirtual/end_plus.gif",
+        "treevirtual-minus-cross": "decoration/treevirtual/cross_minus.gif",
+        "treevirtual-plus-cross": "decoration/treevirtual/cross_plus.gif",
+        "treevirtual-end": "decoration/treevirtual/end.gif",
+        "treevirtual-cross": "decoration/treevirtual/cross.gif",
+        "folder-open": "@MaterialIcons/folder_open/15",
+        "folder": "@MaterialIcons/folder/15",
+        "file": "@MaterialIcons/insert_drive_file/15",
+        // menu
+        "menu-checkbox": "@MaterialIcons/check_box_outline_blank/15",
+        "menu-checkbox-checked": "@MaterialIcons/check_box/15",
+        "menu-radiobutton-checked": "@MaterialIcons/radio_button_checked/15",
+        "menu-radiobutton": "@MaterialIcons/radio_button_unchecked/15",
+        // tabview
+        "tabview-close": "decoration/tabview/close.gif"
+      }
+    }
+  });
+  qx.theme.tangible.Image.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.theme.tangible.ColorEngine": {
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    Tangible Light Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+       2020 Tobi Oetiker
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is inspired by ideas from Material design.
+  ************************************************************************ */
+
+  /**
+   * Simple color theme
+   */
+  qx.Theme.define("qx.theme.tangible.ColorLight", {
+    extend: qx.theme.tangible.ColorEngine,
+    colors: {
+      // theme colors
+      "primary": "#6200ee",
+      "secondary": "#018786",
+      "surface": "#ffffff",
+      "error": "#b00020"
+    }
+  });
+  qx.theme.tangible.ColorLight.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Theme": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.theme.tangible.ColorLight": {
+        "require": true
+      },
+      "qx.theme.tangible.Decoration": {
+        "require": true
+      },
+      "qx.theme.tangible.Font": {
+        "require": true
+      },
+      "qx.theme.tangible.Appearance": {
+        "require": true
+      },
+      "qx.theme.icon.Tango": {
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+    OSparc Dark Theme for Qooxdoo
+  
+    Copyright:
+       2018 IT'IS Foundation
+  
+    License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+    Authors:
+      * Tobias Oetiker (oetiker)
+  
+    Origin:
+      This theme is based in large parts on the osparc.theme
+  ************************************************************************ */
+
+  /**
+   * Tangible Theme (Light)
+   *
+   * The tangible theme is inspired by ideas from material design. A lot of work went into designing a higly automated color
+   * system. In order to customize the theme to your taste, simply create your own color system. Use qx.theme.tangible.ColorLight for inspiration.
+   *
+   * The Tangible Theme is very new and still in a state of flux. PRs highly welcome. Use https://material.io as a visual guide.
+   * 
+   */
+  qx.Theme.define("qx.theme.TangibleLight", {
+    title: "Tangible Light Theme",
+    meta: {
+      color: qx.theme.tangible.ColorLight,
+      decoration: qx.theme.tangible.Decoration,
+      font: qx.theme.tangible.Font,
+      appearance: qx.theme.tangible.Appearance,
+      icon: qx.theme.icon.Tango
+    }
+  });
+  qx.theme.TangibleLight.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 OETIKER+PARTNER AG
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Tobias Oetiker (oetiker)
+  
+  ************************************************************************ */
+
+  /**
+   * A dummy class to trigger the compiler to copy the MaterialIcons font files
+   */
+
+  /**
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.ttf)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.eot)
+   */
+  qx.Class.define("qx.theme.iconfont.LoadMaterialIcons", {});
+  qx.theme.iconfont.LoadMaterialIcons.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 OETIKER+PARTNER AG
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Tobias Oetiker (oetiker)
+  
+  ************************************************************************ */
+
+  /**
+   * A dummy class to trigger the compiler to copy the MaterialIconsOutlined font files
+   */
+
+  /**
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.otf)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.eot)
+   */
+  qx.Class.define("qx.theme.iconfont.LoadMaterialIconsOutlined", {});
+  qx.theme.iconfont.LoadMaterialIconsOutlined.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 OETIKER+PARTNER AG
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Tobias Oetiker (oetiker)
+  
+  ************************************************************************ */
+
+  /**
+   * A dummy class to trigger the compiler to copy the MaterialIconsRound font files
+   */
+
+  /**
+   * @asset(qx/iconfont/MaterialIcons/materialiconsround-v18.otf)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsround-v18.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsround-v18.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsround-v18.eot)
+   */
+  qx.Class.define("qx.theme.iconfont.LoadMaterialIconsRound", {});
+  qx.theme.iconfont.LoadMaterialIconsRound.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 OETIKER+PARTNER AG
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Tobias Oetiker (oetiker)
+  
+  ************************************************************************ */
+
+  /**
+   * A dummy class to trigger the compiler to copy the MaterialIconsSharpe font files
+   */
+
+  /**
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.otf)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.eot)
+   */
+  qx.Class.define("qx.theme.iconfont.LoadMaterialIconsSharp", {});
+  qx.theme.iconfont.LoadMaterialIconsSharp.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      }
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 OETIKER+PARTNER AG
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Tobias Oetiker (oetiker)
+  
+  ************************************************************************ */
+
+  /**
+   * A dummy class to trigger the compiler to copy the MaterialIconsTwoTone font files
+   */
+
+  /**
+   * @asset(qx/iconfont/MaterialIcons/materialiconstwotone-v17.otf)
+   * @asset(qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialiconstwotone-v17.eot)
+   */
+  qx.Class.define("qx.theme.iconfont.LoadMaterialIconsTwoTone", {});
+  qx.theme.iconfont.LoadMaterialIconsTwoTone.$$dbClassInfo = $$dbClassInfo;
 })();
 
 (function () {
@@ -21225,7 +25386,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://qooxdoo.org/docs/#layout/grid.md'>
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/grid.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Grid", {
@@ -40725,7 +44886,7 @@
       // overridden
       appearance: {
         refine: true,
-        init: "button"
+        init: "toggle-button"
       },
       // overridden
       focusable: {
@@ -59377,7 +63538,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://qooxdoo.org/docs/#layout/dock.md'>
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/dock.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Dock", {
@@ -60223,7 +64384,7 @@
    *
    * *External Documentation*
    *
-   * <a href='http://qooxdoo.org/docs/#layout/flow.md'>
+   * <a href='https://qooxdoo.org/documentation/#/desktop/layout/flow.md'>
    * Extended documentation</a> and links to demos of this layout in the qooxdoo manual.
    */
   qx.Class.define("qx.ui.layout.Flow", {
@@ -77727,7 +81888,8 @@
        *
        */
       _resizeColumns: function _resizeColumns(e) {
-        var width = this.getBounds().width - qx.bom.element.Scroll.getScrollbarWidth(); // Compute the column widths
+        var insets = this.getInsets();
+        var width = this.getBounds().width - qx.bom.element.Scroll.getScrollbarWidth() - insets.left - insets.right; // Compute the column widths
 
         this.__bCalculateWidths__P_490_3 = true;
         var padding = {
@@ -92061,7 +96223,8 @@
       },
       "qx.ui.layout.Grow": {
         "construct": true
-      }
+      },
+      "qx.theme.manager.Decoration": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -92174,7 +96337,24 @@
             var firstRow = this.__scroller__P_521_0.getTablePane().getFirstVisibleRow();
 
             var rowHeight = table.getRowHeight();
-            this.setUserBounds(paneModel.getColumnLeft(col) - 2, (row - firstRow) * rowHeight - 2, columnModel.getColumnWidth(col) + 3, rowHeight + 3);
+            var wt = 0;
+            var wr = 0;
+            var wb = 0;
+            var wl = 0;
+            var decoKey = this.getDecorator();
+
+            if (decoKey) {
+              var deco = qx.theme.manager.Decoration.getInstance().resolve(decoKey);
+
+              if (deco) {
+                wt = deco.getWidthTop();
+                wr = deco.getWidthRight();
+                wb = deco.getWidthBottom();
+                wl = deco.getWidthLeft();
+              }
+            }
+
+            this.setUserBounds(paneModel.getColumnLeft(col) - (wt - 1), (row - firstRow) * rowHeight - (wr - 1), columnModel.getColumnWidth(col) + (wt + wb - 3), rowHeight + (wl + wr - 2));
             this.show();
             this.setRow(row);
             this.setColumn(col);
@@ -93291,8 +97471,6 @@
       __defaultWidth__P_510_0: 16,
       __defaultHeight__P_510_1: 16,
       __imageData__P_510_2: null,
-      // overridden
-      _insetY: 2,
 
       /**
        * Identifies the Image to show. This is a template method, which must be
@@ -93566,8 +97744,6 @@
       _applyIconFalse: function _applyIconFalse(value) {
         this.__iconUrlFalse__P_511_2 = this.__aliasManager__P_511_0.resolve(value);
       },
-      // overridden
-      _insetY: 5,
       // overridden
       _identifyImage: function _identifyImage(cellInfo) {
         var w;
@@ -100266,10 +104442,6 @@
       getLookupTable: function getLookupTable() {
         return this.__lookupTable__P_533_0;
       },
-      // Interface implementation
-      isShowTopLevelOpenCloseIcons: function isShowTopLevelOpenCloseIcons() {
-        return true;
-      },
 
       /**
        * Performs a lookup from model index to row.
@@ -102892,6 +107064,7 @@
           bSelected: false,
           bOpened: bOpened,
           bHideOpenClose: bHideOpenCloseButton,
+          bCanEdit: true,
           icon: icon,
           iconSelected: iconSelected,
           children: [],
@@ -102936,8 +107109,8 @@
         "require": true
       },
       "qx.event.type.Mouse": {},
-      "qx.bom.element.Location": {},
-      "qx.ui.treevirtual.SimpleTreeDataModel": {}
+      "qx.ui.treevirtual.SimpleTreeDataModel": {},
+      "qx.bom.element.Location": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -103038,35 +107211,34 @@
 
 
           if (evt instanceof qx.event.type.Mouse) {
-            // Yup.  Get the order of the columns
-            var tcm = tree.getTableColumnModel();
-
-            var columnPositions = tcm._getColToXPosMap(); // Calculate the position of the beginning of the tree column
-
-
-            var left = qx.bom.element.Location.getLeft(tree.getContentElement().getDomElement());
-
-            for (var i = 0; i < columnPositions[treeCol].visX; i++) {
-              left += tcm.getColumnWidth(columnPositions[i].visX);
-            } // Was the click on the open/close button?  That button begins at
-            // (node.level - 1) * (rowHeight + 3) + 2 (the latter for padding),
-            // and has width (rowHeight + 3). We add a bit of latitude to that.
-
-
+            // Was the click on the open/close button? We get the position and add a bit of
+            // latitude to that
             var x = evt.getViewportLeft();
             var latitude = 2;
+            var buttonPos = tree.getOpenCloseButtonPosition(node);
 
-            var rowHeight = _this.__table__P_538_0.getRowHeight();
+            if (x >= buttonPos.left - latitude && x <= buttonPos.left + buttonPos.width + latitude) {
+              // Yup.  Toggle the opened state for this node if open/close is allowed
+              if (!node.bHideOpenClose && node.type !== qx.ui.treevirtual.SimpleTreeDataModel.Type.LEAF) {
+                dataModel.setState(node, {
+                  bOpened: !node.bOpened
+                });
+              }
 
-            var buttonPos = left + (node.level - 1) * (rowHeight + 3) + 2;
-
-            if (x >= buttonPos - latitude && x <= buttonPos + rowHeight + 3 + latitude) {
-              // Yup.  Toggle the opened state for this node.
-              dataModel.setState(node, {
-                bOpened: !node.bOpened
-              });
               return tree.getOpenCloseClickSelectsRow() ? false : true;
             } else {
+              // Yup.  Get the order of the columns
+              var tcm = tree.getTableColumnModel();
+
+              var columnPositions = tcm._getColToXPosMap(); // Calculate the position of the beginning of the tree column
+
+
+              var left = qx.bom.element.Location.getLeft(tree.getContentElement().getDomElement());
+
+              for (var i = 0; i < columnPositions[treeCol].visX; i++) {
+                left += tcm.getColumnWidth(columnPositions[i].visX);
+              }
+
               return _this._handleExtendedClick(tree, evt, node, left);
             }
           } else {
@@ -103195,6 +107367,7 @@
    *   bSelected      : true,  // true if node is selected; false otherwise.
    *   bOpened        : true,  // true (-), false (+)
    *   bHideOpenClose : false, // whether to hide the open/close button
+   *   bCanEdit       : true,  // true if the node label can be edited, false to prevent edit
    *   icon           : "images/folder.gif",
    *   iconSelected   : "images/folder_selected.gif",
    *
@@ -104030,8 +108203,13 @@
               break;
 
             case "bOpened":
-              // Don't do anything if the requested state is the same as the
+              // Don't do anything if this is a leaf, leaf has no opened/closed
+              if (node.type === qx.ui.treevirtual.MTreePrimitive.Type.LEAF) {
+                break;
+              } // Don't do anything if the requested state is the same as the
               // current state.
+
+
               if (attributes[attribute] == node.bOpened) {
                 break;
               } // Get the tree to which this data model is attached
@@ -104149,6 +108327,17 @@
       // property apply
       _applyFilter: function _applyFilter(value, old) {
         this.setData();
+      },
+
+      /**
+       * This checks whether a node label is editable
+       * Used in the NodeEditor to check if edit is permitted
+       *
+       * @param rowIndex {Integer} zero-based row index.
+       * @return {Boolean} If the node has edit permitted
+       */
+      isNodeEditable: function isNodeEditable(rowIndex) {
+        return this.__tree__P_540_1.getAllowNodeEdit() && this.getNodeFromRow(rowIndex).bCanEdit;
       }
     },
     destruct: function destruct() {
@@ -104192,6 +108381,9 @@
       "qx.ui.table.columnmodel.Resize": {
         "construct": true
       },
+      "qx.ui.treevirtual.pane.Scroller": {
+        "construct": true
+      },
       "qx.lang.Type": {
         "construct": true
       },
@@ -104201,6 +108393,7 @@
       "qx.ui.table.selection.Model": {
         "require": true
       },
+      "qx.bom.element.Location": {},
       "qx.event.type.Dom": {}
     }
   };
@@ -104299,6 +108492,17 @@
      *           return new qx.ui.table.columnmodel.Resize(obj);
      *         }
      *       </pre></dd>
+     *     <dt>tablePaneScroller</dt>
+     *       <dd>
+     *         Instance of {@link qx.ui.treevirtual.pane.Scroller}.
+     *         Custom table pane scroller for the tree
+     *         <pre class='javascript'>
+     *         function(obj)
+     *         {
+     *           return new qx.ui.table.columnmodel.Resize(obj);
+     *         }
+     *       </pre>
+     *       </dd>
      *   </dl>
      */
     construct: function construct(headings, custom) {
@@ -104339,6 +108543,12 @@
       if (!custom.tableColumnModel) {
         custom.tableColumnModel = function (obj) {
           return new qx.ui.table.columnmodel.Resize(obj);
+        };
+      }
+
+      if (!custom.tablePaneScroller) {
+        custom.tablePaneScroller = function (obj) {
+          return new qx.ui.treevirtual.pane.Scroller(obj);
         };
       } // Specify the column headings.  We accept a single string (one single
       // column) or an array of strings (one or more columns).
@@ -104634,6 +108844,31 @@
       },
 
       /**
+       * Returns the position of the open/close button for a node
+       *
+       * @return {Object} The position of the open/close button within the tree row
+       */
+      getOpenCloseButtonPosition: function getOpenCloseButtonPosition(node) {
+        var treeCol = this.getDataModel().getTreeColumn();
+        var dcr = this.getTableColumnModel().getDataCellRenderer(treeCol);
+        var rowPos = dcr.getOpenCloseButtonPosition(this, node); // Get the order of the columns
+
+        var tcm = this.getTableColumnModel();
+
+        var columnPositions = tcm._getColToXPosMap(); // Calculate the position of the beginning of the tree column
+
+
+        var left = qx.bom.element.Location.getLeft(this.getContentElement().getDomElement());
+
+        for (var i = 0; i < columnPositions[treeCol].visX; i++) {
+          left += tcm.getColumnWidth(columnPositions[i].visX);
+        }
+
+        rowPos.left += left;
+        return rowPos;
+      },
+
+      /**
        * Set the selection mode.
        *
        * @param mode {Integer}
@@ -104740,7 +108975,7 @@
        *   The event.
        *
        */
-      _onKeyPress: function _onKeyPress(evt) {
+      _onKeyDown: function _onKeyDown(evt) {
         if (!this.getEnabled()) {
           return;
         }
@@ -104878,7 +109113,7 @@
           evt.stopPropagation();
         } else {
           // It's not one of ours.  Let our superclass handle this event
-          qx.ui.treevirtual.TreeVirtual.prototype._onKeyPress.base.call(this, evt);
+          qx.ui.treevirtual.TreeVirtual.prototype._onKeyDown.base.call(this, evt);
         }
       },
 
@@ -105050,7 +109285,7 @@
       this.__rm__P_539_3 = qx.util.ResourceManager.getInstance();
       this.__tm__P_539_4 = qx.theme.manager.Appearance.getInstance(); // Base URL used for indentation
 
-      this.BLANK = this.__rm__P_539_3.toUri(this.__am__P_539_2.resolve("static/blank.gif"));
+      this.BLANK = this.__rm__P_539_3.toUri(this.__am__P_539_2.resolve("static/blank.png"));
     },
     statics: {
       /** File names of each of the tree icons */
@@ -105601,6 +109836,29 @@
         return {
           icon: this.BLANK
         };
+      },
+
+      /**
+       * Determine the position in the cell of the open/close button image
+       *
+       * @param table {Table}
+       *   The column of indentation being requested, zero-relative
+       *
+       * @param node {Node}
+       *   The node being displayed in the row.  The properties of a node are
+       *   described in {@link qx.ui.treevirtual.SimpleTreeDataModel}
+       *
+       * @return {Object} Position of the Open/Close Button
+       */
+      getOpenCloseButtonPosition: function getOpenCloseButtonPosition(table, node) {
+        var padding = 2;
+        var width = table.getRowHeight() + 3;
+        return {
+          top: 0,
+          left: (node.level - 1) * width + padding,
+          width: width,
+          height: table.getRowHeight()
+        };
       }
     },
     destruct: function destruct() {
@@ -105697,6 +109955,98 @@
         "usage": "dynamic",
         "require": true
       },
+      "qx.ui.table.pane.Scroller": {
+        "require": true
+      },
+      "qx.ui.core.scroll.MScrollBarFactory": {
+        "require": true
+      },
+      "qx.ui.treevirtual.SimpleTreeDataModel": {}
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 Tartan Solutions, Inc, http://www.tartansolutions.com
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Patrick Buxton
+  
+  ************************************************************************ */
+
+  /**
+   * An overridden pane Scroller for the treevirtual to allow capture of
+   * the mouse dblclick event in the tree column. To prevent starting an
+   * edit when the tree node editing is turned on and the open/close button
+   * is tapped quickly
+   */
+  qx.Class.define("qx.ui.treevirtual.pane.Scroller", {
+    extend: qx.ui.table.pane.Scroller,
+    include: [qx.ui.core.scroll.MScrollBarFactory],
+
+    /*
+    *****************************************************************************
+       MEMBERS
+    *****************************************************************************
+    */
+    members: {
+      /**
+       * Event handler. Called when the user double tapped a pointer button over the pane.
+       *
+       * @param e {Map} the event.
+       */
+      _onDbltapPane: function _onDbltapPane(e) {
+        var pageX = e.getDocumentLeft();
+        var pageY = e.getDocumentTop();
+
+        var col = this._getColumnForPageX(pageX);
+
+        var row = this._getRowForPagePos(pageX, pageY);
+
+        if (col !== null && row !== null) {
+          // check if the user is tapping on the open/close button of the tree
+          var tree = this.getTable();
+          var tableModel = tree.getTableModel();
+
+          if (tableModel instanceof qx.ui.treevirtual.SimpleTreeDataModel && col === tableModel.getTreeColumn()) {
+            // Was the click on the open/close button? We get the position and add a bit of
+            // latitude to that
+            var x = e.getViewportLeft();
+            var latitude = 2; // Get the node to which this event applies
+
+            var node = tree.getDataModel().getNode(row);
+            var buttonPos = tree.getOpenCloseButtonPosition(node);
+
+            if (x >= buttonPos.left - latitude && x <= buttonPos.left + buttonPos.width + latitude) {
+              return;
+            }
+          }
+        }
+
+        qx.ui.treevirtual.pane.Scroller.prototype._onDbltapPane.base.call(this, e);
+      }
+    }
+  });
+  qx.ui.treevirtual.pane.Scroller.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
       "qx.ui.table.celleditor.TextField": {
         "require": true
       },
@@ -105747,6 +110097,10 @@
       },
       // interface implementation
       createCellEditor: function createCellEditor(cellInfo) {
+        if (!cellInfo.table.getTableModel().isNodeEditable(cellInfo.row)) {
+          return null;
+        }
+
         var cellEditor = this._createEditor(); // The value in the case of a Tree is a Node and we want the label
 
 
@@ -110861,7 +115215,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1596696263580
+//# sourceMappingURL=package-7.js.map?dt=1598908911307
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

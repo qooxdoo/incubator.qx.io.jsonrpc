@@ -110,8 +110,6 @@
       __defaultWidth__P_510_0: 16,
       __defaultHeight__P_510_1: 16,
       __imageData__P_510_2: null,
-      // overridden
-      _insetY: 2,
 
       /**
        * Identifies the Image to show. This is a template method, which must be
@@ -270,4 +268,4 @@
   qx.ui.table.cellrenderer.AbstractImage.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractImage.js.map?dt=1596696246375
+//# sourceMappingURL=AbstractImage.js.map?dt=1598908892376

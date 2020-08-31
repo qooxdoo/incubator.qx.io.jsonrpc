@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 280,
+        "line": 278,
         "column": 3
       }
     },
@@ -132,36 +132,14 @@
       "type": "variable",
       "access": "private"
     },
-    "_insetY": {
-      "location": {
-        "start": {
-          "line": 107,
-          "column": 4
-        },
-        "end": {
-          "line": 107,
-          "column": 15
-        }
-      },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>overridden</p>"
-          }
-        ]
-      },
-      "type": "variable",
-      "access": "protected"
-    },
     "_identifyImage": {
       "location": {
         "start": {
-          "line": 130,
+          "line": 128,
           "column": 4
         },
         "end": {
-          "line": 132,
+          "line": 130,
           "column": 5
         }
       },
@@ -210,11 +188,11 @@
     "_getImageInfos": {
       "location": {
         "start": {
-          "line": 145,
+          "line": 143,
           "column": 4
         },
         "end": {
-          "line": 179,
+          "line": 177,
           "column": 5
         }
       },
@@ -247,11 +225,11 @@
     "__getImageSize": {
       "location": {
         "start": {
-          "line": 189,
+          "line": 187,
           "column": 4
         },
         "end": {
-          "line": 213,
+          "line": 211,
           "column": 5
         }
       },
@@ -286,11 +264,11 @@
     "createDataCellHtml": {
       "location": {
         "start": {
-          "line": 217,
+          "line": 215,
           "column": 4
         },
         "end": {
-          "line": 221,
+          "line": 219,
           "column": 5
         }
       },
@@ -313,11 +291,11 @@
     "_getCellClass": {
       "location": {
         "start": {
-          "line": 225,
+          "line": 223,
           "column": 4
         },
         "end": {
-          "line": 227,
+          "line": 225,
           "column": 5
         }
       },
@@ -339,11 +317,11 @@
     "_getContentHtml": {
       "location": {
         "start": {
-          "line": 231,
+          "line": 229,
           "column": 4
         },
         "end": {
-          "line": 254,
+          "line": 252,
           "column": 5
         }
       },
@@ -365,11 +343,11 @@
     "_getCellAttributes": {
       "location": {
         "start": {
-          "line": 258,
+          "line": 256,
           "column": 4
         },
         "end": {
-          "line": 267,
+          "line": 265,
           "column": 5
         }
       },
@@ -661,11 +639,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 276,
+        "line": 274,
         "column": 13
       },
       "end": {
-        "line": 279,
+        "line": 277,
         "column": 3
       }
     },

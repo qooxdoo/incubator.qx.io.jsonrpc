@@ -8580,5 +8580,7 @@
       ]
     }
   },
-  "descendants": []
+  "descendants": [
+    "qx.ui.treevirtual.pane.Scroller"
+  ]
 }

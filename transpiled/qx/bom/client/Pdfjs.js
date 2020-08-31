@@ -66,6 +66,7 @@
    *
    * @internal
    * @asset(qx/static/empty.pdf)
+   * @ignore($.browser)
    */
   qx.Bootstrap.define("qx.bom.client.Pdfjs", {
     statics: {
@@ -1579,4 +1580,4 @@
   qx.bom.client.Pdfjs.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Pdfjs.js.map?dt=1596696206828
+//# sourceMappingURL=Pdfjs.js.map?dt=1598908848017

@@ -63,6 +63,9 @@
       _applyTheme: function _applyTheme(value) {
         var dest = {};
 
+        this._setDynamic({}); // reset dynamic cache
+
+
         if (value) {
           var colors = value.colors;
 
@@ -99,9 +102,12 @@
           return color;
         } else if (color instanceof Array) {
           return qx.util.ColorUtil.rgbToRgbString(color);
-        }
+        } else if (color instanceof Function) {
+          return this.__parseColor__P_362_0(colors, color(name));
+        } // this is might already be a rgb or hex color
 
-        throw new Error("Could not parse color: " + color);
+
+        return name;
       },
 
       /**
@@ -163,4 +169,4 @@
   qx.theme.manager.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1596696234942
+//# sourceMappingURL=Color.js.map?dt=1598908879194

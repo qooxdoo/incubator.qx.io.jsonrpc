@@ -5,10 +5,10 @@
     "qxl.logpane": "1.0.0-beta.3",
     "qxl.apiviewer": "1.0.0-beta.9",
     "qxl.versionlabel": "1.0.0-beta.3",
-    "qx": "6.0.0-beta-20200609-0430"
+    "qx": "6.0.0-beta-20200830-1953"
   },
-  "environmentHash": "2f4fceda8b9f913c8c1559956c5239a088f36592",
-  "compilerVersion": "1.0.0-beta",
+  "environmentHash": "a78aa84a8172aad8d7facf86ddde1e3fd4ff422a",
+  "compilerVersion": "1.0.0-beta-20200830-1953",
   "classInfo": {
     "qx.Annotation": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -1860,6 +1860,7 @@
           "ecmascript.object.keys",
           "ecmascript.object.values",
           "ecmascript.object.is",
+          "ecmascript.object.assign",
           "ecmascript.number.EPSILON",
           "ecmascript.string.startsWith",
           "ecmascript.string.endsWith",
@@ -2108,39 +2109,8 @@
       "include": [],
       "implement": [],
       "hasDefer": true,
-      "unresolved": [
-        {
-          "name": "$.browser",
-          "locations": [
-            {
-              "start": {
-                "line": 399,
-                "column": 18
-              },
-              "end": {
-                "line": 399,
-                "column": 27
-              }
-            }
-          ]
-        }
-      ],
       "assets": [
         "qx/static/empty.pdf"
-      ],
-      "markers": [
-        {
-          "msgId": "qx.tool.compiler.symbol.unresolved",
-          "pos": {
-            "start": {
-              "line": 399,
-              "column": 18
-            }
-          },
-          "args": [
-            "$.browser"
-          ]
-        }
       ]
     },
     "qx.bom.client.PhoneGap": {
@@ -7673,7 +7643,7 @@
       "hasDefer": null
     },
     "qx.io.Exception": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7742,7 +7712,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.Client": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.core.Environment": {
@@ -7768,11 +7738,11 @@
         "qx.io.jsonrpc.protocol.Parser": {
           "construct": true
         },
+        "qx.core.Assert": {},
         "qx.io.jsonrpc.protocol.Request": {},
         "qx.io.jsonrpc.protocol.Message": {},
         "qx.io.jsonrpc.protocol.Batch": {},
         "qx.io.jsonrpc.protocol.Notification": {},
-        "qx.core.Assert": {},
         "qx.Promise": {},
         "qx.io.jsonrpc.protocol.Result": {},
         "qx.io.jsonrpc.protocol.Error": {},
@@ -7790,7 +7760,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.Cancel": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7814,7 +7784,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.JsonRpc": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7834,7 +7804,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.exception.Transport": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7854,7 +7824,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Batch": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7879,7 +7849,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Error": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7900,7 +7870,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Message": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7918,7 +7888,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Notification": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7936,7 +7906,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Parser": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7960,7 +7930,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Request": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7985,7 +7955,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Result": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8003,7 +7973,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Abstract": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8021,7 +7991,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Http": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8055,7 +8025,7 @@
       "hasDefer": true
     },
     "qx.io.jsonrpc.transport.ITransport": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Interface": {
@@ -8654,7 +8624,7 @@
       "hasDefer": null
     },
     "qx.io.request.authentication.Bearer": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -9048,6 +9018,9 @@
             "defer": true
           },
           "ecmascript.object.is": {
+            "defer": true
+          },
+          "ecmascript.object.assign": {
             "defer": true
           }
         }
@@ -14675,7 +14648,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.HttpTransport": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14713,7 +14686,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.MAssert": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.330Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Mixin": {
@@ -14729,7 +14702,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.Protocol": {
-      "mtime": "2020-08-06T06:42:51.695Z",
+      "mtime": "2020-08-31T21:20:07.334Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -22174,6 +22147,78 @@
         "icon": "qx.theme.icon.Tango"
       }
     },
+    "qx.theme.TangibleDark": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.theme.tangible.ColorDark": {
+          "load": true
+        },
+        "qx.theme.tangible.Decoration": {
+          "load": true
+        },
+        "qx.theme.tangible.Font": {
+          "load": true
+        },
+        "qx.theme.tangible.Appearance": {
+          "load": true
+        },
+        "qx.theme.icon.Tango": {
+          "load": true
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "themeMeta": {
+        "color": "qx.theme.tangible.ColorDark",
+        "decoration": "qx.theme.tangible.Decoration",
+        "font": "qx.theme.tangible.Font",
+        "appearance": "qx.theme.tangible.Appearance",
+        "icon": "qx.theme.icon.Tango"
+      }
+    },
+    "qx.theme.TangibleLight": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.theme.tangible.ColorLight": {
+          "load": true
+        },
+        "qx.theme.tangible.Decoration": {
+          "load": true
+        },
+        "qx.theme.tangible.Font": {
+          "load": true
+        },
+        "qx.theme.tangible.Appearance": {
+          "load": true
+        },
+        "qx.theme.icon.Tango": {
+          "load": true
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "themeMeta": {
+        "color": "qx.theme.tangible.ColorLight",
+        "decoration": "qx.theme.tangible.Decoration",
+        "font": "qx.theme.tangible.Font",
+        "appearance": "qx.theme.tangible.Appearance",
+        "icon": "qx.theme.icon.Tango"
+      }
+    },
     "qx.theme.classic.Appearance": {
       "mtime": "1985-10-26T08:15:00.000Z",
       "libraryName": "qx",
@@ -22294,6 +22339,106 @@
       "aliases": {
         "icon": "qx/icon/Tango"
       }
+    },
+    "qx.theme.iconfont.LoadMaterialIcons": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/iconfont/MaterialIcons/materialicons-v50.ttf",
+        "qx/iconfont/MaterialIcons/materialicons-v50.woff2",
+        "qx/iconfont/MaterialIcons/materialicons-v50.woff",
+        "qx/iconfont/MaterialIcons/materialicons-v50.eot"
+      ]
+    },
+    "qx.theme.iconfont.LoadMaterialIconsOutlined": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.otf",
+        "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff2",
+        "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff",
+        "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.eot"
+      ]
+    },
+    "qx.theme.iconfont.LoadMaterialIconsRound": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/iconfont/MaterialIcons/materialiconsround-v18.otf",
+        "qx/iconfont/MaterialIcons/materialiconsround-v18.woff2",
+        "qx/iconfont/MaterialIcons/materialiconsround-v18.woff",
+        "qx/iconfont/MaterialIcons/materialiconsround-v18.eot"
+      ]
+    },
+    "qx.theme.iconfont.LoadMaterialIconsSharp": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/iconfont/MaterialIcons/materialiconssharp-v19.otf",
+        "qx/iconfont/MaterialIcons/materialiconssharp-v19.woff2",
+        "qx/iconfont/MaterialIcons/materialiconssharp-v19.woff",
+        "qx/iconfont/MaterialIcons/materialiconssharp-v19.eot"
+      ]
+    },
+    "qx.theme.iconfont.LoadMaterialIconsTwoTone": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/iconfont/MaterialIcons/materialiconstwotone-v17.otf",
+        "qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff2",
+        "qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff",
+        "qx/iconfont/MaterialIcons/materialiconstwotone-v17.eot"
+      ]
     },
     "qx.theme.indigo.Appearance": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -22830,6 +22975,141 @@
       "hasDefer": null,
       "assets": [
         "qx/decoration/Simple/*",
+        "qx/static/blank.png"
+      ]
+    },
+    "qx.theme.tangible.Appearance": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.theme.tangible.Image": {}
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/icon/Tango/16/apps/office-calendar.png",
+        "qx/icon/Tango/16/places/folder-open.png",
+        "qx/icon/Tango/16/places/folder.png",
+        "qx/icon/Tango/16/mimetypes/text-plain.png",
+        "qx/icon/Tango/16/actions/view-refresh.png",
+        "qx/icon/Tango/16/actions/window-close.png",
+        "qx/icon/Tango/16/actions/dialog-cancel.png",
+        "qx/icon/Tango/16/actions/dialog-ok.png"
+      ]
+    },
+    "qx.theme.tangible.ColorDark": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.theme.tangible.ColorEngine": {
+          "load": true
+        }
+      },
+      "extends": "qx.theme.tangible.ColorEngine",
+      "include": [],
+      "implement": [],
+      "hasDefer": null
+    },
+    "qx.theme.tangible.ColorEngine": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.util.ColorUtil": {},
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null
+    },
+    "qx.theme.tangible.ColorLight": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.theme.tangible.ColorEngine": {
+          "load": true
+        }
+      },
+      "extends": "qx.theme.tangible.ColorEngine",
+      "include": [],
+      "implement": [],
+      "hasDefer": null
+    },
+    "qx.theme.tangible.Decoration": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "aliases": {
+        "decoration": "qx/decoration/Simple"
+      }
+    },
+    "qx.theme.tangible.Font": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Theme": {
+          "load": true,
+          "usage": "dynamic"
+        }
+      },
+      "extends": null,
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/font/Roboto/*.woff",
+        "qx/font/Roboto/*.woff2",
+        "qx/font/Roboto/*.eot",
+        "qx/font/Roboto/*.ttf"
+      ]
+    },
+    "qx.theme.tangible.Image": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.core.Object": {
+          "load": true
+        }
+      },
+      "extends": "qx.core.Object",
+      "include": [],
+      "implement": [],
+      "hasDefer": null,
+      "assets": [
+        "qx/iconfont/MaterialIcons/materialicons-v50.ttf",
+        "qx/iconfont/MaterialIcons/materialicons-v50.woff2",
+        "qx/iconfont/MaterialIcons/materialicons-v50.woff",
+        "qx/iconfont/MaterialIcons/materialicons-v50.eot",
         "qx/static/blank.png"
       ]
     },
@@ -30144,9 +30424,14 @@
         "qx.bom.Element": {
           "construct": true
         },
+        "qx.ui.core.Widget": {
+          "load": true
+        },
         "qx.ui.popup.Popup": {},
         "qx.lang.Array": {},
-        "qx.ui.core.Widget": {}
+        "qx.ui.core.LayoutItem": {
+          "load": true
+        }
       },
       "extends": "qx.core.Object",
       "include": [],
@@ -32267,6 +32552,7 @@
         "qx.ui.layout.Grow": {
           "construct": true
         },
+        "qx.theme.manager.Decoration": {},
         "qx.ui.core.Widget": {
           "load": true
         }
@@ -33406,8 +33692,8 @@
           "construct": true
         },
         "qx.event.type.Mouse": {},
-        "qx.bom.element.Location": {},
         "qx.ui.treevirtual.SimpleTreeDataModel": {},
+        "qx.bom.element.Location": {},
         "qx.core.Object": {
           "load": true
         }
@@ -33551,6 +33837,9 @@
         "qx.ui.table.columnmodel.Resize": {
           "construct": true
         },
+        "qx.ui.treevirtual.pane.Scroller": {
+          "construct": true
+        },
         "qx.lang.Type": {
           "construct": true
         },
@@ -33560,6 +33849,7 @@
         "qx.ui.table.selection.Model": {
           "load": true
         },
+        "qx.bom.element.Location": {},
         "qx.event.type.Dom": {},
         "qx.ui.core.Widget": {
           "load": true
@@ -33604,6 +33894,56 @@
       },
       "extends": "qx.ui.table.celleditor.TextField",
       "include": [],
+      "implement": [],
+      "hasDefer": null
+    },
+    "qx.ui.treevirtual.pane.Scroller": {
+      "mtime": "1985-10-26T08:15:00.000Z",
+      "libraryName": "qx",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.ui.table.pane.Scroller": {
+          "load": true
+        },
+        "qx.ui.core.scroll.MScrollBarFactory": {
+          "load": true
+        },
+        "qx.ui.treevirtual.SimpleTreeDataModel": {},
+        "qx.core.Environment": {
+          "load": true
+        },
+        "qx.ui.core.Widget": {
+          "load": true
+        },
+        "qx.ui.layout.Grid": {
+          "load": true
+        },
+        "qx.ui.container.Composite": {
+          "load": true
+        },
+        "qx.ui.layout.HBox": {
+          "load": true
+        },
+        "qx.bom.client.Device": {
+          "load": true
+        },
+        "qx.bom.client.Scroll": {
+          "load": true
+        },
+        "qx.ui.layout.Canvas": {
+          "load": true
+        },
+        "qx.event.Timer": {
+          "load": true
+        }
+      },
+      "extends": "qx.ui.table.pane.Scroller",
+      "include": [
+        "qx.ui.core.scroll.MScrollBarFactory"
+      ],
       "implement": [],
       "hasDefer": null
     },

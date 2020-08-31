@@ -1902,6 +1902,204 @@ qx.$$packageData['0'] = {
       "gif",
       "qx"
     ],
+    "qx/font/Roboto/LICENSE.txt": [
+      null,
+      null,
+      "txt",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700italic.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700italic.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700italic.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-700italic.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-italic.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-italic.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-italic.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-italic.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-mono-v6-latin_latin-ext-regular.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700italic.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700italic.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700italic.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-700italic.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-italic.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-italic.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-italic.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-italic.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/font/Roboto/roboto-v18-latin_latin-ext-regular.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
     "qx/icon/Oxygen/16/actions/dialog-cancel.png": [
       16,
       16,
@@ -2074,6 +2272,126 @@ qx.$$packageData['0'] = {
       32,
       32,
       "png",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialicons-v50.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialicons-v50.ttf": [
+      null,
+      null,
+      "ttf",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialicons-v50.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialicons-v50.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.otf": [
+      null,
+      null,
+      "otf",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsround-v18.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsround-v18.otf": [
+      null,
+      null,
+      "otf",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsround-v18.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconsround-v18.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconssharp-v19.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconssharp-v19.otf": [
+      null,
+      null,
+      "otf",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconssharp-v19.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconssharp-v19.woff2": [
+      null,
+      null,
+      "woff2",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.eot": [
+      null,
+      null,
+      "eot",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.otf": [
+      null,
+      null,
+      "otf",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff": [
+      null,
+      null,
+      "woff",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff2": [
+      null,
+      null,
+      "woff2",
       "qx"
     ],
     "qx/mobile/css/.npmignore": [

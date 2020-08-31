@@ -4066,6 +4066,7 @@
     "qx.theme.manager.Icon",
     "qx.theme.manager.Meta",
     "qx.theme.simple.Image",
+    "qx.theme.tangible.Image",
     "qx.ui.command.Command",
     "qx.ui.command.Group",
     "qx.ui.command.GroupManager",

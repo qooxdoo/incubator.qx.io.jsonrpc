@@ -24,11 +24,11 @@
       "qx.io.jsonrpc.protocol.Parser": {
         "construct": true
       },
+      "qx.core.Assert": {},
       "qx.io.jsonrpc.protocol.Request": {},
       "qx.io.jsonrpc.protocol.Message": {},
       "qx.io.jsonrpc.protocol.Batch": {},
       "qx.io.jsonrpc.protocol.Notification": {},
-      "qx.core.Assert": {},
       "qx.Promise": {},
       "qx.io.jsonrpc.protocol.Result": {},
       "qx.io.jsonrpc.protocol.Error": {},
@@ -211,6 +211,7 @@
        * @private
        */
       _prependMethodPrefix(method) {
+        qx.core.Assert.assertString(method);
         let methodPrefix = this.getMethodPrefix();
 
         if (methodPrefix && !method.startsWith(methodPrefix + ".")) {
@@ -421,4 +422,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1596696215430
+//# sourceMappingURL=Client.js.map?dt=1598908857552

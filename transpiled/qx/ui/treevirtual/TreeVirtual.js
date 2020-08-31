@@ -27,6 +27,9 @@
       "qx.ui.table.columnmodel.Resize": {
         "construct": true
       },
+      "qx.ui.treevirtual.pane.Scroller": {
+        "construct": true
+      },
       "qx.lang.Type": {
         "construct": true
       },
@@ -36,6 +39,7 @@
       "qx.ui.table.selection.Model": {
         "require": true
       },
+      "qx.bom.element.Location": {},
       "qx.event.type.Dom": {}
     }
   };
@@ -134,6 +138,17 @@
      *           return new qx.ui.table.columnmodel.Resize(obj);
      *         }
      *       </pre></dd>
+     *     <dt>tablePaneScroller</dt>
+     *       <dd>
+     *         Instance of {@link qx.ui.treevirtual.pane.Scroller}.
+     *         Custom table pane scroller for the tree
+     *         <pre class='javascript'>
+     *         function(obj)
+     *         {
+     *           return new qx.ui.table.columnmodel.Resize(obj);
+     *         }
+     *       </pre>
+     *       </dd>
      *   </dl>
      */
     construct: function construct(headings, custom) {
@@ -174,6 +189,12 @@
       if (!custom.tableColumnModel) {
         custom.tableColumnModel = function (obj) {
           return new qx.ui.table.columnmodel.Resize(obj);
+        };
+      }
+
+      if (!custom.tablePaneScroller) {
+        custom.tablePaneScroller = function (obj) {
+          return new qx.ui.treevirtual.pane.Scroller(obj);
         };
       } // Specify the column headings.  We accept a single string (one single
       // column) or an array of strings (one or more columns).
@@ -469,6 +490,31 @@
       },
 
       /**
+       * Returns the position of the open/close button for a node
+       *
+       * @return {Object} The position of the open/close button within the tree row
+       */
+      getOpenCloseButtonPosition: function getOpenCloseButtonPosition(node) {
+        var treeCol = this.getDataModel().getTreeColumn();
+        var dcr = this.getTableColumnModel().getDataCellRenderer(treeCol);
+        var rowPos = dcr.getOpenCloseButtonPosition(this, node); // Get the order of the columns
+
+        var tcm = this.getTableColumnModel();
+
+        var columnPositions = tcm._getColToXPosMap(); // Calculate the position of the beginning of the tree column
+
+
+        var left = qx.bom.element.Location.getLeft(this.getContentElement().getDomElement());
+
+        for (var i = 0; i < columnPositions[treeCol].visX; i++) {
+          left += tcm.getColumnWidth(columnPositions[i].visX);
+        }
+
+        rowPos.left += left;
+        return rowPos;
+      },
+
+      /**
        * Set the selection mode.
        *
        * @param mode {Integer}
@@ -575,7 +621,7 @@
        *   The event.
        *
        */
-      _onKeyPress: function _onKeyPress(evt) {
+      _onKeyDown: function _onKeyDown(evt) {
         if (!this.getEnabled()) {
           return;
         }
@@ -713,7 +759,7 @@
           evt.stopPropagation();
         } else {
           // It's not one of ours.  Let our superclass handle this event
-          qx.ui.treevirtual.TreeVirtual.prototype._onKeyPress.base.call(this, evt);
+          qx.ui.treevirtual.TreeVirtual.prototype._onKeyDown.base.call(this, evt);
         }
       },
 
@@ -792,4 +838,4 @@
   qx.ui.treevirtual.TreeVirtual.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TreeVirtual.js.map?dt=1596696249179
+//# sourceMappingURL=TreeVirtual.js.map?dt=1598908895525

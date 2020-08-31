@@ -59,4 +59,4 @@
   qx.theme.Modern.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Modern.js.map?dt=1596696234535
+//# sourceMappingURL=Modern.js.map?dt=1598908878654

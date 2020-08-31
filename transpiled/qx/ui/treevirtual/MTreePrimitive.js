@@ -155,6 +155,7 @@
           bSelected: false,
           bOpened: bOpened,
           bHideOpenClose: bHideOpenCloseButton,
+          bCanEdit: true,
           icon: icon,
           iconSelected: iconSelected,
           children: [],
@@ -187,4 +188,4 @@
   qx.ui.treevirtual.MTreePrimitive.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MTreePrimitive.js.map?dt=1596696248863
+//# sourceMappingURL=MTreePrimitive.js.map?dt=1598908895170
