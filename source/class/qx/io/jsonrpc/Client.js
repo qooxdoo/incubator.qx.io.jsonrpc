@@ -173,6 +173,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
      * @private
      */
     _prependMethodPrefix(method) {
+      qx.core.Assert.assertString(method);
       let methodPrefix = this.getMethodPrefix();
       if (methodPrefix && !method.startsWith(methodPrefix + ".")) {
         return `${methodPrefix}.${method}`;
