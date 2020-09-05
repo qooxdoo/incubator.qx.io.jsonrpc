@@ -100,21 +100,21 @@
     */
     construct: function construct() {
       qx.ui.container.Composite.constructor.call(this);
-      this.__menuItemStore__P_597_0 = {};
+      this.__menuItemStore__P_591_0 = {};
       var layout = new qx.ui.layout.VBox();
       this.setLayout(layout);
-      this.add(this.__createHeader__P_597_1());
-      this.add(this.__createToolbar__P_597_2());
+      this.add(this.__createHeader__P_591_1());
+      this.add(this.__createToolbar__P_591_2());
       var tree = new qxl.apiviewer.ui.PackageTree();
       tree.setId("tree");
       this._searchView = new qxl.apiviewer.ui.SearchView();
       var legend = new qxl.apiviewer.ui.LegendView();
 
-      var toggleView = this.__createToggleView__P_597_3(tree, this._searchView, legend);
+      var toggleView = this.__createToggleView__P_591_3(tree, this._searchView, legend);
 
-      var mainFrame = this.__createDetailFrame__P_597_4();
+      var mainFrame = this.__createDetailFrame__P_591_4();
 
-      this.add(this.__createSplitPane__P_597_5(toggleView, mainFrame), {
+      this.add(this.__createSplitPane__P_591_5(toggleView, mainFrame), {
         flex: 1
       }); // Search for the value of the "search" URL query key.
 
@@ -125,7 +125,7 @@
 
         toggleView.setSelection([this._searchView]);
 
-        this.__toggleGroup__P_597_6.setSelection([this.__toggleGroup__P_597_6.getChildren()[1]]);
+        this.__toggleGroup__P_591_6.setSelection([this.__toggleGroup__P_591_6.getChildren()[1]]);
       }
     },
 
@@ -135,10 +135,10 @@
     *****************************************************************************
     */
     members: {
-      __firstPartHash__P_597_7: null,
-      __overflowMenu__P_597_8: null,
-      __menuItemStore__P_597_0: null,
-      __toggleGroup__P_597_6: null,
+      __firstPartHash__P_591_7: null,
+      __overflowMenu__P_591_8: null,
+      __menuItemStore__P_591_0: null,
+      __toggleGroup__P_591_6: null,
 
       /**
        * Creates the button view widget on the left
@@ -147,14 +147,14 @@
        * @param infoWidget {qx.ui.core.Widget} The widget for the "legend" pane
        * @return {qx.ui.tabview.TabView} The configured button view widget
        */
-      __createToggleView__P_597_3: function __createToggleView__P_597_3(treeWidget, searchWidget, infoWidget) {
+      __createToggleView__P_591_3: function __createToggleView__P_591_3(treeWidget, searchWidget, infoWidget) {
         var stack = new qx.ui.container.Stack();
         stack.setAppearance("toggleview");
         stack.add(treeWidget);
         stack.add(searchWidget);
         stack.add(infoWidget);
 
-        this.__toggleGroup__P_597_6.addListener("changeSelection", function (e) {
+        this.__toggleGroup__P_591_6.addListener("changeSelection", function (e) {
           var selected = e.getData()[0];
           var show = selected != null ? selected.getUserData("value") : null;
 
@@ -193,11 +193,11 @@
        *
        * @return {qx.ui.toolbar.ToolBar} The configured tool bar
        */
-      __createToolbar__P_597_2: function __createToolbar__P_597_2() {
+      __createToolbar__P_591_2: function __createToolbar__P_591_2() {
         var toolbar = new qx.ui.toolbar.ToolBar();
         var part = new qx.ui.toolbar.Part();
         toolbar.add(part);
-        this.__firstPartHash__P_597_7 = part.toHashCode();
+        this.__firstPartHash__P_591_7 = part.toHashCode();
         var showPackages = new qx.ui.toolbar.RadioButton(this.tr("Content"), "icon/22/apps/utilities-dictionary.png");
         showPackages.setUserData("value", "packages");
         showPackages.setValue(true);
@@ -213,7 +213,7 @@
         part.add(showLegend);
         var group = new qx.ui.form.RadioGroup(showPackages, showSearch, showLegend);
         group.setAllowEmptySelection(true);
-        this.__toggleGroup__P_597_6 = group;
+        this.__toggleGroup__P_591_6 = group;
         toolbar.addSpacer();
         var part = new qx.ui.toolbar.Part();
         toolbar.add(part);
@@ -258,8 +258,8 @@
         toolbar.add(chevron);
         toolbar.setOverflowIndicator(chevron); // add the overflow menu
 
-        this.__overflowMenu__P_597_8 = new qx.ui.menu.Menu();
-        chevron.setMenu(this.__overflowMenu__P_597_8); // add the listener
+        this.__overflowMenu__P_591_8 = new qx.ui.menu.Menu();
+        chevron.setMenu(this.__overflowMenu__P_591_8); // add the listener
 
         toolbar.addListener("hideItem", function (e) {
           var item = e.getData();
@@ -301,15 +301,15 @@
         var partChildren = toolbarPart.getChildren();
         var menuItems = []; // only add a separator if the first part pops in
 
-        if (toolbarPart.toHashCode() === this.__firstPartHash__P_597_7) {
-          var cachedItem = this.__menuItemStore__P_597_0[toolbarPart.toHashCode()];
+        if (toolbarPart.toHashCode() === this.__firstPartHash__P_591_7) {
+          var cachedItem = this.__menuItemStore__P_591_0[toolbarPart.toHashCode()];
 
           if (!cachedItem) {
             cachedItem = new qx.ui.menu.Separator();
 
-            this.__overflowMenu__P_597_8.addAt(cachedItem, 0);
+            this.__overflowMenu__P_591_8.addAt(cachedItem, 0);
 
-            this.__menuItemStore__P_597_0[toolbarPart.toHashCode()] = cachedItem;
+            this.__menuItemStore__P_591_0[toolbarPart.toHashCode()] = cachedItem;
           }
 
           menuItems.push(cachedItem);
@@ -318,7 +318,7 @@
 
         for (var i = partChildren.length - 1; i >= 0; i--) {
           var toolbarItem = partChildren[i];
-          cachedItem = this.__menuItemStore__P_597_0[toolbarItem.toHashCode()];
+          cachedItem = this.__menuItemStore__P_591_0[toolbarItem.toHashCode()];
 
           if (!cachedItem) {
             if (toolbarItem instanceof qx.ui.toolbar.RadioButton) {
@@ -338,9 +338,9 @@
               cachedItem.bind("value", toolbarItem, "value");
             }
 
-            this.__overflowMenu__P_597_8.addAt(cachedItem, 0);
+            this.__overflowMenu__P_591_8.addAt(cachedItem, 0);
 
-            this.__menuItemStore__P_597_0[toolbarItem.toHashCode()] = cachedItem;
+            this.__menuItemStore__P_591_0[toolbarItem.toHashCode()] = cachedItem;
           }
 
           menuItems.push(cachedItem);
@@ -354,7 +354,7 @@
        *
        * @return {qx.ui.layout.CanvasLayout} The detail Frame
        */
-      __createDetailFrame__P_597_4: function __createDetailFrame__P_597_4() {
+      __createDetailFrame__P_591_4: function __createDetailFrame__P_591_4() {
         var detailFrame = new qx.ui.container.Composite(new qx.ui.layout.Canvas());
         detailFrame.getContentElement().setAttribute("class", "content");
         this._detailLoader = new qx.ui.embed.Html("<div style=\"padding:10px;\"><h1><small>please wait</small>Loading data...</h1></div>");
@@ -387,7 +387,7 @@
        * @param detailFrame {qx.ui.core.Widget} the detail widget
        * @return {qx.ui.layout.VBox} the main frame
        */
-      __createMainFrame__P_597_9: function __createMainFrame__P_597_9(toolbar, detailFrame) {
+      __createMainFrame__P_591_9: function __createMainFrame__P_591_9(toolbar, detailFrame) {
         var mainFrame = new qx.ui.container.Composite();
         mainFrame.setLayout(new qx.ui.layout.VBox());
         mainFrame.add(toolbar);
@@ -404,7 +404,7 @@
        * @param rightWidget {qx.ui.core.Widget} the widget on the right of the splitter
        * @return {qx.ui.splitpane.SplitPane} the split pane
        */
-      __createSplitPane__P_597_5: function __createSplitPane__P_597_5(leftWidget, rightWidget) {
+      __createSplitPane__P_591_5: function __createSplitPane__P_591_5(leftWidget, rightWidget) {
         var mainSplitPane = new qx.ui.splitpane.Pane("horizontal");
         mainSplitPane.setAppearance("app-splitpane");
         mainSplitPane.add(leftWidget, 0);
@@ -415,7 +415,7 @@
       /**
        * Creates the application header.
        */
-      __createHeader__P_597_1: function __createHeader__P_597_1() {
+      __createHeader__P_591_1: function __createHeader__P_591_1() {
         var layout = new qx.ui.layout.HBox();
         var header = new qx.ui.container.Composite(layout);
         header.setAppearance("app-header");
@@ -454,7 +454,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._classTreeNodeHash = this.__toggleGroup__P_597_6 = null;
+      this._classTreeNodeHash = this.__toggleGroup__P_591_6 = null;
 
       this._disposeObjects("_tree", "_detailLoader", "_classViewer", "_packageViewer", "_searchView", "_tabView");
     }
@@ -462,4 +462,4 @@
   qxl.apiviewer.Viewer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Viewer.js.map?dt=1599312867134
+//# sourceMappingURL=Viewer.js.map?dt=1599343250757

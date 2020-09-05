@@ -38,41 +38,41 @@
   qx.Class.define("qx.test.ui.form.Renderer", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __form__P_318_0: null,
-      __b__P_318_1: null,
+      __form__P_312_0: null,
+      __b__P_312_1: null,
       setUp: function setUp() {
-        this.__form__P_318_0 = new qx.ui.form.Form();
-        this.__b__P_318_1 = new qx.ui.form.Button("a");
+        this.__form__P_312_0 = new qx.ui.form.Form();
+        this.__b__P_312_1 = new qx.ui.form.Button("a");
 
-        this.__form__P_318_0.addButton(this.__b__P_318_1);
+        this.__form__P_312_0.addButton(this.__b__P_312_1);
       },
       tearDown: function tearDown() {
-        this.__form__P_318_0.dispose();
+        this.__form__P_312_0.dispose();
 
-        this.__b__P_318_1.dispose();
+        this.__b__P_312_1.dispose();
       },
       testDisposeSingle: function testDisposeSingle() {
-        var renderer = new qx.ui.form.renderer.Single(this.__form__P_318_0);
+        var renderer = new qx.ui.form.renderer.Single(this.__form__P_312_0);
         renderer.dispose(); // check if the button container has been disposed
 
         this.assertNull(renderer._buttonRow);
-        this.assertNotNull(this.__b__P_318_1);
-        this.assertFalse(this.__b__P_318_1.isDisposed());
+        this.assertNotNull(this.__b__P_312_1);
+        this.assertFalse(this.__b__P_312_1.isDisposed());
       },
       testDisposeDouble: function testDisposeDouble() {
-        var renderer = new qx.ui.form.renderer.Double(this.__form__P_318_0);
+        var renderer = new qx.ui.form.renderer.Double(this.__form__P_312_0);
         renderer.dispose(); // check if the button container has been disposed
 
         this.assertNull(renderer._buttonRow);
-        this.assertNotNull(this.__b__P_318_1);
-        this.assertFalse(this.__b__P_318_1.isDisposed());
+        this.assertNotNull(this.__b__P_312_1);
+        this.assertFalse(this.__b__P_312_1.isDisposed());
       },
-      __testExclude__P_318_2: function __testExclude__P_318_2(clazz) {
+      __testExclude__P_312_2: function __testExclude__P_312_2(clazz) {
         var text = new qx.ui.form.TextField();
 
-        this.__form__P_318_0.add(text, "test");
+        this.__form__P_312_0.add(text, "test");
 
-        var renderer = new clazz(this.__form__P_318_0);
+        var renderer = new clazz(this.__form__P_312_0);
 
         var label = renderer._getChildren()[0];
 
@@ -82,18 +82,18 @@
         text.dispose();
       },
       testExcludeSingle: function testExcludeSingle() {
-        this.__testExclude__P_318_2(qx.ui.form.renderer.Single);
+        this.__testExclude__P_312_2(qx.ui.form.renderer.Single);
       },
       testExcludeDouble: function testExcludeDouble() {
-        this.__testExclude__P_318_2(qx.ui.form.renderer.Double);
+        this.__testExclude__P_312_2(qx.ui.form.renderer.Double);
       },
-      __testBindings__P_318_3: function __testBindings__P_318_3(clazz) {
+      __testBindings__P_312_3: function __testBindings__P_312_3(clazz) {
         // after adding the text field get length of bindings for text field, label, form and renderer
         var text = new qx.ui.form.TextField();
 
-        this.__form__P_318_0.add(text, "test");
+        this.__form__P_312_0.add(text, "test");
 
-        var renderer = new clazz(this.__form__P_318_0);
+        var renderer = new clazz(this.__form__P_312_0);
 
         var label = renderer._getChildren()[0]; // text field bindings
 
@@ -114,14 +114,14 @@
         this.assertEquals(0, label.getBindings().length, "Still bindings there!");
       },
       testBindingsSingle: function testBindingsSingle() {
-        this.__testBindings__P_318_3(qx.ui.form.renderer.Single);
+        this.__testBindings__P_312_3(qx.ui.form.renderer.Single);
       },
       testBindingsDouble: function testBindingsDouble() {
-        this.__testBindings__P_318_3(qx.ui.form.renderer.Double);
+        this.__testBindings__P_312_3(qx.ui.form.renderer.Double);
       }
     }
   });
   qx.test.ui.form.Renderer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Renderer.js.map?dt=1599312843841
+//# sourceMappingURL=Renderer.js.map?dt=1599343227382

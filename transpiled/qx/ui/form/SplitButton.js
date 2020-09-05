@@ -159,7 +159,7 @@
     *****************************************************************************
     */
     members: {
-      __cursorIsOut__P_430_0: null,
+      __cursorIsOut__P_424_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -261,7 +261,7 @@
 
         this.addState("hovered"); // Delete cursor out flag
 
-        delete this.__cursorIsOut__P_430_0;
+        delete this.__cursorIsOut__P_424_0;
       },
 
       /**
@@ -291,7 +291,7 @@
         var menu = this.getMenu();
 
         if (menu && menu.isVisible()) {
-          this.__cursorIsOut__P_430_0 = true;
+          this.__cursorIsOut__P_424_0 = true;
           return;
         } // Finally remove state
 
@@ -351,7 +351,7 @@
        * @param e {qx.event.type.Data} property change event
        */
       _onChangeMenuVisibility: function _onChangeMenuVisibility(e) {
-        if (!this.getMenu().isVisible() && this.__cursorIsOut__P_430_0) {
+        if (!this.getMenu().isVisible() && this.__cursorIsOut__P_424_0) {
           this.removeState("hovered");
         }
       }
@@ -360,4 +360,4 @@
   qx.ui.form.SplitButton.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SplitButton.js.map?dt=1599312854150
+//# sourceMappingURL=SplitButton.js.map?dt=1599343237801

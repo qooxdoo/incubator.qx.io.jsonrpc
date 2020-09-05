@@ -40,7 +40,7 @@
   qx.Class.define("qx.test.ui.form.ModelProperty", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __test__P_311_0: function __test__P_311_0(widget) {
+      __test__P_305_0: function __test__P_305_0(widget) {
         // check for the interface
         this.assertTrue(qx.Class.hasInterface(widget.constructor, qx.ui.form.IModel), "Interface not implemented"); // test the init value (null)
 
@@ -73,29 +73,29 @@
         widget.dispose();
       },
       testListItem: function testListItem() {
-        this.__test__P_311_0(new qx.ui.form.ListItem());
+        this.__test__P_305_0(new qx.ui.form.ListItem());
       },
       testRadioButton: function testRadioButton() {
-        this.__test__P_311_0(new qx.ui.form.RadioButton());
+        this.__test__P_305_0(new qx.ui.form.RadioButton());
       },
       testRadioGroupBox: function testRadioGroupBox() {
-        this.__test__P_311_0(new qx.ui.groupbox.RadioGroupBox());
+        this.__test__P_305_0(new qx.ui.groupbox.RadioGroupBox());
       },
       testCheckBox: function testCheckBox() {
-        this.__test__P_311_0(new qx.ui.form.CheckBox());
+        this.__test__P_305_0(new qx.ui.form.CheckBox());
       },
       testCheckGroupBox: function testCheckGroupBox() {
-        this.__test__P_311_0(new qx.ui.groupbox.CheckGroupBox());
+        this.__test__P_305_0(new qx.ui.groupbox.CheckGroupBox());
       },
       testTreeFolder: function testTreeFolder() {
-        this.__test__P_311_0(new qx.ui.tree.TreeFolder());
+        this.__test__P_305_0(new qx.ui.tree.TreeFolder());
       },
       testTreeFile: function testTreeFile() {
-        this.__test__P_311_0(new qx.ui.tree.TreeFile());
+        this.__test__P_305_0(new qx.ui.tree.TreeFile());
       }
     }
   });
   qx.test.ui.form.ModelProperty.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ModelProperty.js.map?dt=1599312843543
+//# sourceMappingURL=ModelProperty.js.map?dt=1599343227166

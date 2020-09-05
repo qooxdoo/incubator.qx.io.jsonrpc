@@ -145,9 +145,9 @@
       }
     },
     members: {
-      __labelAdded__P_535_0: null,
-      __iconAdded__P_535_1: null,
-      __spacer__P_535_2: null,
+      __labelAdded__P_529_0: null,
+      __iconAdded__P_529_1: null,
+      __spacer__P_529_2: null,
 
       /**
        * This method configures the tree item by adding its sub widgets like
@@ -213,13 +213,13 @@
        * old position and added to the end of the layout.
        */
       addSpacer: function addSpacer() {
-        if (!this.__spacer__P_535_2) {
-          this.__spacer__P_535_2 = new qx.ui.core.Spacer();
+        if (!this.__spacer__P_529_2) {
+          this.__spacer__P_529_2 = new qx.ui.core.Spacer();
         } else {
-          this._remove(this.__spacer__P_535_2);
+          this._remove(this.__spacer__P_529_2);
         }
 
-        this._add(this.__spacer__P_535_2);
+        this._add(this.__spacer__P_529_2);
       },
 
       /**
@@ -250,13 +250,13 @@
       addIcon: function addIcon() {
         var icon = this.getChildControl("icon");
 
-        if (this.__iconAdded__P_535_1) {
+        if (this.__iconAdded__P_529_1) {
           this._remove(icon);
         }
 
         this._add(icon);
 
-        this.__iconAdded__P_535_1 = true;
+        this.__iconAdded__P_529_1 = true;
       },
 
       /**
@@ -269,7 +269,7 @@
       addLabel: function addLabel(text) {
         var label = this.getChildControl("label");
 
-        if (this.__labelAdded__P_535_0) {
+        if (this.__labelAdded__P_529_0) {
           this._remove(label);
         }
 
@@ -281,7 +281,7 @@
 
         this._add(label);
 
-        this.__labelAdded__P_535_0 = true;
+        this.__labelAdded__P_529_0 = true;
       },
 
       /*
@@ -293,21 +293,21 @@
       _applyIcon: function _applyIcon(value, old) {
         // Set "closed" icon - even when "opened" - if no "opened" icon was
         // user-defined
-        if (!this.__getUserValueIconOpened__P_535_3()) {
-          this.__setIconSource__P_535_4(value);
+        if (!this.__getUserValueIconOpened__P_529_3()) {
+          this.__setIconSource__P_529_4(value);
         } else if (!this.isOpen()) {
-          this.__setIconSource__P_535_4(value);
+          this.__setIconSource__P_529_4(value);
         }
       },
       // property apply
       _applyIconOpened: function _applyIconOpened(value, old) {
         if (this.isOpen()) {
           // ... both "closed" and "opened" icon were user-defined
-          if (this.__getUserValueIcon__P_535_5() && this.__getUserValueIconOpened__P_535_3()) {
-            this.__setIconSource__P_535_4(value);
+          if (this.__getUserValueIcon__P_529_5() && this.__getUserValueIconOpened__P_529_3()) {
+            this.__setIconSource__P_529_4(value);
           } // .. only "opened" icon was user-defined
-          else if (!this.__getUserValueIcon__P_535_5() && this.__getUserValueIconOpened__P_535_3()) {
-              this.__setIconSource__P_535_4(value);
+          else if (!this.__getUserValueIcon__P_529_5() && this.__getUserValueIconOpened__P_529_3()) {
+              this.__setIconSource__P_529_4(value);
             }
         }
       },
@@ -334,14 +334,14 @@
 
         if (value) {
           // Never overwrite user-defined icon with themed "opened" icon
-          source = this.__getUserValueIconOpened__P_535_3() ? this.getIconOpened() : null;
+          source = this.__getUserValueIconOpened__P_529_3() ? this.getIconOpened() : null;
         } // Closed
         else {
             source = this.getIcon();
           }
 
         if (source) {
-          this.__setIconSource__P_535_4(source);
+          this.__setIconSource__P_529_4(source);
         }
 
         value ? this.addState("opened") : this.removeState("opened");
@@ -352,7 +352,7 @@
       *
       * @return {var} The user value of the property "icon"
       */
-      __getUserValueIcon__P_535_5: function __getUserValueIcon__P_535_5() {
+      __getUserValueIcon__P_529_5: function __getUserValueIcon__P_529_5() {
         return qx.util.PropertyUtil.getUserValue(this, "icon");
       },
 
@@ -361,7 +361,7 @@
       *
       * @return {var} The user value of the property "iconOpened"
       */
-      __getUserValueIconOpened__P_535_3: function __getUserValueIconOpened__P_535_3() {
+      __getUserValueIconOpened__P_529_3: function __getUserValueIconOpened__P_529_3() {
         return qx.util.PropertyUtil.getUserValue(this, "iconOpened");
       },
 
@@ -370,7 +370,7 @@
       *
       * @param url {String} The URL of the icon
       */
-      __setIconSource__P_535_4: function __setIconSource__P_535_4(url) {
+      __setIconSource__P_529_4: function __setIconSource__P_529_4(url) {
         var icon = this.getChildControl("icon", true);
 
         if (icon) {
@@ -429,8 +429,8 @@
           }
         }
 
-        if (this.__spacer__P_535_2) {
-          this.__spacer__P_535_2.setWidth((this.getLevel() + 1) * this.getIndent() - openWidth);
+        if (this.__spacer__P_529_2) {
+          this.__spacer__P_529_2.setWidth((this.getLevel() + 1) * this.getIndent() - openWidth);
         }
       },
       // property apply
@@ -462,10 +462,10 @@
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__spacer__P_535_2");
+      this._disposeObjects("__spacer__P_529_2");
     }
   });
   qx.ui.tree.core.AbstractItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractItem.js.map?dt=1599312862327
+//# sourceMappingURL=AbstractItem.js.map?dt=1599343246073

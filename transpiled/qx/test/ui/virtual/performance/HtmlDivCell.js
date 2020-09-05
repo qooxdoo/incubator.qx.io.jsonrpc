@@ -37,15 +37,15 @@
     // disabled
     members: {
       getLayer: function getLayer() {
-        this.__cellRenderer__P_352_0 = new qx.ui.virtual.cell.Cell();
+        this.__cellRenderer__P_346_0 = new qx.ui.virtual.cell.Cell();
         return new qx.ui.virtual.layer.HtmlCell(this);
       },
       getCellProperties: function getCellProperties(row, column) {
-        return this.__cellRenderer__P_352_0.getCellProperties(row + " / " + column, {});
+        return this.__cellRenderer__P_346_0.getCellProperties(row + " / " + column, {});
       }
     }
   });
   qx.test.ui.virtual.performance.HtmlDivCell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlDivCell.js.map?dt=1599312846606
+//# sourceMappingURL=HtmlDivCell.js.map?dt=1599343230280

@@ -38,12 +38,12 @@
     members: {
       setUp: function setUp() {
         this.manager = qx.theme.manager.Font.getInstance();
-        this.__formerTheme__P_275_0 = this.manager.getTheme();
+        this.__formerTheme__P_269_0 = this.manager.getTheme();
       },
       tearDown: function tearDown() {
         qx.test.Theme.themes = null;
-        this.manager.setTheme(this.__formerTheme__P_275_0);
-        this.__formerTheme__P_275_0 = null;
+        this.manager.setTheme(this.__formerTheme__P_269_0);
+        this.__formerTheme__P_269_0 = null;
       },
       testInclude: function testInclude() {
         qx.Theme.define("qx.test.Theme.themes.A", {
@@ -76,4 +76,4 @@
   qx.test.theme.manager.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1599312841489
+//# sourceMappingURL=Font.js.map?dt=1599343225097

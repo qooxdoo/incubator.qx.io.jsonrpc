@@ -6,7 +6,7 @@
   "interfaces": [],
   "mixins": [
     "qx.dev.unit.MMock",
-    "qx.test.io.jsonrpc.MAssert"
+    "qx.test.io.MAssert"
   ],
   "functionName": null,
   "clazz": {
@@ -959,7 +959,7 @@
       "mixin": true,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.test.io.jsonrpc.MAssert",
+      "overriddenFrom": "qx.test.io.MAssert",
       "jsdoc": {
         "@description": [
           {
@@ -990,7 +990,7 @@
       "mixin": true,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.test.io.jsonrpc.MAssert",
+      "overriddenFrom": "qx.test.io.MAssert",
       "jsdoc": {
         "@description": [
           {

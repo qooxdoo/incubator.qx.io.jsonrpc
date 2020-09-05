@@ -41,16 +41,16 @@
      * @param spacing {Integer} The horizontal spacing between the children
      */
     construct: function construct(children, spacing) {
-      this.__children__P_443_0 = children;
-      this.__spacing__P_443_1 = spacing;
-      this.__hasMoreLines__P_443_2 = children.length > 0;
-      this.__childIndex__P_443_3 = 0;
+      this.__children__P_437_0 = children;
+      this.__spacing__P_437_1 = spacing;
+      this.__hasMoreLines__P_437_2 = children.length > 0;
+      this.__childIndex__P_437_3 = 0;
     },
     members: {
-      __children__P_443_0: null,
-      __spacing__P_443_1: null,
-      __hasMoreLines__P_443_2: null,
-      __childIndex__P_443_3: null,
+      __children__P_437_0: null,
+      __spacing__P_437_1: null,
+      __hasMoreLines__P_437_2: null,
+      __childIndex__P_437_3: null,
 
       /**
        * Computes the properties of the next line taking the available width into
@@ -62,27 +62,27 @@
       computeNextLine: function computeNextLine(availWidth) {
         var availWidth = availWidth || Infinity;
 
-        if (!this.__hasMoreLines__P_443_2) {
+        if (!this.__hasMoreLines__P_437_2) {
           throw new Error("No more lines to compute");
         }
 
-        var children = this.__children__P_443_0;
+        var children = this.__children__P_437_0;
         var lineHeight = 0;
         var lineWidth = 0;
         var lineChildren = [];
         var gapsBefore = [];
 
-        for (var i = this.__childIndex__P_443_3; i < children.length; i++) {
+        for (var i = this.__childIndex__P_437_3; i < children.length; i++) {
           var child = children[i];
           var size = child.getSizeHint();
 
-          var gapBefore = this.__computeGapBeforeChild__P_443_4(i);
+          var gapBefore = this.__computeGapBeforeChild__P_437_4(i);
 
           var childWidth = size.width + gapBefore;
-          var isFirstChild = i == this.__childIndex__P_443_3;
+          var isFirstChild = i == this.__childIndex__P_437_3;
 
           if (!isFirstChild && lineWidth + childWidth > availWidth) {
-            this.__childIndex__P_443_3 = i;
+            this.__childIndex__P_437_3 = i;
             break;
           }
 
@@ -93,13 +93,13 @@
           lineHeight = Math.max(lineHeight, childHeight);
 
           if (child.getLayoutProperties().lineBreak) {
-            this.__childIndex__P_443_3 = i + 1;
+            this.__childIndex__P_437_3 = i + 1;
             break;
           }
         }
 
         if (i >= children.length) {
-          this.__hasMoreLines__P_443_2 = false;
+          this.__hasMoreLines__P_437_2 = false;
         }
 
         return {
@@ -116,13 +116,13 @@
        * @param childIndex {Integer} The index of the child widget
        * @return {Integer} The gap before the given child
        */
-      __computeGapBeforeChild__P_443_4: function __computeGapBeforeChild__P_443_4(childIndex) {
-        var isFirstInLine = childIndex == this.__childIndex__P_443_3;
+      __computeGapBeforeChild__P_437_4: function __computeGapBeforeChild__P_437_4(childIndex) {
+        var isFirstInLine = childIndex == this.__childIndex__P_437_3;
 
         if (isFirstInLine) {
-          return this.__children__P_443_0[childIndex].getMarginLeft();
+          return this.__children__P_437_0[childIndex].getMarginLeft();
         } else {
-          return Math.max(this.__children__P_443_0[childIndex - 1].getMarginRight(), this.__children__P_443_0[childIndex].getMarginLeft(), this.__spacing__P_443_1);
+          return Math.max(this.__children__P_437_0[childIndex - 1].getMarginRight(), this.__children__P_437_0[childIndex].getMarginLeft(), this.__spacing__P_437_1);
         }
       },
 
@@ -132,11 +132,11 @@
        * @return {Boolean} Whether there are more lines
        */
       hasMoreLines: function hasMoreLines() {
-        return this.__hasMoreLines__P_443_2;
+        return this.__hasMoreLines__P_437_2;
       }
     }
   });
   qx.ui.layout.LineSizeIterator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LineSizeIterator.js.map?dt=1599312855413
+//# sourceMappingURL=LineSizeIterator.js.map?dt=1599343239099

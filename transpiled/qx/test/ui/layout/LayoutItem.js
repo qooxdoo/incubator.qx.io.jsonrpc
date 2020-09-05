@@ -58,8 +58,8 @@
     },
     members: {
       bounds: null,
-      __layout__P_331_0: null,
-      __children__P_331_1: null,
+      __layout__P_325_0: null,
+      __children__P_325_1: null,
       renderLayout: function renderLayout(left, top, width, height) {
         var changes = qx.test.ui.layout.LayoutItem.prototype.renderLayout.base.call(this, left, top, width, height);
 
@@ -75,8 +75,8 @@
         };
 
         if (changes.size || changes.local || changes.margin) {
-          if (this.__layout__P_331_0 && this.getLayoutChildren().length > 0) {
-            this.__layout__P_331_0.renderLayout(width, height, {
+          if (this.__layout__P_325_0 && this.getLayoutChildren().length > 0) {
+            this.__layout__P_325_0.renderLayout(width, height, {
               top: 0,
               right: 0,
               bottom: 0,
@@ -90,21 +90,21 @@
       setLayout: function setLayout(layout) {
         layout.connectToWidget(this);
         qx.ui.core.queue.Layout.add(this);
-        this.__layout__P_331_0 = layout;
+        this.__layout__P_325_0 = layout;
       },
       _getLayout: function _getLayout() {
-        return this.__layout__P_331_0;
+        return this.__layout__P_325_0;
       },
       // overridden
       invalidateLayoutCache: function invalidateLayoutCache() {
         qx.test.ui.layout.LayoutItem.prototype.invalidateLayoutCache.base.call(this);
 
-        if (this.__layout__P_331_0) {
-          this.__layout__P_331_0.invalidateLayoutCache();
+        if (this.__layout__P_325_0) {
+          this.__layout__P_325_0.invalidateLayoutCache();
         }
       },
       invalidateLayoutChildren: function invalidateLayoutChildren() {
-        var layout = this.__layout__P_331_0;
+        var layout = this.__layout__P_325_0;
 
         if (layout) {
           layout.invalidateChildrenCache();
@@ -125,8 +125,8 @@
         qx.ui.core.queue.Visibility.add(this);
       },
       _getContentHint: function _getContentHint() {
-        if (this.__layout__P_331_0 && this.getLayoutChildren().length > 0) {
-          return this.__layout__P_331_0.getSizeHint();
+        if (this.__layout__P_325_0 && this.getLayoutChildren().length > 0) {
+          return this.__layout__P_325_0.getSizeHint();
         } else {
           return {
             width: 0,
@@ -192,13 +192,13 @@
         };
       },
       add: function add(child, options) {
-        if (!this.__children__P_331_1) {
-          this.__children__P_331_1 = [];
+        if (!this.__children__P_325_1) {
+          this.__children__P_325_1 = [];
         }
 
-        this.__children__P_331_1.push(child);
+        this.__children__P_325_1.push(child);
 
-        this.__layout__P_331_0.invalidateChildrenCache();
+        this.__layout__P_325_0.invalidateChildrenCache();
 
         if (options) {
           child.setLayoutProperties(options);
@@ -210,23 +210,23 @@
         qx.ui.core.queue.Layout.add(this);
       },
       remove: function remove(child) {
-        if (!this.__children__P_331_1) {
-          this.__children__P_331_1 = [];
+        if (!this.__children__P_325_1) {
+          this.__children__P_325_1 = [];
         }
 
-        qx.lang.Array.remove(this.__children__P_331_1, child); // Clear parent connection
+        qx.lang.Array.remove(this.__children__P_325_1, child); // Clear parent connection
 
         child.setLayoutParent(null); // clear the layout's children cache
 
-        if (this.__layout__P_331_0) {
-          this.__layout__P_331_0.invalidateChildrenCache();
+        if (this.__layout__P_325_0) {
+          this.__layout__P_325_0.invalidateChildrenCache();
         } // Add to layout queue
 
 
         qx.ui.core.queue.Layout.add(this);
       },
       getLayoutChildren: function getLayoutChildren() {
-        var children = this.__children__P_331_1 || [];
+        var children = this.__children__P_325_1 || [];
         var layoutChildren = [];
 
         for (var i = 0; i < children.length; i++) {
@@ -242,7 +242,7 @@
       checkAppearanceNeeds: function checkAppearanceNeeds() {},
       // copied from qx.ui.core.Widget
       addChildrenToQueue: function addChildrenToQueue(queue) {
-        var children = this.__children__P_331_1;
+        var children = this.__children__P_325_1;
 
         if (!children) {
           return;
@@ -258,10 +258,10 @@
       }
     },
     destruct: function destruct() {
-      this.bounds = this.__layout__P_331_0 = this.__children__P_331_1 = null;
+      this.bounds = this.__layout__P_325_0 = this.__children__P_325_1 = null;
     }
   });
   qx.test.ui.layout.LayoutItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LayoutItem.js.map?dt=1599312844474
+//# sourceMappingURL=LayoutItem.js.map?dt=1599343228033

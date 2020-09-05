@@ -42,10 +42,10 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__items__P_426_0 = [];
+      this.__items__P_420_0 = [];
     },
     members: {
-      __items__P_426_0: null,
+      __items__P_420_0: null,
 
       /**
        * Adding a field to the resetter will get its current value and store
@@ -55,9 +55,9 @@
        * @throws {TypeError} When given argument is not a field.
        */
       add: function add(field) {
-        this.__typeCheck__P_426_1(field);
+        this.__typeCheck__P_420_1(field);
 
-        this.__items__P_426_0.push({
+        this.__items__P_420_0.push({
           item: field,
           init: field.getValue()
         });
@@ -71,13 +71,13 @@
        * @return {Boolean} <code>true</code>, if the field has been removed.
        */
       remove: function remove(field) {
-        this.__typeCheck__P_426_1(field);
+        this.__typeCheck__P_420_1(field);
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          var storedItem = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          var storedItem = this.__items__P_420_0[i];
 
           if (storedItem.item === field) {
-            this.__items__P_426_0.splice(i, 1);
+            this.__items__P_420_0.splice(i, 1);
 
             return true;
           }
@@ -97,8 +97,8 @@
             e,
             errors = [];
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          dataEntry = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          dataEntry = this.__items__P_420_0[i];
           e = dataEntry.item.setValue(dataEntry.init);
 
           if (e && e instanceof Error) {
@@ -122,10 +122,10 @@
        * @return {null|Error} Returns an error when the field value could not be set.
        */
       resetItem: function resetItem(field) {
-        this.__typeCheck__P_426_1(field);
+        this.__typeCheck__P_420_1(field);
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          var dataEntry = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          var dataEntry = this.__items__P_420_0[i];
 
           if (dataEntry.item === field) {
             return field.setValue(dataEntry.init);
@@ -141,10 +141,10 @@
        */
       redefine: function redefine() {
         // go threw all added items
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          var item = this.__items__P_426_0[i].item; // set the new init value for the item
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          var item = this.__items__P_420_0[i].item; // set the new init value for the item
 
-          this.__items__P_426_0[i].init = item.getValue();
+          this.__items__P_420_0[i].init = item.getValue();
         }
       },
 
@@ -156,14 +156,14 @@
        * @throws {TypeError} When given argument is not a field.
        */
       redefineItem: function redefineItem(field) {
-        this.__typeCheck__P_426_1(field); // get the data entry
+        this.__typeCheck__P_420_1(field); // get the data entry
 
 
         var dataEntry;
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          if (this.__items__P_426_0[i].item === field) {
-            dataEntry = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          if (this.__items__P_420_0[i].item === field) {
+            dataEntry = this.__items__P_420_0[i];
             dataEntry.init = dataEntry.item.getValue();
             return;
           }
@@ -179,7 +179,7 @@
        * @throws {TypeError} When given argument is not a field.
        * @private
        */
-      __typeCheck__P_426_1: function __typeCheck__P_426_1(field) {
+      __typeCheck__P_420_1: function __typeCheck__P_420_1(field) {
         if (!qx.Class.hasInterface(field.constructor, qx.ui.form.IField)) {
           throw new TypeError("Field " + field + " not supported for resetting.");
         }
@@ -193,10 +193,10 @@
     */
     destruct: function destruct() {
       // holding references to widgets --> must set to null
-      this.__items__P_426_0 = null;
+      this.__items__P_420_0 = null;
     }
   });
   qx.ui.form.Resetter.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resetter.js.map?dt=1599312853706
+//# sourceMappingURL=Resetter.js.map?dt=1599343237482

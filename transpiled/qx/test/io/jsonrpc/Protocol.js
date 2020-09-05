@@ -9,7 +9,7 @@
         "construct": true,
         "require": true
       },
-      "qx.test.io.jsonrpc.MAssert": {
+      "qx.test.io.MAssert": {
         "require": true
       },
       "qx.io.jsonrpc.protocol.Parser": {
@@ -21,9 +21,27 @@
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /* ************************************************************************
+  
+     qooxdoo - the new era of web development
+  
+     http://qooxdoo.org
+  
+     Copyright:
+       2020 Christian Boulanger
+  
+     License:
+       MIT: https://opensource.org/licenses/MIT
+       See the LICENSE file in the project's top-level directory for details.
+  
+     Authors:
+       * Christian Boulanger (cboulanger)
+  
+  ************************************************************************ */
   qx.Class.define("qx.test.io.jsonrpc.Protocol", {
     extend: qx.dev.unit.TestCase,
-    include: [qx.test.io.jsonrpc.MAssert],
+    include: [qx.test.io.MAssert],
 
     construct() {
       qx.dev.unit.TestCase.constructor.call(this);
@@ -91,4 +109,4 @@
   qx.test.io.jsonrpc.Protocol.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Protocol.js.map?dt=1599312838662
+//# sourceMappingURL=Protocol.js.map?dt=1599343222983

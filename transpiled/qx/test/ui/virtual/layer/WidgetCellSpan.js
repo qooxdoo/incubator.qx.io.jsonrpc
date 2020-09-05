@@ -47,17 +47,17 @@
 
         this._disposeArray("_pool");
 
-        this.__cellRenderer__P_351_0.dispose();
+        this.__cellRenderer__P_345_0.dispose();
 
-        this.__rowConfig__P_351_1.dispose();
+        this.__rowConfig__P_345_1.dispose();
 
-        this.__columnConfig__P_351_2.dispose();
+        this.__columnConfig__P_345_2.dispose();
       },
       _createLayer: function _createLayer() {
-        this.__cellRenderer__P_351_0 = new qx.ui.virtual.cell.Cell();
-        this.__rowConfig__P_351_1 = new qx.ui.virtual.core.Axis(10, 100);
-        this.__columnConfig__P_351_2 = new qx.ui.virtual.core.Axis(20, 100);
-        return new qx.ui.virtual.layer.WidgetCellSpan(this, this.__rowConfig__P_351_1, this.__columnConfig__P_351_2);
+        this.__cellRenderer__P_345_0 = new qx.ui.virtual.cell.Cell();
+        this.__rowConfig__P_345_1 = new qx.ui.virtual.core.Axis(10, 100);
+        this.__columnConfig__P_345_2 = new qx.ui.virtual.core.Axis(20, 100);
+        return new qx.ui.virtual.layer.WidgetCellSpan(this, this.__rowConfig__P_345_1, this.__columnConfig__P_345_2);
       },
       getCellWidget: function getCellWidget(row, column) {
         var widget = this._pool.pop() || new qx.ui.core.Widget();
@@ -129,10 +129,10 @@
       }
     },
     destruct: function destruct() {
-      this.__cellRenderer__P_351_0 = null;
+      this.__cellRenderer__P_345_0 = null;
     }
   });
   qx.test.ui.virtual.layer.WidgetCellSpan.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WidgetCellSpan.js.map?dt=1599312846546
+//# sourceMappingURL=WidgetCellSpan.js.map?dt=1599343230214

@@ -96,49 +96,49 @@
         var expected = this.getVisibleItemsFrom(root, [root]);
         qx.lang.Array.insertAt(expected, root, 0);
 
-        this.__testBuildLookupTable__P_344_0(expected);
+        this.__testBuildLookupTable__P_338_0(expected);
       },
       testBuildLookupTableWithOpenNodes: function testBuildLookupTableWithOpenNodes() {
         var root = this.createModelAndSetModel(3);
         var nodesToOpen = [root, root.getChildren().getItem(4), root.getChildren().getItem(4).getChildren().getItem(2)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         var expected = this.getVisibleItemsFrom(root, nodesToOpen);
         qx.lang.Array.insertAt(expected, root, 0);
 
-        this.__testBuildLookupTable__P_344_0(expected);
+        this.__testBuildLookupTable__P_338_0(expected);
       },
       testBuildLookupTableWithRemovedNodes: function testBuildLookupTableWithRemovedNodes() {
         var root = this.createModelAndSetModel(3);
         var nodesToOpen = [root, root.getChildren().getItem(4), root.getChildren().getItem(4).getChildren().getItem(2)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         this.tree.closeNode(nodesToOpen[nodesToOpen.length - 1]);
         nodesToOpen.pop();
         var expected = this.getVisibleItemsFrom(root, nodesToOpen);
         qx.lang.Array.insertAt(expected, root, 0);
 
-        this.__testBuildLookupTable__P_344_0(expected);
+        this.__testBuildLookupTable__P_338_0(expected);
       },
       testBuildLookupTableWithClosedRoot: function testBuildLookupTableWithClosedRoot() {
         var root = this.createModelAndSetModel(1);
         this.tree.closeNode(root);
 
-        this.__testBuildLookupTable__P_344_0([root]);
+        this.__testBuildLookupTable__P_338_0([root]);
       },
       testBuildLookupTableWithNoModel: function testBuildLookupTableWithNoModel() {
         this.createModelAndSetModel(1);
         this.tree.setModel(null);
 
-        this.__testBuildLookupTable__P_344_0([]);
+        this.__testBuildLookupTable__P_338_0([]);
       },
       testBuildLookupTableOnModelChange: function testBuildLookupTableOnModelChange() {
         var root = this.createModelAndSetModel(1);
         var nodesToOpen = [root, root.getChildren().getItem(2)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         var newBranch = new qx.test.ui.tree.virtual.Node("New Branch");
 
@@ -148,20 +148,20 @@
         var expected = this.getVisibleItemsFrom(root, nodesToOpen);
         qx.lang.Array.insertAt(expected, root, 0);
 
-        this.__testBuildLookupTable__P_344_0(expected);
+        this.__testBuildLookupTable__P_338_0(expected);
       },
       testBuildLookupTableWithHiddenRoot: function testBuildLookupTableWithHiddenRoot() {
         var root = this.createModelAndSetModel(1);
         this.tree.setHideRoot(true);
         var expected = this.getVisibleItemsFrom(root, [root]);
 
-        this.__testBuildLookupTable__P_344_0(expected);
+        this.__testBuildLookupTable__P_338_0(expected);
       },
       testBuildLookupWithoutLeafs: function testBuildLookupWithoutLeafs() {
         var root = this.createModelAndSetModel(2);
         var nodesToOpen = [root, root.getChildren().getItem(2)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         this.tree.setShowLeafs(false);
         var allVisibleItems = this.getVisibleItemsFrom(root, nodesToOpen);
@@ -176,9 +176,9 @@
           }
         }
 
-        this.__testBuildLookupTable__P_344_0(expected);
+        this.__testBuildLookupTable__P_338_0(expected);
       },
-      __testBuildLookupTable__P_344_0: function __testBuildLookupTable__P_344_0(expected) {
+      __testBuildLookupTable__P_338_0: function __testBuildLookupTable__P_338_0(expected) {
         this.assertArrayEquals(expected, this.tree.getLookupTable().toArray());
         this.assertEquals(expected.length, this.tree.getPane().getRowConfig().getItemCount());
       },
@@ -213,12 +213,12 @@
         var spy = this.spy(this.tree, "buildLookupTable");
         var removed = root.getChildren().getItem(2).getChildren().removeAll();
 
-        this.__disposeChildren__P_344_2(removed);
+        this.__disposeChildren__P_338_2(removed);
 
         this.assertCalledOnce(spy);
         removed = root.getChildren().removeAll();
 
-        this.__disposeChildren__P_344_2(removed);
+        this.__disposeChildren__P_338_2(removed);
 
         this.assertCalledTwice(spy);
       },
@@ -245,7 +245,7 @@
         var root = this.createModelAndSetModel(2);
         var nodesToOpen = [root, root.getChildren().getItem(0)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         this.assertTrue(this.tree.isNodeOpen(nodesToOpen[0]));
         this.assertTrue(this.tree.isNodeOpen(nodesToOpen[1]));
@@ -255,7 +255,7 @@
         var root = this.createModelAndSetModel(3);
         var nodesToOpen = [root, root.getChildren().getItem(0)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         this.assertArrayEquals(nodesToOpen, this.tree.getOpenNodes());
         this.tree.openNode(nodesToOpen[1]);
@@ -265,7 +265,7 @@
         var root = this.createModelAndSetModel(2);
         var nodesToOpen = [root, root.getChildren().getItem(0)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         this.assertArrayEquals(nodesToOpen, this.tree.getOpenNodes());
         this.tree.closeNode(nodesToOpen[1]);
@@ -276,7 +276,7 @@
         var root = this.createModelAndSetModel(2);
         var nodesToOpen = [root, root.getChildren().getItem(0)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
         this.assertArrayEquals(nodesToOpen, this.tree.getOpenNodes());
         this.tree.closeNode(nodesToOpen[1]);
@@ -306,21 +306,21 @@
         var root = this.createModelAndSetModel(3);
         var nodesToOpen = [root, root.getChildren().getItem(2), root.getChildren().getItem(2).getChildren().getItem(3), root.getChildren().getItem(2).getChildren().getItem(3).getChildren().getItem(1)];
 
-        this.__openNodes__P_344_1(nodesToOpen);
+        this.__openNodes__P_338_1(nodesToOpen);
 
-        this.assertEquals(0, this.tree.getLevel(this.__getRowFrom__P_344_3(nodesToOpen[0])));
-        this.assertEquals(1, this.tree.getLevel(this.__getRowFrom__P_344_3(nodesToOpen[1])));
-        this.assertEquals(2, this.tree.getLevel(this.__getRowFrom__P_344_3(nodesToOpen[2])));
-        this.assertEquals(3, this.tree.getLevel(this.__getRowFrom__P_344_3(nodesToOpen[3])));
-        this.assertEquals(4, this.tree.getLevel(this.__getRowFrom__P_344_3(nodesToOpen[3].getChildren().getItem(4))));
+        this.assertEquals(0, this.tree.getLevel(this.__getRowFrom__P_338_3(nodesToOpen[0])));
+        this.assertEquals(1, this.tree.getLevel(this.__getRowFrom__P_338_3(nodesToOpen[1])));
+        this.assertEquals(2, this.tree.getLevel(this.__getRowFrom__P_338_3(nodesToOpen[2])));
+        this.assertEquals(3, this.tree.getLevel(this.__getRowFrom__P_338_3(nodesToOpen[3])));
+        this.assertEquals(4, this.tree.getLevel(this.__getRowFrom__P_338_3(nodesToOpen[3].getChildren().getItem(4))));
       },
       testGetLevelWithHiddenRoot: function testGetLevelWithHiddenRoot() {
         var root = this.createModelAndSetModel(1);
         this.tree.openNode(root.getChildren().getItem(4));
         this.tree.setHideRoot(true);
         var excpected = [root.getChildren().getItem(4), root.getChildren().getItem(4).getChildren().getItem(2)];
-        this.assertEquals(0, this.tree.getLevel(this.__getRowFrom__P_344_3(excpected[0])));
-        this.assertEquals(1, this.tree.getLevel(this.__getRowFrom__P_344_3(excpected[1])));
+        this.assertEquals(0, this.tree.getLevel(this.__getRowFrom__P_338_3(excpected[0])));
+        this.assertEquals(1, this.tree.getLevel(this.__getRowFrom__P_338_3(excpected[1])));
       },
       testHasChildren: function testHasChildren() {
         var root = this.createModelAndSetModel(1);
@@ -348,22 +348,22 @@
       testSetOpenModeWithTap: function testSetOpenModeWithTap() {
         this.tree.setOpenMode("tap");
 
-        this.__testOpenMode__P_344_4(false, true);
+        this.__testOpenMode__P_338_4(false, true);
 
         this.tree.resetOpenMode();
 
-        this.__testOpenMode__P_344_4(true, false);
+        this.__testOpenMode__P_338_4(true, false);
       },
       testSetOpenModeWithNone: function testSetOpenModeWithNone() {
         this.tree.setOpenMode("none");
 
-        this.__testOpenMode__P_344_4(false, false);
+        this.__testOpenMode__P_338_4(false, false);
 
         this.tree.resetOpenMode();
 
-        this.__testOpenMode__P_344_4(true, false);
+        this.__testOpenMode__P_338_4(true, false);
       },
-      __testOpenMode__P_344_4: function __testOpenMode__P_344_4(dbltap, tap) {
+      __testOpenMode__P_338_4: function __testOpenMode__P_338_4(dbltap, tap) {
         var pane = this.tree.getPane();
         this.assertEquals(dbltap, pane.hasListener("cellDbltap"), "Expected " + (dbltap ? "" : "no ") + " listener for 'cellDbltap'!");
         this.assertEquals(tap, pane.hasListener("cellTap"), "Expected " + (tap ? "" : "no ") + " listener for 'cellTap'!");
@@ -421,7 +421,7 @@
         HELPER METHOD TO CALCULATE THE VISIBLE ITEMS
       ---------------------------------------------------------------------------
       */
-      __getRowFrom__P_344_3: function __getRowFrom__P_344_3(item) {
+      __getRowFrom__P_338_3: function __getRowFrom__P_338_3(item) {
         return this.tree.getLookupTable().indexOf(item);
       },
 
@@ -430,12 +430,12 @@
         HELPER METHOD TO OPEN NODES ON TREE
       ---------------------------------------------------------------------------
       */
-      __openNodes__P_344_1: function __openNodes__P_344_1(nodes) {
+      __openNodes__P_338_1: function __openNodes__P_338_1(nodes) {
         for (var i = 0; i < nodes.length; i++) {
           this.tree.openNodeWithoutScrolling(nodes[i]);
         }
       },
-      __disposeChildren__P_344_2: function __disposeChildren__P_344_2(nativeArray) {
+      __disposeChildren__P_338_2: function __disposeChildren__P_338_2(nativeArray) {
         for (var i = 0; i < nativeArray.length; i++) {
           nativeArray[i].dispose();
         }
@@ -445,4 +445,4 @@
   qx.test.ui.tree.virtual.Tree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Tree.js.map?dt=1599312845819
+//# sourceMappingURL=Tree.js.map?dt=1599343229467

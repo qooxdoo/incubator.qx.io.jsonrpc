@@ -35,47 +35,47 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__selectBox__P_297_0 = new qx.ui.form.SelectBox();
-        this.getRoot().add(this.__selectBox__P_297_0);
-        this.__comboBox__P_297_1 = new qx.ui.form.ComboBox();
-        this.getRoot().add(this.__comboBox__P_297_1);
+        this.__selectBox__P_291_0 = new qx.ui.form.SelectBox();
+        this.getRoot().add(this.__selectBox__P_291_0);
+        this.__comboBox__P_291_1 = new qx.ui.form.ComboBox();
+        this.getRoot().add(this.__comboBox__P_291_1);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.AbstractSelectBox.prototype.tearDown.base.call(this);
 
-        this.__selectBox__P_297_0.dispose();
+        this.__selectBox__P_291_0.dispose();
 
-        this.__selectBox__P_297_0 = null;
+        this.__selectBox__P_291_0 = null;
 
-        this.__comboBox__P_297_1.dispose();
+        this.__comboBox__P_291_1.dispose();
 
-        this.__comboBox__P_297_1 = null;
+        this.__comboBox__P_291_1 = null;
       },
       testStatePopupOpen: function testStatePopupOpen() {
-        this.__selectBox__P_297_0.open();
+        this.__selectBox__P_291_0.open();
 
         this.flush();
-        this.assertTrue(this.__selectBox__P_297_0.hasState("popupOpen"));
+        this.assertTrue(this.__selectBox__P_291_0.hasState("popupOpen"));
 
-        this.__selectBox__P_297_0.close();
-
-        this.flush();
-        this.assertFalse(this.__selectBox__P_297_0.hasState("popupOpen"));
-
-        this.__comboBox__P_297_1.open();
+        this.__selectBox__P_291_0.close();
 
         this.flush();
-        this.assertTrue(this.__comboBox__P_297_1.hasState("popupOpen"));
+        this.assertFalse(this.__selectBox__P_291_0.hasState("popupOpen"));
 
-        this.__comboBox__P_297_1.close();
+        this.__comboBox__P_291_1.open();
 
         this.flush();
-        this.assertFalse(this.__comboBox__P_297_1.hasState("popupOpen"));
+        this.assertTrue(this.__comboBox__P_291_1.hasState("popupOpen"));
+
+        this.__comboBox__P_291_1.close();
+
+        this.flush();
+        this.assertFalse(this.__comboBox__P_291_1.hasState("popupOpen"));
       }
     }
   });
   qx.test.ui.form.AbstractSelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractSelectBox.js.map?dt=1599312842893
+//# sourceMappingURL=AbstractSelectBox.js.map?dt=1599343226528

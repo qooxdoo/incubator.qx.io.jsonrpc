@@ -59,11 +59,11 @@
     construct: function construct(columnWidths, labelArr) {
       qx.ui.progressive.headfoot.Abstract.constructor.call(this); // Save the Widths object containing all of our column widths
 
-      this.__columnWidths__P_491_0 = columnWidths; // Get the array of column width data
+      this.__columnWidths__P_485_0 = columnWidths; // Get the array of column width data
 
       var columnData = columnWidths.getData(); // Create a place to put labels
 
-      this.__labels__P_491_1 = []; // For each label...
+      this.__labels__P_485_1 = []; // For each label...
 
       for (var i = 0; i < columnData.length; i++) {
         // ... create an atom to hold the label
@@ -72,7 +72,7 @@
 
         this.add(label); // Save this label so we can resize it later
 
-        this.__labels__P_491_1[i] = label;
+        this.__labels__P_485_1[i] = label;
       } // Add a spacer to take up the scroll-bar width
 
 
@@ -96,9 +96,9 @@
       // manager is that the semantics of flex and percent are exactly the same
       // as in the widget code.
 
-      this.__layout__P_491_2 = new qx.ui.layout.HBox();
+      this.__layout__P_485_2 = new qx.ui.layout.HBox();
 
-      this.__layout__P_491_2.connectToWidget(this);
+      this.__layout__P_485_2.connectToWidget(this);
     },
     properties: {
       appearance: {
@@ -107,10 +107,10 @@
       }
     },
     members: {
-      __columnWidths__P_491_0: null,
-      __bCalculateWidths__P_491_3: null,
-      __labels__P_491_1: null,
-      __layout__P_491_2: null,
+      __columnWidths__P_485_0: null,
+      __bCalculateWidths__P_485_3: null,
+      __labels__P_485_1: null,
+      __layout__P_485_2: null,
       // overridden
       join: function join(progressive) {
         // Save the progressive handle
@@ -123,8 +123,8 @@
        * @return {Array} List of child items
        */
       getLayoutChildren: function getLayoutChildren() {
-        if (this.__bCalculateWidths__P_491_3) {
-          return this.__columnWidths__P_491_0.getData();
+        if (this.__bCalculateWidths__P_485_3) {
+          return this.__columnWidths__P_485_0.getData();
         } else {
           return qx.ui.progressive.headfoot.TableHeading.prototype.getLayoutChildren.base.call(this);
         }
@@ -142,7 +142,7 @@
         var insets = this.getInsets();
         var width = this.getBounds().width - qx.bom.element.Scroll.getScrollbarWidth() - insets.left - insets.right; // Compute the column widths
 
-        this.__bCalculateWidths__P_491_3 = true;
+        this.__bCalculateWidths__P_485_3 = true;
         var padding = {
           top: this.getPaddingTop(),
           right: this.getPaddingRight(),
@@ -150,21 +150,21 @@
           left: this.getPaddingLeft()
         };
 
-        this.__layout__P_491_2.renderLayout(width, 100, padding);
+        this.__layout__P_485_2.renderLayout(width, 100, padding);
 
-        this.__bCalculateWidths__P_491_3 = false; // Get the column data
+        this.__bCalculateWidths__P_485_3 = false; // Get the column data
 
-        var columnData = this.__columnWidths__P_491_0.getData(); // Get the column width data.  For each label...
+        var columnData = this.__columnWidths__P_485_0.getData(); // Get the column width data.  For each label...
 
 
         for (var i = 0; i < columnData.length; i++) {
           // ... reset the width of the corresponding column (label)
-          this.__labels__P_491_1[i].setWidth(columnData[i].getComputedWidth());
+          this.__labels__P_485_1[i].setWidth(columnData[i].getComputedWidth());
         }
       }
     },
     destruct: function destruct() {
-      this.__columnWidths__P_491_0 = this.__labels__P_491_1 = null;
+      this.__columnWidths__P_485_0 = this.__labels__P_485_1 = null;
 
       this._disposeObjects("_layout");
     }
@@ -172,4 +172,4 @@
   qx.ui.progressive.headfoot.TableHeading.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TableHeading.js.map?dt=1599312858842
+//# sourceMappingURL=TableHeading.js.map?dt=1599343242578

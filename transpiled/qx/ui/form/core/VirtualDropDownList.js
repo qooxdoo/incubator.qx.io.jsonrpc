@@ -74,9 +74,9 @@
 
       this._createChildControl("list");
 
-      this.addListener("changeVisibility", this.__onChangeVisibility__P_435_0, this);
-      this.__defaultSelection__P_435_1 = new qx.data.Array();
-      this.initSelection(this.__defaultSelection__P_435_1);
+      this.addListener("changeVisibility", this.__onChangeVisibility__P_429_0, this);
+      this.__defaultSelection__P_429_1 = new qx.data.Array();
+      this.initSelection(this.__defaultSelection__P_429_1);
     },
     properties: {
       // overridden
@@ -132,13 +132,13 @@
        * @type {Boolean} Indicator to ignore selection changes from the
        * {@link #selection} array.
        */
-      __ignoreSelection__P_435_2: false,
+      __ignoreSelection__P_429_2: false,
 
       /** @type {Boolean} Indicator to ignore selection changes from the list. */
-      __ignoreListSelection__P_435_3: false,
+      __ignoreListSelection__P_429_3: false,
 
       /** @type {qx.data.Array} The initial selection array. */
-      __defaultSelection__P_435_1: null,
+      __defaultSelection__P_429_1: null,
 
       /**
        * When the drop-down is allowed to grow wider than its parent,
@@ -147,7 +147,7 @@
        *
        * @type {Number}
        */
-      __cachedMaxListItemWidth__P_435_4: 0,
+      __cachedMaxListItemWidth__P_429_4: 0,
 
       /*
       ---------------------------------------------------------------------------
@@ -177,14 +177,14 @@
        */
       setPreselected: function setPreselected(modelItem) {
         this._preselected = modelItem;
-        this.__ignoreListSelection__P_435_3 = true;
+        this.__ignoreListSelection__P_429_3 = true;
         var listSelection = this.getChildControl("list").getSelection();
         var helper = new qx.data.Array([modelItem]);
 
-        this.__synchronizeSelection__P_435_5(helper, listSelection);
+        this.__synchronizeSelection__P_429_5(helper, listSelection);
 
         helper.dispose();
-        this.__ignoreListSelection__P_435_3 = false;
+        this.__ignoreListSelection__P_429_3 = false;
       },
 
       /*
@@ -235,7 +235,7 @@
        */
       _handleKeyboard: function _handleKeyboard(event) {
         if (this.isVisible() && event.getKeyIdentifier() === "Enter") {
-          this.__selectPreselected__P_435_6();
+          this.__selectPreselected__P_429_6();
 
           return;
         }
@@ -252,7 +252,7 @@
        * @param event {qx.event.type.Mouse} The mouse event.
        */
       _handlePointer: function _handlePointer(event) {
-        this.__selectPreselected__P_435_6();
+        this.__selectPreselected__P_429_6();
       },
 
       /**
@@ -262,23 +262,23 @@
        *
        * @param event {qx.event.type.Data} The data event.
        */
-      __onChangeSelection__P_435_7: function __onChangeSelection__P_435_7(event) {
-        if (this.__ignoreSelection__P_435_2) {
+      __onChangeSelection__P_429_7: function __onChangeSelection__P_429_7(event) {
+        if (this.__ignoreSelection__P_429_2) {
           return;
         }
 
         var selection = this.getSelection();
         var listSelection = this.getChildControl("list").getSelection();
-        this.__ignoreListSelection__P_435_3 = true;
+        this.__ignoreListSelection__P_429_3 = true;
 
-        this.__synchronizeSelection__P_435_5(selection, listSelection);
+        this.__synchronizeSelection__P_429_5(selection, listSelection);
 
-        this.__ignoreListSelection__P_435_3 = false;
-        this.__ignoreSelection__P_435_2 = true;
+        this.__ignoreListSelection__P_429_3 = false;
+        this.__ignoreSelection__P_429_2 = true;
 
-        this.__synchronizeSelection__P_435_5(listSelection, selection);
+        this.__synchronizeSelection__P_429_5(listSelection, selection);
 
-        this.__ignoreSelection__P_435_2 = false;
+        this.__ignoreSelection__P_429_2 = false;
       },
 
       /**
@@ -288,7 +288,7 @@
        * @param event {qx.event.type.Data} The data event.
        */
       _onListChangeSelection: function _onListChangeSelection(event) {
-        if (this.__ignoreListSelection__P_435_3) {
+        if (this.__ignoreListSelection__P_429_3) {
           return;
         }
 
@@ -297,11 +297,11 @@
         if (this.isVisible()) {
           this.setPreselected(listSelection.getItem(0));
         } else {
-          this.__ignoreSelection__P_435_2 = true;
+          this.__ignoreSelection__P_429_2 = true;
 
-          this.__synchronizeSelection__P_435_5(listSelection, this.getSelection());
+          this.__synchronizeSelection__P_429_5(listSelection, this.getSelection());
 
-          this.__ignoreSelection__P_435_2 = false;
+          this.__ignoreSelection__P_429_2 = false;
         }
       },
 
@@ -311,13 +311,13 @@
        *
        * @param event {qx.event.type.Data} The event.
        */
-      __onChangeVisibility__P_435_0: function __onChangeVisibility__P_435_0(event) {
+      __onChangeVisibility__P_429_0: function __onChangeVisibility__P_429_0(event) {
         if (this.isVisible()) {
           if (this._preselected == null) {
             var selection = this.getSelection();
             var listSelection = this.getChildControl("list").getSelection();
 
-            this.__synchronizeSelection__P_435_5(selection, listSelection);
+            this.__synchronizeSelection__P_429_5(selection, listSelection);
           }
 
           this._adjustSize();
@@ -373,13 +373,13 @@
       */
       // property apply
       _applySelection: function _applySelection(value, old) {
-        value.addListener("change", this.__onChangeSelection__P_435_7, this);
+        value.addListener("change", this.__onChangeSelection__P_429_7, this);
 
         if (old != null) {
-          old.removeListener("change", this.__onChangeSelection__P_435_7, this);
+          old.removeListener("change", this.__onChangeSelection__P_429_7, this);
         }
 
-        this.__synchronizeSelection__P_435_5(value, this.getChildControl("list").getSelection(value));
+        this.__synchronizeSelection__P_429_5(value, this.getChildControl("list").getSelection(value));
       },
 
       /*
@@ -392,7 +392,7 @@
        * Helper method to select the current preselected item, also closes the
        * drop-down.
        */
-      __selectPreselected__P_435_6: function __selectPreselected__P_435_6() {
+      __selectPreselected__P_429_6: function __selectPreselected__P_429_6() {
         if (this._preselected != null) {
           var selection = this.getSelection();
           selection.splice(0, 1, this._preselected);
@@ -408,7 +408,7 @@
        * @param source {qx.data.Array} The source selection.
        * @param target {qx.data.Array} The target selection.
        */
-      __synchronizeSelection__P_435_5: function __synchronizeSelection__P_435_5(source, target) {
+      __synchronizeSelection__P_429_5: function __synchronizeSelection__P_429_5(source, target) {
         if (source.equals(target)) {
           return;
         }
@@ -454,8 +454,8 @@
           // Let the drop-down handle its own width.
           this.setWidth(null);
 
-          if (this.__cachedMaxListItemWidth__P_435_4 > 0) {
-            uiList.setWidth(this.__cachedMaxListItemWidth__P_435_4);
+          if (this.__cachedMaxListItemWidth__P_429_4 > 0) {
+            uiList.setWidth(this.__cachedMaxListItemWidth__P_429_4);
           } else {
             uiList.setWidth(width);
           }
@@ -582,7 +582,7 @@
           tempListItem.dispose();
         }
 
-        this.__cachedMaxListItemWidth__P_435_4 = maxWidth;
+        this.__cachedMaxListItemWidth__P_429_4 = maxWidth;
       },
 
       /**
@@ -592,16 +592,16 @@
        * @protected
        */
       _getMaxListItemWidth: function _getMaxListItemWidth() {
-        return this.__cachedMaxListItemWidth__P_435_4;
+        return this.__cachedMaxListItemWidth__P_429_4;
       }
     },
     destruct: function destruct() {
-      if (this.__defaultSelection__P_435_1) {
-        this.__defaultSelection__P_435_1.dispose();
+      if (this.__defaultSelection__P_429_1) {
+        this.__defaultSelection__P_429_1.dispose();
       }
     }
   });
   qx.ui.form.core.VirtualDropDownList.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualDropDownList.js.map?dt=1599312854512
+//# sourceMappingURL=VirtualDropDownList.js.map?dt=1599343238166

@@ -229,9 +229,10 @@ var envinfo = {
   "qx.promise.longStackTraces": true,
   "qx.compiler.version": "1.0.0-beta-20200904-1332",
   "qx.icontheme": "Tango",
+  "qx.test.delay.scale": 1,
   "qx.buildType": "source",
   "qx.headless": false,
-  "testtapper.testNameSpace": "qx.test.io.jsonrpc",
+  "testtapper.testNameSpace": "qx.test.io",
   "excludeFromAPIViewer": [
     "qxl.*",
     "q",
@@ -358,7 +359,6 @@ qx.$$loader = {
   },
   "8": {
     "uris": [
-      "../transpiled/qx/test/io/jsonrpc/MAssert.js",
       "../transpiled/qx/test/io/jsonrpc/HttpTransport.js",
       "../transpiled/qx/test/io/jsonrpc/Protocol.js"
     ]

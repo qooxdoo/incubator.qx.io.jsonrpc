@@ -74,9 +74,9 @@
     construct: function construct(label, icon) {
       qx.ui.form.Button.constructor.call(this, label, icon); // create the timer and add the listener
 
-      this.__timer__P_425_0 = new qx.event.AcceleratingTimer();
+      this.__timer__P_419_0 = new qx.event.AcceleratingTimer();
 
-      this.__timer__P_425_0.addListener("interval", this._onInterval, this);
+      this.__timer__P_419_0.addListener("interval", this._onInterval, this);
     },
     events: {
       /**
@@ -128,8 +128,8 @@
       }
     },
     members: {
-      __executed__P_425_1: null,
-      __timer__P_425_0: null,
+      __executed__P_419_1: null,
+      __timer__P_419_0: null,
 
       /**
        * Calling this function is like a tap from the user on the
@@ -143,7 +143,7 @@
           // if the state pressed must be applied (first call)
           if (!this.hasState("pressed")) {
             // start the timer
-            this.__startInternalTimer__P_425_2();
+            this.__startInternalTimer__P_419_2();
           } // set the states
 
 
@@ -169,7 +169,7 @@
 
         if (this.hasState("pressed")) {
           // if the button has not been executed
-          if (!this.__executed__P_425_1) {
+          if (!this.__executed__P_419_1) {
             this.execute();
           }
         } // remove button states
@@ -178,7 +178,7 @@
         this.removeState("pressed");
         this.removeState("abandoned"); // stop the repeat timer and therefore the execution
 
-        this.__stopInternalTimer__P_425_3();
+        this.__stopInternalTimer__P_419_3();
       },
 
       /*
@@ -200,7 +200,7 @@
           this.removeState("pressed");
           this.removeState("abandoned"); // stop the repeat timer and therefore the execution
 
-          this.__stopInternalTimer__P_425_3();
+          this.__stopInternalTimer__P_419_3();
         }
       },
 
@@ -228,7 +228,7 @@
           this.removeState("abandoned");
           this.addState("pressed");
 
-          this.__timer__P_425_0.start();
+          this.__timer__P_419_0.start();
         }
 
         this.addState("hovered");
@@ -254,7 +254,7 @@
           this.removeState("pressed");
           this.addState("abandoned");
 
-          this.__timer__P_425_0.stop();
+          this.__timer__P_419_0.stop();
         }
       },
 
@@ -276,7 +276,7 @@
 
         this.capture();
 
-        this.__startInternalTimer__P_425_2();
+        this.__startInternalTimer__P_419_2();
 
         e.stopPropagation();
       },
@@ -296,12 +296,12 @@
         if (!this.hasState("abandoned")) {
           this.addState("hovered");
 
-          if (this.hasState("pressed") && !this.__executed__P_425_1) {
+          if (this.hasState("pressed") && !this.__executed__P_419_1) {
             this.execute();
           }
         }
 
-        this.__stopInternalTimer__P_425_3();
+        this.__stopInternalTimer__P_419_3();
 
         e.stopPropagation();
       },
@@ -322,7 +322,7 @@
           case "Enter":
           case "Space":
             if (this.hasState("pressed")) {
-              if (!this.__executed__P_425_1) {
+              if (!this.__executed__P_419_1) {
                 this.execute();
               }
 
@@ -330,7 +330,7 @@
               this.removeState("abandoned");
               e.stopPropagation();
 
-              this.__stopInternalTimer__P_425_3();
+              this.__stopInternalTimer__P_419_3();
             }
 
         }
@@ -353,7 +353,7 @@
             this.addState("pressed");
             e.stopPropagation();
 
-            this.__startInternalTimer__P_425_2();
+            this.__startInternalTimer__P_419_2();
 
         }
       },
@@ -368,7 +368,7 @@
        * @param e {qx.event.type.Event} interval event
        */
       _onInterval: function _onInterval(e) {
-        this.__executed__P_425_1 = true;
+        this.__executed__P_419_1 = true;
         this.fireEvent("execute");
       },
 
@@ -383,11 +383,11 @@
        * events in an interval. It also presses the button.
        *
        */
-      __startInternalTimer__P_425_2: function __startInternalTimer__P_425_2() {
+      __startInternalTimer__P_419_2: function __startInternalTimer__P_419_2() {
         this.fireEvent("press");
-        this.__executed__P_425_1 = false;
+        this.__executed__P_419_1 = false;
 
-        this.__timer__P_425_0.set({
+        this.__timer__P_419_0.set({
           interval: this.getInterval(),
           firstInterval: this.getFirstInterval(),
           minimum: this.getMinTimer(),
@@ -402,10 +402,10 @@
        * Stops the internal timer and releases the button.
        *
        */
-      __stopInternalTimer__P_425_3: function __stopInternalTimer__P_425_3() {
+      __stopInternalTimer__P_419_3: function __stopInternalTimer__P_419_3() {
         this.fireEvent("release");
 
-        this.__timer__P_425_0.stop();
+        this.__timer__P_419_0.stop();
 
         this.removeState("abandoned");
         this.removeState("pressed");
@@ -418,10 +418,10 @@
       *****************************************************************************
       */
     destruct: function destruct() {
-      this._disposeObjects("__timer__P_425_0");
+      this._disposeObjects("__timer__P_419_0");
     }
   });
   qx.ui.form.RepeatButton.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RepeatButton.js.map?dt=1599312853678
+//# sourceMappingURL=RepeatButton.js.map?dt=1599343237454

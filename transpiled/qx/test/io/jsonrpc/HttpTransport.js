@@ -11,7 +11,7 @@
       "qx.dev.unit.MMock": {
         "require": true
       },
-      "qx.test.io.jsonrpc.MAssert": {
+      "qx.test.io.MAssert": {
         "require": true
       },
       "qx.dev.unit.Sinon": {},
@@ -55,7 +55,7 @@
    */
   qx.Class.define("qx.test.io.jsonrpc.HttpTransport", {
     extend: qx.dev.unit.TestCase,
-    include: [qx.dev.unit.MMock, qx.test.io.jsonrpc.MAssert],
+    include: [qx.dev.unit.MMock, qx.test.io.MAssert],
     members: {
       setUp() {
         this.sinon = qx.dev.unit.Sinon.getSinon();
@@ -327,4 +327,4 @@
   qx.test.io.jsonrpc.HttpTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HttpTransport.js.map?dt=1599312838629
+//# sourceMappingURL=HttpTransport.js.map?dt=1599343222957

@@ -62,9 +62,9 @@
      */
     construct: function construct(callback, context) {
       qx.core.Object.constructor.call(this);
-      this.__callback__P_573_0 = callback;
-      this.__context__P_573_1 = context || null;
-      this.__manager__P_573_2 = qx.util.DeferredCallManager.getInstance();
+      this.__callback__P_567_0 = callback;
+      this.__context__P_567_1 = context || null;
+      this.__manager__P_567_2 = qx.util.DeferredCallManager.getInstance();
     },
 
     /*
@@ -73,22 +73,22 @@
     *****************************************************************************
     */
     members: {
-      __callback__P_573_0: null,
-      __context__P_573_1: null,
-      __manager__P_573_2: null,
+      __callback__P_567_0: null,
+      __context__P_567_1: null,
+      __manager__P_567_2: null,
 
       /**
        * Prevent the callback from being called.
        */
       cancel: function cancel() {
-        this.__manager__P_573_2.cancel(this);
+        this.__manager__P_567_2.cancel(this);
       },
 
       /**
        * Issue a deferred call of the callback.
        */
       schedule: function schedule() {
-        this.__manager__P_573_2.schedule(this);
+        this.__manager__P_567_2.schedule(this);
       },
 
       /**
@@ -97,13 +97,13 @@
       call: function call() {
         {
           // warn if the context is disposed
-          var context = this.__context__P_573_1;
+          var context = this.__context__P_567_1;
 
           if (context && context.isDisposed && context.isDisposed()) {
             this.warn("The context object '" + context + "' of the defered call '" + this + "'is already disposed.");
           }
         }
-        this.__context__P_573_1 ? this.__callback__P_573_0.apply(this.__context__P_573_1) : this.__callback__P_573_0();
+        this.__context__P_567_1 ? this.__callback__P_567_0.apply(this.__context__P_567_1) : this.__callback__P_567_0();
       }
     },
 
@@ -114,10 +114,10 @@
     */
     destruct: function destruct() {
       this.cancel();
-      this.__context__P_573_1 = this.__callback__P_573_0 = this.__manager__P_573_2 = null;
+      this.__context__P_567_1 = this.__callback__P_567_0 = this.__manager__P_567_2 = null;
     }
   });
   qx.util.DeferredCall.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DeferredCall.js.map?dt=1599312865324
+//# sourceMappingURL=DeferredCall.js.map?dt=1599343249044

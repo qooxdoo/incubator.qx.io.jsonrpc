@@ -32,11 +32,11 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__groups__P_372_0 = [];
+      this.__groups__P_366_0 = [];
     },
     members: {
-      __groups__P_372_0: null,
-      __activeGroup__P_372_1: null,
+      __groups__P_366_0: null,
+      __activeGroup__P_366_1: null,
 
       /**
        * Add command group.
@@ -50,14 +50,14 @@
           this.assertInstance(group, qx.ui.command.Group, "Given group is not an instance of qx.ui.command.Group");
         }
 
-        if (this.__groups__P_372_0.includes(group)) {
+        if (this.__groups__P_366_0.includes(group)) {
           {
             this.debug("Group is already added!");
           }
           return false;
         }
 
-        this.__groups__P_372_0.push(group); // deactivate added group to prevent collusions
+        this.__groups__P_366_0.push(group); // deactivate added group to prevent collusions
 
 
         group.setActive(false);
@@ -92,7 +92,7 @@
           this.assertInstance(group, qx.ui.command.Group, "Group must be an instance of qx.ui.command.Group");
         }
 
-        var index = this.__groups__P_372_0.indexOf(group);
+        var index = this.__groups__P_366_0.indexOf(group);
 
         if (index === -1) {
           {
@@ -102,11 +102,11 @@
 
 
         if (this.getActive() === group) {
-          this.__activeGroup__P_372_1 = null;
+          this.__activeGroup__P_366_1 = null;
         } // remove group from internal array
 
 
-        this.__groups__P_372_0.splice(index, 1);
+        this.__groups__P_366_0.splice(index, 1);
 
         return group;
       },
@@ -131,12 +131,12 @@
         } // iterate through all groups and deactivate all expect the given one
 
 
-        for (var i = 0; i < this.__groups__P_372_0.length; i++) {
-          var item = this.__groups__P_372_0[i];
+        for (var i = 0; i < this.__groups__P_366_0.length; i++) {
+          var item = this.__groups__P_366_0[i];
 
           if (item == group) {
             item.setActive(true);
-            this.__activeGroup__P_372_1 = item;
+            this.__activeGroup__P_366_1 = item;
             continue;
           }
 
@@ -152,15 +152,15 @@
        * @return {qx.ui.command.Group | null} Active command group
        */
       getActive: function getActive() {
-        return this.__activeGroup__P_372_1;
+        return this.__activeGroup__P_366_1;
       },
 
       /**
        * Blocks the active command group.
        */
       block: function block() {
-        if (this.__activeGroup__P_372_1) {
-          this.__activeGroup__P_372_1.setActive(false);
+        if (this.__activeGroup__P_366_1) {
+          this.__activeGroup__P_366_1.setActive(false);
         }
       },
 
@@ -168,8 +168,8 @@
        * Unblocks the active command group.
        */
       unblock: function unblock() {
-        if (this.__activeGroup__P_372_1) {
-          this.__activeGroup__P_372_1.setActive(true);
+        if (this.__activeGroup__P_366_1) {
+          this.__activeGroup__P_366_1.setActive(true);
         }
       },
 
@@ -181,20 +181,20 @@
        * @return {qx.ui.command.Group | null} Command group or null
        */
       _getGroup: function _getGroup(group) {
-        var index = this.__groups__P_372_0.indexOf(group);
+        var index = this.__groups__P_366_0.indexOf(group);
 
         if (index === -1) {
           return null;
         }
 
-        return this.__groups__P_372_0[index];
+        return this.__groups__P_366_0[index];
       }
     },
     destruct: function destruct() {
-      this.__groups__P_372_0 = this.__activeGroup__P_372_1 = null;
+      this.__groups__P_366_0 = this.__activeGroup__P_366_1 = null;
     }
   });
   qx.ui.command.GroupManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GroupManager.js.map?dt=1599312849624
+//# sourceMappingURL=GroupManager.js.map?dt=1599343233369

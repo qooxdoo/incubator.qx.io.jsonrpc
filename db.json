@@ -7,7 +7,7 @@
     "qxl.versionlabel": "1.0.0-beta.3",
     "qx": "6.0.0-beta-20200904-1332"
   },
-  "environmentHash": "a4bc97a2d5801fd42e2fa41fdc9aa2285126a385",
+  "environmentHash": "7941ab30e4cb9013c0eef099ef3c2d46c4bb79e6",
   "compilerVersion": "1.0.0-beta-20200904-1332",
   "classInfo": {
     "qx.Annotation": {
@@ -4509,11 +4509,6 @@
       "mtime": "1985-10-26T08:15:00.000Z",
       "libraryName": "qx",
       "dependsOn": {
-        "qx.core.Environment": {
-          "load": true,
-          "defer": "load",
-          "construct": true
-        },
         "qx.Class": {
           "load": true,
           "usage": "dynamic"
@@ -4528,14 +4523,6 @@
       "extends": "qx.core.Object",
       "include": [],
       "implement": [],
-      "environment": {
-        "provided": [],
-        "required": {
-          "qx.test.delay.scale": {
-            "construct": true
-          }
-        }
-      },
       "hasDefer": null
     },
     "qx.dev.unit.JsUnitTestResult": {
@@ -7694,7 +7681,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Cancel": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7718,7 +7705,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Exception": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7736,7 +7723,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Protocol": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7756,7 +7743,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Transport": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7776,7 +7763,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.Client": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7787,8 +7774,8 @@
           "load": true,
           "construct": true
         },
-        "qx.io.graphql.protocol.Response": {},
         "qx.io.exception.Transport": {},
+        "qx.io.graphql.protocol.Response": {},
         "qx.io.exception.Protocol": {}
       },
       "extends": "qx.core.Object",
@@ -7797,7 +7784,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Message": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7816,7 +7803,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Request": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7836,7 +7823,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Response": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7857,7 +7844,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.Client": {
-      "mtime": "2020-09-05T13:33:04.582Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.core.Environment": {
@@ -7905,7 +7892,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Batch": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7930,7 +7917,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Error": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7951,7 +7938,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Message": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7969,7 +7956,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Notification": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7987,7 +7974,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Parser": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8011,7 +7998,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Request": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8036,7 +8023,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Result": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8054,7 +8041,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Abstract": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8072,7 +8059,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.transport.Http": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8106,7 +8093,7 @@
       "hasDefer": true
     },
     "qx.io.jsonrpc.transport.ITransport": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Interface": {
@@ -8705,7 +8692,7 @@
       "hasDefer": null
     },
     "qx.io.request.authentication.Bearer": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14690,28 +14677,21 @@
         "qx/static/blank.html"
       ]
     },
-    "qx.test.io.ImageLoader": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
+    "qx.test.io.MAssert": {
+      "mtime": "2020-09-05T21:59:30.359Z",
+      "libraryName": "qx.io",
       "dependsOn": {
-        "qx.Class": {
+        "qx.Mixin": {
           "load": true,
           "usage": "dynamic"
         },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.util.ResourceManager": {},
-        "qx.io.ImageLoader": {},
-        "qx.event.Timer": {}
+        "qx.lang.Json": {},
+        "qx.dev.unit.Sinon": {}
       },
-      "extends": "qx.dev.unit.TestCase",
+      "extends": null,
       "include": [],
       "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/colorstrip.gif"
-      ]
+      "hasDefer": null
     },
     "qx.test.io.MRemoteTest": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -14728,8 +14708,35 @@
       "implement": [],
       "hasDefer": null
     },
+    "qx.test.io.graphql.Client": {
+      "mtime": "2020-09-05T21:59:30.359Z",
+      "libraryName": "qx.io",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.dev.unit.TestCase": {
+          "load": true,
+          "construct": true
+        },
+        "qx.test.io.MAssert": {
+          "load": true
+        },
+        "qx.io.graphql.Client": {
+          "construct": true
+        },
+        "qx.io.graphql.protocol.Request": {}
+      },
+      "extends": "qx.dev.unit.TestCase",
+      "include": [
+        "qx.test.io.MAssert"
+      ],
+      "implement": [],
+      "hasDefer": null
+    },
     "qx.test.io.jsonrpc.HttpTransport": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14742,7 +14749,7 @@
         "qx.dev.unit.MMock": {
           "load": true
         },
-        "qx.test.io.jsonrpc.MAssert": {
+        "qx.test.io.MAssert": {
           "load": true
         },
         "qx.dev.unit.Sinon": {},
@@ -14761,29 +14768,13 @@
       "extends": "qx.dev.unit.TestCase",
       "include": [
         "qx.dev.unit.MMock",
-        "qx.test.io.jsonrpc.MAssert"
+        "qx.test.io.MAssert"
       ],
       "implement": [],
       "hasDefer": null
     },
-    "qx.test.io.jsonrpc.MAssert": {
-      "mtime": "2020-09-05T13:33:04.586Z",
-      "libraryName": "qx.io",
-      "dependsOn": {
-        "qx.Mixin": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.lang.Json": {},
-        "qx.dev.unit.Sinon": {}
-      },
-      "extends": null,
-      "include": [],
-      "implement": [],
-      "hasDefer": null
-    },
     "qx.test.io.jsonrpc.Protocol": {
-      "mtime": "2020-09-05T13:33:04.586Z",
+      "mtime": "2020-09-05T21:59:30.359Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14794,7 +14785,7 @@
           "load": true,
           "construct": true
         },
-        "qx.test.io.jsonrpc.MAssert": {
+        "qx.test.io.MAssert": {
           "load": true
         },
         "qx.io.jsonrpc.protocol.Parser": {
@@ -14806,535 +14797,10 @@
       },
       "extends": "qx.dev.unit.TestCase",
       "include": [
-        "qx.test.io.jsonrpc.MAssert"
+        "qx.test.io.MAssert"
       ],
       "implement": [],
       "hasDefer": null
-    },
-    "qx.test.io.part.ClosurePart": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.test.Part": {},
-        "qx.test.io.part.MockLoader": {},
-        "qx.Part": {},
-        "qx.io.part.Package": {},
-        "qx.io.part.ClosurePart": {},
-        "qx.test.io.part.MockPackage": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.part.MockLoader": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Bootstrap": {
-          "load": true,
-          "usage": "dynamic"
-        }
-      },
-      "extends": null,
-      "include": [],
-      "implement": [],
-      "hasDefer": null
-    },
-    "qx.test.io.part.MockPackage": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Bootstrap": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.Part": {},
-        "qx.test.Part": {}
-      },
-      "extends": null,
-      "include": [],
-      "implement": [],
-      "hasDefer": null
-    },
-    "qx.test.io.part.Package": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.core.Environment": {
-          "load": true,
-          "defer": "load"
-        },
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.test.io.part.MockLoader": {},
-        "qx.io.part.Package": {},
-        "qx.bom.client.Engine": {},
-        "qx.Part": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest"
-      ],
-      "implement": [],
-      "environment": {
-        "provided": [],
-        "required": {
-          "engine.name": {
-            "className": "qx.bom.client.Engine"
-          }
-        }
-      },
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.part.Part": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.test.Part": {},
-        "qx.test.io.part.MockLoader": {},
-        "qx.Part": {},
-        "qx.io.part.Part": {},
-        "qx.test.io.part.MockPackage": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.remote.AbstractRequest": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.event.Timer": {},
-        "qx.lang.Json": {},
-        "qx.io.remote.Request": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.remote.RequestIframe": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.core.Environment": {
-          "load": true,
-          "defer": "load"
-        },
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.test.io.remote.AbstractRequest": {
-          "load": true
-        },
-        "qx.io.remote.Request": {},
-        "qx.bom.client.Engine": {},
-        "qx.lang.Json": {}
-      },
-      "extends": "qx.test.io.remote.AbstractRequest",
-      "include": [],
-      "implement": [],
-      "environment": {
-        "provided": [],
-        "required": {
-          "engine.name": {
-            "className": "qx.bom.client.Engine"
-          }
-        }
-      },
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.remote.RequestXhr": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.test.io.remote.AbstractRequest": {
-          "load": true
-        },
-        "qx.io.remote.Request": {},
-        "qx.lang.Json": {}
-      },
-      "extends": "qx.test.io.remote.AbstractRequest",
-      "include": [],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.remote.Rpc": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.dev.unit.MMock": {
-          "load": true
-        },
-        "qx.io.remote.Request": {},
-        "qx.io.remote.Rpc": {},
-        "qx.event.Registration": {},
-        "qx.io.remote.Response": {},
-        "qx.lang.Type": {},
-        "qx.lang.Json": {},
-        "qx.dev.unit.RequirementError": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.dev.unit.MMock"
-      ],
-      "implement": [],
-      "hasDefer": null
-    },
-    "qx.test.io.remote.transport.Iframe": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.io.remote.transport.Iframe": {},
-        "qx.lang.Json": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/xmlhttp/echo_get_request.php"
-      ]
-    },
-    "qx.test.io.remote.transport.XmlHttp": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.io.remote.transport.XmlHttp": {},
-        "qx.util.AliasManager": {},
-        "qx.event.Timer": {},
-        "qx.util.ResourceManager": {},
-        "qx.lang.Json": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/*"
-      ]
-    },
-    "qx.test.io.request.Jsonp": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.request.MRequest": {
-          "load": true
-        },
-        "qx.dev.unit.MMock": {
-          "load": true
-        },
-        "qx.io.request.Jsonp": {},
-        "qx.bom.request.Jsonp": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.request.MRequest",
-        "qx.dev.unit.MMock"
-      ],
-      "implement": [],
-      "hasDefer": null
-    },
-    "qx.test.io.request.JsonpWithRemote": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.dev.unit.MRequirements": {
-          "load": true
-        },
-        "qx.io.request.Jsonp": {},
-        "qx.util.Uri": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest",
-        "qx.dev.unit.MRequirements"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/jsonp_primitive.php"
-      ]
-    },
-    "qx.test.io.request.MRequest": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Mixin": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.Class": {},
-        "qx.core.Object": {},
-        "qx.util.Uri": {}
-      },
-      "extends": null,
-      "include": [],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/xmlhttp/*"
-      ]
-    },
-    "qx.test.io.request.Xhr": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.request.MRequest": {
-          "load": true
-        },
-        "qx.dev.unit.MMock": {
-          "load": true
-        },
-        "qx.dev.unit.MRequirements": {
-          "load": true
-        },
-        "qx.io.request.Xhr": {},
-        "qx.io.request.authentication.Basic": {},
-        "qx.util.Base64": {},
-        "qx.type.BaseError": {},
-        "qx.event.Registration": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.request.MRequest",
-        "qx.dev.unit.MMock",
-        "qx.dev.unit.MRequirements"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/xmlhttp/*"
-      ]
-    },
-    "qx.test.io.request.XhrWithRemote": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.core.Environment": {
-          "load": true,
-          "defer": "load"
-        },
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.dev.unit.MRequirements": {
-          "load": true
-        },
-        "qx.io.request.Xhr": {},
-        "qx.event.Timer": {},
-        "qx.util.Uri": {},
-        "qx.bom.client.Engine": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.test.io.MRemoteTest",
-        "qx.dev.unit.MRequirements"
-      ],
-      "implement": [],
-      "environment": {
-        "provided": [],
-        "required": {
-          "engine.name": {
-            "className": "qx.bom.client.Engine"
-          }
-        }
-      },
-      "hasDefer": null
-    },
-    "qx.test.io.rest.Resource": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.dev.unit.MRequirements": {
-          "load": true
-        },
-        "qx.dev.unit.MMock": {
-          "load": true
-        },
-        "qx.io.request.Xhr": {},
-        "qx.io.request.AbstractRequest": {},
-        "qx.io.rest.Resource": {},
-        "qx.lang.Function": {},
-        "qx.lang.Json": {},
-        "qx.core.Environment": {},
-        "qx.dev.unit.RequirementError": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.dev.unit.MRequirements",
-        "qx.dev.unit.MMock"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/xmlhttp/*"
-      ]
-    },
-    "qx.test.io.rest.ResourceWithRemote": {
-      "mtime": "1985-10-26T08:15:00.000Z",
-      "libraryName": "qx",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qx.dev.unit.TestCase": {
-          "load": true
-        },
-        "qx.dev.unit.MRequirements": {
-          "load": true
-        },
-        "qx.test.io.MRemoteTest": {
-          "load": true
-        },
-        "qx.io.rest.Resource": {}
-      },
-      "extends": "qx.dev.unit.TestCase",
-      "include": [
-        "qx.dev.unit.MRequirements",
-        "qx.test.io.MRemoteTest"
-      ],
-      "implement": [],
-      "hasDefer": null,
-      "assets": [
-        "qx/test/xmlhttp/random.php",
-        "qx/test/xmlhttp/long_poll.php",
-        "qx/test/xmlhttp/sample.txt"
-      ]
     },
     "qx.test.lang.Array": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -38103,7 +37569,7 @@
     }
   },
   "manglePrefixes": {
-    "nextPrefix": 612,
+    "nextPrefix": 606,
     "classPrefixes": {
       "qx.Annotation": "__P_2_",
       "qx.Bootstrap": "__P_3_",
@@ -38354,368 +37820,362 @@
       "qx.test.event.message.Bus": "__P_248_",
       "qx.test.html.Flash": "__P_249_",
       "qx.test.html.Iframe": "__P_250_",
-      "qx.test.io.ImageLoader": "__P_251_",
-      "qx.test.io.part.ClosurePart": "__P_252_",
-      "qx.test.io.part.MockPackage": "__P_253_",
-      "qx.test.io.part.Package": "__P_254_",
-      "qx.test.io.part.Part": "__P_255_",
-      "qx.test.io.rest.Resource": "__P_256_",
-      "qx.test.locale.Locale": "__P_257_",
-      "qx.test.log.DeprecationMethodOverriding": "__P_258_",
-      "qx.test.log.Logger": "__P_259_",
-      "qx.test.log.RingBuffer": "__P_260_",
-      "qx.test.mobile.LocaleSwitch": "__P_261_",
-      "qx.test.mobile.core.Widget": "__P_262_",
-      "qx.test.mobile.form.Form": "__P_263_",
-      "qx.test.mobile.form.SingleRenderer": "__P_264_",
-      "qx.test.mobile.list.List": "__P_265_",
-      "qx.test.mobile.page.Page": "__P_266_",
-      "qx.test.mobile.tabbar.TabBar": "__P_267_",
-      "qx.test.mobile.toolbar.Toolbar": "__P_268_",
-      "qx.test.performance.Object": "__P_269_",
-      "qx.test.performance.data.Marshaling": "__P_270_",
-      "qx.test.performance.decorator.AbstractDecorator": "__P_271_",
-      "qx.test.performance.widget.WidgetWithDecorator": "__P_272_",
-      "qx.test.theme.manager.Color": "__P_273_",
-      "qx.test.theme.manager.Decoration": "__P_274_",
-      "qx.test.theme.manager.Font": "__P_275_",
-      "qx.test.theme.manager.Icon": "__P_276_",
-      "qx.test.theme.manager.Meta": "__P_277_",
-      "qx.test.theme.simple.Appearance": "__P_278_",
-      "qx.test.toolchain.PrivateOptimization": "__P_279_",
-      "qx.test.type.Array": "__P_280_",
-      "qx.test.type.BaseString": "__P_281_",
-      "qx.test.ui.Destroy": "__P_282_",
-      "qx.test.ui.LayoutTestCase": "__P_283_",
-      "qx.test.ui.LocaleSwitch": "__P_284_",
-      "qx.test.ui.RadioItems": "__P_285_",
-      "qx.test.ui.Widget": "__P_286_",
-      "qx.test.ui.command.Command": "__P_287_",
-      "qx.test.ui.container.Stack": "__P_288_",
-      "qx.test.ui.core.AbstractScrollArea": "__P_289_",
-      "qx.test.ui.core.Appearance": "__P_290_",
-      "qx.test.ui.core.Blocker": "__P_291_",
-      "qx.test.ui.core.Placement": "__P_292_",
-      "qx.test.ui.core.Queues": "__P_293_",
-      "qx.test.ui.decoration.LinearGradient": "__P_294_",
-      "qx.test.ui.embed.Flash": "__P_295_",
-      "qx.test.ui.embed.Iframe": "__P_296_",
-      "qx.test.ui.form.AbstractSelectBox": "__P_297_",
-      "qx.test.ui.form.AbstractVirtualBox": "__P_298_",
-      "qx.test.ui.form.BooleanFormat": "__P_299_",
-      "qx.test.ui.form.Color": "__P_300_",
-      "qx.test.ui.form.ComboBox": "__P_301_",
-      "qx.test.ui.form.Date": "__P_302_",
-      "qx.test.ui.form.DateField": "__P_303_",
-      "qx.test.ui.form.Executable": "__P_304_",
-      "qx.test.ui.form.Form": "__P_305_",
-      "qx.test.ui.form.FormManager": "__P_306_",
-      "qx.test.ui.form.FormValidator": "__P_307_",
-      "qx.test.ui.form.Label": "__P_308_",
-      "qx.test.ui.form.List": "__P_309_",
-      "qx.test.ui.form.MenuButton": "__P_310_",
-      "qx.test.ui.form.ModelProperty": "__P_311_",
-      "qx.test.ui.form.ModelSelection": "__P_312_",
-      "qx.test.ui.form.NumberFormat": "__P_313_",
-      "qx.test.ui.form.Placeholder": "__P_314_",
-      "qx.test.ui.form.RadioButtonGroup": "__P_315_",
-      "qx.test.ui.form.RadioGroup": "__P_316_",
-      "qx.test.ui.form.Range": "__P_317_",
-      "qx.test.ui.form.Renderer": "__P_318_",
-      "qx.test.ui.form.Resetter": "__P_319_",
-      "qx.test.ui.form.Slider": "__P_320_",
-      "qx.test.ui.form.StringFormat": "__P_321_",
-      "qx.test.ui.form.TextArea": "__P_322_",
-      "qx.test.ui.form.TextField": "__P_323_",
-      "qx.test.ui.form.ToggleButton": "__P_324_",
-      "qx.test.ui.form.VirtualSelectBox": "__P_325_",
-      "qx.test.ui.form.virtual.VirtualComboBox": "__P_326_",
-      "qx.test.ui.form.virtual.VirtualDropDownList": "__P_327_",
-      "qx.test.ui.form.virtual.VirtualSelectBox": "__P_328_",
-      "qx.test.ui.indicator.ProgressBar": "__P_329_",
-      "qx.test.ui.layout.Box": "__P_330_",
-      "qx.test.ui.layout.LayoutItem": "__P_331_",
-      "qx.test.ui.list.Group": "__P_332_",
-      "qx.test.ui.list.ObjectGroup": "__P_333_",
-      "qx.test.ui.root.Inline": "__P_334_",
-      "qx.test.ui.selection.RadioGroup": "__P_335_",
-      "qx.test.ui.selection.Stack": "__P_336_",
-      "qx.test.ui.selection.TabView": "__P_337_",
-      "qx.test.ui.toolbar.OverflowHandling": "__P_338_",
-      "qx.test.ui.toolbar.ToolBar": "__P_339_",
-      "qx.test.ui.tree.Tree": "__P_340_",
-      "qx.test.ui.tree.TreeFolder": "__P_341_",
-      "qx.test.ui.tree.virtual.AbstractTreeTest": "__P_342_",
-      "qx.test.ui.tree.virtual.Sorting": "__P_343_",
-      "qx.test.ui.tree.virtual.Tree": "__P_344_",
-      "qx.test.ui.tree.virtual.TreeItem": "__P_345_",
-      "qx.test.ui.virtual.Axis": "__P_346_",
-      "qx.test.ui.virtual.PointerEventMock": "__P_347_",
-      "qx.test.ui.virtual.cell.WidgetCell": "__P_348_",
-      "qx.test.ui.virtual.layer.HtmlCell": "__P_349_",
-      "qx.test.ui.virtual.layer.HtmlCellSpan": "__P_350_",
-      "qx.test.ui.virtual.layer.WidgetCellSpan": "__P_351_",
-      "qx.test.ui.virtual.performance.HtmlDivCell": "__P_352_",
-      "qx.test.ui.virtual.performance.layer.HtmlTableCssCell": "__P_353_",
-      "qx.test.util.DateFormat": "__P_354_",
-      "qx.test.util.DateMock": "__P_355_",
-      "qx.test.util.Delegate": "__P_356_",
-      "qx.test.util.LibraryManager": "__P_357_",
-      "qx.test.util.NumberFormat": "__P_358_",
-      "qx.test.util.ResponseParser": "__P_359_",
-      "qx.test.util.Serializer": "__P_360_",
-      "qx.test.util.StringBuilder": "__P_361_",
-      "qx.theme.manager.Appearance": "__P_362_",
-      "qx.theme.manager.Color": "__P_363_",
-      "qx.theme.manager.Decoration": "__P_364_",
-      "qx.theme.manager.Font": "__P_365_",
-      "qx.theme.manager.Meta": "__P_366_",
-      "qx.type.Array": "__P_367_",
-      "qx.type.BaseError": "__P_368_",
-      "qx.type.BaseString": "__P_369_",
-      "qx.ui.basic.Image": "__P_370_",
-      "qx.ui.basic.Label": "__P_371_",
-      "qx.ui.command.GroupManager": "__P_372_",
-      "qx.ui.container.Stack": "__P_373_",
-      "qx.ui.control.ColorPopup": "__P_374_",
-      "qx.ui.control.ColorSelector": "__P_375_",
-      "qx.ui.control.DateChooser": "__P_376_",
-      "qx.ui.core.Blocker": "__P_377_",
-      "qx.ui.core.ColumnData": "__P_378_",
-      "qx.ui.core.EventHandler": "__P_379_",
-      "qx.ui.core.FocusHandler": "__P_380_",
-      "qx.ui.core.LayoutItem": "__P_381_",
-      "qx.ui.core.MBlocker": "__P_382_",
-      "qx.ui.core.MContentPadding": "__P_383_",
-      "qx.ui.core.MDragDropScrolling": "__P_384_",
-      "qx.ui.core.MExecutable": "__P_385_",
-      "qx.ui.core.MMovable": "__P_386_",
-      "qx.ui.core.MMultiSelectionHandling": "__P_387_",
-      "qx.ui.core.MPlacement": "__P_388_",
-      "qx.ui.core.MRemoteChildrenHandling": "__P_389_",
-      "qx.ui.core.MResizable": "__P_390_",
-      "qx.ui.core.MSingleSelectionHandling": "__P_391_",
-      "qx.ui.core.SingleSelectionManager": "__P_392_",
-      "qx.ui.core.Widget": "__P_393_",
-      "qx.ui.core.queue.Appearance": "__P_394_",
-      "qx.ui.core.queue.Dispose": "__P_395_",
-      "qx.ui.core.queue.Layout": "__P_396_",
-      "qx.ui.core.queue.Manager": "__P_397_",
-      "qx.ui.core.queue.Visibility": "__P_398_",
-      "qx.ui.core.queue.Widget": "__P_399_",
-      "qx.ui.core.scroll.NativeScrollBar": "__P_400_",
-      "qx.ui.core.scroll.ScrollBar": "__P_401_",
-      "qx.ui.core.scroll.ScrollPane": "__P_402_",
-      "qx.ui.core.selection.Abstract": "__P_403_",
-      "qx.ui.core.selection.Widget": "__P_404_",
-      "qx.ui.decoration.Abstract": "__P_405_",
-      "qx.ui.decoration.Decorator": "__P_406_",
-      "qx.ui.decoration.MBorderImage": "__P_407_",
-      "qx.ui.decoration.MDoubleBorder": "__P_408_",
-      "qx.ui.decoration.MLinearBackgroundGradient": "__P_409_",
-      "qx.ui.embed.AbstractIframe": "__P_410_",
-      "qx.ui.embed.Canvas": "__P_411_",
-      "qx.ui.embed.Flash": "__P_412_",
-      "qx.ui.embed.Iframe": "__P_413_",
-      "qx.ui.embed.ThemedIframe": "__P_414_",
-      "qx.ui.form.AbstractField": "__P_415_",
-      "qx.ui.form.ComboBox": "__P_416_",
-      "qx.ui.form.DateField": "__P_417_",
-      "qx.ui.form.Form": "__P_418_",
-      "qx.ui.form.HoverButton": "__P_419_",
-      "qx.ui.form.List": "__P_420_",
-      "qx.ui.form.MForm": "__P_421_",
-      "qx.ui.form.MModelSelection": "__P_422_",
-      "qx.ui.form.RadioButtonGroup": "__P_423_",
-      "qx.ui.form.RadioGroup": "__P_424_",
-      "qx.ui.form.RepeatButton": "__P_425_",
-      "qx.ui.form.Resetter": "__P_426_",
-      "qx.ui.form.SelectBox": "__P_427_",
-      "qx.ui.form.Slider": "__P_428_",
-      "qx.ui.form.Spinner": "__P_429_",
-      "qx.ui.form.SplitButton": "__P_430_",
-      "qx.ui.form.TextArea": "__P_431_",
-      "qx.ui.form.VirtualComboBox": "__P_432_",
-      "qx.ui.form.VirtualSelectBox": "__P_433_",
-      "qx.ui.form.core.AbstractVirtualBox": "__P_434_",
-      "qx.ui.form.core.VirtualDropDownList": "__P_435_",
-      "qx.ui.form.validation.AsyncValidator": "__P_436_",
-      "qx.ui.form.validation.Manager": "__P_437_",
-      "qx.ui.layout.Abstract": "__P_438_",
-      "qx.ui.layout.Dock": "__P_439_",
-      "qx.ui.layout.Flow": "__P_440_",
-      "qx.ui.layout.Grid": "__P_441_",
-      "qx.ui.layout.HBox": "__P_442_",
-      "qx.ui.layout.LineSizeIterator": "__P_443_",
-      "qx.ui.layout.VBox": "__P_444_",
-      "qx.ui.list.List": "__P_445_",
-      "qx.ui.list.core.MWidgetController": "__P_446_",
-      "qx.ui.list.provider.WidgetProvider": "__P_447_",
-      "qx.ui.menu.ButtonLayout": "__P_448_",
-      "qx.ui.menu.Layout": "__P_449_",
-      "qx.ui.menu.Manager": "__P_450_",
-      "qx.ui.menu.Menu": "__P_451_",
-      "qx.ui.mobile.basic.Atom": "__P_452_",
-      "qx.ui.mobile.basic.Image": "__P_453_",
-      "qx.ui.mobile.container.Carousel": "__P_454_",
-      "qx.ui.mobile.container.Drawer": "__P_455_",
-      "qx.ui.mobile.container.MIScroll": "__P_456_",
-      "qx.ui.mobile.container.Navigation": "__P_457_",
-      "qx.ui.mobile.core.Blocker": "__P_458_",
-      "qx.ui.mobile.core.DomUpdatedHandler": "__P_459_",
-      "qx.ui.mobile.core.EventHandler": "__P_460_",
-      "qx.ui.mobile.core.MResize": "__P_461_",
-      "qx.ui.mobile.core.Root": "__P_462_",
-      "qx.ui.mobile.core.Widget": "__P_463_",
-      "qx.ui.mobile.dialog.BusyIndicator": "__P_464_",
-      "qx.ui.mobile.dialog.Manager": "__P_465_",
-      "qx.ui.mobile.dialog.Menu": "__P_466_",
-      "qx.ui.mobile.dialog.Popup": "__P_467_",
-      "qx.ui.mobile.form.Form": "__P_468_",
-      "qx.ui.mobile.form.Label": "__P_469_",
-      "qx.ui.mobile.form.MState": "__P_470_",
-      "qx.ui.mobile.form.MValue": "__P_471_",
-      "qx.ui.mobile.form.SelectBox": "__P_472_",
-      "qx.ui.mobile.form.Slider": "__P_473_",
-      "qx.ui.mobile.form.TextArea": "__P_474_",
-      "qx.ui.mobile.form.ToggleButton": "__P_475_",
-      "qx.ui.mobile.form.renderer.Single": "__P_476_",
-      "qx.ui.mobile.layout.Abstract": "__P_477_",
-      "qx.ui.mobile.layout.Card": "__P_478_",
-      "qx.ui.mobile.list.List": "__P_479_",
-      "qx.ui.mobile.list.provider.Provider": "__P_480_",
-      "qx.ui.mobile.list.renderer.Default": "__P_481_",
-      "qx.ui.mobile.list.renderer.group.Default": "__P_482_",
-      "qx.ui.mobile.page.Manager": "__P_483_",
-      "qx.ui.mobile.page.NavigationPage": "__P_484_",
-      "qx.ui.mobile.page.Page": "__P_485_",
-      "qx.ui.mobile.toolbar.ToolBar": "__P_486_",
-      "qx.ui.popup.Manager": "__P_487_",
-      "qx.ui.progressive.Progressive": "__P_488_",
-      "qx.ui.progressive.headfoot.Abstract": "__P_489_",
-      "qx.ui.progressive.headfoot.Progress": "__P_490_",
-      "qx.ui.progressive.headfoot.TableHeading": "__P_491_",
-      "qx.ui.progressive.model.Default": "__P_492_",
-      "qx.ui.progressive.renderer.table.Row": "__P_493_",
-      "qx.ui.progressive.renderer.table.Widths": "__P_494_",
-      "qx.ui.progressive.renderer.table.cell.Boolean": "__P_495_",
-      "qx.ui.progressive.renderer.table.cell.Conditional": "__P_496_",
-      "qx.ui.progressive.renderer.table.cell.Icon": "__P_497_",
-      "qx.ui.progressive.renderer.table.cell.Image": "__P_498_",
-      "qx.ui.progressive.structure.Abstract": "__P_499_",
-      "qx.ui.progressive.structure.Default": "__P_500_",
-      "qx.ui.root.Abstract": "__P_501_",
-      "qx.ui.root.Application": "__P_502_",
-      "qx.ui.root.Inline": "__P_503_",
-      "qx.ui.root.Page": "__P_504_",
-      "qx.ui.splitpane.Pane": "__P_505_",
-      "qx.ui.style.Stylesheet": "__P_506_",
-      "qx.ui.table.MTableContextMenu": "__P_507_",
-      "qx.ui.table.Table": "__P_508_",
-      "qx.ui.table.celleditor.Dynamic": "__P_509_",
-      "qx.ui.table.cellrenderer.Abstract": "__P_510_",
-      "qx.ui.table.cellrenderer.AbstractImage": "__P_511_",
-      "qx.ui.table.cellrenderer.Boolean": "__P_512_",
-      "qx.ui.table.cellrenderer.Conditional": "__P_513_",
-      "qx.ui.table.cellrenderer.Image": "__P_514_",
-      "qx.ui.table.columnmenu.Button": "__P_515_",
-      "qx.ui.table.columnmodel.Basic": "__P_516_",
-      "qx.ui.table.columnmodel.Resize": "__P_517_",
-      "qx.ui.table.columnmodel.resizebehavior.Default": "__P_518_",
-      "qx.ui.table.model.Abstract": "__P_519_",
-      "qx.ui.table.model.Filtered": "__P_520_",
-      "qx.ui.table.model.Simple": "__P_521_",
-      "qx.ui.table.pane.FocusIndicator": "__P_522_",
-      "qx.ui.table.pane.Header": "__P_523_",
-      "qx.ui.table.pane.Model": "__P_524_",
-      "qx.ui.table.pane.Pane": "__P_525_",
-      "qx.ui.table.pane.Scroller": "__P_526_",
-      "qx.ui.table.selection.Manager": "__P_527_",
-      "qx.ui.table.selection.Model": "__P_528_",
-      "qx.ui.tabview.TabView": "__P_529_",
-      "qx.ui.toolbar.Part": "__P_530_",
-      "qx.ui.toolbar.ToolBar": "__P_531_",
-      "qx.ui.tooltip.Manager": "__P_532_",
-      "qx.ui.tree.Tree": "__P_533_",
-      "qx.ui.tree.VirtualTree": "__P_534_",
-      "qx.ui.tree.core.AbstractItem": "__P_535_",
-      "qx.ui.tree.core.AbstractTreeItem": "__P_536_",
-      "qx.ui.tree.core.MWidgetController": "__P_537_",
-      "qx.ui.tree.provider.WidgetProvider": "__P_538_",
-      "qx.ui.treevirtual.SelectionManager": "__P_539_",
-      "qx.ui.treevirtual.SimpleTreeDataCellRenderer": "__P_540_",
-      "qx.ui.treevirtual.SimpleTreeDataModel": "__P_541_",
-      "qx.ui.virtual.behavior.Prefetch": "__P_542_",
-      "qx.ui.virtual.cell.AbstractImage": "__P_543_",
-      "qx.ui.virtual.cell.AbstractWidget": "__P_544_",
-      "qx.ui.virtual.cell.Boolean": "__P_545_",
-      "qx.ui.virtual.cell.Cell": "__P_546_",
-      "qx.ui.virtual.cell.CellStylesheet": "__P_547_",
-      "qx.ui.virtual.core.Axis": "__P_548_",
-      "qx.ui.virtual.core.Pane": "__P_549_",
-      "qx.ui.virtual.core.Scroller": "__P_550_",
-      "qx.ui.virtual.layer.Abstract": "__P_551_",
-      "qx.ui.virtual.layer.AbstractBackground": "__P_552_",
-      "qx.ui.virtual.layer.CellSpanManager": "__P_553_",
-      "qx.ui.virtual.layer.GridLines": "__P_554_",
-      "qx.ui.virtual.layer.HtmlCellSpan": "__P_555_",
-      "qx.ui.virtual.layer.Row": "__P_556_",
-      "qx.ui.virtual.layer.WidgetCell": "__P_557_",
-      "qx.ui.virtual.layer.WidgetCellSpan": "__P_558_",
-      "qx.ui.virtual.selection.MModel": "__P_559_",
-      "qx.ui.website.Calendar": "__P_560_",
-      "qx.ui.website.Carousel": "__P_561_",
-      "qx.ui.website.DatePicker": "__P_562_",
-      "qx.ui.website.Slider": "__P_563_",
-      "qx.ui.website.Table": "__P_564_",
-      "qx.ui.website.Tabs": "__P_565_",
-      "qx.ui.website.Widget": "__P_566_",
-      "qx.ui.window.MDesktop": "__P_567_",
-      "qx.ui.window.Manager": "__P_568_",
-      "qx.ui.window.Window": "__P_569_",
-      "qx.util.AliasManager": "__P_570_",
-      "qx.util.Base64": "__P_571_",
-      "qx.util.ColorUtil": "__P_572_",
-      "qx.util.DeferredCall": "__P_573_",
-      "qx.util.DeferredCallManager": "__P_574_",
-      "qx.util.DisposeUtil": "__P_575_",
-      "qx.util.DynamicScriptLoader": "__P_576_",
-      "qx.util.EditDistance": "__P_577_",
-      "qx.util.LibraryManager": "__P_578_",
-      "qx.util.ObjectPool": "__P_579_",
-      "qx.util.ResourceManager": "__P_580_",
-      "qx.util.ResponseParser": "__P_581_",
-      "qx.util.RingBuffer": "__P_582_",
-      "qx.util.Serializer": "__P_583_",
-      "qx.util.TimerManager": "__P_584_",
-      "qx.util.Uri": "__P_585_",
-      "qx.util.Wheel": "__P_586_",
-      "qx.util.format.DateFormat": "__P_587_",
-      "qx.util.fsm.FiniteStateMachine": "__P_588_",
-      "qx.util.fsm.State": "__P_589_",
-      "qx.util.fsm.Transition": "__P_590_",
-      "qx.util.placement.Placement": "__P_591_",
-      "qx.xml.Element": "__P_592_",
-      "qxl.testtapper.Application": "__P_593_",
-      "qxWeb": "__P_594_",
-      "qxl.logpane.LogPane": "__P_595_",
-      "qxl.apiviewer.MWidgetRegistry": "__P_596_",
-      "qxl.apiviewer.Viewer": "__P_597_",
-      "qxl.apiviewer.Controller": "__P_598_",
-      "qxl.apiviewer.ui.PackageTree": "__P_599_",
-      "qxl.apiviewer.ui.SearchView": "__P_600_",
-      "qxl.apiviewer.ui.LegendView": "__P_601_",
-      "qxl.apiviewer.ClassLoader": "__P_602_",
-      "qxl.apiviewer.TabViewController": "__P_603_",
-      "qxl.apiviewer.dao.Package": "__P_604_",
-      "qxl.apiviewer.LoadingIndicator": "__P_605_",
-      "qxl.apiviewer.ui.tabview.AbstractPage": "__P_606_",
-      "qxl.apiviewer.ui.ClassViewer": "__P_607_",
-      "qxl.apiviewer.ui.AbstractViewer": "__P_608_",
-      "qxl.apiviewer.ui.panels.InfoPanel": "__P_609_",
-      "qxl.apiviewer.ui.panels.ConstantPanel": "__P_610_",
-      "qxl.apiviewer.ui.panels.PropertyPanel": "__P_611_",
-      "qxl.apiviewer.ObjectRegistry": "__P_612_"
+      "qx.test.locale.Locale": "__P_251_",
+      "qx.test.log.DeprecationMethodOverriding": "__P_252_",
+      "qx.test.log.Logger": "__P_253_",
+      "qx.test.log.RingBuffer": "__P_254_",
+      "qx.test.mobile.LocaleSwitch": "__P_255_",
+      "qx.test.mobile.core.Widget": "__P_256_",
+      "qx.test.mobile.form.Form": "__P_257_",
+      "qx.test.mobile.form.SingleRenderer": "__P_258_",
+      "qx.test.mobile.list.List": "__P_259_",
+      "qx.test.mobile.page.Page": "__P_260_",
+      "qx.test.mobile.tabbar.TabBar": "__P_261_",
+      "qx.test.mobile.toolbar.Toolbar": "__P_262_",
+      "qx.test.performance.Object": "__P_263_",
+      "qx.test.performance.data.Marshaling": "__P_264_",
+      "qx.test.performance.decorator.AbstractDecorator": "__P_265_",
+      "qx.test.performance.widget.WidgetWithDecorator": "__P_266_",
+      "qx.test.theme.manager.Color": "__P_267_",
+      "qx.test.theme.manager.Decoration": "__P_268_",
+      "qx.test.theme.manager.Font": "__P_269_",
+      "qx.test.theme.manager.Icon": "__P_270_",
+      "qx.test.theme.manager.Meta": "__P_271_",
+      "qx.test.theme.simple.Appearance": "__P_272_",
+      "qx.test.toolchain.PrivateOptimization": "__P_273_",
+      "qx.test.type.Array": "__P_274_",
+      "qx.test.type.BaseString": "__P_275_",
+      "qx.test.ui.Destroy": "__P_276_",
+      "qx.test.ui.LayoutTestCase": "__P_277_",
+      "qx.test.ui.LocaleSwitch": "__P_278_",
+      "qx.test.ui.RadioItems": "__P_279_",
+      "qx.test.ui.Widget": "__P_280_",
+      "qx.test.ui.command.Command": "__P_281_",
+      "qx.test.ui.container.Stack": "__P_282_",
+      "qx.test.ui.core.AbstractScrollArea": "__P_283_",
+      "qx.test.ui.core.Appearance": "__P_284_",
+      "qx.test.ui.core.Blocker": "__P_285_",
+      "qx.test.ui.core.Placement": "__P_286_",
+      "qx.test.ui.core.Queues": "__P_287_",
+      "qx.test.ui.decoration.LinearGradient": "__P_288_",
+      "qx.test.ui.embed.Flash": "__P_289_",
+      "qx.test.ui.embed.Iframe": "__P_290_",
+      "qx.test.ui.form.AbstractSelectBox": "__P_291_",
+      "qx.test.ui.form.AbstractVirtualBox": "__P_292_",
+      "qx.test.ui.form.BooleanFormat": "__P_293_",
+      "qx.test.ui.form.Color": "__P_294_",
+      "qx.test.ui.form.ComboBox": "__P_295_",
+      "qx.test.ui.form.Date": "__P_296_",
+      "qx.test.ui.form.DateField": "__P_297_",
+      "qx.test.ui.form.Executable": "__P_298_",
+      "qx.test.ui.form.Form": "__P_299_",
+      "qx.test.ui.form.FormManager": "__P_300_",
+      "qx.test.ui.form.FormValidator": "__P_301_",
+      "qx.test.ui.form.Label": "__P_302_",
+      "qx.test.ui.form.List": "__P_303_",
+      "qx.test.ui.form.MenuButton": "__P_304_",
+      "qx.test.ui.form.ModelProperty": "__P_305_",
+      "qx.test.ui.form.ModelSelection": "__P_306_",
+      "qx.test.ui.form.NumberFormat": "__P_307_",
+      "qx.test.ui.form.Placeholder": "__P_308_",
+      "qx.test.ui.form.RadioButtonGroup": "__P_309_",
+      "qx.test.ui.form.RadioGroup": "__P_310_",
+      "qx.test.ui.form.Range": "__P_311_",
+      "qx.test.ui.form.Renderer": "__P_312_",
+      "qx.test.ui.form.Resetter": "__P_313_",
+      "qx.test.ui.form.Slider": "__P_314_",
+      "qx.test.ui.form.StringFormat": "__P_315_",
+      "qx.test.ui.form.TextArea": "__P_316_",
+      "qx.test.ui.form.TextField": "__P_317_",
+      "qx.test.ui.form.ToggleButton": "__P_318_",
+      "qx.test.ui.form.VirtualSelectBox": "__P_319_",
+      "qx.test.ui.form.virtual.VirtualComboBox": "__P_320_",
+      "qx.test.ui.form.virtual.VirtualDropDownList": "__P_321_",
+      "qx.test.ui.form.virtual.VirtualSelectBox": "__P_322_",
+      "qx.test.ui.indicator.ProgressBar": "__P_323_",
+      "qx.test.ui.layout.Box": "__P_324_",
+      "qx.test.ui.layout.LayoutItem": "__P_325_",
+      "qx.test.ui.list.Group": "__P_326_",
+      "qx.test.ui.list.ObjectGroup": "__P_327_",
+      "qx.test.ui.root.Inline": "__P_328_",
+      "qx.test.ui.selection.RadioGroup": "__P_329_",
+      "qx.test.ui.selection.Stack": "__P_330_",
+      "qx.test.ui.selection.TabView": "__P_331_",
+      "qx.test.ui.toolbar.OverflowHandling": "__P_332_",
+      "qx.test.ui.toolbar.ToolBar": "__P_333_",
+      "qx.test.ui.tree.Tree": "__P_334_",
+      "qx.test.ui.tree.TreeFolder": "__P_335_",
+      "qx.test.ui.tree.virtual.AbstractTreeTest": "__P_336_",
+      "qx.test.ui.tree.virtual.Sorting": "__P_337_",
+      "qx.test.ui.tree.virtual.Tree": "__P_338_",
+      "qx.test.ui.tree.virtual.TreeItem": "__P_339_",
+      "qx.test.ui.virtual.Axis": "__P_340_",
+      "qx.test.ui.virtual.PointerEventMock": "__P_341_",
+      "qx.test.ui.virtual.cell.WidgetCell": "__P_342_",
+      "qx.test.ui.virtual.layer.HtmlCell": "__P_343_",
+      "qx.test.ui.virtual.layer.HtmlCellSpan": "__P_344_",
+      "qx.test.ui.virtual.layer.WidgetCellSpan": "__P_345_",
+      "qx.test.ui.virtual.performance.HtmlDivCell": "__P_346_",
+      "qx.test.ui.virtual.performance.layer.HtmlTableCssCell": "__P_347_",
+      "qx.test.util.DateFormat": "__P_348_",
+      "qx.test.util.DateMock": "__P_349_",
+      "qx.test.util.Delegate": "__P_350_",
+      "qx.test.util.LibraryManager": "__P_351_",
+      "qx.test.util.NumberFormat": "__P_352_",
+      "qx.test.util.ResponseParser": "__P_353_",
+      "qx.test.util.Serializer": "__P_354_",
+      "qx.test.util.StringBuilder": "__P_355_",
+      "qx.theme.manager.Appearance": "__P_356_",
+      "qx.theme.manager.Color": "__P_357_",
+      "qx.theme.manager.Decoration": "__P_358_",
+      "qx.theme.manager.Font": "__P_359_",
+      "qx.theme.manager.Meta": "__P_360_",
+      "qx.type.Array": "__P_361_",
+      "qx.type.BaseError": "__P_362_",
+      "qx.type.BaseString": "__P_363_",
+      "qx.ui.basic.Image": "__P_364_",
+      "qx.ui.basic.Label": "__P_365_",
+      "qx.ui.command.GroupManager": "__P_366_",
+      "qx.ui.container.Stack": "__P_367_",
+      "qx.ui.control.ColorPopup": "__P_368_",
+      "qx.ui.control.ColorSelector": "__P_369_",
+      "qx.ui.control.DateChooser": "__P_370_",
+      "qx.ui.core.Blocker": "__P_371_",
+      "qx.ui.core.ColumnData": "__P_372_",
+      "qx.ui.core.EventHandler": "__P_373_",
+      "qx.ui.core.FocusHandler": "__P_374_",
+      "qx.ui.core.LayoutItem": "__P_375_",
+      "qx.ui.core.MBlocker": "__P_376_",
+      "qx.ui.core.MContentPadding": "__P_377_",
+      "qx.ui.core.MDragDropScrolling": "__P_378_",
+      "qx.ui.core.MExecutable": "__P_379_",
+      "qx.ui.core.MMovable": "__P_380_",
+      "qx.ui.core.MMultiSelectionHandling": "__P_381_",
+      "qx.ui.core.MPlacement": "__P_382_",
+      "qx.ui.core.MRemoteChildrenHandling": "__P_383_",
+      "qx.ui.core.MResizable": "__P_384_",
+      "qx.ui.core.MSingleSelectionHandling": "__P_385_",
+      "qx.ui.core.SingleSelectionManager": "__P_386_",
+      "qx.ui.core.Widget": "__P_387_",
+      "qx.ui.core.queue.Appearance": "__P_388_",
+      "qx.ui.core.queue.Dispose": "__P_389_",
+      "qx.ui.core.queue.Layout": "__P_390_",
+      "qx.ui.core.queue.Manager": "__P_391_",
+      "qx.ui.core.queue.Visibility": "__P_392_",
+      "qx.ui.core.queue.Widget": "__P_393_",
+      "qx.ui.core.scroll.NativeScrollBar": "__P_394_",
+      "qx.ui.core.scroll.ScrollBar": "__P_395_",
+      "qx.ui.core.scroll.ScrollPane": "__P_396_",
+      "qx.ui.core.selection.Abstract": "__P_397_",
+      "qx.ui.core.selection.Widget": "__P_398_",
+      "qx.ui.decoration.Abstract": "__P_399_",
+      "qx.ui.decoration.Decorator": "__P_400_",
+      "qx.ui.decoration.MBorderImage": "__P_401_",
+      "qx.ui.decoration.MDoubleBorder": "__P_402_",
+      "qx.ui.decoration.MLinearBackgroundGradient": "__P_403_",
+      "qx.ui.embed.AbstractIframe": "__P_404_",
+      "qx.ui.embed.Canvas": "__P_405_",
+      "qx.ui.embed.Flash": "__P_406_",
+      "qx.ui.embed.Iframe": "__P_407_",
+      "qx.ui.embed.ThemedIframe": "__P_408_",
+      "qx.ui.form.AbstractField": "__P_409_",
+      "qx.ui.form.ComboBox": "__P_410_",
+      "qx.ui.form.DateField": "__P_411_",
+      "qx.ui.form.Form": "__P_412_",
+      "qx.ui.form.HoverButton": "__P_413_",
+      "qx.ui.form.List": "__P_414_",
+      "qx.ui.form.MForm": "__P_415_",
+      "qx.ui.form.MModelSelection": "__P_416_",
+      "qx.ui.form.RadioButtonGroup": "__P_417_",
+      "qx.ui.form.RadioGroup": "__P_418_",
+      "qx.ui.form.RepeatButton": "__P_419_",
+      "qx.ui.form.Resetter": "__P_420_",
+      "qx.ui.form.SelectBox": "__P_421_",
+      "qx.ui.form.Slider": "__P_422_",
+      "qx.ui.form.Spinner": "__P_423_",
+      "qx.ui.form.SplitButton": "__P_424_",
+      "qx.ui.form.TextArea": "__P_425_",
+      "qx.ui.form.VirtualComboBox": "__P_426_",
+      "qx.ui.form.VirtualSelectBox": "__P_427_",
+      "qx.ui.form.core.AbstractVirtualBox": "__P_428_",
+      "qx.ui.form.core.VirtualDropDownList": "__P_429_",
+      "qx.ui.form.validation.AsyncValidator": "__P_430_",
+      "qx.ui.form.validation.Manager": "__P_431_",
+      "qx.ui.layout.Abstract": "__P_432_",
+      "qx.ui.layout.Dock": "__P_433_",
+      "qx.ui.layout.Flow": "__P_434_",
+      "qx.ui.layout.Grid": "__P_435_",
+      "qx.ui.layout.HBox": "__P_436_",
+      "qx.ui.layout.LineSizeIterator": "__P_437_",
+      "qx.ui.layout.VBox": "__P_438_",
+      "qx.ui.list.List": "__P_439_",
+      "qx.ui.list.core.MWidgetController": "__P_440_",
+      "qx.ui.list.provider.WidgetProvider": "__P_441_",
+      "qx.ui.menu.ButtonLayout": "__P_442_",
+      "qx.ui.menu.Layout": "__P_443_",
+      "qx.ui.menu.Manager": "__P_444_",
+      "qx.ui.menu.Menu": "__P_445_",
+      "qx.ui.mobile.basic.Atom": "__P_446_",
+      "qx.ui.mobile.basic.Image": "__P_447_",
+      "qx.ui.mobile.container.Carousel": "__P_448_",
+      "qx.ui.mobile.container.Drawer": "__P_449_",
+      "qx.ui.mobile.container.MIScroll": "__P_450_",
+      "qx.ui.mobile.container.Navigation": "__P_451_",
+      "qx.ui.mobile.core.Blocker": "__P_452_",
+      "qx.ui.mobile.core.DomUpdatedHandler": "__P_453_",
+      "qx.ui.mobile.core.EventHandler": "__P_454_",
+      "qx.ui.mobile.core.MResize": "__P_455_",
+      "qx.ui.mobile.core.Root": "__P_456_",
+      "qx.ui.mobile.core.Widget": "__P_457_",
+      "qx.ui.mobile.dialog.BusyIndicator": "__P_458_",
+      "qx.ui.mobile.dialog.Manager": "__P_459_",
+      "qx.ui.mobile.dialog.Menu": "__P_460_",
+      "qx.ui.mobile.dialog.Popup": "__P_461_",
+      "qx.ui.mobile.form.Form": "__P_462_",
+      "qx.ui.mobile.form.Label": "__P_463_",
+      "qx.ui.mobile.form.MState": "__P_464_",
+      "qx.ui.mobile.form.MValue": "__P_465_",
+      "qx.ui.mobile.form.SelectBox": "__P_466_",
+      "qx.ui.mobile.form.Slider": "__P_467_",
+      "qx.ui.mobile.form.TextArea": "__P_468_",
+      "qx.ui.mobile.form.ToggleButton": "__P_469_",
+      "qx.ui.mobile.form.renderer.Single": "__P_470_",
+      "qx.ui.mobile.layout.Abstract": "__P_471_",
+      "qx.ui.mobile.layout.Card": "__P_472_",
+      "qx.ui.mobile.list.List": "__P_473_",
+      "qx.ui.mobile.list.provider.Provider": "__P_474_",
+      "qx.ui.mobile.list.renderer.Default": "__P_475_",
+      "qx.ui.mobile.list.renderer.group.Default": "__P_476_",
+      "qx.ui.mobile.page.Manager": "__P_477_",
+      "qx.ui.mobile.page.NavigationPage": "__P_478_",
+      "qx.ui.mobile.page.Page": "__P_479_",
+      "qx.ui.mobile.toolbar.ToolBar": "__P_480_",
+      "qx.ui.popup.Manager": "__P_481_",
+      "qx.ui.progressive.Progressive": "__P_482_",
+      "qx.ui.progressive.headfoot.Abstract": "__P_483_",
+      "qx.ui.progressive.headfoot.Progress": "__P_484_",
+      "qx.ui.progressive.headfoot.TableHeading": "__P_485_",
+      "qx.ui.progressive.model.Default": "__P_486_",
+      "qx.ui.progressive.renderer.table.Row": "__P_487_",
+      "qx.ui.progressive.renderer.table.Widths": "__P_488_",
+      "qx.ui.progressive.renderer.table.cell.Boolean": "__P_489_",
+      "qx.ui.progressive.renderer.table.cell.Conditional": "__P_490_",
+      "qx.ui.progressive.renderer.table.cell.Icon": "__P_491_",
+      "qx.ui.progressive.renderer.table.cell.Image": "__P_492_",
+      "qx.ui.progressive.structure.Abstract": "__P_493_",
+      "qx.ui.progressive.structure.Default": "__P_494_",
+      "qx.ui.root.Abstract": "__P_495_",
+      "qx.ui.root.Application": "__P_496_",
+      "qx.ui.root.Inline": "__P_497_",
+      "qx.ui.root.Page": "__P_498_",
+      "qx.ui.splitpane.Pane": "__P_499_",
+      "qx.ui.style.Stylesheet": "__P_500_",
+      "qx.ui.table.MTableContextMenu": "__P_501_",
+      "qx.ui.table.Table": "__P_502_",
+      "qx.ui.table.celleditor.Dynamic": "__P_503_",
+      "qx.ui.table.cellrenderer.Abstract": "__P_504_",
+      "qx.ui.table.cellrenderer.AbstractImage": "__P_505_",
+      "qx.ui.table.cellrenderer.Boolean": "__P_506_",
+      "qx.ui.table.cellrenderer.Conditional": "__P_507_",
+      "qx.ui.table.cellrenderer.Image": "__P_508_",
+      "qx.ui.table.columnmenu.Button": "__P_509_",
+      "qx.ui.table.columnmodel.Basic": "__P_510_",
+      "qx.ui.table.columnmodel.Resize": "__P_511_",
+      "qx.ui.table.columnmodel.resizebehavior.Default": "__P_512_",
+      "qx.ui.table.model.Abstract": "__P_513_",
+      "qx.ui.table.model.Filtered": "__P_514_",
+      "qx.ui.table.model.Simple": "__P_515_",
+      "qx.ui.table.pane.FocusIndicator": "__P_516_",
+      "qx.ui.table.pane.Header": "__P_517_",
+      "qx.ui.table.pane.Model": "__P_518_",
+      "qx.ui.table.pane.Pane": "__P_519_",
+      "qx.ui.table.pane.Scroller": "__P_520_",
+      "qx.ui.table.selection.Manager": "__P_521_",
+      "qx.ui.table.selection.Model": "__P_522_",
+      "qx.ui.tabview.TabView": "__P_523_",
+      "qx.ui.toolbar.Part": "__P_524_",
+      "qx.ui.toolbar.ToolBar": "__P_525_",
+      "qx.ui.tooltip.Manager": "__P_526_",
+      "qx.ui.tree.Tree": "__P_527_",
+      "qx.ui.tree.VirtualTree": "__P_528_",
+      "qx.ui.tree.core.AbstractItem": "__P_529_",
+      "qx.ui.tree.core.AbstractTreeItem": "__P_530_",
+      "qx.ui.tree.core.MWidgetController": "__P_531_",
+      "qx.ui.tree.provider.WidgetProvider": "__P_532_",
+      "qx.ui.treevirtual.SelectionManager": "__P_533_",
+      "qx.ui.treevirtual.SimpleTreeDataCellRenderer": "__P_534_",
+      "qx.ui.treevirtual.SimpleTreeDataModel": "__P_535_",
+      "qx.ui.virtual.behavior.Prefetch": "__P_536_",
+      "qx.ui.virtual.cell.AbstractImage": "__P_537_",
+      "qx.ui.virtual.cell.AbstractWidget": "__P_538_",
+      "qx.ui.virtual.cell.Boolean": "__P_539_",
+      "qx.ui.virtual.cell.Cell": "__P_540_",
+      "qx.ui.virtual.cell.CellStylesheet": "__P_541_",
+      "qx.ui.virtual.core.Axis": "__P_542_",
+      "qx.ui.virtual.core.Pane": "__P_543_",
+      "qx.ui.virtual.core.Scroller": "__P_544_",
+      "qx.ui.virtual.layer.Abstract": "__P_545_",
+      "qx.ui.virtual.layer.AbstractBackground": "__P_546_",
+      "qx.ui.virtual.layer.CellSpanManager": "__P_547_",
+      "qx.ui.virtual.layer.GridLines": "__P_548_",
+      "qx.ui.virtual.layer.HtmlCellSpan": "__P_549_",
+      "qx.ui.virtual.layer.Row": "__P_550_",
+      "qx.ui.virtual.layer.WidgetCell": "__P_551_",
+      "qx.ui.virtual.layer.WidgetCellSpan": "__P_552_",
+      "qx.ui.virtual.selection.MModel": "__P_553_",
+      "qx.ui.website.Calendar": "__P_554_",
+      "qx.ui.website.Carousel": "__P_555_",
+      "qx.ui.website.DatePicker": "__P_556_",
+      "qx.ui.website.Slider": "__P_557_",
+      "qx.ui.website.Table": "__P_558_",
+      "qx.ui.website.Tabs": "__P_559_",
+      "qx.ui.website.Widget": "__P_560_",
+      "qx.ui.window.MDesktop": "__P_561_",
+      "qx.ui.window.Manager": "__P_562_",
+      "qx.ui.window.Window": "__P_563_",
+      "qx.util.AliasManager": "__P_564_",
+      "qx.util.Base64": "__P_565_",
+      "qx.util.ColorUtil": "__P_566_",
+      "qx.util.DeferredCall": "__P_567_",
+      "qx.util.DeferredCallManager": "__P_568_",
+      "qx.util.DisposeUtil": "__P_569_",
+      "qx.util.DynamicScriptLoader": "__P_570_",
+      "qx.util.EditDistance": "__P_571_",
+      "qx.util.LibraryManager": "__P_572_",
+      "qx.util.ObjectPool": "__P_573_",
+      "qx.util.ResourceManager": "__P_574_",
+      "qx.util.ResponseParser": "__P_575_",
+      "qx.util.RingBuffer": "__P_576_",
+      "qx.util.Serializer": "__P_577_",
+      "qx.util.TimerManager": "__P_578_",
+      "qx.util.Uri": "__P_579_",
+      "qx.util.Wheel": "__P_580_",
+      "qx.util.format.DateFormat": "__P_581_",
+      "qx.util.fsm.FiniteStateMachine": "__P_582_",
+      "qx.util.fsm.State": "__P_583_",
+      "qx.util.fsm.Transition": "__P_584_",
+      "qx.util.placement.Placement": "__P_585_",
+      "qx.xml.Element": "__P_586_",
+      "qxl.testtapper.Application": "__P_587_",
+      "qxWeb": "__P_588_",
+      "qxl.logpane.LogPane": "__P_589_",
+      "qxl.apiviewer.MWidgetRegistry": "__P_590_",
+      "qxl.apiviewer.Viewer": "__P_591_",
+      "qxl.apiviewer.Controller": "__P_592_",
+      "qxl.apiviewer.ui.PackageTree": "__P_593_",
+      "qxl.apiviewer.ui.SearchView": "__P_594_",
+      "qxl.apiviewer.ui.LegendView": "__P_595_",
+      "qxl.apiviewer.ClassLoader": "__P_596_",
+      "qxl.apiviewer.TabViewController": "__P_597_",
+      "qxl.apiviewer.dao.Package": "__P_598_",
+      "qxl.apiviewer.LoadingIndicator": "__P_599_",
+      "qxl.apiviewer.ui.tabview.AbstractPage": "__P_600_",
+      "qxl.apiviewer.ui.ClassViewer": "__P_601_",
+      "qxl.apiviewer.ui.AbstractViewer": "__P_602_",
+      "qxl.apiviewer.ui.panels.InfoPanel": "__P_603_",
+      "qxl.apiviewer.ui.panels.ConstantPanel": "__P_604_",
+      "qxl.apiviewer.ui.panels.PropertyPanel": "__P_605_",
+      "qxl.apiviewer.ObjectRegistry": "__P_606_"
     }
   }
 }

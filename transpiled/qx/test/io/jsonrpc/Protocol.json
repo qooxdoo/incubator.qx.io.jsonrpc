@@ -5,30 +5,38 @@
   "superClass": "qx.dev.unit.TestCase",
   "interfaces": [],
   "mixins": [
-    "qx.test.io.jsonrpc.MAssert"
+    "qx.test.io.MAssert"
   ],
   "functionName": null,
   "clazz": {
     "location": {
       "start": {
-        "line": 1,
+        "line": 19,
         "column": 0
       },
       "end": {
-        "line": 62,
+        "line": 80,
         "column": 3
       }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        }
+      ]
     }
   },
   "type": "class",
   "construct": {
     "location": {
       "start": {
-        "line": 5,
+        "line": 23,
         "column": 2
       },
       "end": {
-        "line": 8,
+        "line": 26,
         "column": 3
       }
     }
@@ -37,11 +45,11 @@
     "test: JSON-RPC request message object": {
       "location": {
         "start": {
-          "line": 10,
+          "line": 28,
           "column": 4
         },
         "end": {
-          "line": 21,
+          "line": 39,
           "column": 5
         }
       },
@@ -51,11 +59,11 @@
     "test: JSON-RPC request notification object": {
       "location": {
         "start": {
-          "line": 23,
+          "line": 41,
           "column": 4
         },
         "end": {
-          "line": 33,
+          "line": 51,
           "column": 5
         }
       },
@@ -65,11 +73,11 @@
     "test: JSON-RPC error object": {
       "location": {
         "start": {
-          "line": 35,
+          "line": 53,
           "column": 4
         },
         "end": {
-          "line": 48,
+          "line": 66,
           "column": 5
         }
       },
@@ -79,11 +87,11 @@
     "test: JSON-RPC result object": {
       "location": {
         "start": {
-          "line": 50,
+          "line": 68,
           "column": 4
         },
         "end": {
-          "line": 60,
+          "line": 78,
           "column": 5
         }
       },
@@ -97,7 +105,7 @@
       "mixin": true,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.test.io.jsonrpc.MAssert",
+      "overriddenFrom": "qx.test.io.MAssert",
       "jsdoc": {
         "@description": [
           {
@@ -128,7 +136,7 @@
       "mixin": true,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.test.io.jsonrpc.MAssert",
+      "overriddenFrom": "qx.test.io.MAssert",
       "jsdoc": {
         "@description": [
           {

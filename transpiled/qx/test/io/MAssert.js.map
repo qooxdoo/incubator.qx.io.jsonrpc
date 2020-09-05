@@ -1,0 +1,39 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/test/io/MAssert.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Mixin",
+    "define",
+    "members",
+    "assertDeepEquals",
+    "expected",
+    "actual",
+    "msg",
+    "lang",
+    "Json",
+    "stringify",
+    "assert",
+    "dev",
+    "unit",
+    "Sinon",
+    "getSinon",
+    "deepEqual",
+    "assertMessageDispatched",
+    "name",
+    "data",
+    "Error",
+    "test",
+    "io",
+    "MAssert"
+  ],
+  "mappings": ";;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,oBAAhB,EAAqC;AAEnCC,IAAAA,OAAO,EAAG;AAER;;;;;;;;;;;;;;;;AAgBAC,MAAAA,gBAAgB,EAAG,0BAASC,QAAT,EAAmBC,MAAnB,EAA2BC,GAA3B,EAAgC;AACjD,YAAI,CAACA,GAAL,EAAU;AACRA,UAAAA,GAAG,GAAI,yBAAwBV,EAAE,CAACW,IAAH,CAAQC,IAAR,CAAaC,SAAb,CAAuBJ,MAAvB,CAA+B,kBAAiBT,EAAE,CAACW,IAAH,CAAQC,IAAR,CAAaC,SAAb,CAAuBL,QAAvB,CAAiC,GAAhH;AACD;;AACD,aAAKM,MAAL,CAAYd,EAAE,CAACe,GAAH,CAAOC,IAAP,CAAYC,KAAZ,CAAkBC,QAAlB,GAA6BC,SAA7B,CAAuCX,QAAvC,EAAiDC,MAAjD,CAAZ,EAAsEC,GAAtE;AACD,OAvBO;;AAyBR;;;;;;;;;;AAUAU,MAAAA,uBAAuB,EAAG,iCAASC,IAAT,EAAeC,IAAf,EAAqBZ,GAArB,EAA0B;AAClD,cAAM,IAAIa,KAAJ,CAAU,yBAAV,CAAN;AACD;AArCO;AAFyB,GAArC;AAHAvB,EAAAA,EAAE,CAACwB,IAAH,CAAQC,EAAR,CAAWC,OAAX,CAAmBvB,aAAnB,GAAmCA,aAAnC",
+  "sourcesContent": [
+    "/**\n * Mixin containing special assert methods\n */\nqx.Mixin.define(\"qx.test.io.MAssert\",{\n\n  members : {\n\n    /**\n     * Deep equal comparison, using Sinon's `deepEqual` comparison.\n     * Two values are \"deep equal\" if:\n     *\n     *   - They are equal, according to samsam.identical\n     *   (https://sinonjs.github.io/samsam/)\n     *   - They are both date objects representing the same time\n     *   - They are both arrays containing elements that are all deepEqual\n     *   - They are objects with the same set of properties, and each property\n     *     in obj1 is deepEqual to the corresponding property in obj2\n     *\n     * Supports cyclic objects.\n     * @param {*} expected\n     * @param {*} actual\n     * @param {String?} msg\n     */\n    assertDeepEquals : function(expected, actual, msg) {\n      if (!msg) {\n        msg = `Failed to assert that ${qx.lang.Json.stringify(actual)} deeply equals ${qx.lang.Json.stringify(expected)}.`;\n      }\n      this.assert(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);\n    },\n\n    /**\n     * Assert that an message is dispatched via the message bus.\n     *\n     * @param {String} name The name of the message\n     * @param {*|Function|undefined} data The data of the message, if any, or a\n     * valiation function which returns true of false depending on whether the\n     * data was correct. If you dont want to check the data and want to provide\n     * a message as the third argument, pass `undefined` explicitly.\n     * @param msg {String?\"\"} Message to be shows if the assertion fails.\n     */\n    assertMessageDispatched : function(name, data, msg) {\n      throw new Error(\"Needs to be implemented\");\n    }\n  }\n});\n"
+  ]
+}

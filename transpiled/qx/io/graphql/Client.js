@@ -9,8 +9,8 @@
         "construct": true,
         "require": true
       },
-      "qx.io.graphql.protocol.Response": {},
       "qx.io.exception.Transport": {},
+      "qx.io.graphql.protocol.Response": {},
       "qx.io.exception.Protocol": {}
     }
   };
@@ -116,16 +116,18 @@
         this.__init__P_158_0.body = request.toString();
         let response = await fetch(this.getUrl(), this.__init__P_158_0);
 
-        if (response.ok) {
-          let responseData = await response.json();
-          let graphQlResponse = new qx.io.graphql.protocol.Response(responseData);
-
-          if (graphQlResponse.getErrors()) {
-            this._handleErrors(graphQlResponse);
-          }
-        } else {
+        if (!response.ok) {
           throw new qx.io.exception.Transport(response.statusText, response.status);
         }
+
+        let responseData = await response.json();
+        let graphQlResponse = new qx.io.graphql.protocol.Response(responseData);
+
+        if (graphQlResponse.getErrors()) {
+          this._handleErrors(graphQlResponse);
+        }
+
+        return graphQlResponse.getData();
       },
 
       /**
@@ -151,4 +153,4 @@
   qx.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1599312828673
+//# sourceMappingURL=Client.js.map?dt=1599343212833

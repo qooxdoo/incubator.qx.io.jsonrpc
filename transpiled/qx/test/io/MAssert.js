@@ -14,7 +14,7 @@
   /**
    * Mixin containing special assert methods
    */
-  qx.Mixin.define("qx.test.io.jsonrpc.MAssert", {
+  qx.Mixin.define("qx.test.io.MAssert", {
     members: {
       /**
        * Deep equal comparison, using Sinon's `deepEqual` comparison.
@@ -55,7 +55,7 @@
       }
     }
   });
-  qx.test.io.jsonrpc.MAssert.$$dbClassInfo = $$dbClassInfo;
+  qx.test.io.MAssert.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MAssert.js.map?dt=1599312838643
+//# sourceMappingURL=MAssert.js.map?dt=1599343222879

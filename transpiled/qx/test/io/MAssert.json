@@ -1,6 +1,6 @@
 {
-  "className": "qx.test.io.jsonrpc.MAssert",
-  "packageName": "qx.test.io.jsonrpc",
+  "className": "qx.test.io.MAssert",
+  "packageName": "qx.test.io",
   "name": "MAssert",
   "superClass": null,
   "interfaces": [],

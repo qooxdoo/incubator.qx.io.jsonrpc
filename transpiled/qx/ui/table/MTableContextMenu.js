@@ -61,7 +61,7 @@
         } // Get the context object for the handler function
 
 
-        var handlerContext = this.__contextMenuHandlerContext__P_507_0[col]; // Get the data model
+        var handlerContext = this.__contextMenuHandlerContext__P_501_0[col]; // Get the data model
 
         var tableModel = this.getTableModel(); // Create a context menu for this tree.
 
@@ -88,12 +88,12 @@
       }, this); // Provide an array in which context menu handlers will be stored.  The
       // array is indexed by column number.
 
-      this.__contextMenuHandler__P_507_1 = [];
-      this.__contextMenuHandlerContext__P_507_0 = [];
+      this.__contextMenuHandler__P_501_1 = [];
+      this.__contextMenuHandlerContext__P_501_0 = [];
     },
     members: {
-      __contextMenuHandler__P_507_1: null,
-      __contextMenuHandlerContext__P_507_0: null,
+      __contextMenuHandler__P_501_1: null,
+      __contextMenuHandlerContext__P_501_0: null,
 
       /**
        * Add a handler for a context menu which is initiated in a specific
@@ -139,8 +139,8 @@
        *
        */
       setContextMenuHandler: function setContextMenuHandler(col, handler, context) {
-        this.__contextMenuHandler__P_507_1[col] = handler;
-        this.__contextMenuHandlerContext__P_507_0[col] = context || this;
+        this.__contextMenuHandler__P_501_1[col] = handler;
+        this.__contextMenuHandlerContext__P_501_0[col] = context || this;
       },
 
       /**
@@ -155,7 +155,7 @@
        *   {@link #setContextMenuHandler}.
        */
       getContextMenuHandler: function getContextMenuHandler(col) {
-        return this.__contextMenuHandler__P_507_1[col];
+        return this.__contextMenuHandler__P_501_1[col];
       }
     },
 
@@ -165,11 +165,11 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__contextMenuHandler__P_507_1 = null;
-      this.__contextMenuHandlerContext__P_507_0 = null;
+      this.__contextMenuHandler__P_501_1 = null;
+      this.__contextMenuHandlerContext__P_501_0 = null;
     }
   });
   qx.ui.table.MTableContextMenu.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MTableContextMenu.js.map?dt=1599312859725
+//# sourceMappingURL=MTableContextMenu.js.map?dt=1599343243463

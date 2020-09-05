@@ -9076,7 +9076,7 @@
           cls._root.destroy();
 
           cls._root = null;
-          qx.core.Init.getApplication = cls.__oldGetApp__P_283_0;
+          qx.core.Init.getApplication = cls.__oldGetApp__P_277_0;
         }
       },
       getRoot: function getRoot() {
@@ -9088,8 +9088,8 @@
 
         qx.theme.manager.Meta.getInstance().initialize();
         cls._root = new qx.ui.root.Application(document);
-        cls.__oldApplication__P_283_1 = qx.core.Init.getApplication();
-        cls.__oldGetApp__P_283_0 = qx.core.Init.getApplication;
+        cls.__oldApplication__P_277_1 = qx.core.Init.getApplication();
+        cls.__oldGetApp__P_277_0 = qx.core.Init.getApplication;
 
         qx.core.Init.getApplication = function () {
           return {
@@ -9104,7 +9104,7 @@
         return cls._root;
       },
       getRunnerApplication: function getRunnerApplication() {
-        return qx.test.ui.LayoutTestCase.__oldApplication__P_283_1 || qx.core.Init.getApplication();
+        return qx.test.ui.LayoutTestCase.__oldApplication__P_277_1 || qx.core.Init.getApplication();
       },
       flush: function flush() {
         qx.ui.core.queue.Manager.flush();
@@ -12714,7 +12714,7 @@
        * @param dataB {Array} incoming target data
        * @return {Integer[][]} outgoing matrix
        */
-      __computeLevenshteinDistance__P_577_0: function __computeLevenshteinDistance__P_577_0(dataA, dataB) {
+      __computeLevenshteinDistance__P_571_0: function __computeLevenshteinDistance__P_571_0(dataA, dataB) {
         // distance is dataA table with dataA.length+1 rows and dataB.length+1 columns
         var distance = []; // posA and posB are used to iterate over str1 and str2
 
@@ -12755,7 +12755,7 @@
        * @param dataB {Array} incoming target data
        * @return {Map[]} Array of maps describing the operations needed
        */
-      __computeEditOperations__P_577_1: function __computeEditOperations__P_577_1(distance, dataA, dataB) {
+      __computeEditOperations__P_571_1: function __computeEditOperations__P_571_1(distance, dataA, dataB) {
         var operations = [];
         var posA = dataA.length;
         var posB = dataB.length;
@@ -12832,9 +12832,9 @@
        * @return {Map[]} Array of maps describing the operations needed
        */
       getEditOperations: function getEditOperations(dataA, dataB) {
-        var distance = this.__computeLevenshteinDistance__P_577_0(dataA, dataB);
+        var distance = this.__computeLevenshteinDistance__P_571_0(dataA, dataB);
 
-        var operations = this.__computeEditOperations__P_577_1(distance, dataA, dataB);
+        var operations = this.__computeEditOperations__P_571_1(distance, dataA, dataB);
 
         return operations;
       }
@@ -15487,7 +15487,7 @@
    */
   qx.Class.define("qx.xml.Element", {
     statics: {
-      __xpe__P_592_0: null,
+      __xpe__P_586_0: null,
 
       /**
        * @type {Boolean} <code>true</code> if the native XMLSerializer should be used,
@@ -15523,11 +15523,11 @@
        */
       selectSingleNode: function selectSingleNode(element, query, namespaces) {
         if (qx.core.Environment.get("html.xpath")) {
-          if (!this.__xpe__P_592_0) {
-            this.__xpe__P_592_0 = new XPathEvaluator();
+          if (!this.__xpe__P_586_0) {
+            this.__xpe__P_586_0 = new XPathEvaluator();
           }
 
-          var xpe = this.__xpe__P_592_0;
+          var xpe = this.__xpe__P_586_0;
           var resolver;
 
           if (namespaces) {
@@ -15578,10 +15578,10 @@
        */
       selectNodes: function selectNodes(element, query, namespaces) {
         if (qx.core.Environment.get("html.xpath")) {
-          var xpe = this.__xpe__P_592_0;
+          var xpe = this.__xpe__P_586_0;
 
           if (!xpe) {
-            this.__xpe__P_592_0 = xpe = new XPathEvaluator();
+            this.__xpe__P_586_0 = xpe = new XPathEvaluator();
           }
 
           var resolver;
@@ -27166,17 +27166,17 @@
     *****************************************************************************
     */
     members: {
-      __offset__P_401_0: 2,
-      __originalMinSize__P_401_1: 0,
+      __offset__P_395_0: 2,
+      __originalMinSize__P_395_1: 0,
       // overridden
       _computeSizeHint: function _computeSizeHint() {
         var hint = qx.ui.core.scroll.ScrollBar.prototype._computeSizeHint.base.call(this);
 
         if (this.getOrientation() === "horizontal") {
-          this.__originalMinSize__P_401_1 = hint.minWidth;
+          this.__originalMinSize__P_395_1 = hint.minWidth;
           hint.minWidth = 0;
         } else {
-          this.__originalMinSize__P_401_1 = hint.minHeight;
+          this.__originalMinSize__P_395_1 = hint.minHeight;
           hint.minHeight = 0;
         }
 
@@ -27187,7 +27187,7 @@
         var changes = qx.ui.core.scroll.ScrollBar.prototype.renderLayout.base.call(this, left, top, width, height);
         var horizontal = this.getOrientation() === "horizontal";
 
-        if (this.__originalMinSize__P_401_1 >= (horizontal ? width : height)) {
+        if (this.__originalMinSize__P_395_1 >= (horizontal ? width : height)) {
           this.getChildControl("button-begin").setVisibility("hidden");
           this.getChildControl("button-end").setVisibility("hidden");
         } else {
@@ -27406,11 +27406,11 @@
         var sliderSize = this.getChildControl("slider").getInnerSize();
 
         if (this.getOrientation() == "vertical") {
-          if (sliderSize.height < knobHint.minHeight + this.__offset__P_401_0) {
+          if (sliderSize.height < knobHint.minHeight + this.__offset__P_395_0) {
             hideKnob = true;
           }
         } else {
-          if (sliderSize.width < knobHint.minWidth + this.__offset__P_401_0) {
+          if (sliderSize.width < knobHint.minWidth + this.__offset__P_395_0) {
             hideKnob = true;
           }
         }
@@ -27682,7 +27682,7 @@
   qx.Mixin.define("qx.ui.form.MForm", {
     construct: function construct() {
       {
-        qx.locale.Manager.getInstance().addListener("changeLocale", this.__onChangeLocale__P_421_0, this);
+        qx.locale.Manager.getInstance().addListener("changeLocale", this.__onChangeLocale__P_415_0, this);
       }
     },
     properties: {
@@ -27737,7 +27737,7 @@
        * @signature function(e)
        * @param e {Event} the change event
        */
-      __onChangeLocale__P_421_0: function __onChangeLocale__P_421_0(e) {
+      __onChangeLocale__P_415_0: function __onChangeLocale__P_415_0(e) {
         // invalid message
         var invalidMessage = this.getInvalidMessage();
 
@@ -27755,7 +27755,7 @@
     },
     destruct: function destruct() {
       {
-        qx.locale.Manager.getInstance().removeListener("changeLocale", this.__onChangeLocale__P_421_0, this);
+        qx.locale.Manager.getInstance().removeListener("changeLocale", this.__onChangeLocale__P_415_0, this);
       }
     }
   });
@@ -28002,20 +28002,20 @@
     *****************************************************************************
     */
     members: {
-      __sliderLocation__P_428_0: null,
-      __knobLocation__P_428_1: null,
-      __knobSize__P_428_2: null,
-      __dragMode__P_428_3: null,
-      __dragOffset__P_428_4: null,
-      __trackingMode__P_428_5: null,
-      __trackingDirection__P_428_6: null,
-      __trackingEnd__P_428_7: null,
-      __timer__P_428_8: null,
+      __sliderLocation__P_422_0: null,
+      __knobLocation__P_422_1: null,
+      __knobSize__P_422_2: null,
+      __dragMode__P_422_3: null,
+      __dragOffset__P_422_4: null,
+      __trackingMode__P_422_5: null,
+      __trackingDirection__P_422_6: null,
+      __trackingEnd__P_422_7: null,
+      __timer__P_422_8: null,
       // event delay stuff during drag
-      __dragTimer__P_428_9: null,
-      __lastValueEvent__P_428_10: null,
-      __dragValue__P_428_11: null,
-      __scrollAnimationframe__P_428_12: null,
+      __dragTimer__P_422_9: null,
+      __lastValueEvent__P_422_10: null,
+      __dragValue__P_422_11: null,
+      __scrollAnimationframe__P_422_12: null,
       // overridden
 
       /**
@@ -28148,11 +28148,11 @@
       _onPointerDown: function _onPointerDown(e) {
         // this can happen if the user releases the button while dragging outside
         // of the browser viewport
-        if (this.__dragMode__P_428_3) {
+        if (this.__dragMode__P_422_3) {
           return;
         }
 
-        var isHorizontal = this.__isHorizontal__P_428_13;
+        var isHorizontal = this.__isHorizontal__P_422_13;
         var knob = this.getChildControl("knob");
         var locationProperty = isHorizontal ? "left" : "top";
         var cursorLocation = isHorizontal ? e.getDocumentLeft() : e.getDocumentTop();
@@ -28167,48 +28167,48 @@
           var padding = (this.getPaddingTop() || 0) + decoratorPadding;
         }
 
-        var sliderLocation = this.__sliderLocation__P_428_0 = qx.bom.element.Location.get(this.getContentElement().getDomElement())[locationProperty];
+        var sliderLocation = this.__sliderLocation__P_422_0 = qx.bom.element.Location.get(this.getContentElement().getDomElement())[locationProperty];
         sliderLocation += padding;
-        var knobLocation = this.__knobLocation__P_428_1 = qx.bom.element.Location.get(knob.getContentElement().getDomElement())[locationProperty];
+        var knobLocation = this.__knobLocation__P_422_1 = qx.bom.element.Location.get(knob.getContentElement().getDomElement())[locationProperty];
 
         if (e.getTarget() === knob) {
           // Switch into drag mode
-          this.__dragMode__P_428_3 = true;
+          this.__dragMode__P_422_3 = true;
 
-          if (!this.__dragTimer__P_428_9) {
+          if (!this.__dragTimer__P_422_9) {
             // create a timer to fire delayed dragging events if dragging stops.
-            this.__dragTimer__P_428_9 = new qx.event.Timer(100);
+            this.__dragTimer__P_422_9 = new qx.event.Timer(100);
 
-            this.__dragTimer__P_428_9.addListener("interval", this._fireValue, this);
+            this.__dragTimer__P_422_9.addListener("interval", this._fireValue, this);
           }
 
-          this.__dragTimer__P_428_9.start(); // Compute dragOffset (includes both: inner position of the widget and
+          this.__dragTimer__P_422_9.start(); // Compute dragOffset (includes both: inner position of the widget and
           // cursor position on knob)
 
 
-          this.__dragOffset__P_428_4 = cursorLocation + sliderLocation - knobLocation; // add state
+          this.__dragOffset__P_422_4 = cursorLocation + sliderLocation - knobLocation; // add state
 
           knob.addState("pressed");
         } else {
           // Switch into tracking mode
-          this.__trackingMode__P_428_5 = true; // Detect tracking direction
+          this.__trackingMode__P_422_5 = true; // Detect tracking direction
 
-          this.__trackingDirection__P_428_6 = cursorLocation <= knobLocation ? -1 : 1; // Compute end value
+          this.__trackingDirection__P_422_6 = cursorLocation <= knobLocation ? -1 : 1; // Compute end value
 
-          this.__computeTrackingEnd__P_428_14(e); // Directly call interval method once
+          this.__computeTrackingEnd__P_422_14(e); // Directly call interval method once
 
 
           this._onInterval(); // Initialize timer (when needed)
 
 
-          if (!this.__timer__P_428_8) {
-            this.__timer__P_428_8 = new qx.event.Timer(100);
+          if (!this.__timer__P_422_8) {
+            this.__timer__P_422_8 = new qx.event.Timer(100);
 
-            this.__timer__P_428_8.addListener("interval", this._onInterval, this);
+            this.__timer__P_422_8.addListener("interval", this._onInterval, this);
           } // Start timer
 
 
-          this.__timer__P_428_8.start();
+          this.__timer__P_422_8.start();
         } // Register move listener
 
 
@@ -28226,18 +28226,18 @@
        * @param e {qx.event.type.Pointer} Incoming event object
        */
       _onPointerUp: function _onPointerUp(e) {
-        if (this.__dragMode__P_428_3) {
+        if (this.__dragMode__P_422_3) {
           // Release capture mode
           this.releaseCapture(); // Cleanup status flags
 
-          delete this.__dragMode__P_428_3; // as we come out of drag mode, make
+          delete this.__dragMode__P_422_3; // as we come out of drag mode, make
           // sure content gets synced
 
-          this.__dragTimer__P_428_9.stop();
+          this.__dragTimer__P_422_9.stop();
 
           this._fireValue();
 
-          delete this.__dragOffset__P_428_4; // remove state
+          delete this.__dragOffset__P_422_4; // remove state
 
           this.getChildControl("knob").removeState("pressed"); // it's necessary to check whether the cursor is over the knob widget to be able to
           // to decide whether to remove the 'hovered' state.
@@ -28247,30 +28247,30 @@
             var deltaPosition;
             var positionSlider;
 
-            if (this.__isHorizontal__P_428_13) {
-              deltaSlider = e.getDocumentLeft() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_428_0);
+            if (this.__isHorizontal__P_422_13) {
+              deltaSlider = e.getDocumentLeft() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_422_0);
               positionSlider = qx.bom.element.Location.get(this.getContentElement().getDomElement())["top"];
               deltaPosition = e.getDocumentTop() - (positionSlider + this.getChildControl("knob").getBounds().top);
             } else {
-              deltaSlider = e.getDocumentTop() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_428_0);
+              deltaSlider = e.getDocumentTop() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_422_0);
               positionSlider = qx.bom.element.Location.get(this.getContentElement().getDomElement())["left"];
               deltaPosition = e.getDocumentLeft() - (positionSlider + this.getChildControl("knob").getBounds().left);
             }
 
-            if (deltaPosition < 0 || deltaPosition > this.__knobSize__P_428_2 || deltaSlider < 0 || deltaSlider > this.__knobSize__P_428_2) {
+            if (deltaPosition < 0 || deltaPosition > this.__knobSize__P_422_2 || deltaSlider < 0 || deltaSlider > this.__knobSize__P_422_2) {
               this.getChildControl("knob").removeState("hovered");
             }
           }
-        } else if (this.__trackingMode__P_428_5) {
+        } else if (this.__trackingMode__P_422_5) {
           // Stop timer interval
-          this.__timer__P_428_8.stop(); // Release capture mode
+          this.__timer__P_422_8.stop(); // Release capture mode
 
 
           this.releaseCapture(); // Cleanup status flags
 
-          delete this.__trackingMode__P_428_5;
-          delete this.__trackingDirection__P_428_6;
-          delete this.__trackingEnd__P_428_7;
+          delete this.__trackingMode__P_422_5;
+          delete this.__trackingDirection__P_422_6;
+          delete this.__trackingEnd__P_422_7;
         } // Remove move listener again
 
 
@@ -28287,13 +28287,13 @@
        * @param e {qx.event.type.Pointer} Incoming event object
        */
       _onPointerMove: function _onPointerMove(e) {
-        if (this.__dragMode__P_428_3) {
-          var dragStop = this.__isHorizontal__P_428_13 ? e.getDocumentLeft() : e.getDocumentTop();
-          var position = dragStop - this.__dragOffset__P_428_4;
+        if (this.__dragMode__P_422_3) {
+          var dragStop = this.__isHorizontal__P_422_13 ? e.getDocumentLeft() : e.getDocumentTop();
+          var position = dragStop - this.__dragOffset__P_422_4;
           this.slideTo(this._positionToValue(position));
-        } else if (this.__trackingMode__P_428_5) {
+        } else if (this.__trackingMode__P_422_5) {
           // Update tracking end on pointermove
-          this.__computeTrackingEnd__P_428_14(e);
+          this.__computeTrackingEnd__P_422_14(e);
         } // Stop event
 
 
@@ -28308,7 +28308,7 @@
        */
       _onInterval: function _onInterval(e) {
         // Compute new value
-        var value = this.getValue() + this.__trackingDirection__P_428_6 * this.getPageStep(); // Limit value
+        var value = this.getValue() + this.__trackingDirection__P_422_6 * this.getPageStep(); // Limit value
 
         if (value < this.getMinimum()) {
           value = this.getMinimum();
@@ -28317,10 +28317,10 @@
         } // Stop at tracking position (where the pointer is pressed down)
 
 
-        var slideBack = this.__trackingDirection__P_428_6 == -1;
+        var slideBack = this.__trackingDirection__P_422_6 == -1;
 
-        if (slideBack && value <= this.__trackingEnd__P_428_7 || !slideBack && value >= this.__trackingEnd__P_428_7) {
-          value = this.__trackingEnd__P_428_7;
+        if (slideBack && value <= this.__trackingEnd__P_422_7 || !slideBack && value >= this.__trackingEnd__P_422_7) {
+          value = this.__trackingEnd__P_422_7;
         } // Finally slide to the desired position
 
 
@@ -28336,13 +28336,13 @@
         // Update sliding space
         var availSize = this.getInnerSize();
         var knobSize = this.getChildControl("knob").getBounds();
-        var sizeProperty = this.__isHorizontal__P_428_13 ? "width" : "height"; // Sync knob size
+        var sizeProperty = this.__isHorizontal__P_422_13 ? "width" : "height"; // Sync knob size
 
         this._updateKnobSize(); // Store knob size
 
 
-        this.__slidingSpace__P_428_15 = availSize[sizeProperty] - knobSize[sizeProperty];
-        this.__knobSize__P_428_2 = knobSize[sizeProperty]; // Update knob position (sliding space must be updated first)
+        this.__slidingSpace__P_422_15 = availSize[sizeProperty] - knobSize[sizeProperty];
+        this.__knobSize__P_422_2 = knobSize[sizeProperty]; // Update knob position (sliding space must be updated first)
 
         this._updateKnobPosition();
       },
@@ -28354,13 +28354,13 @@
       */
 
       /** @type {Boolean} Whether the slider is laid out horizontally */
-      __isHorizontal__P_428_13: false,
+      __isHorizontal__P_422_13: false,
 
       /**
        * @type {Integer} Available space for knob to slide on, computed on resize of
        * the widget
        */
-      __slidingSpace__P_428_15: 0,
+      __slidingSpace__P_422_15: 0,
 
       /**
        * Computes the value where the tracking should end depending on
@@ -28368,12 +28368,12 @@
        *
        * @param e {qx.event.type.Pointer} Incoming pointer event
        */
-      __computeTrackingEnd__P_428_14: function __computeTrackingEnd__P_428_14(e) {
-        var isHorizontal = this.__isHorizontal__P_428_13;
+      __computeTrackingEnd__P_422_14: function __computeTrackingEnd__P_422_14(e) {
+        var isHorizontal = this.__isHorizontal__P_422_13;
         var cursorLocation = isHorizontal ? e.getDocumentLeft() : e.getDocumentTop();
-        var sliderLocation = this.__sliderLocation__P_428_0;
-        var knobLocation = this.__knobLocation__P_428_1;
-        var knobSize = this.__knobSize__P_428_2; // Compute relative position
+        var sliderLocation = this.__sliderLocation__P_422_0;
+        var knobLocation = this.__knobLocation__P_422_1;
+        var knobSize = this.__knobSize__P_422_2; // Compute relative position
 
         var position = cursorLocation - sliderLocation;
 
@@ -28394,15 +28394,15 @@
         } else {
           var old = this.getValue();
           var step = this.getPageStep();
-          var method = this.__trackingDirection__P_428_6 < 0 ? "floor" : "ceil"; // Fix to page step
+          var method = this.__trackingDirection__P_422_6 < 0 ? "floor" : "ceil"; // Fix to page step
 
           value = old + Math[method]((value - old) / step) * step;
         } // Store value when undefined, otherwise only when it follows the
         // current direction e.g. goes up or down
 
 
-        if (this.__trackingEnd__P_428_7 == null || this.__trackingDirection__P_428_6 == -1 && value <= this.__trackingEnd__P_428_7 || this.__trackingDirection__P_428_6 == 1 && value >= this.__trackingEnd__P_428_7) {
-          this.__trackingEnd__P_428_7 = value;
+        if (this.__trackingEnd__P_422_7 == null || this.__trackingDirection__P_422_6 == -1 && value <= this.__trackingEnd__P_422_7 || this.__trackingDirection__P_422_6 == 1 && value >= this.__trackingEnd__P_422_7) {
+          this.__trackingEnd__P_422_7 = value;
         }
       },
 
@@ -28416,7 +28416,7 @@
        */
       _positionToValue: function _positionToValue(position) {
         // Reading available space
-        var avail = this.__slidingSpace__P_428_15; // Protect undefined value (before initial resize) and division by zero
+        var avail = this.__slidingSpace__P_422_15; // Protect undefined value (before initial resize) and division by zero
 
         if (avail == null || avail == 0) {
           return 0;
@@ -28446,7 +28446,7 @@
        */
       _valueToPosition: function _valueToPosition(value) {
         // Reading available space
-        var avail = this.__slidingSpace__P_428_15;
+        var avail = this.__slidingSpace__P_422_15;
 
         if (avail == null) {
           return 0;
@@ -28497,7 +28497,7 @@
         dec = qx.theme.manager.Decoration.getInstance().resolve(dec);
         var content = knob.getContentElement();
 
-        if (this.__isHorizontal__P_428_13) {
+        if (this.__isHorizontal__P_422_13) {
           if (dec && dec.getPadding()) {
             position += dec.getPadding().left;
           }
@@ -28535,7 +28535,7 @@
         } // Read size property
 
 
-        if (this.__isHorizontal__P_428_13) {
+        if (this.__isHorizontal__P_422_13) {
           this.getChildControl("knob").setWidth(Math.round(knobFactor * avail.width));
         } else {
           this.getChildControl("knob").setHeight(Math.round(knobFactor * avail.height));
@@ -28621,7 +28621,7 @@
         this.stopSlideAnimation();
 
         if (duration) {
-          this.__animateTo__P_428_16(value, duration);
+          this.__animateTo__P_422_16(value, duration);
         } else {
           this.updatePosition(value);
         }
@@ -28632,7 +28632,7 @@
        * @param value {Number} The new position.
        */
       updatePosition: function updatePosition(value) {
-        this.setValue(this.__normalizeValue__P_428_17(value));
+        this.setValue(this.__normalizeValue__P_422_17(value));
       },
 
       /**
@@ -28640,10 +28640,10 @@
        * If not, the method does nothing.
        */
       stopSlideAnimation: function stopSlideAnimation() {
-        if (this.__scrollAnimationframe__P_428_12) {
-          this.__scrollAnimationframe__P_428_12.cancelSequence();
+        if (this.__scrollAnimationframe__P_422_12) {
+          this.__scrollAnimationframe__P_422_12.cancelSequence();
 
-          this.__scrollAnimationframe__P_428_12 = null;
+          this.__scrollAnimationframe__P_422_12 = null;
         }
       },
 
@@ -28653,7 +28653,7 @@
        * @param value {Number} The value to normalize.
        * @return {Number} The normalized value.
        */
-      __normalizeValue__P_428_17: function __normalizeValue__P_428_17(value) {
+      __normalizeValue__P_422_17: function __normalizeValue__P_422_17(value) {
         // Bring into allowed range or fix to single step grid
         if (value < this.getMinimum()) {
           value = this.getMinimum();
@@ -28671,22 +28671,22 @@
        * @param to {Number} The target value.
        * @param duration {Number} The time in milliseconds the slide to should take.
        */
-      __animateTo__P_428_16: function __animateTo__P_428_16(to, duration) {
-        to = this.__normalizeValue__P_428_17(to);
+      __animateTo__P_422_16: function __animateTo__P_422_16(to, duration) {
+        to = this.__normalizeValue__P_422_17(to);
         var from = this.getValue();
-        this.__scrollAnimationframe__P_428_12 = new qx.bom.AnimationFrame();
+        this.__scrollAnimationframe__P_422_12 = new qx.bom.AnimationFrame();
 
-        this.__scrollAnimationframe__P_428_12.on("frame", function (timePassed) {
+        this.__scrollAnimationframe__P_422_12.on("frame", function (timePassed) {
           this.setValue(parseInt(timePassed / duration * (to - from) + from));
         }, this);
 
-        this.__scrollAnimationframe__P_428_12.on("end", function () {
+        this.__scrollAnimationframe__P_422_12.on("end", function () {
           this.setValue(to);
-          this.__scrollAnimationframe__P_428_12 = null;
+          this.__scrollAnimationframe__P_422_12 = null;
           this.fireEvent("slideAnimationEnd");
         }, this);
 
-        this.__scrollAnimationframe__P_428_12.startSequence(duration);
+        this.__scrollAnimationframe__P_422_12.startSequence(duration);
       },
 
       /*
@@ -28698,9 +28698,9 @@
       _applyOrientation: function _applyOrientation(value, old) {
         var knob = this.getChildControl("knob"); // Update private flag for faster access
 
-        this.__isHorizontal__P_428_13 = value === "horizontal"; // Toggle states and knob layout
+        this.__isHorizontal__P_422_13 = value === "horizontal"; // Toggle states and knob layout
 
-        if (this.__isHorizontal__P_428_13) {
+        if (this.__isHorizontal__P_422_13) {
           this.removeState("vertical");
           knob.removeState("vertical");
           this.addState("horizontal");
@@ -28730,7 +28730,7 @@
         if (value != null) {
           this._updateKnobSize();
         } else {
-          if (this.__isHorizontal__P_428_13) {
+          if (this.__isHorizontal__P_422_13) {
             this.getChildControl("knob").resetWidth();
           } else {
             this.getChildControl("knob").resetHeight();
@@ -28742,8 +28742,8 @@
         if (value != null) {
           this._updateKnobPosition();
 
-          if (this.__dragMode__P_428_3) {
-            this.__dragValue__P_428_11 = [value, old];
+          if (this.__dragMode__P_422_3) {
+            this.__dragValue__P_422_11 = [value, old];
           } else {
             this.fireEvent("changeValue", qx.event.type.Data, [value, old]);
           }
@@ -28756,12 +28756,12 @@
        * Helper for applyValue which fires the changeValue event.
        */
       _fireValue: function _fireValue() {
-        if (!this.__dragValue__P_428_11) {
+        if (!this.__dragValue__P_422_11) {
           return;
         }
 
-        var tmp = this.__dragValue__P_428_11;
-        this.__dragValue__P_428_11 = null;
+        var tmp = this.__dragValue__P_422_11;
+        this.__dragValue__P_422_11 = null;
         this.fireEvent("changeValue", qx.event.type.Data, tmp);
       },
       // property apply
@@ -29365,9 +29365,9 @@
     construct: function construct(label, icon) {
       qx.ui.form.Button.constructor.call(this, label, icon); // create the timer and add the listener
 
-      this.__timer__P_425_0 = new qx.event.AcceleratingTimer();
+      this.__timer__P_419_0 = new qx.event.AcceleratingTimer();
 
-      this.__timer__P_425_0.addListener("interval", this._onInterval, this);
+      this.__timer__P_419_0.addListener("interval", this._onInterval, this);
     },
     events: {
       /**
@@ -29419,8 +29419,8 @@
       }
     },
     members: {
-      __executed__P_425_1: null,
-      __timer__P_425_0: null,
+      __executed__P_419_1: null,
+      __timer__P_419_0: null,
 
       /**
        * Calling this function is like a tap from the user on the
@@ -29434,7 +29434,7 @@
           // if the state pressed must be applied (first call)
           if (!this.hasState("pressed")) {
             // start the timer
-            this.__startInternalTimer__P_425_2();
+            this.__startInternalTimer__P_419_2();
           } // set the states
 
 
@@ -29460,7 +29460,7 @@
 
         if (this.hasState("pressed")) {
           // if the button has not been executed
-          if (!this.__executed__P_425_1) {
+          if (!this.__executed__P_419_1) {
             this.execute();
           }
         } // remove button states
@@ -29469,7 +29469,7 @@
         this.removeState("pressed");
         this.removeState("abandoned"); // stop the repeat timer and therefore the execution
 
-        this.__stopInternalTimer__P_425_3();
+        this.__stopInternalTimer__P_419_3();
       },
 
       /*
@@ -29491,7 +29491,7 @@
           this.removeState("pressed");
           this.removeState("abandoned"); // stop the repeat timer and therefore the execution
 
-          this.__stopInternalTimer__P_425_3();
+          this.__stopInternalTimer__P_419_3();
         }
       },
 
@@ -29519,7 +29519,7 @@
           this.removeState("abandoned");
           this.addState("pressed");
 
-          this.__timer__P_425_0.start();
+          this.__timer__P_419_0.start();
         }
 
         this.addState("hovered");
@@ -29545,7 +29545,7 @@
           this.removeState("pressed");
           this.addState("abandoned");
 
-          this.__timer__P_425_0.stop();
+          this.__timer__P_419_0.stop();
         }
       },
 
@@ -29567,7 +29567,7 @@
 
         this.capture();
 
-        this.__startInternalTimer__P_425_2();
+        this.__startInternalTimer__P_419_2();
 
         e.stopPropagation();
       },
@@ -29587,12 +29587,12 @@
         if (!this.hasState("abandoned")) {
           this.addState("hovered");
 
-          if (this.hasState("pressed") && !this.__executed__P_425_1) {
+          if (this.hasState("pressed") && !this.__executed__P_419_1) {
             this.execute();
           }
         }
 
-        this.__stopInternalTimer__P_425_3();
+        this.__stopInternalTimer__P_419_3();
 
         e.stopPropagation();
       },
@@ -29613,7 +29613,7 @@
           case "Enter":
           case "Space":
             if (this.hasState("pressed")) {
-              if (!this.__executed__P_425_1) {
+              if (!this.__executed__P_419_1) {
                 this.execute();
               }
 
@@ -29621,7 +29621,7 @@
               this.removeState("abandoned");
               e.stopPropagation();
 
-              this.__stopInternalTimer__P_425_3();
+              this.__stopInternalTimer__P_419_3();
             }
 
         }
@@ -29644,7 +29644,7 @@
             this.addState("pressed");
             e.stopPropagation();
 
-            this.__startInternalTimer__P_425_2();
+            this.__startInternalTimer__P_419_2();
 
         }
       },
@@ -29659,7 +29659,7 @@
        * @param e {qx.event.type.Event} interval event
        */
       _onInterval: function _onInterval(e) {
-        this.__executed__P_425_1 = true;
+        this.__executed__P_419_1 = true;
         this.fireEvent("execute");
       },
 
@@ -29674,11 +29674,11 @@
        * events in an interval. It also presses the button.
        *
        */
-      __startInternalTimer__P_425_2: function __startInternalTimer__P_425_2() {
+      __startInternalTimer__P_419_2: function __startInternalTimer__P_419_2() {
         this.fireEvent("press");
-        this.__executed__P_425_1 = false;
+        this.__executed__P_419_1 = false;
 
-        this.__timer__P_425_0.set({
+        this.__timer__P_419_0.set({
           interval: this.getInterval(),
           firstInterval: this.getFirstInterval(),
           minimum: this.getMinTimer(),
@@ -29693,10 +29693,10 @@
        * Stops the internal timer and releases the button.
        *
        */
-      __stopInternalTimer__P_425_3: function __stopInternalTimer__P_425_3() {
+      __stopInternalTimer__P_419_3: function __stopInternalTimer__P_419_3() {
         this.fireEvent("release");
 
-        this.__timer__P_425_0.stop();
+        this.__timer__P_419_0.stop();
 
         this.removeState("abandoned");
         this.removeState("pressed");
@@ -29709,7 +29709,7 @@
       *****************************************************************************
       */
     destruct: function destruct() {
-      this._disposeObjects("__timer__P_425_0");
+      this._disposeObjects("__timer__P_419_0");
     }
   });
   qx.ui.form.RepeatButton.$$dbClassInfo = $$dbClassInfo;
@@ -30457,12 +30457,12 @@
     type: "abstract",
     statics: {
       /** Stylesheet needed to style the native placeholder element. */
-      __stylesheet__P_415_0: null,
+      __stylesheet__P_409_0: null,
 
       /**
        * Adds the CSS rules needed to style the native placeholder element.
        */
-      __addPlaceholderRules__P_415_1: function __addPlaceholderRules__P_415_1() {
+      __addPlaceholderRules__P_409_1: function __addPlaceholderRules__P_409_1() {
         var engine = qx.core.Environment.get("engine.name");
         var browser = qx.core.Environment.get("browser.name");
         var colorManager = qx.theme.manager.Color.getInstance();
@@ -30501,7 +30501,7 @@
     construct: function construct(value) {
       qx.ui.core.Widget.constructor.call(this); // shortcut for placeholder feature detection
 
-      this.__useQxPlaceholder__P_415_2 = !qx.core.Environment.get("css.placeholder");
+      this.__useQxPlaceholder__P_409_2 = !qx.core.Environment.get("css.placeholder");
 
       if (value != null) {
         this.setValue(value);
@@ -30509,12 +30509,12 @@
 
       this.getContentElement().addListener("change", this._onChangeContent, this); // use qooxdoo placeholder if no native placeholder is supported
 
-      if (this.__useQxPlaceholder__P_415_2) {
+      if (this.__useQxPlaceholder__P_409_2) {
         // assign the placeholder text after the appearance has been applied
         this.addListener("syncAppearance", this._syncPlaceholder, this);
       } else {
         // add rules for native placeholder color
-        qx.ui.form.AbstractField.__addPlaceholderRules__P_415_1(); // add a class to the input to restrict the placeholder color
+        qx.ui.form.AbstractField.__addPlaceholderRules__P_409_1(); // add a class to the input to restrict the placeholder color
 
 
         this.getContentElement().addClass("qx-placeholder-color");
@@ -30649,13 +30649,13 @@
     *****************************************************************************
     */
     members: {
-      __nullValue__P_415_3: true,
+      __nullValue__P_409_3: true,
       _placeholder: null,
-      __oldValue__P_415_4: null,
-      __oldInputValue__P_415_5: null,
-      __useQxPlaceholder__P_415_2: true,
-      __font__P_415_6: null,
-      __webfontListenerId__P_415_7: null,
+      __oldValue__P_409_4: null,
+      __oldInputValue__P_409_5: null,
+      __useQxPlaceholder__P_409_2: true,
+      __font__P_409_6: null,
+      __webfontListenerId__P_409_7: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -30700,8 +30700,8 @@
 
         var input = this.getContentElement(); // we don't need to update positions on native placeholders
 
-        if (updateInsets && this.__useQxPlaceholder__P_415_2) {
-          if (this.__useQxPlaceholder__P_415_2) {
+        if (updateInsets && this.__useQxPlaceholder__P_409_2) {
+          if (this.__useQxPlaceholder__P_409_2) {
             var insets = this.getInsets();
 
             this._getPlaceholderElement().setStyles({
@@ -30715,7 +30715,7 @@
 
         if (inner || changes.margin) {
           // we don't need to update dimensions on native placeholders
-          if (this.__useQxPlaceholder__P_415_2) {
+          if (this.__useQxPlaceholder__P_409_2) {
             var insets = this.getInsets();
 
             this._getPlaceholderElement().setStyles({
@@ -30733,7 +30733,7 @@
         }
 
         if (changes.position) {
-          if (this.__useQxPlaceholder__P_415_2) {
+          if (this.__useQxPlaceholder__P_409_2) {
             this._getPlaceholderElement().setStyles({
               "left": left + pixel,
               "top": top + pixel
@@ -30781,7 +30781,7 @@
 
         this.getContentElement().setEnabled(value);
 
-        if (this.__useQxPlaceholder__P_415_2) {
+        if (this.__useQxPlaceholder__P_409_2) {
           if (value) {
             this._showPlaceholder();
           } else {
@@ -30798,36 +30798,36 @@
       /**
        * @lint ignoreReferenceField(__textSize)
        */
-      __textSize__P_415_8: {
+      __textSize__P_409_8: {
         width: 16,
         height: 16
       },
       // overridden
       _getContentHint: function _getContentHint() {
         return {
-          width: this.__textSize__P_415_8.width * 10,
-          height: this.__textSize__P_415_8.height || 16
+          width: this.__textSize__P_409_8.width * 10,
+          height: this.__textSize__P_409_8.height || 16
         };
       },
       // overridden
       _applyFont: function _applyFont(value, old) {
-        if (old && this.__font__P_415_6 && this.__webfontListenerId__P_415_7) {
-          this.__font__P_415_6.removeListenerById(this.__webfontListenerId__P_415_7);
+        if (old && this.__font__P_409_6 && this.__webfontListenerId__P_409_7) {
+          this.__font__P_409_6.removeListenerById(this.__webfontListenerId__P_409_7);
 
-          this.__webfontListenerId__P_415_7 = null;
+          this.__webfontListenerId__P_409_7 = null;
         } // Apply
 
 
         var styles;
 
         if (value) {
-          this.__font__P_415_6 = qx.theme.manager.Font.getInstance().resolve(value);
+          this.__font__P_409_6 = qx.theme.manager.Font.getInstance().resolve(value);
 
-          if (this.__font__P_415_6 instanceof qx.bom.webfonts.WebFont) {
-            this.__webfontListenerId__P_415_7 = this.__font__P_415_6.addListener("changeStatus", this._onWebFontStatusChange, this);
+          if (this.__font__P_409_6 instanceof qx.bom.webfonts.WebFont) {
+            this.__webfontListenerId__P_409_7 = this.__font__P_409_6.addListener("changeStatus", this._onWebFontStatusChange, this);
           }
 
-          styles = this.__font__P_415_6.getStyles();
+          styles = this.__font__P_409_6.getStyles();
         } else {
           styles = qx.bom.Font.getDefaultStyles();
         } // check if text color already set - if so this local value has higher priority
@@ -30848,7 +30848,7 @@
         } // the font will adjust automatically on native placeholders
 
 
-        if (this.__useQxPlaceholder__P_415_2) {
+        if (this.__useQxPlaceholder__P_409_2) {
           // don't apply the color to the placeholder
           delete styles["color"]; // apply the font to the placeholder
 
@@ -30857,9 +30857,9 @@
 
 
         if (value) {
-          this.__textSize__P_415_8 = qx.bom.Label.getTextSize("A", styles);
+          this.__textSize__P_409_8 = qx.bom.Label.getTextSize("A", styles);
         } else {
-          delete this.__textSize__P_415_8;
+          delete this.__textSize__P_409_8;
         } // Update layout
 
 
@@ -30900,7 +30900,7 @@
        * @return {Map} The text size.
        */
       _getTextSize: function _getTextSize() {
-        return this.__textSize__P_415_8;
+        return this.__textSize__P_409_8;
       },
 
       /*
@@ -30918,9 +30918,9 @@
       _onHtmlInput: function _onHtmlInput(e) {
         var value = e.getData();
         var fireEvents = true;
-        this.__nullValue__P_415_3 = false; // value unchanged; Firefox fires "input" when pressing ESC [BUG #5309]
+        this.__nullValue__P_409_3 = false; // value unchanged; Firefox fires "input" when pressing ESC [BUG #5309]
 
-        if (this.__oldInputValue__P_415_5 && this.__oldInputValue__P_415_5 === value) {
+        if (this.__oldInputValue__P_409_5 && this.__oldInputValue__P_409_5 === value) {
           fireEvents = false;
         } // check for the filter
 
@@ -30929,7 +30929,7 @@
           var filteredValue = this._validateInput(value);
 
           if (filteredValue != value) {
-            fireEvents = this.__oldInputValue__P_415_5 !== filteredValue;
+            fireEvents = this.__oldInputValue__P_409_5 !== filteredValue;
             value = filteredValue;
             this.getContentElement().setValue(value);
           }
@@ -30938,17 +30938,17 @@
 
         if (fireEvents) {
           // store the old input value
-          this.fireDataEvent("input", value, this.__oldInputValue__P_415_5);
-          this.__oldInputValue__P_415_5 = value; // check for the live change event
+          this.fireDataEvent("input", value, this.__oldInputValue__P_409_5);
+          this.__oldInputValue__P_409_5 = value; // check for the live change event
 
           if (this.getLiveUpdate()) {
-            this.__fireChangeValueEvent__P_415_9(value);
+            this.__fireChangeValueEvent__P_409_9(value);
           } // check for the liveUpdateOnRxMatch change event
           else {
               var fireRx = this.getLiveUpdateOnRxMatch();
 
               if (fireRx && value.match(fireRx)) {
-                this.__fireChangeValueEvent__P_415_9(value);
+                this.__fireChangeValueEvent__P_409_9(value);
               }
             }
         }
@@ -30961,9 +30961,9 @@
        */
       _onWebFontStatusChange: function _onWebFontStatusChange(ev) {
         if (ev.getData().valid === true) {
-          var styles = this.__font__P_415_6.getStyles();
+          var styles = this.__font__P_409_6.getStyles();
 
-          this.__textSize__P_415_8 = qx.bom.Label.getTextSize("A", styles);
+          this.__textSize__P_409_8 = qx.bom.Label.getTextSize("A", styles);
           qx.ui.core.queue.Layout.add(this);
         }
       },
@@ -30974,9 +30974,9 @@
        *
        * @param value {String} The new value.
        */
-      __fireChangeValueEvent__P_415_9: function __fireChangeValueEvent__P_415_9(value) {
-        var old = this.__oldValue__P_415_4;
-        this.__oldValue__P_415_4 = value;
+      __fireChangeValueEvent__P_409_9: function __fireChangeValueEvent__P_409_9(value) {
+        var old = this.__oldValue__P_409_4;
+        this.__oldValue__P_409_4 = value;
 
         if (old != value) {
           this.fireNonBubblingEvent("changeValue", qx.event.type.Data, [value, old]);
@@ -31002,16 +31002,16 @@
 
         if (value === null) {
           // just do nothing if null is already set
-          if (this.__nullValue__P_415_3) {
+          if (this.__nullValue__P_409_3) {
             return value;
           }
 
           value = "";
-          this.__nullValue__P_415_3 = true;
+          this.__nullValue__P_409_3 = true;
         } else {
-          this.__nullValue__P_415_3 = false; // native placeholders will be removed by the browser
+          this.__nullValue__P_409_3 = false; // native placeholders will be removed by the browser
 
-          if (this.__useQxPlaceholder__P_415_2) {
+          if (this.__useQxPlaceholder__P_409_2) {
             this._removePlaceholder();
           }
         }
@@ -31022,17 +31022,17 @@
           if (elem.getValue() != value) {
             var oldValue = elem.getValue();
             elem.setValue(value);
-            var data = this.__nullValue__P_415_3 ? null : value;
-            this.__oldValue__P_415_4 = oldValue;
+            var data = this.__nullValue__P_409_3 ? null : value;
+            this.__oldValue__P_409_4 = oldValue;
 
-            this.__fireChangeValueEvent__P_415_9(data); // reset the input value on setValue calls [BUG #6892]
+            this.__fireChangeValueEvent__P_409_9(data); // reset the input value on setValue calls [BUG #6892]
 
 
-            this.__oldInputValue__P_415_5 = this.__oldValue__P_415_4;
+            this.__oldInputValue__P_409_5 = this.__oldValue__P_409_4;
           } // native placeholders will be shown by the browser
 
 
-          if (this.__useQxPlaceholder__P_415_2) {
+          if (this.__useQxPlaceholder__P_409_2) {
             this._showPlaceholder();
           }
 
@@ -31048,7 +31048,7 @@
        * @return {String|null} The current value
        */
       getValue: function getValue() {
-        return this.isDisposed() || this.__nullValue__P_415_3 ? null : this.getContentElement().getValue();
+        return this.isDisposed() || this.__nullValue__P_409_3 ? null : this.getContentElement().getValue();
       },
 
       /**
@@ -31064,9 +31064,9 @@
        * @param e {qx.event.type.Data} Incoming change event
        */
       _onChangeContent: function _onChangeContent(e) {
-        this.__nullValue__P_415_3 = e.getData() === null;
+        this.__nullValue__P_409_3 = e.getData() === null;
 
-        this.__fireChangeValueEvent__P_415_9(e.getData());
+        this.__fireChangeValueEvent__P_409_9(e.getData());
       },
 
       /*
@@ -31156,7 +31156,7 @@
       setLayoutParent: function setLayoutParent(parent) {
         qx.ui.form.AbstractField.prototype.setLayoutParent.base.call(this, parent);
 
-        if (this.__useQxPlaceholder__P_415_2) {
+        if (this.__useQxPlaceholder__P_409_2) {
           if (parent) {
             this.getLayoutParent().getContentElement().add(this._getPlaceholderElement());
           } else {
@@ -31200,7 +31200,7 @@
        */
       _removePlaceholder: function _removePlaceholder() {
         if (this.hasState("showingPlaceholder")) {
-          if (this.__useQxPlaceholder__P_415_2) {
+          if (this.__useQxPlaceholder__P_409_2) {
             this._getPlaceholderElement().setStyle("visibility", "hidden");
           }
 
@@ -31212,7 +31212,7 @@
        * Updates the placeholder text with the DOM
        */
       _syncPlaceholder: function _syncPlaceholder() {
-        if (this.hasState("showingPlaceholder") && this.__useQxPlaceholder__P_415_2) {
+        if (this.hasState("showingPlaceholder") && this.__useQxPlaceholder__P_409_2) {
           this._getPlaceholderElement().setStyle("visibility", "visible");
         }
       },
@@ -31266,11 +31266,11 @@
           this._placeholder = null;
         }
 
-        if (!this.__useQxPlaceholder__P_415_2 && qx.ui.form.AbstractField.__stylesheet__P_415_0) {
-          qx.bom.Stylesheet.removeSheet(qx.ui.form.AbstractField.__stylesheet__P_415_0);
-          qx.ui.form.AbstractField.__stylesheet__P_415_0 = null;
+        if (!this.__useQxPlaceholder__P_409_2 && qx.ui.form.AbstractField.__stylesheet__P_409_0) {
+          qx.bom.Stylesheet.removeSheet(qx.ui.form.AbstractField.__stylesheet__P_409_0);
+          qx.ui.form.AbstractField.__stylesheet__P_409_0 = null;
 
-          qx.ui.form.AbstractField.__addPlaceholderRules__P_415_1();
+          qx.ui.form.AbstractField.__addPlaceholderRules__P_409_1();
         }
       },
 
@@ -31306,7 +31306,7 @@
       */
       // property apply
       _applyPlaceholder: function _applyPlaceholder(value, old) {
-        if (this.__useQxPlaceholder__P_415_2) {
+        if (this.__useQxPlaceholder__P_409_2) {
           this._getPlaceholderElement().setValue(value);
 
           if (value != null) {
@@ -31378,13 +31378,13 @@
         this._placeholder.dispose();
       }
 
-      this._placeholder = this.__font__P_415_6 = null;
+      this._placeholder = this.__font__P_409_6 = null;
       {
         qx.locale.Manager.getInstance().removeListener("changeLocale", this._onChangeLocale, this);
       }
 
-      if (this.__font__P_415_6 && this.__webfontListenerId__P_415_7) {
-        this.__font__P_415_6.removeListenerById(this.__webfontListenerId__P_415_7);
+      if (this.__font__P_409_6 && this.__webfontListenerId__P_409_7) {
+        this.__font__P_409_6.removeListenerById(this.__webfontListenerId__P_409_7);
       }
 
       this.getContentElement().removeListener("input", this._onHtmlInput, this);
@@ -35371,7 +35371,7 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__groups__P_418_0 = [];
+      this.__groups__P_412_0 = [];
       this._buttons = [];
       this._buttonOptions = [];
       this._validationManager = this._createValidationManager();
@@ -35382,7 +35382,7 @@
       "change": "qx.event.type.Event"
     },
     members: {
-      __groups__P_418_0: null,
+      __groups__P_412_0: null,
       _validationManager: null,
       _groupCounter: 0,
       _buttons: null,
@@ -35413,8 +35413,8 @@
        *   will be available in your form renderer specific to the added item.
        */
       add: function add(item, label, validator, name, validatorContext, options) {
-        if (this.__isFirstAdd__P_418_1()) {
-          this.__groups__P_418_0.push({
+        if (this.__isFirstAdd__P_412_1()) {
+          this.__groups__P_412_0.push({
             title: null,
             items: [],
             labels: [],
@@ -35425,18 +35425,18 @@
         } // save the given arguments
 
 
-        this.__groups__P_418_0[this._groupCounter].items.push(item);
+        this.__groups__P_412_0[this._groupCounter].items.push(item);
 
-        this.__groups__P_418_0[this._groupCounter].labels.push(label);
+        this.__groups__P_412_0[this._groupCounter].labels.push(label);
 
-        this.__groups__P_418_0[this._groupCounter].options.push(options); // if no name is given, use the label without not working character
+        this.__groups__P_412_0[this._groupCounter].options.push(options); // if no name is given, use the label without not working character
 
 
         if (name == null) {
           name = label.replace(/\s+|&|-|\+|\*|\/|\||!|\.|,|:|\?|;|~|%|\{|\}|\(|\)|\[|\]|<|>|=|\^|@|\\/g, "");
         }
 
-        this.__groups__P_418_0[this._groupCounter].names.push(name); // add the item to the validation manager
+        this.__groups__P_412_0[this._groupCounter].names.push(name); // add the item to the validation manager
 
 
         this._validationManager.add(item, validator, validatorContext); // add the item to the reset manager
@@ -35458,11 +35458,11 @@
        *   given to the renderer.
        */
       addGroupHeader: function addGroupHeader(title, options) {
-        if (!this.__isFirstAdd__P_418_1()) {
+        if (!this.__isFirstAdd__P_412_1()) {
           this._groupCounter++;
         }
 
-        this.__groups__P_418_0.push({
+        this.__groups__P_412_0.push({
           title: title,
           items: [],
           labels: [],
@@ -35498,8 +35498,8 @@
        *
        * @return {Boolean} true, if nothing has been added jet.
        */
-      __isFirstAdd__P_418_1: function __isFirstAdd__P_418_1() {
-        return this.__groups__P_418_0.length === 0;
+      __isFirstAdd__P_412_1: function __isFirstAdd__P_412_1() {
+        return this.__groups__P_412_0.length === 0;
       },
 
       /*
@@ -35515,8 +35515,8 @@
        * @return {Boolean} <code>true</code>, if the item could be removed.
        */
       remove: function remove(item) {
-        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
-          var group = this.__groups__P_418_0[i];
+        for (var i = 0; i < this.__groups__P_412_0.length; i++) {
+          var group = this.__groups__P_412_0[i];
 
           for (var j = 0; j < group.items.length; j++) {
             var storedItem = group.items[j];
@@ -35552,15 +35552,15 @@
        * @return {Boolean} <code>true</code>, if the header could be removed.
        */
       removeGroupHeader: function removeGroupHeader(title) {
-        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
-          var group = this.__groups__P_418_0[i];
+        for (var i = 0; i < this.__groups__P_412_0.length; i++) {
+          var group = this.__groups__P_412_0[i];
 
           if (group.title === title) {
             var targetGroup; // if it's the first group
 
             if (i == 0) {
               // if it's the only group
-              if (this.__groups__P_418_0.length == 1) {
+              if (this.__groups__P_412_0.length == 1) {
                 // remove the title and the header options
                 group.title = null;
                 group.headerOptions = {}; // fire the change event
@@ -35569,11 +35569,11 @@
                 return true;
               } else {
                 // add to the next
-                targetGroup = this.__groups__P_418_0[i + 1];
+                targetGroup = this.__groups__P_412_0[i + 1];
               }
             } else {
               // add to the previous group
-              targetGroup = this.__groups__P_418_0[i - 1];
+              targetGroup = this.__groups__P_412_0[i - 1];
             } // copy the data over
 
 
@@ -35582,7 +35582,7 @@
             targetGroup.names = targetGroup.names.concat(group.names);
             targetGroup.options = targetGroup.options.concat(group.options); // delete the group
 
-            this.__groups__P_418_0.splice(i, 1);
+            this.__groups__P_412_0.splice(i, 1);
 
             this._groupCounter--; // fire the change event
 
@@ -35626,8 +35626,8 @@
       getItems: function getItems() {
         var items = {}; // go threw all groups
 
-        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
-          var group = this.__groups__P_418_0[i]; // get all items
+        for (var i = 0; i < this.__groups__P_412_0.length; i++) {
+          var group = this.__groups__P_412_0[i]; // get all items
 
           for (var j = 0; j < group.names.length; j++) {
             var name = group.names[j];
@@ -35645,8 +35645,8 @@
        * @return {qx.ui.form.IForm|null} The form item or null.
        */
       getItem: function getItem(name) {
-        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
-          var group = this.__groups__P_418_0[i];
+        for (var i = 0; i < this.__groups__P_412_0.length; i++) {
+          var group = this.__groups__P_412_0[i];
 
           for (var j = 0; j < group.names.length; j++) {
             if (group.names[j] === name) {
@@ -35732,7 +35732,7 @@
        * @internal
        */
       getGroups: function getGroups() {
-        return this.__groups__P_418_0;
+        return this.__groups__P_412_0;
       },
 
       /**
@@ -35787,7 +35787,7 @@
     */
     destruct: function destruct() {
       // holding references to widgets --> must set to null
-      this.__groups__P_418_0 = this._buttons = this._buttonOptions = null;
+      this.__groups__P_412_0 = this._buttons = this._buttonOptions = null;
 
       this._validationManager.dispose();
 
@@ -36460,7 +36460,7 @@
        * @param a3 {var?} third argument of the method to call
        * @return {var} The return value of the forward method
        */
-      __forward__P_389_0: function __forward__P_389_0(functionName, a1, a2, a3) {
+      __forward__P_383_0: function __forward__P_383_0(functionName, a1, a2, a3) {
         var container = this.getChildrenContainer();
 
         if (container === this) {
@@ -36477,7 +36477,7 @@
        *   reference types, please do not modify them in-place)
        */
       getChildren: function getChildren() {
-        return this.__forward__P_389_0("getChildren");
+        return this.__forward__P_383_0("getChildren");
       },
 
       /**
@@ -36486,7 +36486,7 @@
        * @return {Boolean} Returns <code>true</code> when the widget has children.
        */
       hasChildren: function hasChildren() {
-        return this.__forward__P_389_0("hasChildren");
+        return this.__forward__P_383_0("hasChildren");
       },
 
       /**
@@ -36501,7 +36501,7 @@
        * @return {qx.ui.core.Widget} This object (for chaining support)
        */
       add: function add(child, options) {
-        return this.__forward__P_389_0("add", child, options);
+        return this.__forward__P_383_0("add", child, options);
       },
 
       /**
@@ -36511,7 +36511,7 @@
        * @return {qx.ui.core.Widget} This object (for chaining support)
        */
       remove: function remove(child) {
-        return this.__forward__P_389_0("remove", child);
+        return this.__forward__P_383_0("remove", child);
       },
 
       /**
@@ -36519,7 +36519,7 @@
        * @return {Array} An array containing the removed children.
        */
       removeAll: function removeAll() {
-        return this.__forward__P_389_0("removeAll");
+        return this.__forward__P_383_0("removeAll");
       },
 
       /**
@@ -36536,7 +36536,7 @@
        *   the given item is no child of this layout.
        */
       indexOf: function indexOf(child) {
-        return this.__forward__P_389_0("indexOf", child);
+        return this.__forward__P_383_0("indexOf", child);
       },
 
       /**
@@ -36552,7 +36552,7 @@
        * @param options {Map?null} Optional layout data for item.
        */
       addAt: function addAt(child, index, options) {
-        this.__forward__P_389_0("addAt", child, index, options);
+        this.__forward__P_383_0("addAt", child, index, options);
       },
 
       /**
@@ -36568,7 +36568,7 @@
        * @param options {Map?null} Optional layout data for item.
        */
       addBefore: function addBefore(child, before, options) {
-        this.__forward__P_389_0("addBefore", child, before, options);
+        this.__forward__P_383_0("addBefore", child, before, options);
       },
 
       /**
@@ -36584,7 +36584,7 @@
        * @param options {Map?null} Optional layout data for item.
        */
       addAfter: function addAfter(child, after, options) {
-        this.__forward__P_389_0("addAfter", child, after, options);
+        this.__forward__P_383_0("addAfter", child, after, options);
       },
 
       /**
@@ -36599,7 +36599,7 @@
        * @return {qx.ui.core.LayoutItem} The removed item
        */
       removeAt: function removeAt(index) {
-        return this.__forward__P_389_0("removeAt", index);
+        return this.__forward__P_383_0("removeAt", index);
       }
     }
   });
@@ -36998,7 +36998,7 @@
     */
     members: {
       /** @type {qx.ui.core.SingleSelectionManager} the single selection manager */
-      __manager__P_391_0: null,
+      __manager__P_385_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -37019,7 +37019,7 @@
         }
 
         if (item instanceof qx.ui.core.Widget) {
-          this.__getManager__P_391_1().setSelected(item);
+          this.__getManager__P_385_1().setSelected(item);
 
           return null;
         } else {
@@ -37033,14 +37033,14 @@
        * @returns {null|qx.ui.core.Widget} The currently selected widget or null if there is none.
        */
       getValue: function getValue() {
-        return this.__getManager__P_391_1().getSelected() || null;
+        return this.__getManager__P_385_1().getSelected() || null;
       },
 
       /**
        * resetValue implements part of the {@link qx.ui.form.IField} interface.
        */
       resetValue: function resetValue() {
-        this.__getManager__P_391_1().resetSelected();
+        this.__getManager__P_385_1().resetSelected();
       },
 
       /**
@@ -37052,7 +37052,7 @@
        * @return {qx.ui.core.Widget[]} List of items.
        */
       getSelection: function getSelection() {
-        var selected = this.__getManager__P_391_1().getSelected();
+        var selected = this.__getManager__P_385_1().getSelected();
 
         if (selected) {
           return [selected];
@@ -37075,7 +37075,7 @@
             break;
 
           case 1:
-            this.__getManager__P_391_1().setSelected(items[0]);
+            this.__getManager__P_385_1().setSelected(items[0]);
 
             break;
 
@@ -37088,7 +37088,7 @@
        * Clears the whole selection at once.
        */
       resetSelection: function resetSelection() {
-        this.__getManager__P_391_1().resetSelected();
+        this.__getManager__P_385_1().resetSelected();
       },
 
       /**
@@ -37099,7 +37099,7 @@
        * @throws {Error} if one of the items is not a child element.
        */
       isSelected: function isSelected(item) {
-        return this.__getManager__P_391_1().isSelected(item);
+        return this.__getManager__P_385_1().isSelected(item);
       },
 
       /**
@@ -37108,7 +37108,7 @@
        * @return {Boolean} Whether the selection is empty.
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__getManager__P_391_1().isSelectionEmpty();
+        return this.__getManager__P_385_1().isSelectionEmpty();
       },
 
       /**
@@ -37119,7 +37119,7 @@
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        return this.__getManager__P_391_1().getSelectables(all);
+        return this.__getManager__P_385_1().getSelectables(all);
       },
 
       /*
@@ -37149,10 +37149,10 @@
        *
        * @return {qx.ui.core.SingleSelectionManager} Single selection manager.
        */
-      __getManager__P_391_1: function __getManager__P_391_1() {
-        if (this.__manager__P_391_0 == null) {
+      __getManager__P_385_1: function __getManager__P_385_1() {
+        if (this.__manager__P_385_0 == null) {
           var that = this;
-          this.__manager__P_391_0 = new qx.ui.core.SingleSelectionManager({
+          this.__manager__P_385_0 = new qx.ui.core.SingleSelectionManager({
             getItems: function getItems() {
               return that._getItems();
             },
@@ -37165,12 +37165,12 @@
             }
           });
 
-          this.__manager__P_391_0.addListener("changeSelected", this._onChangeSelected, this);
+          this.__manager__P_385_0.addListener("changeSelected", this._onChangeSelected, this);
         }
 
-        this.__manager__P_391_0.setAllowEmptySelection(this._isAllowEmptySelection());
+        this.__manager__P_385_0.setAllowEmptySelection(this._isAllowEmptySelection());
 
-        return this.__manager__P_391_0;
+        return this.__manager__P_385_0;
       }
     },
 
@@ -37180,7 +37180,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__manager__P_391_0");
+      this._disposeObjects("__manager__P_385_0");
     }
   });
   qx.ui.core.MSingleSelectionHandling.$$dbClassInfo = $$dbClassInfo;
@@ -37228,11 +37228,11 @@
   qx.Mixin.define("qx.ui.form.MModelSelection", {
     construct: function construct() {
       // create the selection array
-      this.__modelSelection__P_422_0 = new qx.data.Array(); // listen to the changes
+      this.__modelSelection__P_416_0 = new qx.data.Array(); // listen to the changes
 
-      this.__modelSelection__P_422_0.addListener("change", this.__onModelSelectionArrayChange__P_422_1, this);
+      this.__modelSelection__P_416_0.addListener("change", this.__onModelSelectionArrayChange__P_416_1, this);
 
-      this.addListener("changeSelection", this.__onModelSelectionChange__P_422_2, this);
+      this.addListener("changeSelection", this.__onModelSelectionChange__P_416_2, this);
     },
     events: {
       /**
@@ -37242,16 +37242,16 @@
       changeModelSelection: "qx.event.type.Data"
     },
     members: {
-      __modelSelection__P_422_0: null,
-      __inSelectionChange__P_422_3: false,
+      __modelSelection__P_416_0: null,
+      __inSelectionChange__P_416_3: false,
 
       /**
        * Handler for the selection change of the including class e.g. SelectBox,
        * List, ...
        * It sets the new modelSelection via {@link #setModelSelection}.
        */
-      __onModelSelectionChange__P_422_2: function __onModelSelectionChange__P_422_2() {
-        if (this.__inSelectionChange__P_422_3) {
+      __onModelSelectionChange__P_416_2: function __onModelSelectionChange__P_416_2() {
+        if (this.__inSelectionChange__P_416_3) {
           return;
         }
 
@@ -37279,12 +37279,12 @@
       /**
        * Listener for the change of the internal model selection data array.
        */
-      __onModelSelectionArrayChange__P_422_1: function __onModelSelectionArrayChange__P_422_1() {
-        this.__inSelectionChange__P_422_3 = true;
+      __onModelSelectionArrayChange__P_416_1: function __onModelSelectionArrayChange__P_416_1() {
+        this.__inSelectionChange__P_416_3 = true;
         var selectables = this.getSelectables(true);
         var itemSelection = [];
 
-        var modelSelection = this.__modelSelection__P_422_0.toArray();
+        var modelSelection = this.__modelSelection__P_416_0.toArray();
 
         for (var i = 0; i < modelSelection.length; i++) {
           var model = modelSelection[i];
@@ -37302,13 +37302,13 @@
         }
 
         this.setSelection(itemSelection);
-        this.__inSelectionChange__P_422_3 = false; // check if the setting has worked
+        this.__inSelectionChange__P_416_3 = false; // check if the setting has worked
 
         var currentSelection = this.getSelection();
 
         if (!qx.lang.Array.equals(currentSelection, itemSelection)) {
           // if not, set the actual selection
-          this.__onModelSelectionChange__P_422_2();
+          this.__onModelSelectionChange__P_416_2();
         }
       },
 
@@ -37322,7 +37322,7 @@
        * @return {qx.data.Array} An array of the models of the selected items.
        */
       getModelSelection: function getModelSelection() {
-        return this.__modelSelection__P_422_0;
+        return this.__modelSelection__P_416_0;
       },
 
       /**
@@ -37341,7 +37341,7 @@
       setModelSelection: function setModelSelection(modelSelection) {
         // check for null values
         if (!modelSelection) {
-          this.__modelSelection__P_422_0.removeAll();
+          this.__modelSelection__P_416_0.removeAll();
 
           return;
         }
@@ -37350,17 +37350,17 @@
           this.assertArray(modelSelection, "Please use an array as parameter.");
         } // add the first two parameter
 
-        modelSelection.unshift(this.__modelSelection__P_422_0.getLength()); // remove index
+        modelSelection.unshift(this.__modelSelection__P_416_0.getLength()); // remove index
 
         modelSelection.unshift(0); // start index
 
-        var returnArray = this.__modelSelection__P_422_0.splice.apply(this.__modelSelection__P_422_0, modelSelection);
+        var returnArray = this.__modelSelection__P_416_0.splice.apply(this.__modelSelection__P_416_0, modelSelection);
 
         returnArray.dispose();
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__modelSelection__P_422_0");
+      this._disposeObjects("__modelSelection__P_416_0");
     }
   });
   qx.ui.form.MModelSelection.$$dbClassInfo = $$dbClassInfo;
@@ -37468,7 +37468,7 @@
       this.addListener("pointerout", this._onPointerOut, this);
       this.addListener("tap", this._onTap, this);
       this.addListener("keyinput", this._onKeyInput, this);
-      this.addListener("changeSelection", this.__onChangeSelection__P_427_0, this);
+      this.addListener("changeSelection", this.__onChangeSelection__P_421_0, this);
     },
 
     /*
@@ -37496,7 +37496,7 @@
     */
     members: {
       /** @type {qx.ui.form.ListItem} instance */
-      __preSelectedItem__P_427_1: null,
+      __preSelectedItem__P_421_1: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -37593,7 +37593,7 @@
        *
        * @param e {qx.event.type.Data} Data event.
        */
-      __onChangeSelection__P_427_0: function __onChangeSelection__P_427_0(e) {
+      __onChangeSelection__P_421_0: function __onChangeSelection__P_421_0(e) {
         var listItem = e.getData()[0];
         var list = this.getChildControl("list");
 
@@ -37605,15 +37605,15 @@
           }
         }
 
-        this.__updateIcon__P_427_2();
+        this.__updateIcon__P_421_2();
 
-        this.__updateLabel__P_427_3();
+        this.__updateLabel__P_421_3();
       },
 
       /**
        * Sets the icon inside the list to match the selected ListItem.
        */
-      __updateIcon__P_427_2: function __updateIcon__P_427_2() {
+      __updateIcon__P_421_2: function __updateIcon__P_421_2() {
         var listItem = this.getChildControl("list").getSelection()[0];
         var atom = this.getChildControl("atom");
         var icon = listItem ? listItem.getIcon() : "";
@@ -37623,7 +37623,7 @@
       /**
        * Sets the label inside the list to match the selected ListItem.
        */
-      __updateLabel__P_427_3: function __updateLabel__P_427_3() {
+      __updateLabel__P_421_3: function __updateLabel__P_421_3() {
         var listItem = this.getChildControl("list").getSelection()[0];
         var atom = this.getChildControl("atom");
         var label = listItem ? listItem.getLabel() : "";
@@ -37705,9 +37705,9 @@
 
         if (iden == "Enter" || iden == "Space") {
           // Apply pre-selected item (translate quick selection to real selection)
-          if (this.__preSelectedItem__P_427_1) {
-            this.setSelection([this.__preSelectedItem__P_427_1]);
-            this.__preSelectedItem__P_427_1 = null;
+          if (this.__preSelectedItem__P_421_1) {
+            this.setSelection([this.__preSelectedItem__P_421_1]);
+            this.__preSelectedItem__P_421_1 = null;
           }
 
           this.toggle();
@@ -37732,9 +37732,9 @@
       // overridden
       _onListPointerDown: function _onListPointerDown(e) {
         // Apply pre-selected item (translate quick selection to real selection)
-        if (this.__preSelectedItem__P_427_1) {
-          this.setSelection([this.__preSelectedItem__P_427_1]);
-          this.__preSelectedItem__P_427_1 = null;
+        if (this.__preSelectedItem__P_421_1) {
+          this.setSelection([this.__preSelectedItem__P_421_1]);
+          this.__preSelectedItem__P_421_1 = null;
         }
       },
       // overridden
@@ -37743,8 +37743,8 @@
         var old = e.getOldData(); // Remove old listeners for icon and label changes.
 
         if (old && old.length > 0) {
-          old[0].removeListener("changeIcon", this.__updateIcon__P_427_2, this);
-          old[0].removeListener("changeLabel", this.__updateLabel__P_427_3, this);
+          old[0].removeListener("changeIcon", this.__updateIcon__P_421_2, this);
+          old[0].removeListener("changeLabel", this.__updateLabel__P_421_3, this);
         }
 
         if (current.length > 0) {
@@ -37755,15 +37755,15 @@
           var context = list.getSelectionContext();
 
           if (popup.isVisible() && (context == "quick" || context == "key")) {
-            this.__preSelectedItem__P_427_1 = current[0];
+            this.__preSelectedItem__P_421_1 = current[0];
           } else {
             this.setSelection([current[0]]);
-            this.__preSelectedItem__P_427_1 = null;
+            this.__preSelectedItem__P_421_1 = null;
           } // Add listeners for icon and label changes
 
 
-          current[0].addListener("changeIcon", this.__updateIcon__P_427_2, this);
-          current[0].addListener("changeLabel", this.__updateLabel__P_427_3, this);
+          current[0].addListener("changeIcon", this.__updateIcon__P_421_2, this);
+          current[0].addListener("changeLabel", this.__updateLabel__P_421_3, this);
         } else {
           this.resetSelection();
         }
@@ -37811,7 +37811,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__preSelectedItem__P_427_1 = null;
+      this.__preSelectedItem__P_421_1 = null;
     }
   });
   qx.ui.form.SelectBox.$$dbClassInfo = $$dbClassInfo;
@@ -38006,10 +38006,10 @@
         widget = this._getWidget();
       }
 
-      widget.addListener("drag", this.__onDrag__P_384_0, this);
-      widget.addListener("dragend", this.__onDragend__P_384_1, this);
-      this.__xDirs__P_384_2 = ["left", "right"];
-      this.__yDirs__P_384_3 = ["top", "bottom"];
+      widget.addListener("drag", this.__onDrag__P_378_0, this);
+      widget.addListener("dragend", this.__onDragend__P_378_1, this);
+      this.__xDirs__P_378_2 = ["left", "right"];
+      this.__yDirs__P_378_3 = ["top", "bottom"];
     },
 
     /*
@@ -38043,9 +38043,9 @@
     *****************************************************************************
     */
     members: {
-      __dragScrollTimer__P_384_4: null,
-      __xDirs__P_384_2: null,
-      __yDirs__P_384_3: null,
+      __dragScrollTimer__P_378_4: null,
+      __xDirs__P_378_2: null,
+      __yDirs__P_378_3: null,
 
       /**
        * Finds the first scrollable parent (in the parent chain).
@@ -38127,9 +38127,9 @@
        * @return {String} Returns 'y' or 'x'.
        */
       _getAxis: function _getAxis(edgeType) {
-        if (this.__xDirs__P_384_2.indexOf(edgeType) !== -1) {
+        if (this.__xDirs__P_378_2.indexOf(edgeType) !== -1) {
           return "x";
-        } else if (this.__yDirs__P_384_3.indexOf(edgeType) !== -1) {
+        } else if (this.__yDirs__P_378_3.indexOf(edgeType) !== -1) {
           return "y";
         } else {
           throw new Error("Invalid edge type given (" + edgeType + "). Must be: 'left', 'right', 'top' or 'bottom'");
@@ -38143,9 +38143,9 @@
        * @return {Number} The threshold of the x or y axis.
        */
       _getThresholdByEdgeType: function _getThresholdByEdgeType(edgeType) {
-        if (this.__xDirs__P_384_2.indexOf(edgeType) !== -1) {
+        if (this.__xDirs__P_378_2.indexOf(edgeType) !== -1) {
           return this.getDragScrollThresholdX();
-        } else if (this.__yDirs__P_384_3.indexOf(edgeType) !== -1) {
+        } else if (this.__yDirs__P_378_3.indexOf(edgeType) !== -1) {
           return this.getDragScrollThresholdY();
         }
       },
@@ -38228,7 +38228,7 @@
             amount = this._calculateScrollAmount(scrollbarSize, exceedanceAmount);
 
         if (this._isScrollbarExceedingMaxPos(scrollbar, axis, amount)) {
-          this.__dragScrollTimer__P_384_4.stop();
+          this.__dragScrollTimer__P_378_4.stop();
         }
 
         scrollbar.scrollBy(amount);
@@ -38245,10 +38245,10 @@
        *
        * @param e {qx.event.type.Drag} The drag event instance.
        */
-      __onDrag__P_384_0: function __onDrag__P_384_0(e) {
-        if (this.__dragScrollTimer__P_384_4) {
+      __onDrag__P_378_0: function __onDrag__P_378_0(e) {
+        if (this.__dragScrollTimer__P_378_4) {
           // stop last scroll action
-          this.__dragScrollTimer__P_384_4.stop();
+          this.__dragScrollTimer__P_378_4.stop();
         }
 
         var target;
@@ -38297,17 +38297,17 @@
           if (this._isScrollbarVisible(scrollable, axis)) {
             exceedanceAmount = this._calculateThresholdExceedance(diff[edgeType], this._getThresholdByEdgeType(edgeType));
 
-            if (this.__dragScrollTimer__P_384_4) {
-              this.__dragScrollTimer__P_384_4.dispose();
+            if (this.__dragScrollTimer__P_378_4) {
+              this.__dragScrollTimer__P_378_4.dispose();
             }
 
-            this.__dragScrollTimer__P_384_4 = new qx.event.Timer(50);
+            this.__dragScrollTimer__P_378_4 = new qx.event.Timer(50);
 
-            this.__dragScrollTimer__P_384_4.addListener("interval", function (scrollable, axis, amount) {
+            this.__dragScrollTimer__P_378_4.addListener("interval", function (scrollable, axis, amount) {
               this._scrollBy(scrollable, axis, amount);
             }.bind(this, scrollable, axis, exceedanceAmount));
 
-            this.__dragScrollTimer__P_384_4.start();
+            this.__dragScrollTimer__P_378_4.start();
 
             e.stopPropagation();
             return;
@@ -38322,15 +38322,15 @@
        *
        * @param e {qx.event.type.Drag} The drag event instance.
        */
-      __onDragend__P_384_1: function __onDragend__P_384_1(e) {
-        if (this.__dragScrollTimer__P_384_4) {
-          this.__dragScrollTimer__P_384_4.stop();
+      __onDragend__P_378_1: function __onDragend__P_378_1(e) {
+        if (this.__dragScrollTimer__P_378_4) {
+          this.__dragScrollTimer__P_378_4.stop();
         }
       }
     },
     destruct: function destruct() {
-      if (this.__dragScrollTimer__P_384_4) {
-        this.__dragScrollTimer__P_384_4.dispose();
+      if (this.__dragScrollTimer__P_378_4) {
+        this.__dragScrollTimer__P_378_4.dispose();
       }
     }
   });
@@ -39083,7 +39083,7 @@
     construct: function construct() {
       // Create selection manager
       var clazz = this.SELECTION_MANAGER;
-      var manager = this.__manager__P_387_0 = new clazz(this); // Add widget event listeners
+      var manager = this.__manager__P_381_0 = new clazz(this); // Add widget event listeners
 
       this.addListener("pointerdown", manager.handlePointerDown, manager);
       this.addListener("tap", manager.handleTap, manager);
@@ -39159,10 +39159,10 @@
     */
     members: {
       /** @type {qx.ui.core.selection.Abstract} The selection manager */
-      __manager__P_387_0: null,
+      __manager__P_381_0: null,
 
       /** @type {Boolean} used to control recursion in onSelectionChange */
-      __inOnSelectionChange__P_387_1: false,
+      __inOnSelectionChange__P_381_1: false,
 
       /*
       ---------------------------------------------------------------------------
@@ -39178,7 +39178,7 @@
        */
       setValue: function setValue(items) {
         if (null === items) {
-          this.__manager__P_387_0.clearSelection();
+          this.__manager__P_381_0.clearSelection();
 
           return null;
         }
@@ -39205,21 +39205,21 @@
        * @returns {qx.ui.core.Widget[]} The selected widgets or null if there are none.
        */
       getValue: function getValue() {
-        return this.__manager__P_387_0.getSelection();
+        return this.__manager__P_381_0.getSelection();
       },
 
       /**
        * resetValue implements part of the {@link qx.ui.form.IField} interface.
        */
       resetValue: function resetValue() {
-        this.__manager__P_387_0.clearSelection();
+        this.__manager__P_381_0.clearSelection();
       },
 
       /**
        * Selects all items of the managed object.
        */
       selectAll: function selectAll() {
-        this.__manager__P_387_0.selectAll();
+        this.__manager__P_381_0.selectAll();
       },
 
       /**
@@ -39234,7 +39234,7 @@
           throw new Error("Could not test if " + item + " is selected, because it is not a child element!");
         }
 
-        return this.__manager__P_387_0.isItemSelected(item);
+        return this.__manager__P_381_0.isItemSelected(item);
       },
 
       /**
@@ -39251,7 +39251,7 @@
           throw new Error("Could not add + " + item + " to selection, because it is not a child element!");
         }
 
-        this.__manager__P_387_0.addItem(item);
+        this.__manager__P_381_0.addItem(item);
       },
 
       /**
@@ -39268,7 +39268,7 @@
           throw new Error("Could not remove " + item + " from selection, because it is not a child element!");
         }
 
-        this.__manager__P_387_0.removeItem(item);
+        this.__manager__P_381_0.removeItem(item);
       },
 
       /**
@@ -39278,7 +39278,7 @@
        * @param end {qx.ui.core.Widget} Item to end at
        */
       selectRange: function selectRange(begin, end) {
-        this.__manager__P_387_0.selectItemRange(begin, end);
+        this.__manager__P_381_0.selectItemRange(begin, end);
       },
 
       /**
@@ -39287,7 +39287,7 @@
        * styles.
        */
       resetSelection: function resetSelection() {
-        this.__manager__P_387_0.clearSelection();
+        this.__manager__P_381_0.clearSelection();
       },
 
       /**
@@ -39303,7 +39303,7 @@
         //  cannot change selection again; this is important because modelSelection does not
         //  necessarily match selection, for example when the item's model properties are
         //  null.
-        if (this.__inOnSelectionChange__P_387_1) {
+        if (this.__inOnSelectionChange__P_381_1) {
           return;
         }
 
@@ -39319,7 +39319,7 @@
           var currentSelection = this.getSelection();
 
           if (!qx.lang.Array.equals(currentSelection, items)) {
-            this.__manager__P_387_0.replaceSelection(items);
+            this.__manager__P_381_0.replaceSelection(items);
           }
         }
       },
@@ -39333,7 +39333,7 @@
        * @return {qx.ui.core.Widget[]} List of items.
        */
       getSelection: function getSelection() {
-        return this.__manager__P_387_0.getSelection();
+        return this.__manager__P_381_0.getSelection();
       },
 
       /**
@@ -39343,7 +39343,7 @@
        * @return {qx.ui.core.Widget[]} Sorted list of items
        */
       getSortedSelection: function getSortedSelection() {
-        return this.__manager__P_387_0.getSortedSelection();
+        return this.__manager__P_381_0.getSortedSelection();
       },
 
       /**
@@ -39352,7 +39352,7 @@
        * @return {Boolean} Whether the selection is empty
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__manager__P_387_0.isSelectionEmpty();
+        return this.__manager__P_381_0.isSelectionEmpty();
       },
 
       /**
@@ -39362,7 +39362,7 @@
        *    <code>drag</code> or <code>key</code> or <code>null</code>.
        */
       getSelectionContext: function getSelectionContext() {
-        return this.__manager__P_387_0.getSelectionContext();
+        return this.__manager__P_381_0.getSelectionContext();
       },
 
       /**
@@ -39372,7 +39372,7 @@
        * @return {qx.ui.core.selection.Abstract} The selection manager
        */
       _getManager: function _getManager() {
-        return this.__manager__P_387_0;
+        return this.__manager__P_381_0;
       },
 
       /**
@@ -39383,14 +39383,14 @@
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        return this.__manager__P_387_0.getSelectables(all);
+        return this.__manager__P_381_0.getSelectables(all);
       },
 
       /**
        * Invert the selection. Select the non selected and deselect the selected.
        */
       invertSelection: function invertSelection() {
-        this.__manager__P_387_0.invertSelection();
+        this.__manager__P_381_0.invertSelection();
       },
 
       /**
@@ -39400,12 +39400,12 @@
        * @return {qx.ui.core.Widget} The lead item or <code>null</code>
        */
       _getLeadItem: function _getLeadItem() {
-        var mode = this.__manager__P_387_0.getMode();
+        var mode = this.__manager__P_381_0.getMode();
 
         if (mode === "single" || mode === "one") {
-          return this.__manager__P_387_0.getSelectedItem();
+          return this.__manager__P_381_0.getSelectedItem();
         } else {
-          return this.__manager__P_387_0.getLeadItem();
+          return this.__manager__P_381_0.getLeadItem();
         }
       },
 
@@ -39416,15 +39416,15 @@
       */
       // property apply
       _applySelectionMode: function _applySelectionMode(value, old) {
-        this.__manager__P_387_0.setMode(value);
+        this.__manager__P_381_0.setMode(value);
       },
       // property apply
       _applyDragSelection: function _applyDragSelection(value, old) {
-        this.__manager__P_387_0.setDrag(value);
+        this.__manager__P_381_0.setDrag(value);
       },
       // property apply
       _applyQuickSelection: function _applyQuickSelection(value, old) {
-        this.__manager__P_387_0.setQuick(value);
+        this.__manager__P_381_0.setQuick(value);
       },
 
       /*
@@ -39439,17 +39439,17 @@
        * @param e {qx.event.type.Data} Data event
        */
       _onSelectionChange: function _onSelectionChange(e) {
-        if (this.__inOnSelectionChange__P_387_1) {
+        if (this.__inOnSelectionChange__P_381_1) {
           return;
         }
 
-        this.__inOnSelectionChange__P_387_1 = true;
+        this.__inOnSelectionChange__P_381_1 = true;
 
         try {
           this.fireDataEvent("changeSelection", e.getData(), e.getOldData());
           this.fireDataEvent("changeValue", e.getData(), e.getOldData());
         } finally {
-          this.__inOnSelectionChange__P_387_1 = false;
+          this.__inOnSelectionChange__P_381_1 = false;
         }
       }
     },
@@ -39460,7 +39460,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__manager__P_387_0");
+      this._disposeObjects("__manager__P_381_0");
     }
   });
   qx.ui.core.MMultiSelectionHandling.$$dbClassInfo = $$dbClassInfo;
@@ -39533,7 +39533,7 @@
     construct: function construct() {
       qx.core.Object.constructor.call(this); // {Map} Internal selection storage
 
-      this.__selection__P_403_0 = {};
+      this.__selection__P_397_0 = {};
     },
 
     /*
@@ -39594,30 +39594,30 @@
     *****************************************************************************
     */
     members: {
-      __scrollStepX__P_403_1: 0,
-      __scrollStepY__P_403_2: 0,
-      __scrollTimer__P_403_3: null,
-      __frameScroll__P_403_4: null,
-      __lastRelX__P_403_5: null,
-      __lastRelY__P_403_6: null,
-      __frameLocation__P_403_7: null,
-      __dragStartX__P_403_8: null,
-      __dragStartY__P_403_9: null,
-      __inCapture__P_403_10: null,
-      __pointerX__P_403_11: null,
-      __pointerY__P_403_12: null,
-      __moveDirectionX__P_403_13: null,
-      __moveDirectionY__P_403_14: null,
-      __selectionModified__P_403_15: null,
-      __selectionContext__P_403_16: null,
-      __leadItem__P_403_17: null,
-      __selection__P_403_0: null,
-      __anchorItem__P_403_18: null,
-      __pointerDownOnSelected__P_403_19: null,
+      __scrollStepX__P_397_1: 0,
+      __scrollStepY__P_397_2: 0,
+      __scrollTimer__P_397_3: null,
+      __frameScroll__P_397_4: null,
+      __lastRelX__P_397_5: null,
+      __lastRelY__P_397_6: null,
+      __frameLocation__P_397_7: null,
+      __dragStartX__P_397_8: null,
+      __dragStartY__P_397_9: null,
+      __inCapture__P_397_10: null,
+      __pointerX__P_397_11: null,
+      __pointerY__P_397_12: null,
+      __moveDirectionX__P_397_13: null,
+      __moveDirectionY__P_397_14: null,
+      __selectionModified__P_397_15: null,
+      __selectionContext__P_397_16: null,
+      __leadItem__P_397_17: null,
+      __selection__P_397_0: null,
+      __anchorItem__P_397_18: null,
+      __pointerDownOnSelected__P_397_19: null,
       // A flag that signals an user interaction, which means the selection change
       // was triggered by pointer or keyboard [BUG #3344]
       _userInteraction: false,
-      __oldScrollTop__P_403_20: null,
+      __oldScrollTop__P_397_20: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -39634,7 +39634,7 @@
        *    <code>drag</code> or <code>key</code> or <code>null</code>
        */
       getSelectionContext: function getSelectionContext() {
-        return this.__selectionContext__P_403_16;
+        return this.__selectionContext__P_397_16;
       },
 
       /**
@@ -39840,7 +39840,7 @@
        * @return {Object[]} List of items.
        */
       getSelection: function getSelection() {
-        return Object.values(this.__selection__P_403_0);
+        return Object.values(this.__selection__P_397_0);
       },
 
       /**
@@ -39851,7 +39851,7 @@
        */
       getSortedSelection: function getSortedSelection() {
         var children = this.getSelectables();
-        var sel = Object.values(this.__selection__P_403_0);
+        var sel = Object.values(this.__selection__P_397_0);
         sel.sort(function (a, b) {
           return children.indexOf(a) - children.indexOf(b);
         });
@@ -39867,7 +39867,7 @@
       isItemSelected: function isItemSelected(item) {
         var hash = this._selectableToHashCode(item);
 
-        return this.__selection__P_403_0[hash] !== undefined;
+        return this.__selection__P_397_0[hash] !== undefined;
       },
 
       /**
@@ -39876,7 +39876,7 @@
        * @return {Boolean} Whether the selection is empty
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return qx.lang.Object.isEmpty(this.__selection__P_403_0);
+        return qx.lang.Object.isEmpty(this.__selection__P_397_0);
       },
 
       /**
@@ -39911,7 +39911,7 @@
        * @param value {Object} Any valid item or <code>null</code>
        */
       _setLeadItem: function _setLeadItem(value) {
-        var old = this.__leadItem__P_403_17;
+        var old = this.__leadItem__P_397_17;
 
         if (old !== null) {
           this._styleSelectable(old, "lead", false);
@@ -39921,7 +39921,7 @@
           this._styleSelectable(value, "lead", true);
         }
 
-        this.__leadItem__P_403_17 = value;
+        this.__leadItem__P_397_17 = value;
       },
 
       /**
@@ -39931,7 +39931,7 @@
        * @return {Object} The lead item or <code>null</code>
        */
       getLeadItem: function getLeadItem() {
-        return this.__leadItem__P_403_17;
+        return this.__leadItem__P_397_17;
       },
 
       /**
@@ -39942,7 +39942,7 @@
        * @param value {Object} Any valid item or <code>null</code>
        */
       _setAnchorItem: function _setAnchorItem(value) {
-        var old = this.__anchorItem__P_403_18;
+        var old = this.__anchorItem__P_397_18;
 
         if (old != null) {
           this._styleSelectable(old, "anchor", false);
@@ -39952,7 +39952,7 @@
           this._styleSelectable(value, "anchor", true);
         }
 
-        this.__anchorItem__P_403_18 = value;
+        this.__anchorItem__P_397_18 = value;
       },
 
       /**
@@ -39963,7 +39963,7 @@
        * @return {Object} The anchor item or <code>null</code>
        */
       _getAnchorItem: function _getAnchorItem() {
-        return this.__anchorItem__P_403_18 !== null ? this.__anchorItem__P_403_18 : null;
+        return this.__anchorItem__P_397_18 !== null ? this.__anchorItem__P_397_18 : null;
       },
 
       /*
@@ -40225,8 +40225,8 @@
         // All browsers (except Opera) fire a native "mouseover" event when a scroll appears
         // by keyboard interaction. We have to ignore the event to avoid a selection for
         // "pointerover" (quick selection). For more details see [BUG #4225]
-        if (this.__oldScrollTop__P_403_20 != null && this.__oldScrollTop__P_403_20 != this._getScroll().top) {
-          this.__oldScrollTop__P_403_20 = null;
+        if (this.__oldScrollTop__P_397_20 != null && this.__oldScrollTop__P_397_20 != this._getScroll().top) {
+          this.__oldScrollTop__P_397_20 = null;
           return;
         } // quick select should only work on mouse events
 
@@ -40292,11 +40292,11 @@
         var isShiftPressed = event.isShiftPressed(); // tapping on selected items deselect on pointerup, not on pointerdown
 
         if (this.isItemSelected(item) && !isShiftPressed && !isCtrlPressed && !this.getDrag()) {
-          this.__pointerDownOnSelected__P_403_19 = item;
+          this.__pointerDownOnSelected__P_397_19 = item;
           this._userInteraction = false;
           return;
         } else {
-          this.__pointerDownOnSelected__P_403_19 = null;
+          this.__pointerDownOnSelected__P_397_19 = null;
         } // Be sure that item is in view
 
 
@@ -40311,13 +40311,13 @@
           this._setLeadItem(item); // Cache location/scroll data
 
 
-          this.__frameLocation__P_403_7 = this._getLocation();
-          this.__frameScroll__P_403_4 = this._getScroll(); // Store position at start
+          this.__frameLocation__P_397_7 = this._getLocation();
+          this.__frameScroll__P_397_4 = this._getScroll(); // Store position at start
 
-          this.__dragStartX__P_403_8 = event.getDocumentLeft() + this.__frameScroll__P_403_4.left;
-          this.__dragStartY__P_403_9 = event.getDocumentTop() + this.__frameScroll__P_403_4.top; // Switch to capture mode
+          this.__dragStartX__P_397_8 = event.getDocumentLeft() + this.__frameScroll__P_397_4.left;
+          this.__dragStartY__P_397_9 = event.getDocumentTop() + this.__frameScroll__P_397_4.top; // Switch to capture mode
 
-          this.__inCapture__P_403_10 = true;
+          this.__inCapture__P_397_10 = true;
 
           this._capture();
         } // Fire change event as needed
@@ -40342,7 +40342,7 @@
         var isCtrlPressed = event.isCtrlPressed() || qx.core.Environment.get("os.name") == "osx" && event.isMetaPressed();
         var isShiftPressed = event.isShiftPressed();
 
-        if (!isCtrlPressed && !isShiftPressed && this.__pointerDownOnSelected__P_403_19 != null) {
+        if (!isCtrlPressed && !isShiftPressed && this.__pointerDownOnSelected__P_397_19 != null) {
           this._userInteraction = false;
 
           var item = this._getSelectableFromPointerEvent(event);
@@ -40430,65 +40430,65 @@
        */
       handlePointerMove: function handlePointerMove(event) {
         // Only relevant when capturing is enabled
-        if (!this.__inCapture__P_403_10) {
+        if (!this.__inCapture__P_397_10) {
           return;
         } // Update pointer position cache
 
 
-        this.__pointerX__P_403_11 = event.getDocumentLeft();
-        this.__pointerY__P_403_12 = event.getDocumentTop(); // this is a method invoked by an user interaction, so be careful to
+        this.__pointerX__P_397_11 = event.getDocumentLeft();
+        this.__pointerY__P_397_12 = event.getDocumentTop(); // this is a method invoked by an user interaction, so be careful to
         // set / clear the mark this._userInteraction [BUG #3344]
 
         this._userInteraction = true; // Detect move directions
 
-        var dragX = this.__pointerX__P_403_11 + this.__frameScroll__P_403_4.left;
+        var dragX = this.__pointerX__P_397_11 + this.__frameScroll__P_397_4.left;
 
-        if (dragX > this.__dragStartX__P_403_8) {
-          this.__moveDirectionX__P_403_13 = 1;
-        } else if (dragX < this.__dragStartX__P_403_8) {
-          this.__moveDirectionX__P_403_13 = -1;
+        if (dragX > this.__dragStartX__P_397_8) {
+          this.__moveDirectionX__P_397_13 = 1;
+        } else if (dragX < this.__dragStartX__P_397_8) {
+          this.__moveDirectionX__P_397_13 = -1;
         } else {
-          this.__moveDirectionX__P_403_13 = 0;
+          this.__moveDirectionX__P_397_13 = 0;
         }
 
-        var dragY = this.__pointerY__P_403_12 + this.__frameScroll__P_403_4.top;
+        var dragY = this.__pointerY__P_397_12 + this.__frameScroll__P_397_4.top;
 
-        if (dragY > this.__dragStartY__P_403_9) {
-          this.__moveDirectionY__P_403_14 = 1;
-        } else if (dragY < this.__dragStartY__P_403_9) {
-          this.__moveDirectionY__P_403_14 = -1;
+        if (dragY > this.__dragStartY__P_397_9) {
+          this.__moveDirectionY__P_397_14 = 1;
+        } else if (dragY < this.__dragStartY__P_397_9) {
+          this.__moveDirectionY__P_397_14 = -1;
         } else {
-          this.__moveDirectionY__P_403_14 = 0;
+          this.__moveDirectionY__P_397_14 = 0;
         } // Update scroll steps
 
 
-        var location = this.__frameLocation__P_403_7;
+        var location = this.__frameLocation__P_397_7;
 
-        if (this.__pointerX__P_403_11 < location.left) {
-          this.__scrollStepX__P_403_1 = this.__pointerX__P_403_11 - location.left;
-        } else if (this.__pointerX__P_403_11 > location.right) {
-          this.__scrollStepX__P_403_1 = this.__pointerX__P_403_11 - location.right;
+        if (this.__pointerX__P_397_11 < location.left) {
+          this.__scrollStepX__P_397_1 = this.__pointerX__P_397_11 - location.left;
+        } else if (this.__pointerX__P_397_11 > location.right) {
+          this.__scrollStepX__P_397_1 = this.__pointerX__P_397_11 - location.right;
         } else {
-          this.__scrollStepX__P_403_1 = 0;
+          this.__scrollStepX__P_397_1 = 0;
         }
 
-        if (this.__pointerY__P_403_12 < location.top) {
-          this.__scrollStepY__P_403_2 = this.__pointerY__P_403_12 - location.top;
-        } else if (this.__pointerY__P_403_12 > location.bottom) {
-          this.__scrollStepY__P_403_2 = this.__pointerY__P_403_12 - location.bottom;
+        if (this.__pointerY__P_397_12 < location.top) {
+          this.__scrollStepY__P_397_2 = this.__pointerY__P_397_12 - location.top;
+        } else if (this.__pointerY__P_397_12 > location.bottom) {
+          this.__scrollStepY__P_397_2 = this.__pointerY__P_397_12 - location.bottom;
         } else {
-          this.__scrollStepY__P_403_2 = 0;
+          this.__scrollStepY__P_397_2 = 0;
         } // Dynamically create required timer instance
 
 
-        if (!this.__scrollTimer__P_403_3) {
-          this.__scrollTimer__P_403_3 = new qx.event.Timer(100);
+        if (!this.__scrollTimer__P_397_3) {
+          this.__scrollTimer__P_397_3 = new qx.event.Timer(100);
 
-          this.__scrollTimer__P_403_3.addListener("interval", this._onInterval, this);
+          this.__scrollTimer__P_397_3.addListener("interval", this._onInterval, this);
         } // Start interval
 
 
-        this.__scrollTimer__P_403_3.start(); // Auto select based on new cursor position
+        this.__scrollTimer__P_397_3.start(); // Auto select based on new cursor position
 
 
         this._autoSelect();
@@ -40531,25 +40531,25 @@
        * Stops all timers, release capture etc. to cleanup drag selection
        */
       _cleanup: function _cleanup() {
-        if (!this.getDrag() && this.__inCapture__P_403_10) {
+        if (!this.getDrag() && this.__inCapture__P_397_10) {
           return;
         } // Fire change event if needed
 
 
-        if (this.__selectionModified__P_403_15) {
+        if (this.__selectionModified__P_397_15) {
           this._fireChange("tap");
         } // Remove flags
 
 
-        delete this.__inCapture__P_403_10;
-        delete this.__lastRelX__P_403_5;
-        delete this.__lastRelY__P_403_6; // Stop capturing
+        delete this.__inCapture__P_397_10;
+        delete this.__lastRelX__P_397_5;
+        delete this.__lastRelY__P_397_6; // Stop capturing
 
         this._releaseCapture(); // Stop timer
 
 
-        if (this.__scrollTimer__P_403_3) {
-          this.__scrollTimer__P_403_3.stop();
+        if (this.__scrollTimer__P_397_3) {
+          this.__scrollTimer__P_397_3.stop();
         }
       },
 
@@ -40560,10 +40560,10 @@
        */
       _onInterval: function _onInterval(e) {
         // Scroll by defined block size
-        this._scrollBy(this.__scrollStepX__P_403_1, this.__scrollStepY__P_403_2); // Update scroll cache
+        this._scrollBy(this.__scrollStepX__P_397_1, this.__scrollStepY__P_397_2); // Update scroll cache
 
 
-        this.__frameScroll__P_403_4 = this._getScroll(); // Auto select based on new scroll position and cursor
+        this.__frameScroll__P_397_4 = this._getScroll(); // Auto select based on new scroll position and cursor
 
         this._autoSelect();
       },
@@ -40575,23 +40575,23 @@
         var inner = this._getDimension(); // Get current relative Y position and compare it with previous one
 
 
-        var relX = Math.max(0, Math.min(this.__pointerX__P_403_11 - this.__frameLocation__P_403_7.left, inner.width)) + this.__frameScroll__P_403_4.left;
+        var relX = Math.max(0, Math.min(this.__pointerX__P_397_11 - this.__frameLocation__P_397_7.left, inner.width)) + this.__frameScroll__P_397_4.left;
 
-        var relY = Math.max(0, Math.min(this.__pointerY__P_403_12 - this.__frameLocation__P_403_7.top, inner.height)) + this.__frameScroll__P_403_4.top; // Compare old and new relative coordinates (for performance reasons)
+        var relY = Math.max(0, Math.min(this.__pointerY__P_397_12 - this.__frameLocation__P_397_7.top, inner.height)) + this.__frameScroll__P_397_4.top; // Compare old and new relative coordinates (for performance reasons)
 
 
-        if (this.__lastRelX__P_403_5 === relX && this.__lastRelY__P_403_6 === relY) {
+        if (this.__lastRelX__P_397_5 === relX && this.__lastRelY__P_397_6 === relY) {
           return;
         }
 
-        this.__lastRelX__P_403_5 = relX;
-        this.__lastRelY__P_403_6 = relY; // Cache anchor
+        this.__lastRelX__P_397_5 = relX;
+        this.__lastRelY__P_397_6 = relY; // Cache anchor
 
         var anchor = this._getAnchorItem();
 
         var lead = anchor; // Process X-coordinate
 
-        var moveX = this.__moveDirectionX__P_403_13;
+        var moveX = this.__moveDirectionX__P_397_13;
         var nextX, locationX;
 
         while (moveX !== 0) {
@@ -40612,7 +40612,7 @@
         } // Process Y-coordinate
 
 
-        var moveY = this.__moveDirectionY__P_403_14;
+        var moveY = this.__moveDirectionY__P_397_14;
         var nextY, locationY;
 
         while (moveY !== 0) {
@@ -40668,7 +40668,7 @@
        *
        * @lint ignoreReferenceField(__navigationKeys)
        */
-      __navigationKeys__P_403_21: {
+      __navigationKeys__P_397_21: {
         Home: 1,
         Down: 1,
         Right: 1,
@@ -40721,7 +40721,7 @@
 
             consumed = true;
           }
-        } else if (this.__navigationKeys__P_403_21[key]) {
+        } else if (this.__navigationKeys__P_397_21[key]) {
           consumed = true;
 
           if (mode === "single" || mode == "one") {
@@ -40820,7 +40820,7 @@
                 break;
             }
 
-            this.__oldScrollTop__P_403_20 = this._getScroll().top;
+            this.__oldScrollTop__P_397_20 = this._getScroll().top;
 
             this._scrollItemIntoView(next);
           }
@@ -40857,13 +40857,13 @@
        * Clears current selection
        */
       _clearSelection: function _clearSelection() {
-        var selection = this.__selection__P_403_0;
+        var selection = this.__selection__P_397_0;
 
         for (var hash in selection) {
           this._removeFromSelection(selection[hash]);
         }
 
-        this.__selection__P_403_0 = {};
+        this.__selection__P_397_0 = {};
       },
 
       /**
@@ -40879,9 +40879,9 @@
 
 
         if (!extend) {
-          var selected = this.__selection__P_403_0;
+          var selected = this.__selection__P_397_0;
 
-          var mapped = this.__rangeToMap__P_403_22(range);
+          var mapped = this.__rangeToMap__P_397_22(range);
 
           for (var hash in selected) {
             if (!mapped[hash]) {
@@ -40916,7 +40916,7 @@
        *
        * @param range {Array} List of selectable items
        */
-      __rangeToMap__P_403_22: function __rangeToMap__P_403_22(range) {
+      __rangeToMap__P_397_22: function __rangeToMap__P_397_22(range) {
         var mapped = {};
         var item;
 
@@ -40941,8 +40941,8 @@
        * @return {var} The selected item (or <code>null</code>)
        */
       _getSelectedItem: function _getSelectedItem() {
-        for (var hash in this.__selection__P_403_0) {
-          return this.__selection__P_403_0[hash];
+        for (var hash in this.__selection__P_397_0) {
+          return this.__selection__P_397_0[hash];
         }
 
         return null;
@@ -40956,7 +40956,7 @@
       _setSelectedItem: function _setSelectedItem(item) {
         if (this._isSelectable(item)) {
           // If already selected try to find out if this is the only item
-          var current = this.__selection__P_403_0;
+          var current = this.__selection__P_397_0;
 
           var hash = this._selectableToHashCode(item);
 
@@ -40982,12 +40982,12 @@
       _addToSelection: function _addToSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_403_0[hash] == null && this._isSelectable(item)) {
-          this.__selection__P_403_0[hash] = item;
+        if (this.__selection__P_397_0[hash] == null && this._isSelectable(item)) {
+          this.__selection__P_397_0[hash] = item;
 
           this._styleSelectable(item, "selected", true);
 
-          this.__selectionModified__P_403_15 = true;
+          this.__selectionModified__P_397_15 = true;
         }
       },
 
@@ -41000,17 +41000,17 @@
       _toggleInSelection: function _toggleInSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_403_0[hash] == null) {
-          this.__selection__P_403_0[hash] = item;
+        if (this.__selection__P_397_0[hash] == null) {
+          this.__selection__P_397_0[hash] = item;
 
           this._styleSelectable(item, "selected", true);
         } else {
-          delete this.__selection__P_403_0[hash];
+          delete this.__selection__P_397_0[hash];
 
           this._styleSelectable(item, "selected", false);
         }
 
-        this.__selectionModified__P_403_15 = true;
+        this.__selectionModified__P_397_15 = true;
       },
 
       /**
@@ -41021,12 +41021,12 @@
       _removeFromSelection: function _removeFromSelection(item) {
         var hash = this._selectableToHashCode(item);
 
-        if (this.__selection__P_403_0[hash] != null) {
-          delete this.__selection__P_403_0[hash];
+        if (this.__selection__P_397_0[hash] != null) {
+          delete this.__selection__P_397_0[hash];
 
           this._styleSelectable(item, "selected", false);
 
-          this.__selectionModified__P_403_15 = true;
+          this.__selectionModified__P_397_15 = true;
         }
       },
 
@@ -41059,7 +41059,7 @@
         var first = items[0];
         var last = selectable; // Clear old entries from map
 
-        var current = this.__selection__P_403_0;
+        var current = this.__selection__P_397_0;
 
         for (var hash in current) {
           if (incoming[hash]) {
@@ -41102,7 +41102,7 @@
         this._setAnchorItem(first); // Finally fire change event
 
 
-        this.__selectionModified__P_403_15 = true;
+        this.__selectionModified__P_397_15 = true;
 
         this._fireChange();
       },
@@ -41115,12 +41115,12 @@
        *    <code>drag</code> or <code>key</code> or <code>null</code>
        */
       _fireChange: function _fireChange(context) {
-        if (this.__selectionModified__P_403_15) {
+        if (this.__selectionModified__P_397_15) {
           // Store context
-          this.__selectionContext__P_403_16 = context || null; // Fire data event which contains the current selection
+          this.__selectionContext__P_397_16 = context || null; // Fire data event which contains the current selection
 
           this.fireDataEvent("changeSelection", this.getSelection());
-          delete this.__selectionModified__P_403_15;
+          delete this.__selectionModified__P_397_15;
         }
       },
 
@@ -41152,10 +41152,10 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__scrollTimer__P_403_3");
+      this._disposeObjects("__scrollTimer__P_397_3");
 
-      this.__selection__P_403_0 = this.__pointerDownOnSelected__P_403_19 = this.__anchorItem__P_403_18 = null;
-      this.__leadItem__P_403_17 = null;
+      this.__selection__P_397_0 = this.__pointerDownOnSelected__P_397_19 = this.__anchorItem__P_397_18 = null;
+      this.__leadItem__P_397_17 = null;
     }
   });
   qx.ui.core.selection.Abstract.$$dbClassInfo = $$dbClassInfo;
@@ -41212,7 +41212,7 @@
      */
     construct: function construct(widget) {
       qx.ui.core.selection.Abstract.constructor.call(this);
-      this.__widget__P_404_0 = widget;
+      this.__widget__P_398_0 = widget;
     },
 
     /*
@@ -41221,7 +41221,7 @@
     *****************************************************************************
     */
     members: {
-      __widget__P_404_0: null,
+      __widget__P_398_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -41230,7 +41230,7 @@
       */
       // overridden
       _isSelectable: function _isSelectable(item) {
-        return this._isItemSelectable(item) && item.getLayoutParent() === this.__widget__P_404_0;
+        return this._isItemSelectable(item) && item.getLayoutParent() === this.__widget__P_398_0;
       },
       // overridden
       _selectableToHashCode: function _selectableToHashCode(item) {
@@ -41242,11 +41242,11 @@
       },
       // overridden
       _capture: function _capture() {
-        this.__widget__P_404_0.capture();
+        this.__widget__P_398_0.capture();
       },
       // overridden
       _releaseCapture: function _releaseCapture() {
-        this.__widget__P_404_0.releaseCapture();
+        this.__widget__P_398_0.releaseCapture();
       },
 
       /**
@@ -41269,7 +41269,7 @@
        * @return {qx.ui.core.Widget} The widget
        */
       _getWidget: function _getWidget() {
-        return this.__widget__P_404_0;
+        return this.__widget__P_398_0;
       },
 
       /*
@@ -41279,13 +41279,13 @@
       */
       // overridden
       _getLocation: function _getLocation() {
-        var elem = this.__widget__P_404_0.getContentElement().getDomElement();
+        var elem = this.__widget__P_398_0.getContentElement().getDomElement();
 
         return elem ? qx.bom.element.Location.get(elem) : null;
       },
       // overridden
       _getDimension: function _getDimension() {
-        return this.__widget__P_404_0.getInnerSize();
+        return this.__widget__P_398_0.getInnerSize();
       },
       // overridden
       _getSelectableLocationX: function _getSelectableLocationX(item) {
@@ -41327,7 +41327,7 @@
       },
       // overridden
       _scrollItemIntoView: function _scrollItemIntoView(item) {
-        this.__widget__P_404_0.scrollChildIntoView(item);
+        this.__widget__P_398_0.scrollChildIntoView(item);
       },
 
       /*
@@ -41345,7 +41345,7 @@
           this._userInteraction = true;
         }
 
-        var children = this.__widget__P_404_0.getChildren();
+        var children = this.__widget__P_398_0.getChildren();
 
         var result = [];
         var child;
@@ -41371,7 +41371,7 @@
         // between the given two (including them)
 
 
-        var children = this.__widget__P_404_0.getChildren();
+        var children = this.__widget__P_398_0.getChildren();
 
         var result = [];
         var active = false;
@@ -41398,7 +41398,7 @@
       },
       // overridden
       _getFirstSelectable: function _getFirstSelectable() {
-        var children = this.__widget__P_404_0.getChildren();
+        var children = this.__widget__P_398_0.getChildren();
 
         for (var i = 0, l = children.length; i < l; i++) {
           if (this._isItemSelectable(children[i])) {
@@ -41410,7 +41410,7 @@
       },
       // overridden
       _getLastSelectable: function _getLastSelectable() {
-        var children = this.__widget__P_404_0.getChildren();
+        var children = this.__widget__P_398_0.getChildren();
 
         for (var i = children.length - 1; i > 0; i--) {
           if (this._isItemSelectable(children[i])) {
@@ -41422,9 +41422,9 @@
       },
       // overridden
       _getRelatedSelectable: function _getRelatedSelectable(item, relation) {
-        var vertical = this.__widget__P_404_0.getOrientation() === "vertical";
+        var vertical = this.__widget__P_398_0.getOrientation() === "vertical";
 
-        var children = this.__widget__P_404_0.getChildren();
+        var children = this.__widget__P_398_0.getChildren();
 
         var index = children.indexOf(item);
         var sibling;
@@ -41465,7 +41465,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__widget__P_404_0 = null;
+      this.__widget__P_398_0 = null;
     }
   });
   qx.ui.core.selection.Widget.$$dbClassInfo = $$dbClassInfo;
@@ -41771,8 +41771,8 @@
      */
     construct: function construct(spacingX, spacingY) {
       qx.ui.layout.Abstract.constructor.call(this);
-      this.__rowData__P_441_0 = [];
-      this.__colData__P_441_1 = [];
+      this.__rowData__P_435_0 = [];
+      this.__colData__P_435_1 = [];
 
       if (spacingX) {
         this.setSpacingX(spacingX);
@@ -41828,19 +41828,19 @@
     */
     members: {
       /** @type {Array} 2D array of grid cell data */
-      __grid__P_441_2: null,
-      __rowData__P_441_0: null,
-      __colData__P_441_1: null,
-      __colSpans__P_441_3: null,
-      __rowSpans__P_441_4: null,
-      __maxRowIndex__P_441_5: null,
-      __maxColIndex__P_441_6: null,
+      __grid__P_435_2: null,
+      __rowData__P_435_0: null,
+      __colData__P_435_1: null,
+      __colSpans__P_435_3: null,
+      __rowSpans__P_435_4: null,
+      __maxRowIndex__P_435_5: null,
+      __maxColIndex__P_435_6: null,
 
       /** @type {Array} cached row heights */
-      __rowHeights__P_441_7: null,
+      __rowHeights__P_435_7: null,
 
       /** @type {Array} cached column widths */
-      __colWidths__P_441_8: null,
+      __colWidths__P_435_8: null,
       // overridden
       verifyLayoutProperty: function verifyLayoutProperty(item, name, value) {
         var layoutProperties = {
@@ -41857,7 +41857,7 @@
       /**
        * Rebuild the internal representation of the grid
        */
-      __buildGrid__P_441_9: function __buildGrid__P_441_9() {
+      __buildGrid__P_435_9: function __buildGrid__P_435_9() {
         var grid = [];
         var colSpans = [];
         var rowSpans = [];
@@ -41911,13 +41911,13 @@
           }
         }
 
-        this.__grid__P_441_2 = grid;
-        this.__colSpans__P_441_3 = colSpans;
-        this.__rowSpans__P_441_4 = rowSpans;
-        this.__maxRowIndex__P_441_5 = maxRowIndex;
-        this.__maxColIndex__P_441_6 = maxColIndex;
-        this.__rowHeights__P_441_7 = null;
-        this.__colWidths__P_441_8 = null; // Clear invalidation marker
+        this.__grid__P_435_2 = grid;
+        this.__colSpans__P_435_3 = colSpans;
+        this.__rowSpans__P_435_4 = rowSpans;
+        this.__maxRowIndex__P_435_5 = maxRowIndex;
+        this.__maxColIndex__P_435_6 = maxColIndex;
+        this.__rowHeights__P_435_7 = null;
+        this.__colWidths__P_435_8 = null; // Clear invalidation marker
 
         delete this._invalidChildrenCache;
       },
@@ -41930,11 +41930,11 @@
        * @param value {var} data to store
        */
       _setRowData: function _setRowData(row, key, value) {
-        var rowData = this.__rowData__P_441_0[row];
+        var rowData = this.__rowData__P_435_0[row];
 
         if (!rowData) {
-          this.__rowData__P_441_0[row] = {};
-          this.__rowData__P_441_0[row][key] = value;
+          this.__rowData__P_435_0[row] = {};
+          this.__rowData__P_435_0[row][key] = value;
         } else {
           rowData[key] = value;
         }
@@ -41948,11 +41948,11 @@
        * @param value {var} data to store
        */
       _setColumnData: function _setColumnData(column, key, value) {
-        var colData = this.__colData__P_441_1[column];
+        var colData = this.__colData__P_435_1[column];
 
         if (!colData) {
-          this.__colData__P_441_1[column] = {};
-          this.__colData__P_441_1[column][key] = value;
+          this.__colData__P_435_1[column] = {};
+          this.__colData__P_435_1[column][key] = value;
         } else {
           colData[key] = value;
         }
@@ -42011,7 +42011,7 @@
        *     containing the vertical and horizontal column alignment.
        */
       getColumnAlign: function getColumnAlign(column) {
-        var colData = this.__colData__P_441_1[column] || {};
+        var colData = this.__colData__P_435_1[column] || {};
         return {
           vAlign: colData.vAlign || "top",
           hAlign: colData.hAlign || "left"
@@ -42058,7 +42058,7 @@
        *     containing the vertical and horizontal row alignment.
        */
       getRowAlign: function getRowAlign(row) {
-        var rowData = this.__rowData__P_441_0[row] || {};
+        var rowData = this.__rowData__P_435_0[row] || {};
         return {
           vAlign: rowData.vAlign || "top",
           hAlign: rowData.hAlign || "left"
@@ -42076,10 +42076,10 @@
        */
       getCellWidget: function getCellWidget(row, column) {
         if (this._invalidChildrenCache) {
-          this.__buildGrid__P_441_9();
+          this.__buildGrid__P_435_9();
         }
 
-        var row = this.__grid__P_441_2[row] || {};
+        var row = this.__grid__P_435_2[row] || {};
         return row[column] || null;
       },
 
@@ -42090,10 +42090,10 @@
        */
       getRowCount: function getRowCount() {
         if (this._invalidChildrenCache) {
-          this.__buildGrid__P_441_9();
+          this.__buildGrid__P_435_9();
         }
 
-        return this.__maxRowIndex__P_441_5 + 1;
+        return this.__maxRowIndex__P_435_5 + 1;
       },
 
       /**
@@ -42103,10 +42103,10 @@
        */
       getColumnCount: function getColumnCount() {
         if (this._invalidChildrenCache) {
-          this.__buildGrid__P_441_9();
+          this.__buildGrid__P_435_9();
         }
 
-        return this.__maxColIndex__P_441_6 + 1;
+        return this.__maxColIndex__P_435_6 + 1;
       },
 
       /**
@@ -42124,9 +42124,9 @@
       getCellAlign: function getCellAlign(row, column) {
         var vAlign = "top";
         var hAlign = "left";
-        var rowData = this.__rowData__P_441_0[row];
-        var colData = this.__colData__P_441_1[column];
-        var widget = this.__grid__P_441_2[row][column];
+        var rowData = this.__rowData__P_435_0[row];
+        var colData = this.__colData__P_435_1[column];
+        var widget = this.__grid__P_435_2[row][column];
 
         if (widget) {
           var widgetProps = {
@@ -42186,7 +42186,7 @@
        * @return {Integer} The column's flex value
        */
       getColumnFlex: function getColumnFlex(column) {
-        var colData = this.__colData__P_441_1[column] || {};
+        var colData = this.__colData__P_435_1[column] || {};
         return colData.flex !== undefined ? colData.flex : 0;
       },
 
@@ -42213,7 +42213,7 @@
        * @return {Integer} The row's flex value
        */
       getRowFlex: function getRowFlex(row) {
-        var rowData = this.__rowData__P_441_0[row] || {};
+        var rowData = this.__rowData__P_435_0[row] || {};
         var rowFlex = rowData.flex !== undefined ? rowData.flex : 0;
         return rowFlex;
       },
@@ -42241,7 +42241,7 @@
        * @return {Integer} The column's maximum width
        */
       getColumnMaxWidth: function getColumnMaxWidth(column) {
-        var colData = this.__colData__P_441_1[column] || {};
+        var colData = this.__colData__P_435_1[column] || {};
         return colData.maxWidth !== undefined ? colData.maxWidth : Infinity;
       },
 
@@ -42268,7 +42268,7 @@
        * @return {Integer} The column's width
        */
       getColumnWidth: function getColumnWidth(column) {
-        var colData = this.__colData__P_441_1[column] || {};
+        var colData = this.__colData__P_435_1[column] || {};
         return colData.width !== undefined ? colData.width : null;
       },
 
@@ -42295,7 +42295,7 @@
        * @return {Integer} The column's minimum width
        */
       getColumnMinWidth: function getColumnMinWidth(column) {
-        var colData = this.__colData__P_441_1[column] || {};
+        var colData = this.__colData__P_435_1[column] || {};
         return colData.minWidth || 0;
       },
 
@@ -42322,7 +42322,7 @@
        * @return {Integer} The row's maximum width
        */
       getRowMaxHeight: function getRowMaxHeight(row) {
-        var rowData = this.__rowData__P_441_0[row] || {};
+        var rowData = this.__rowData__P_435_0[row] || {};
         return rowData.maxHeight || Infinity;
       },
 
@@ -42349,7 +42349,7 @@
        * @return {Integer} The row's width
        */
       getRowHeight: function getRowHeight(row) {
-        var rowData = this.__rowData__P_441_0[row] || {};
+        var rowData = this.__rowData__P_435_0[row] || {};
         return rowData.height !== undefined ? rowData.height : null;
       },
 
@@ -42376,7 +42376,7 @@
        * @return {Integer} The row's minimum width
        */
       getRowMinHeight: function getRowMinHeight(row) {
-        var rowData = this.__rowData__P_441_0[row] || {};
+        var rowData = this.__rowData__P_435_0[row] || {};
         return rowData.minHeight || 0;
       },
 
@@ -42417,8 +42417,8 @@
       _fixHeightsRowSpan: function _fixHeightsRowSpan(rowHeights) {
         var vSpacing = this.getSpacingY();
 
-        for (var i = 0, l = this.__rowSpans__P_441_4.length; i < l; i++) {
-          var widget = this.__rowSpans__P_441_4[i];
+        for (var i = 0, l = this.__rowSpans__P_435_4.length; i < l; i++) {
+          var widget = this.__rowSpans__P_435_4[i];
 
           var hint = this._getOuterSize(widget);
 
@@ -42619,13 +42619,13 @@
        *     <code>height</code>.
        */
       _getRowHeights: function _getRowHeights() {
-        if (this.__rowHeights__P_441_7 != null) {
-          return this.__rowHeights__P_441_7;
+        if (this.__rowHeights__P_435_7 != null) {
+          return this.__rowHeights__P_435_7;
         }
 
         var rowHeights = [];
-        var maxRowIndex = this.__maxRowIndex__P_441_5;
-        var maxColIndex = this.__maxColIndex__P_441_6;
+        var maxRowIndex = this.__maxRowIndex__P_435_5;
+        var maxColIndex = this.__maxColIndex__P_435_6;
 
         for (var row = 0; row <= maxRowIndex; row++) {
           var minHeight = 0;
@@ -42633,7 +42633,7 @@
           var maxHeight = 0;
 
           for (var col = 0; col <= maxColIndex; col++) {
-            var widget = this.__grid__P_441_2[row][col];
+            var widget = this.__grid__P_435_2[row][col];
 
             if (!widget) {
               continue;
@@ -42674,11 +42674,11 @@
           };
         }
 
-        if (this.__rowSpans__P_441_4.length > 0) {
+        if (this.__rowSpans__P_435_4.length > 0) {
           this._fixHeightsRowSpan(rowHeights);
         }
 
-        this.__rowHeights__P_441_7 = rowHeights;
+        this.__rowHeights__P_435_7 = rowHeights;
         return rowHeights;
       },
 
@@ -42690,13 +42690,13 @@
        *     <code>width</code>.
        */
       _getColWidths: function _getColWidths() {
-        if (this.__colWidths__P_441_8 != null) {
-          return this.__colWidths__P_441_8;
+        if (this.__colWidths__P_435_8 != null) {
+          return this.__colWidths__P_435_8;
         }
 
         var colWidths = [];
-        var maxColIndex = this.__maxColIndex__P_441_6;
-        var maxRowIndex = this.__maxRowIndex__P_441_5;
+        var maxColIndex = this.__maxColIndex__P_435_6;
+        var maxRowIndex = this.__maxRowIndex__P_435_5;
 
         for (var col = 0; col <= maxColIndex; col++) {
           var width = 0;
@@ -42704,7 +42704,7 @@
           var maxWidth = Infinity;
 
           for (var row = 0; row <= maxRowIndex; row++) {
-            var widget = this.__grid__P_441_2[row][col];
+            var widget = this.__grid__P_435_2[row][col];
 
             if (!widget) {
               continue;
@@ -42744,7 +42744,7 @@
           this._fixWidthsColSpan(colWidths);
         }
 
-        this.__colWidths__P_441_8 = colWidths;
+        this.__colWidths__P_435_8 = colWidths;
         return colWidths;
       },
 
@@ -42836,12 +42836,12 @@
        * @return {Array} the __colSpans array
        */
       _getColSpans: function _getColSpans() {
-        return this.__colSpans__P_441_3;
+        return this.__colSpans__P_435_3;
       },
       // overridden
       renderLayout: function renderLayout(availWidth, availHeight, padding) {
         if (this._invalidChildrenCache) {
-          this.__buildGrid__P_441_9();
+          this.__buildGrid__P_435_9();
         }
 
         var Util = qx.ui.layout.Util;
@@ -42853,8 +42853,8 @@
         var colStretchOffsets = this._getColumnFlexOffsets(availWidth);
 
         var colWidths = [];
-        var maxColIndex = this.__maxColIndex__P_441_6;
-        var maxRowIndex = this.__maxRowIndex__P_441_5;
+        var maxColIndex = this.__maxColIndex__P_435_6;
+        var maxRowIndex = this.__maxRowIndex__P_435_5;
         var offset;
 
         for (var col = 0; col <= maxColIndex; col++) {
@@ -42881,7 +42881,7 @@
           var top = 0;
 
           for (var row = 0; row <= maxRowIndex; row++) {
-            var widget = this.__grid__P_441_2[row][col]; // ignore empty cells
+            var widget = this.__grid__P_435_2[row][col]; // ignore empty cells
 
             if (!widget) {
               top += rowHeights[row] + vSpacing;
@@ -42929,13 +42929,13 @@
       // overridden
       invalidateLayoutCache: function invalidateLayoutCache() {
         qx.ui.layout.Grid.prototype.invalidateLayoutCache.base.call(this);
-        this.__colWidths__P_441_8 = null;
-        this.__rowHeights__P_441_7 = null;
+        this.__colWidths__P_435_8 = null;
+        this.__rowHeights__P_435_7 = null;
       },
       // overridden
       _computeSizeHint: function _computeSizeHint() {
         if (this._invalidChildrenCache) {
-          this.__buildGrid__P_441_9();
+          this.__buildGrid__P_435_9();
         } // calculate col widths
 
 
@@ -42992,7 +42992,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__grid__P_441_2 = this.__rowData__P_441_0 = this.__colData__P_441_1 = this.__colSpans__P_441_3 = this.__rowSpans__P_441_4 = this.__colWidths__P_441_8 = this.__rowHeights__P_441_7 = null;
+      this.__grid__P_435_2 = this.__rowData__P_435_0 = this.__colData__P_435_1 = this.__colSpans__P_435_3 = this.__rowSpans__P_435_4 = this.__colWidths__P_435_8 = this.__rowHeights__P_435_7 = null;
     }
   });
   qx.ui.layout.Grid.$$dbClassInfo = $$dbClassInfo;
@@ -43087,14 +43087,14 @@
     construct: function construct(horizontal) {
       qx.ui.core.scroll.AbstractScrollArea.constructor.call(this); // Create content
 
-      this.__content__P_420_0 = this._createListItemContainer(); // Used to fire item add/remove events
+      this.__content__P_414_0 = this._createListItemContainer(); // Used to fire item add/remove events
 
-      this.__content__P_420_0.addListener("addChildWidget", this._onAddChild, this);
+      this.__content__P_414_0.addListener("addChildWidget", this._onAddChild, this);
 
-      this.__content__P_420_0.addListener("removeChildWidget", this._onRemoveChild, this); // Add to scrollpane
+      this.__content__P_414_0.addListener("removeChildWidget", this._onRemoveChild, this); // Add to scrollpane
 
 
-      this.getChildControl("pane").add(this.__content__P_420_0); // Apply orientation
+      this.getChildControl("pane").add(this.__content__P_414_0); // Apply orientation
 
       if (horizontal) {
         this.setOrientation("horizontal");
@@ -43106,7 +43106,7 @@
       this.addListener("keypress", this._onKeyPress);
       this.addListener("keyinput", this._onKeyInput); // initialize the search string
 
-      this.__pressedString__P_420_1 = "";
+      this.__pressedString__P_414_1 = "";
     },
 
     /*
@@ -43187,11 +43187,11 @@
     *****************************************************************************
     */
     members: {
-      __pressedString__P_420_1: null,
-      __lastKeyPress__P_420_2: null,
+      __pressedString__P_414_1: null,
+      __lastKeyPress__P_414_2: null,
 
       /** @type {qx.ui.core.Widget} The children container */
-      __content__P_420_0: null,
+      __content__P_414_0: null,
 
       /** @type {Class} Pointer to the selection manager to use */
       SELECTION_MANAGER: qx.ui.core.selection.ScrollArea,
@@ -43203,7 +43203,7 @@
       */
       // overridden
       getChildrenContainer: function getChildrenContainer() {
-        return this.__content__P_420_0;
+        return this.__content__P_414_0;
       },
 
       /**
@@ -43264,7 +43264,7 @@
       */
       // property apply
       _applyOrientation: function _applyOrientation(value, old) {
-        var content = this.__content__P_420_0; // save old layout for disposal
+        var content = this.__content__P_414_0; // save old layout for disposal
 
         var oldLayout = content.getLayout(); // Create new layout
 
@@ -43284,7 +43284,7 @@
       },
       // property apply
       _applySpacing: function _applySpacing(value, old) {
-        this.__content__P_420_0.getLayout().setSpacing(value);
+        this.__content__P_414_0.getLayout().setSpacing(value);
       },
 
       /*
@@ -43339,21 +43339,21 @@
         } // Reset string after a second of non pressed key
 
 
-        if (new Date().valueOf() - this.__lastKeyPress__P_420_2 > 1000) {
-          this.__pressedString__P_420_1 = "";
+        if (new Date().valueOf() - this.__lastKeyPress__P_414_2 > 1000) {
+          this.__pressedString__P_414_1 = "";
         } // Combine keys the user pressed to a string
 
 
-        this.__pressedString__P_420_1 += e.getChar(); // Find matching item
+        this.__pressedString__P_414_1 += e.getChar(); // Find matching item
 
-        var matchedItem = this.findItemByLabelFuzzy(this.__pressedString__P_420_1); // if an item was found, select it
+        var matchedItem = this.findItemByLabelFuzzy(this.__pressedString__P_414_1); // if an item was found, select it
 
         if (matchedItem) {
           this.setSelection([matchedItem]);
         } // Store timestamp
 
 
-        this.__lastKeyPress__P_420_2 = new Date().valueOf();
+        this.__lastKeyPress__P_414_2 = new Date().valueOf();
       },
 
       /**
@@ -43447,7 +43447,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__content__P_420_0");
+      this._disposeObjects("__content__P_414_0");
     }
   });
   qx.ui.form.List.$$dbClassInfo = $$dbClassInfo;
@@ -43557,7 +43557,7 @@
        *
        * @lint ignoreReferenceField(__contentPaddingSetter)
        */
-      __contentPaddingSetter__P_383_0: {
+      __contentPaddingSetter__P_377_0: {
         contentPaddingTop: "setPaddingTop",
         contentPaddingRight: "setPaddingRight",
         contentPaddingBottom: "setPaddingBottom",
@@ -43569,7 +43569,7 @@
        *
        * @lint ignoreReferenceField(__contentPaddingThemedSetter)
        */
-      __contentPaddingThemedSetter__P_383_1: {
+      __contentPaddingThemedSetter__P_377_1: {
         contentPaddingTop: "setThemedPaddingTop",
         contentPaddingRight: "setThemedPaddingRight",
         contentPaddingBottom: "setThemedPaddingBottom",
@@ -43581,7 +43581,7 @@
        *
        * @lint ignoreReferenceField(__contentPaddingResetter)
        */
-      __contentPaddingResetter__P_383_2: {
+      __contentPaddingResetter__P_377_2: {
         contentPaddingTop: "resetPaddingTop",
         contentPaddingRight: "resetPaddingRight",
         contentPaddingBottom: "resetPaddingBottom",
@@ -43592,15 +43592,15 @@
         var target = this._getContentPaddingTarget();
 
         if (value == null) {
-          var resetter = this.__contentPaddingResetter__P_383_2[name];
+          var resetter = this.__contentPaddingResetter__P_377_2[name];
           target[resetter]();
         } else {
           // forward the themed sates if case the apply was invoked by a theme
           if (variant == "setThemed" || variant == "resetThemed") {
-            var setter = this.__contentPaddingThemedSetter__P_383_1[name];
+            var setter = this.__contentPaddingThemedSetter__P_377_1[name];
             target[setter](value);
           } else {
-            var setter = this.__contentPaddingSetter__P_383_0[name];
+            var setter = this.__contentPaddingSetter__P_377_0[name];
             target[setter](value);
           }
         }
@@ -43862,13 +43862,13 @@
     */
     members: {
       /** Saved last value in case invalid text is entered */
-      __lastValidValue__P_429_0: null,
+      __lastValidValue__P_423_0: null,
 
       /** Whether the page-up button has been pressed */
-      __pageUpMode__P_429_1: false,
+      __pageUpMode__P_423_1: false,
 
       /** Whether the page-down button has been pressed */
-      __pageDownMode__P_429_2: false,
+      __pageDownMode__P_423_2: false,
 
       /*
       ---------------------------------------------------------------------------
@@ -44056,7 +44056,7 @@
         this._updateButtons(); // save the last valid value of the spinner
 
 
-        this.__lastValidValue__P_429_0 = value; // write the value of the spinner to the textfield
+        this.__lastValidValue__P_423_0 = value; // write the value of the spinner to the textfield
 
         if (value !== null) {
           if (this.getNumberFormat()) {
@@ -44117,7 +44117,7 @@
           numberFormat.addListener("changeNumberFormat", this._onChangeNumberFormat, this);
         }
 
-        this._applyValue(this.__lastValidValue__P_429_0, undefined);
+        this._applyValue(this.__lastValidValue__P_423_0, undefined);
       },
 
       /**
@@ -44184,7 +44184,7 @@
         switch (e.getKeyIdentifier()) {
           case "PageUp":
             // mark that the spinner is in page mode and process further
-            this.__pageUpMode__P_429_1 = true;
+            this.__pageUpMode__P_423_1 = true;
 
           case "Up":
             this.getChildControl("upbutton").press();
@@ -44192,7 +44192,7 @@
 
           case "PageDown":
             // mark that the spinner is in page mode and process further
-            this.__pageDownMode__P_429_2 = true;
+            this.__pageDownMode__P_423_2 = true;
 
           case "Down":
             this.getChildControl("downbutton").press();
@@ -44218,7 +44218,7 @@
         switch (e.getKeyIdentifier()) {
           case "PageUp":
             this.getChildControl("upbutton").release();
-            this.__pageUpMode__P_429_1 = false;
+            this.__pageUpMode__P_423_1 = false;
             break;
 
           case "Up":
@@ -44227,7 +44227,7 @@
 
           case "PageDown":
             this.getChildControl("downbutton").release();
-            this.__pageDownMode__P_429_2 = false;
+            this.__pageDownMode__P_423_2 = false;
             break;
 
           case "Down":
@@ -44297,14 +44297,14 @@
           } // If value is the same than before, call directly _applyValue()
 
 
-          if (value === this.__lastValidValue__P_429_0) {
-            this._applyValue(this.__lastValidValue__P_429_0);
+          if (value === this.__lastValidValue__P_423_0) {
+            this._applyValue(this.__lastValidValue__P_423_0);
           } else {
             this.setValue(value);
           }
         } else {
           // otherwise, reset the last valid value
-          this._applyValue(this.__lastValidValue__P_429_0, undefined);
+          this._applyValue(this.__lastValidValue__P_423_0, undefined);
         }
       },
 
@@ -44345,7 +44345,7 @@
        *
        */
       _countUp: function _countUp() {
-        if (this.__pageUpMode__P_429_1) {
+        if (this.__pageUpMode__P_423_1) {
           var newValue = this.getValue() + this.getPageStep();
         } else {
           var newValue = this.getValue() + this.getSingleStep();
@@ -44368,7 +44368,7 @@
        *
        */
       _countDown: function _countDown() {
-        if (this.__pageDownMode__P_429_2) {
+        if (this.__pageDownMode__P_423_2) {
           var newValue = this.getValue() - this.getPageStep();
         } else {
           var newValue = this.getValue() - this.getSingleStep();
@@ -44471,9 +44471,9 @@
     construct: function construct() {
       qx.core.Object.constructor.call(this); // storage for all form items
 
-      this.__formItems__P_437_0 = []; // storage for all results of async validation calls
+      this.__formItems__P_431_0 = []; // storage for all results of async validation calls
 
-      this.__asyncResults__P_437_1 = {}; // set the default required field message
+      this.__asyncResults__P_431_1 = {}; // set the default required field message
 
       this.setRequiredFieldMessage(qx.locale.Manager.tr("This field is required"));
     },
@@ -44535,10 +44535,10 @@
       }
     },
     members: {
-      __formItems__P_437_0: null,
-      __valid__P_437_2: null,
-      __asyncResults__P_437_1: null,
-      __syncValid__P_437_3: null,
+      __formItems__P_431_0: null,
+      __valid__P_431_2: null,
+      __asyncResults__P_431_1: null,
+      __syncValid__P_431_3: null,
 
       /**
        * Add a form item to the validation manager.
@@ -44570,12 +44570,12 @@
        */
       add: function add(formItem, validator, context) {
         // check for the form API
-        if (!this.__supportsInvalid__P_437_4(formItem)) {
+        if (!this.__supportsInvalid__P_431_4(formItem)) {
           throw new Error("Added widget not supported.");
         } // check for the data type
 
 
-        if (this.__supportsSingleSelection__P_437_5(formItem) && !formItem.getValue) {
+        if (this.__supportsSingleSelection__P_431_5(formItem) && !formItem.getValue) {
           // check for a validator
           if (validator != null) {
             throw new Error("Widgets supporting selection can only be validated in the form validator");
@@ -44589,7 +44589,7 @@
           context: context
         };
 
-        this.__formItems__P_437_0.push(dataEntry);
+        this.__formItems__P_431_0.push(dataEntry);
       },
 
       /**
@@ -44600,7 +44600,7 @@
        *  <code>null</code> if the item could not be found.
        */
       remove: function remove(formItem) {
-        var items = this.__formItems__P_437_0;
+        var items = this.__formItems__P_431_0;
 
         for (var i = 0, len = items.length; i < len; i++) {
           if (formItem === items[i].item) {
@@ -44620,8 +44620,8 @@
       getItems: function getItems() {
         var items = [];
 
-        for (var i = 0; i < this.__formItems__P_437_0.length; i++) {
-          items.push(this.__formItems__P_437_0[i].item);
+        for (var i = 0; i < this.__formItems__P_431_0.length; i++) {
+          items.push(this.__formItems__P_431_0[i].item);
         }
 
         ;
@@ -44641,13 +44641,13 @@
        */
       validate: function validate() {
         var valid = true;
-        this.__syncValid__P_437_3 = true; // collaboration of all synchronous validations
+        this.__syncValid__P_431_3 = true; // collaboration of all synchronous validations
 
         var items = []; // check all validators for the added form items
 
-        for (var i = 0; i < this.__formItems__P_437_0.length; i++) {
-          var formItem = this.__formItems__P_437_0[i].item;
-          var validator = this.__formItems__P_437_0[i].validator; // store the items in case of form validation
+        for (var i = 0; i < this.__formItems__P_431_0.length; i++) {
+          var formItem = this.__formItems__P_431_0[i].item;
+          var validator = this.__formItems__P_431_0[i].validator; // store the items in case of form validation
 
           items.push(formItem); // ignore all form items without a validator
 
@@ -44656,33 +44656,33 @@
             var validatorResult = this._validateRequired(formItem);
 
             valid = valid && validatorResult;
-            this.__syncValid__P_437_3 = validatorResult && this.__syncValid__P_437_3;
+            this.__syncValid__P_431_3 = validatorResult && this.__syncValid__P_431_3;
             continue;
           }
 
-          var validatorResult = this._validateItem(this.__formItems__P_437_0[i], formItem.getValue()); // keep that order to ensure that null is returned on async cases
+          var validatorResult = this._validateItem(this.__formItems__P_431_0[i], formItem.getValue()); // keep that order to ensure that null is returned on async cases
 
 
           valid = validatorResult && valid;
 
           if (validatorResult != null) {
-            this.__syncValid__P_437_3 = validatorResult && this.__syncValid__P_437_3;
+            this.__syncValid__P_431_3 = validatorResult && this.__syncValid__P_431_3;
           }
         } // check the form validator (be sure to invoke it even if the form
         // items are already false, so keep the order!)
 
 
-        var formValid = this.__validateForm__P_437_6(items);
+        var formValid = this.__validateForm__P_431_6(items);
 
         if (qx.lang.Type.isBoolean(formValid)) {
-          this.__syncValid__P_437_3 = formValid && this.__syncValid__P_437_3;
+          this.__syncValid__P_431_3 = formValid && this.__syncValid__P_431_3;
         }
 
         valid = formValid && valid;
 
         this._setValid(valid);
 
-        if (qx.lang.Object.isEmpty(this.__asyncResults__P_437_1)) {
+        if (qx.lang.Object.isEmpty(this.__asyncResults__P_431_1)) {
           this.fireEvent("complete");
         }
 
@@ -44701,9 +44701,9 @@
         if (formItem.getRequired()) {
           var validatorResult; // if its a widget supporting the selection
 
-          if (this.__supportsSingleSelection__P_437_5(formItem)) {
+          if (this.__supportsSingleSelection__P_431_5(formItem)) {
             validatorResult = !!formItem.getSelection()[0];
-          } else if (this.__supportsDataBindingSelection__P_437_7(formItem)) {
+          } else if (this.__supportsDataBindingSelection__P_431_7(formItem)) {
             validatorResult = formItem.getSelection().getLength() > 0;
           } else {
             var value = formItem.getValue();
@@ -44736,9 +44736,9 @@
         var context = dataEntry.context;
         var validator = dataEntry.validator; // check for asynchronous validation
 
-        if (this.__isAsyncValidator__P_437_8(validator)) {
+        if (this.__isAsyncValidator__P_431_8(validator)) {
           // used to check if all async validations are done
-          this.__asyncResults__P_437_1[formItem.toHashCode()] = null;
+          this.__asyncResults__P_431_1[formItem.toHashCode()] = null;
           validator.validate(formItem, formItem.getValue(), this, context);
           return null;
         }
@@ -44782,7 +44782,7 @@
        * @param items {qx.ui.core.Widget[]} An array of all form items.
        * @return {Boolean|null} description
        */
-      __validateForm__P_437_6: function __validateForm__P_437_6(items) {
+      __validateForm__P_431_6: function __validateForm__P_431_6(items) {
         var formValidator = this.getValidator();
         var context = this.getContext() || this;
 
@@ -44793,8 +44793,8 @@
 
         this.setInvalidMessage("");
 
-        if (this.__isAsyncValidator__P_437_8(formValidator)) {
-          this.__asyncResults__P_437_1[this.toHashCode()] = null;
+        if (this.__isAsyncValidator__P_431_8(formValidator)) {
+          this.__asyncResults__P_431_1[this.toHashCode()] = null;
           formValidator.validateForm(items, this, context);
           return null;
         }
@@ -44832,7 +44832,7 @@
        *   The validator to check.
        * @return {Boolean} True, if the given validator is asynchronous.
        */
-      __isAsyncValidator__P_437_8: function __isAsyncValidator__P_437_8(validator) {
+      __isAsyncValidator__P_431_8: function __isAsyncValidator__P_431_8(validator) {
         var async = false;
 
         if (!qx.lang.Type.isFunction(validator)) {
@@ -44850,7 +44850,7 @@
        * @return {Boolean} true, if the given item implements the
        *   necessary interface.
        */
-      __supportsInvalid__P_437_4: function __supportsInvalid__P_437_4(formItem) {
+      __supportsInvalid__P_431_4: function __supportsInvalid__P_431_4(formItem) {
         var clazz = formItem.constructor;
         return qx.Class.hasInterface(clazz, qx.ui.form.IForm);
       },
@@ -44863,7 +44863,7 @@
        * @return {Boolean} true, if the given item implements the
        *   necessary interface.
        */
-      __supportsSingleSelection__P_437_5: function __supportsSingleSelection__P_437_5(formItem) {
+      __supportsSingleSelection__P_431_5: function __supportsSingleSelection__P_431_5(formItem) {
         var clazz = formItem.constructor;
         return qx.Class.hasInterface(clazz, qx.ui.core.ISingleSelection);
       },
@@ -44876,7 +44876,7 @@
        * @return {Boolean} true, if the given item implements the
        *   necessary interface.
        */
-      __supportsDataBindingSelection__P_437_7: function __supportsDataBindingSelection__P_437_7(formItem) {
+      __supportsDataBindingSelection__P_431_7: function __supportsDataBindingSelection__P_431_7(formItem) {
         var clazz = formItem.constructor;
         return qx.Class.hasInterface(clazz, qx.data.controller.ISelection);
       },
@@ -44890,8 +44890,8 @@
       _setValid: function _setValid(value) {
         this._showToolTip(value);
 
-        var oldValue = this.__valid__P_437_2;
-        this.__valid__P_437_2 = value; // check for the change event
+        var oldValue = this.__valid__P_431_2;
+        this.__valid__P_431_2 = value; // check for the change event
 
         if (oldValue != value) {
           this.fireDataEvent("changeValid", value, oldValue);
@@ -44914,8 +44914,8 @@
         if (!valid) {
           var firstInvalid;
 
-          for (var i = 0; i < this.__formItems__P_437_0.length; i++) {
-            var item = this.__formItems__P_437_0[i].item;
+          for (var i = 0; i < this.__formItems__P_431_0.length; i++) {
+            var item = this.__formItems__P_431_0[i].item;
 
             if (!item.isValid()) {
               firstInvalid = item; // only for desktop widgets
@@ -44957,7 +44957,7 @@
        * @return {Boolean|null} The valid state of the manager.
        */
       getValid: function getValid() {
-        return this.__valid__P_437_2;
+        return this.__valid__P_431_2;
       },
 
       /**
@@ -44978,8 +44978,8 @@
       getInvalidMessages: function getInvalidMessages() {
         var messages = []; // combine the messages of all form items
 
-        for (var i = 0; i < this.__formItems__P_437_0.length; i++) {
-          var formItem = this.__formItems__P_437_0[i].item;
+        for (var i = 0; i < this.__formItems__P_431_0.length; i++) {
+          var formItem = this.__formItems__P_431_0[i].item;
 
           if (!formItem.getValid()) {
             messages.push(formItem.getInvalidMessage());
@@ -45002,8 +45002,8 @@
       getInvalidFormItems: function getInvalidFormItems() {
         var res = [];
 
-        for (var i = 0; i < this.__formItems__P_437_0.length; i++) {
-          var formItem = this.__formItems__P_437_0[i].item;
+        for (var i = 0; i < this.__formItems__P_431_0.length; i++) {
+          var formItem = this.__formItems__P_431_0[i].item;
 
           if (!formItem.getValid()) {
             res.push(formItem);
@@ -45018,14 +45018,14 @@
        */
       reset: function reset() {
         // reset all form items
-        for (var i = 0; i < this.__formItems__P_437_0.length; i++) {
-          var dataEntry = this.__formItems__P_437_0[i]; // set the field to valid
+        for (var i = 0; i < this.__formItems__P_431_0.length; i++) {
+          var dataEntry = this.__formItems__P_431_0[i]; // set the field to valid
 
           dataEntry.item.setValid(true);
         } // set the manager to its initial valid value
 
 
-        this.__valid__P_437_2 = null;
+        this.__valid__P_431_2 = null;
 
         this._showToolTip(true);
       },
@@ -45044,10 +45044,10 @@
        */
       setItemValid: function setItemValid(formItem, valid) {
         // store the result
-        this.__asyncResults__P_437_1[formItem.toHashCode()] = valid;
+        this.__asyncResults__P_431_1[formItem.toHashCode()] = valid;
         formItem.setValid(valid);
 
-        this.__checkValidationComplete__P_437_9();
+        this.__checkValidationComplete__P_431_9();
       },
 
       /**
@@ -45062,9 +45062,9 @@
        * @internal
        */
       setFormValid: function setFormValid(valid) {
-        this.__asyncResults__P_437_1[this.toHashCode()] = valid;
+        this.__asyncResults__P_431_1[this.toHashCode()] = valid;
 
-        this.__checkValidationComplete__P_437_9();
+        this.__checkValidationComplete__P_431_9();
       },
 
       /**
@@ -45072,11 +45072,11 @@
        * is final and the {@link #complete} event can be fired. If that's not
        * the case, nothing will happen in the method.
        */
-      __checkValidationComplete__P_437_9: function __checkValidationComplete__P_437_9() {
-        var valid = this.__syncValid__P_437_3; // check if all async validators are done
+      __checkValidationComplete__P_431_9: function __checkValidationComplete__P_431_9() {
+        var valid = this.__syncValid__P_431_3; // check if all async validators are done
 
-        for (var hash in this.__asyncResults__P_437_1) {
-          var currentResult = this.__asyncResults__P_437_1[hash];
+        for (var hash in this.__asyncResults__P_431_1) {
+          var currentResult = this.__asyncResults__P_431_1[hash];
           valid = currentResult && valid; // the validation is not done so just do nothing
 
           if (currentResult == null) {
@@ -45088,7 +45088,7 @@
         this._setValid(valid); // reset the results
 
 
-        this.__asyncResults__P_437_1 = {}; // fire the complete event (no entry in the results with null)
+        this.__asyncResults__P_431_1 = {}; // fire the complete event (no entry in the results with null)
 
         this.fireEvent("complete");
       }
@@ -45102,7 +45102,7 @@
     destruct: function destruct() {
       this._showToolTip(true);
 
-      this.__formItems__P_437_0 = null;
+      this.__formItems__P_431_0 = null;
     }
   });
   qx.ui.form.validation.Manager.$$dbClassInfo = $$dbClassInfo;
@@ -45152,10 +45152,10 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__items__P_426_0 = [];
+      this.__items__P_420_0 = [];
     },
     members: {
-      __items__P_426_0: null,
+      __items__P_420_0: null,
 
       /**
        * Adding a field to the resetter will get its current value and store
@@ -45165,9 +45165,9 @@
        * @throws {TypeError} When given argument is not a field.
        */
       add: function add(field) {
-        this.__typeCheck__P_426_1(field);
+        this.__typeCheck__P_420_1(field);
 
-        this.__items__P_426_0.push({
+        this.__items__P_420_0.push({
           item: field,
           init: field.getValue()
         });
@@ -45181,13 +45181,13 @@
        * @return {Boolean} <code>true</code>, if the field has been removed.
        */
       remove: function remove(field) {
-        this.__typeCheck__P_426_1(field);
+        this.__typeCheck__P_420_1(field);
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          var storedItem = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          var storedItem = this.__items__P_420_0[i];
 
           if (storedItem.item === field) {
-            this.__items__P_426_0.splice(i, 1);
+            this.__items__P_420_0.splice(i, 1);
 
             return true;
           }
@@ -45207,8 +45207,8 @@
             e,
             errors = [];
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          dataEntry = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          dataEntry = this.__items__P_420_0[i];
           e = dataEntry.item.setValue(dataEntry.init);
 
           if (e && e instanceof Error) {
@@ -45232,10 +45232,10 @@
        * @return {null|Error} Returns an error when the field value could not be set.
        */
       resetItem: function resetItem(field) {
-        this.__typeCheck__P_426_1(field);
+        this.__typeCheck__P_420_1(field);
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          var dataEntry = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          var dataEntry = this.__items__P_420_0[i];
 
           if (dataEntry.item === field) {
             return field.setValue(dataEntry.init);
@@ -45251,10 +45251,10 @@
        */
       redefine: function redefine() {
         // go threw all added items
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          var item = this.__items__P_426_0[i].item; // set the new init value for the item
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          var item = this.__items__P_420_0[i].item; // set the new init value for the item
 
-          this.__items__P_426_0[i].init = item.getValue();
+          this.__items__P_420_0[i].init = item.getValue();
         }
       },
 
@@ -45266,14 +45266,14 @@
        * @throws {TypeError} When given argument is not a field.
        */
       redefineItem: function redefineItem(field) {
-        this.__typeCheck__P_426_1(field); // get the data entry
+        this.__typeCheck__P_420_1(field); // get the data entry
 
 
         var dataEntry;
 
-        for (var i = 0; i < this.__items__P_426_0.length; i++) {
-          if (this.__items__P_426_0[i].item === field) {
-            dataEntry = this.__items__P_426_0[i];
+        for (var i = 0; i < this.__items__P_420_0.length; i++) {
+          if (this.__items__P_420_0[i].item === field) {
+            dataEntry = this.__items__P_420_0[i];
             dataEntry.init = dataEntry.item.getValue();
             return;
           }
@@ -45289,7 +45289,7 @@
        * @throws {TypeError} When given argument is not a field.
        * @private
        */
-      __typeCheck__P_426_1: function __typeCheck__P_426_1(field) {
+      __typeCheck__P_420_1: function __typeCheck__P_420_1(field) {
         if (!qx.Class.hasInterface(field.constructor, qx.ui.form.IField)) {
           throw new TypeError("Field " + field + " not supported for resetting.");
         }
@@ -45303,7 +45303,7 @@
     */
     destruct: function destruct() {
       // holding references to widgets --> must set to null
-      this.__items__P_426_0 = null;
+      this.__items__P_420_0 = null;
     }
   });
   qx.ui.form.Resetter.$$dbClassInfo = $$dbClassInfo;
@@ -45395,9 +45395,9 @@
     construct: function construct(varargs) {
       qx.core.Object.constructor.call(this); // create item array
 
-      this.__items__P_424_0 = []; // add listener before call add!!!
+      this.__items__P_418_0 = []; // add listener before call add!!!
 
-      this.addListener("changeSelection", this.__onChangeSelection__P_424_1, this);
+      this.addListener("changeSelection", this.__onChangeSelection__P_418_1, this);
 
       if (varargs != null) {
         this.add.apply(this, arguments);
@@ -45507,7 +45507,7 @@
     */
     members: {
       /** @type {qx.ui.form.IRadioItem[]} The items of the radio group */
-      __items__P_424_0: null,
+      __items__P_418_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -45521,7 +45521,7 @@
        * @return {qx.ui.form.IRadioItem[]} All managed items.
        */
       getItems: function getItems() {
-        return this.__items__P_424_0;
+        return this.__items__P_418_0;
       },
 
       /*
@@ -45536,7 +45536,7 @@
        * @param varargs {qx.ui.form.IRadioItem} A variable number of items to add.
        */
       add: function add(varargs) {
-        var items = this.__items__P_424_0;
+        var items = this.__items__P_418_0;
         var item;
         var groupedProperty = this.getGroupedProperty();
         var groupedPropertyUp = qx.lang.String.firstUp(groupedProperty);
@@ -45572,7 +45572,7 @@
        * @param item {qx.ui.form.IRadioItem} The item to remove.
        */
       remove: function remove(item) {
-        var items = this.__items__P_424_0;
+        var items = this.__items__P_418_0;
         var groupedProperty = this.getGroupedProperty();
         var groupedPropertyUp = qx.lang.String.firstUp(groupedProperty);
 
@@ -45599,7 +45599,7 @@
        * @return {qx.ui.form.IRadioItem[]} The item array
        */
       getChildren: function getChildren() {
-        return this.__items__P_424_0;
+        return this.__items__P_418_0;
       },
 
       /*
@@ -45635,8 +45635,8 @@
         var oldFirstUp = qx.lang.String.firstUp(old);
         var newFirstUp = qx.lang.String.firstUp(value);
 
-        for (var i = 0; i < this.__items__P_424_0.length; i++) {
-          item = this.__items__P_424_0[i]; // remove the listener for the old change event
+        for (var i = 0; i < this.__items__P_418_0.length; i++) {
+          item = this.__items__P_418_0[i]; // remove the listener for the old change event
 
           item.removeListener("change" + oldFirstUp, this._onItemChangeChecked, this); // add the listener for the new change event
 
@@ -45645,19 +45645,19 @@
       },
       // property apply
       _applyInvalidMessage: function _applyInvalidMessage(value, old) {
-        for (var i = 0; i < this.__items__P_424_0.length; i++) {
-          this.__items__P_424_0[i].setInvalidMessage(value);
+        for (var i = 0; i < this.__items__P_418_0.length; i++) {
+          this.__items__P_418_0[i].setInvalidMessage(value);
         }
       },
       // property apply
       _applyValid: function _applyValid(value, old) {
-        for (var i = 0; i < this.__items__P_424_0.length; i++) {
-          this.__items__P_424_0[i].setValid(value);
+        for (var i = 0; i < this.__items__P_418_0.length; i++) {
+          this.__items__P_418_0[i].setValid(value);
         }
       },
       // property apply
       _applyEnabled: function _applyEnabled(value, old) {
-        var items = this.__items__P_424_0;
+        var items = this.__items__P_418_0;
 
         if (value == null) {
           for (var i = 0, l = items.length; i < l; i++) {
@@ -45687,7 +45687,7 @@
        */
       selectNext: function selectNext() {
         var item = this.getSelection()[0];
-        var items = this.__items__P_424_0;
+        var items = this.__items__P_418_0;
         var index = items.indexOf(item);
 
         if (index == -1) {
@@ -45716,7 +45716,7 @@
        */
       selectPrevious: function selectPrevious() {
         var item = this.getSelection()[0];
-        var items = this.__items__P_424_0;
+        var items = this.__items__P_418_0;
         var index = items.indexOf(item);
 
         if (index == -1) {
@@ -45775,7 +45775,7 @@
        *    <code>false</code> otherwise.
        */
       _isItemSelectable: function _isItemSelectable(item) {
-        return this.__items__P_424_0.indexOf(item) != -1;
+        return this.__items__P_418_0.indexOf(item) != -1;
       },
 
       /**
@@ -45783,7 +45783,7 @@
        *
        * @param e {qx.event.type.Data} Data event.
        */
-      __onChangeSelection__P_424_1: function __onChangeSelection__P_424_1(e) {
+      __onChangeSelection__P_418_1: function __onChangeSelection__P_418_1(e) {
         var value = e.getData()[0];
         var old = e.getOldData()[0];
         var groupedProperty = this.getGroupedProperty();
@@ -45804,7 +45804,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeArray("__items__P_424_0");
+      this._disposeArray("__items__P_418_0");
     }
   });
   qx.ui.form.RadioGroup.$$dbClassInfo = $$dbClassInfo;
@@ -45877,7 +45877,7 @@
       {
         qx.core.Assert.assertInterface(selectionProvider, qx.ui.core.ISingleSelectionProvider, "Invalid selectionProvider!");
       }
-      this.__selectionProvider__P_392_0 = selectionProvider;
+      this.__selectionProvider__P_386_0 = selectionProvider;
     },
 
     /*
@@ -45904,7 +45904,7 @@
       allowEmptySelection: {
         check: "Boolean",
         init: true,
-        apply: "__applyAllowEmptySelection__P_392_1"
+        apply: "__applyAllowEmptySelection__P_386_1"
       }
     },
 
@@ -45915,10 +45915,10 @@
     */
     members: {
       /** @type {qx.ui.core.Widget} The selected widget. */
-      __selected__P_392_2: null,
+      __selected__P_386_2: null,
 
       /** @type {qx.ui.core.ISingleSelectionProvider} The provider for selection management */
-      __selectionProvider__P_392_0: null,
+      __selectionProvider__P_386_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -45933,7 +45933,7 @@
        *    <code>null</code> if the selection is empty.
        */
       getSelected: function getSelected() {
-        return this.__selected__P_392_2;
+        return this.__selected__P_386_2;
       },
 
       /**
@@ -45943,11 +45943,11 @@
        * @throws {Error} if the element is not a child element.
        */
       setSelected: function setSelected(item) {
-        if (!this.__isChildElement__P_392_3(item)) {
+        if (!this.__isChildElement__P_386_3(item)) {
           throw new Error("Could not select " + item + ", because it is not a child element!");
         }
 
-        this.__setSelected__P_392_4(item);
+        this.__setSelected__P_386_4(item);
       },
 
       /**
@@ -45955,7 +45955,7 @@
        * <code>true</code> the first element will be selected.
        */
       resetSelected: function resetSelected() {
-        this.__setSelected__P_392_4(null);
+        this.__setSelected__P_386_4(null);
       },
 
       /**
@@ -45967,11 +45967,11 @@
        * @throws {Error} if the element is not a child element.
        */
       isSelected: function isSelected(item) {
-        if (!this.__isChildElement__P_392_3(item)) {
+        if (!this.__isChildElement__P_386_3(item)) {
           throw new Error("Could not check if " + item + " is selected," + " because it is not a child element!");
         }
 
-        return this.__selected__P_392_2 === item;
+        return this.__selected__P_386_2 === item;
       },
 
       /**
@@ -45981,7 +45981,7 @@
        *    <code>false</code> otherwise.
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__selected__P_392_2 == null;
+        return this.__selected__P_386_2 == null;
       },
 
       /**
@@ -45992,12 +45992,12 @@
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        var items = this.__selectionProvider__P_392_0.getItems();
+        var items = this.__selectionProvider__P_386_0.getItems();
 
         var result = [];
 
         for (var i = 0; i < items.length; i++) {
-          if (this.__selectionProvider__P_392_0.isItemSelectable(items[i])) {
+          if (this.__selectionProvider__P_386_0.isItemSelectable(items[i])) {
             result.push(items[i]);
           }
         } // in case of an user selectable list, remove the enabled items
@@ -46022,9 +46022,9 @@
       ---------------------------------------------------------------------------
       */
       // apply method
-      __applyAllowEmptySelection__P_392_1: function __applyAllowEmptySelection__P_392_1(value, old) {
+      __applyAllowEmptySelection__P_386_1: function __applyAllowEmptySelection__P_386_1(value, old) {
         if (!value) {
-          this.__setSelected__P_392_4(this.__selected__P_392_2);
+          this.__setSelected__P_386_4(this.__selected__P_386_2);
         }
       },
 
@@ -46042,8 +46042,8 @@
        * @param item {qx.ui.core.Widget | null} element to select, or
        *    <code>null</code> to reset selection.
        */
-      __setSelected__P_392_4: function __setSelected__P_392_4(item) {
-        var oldSelected = this.__selected__P_392_2;
+      __setSelected__P_386_4: function __setSelected__P_386_4(item) {
+        var oldSelected = this.__selected__P_386_2;
         var newSelected = item;
 
         if (newSelected != null && oldSelected === newSelected) {
@@ -46058,7 +46058,7 @@
           }
         }
 
-        this.__selected__P_392_2 = newSelected;
+        this.__selected__P_386_2 = newSelected;
         this.fireDataEvent("changeSelected", newSelected, oldSelected);
       },
 
@@ -46069,8 +46069,8 @@
        * @return {Boolean} <code>true</code> if element is child element,
        *    <code>false</code> otherwise.
        */
-      __isChildElement__P_392_3: function __isChildElement__P_392_3(item) {
-        var items = this.__selectionProvider__P_392_0.getItems();
+      __isChildElement__P_386_3: function __isChildElement__P_386_3(item) {
+        var items = this.__selectionProvider__P_386_0.getItems();
 
         for (var i = 0; i < items.length; i++) {
           if (items[i] === item) {
@@ -46088,13 +46088,13 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      if (this.__selectionProvider__P_392_0.toHashCode) {
-        this._disposeObjects("__selectionProvider__P_392_0");
+      if (this.__selectionProvider__P_386_0.toHashCode) {
+        this._disposeObjects("__selectionProvider__P_386_0");
       } else {
-        this.__selectionProvider__P_392_0 = null;
+        this.__selectionProvider__P_386_0 = null;
       }
 
-      this._disposeObjects("__selected__P_392_2");
+      this._disposeObjects("__selected__P_386_2");
     }
   });
   qx.ui.core.SingleSelectionManager.$$dbClassInfo = $$dbClassInfo;
@@ -46168,13 +46168,13 @@
     construct: function construct(validator) {
       qx.core.Object.constructor.call(this); // save the validator function
 
-      this.__validatorFunction__P_436_0 = validator;
+      this.__validatorFunction__P_430_0 = validator;
     },
     members: {
-      __validatorFunction__P_436_0: null,
-      __item__P_436_1: null,
-      __manager__P_436_2: null,
-      __usedForForm__P_436_3: null,
+      __validatorFunction__P_430_0: null,
+      __item__P_430_1: null,
+      __manager__P_430_2: null,
+      __usedForForm__P_430_3: null,
 
       /**
        * The validate function should only be called by
@@ -46194,12 +46194,12 @@
        */
       validate: function validate(item, value, manager, context) {
         // mark as item validator
-        this.__usedForForm__P_436_3 = false; // store the item and the manager
+        this.__usedForForm__P_430_3 = false; // store the item and the manager
 
-        this.__item__P_436_1 = item;
-        this.__manager__P_436_2 = manager; // invoke the user set validator function
+        this.__item__P_430_1 = item;
+        this.__manager__P_430_2 = manager; // invoke the user set validator function
 
-        this.__validatorFunction__P_436_0.call(context || this, this, value);
+        this.__validatorFunction__P_430_0.call(context || this, this, value);
       },
 
       /**
@@ -46218,10 +46218,10 @@
        * @internal
        */
       validateForm: function validateForm(items, manager, context) {
-        this.__usedForForm__P_436_3 = true;
-        this.__manager__P_436_2 = manager;
+        this.__usedForForm__P_430_3 = true;
+        this.__manager__P_430_2 = manager;
 
-        this.__validatorFunction__P_436_0.call(context, items, this);
+        this.__validatorFunction__P_430_0.call(context, items, this);
       },
 
       /**
@@ -46233,20 +46233,20 @@
        */
       setValid: function setValid(valid, message) {
         // valid processing
-        if (this.__usedForForm__P_436_3) {
+        if (this.__usedForForm__P_430_3) {
           // message processing
           if (message !== undefined) {
-            this.__manager__P_436_2.setInvalidMessage(message);
+            this.__manager__P_430_2.setInvalidMessage(message);
           }
 
-          this.__manager__P_436_2.setFormValid(valid);
+          this.__manager__P_430_2.setFormValid(valid);
         } else {
           // message processing
           if (message !== undefined) {
-            this.__item__P_436_1.setInvalidMessage(message);
+            this.__item__P_430_1.setInvalidMessage(message);
           }
 
-          this.__manager__P_436_2.setItemValid(this.__item__P_436_1, valid);
+          this.__manager__P_430_2.setItemValid(this.__item__P_430_1, valid);
         }
       }
     },
@@ -46257,7 +46257,7 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this.__manager__P_436_2 = this.__item__P_436_1 = null;
+      this.__manager__P_430_2 = this.__item__P_430_1 = null;
     }
   });
   qx.ui.form.validation.AsyncValidator.$$dbClassInfo = $$dbClassInfo;
@@ -48045,8 +48045,8 @@
     *****************************************************************************
     */
     members: {
-      __preSelectedItem__P_416_0: null,
-      __onInputId__P_416_1: null,
+      __preSelectedItem__P_410_0: null,
+      __onInputId__P_410_1: null,
       // property apply
       _applyPlaceholder: function _applyPlaceholder(value, old) {
         this.getChildControl("textfield").setPlaceholder(value);
@@ -48180,11 +48180,11 @@
        * Apply pre-selected item
        */
       _setPreselectedItem: function _setPreselectedItem() {
-        if (this.__preSelectedItem__P_416_0) {
-          var label = this.__preSelectedItem__P_416_0.getLabel();
+        if (this.__preSelectedItem__P_410_0) {
+          var label = this.__preSelectedItem__P_410_0.getLabel();
 
           if (this.getFormat() != null) {
-            label = this.getFormat().call(this, this.__preSelectedItem__P_416_0);
+            label = this.getFormat().call(this, this.__preSelectedItem__P_410_0);
           } // check for translation
 
 
@@ -48193,7 +48193,7 @@
           }
 
           this.setValue(label);
-          this.__preSelectedItem__P_416_0 = null;
+          this.__preSelectedItem__P_410_0 = null;
         }
       },
       // overridden
@@ -48207,7 +48207,7 @@
           var ctx = list.getSelectionContext();
 
           if (ctx == "quick" || ctx == "key") {
-            this.__preSelectedItem__P_416_0 = current[0];
+            this.__preSelectedItem__P_410_0 = current[0];
           } else {
             var label = current[0].getLabel();
 
@@ -48221,7 +48221,7 @@
             }
 
             this.setValue(label);
-            this.__preSelectedItem__P_416_0 = null;
+            this.__preSelectedItem__P_410_0 = null;
           }
         }
       },
@@ -50913,11 +50913,11 @@
     */
     construct: function construct() {
       qx.ui.core.scroll.AbstractScrollArea.constructor.call(this);
-      this.__content__P_533_0 = new qx.ui.container.Composite(new qx.ui.layout.VBox()).set({
+      this.__content__P_527_0 = new qx.ui.container.Composite(new qx.ui.layout.VBox()).set({
         allowShrinkY: false,
         allowGrowX: true
       });
-      this.getChildControl("pane").add(this.__content__P_533_0);
+      this.getChildControl("pane").add(this.__content__P_527_0);
       this.initOpenMode();
       this.initRootOpenClose();
       this.addListener("changeSelection", this._onChangeSelection, this);
@@ -51014,7 +51014,7 @@
     *****************************************************************************
     */
     members: {
-      __content__P_533_0: null,
+      __content__P_527_0: null,
 
       /** @type {Class} Pointer to the selection manager to use */
       SELECTION_MANAGER: qx.ui.tree.selection.SelectionManager,
@@ -51032,7 +51032,7 @@
        * @return {qx.ui.core.Widget} the children container
        */
       getChildrenContainer: function getChildrenContainer() {
-        return this.__content__P_533_0;
+        return this.__content__P_527_0;
       },
       // property apply
       _applyRoot: function _applyRoot(value, old) {
@@ -51085,7 +51085,7 @@
        * @return {qx.ui.core.Widget} The content padding target.
        */
       _getContentPaddingTarget: function _getContentPaddingTarget() {
-        return this.__content__P_533_0;
+        return this.__content__P_527_0;
       },
 
       /*
@@ -51383,7 +51383,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeObjects("__content__P_533_0");
+      this._disposeObjects("__content__P_527_0");
     }
   });
   qx.ui.tree.Tree.$$dbClassInfo = $$dbClassInfo;
@@ -61198,16 +61198,81 @@
 (function () {
   var $$dbClassInfo = {
     "dependsOn": {
+      "qx.Mixin": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.lang.Json": {},
+      "qx.dev.unit.Sinon": {}
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /**
+   * Mixin containing special assert methods
+   */
+  qx.Mixin.define("qx.test.io.MAssert", {
+    members: {
+      /**
+       * Deep equal comparison, using Sinon's `deepEqual` comparison.
+       * Two values are "deep equal" if:
+       *
+       *   - They are equal, according to samsam.identical
+       *   (https://sinonjs.github.io/samsam/)
+       *   - They are both date objects representing the same time
+       *   - They are both arrays containing elements that are all deepEqual
+       *   - They are objects with the same set of properties, and each property
+       *     in obj1 is deepEqual to the corresponding property in obj2
+       *
+       * Supports cyclic objects.
+       * @param {*} expected
+       * @param {*} actual
+       * @param {String?} msg
+       */
+      assertDeepEquals: function assertDeepEquals(expected, actual, msg) {
+        if (!msg) {
+          msg = `Failed to assert that ${qx.lang.Json.stringify(actual)} deeply equals ${qx.lang.Json.stringify(expected)}.`;
+        }
+
+        this.assert(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
+      },
+
+      /**
+       * Assert that an message is dispatched via the message bus.
+       *
+       * @param {String} name The name of the message
+       * @param {*|Function|undefined} data The data of the message, if any, or a
+       * valiation function which returns true of false depending on whether the
+       * data was correct. If you dont want to check the data and want to provide
+       * a message as the third argument, pass `undefined` explicitly.
+       * @param msg {String?""} Message to be shows if the assertion fails.
+       */
+      assertMessageDispatched: function assertMessageDispatched(name, data, msg) {
+        throw new Error("Needs to be implemented");
+      }
+    }
+  });
+  qx.test.io.MAssert.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
       "qx.Class": {
         "usage": "dynamic",
         "require": true
       },
       "qx.dev.unit.TestCase": {
+        "construct": true,
         "require": true
       },
-      "qx.util.ResourceManager": {},
-      "qx.io.ImageLoader": {},
-      "qx.event.Timer": {}
+      "qx.test.io.MAssert": {
+        "require": true
+      },
+      "qx.io.graphql.Client": {
+        "construct": true
+      },
+      "qx.io.graphql.protocol.Request": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -61219,199 +61284,64 @@
      http://qooxdoo.org
   
      Copyright:
-       2007-2008 1&1 Internet AG, Germany, http://www.1und1.de
+       2020 Christian Boulanger
   
      License:
        MIT: https://opensource.org/licenses/MIT
        See the LICENSE file in the project's top-level directory for details.
   
      Authors:
-       * Alexander Steitz (aback)
+       * Christian Boulanger (cboulanger)
   
   ************************************************************************ */
-
-  /* ************************************************************************
-  ************************************************************************ */
-
-  /**
-   *
-   * @asset(qx/test/colorstrip.gif)
-   */
-  qx.Class.define("qx.test.io.ImageLoader", {
+  qx.Class.define("qx.test.io.graphql.Client", {
     extend: qx.dev.unit.TestCase,
+    include: [qx.test.io.MAssert],
+    statics: {
+      TEST_ENDPOINT: "https://countries-274616.ew.r.appspot.com/"
+    },
+
+    construct() {
+      qx.dev.unit.TestCase.constructor.call(this);
+      this.client = new qx.io.graphql.Client(this.constructor.TEST_ENDPOINT);
+    },
+
     members: {
-      setUp: function setUp() {
-        this.__imageUri__P_251_0 = qx.util.ResourceManager.getInstance().toUri("qx/test/colorstrip.gif");
-        this.__wrongImageUri__P_251_1 = this.__imageUri__P_251_0.replace(/color/, "foocolor");
-        this.__vectorImageUri__P_251_2 = qx.util.ResourceManager.getInstance().toUri("qx/test/bluebar.svg");
-        this.__wrongVectorImageUri__P_251_3 = this.__vectorImageUri__P_251_2.replace(/blue/, "fooblue");
-      },
-      tearDown: function tearDown() {
-        qx.io.ImageLoader.dispose();
-      },
-      testLoadImageSuccess: function testLoadImageSuccess() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__imageUri__P_251_0, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertTrue(qx.io.ImageLoader.isLoaded(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testLoadVectorImageSuccess: function testLoadVectorImageSuccess() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__vectorImageUri__P_251_2, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertTrue(qx.io.ImageLoader.isLoaded(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testLoadImageFailure: function testLoadImageFailure() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__wrongImageUri__P_251_1, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertTrue(qx.io.ImageLoader.isFailed(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testLoadVectorImageFailure: function testLoadVectorImageFailure() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__wrongVectorImageUri__P_251_3, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertTrue(qx.io.ImageLoader.isFailed(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testImageWidth: function testImageWidth() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__imageUri__P_251_0, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertEquals(192, qx.io.ImageLoader.getWidth(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testVectorImageWidth: function testVectorImageWidth() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__vectorImageUri__P_251_2, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertEquals(192, qx.io.ImageLoader.getWidth(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testImageHeight: function testImageHeight() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__imageUri__P_251_0, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertEquals(10, qx.io.ImageLoader.getHeight(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testVectorImageHeight: function testVectorImageHeight() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__vectorImageUri__P_251_2, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertEquals(10, qx.io.ImageLoader.getHeight(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testImageSize: function testImageSize() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__imageUri__P_251_0, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            var size = qx.io.ImageLoader.getSize(this.__imageSource__P_251_4);
-            this.assertEquals(192, size.width);
-            this.assertEquals(10, size.height);
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testVectorImageSize: function testVectorImageSize() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__vectorImageUri__P_251_2, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            var size = qx.io.ImageLoader.getSize(this.__imageSource__P_251_4);
-            this.assertEquals(192, size.width);
-            this.assertEquals(10, size.height);
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testImageFormat: function testImageFormat() {
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__imageUri__P_251_0, function (source, entry) {
-          this.__imageSource__P_251_4 = source;
-        }, this);
-        qx.event.Timer.once(function (e) {
-          var self = this;
-          this.resume(function () {
-            this.assertEquals("gif", qx.io.ImageLoader.getFormat(this.__imageSource__P_251_4));
-          }, self);
-        }, this, 500);
-        this.wait();
-      },
-      testAbort: function testAbort() {
-        var aborted = false;
-        this.__imageSource__P_251_4 = null;
-        qx.io.ImageLoader.load(this.__imageUri__P_251_0, function (source, entry) {
-          aborted = true;
-          this.assertTrue(entry.aborted);
-          this.assertEquals(this.__imageUri__P_251_0, source);
-        }, this);
-        qx.io.ImageLoader.abort(this.__imageUri__P_251_0);
-        this.assertTrue(aborted);
+      async "test: run successful query"() {
+        let query = `query {
+          Country(name: "Switzerland") {
+            name, nativeName, flag {svgFile},
+            officialLanguages {name}
+          }
+        }`;
+        let req = new qx.io.graphql.protocol.Request({
+          query
+        });
+        let result = await this.client.send(req);
+        let expected = {
+          "Country": [{
+            "name": "Switzerland",
+            "nativeName": "Schweiz",
+            "flag": {
+              "svgFile": "https://restcountries.eu/data/che.svg"
+            },
+            "officialLanguages": [{
+              "name": "Italian"
+            }, {
+              "name": "French"
+            }, {
+              "name": "German"
+            }]
+          }]
+        };
+        this.assertDeepEquals(expected, result);
       }
+
     }
   });
-  qx.test.io.ImageLoader.$$dbClassInfo = $$dbClassInfo;
+  qx.test.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1599312877473
+//# sourceMappingURL=package-7.js.map?dt=1599343261426
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

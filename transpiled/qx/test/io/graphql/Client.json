@@ -1,291 +1,153 @@
 {
-  "className": "qx.test.io.part.ClosurePart",
-  "packageName": "qx.test.io.part",
-  "name": "ClosurePart",
+  "className": "qx.test.io.graphql.Client",
+  "packageName": "qx.test.io.graphql",
+  "name": "Client",
   "superClass": "qx.dev.unit.TestCase",
   "interfaces": [],
   "mixins": [
-    "qx.test.io.MRemoteTest"
+    "qx.test.io.MAssert"
   ],
   "functionName": null,
   "clazz": {
     "location": {
       "start": {
-        "line": 29,
+        "line": 19,
         "column": 0
       },
       "end": {
-        "line": 288,
-        "column": 3
+        "line": 65,
+        "column": 5
       }
     },
     "jsdoc": {
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\nhttp://qooxdoo.org\nCopyright:\n  2007-2008 1&amp;1 Internet AG, Germany, http://www.1und1.de\nLicense:\n     MIT: https://opensource.org/licenses/MIT\n  See the LICENSE file in the project's top-level directory for details.\nAuthors:\n Fabian Jakobs (fjakobs)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n*****************************************************************\n</code></pre>"
-        },
-        {
-          "name": "@description",
-          "body": ""
-        }
-      ],
-      "@ignore": [
-        {
-          "name": "@ignore",
-          "body": "qx.test.PART_FILES"
-        }
-      ],
-      "@asset": [
-        {
-          "name": "@asset",
-          "body": "qx/test/*"
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
         }
       ]
     }
   },
   "type": "class",
+  "statics": {
+    "TEST_ENDPOINT": {
+      "location": {
+        "start": {
+          "line": 24,
+          "column": 6
+        },
+        "end": {
+          "line": 24,
+          "column": 65
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    }
+  },
+  "construct": {
+    "location": {
+      "start": {
+        "line": 26,
+        "column": 4
+      },
+      "end": {
+        "line": 29,
+        "column": 5
+      }
+    }
+  },
   "members": {
-    "__dummyLoader": {
+    "test: run successful query": {
       "location": {
         "start": {
-          "line": 36,
-          "column": 4
+          "line": 31,
+          "column": 6
         },
         "end": {
-          "line": 36,
-          "column": 24
-        }
-      },
-      "type": "variable",
-      "access": "private"
-    },
-    "__timeout": {
-      "location": {
-        "start": {
-          "line": 37,
-          "column": 4
-        },
-        "end": {
-          "line": 37,
-          "column": 20
-        }
-      },
-      "type": "variable",
-      "access": "private"
-    },
-    "__loader": {
-      "location": {
-        "start": {
-          "line": 38,
-          "column": 4
-        },
-        "end": {
-          "line": 38,
-          "column": 19
-        }
-      },
-      "type": "variable",
-      "access": "private"
-    },
-    "setUp": {
-      "location": {
-        "start": {
-          "line": 40,
-          "column": 4
-        },
-        "end": {
-          "line": 50,
-          "column": 5
+          "line": 63,
+          "column": 7
         }
       },
       "type": "function",
       "access": "public"
     },
-    "tearDown": {
-      "location": {
-        "start": {
-          "line": 53,
-          "column": 4
-        },
-        "end": {
-          "line": 56,
-          "column": 5
-        }
-      },
+    "assertDeepEquals": {
       "type": "function",
-      "access": "public"
-    },
-    "loadPackage": {
-      "location": {
-        "start": {
-          "line": 59,
-          "column": 4
-        },
-        "end": {
-          "line": 62,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with one package": {
-      "location": {
-        "start": {
-          "line": 65,
-          "column": 4
-        },
-        "end": {
-          "line": 85,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with two packages": {
-      "location": {
-        "start": {
-          "line": 88,
-          "column": 4
-        },
-        "end": {
-          "line": 111,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with two packages and one already loading": {
-      "location": {
-        "start": {
-          "line": 114,
-          "column": 4
-        },
-        "end": {
-          "line": 135,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with two packages and both already loading": {
-      "location": {
-        "start": {
-          "line": 138,
-          "column": 4
-        },
-        "end": {
-          "line": 161,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with three packages and delay": {
-      "location": {
-        "start": {
-          "line": 164,
-          "column": 4
-        },
-        "end": {
-          "line": 186,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with two packages and delay first part": {
-      "location": {
-        "start": {
-          "line": 190,
-          "column": 4
-        },
-        "end": {
-          "line": 214,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with an error package": {
-      "location": {
-        "start": {
-          "line": 217,
-          "column": 4
-        },
-        "end": {
-          "line": 233,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load part with a loaded package should not reload the package again": {
-      "location": {
-        "start": {
-          "line": 236,
-          "column": 4
-        },
-        "end": {
-          "line": 253,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "test: load a part with preloaded package": {
-      "location": {
-        "start": {
-          "line": 256,
-          "column": 4
-        },
-        "end": {
-          "line": 286,
-          "column": 5
-        }
-      },
-      "type": "function",
-      "access": "public"
-    },
-    "getUrl": {
-      "type": "function",
-      "name": "getUrl",
+      "name": "assertDeepEquals",
       "abstract": false,
       "mixin": true,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.test.io.MRemoteTest"
+      "overriddenFrom": "qx.test.io.MAssert",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Deep equal comparison, using Sinon's <code>deepEqual</code> comparison.\n Two values are \"deep equal\" if:</p>\n<ul>\n<li>They are equal, according to samsam.identical\n(https://sinonjs.github.io/samsam/)</li>\n<li>They are both date objects representing the same time</li>\n<li>They are both arrays containing elements that are all deepEqual</li>\n<li>They are objects with the same set of properties, and each property\n in obj1 is deepEqual to the corresponding property in obj2\nSupports cyclic objects.</li>\n</ul>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{*} expected"
+          },
+          {
+            "name": "@param",
+            "body": "{*} actual"
+          },
+          {
+            "name": "@param",
+            "body": "{String?} msg"
+          }
+        ]
+      }
     },
-    "isLocal": {
+    "assertMessageDispatched": {
       "type": "function",
-      "name": "isLocal",
+      "name": "assertMessageDispatched",
       "abstract": false,
       "mixin": true,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.test.io.MRemoteTest"
-    },
-    "needsPHPWarning": {
-      "type": "function",
-      "name": "needsPHPWarning",
-      "abstract": false,
-      "mixin": true,
-      "inherited": true,
-      "access": "public",
-      "overriddenFrom": "qx.test.io.MRemoteTest"
+      "overriddenFrom": "qx.test.io.MAssert",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Assert that an message is dispatched via the message bus.</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{String} name The name of the message",
+            "paramName": "name",
+            "description": "The name of the message",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "{*|Function|undefined} data The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass `undefined` explicitly.",
+            "paramName": "data",
+            "description": "The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass `undefined` explicitly.",
+            "type": [
+              "*",
+              "Function",
+              "undefined"
+            ]
+          },
+          {
+            "name": "@param",
+            "body": "msg {String?\"\"} Message to be shows if the assertion fails.",
+            "paramName": "msg",
+            "description": " Message to be shows if the assertion fails.",
+            "optional": true,
+            "defaultValue": "\"\"",
+            "type": "String"
+          }
+        ]
+      }
     },
     "getQxOwner": {
       "type": "function",

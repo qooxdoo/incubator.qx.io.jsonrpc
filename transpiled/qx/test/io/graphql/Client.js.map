@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/test/io/graphql/Client.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "test",
+    "io",
+    "MAssert",
+    "statics",
+    "TEST_ENDPOINT",
+    "construct",
+    "client",
+    "graphql",
+    "Client",
+    "constructor",
+    "members",
+    "query",
+    "req",
+    "protocol",
+    "Request",
+    "result",
+    "send",
+    "expected",
+    "assertDeepEquals"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAkBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACE;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADvB;AAEEC,IAAAA,OAAO,EAAG,CAACV,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWC,OAAZ,CAFZ;AAGEC,IAAAA,OAAO,EAAE;AACPC,MAAAA,aAAa,EAAE;AADR,KAHX;;AAMEC,IAAAA,SAAS,GAAG;AACV;AACA,WAAKC,MAAL,GAAc,IAAIjB,EAAE,CAACY,EAAH,CAAMM,OAAN,CAAcC,MAAlB,CAAyB,KAAKC,WAAL,CAAiBL,aAA1C,CAAd;AACD,KATH;;AAUEM,IAAAA,OAAO,EAAG;AACR,YAAM,4BAAN,GAAqC;AACnC,YAAIC,KAAK,GAAI;;;;;UAAb;AAMA,YAAIC,GAAG,GAAG,IAAIvB,EAAE,CAACY,EAAH,CAAMM,OAAN,CAAcM,QAAd,CAAuBC,OAA3B,CAAmC;AAACH,UAAAA;AAAD,SAAnC,CAAV;AACA,YAAII,MAAM,GAAG,MAAM,KAAKT,MAAL,CAAYU,IAAZ,CAAiBJ,GAAjB,CAAnB;AACA,YAAIK,QAAQ,GAAG;AACb,qBAAW,CACT;AACE,oBAAQ,aADV;AAEE,0BAAc,SAFhB;AAGE,oBAAQ;AACN,yBAAW;AADL,aAHV;AAME,iCAAqB,CACnB;AACE,sBAAQ;AADV,aADmB,EAInB;AACE,sBAAQ;AADV,aAJmB,EAOnB;AACE,sBAAQ;AADV,aAPmB;AANvB,WADS;AADE,SAAf;AAsBA,aAAKC,gBAAL,CAAsBD,QAAtB,EAAgCF,MAAhC;AACD;;AAjCO;AAVZ,GADF;AAlBA1B,EAAAA,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWM,OAAX,CAAmBC,MAAnB,CAA0BhB,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\nqx.Class.define(\"qx.test.io.graphql.Client\",\n  {\n    extend : qx.dev.unit.TestCase,\n    include : [qx.test.io.MAssert],\n    statics: {\n      TEST_ENDPOINT: \"https://countries-274616.ew.r.appspot.com/\"\n    },\n    construct() {\n      this.base(arguments);\n      this.client = new qx.io.graphql.Client(this.constructor.TEST_ENDPOINT);\n    },\n    members : {\n      async \"test: run successful query\"() {\n        let query = `query {\n          Country(name: \"Switzerland\") {\n            name, nativeName, flag {svgFile},\n            officialLanguages {name}\n          }\n        }`;\n        let req = new qx.io.graphql.protocol.Request({query});\n        let result = await this.client.send(req);\n        let expected = {\n          \"Country\": [\n            {\n              \"name\": \"Switzerland\",\n              \"nativeName\": \"Schweiz\",\n              \"flag\": {\n                \"svgFile\": \"https://restcountries.eu/data/che.svg\"\n              },\n              \"officialLanguages\": [\n                {\n                  \"name\": \"Italian\"\n                },\n                {\n                  \"name\": \"French\"\n                },\n                {\n                  \"name\": \"German\"\n                }\n              ]\n            }\n          ]\n        };\n        this.assertDeepEquals(expected, result)\n      }\n    }\n  });\n"
+  ]
+}

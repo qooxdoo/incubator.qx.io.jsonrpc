@@ -63,7 +63,7 @@
       getSubtitleElement: function getSubtitleElement(list, elementIndex) {
         return list.getContentElement().childNodes[elementIndex].childNodes[1].childNodes[1];
       },
-      __createModel__P_265_0: function __createModel__P_265_0() {
+      __createModel__P_259_0: function __createModel__P_259_0() {
         var data = [];
         data.push({
           title: "1",
@@ -92,26 +92,26 @@
         });
         return new qx.data.Array(data);
       },
-      __createList__P_265_1: function __createList__P_265_1(createItemRenderer, configureItemFunction) {
+      __createList__P_259_1: function __createList__P_259_1(createItemRenderer, configureItemFunction) {
         var list = new qx.ui.mobile.list.List();
         this.getRoot().add(list);
         list.setDelegate({
-          configureItem: configureItemFunction ? configureItemFunction : this.__configureItemFunction__P_265_2,
+          configureItem: configureItemFunction ? configureItemFunction : this.__configureItemFunction__P_259_2,
           createItemRenderer: createItemRenderer ? createItemRenderer : null
         });
-        list.setModel(this.__createModel__P_265_0());
+        list.setModel(this.__createModel__P_259_0());
         return list;
       },
-      __configureItemFunction__P_265_2: function __configureItemFunction__P_265_2(item, data, row) {
+      __configureItemFunction__P_259_2: function __configureItemFunction__P_259_2(item, data, row) {
         item.setImage(data.image);
         item.setTitle(data.title);
         item.setSubtitle(data.subtitle);
       },
-      __assertItemsAndModelLength__P_265_3: function __assertItemsAndModelLength__P_265_3(list, dataLength) {
+      __assertItemsAndModelLength__P_259_3: function __assertItemsAndModelLength__P_259_3(list, dataLength) {
         var childrenLength = list.getContentElement().childNodes.length;
         this.assertEquals(dataLength, childrenLength);
       },
-      __cleanUp__P_265_4: function __cleanUp__P_265_4(list) {
+      __cleanUp__P_259_4: function __cleanUp__P_259_4(list) {
         list.destroy();
         var modelData = list.getModel();
 
@@ -121,54 +121,54 @@
         }
       },
       testCreate: function testCreate() {
-        var list = this.__createList__P_265_1();
+        var list = this.__createList__P_259_1();
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
       testCustomRenderer: function testCustomRenderer() {
-        var list = this.__createList__P_265_1(function () {
+        var list = this.__createList__P_259_1(function () {
           return new qx.ui.mobile.list.renderer.Default();
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
       testSetModelNull: function testSetModelNull() {
-        var list = this.__createList__P_265_1(function () {
+        var list = this.__createList__P_259_1(function () {
           return new qx.ui.mobile.list.renderer.Default();
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         list.getModel().dispose();
         list.setModel(null);
 
-        this.__assertItemsAndModelLength__P_265_3(list, 0);
+        this.__assertItemsAndModelLength__P_259_3(list, 0);
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
       testModelChangeRemove: function testModelChangeRemove() {
-        var list = this.__createList__P_265_1(function () {
+        var list = this.__createList__P_259_1(function () {
           return new qx.ui.mobile.list.renderer.Default();
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         list.getModel().removeAt(0);
 
-        this.__assertItemsAndModelLength__P_265_3(list, 4);
+        this.__assertItemsAndModelLength__P_259_3(list, 4);
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
       testModelChangeEdit: function testModelChangeEdit() {
-        var list = this.__createList__P_265_1(function () {
+        var list = this.__createList__P_259_1(function () {
           return new qx.ui.mobile.list.renderer.Default();
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         list.getModel().setItem(0, {
           title: "affe",
@@ -176,21 +176,21 @@
           image: "qx/icon/Tango/48/places/folder.png"
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         var titleText = this.getTitleElement(list, 0).innerHTML;
         this.assertEquals("affe", titleText);
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
 
       /** Test Case for [BUG #7267] for different length of edited string value. */
       testModelChangeStringLength: function testModelChangeStringLength() {
-        var list = this.__createList__P_265_1(function () {
+        var list = this.__createList__P_259_1(function () {
           return new qx.ui.mobile.list.renderer.Default();
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         var newImageSrc = "qx/icon/Tango/52/places/folder.png";
         var newTitleText = "Giraffe";
@@ -201,7 +201,7 @@
           image: newImageSrc
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         var titleText = this.getTitleElement(list, 0).innerHTML;
         ;
@@ -212,14 +212,14 @@
         this.assertEquals(newSubtitleText, subtitleText);
         this.assertNotEquals("-1", imageSrc.indexOf(newImageSrc));
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
       testModelChangeAdd: function testModelChangeAdd() {
-        var list = this.__createList__P_265_1(function () {
+        var list = this.__createList__P_259_1(function () {
           return new qx.ui.mobile.list.renderer.Default();
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 5);
+        this.__assertItemsAndModelLength__P_259_3(list, 5);
 
         list.getModel().push({
           title: "6",
@@ -227,9 +227,9 @@
           image: "qx/icon/Tango/48/places/folder.png"
         });
 
-        this.__assertItemsAndModelLength__P_265_3(list, 6);
+        this.__assertItemsAndModelLength__P_259_3(list, 6);
 
-        this.__cleanUp__P_265_4(list);
+        this.__cleanUp__P_259_4(list);
       },
       testExtractRowsToRender: function testExtractRowsToRender() {
         var list = new qx.ui.mobile.list.List();
@@ -244,4 +244,4 @@
   qx.test.mobile.list.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1599312840873
+//# sourceMappingURL=List.js.map?dt=1599343224504

@@ -66,7 +66,7 @@
           cls._root.destroy();
 
           cls._root = null;
-          qx.core.Init.getApplication = cls.__oldGetApp__P_283_0;
+          qx.core.Init.getApplication = cls.__oldGetApp__P_277_0;
         }
       },
       getRoot: function getRoot() {
@@ -78,8 +78,8 @@
 
         qx.theme.manager.Meta.getInstance().initialize();
         cls._root = new qx.ui.root.Application(document);
-        cls.__oldApplication__P_283_1 = qx.core.Init.getApplication();
-        cls.__oldGetApp__P_283_0 = qx.core.Init.getApplication;
+        cls.__oldApplication__P_277_1 = qx.core.Init.getApplication();
+        cls.__oldGetApp__P_277_0 = qx.core.Init.getApplication;
 
         qx.core.Init.getApplication = function () {
           return {
@@ -94,7 +94,7 @@
         return cls._root;
       },
       getRunnerApplication: function getRunnerApplication() {
-        return qx.test.ui.LayoutTestCase.__oldApplication__P_283_1 || qx.core.Init.getApplication();
+        return qx.test.ui.LayoutTestCase.__oldApplication__P_277_1 || qx.core.Init.getApplication();
       },
       flush: function flush() {
         qx.ui.core.queue.Manager.flush();
@@ -234,4 +234,4 @@
   qx.test.ui.LayoutTestCase.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LayoutTestCase.js.map?dt=1599312842070
+//# sourceMappingURL=LayoutTestCase.js.map?dt=1599343225697

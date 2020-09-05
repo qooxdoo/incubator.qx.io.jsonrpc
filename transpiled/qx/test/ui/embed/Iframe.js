@@ -51,61 +51,61 @@
   qx.Class.define("qx.test.ui.embed.Iframe", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __iframe__P_296_0: null,
+      __iframe__P_290_0: null,
       setUp: function setUp() {
-        this.__iframe__P_296_0 = new qx.ui.embed.Iframe();
+        this.__iframe__P_290_0 = new qx.ui.embed.Iframe();
 
-        this.__iframe__P_296_0.set({
+        this.__iframe__P_290_0.set({
           width: 200,
           height: 500
         });
       },
       tearDown: function tearDown() {
-        this.__iframe__P_296_0.destroy();
+        this.__iframe__P_290_0.destroy();
       },
       testHiddenSetSourceInitial: function testHiddenSetSourceInitial() {
-        this.__iframe__P_296_0.set({
+        this.__iframe__P_290_0.set({
           visibility: "hidden"
         });
 
-        this.getRoot().add(this.__iframe__P_296_0);
+        this.getRoot().add(this.__iframe__P_290_0);
         qx.ui.core.queue.Manager.flush();
-        this.assertNotNull(this.__iframe__P_296_0.getContentElement().getDomElement());
+        this.assertNotNull(this.__iframe__P_290_0.getContentElement().getDomElement());
       },
       testHiddenSetSource: function testHiddenSetSource() {
-        this.getRoot().add(this.__iframe__P_296_0);
+        this.getRoot().add(this.__iframe__P_290_0);
         qx.ui.core.queue.Manager.flush();
 
-        this.__iframe__P_296_0.hide();
+        this.__iframe__P_290_0.hide();
 
         qx.ui.core.queue.Manager.flush();
         var src = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
         src = qx.util.Uri.getAbsolute(src);
 
-        this.__iframe__P_296_0.setSource(src);
+        this.__iframe__P_290_0.setSource(src);
 
         qx.ui.core.queue.Manager.flush();
 
-        this.__iframe__P_296_0.addListenerOnce("load", function () {
+        this.__iframe__P_290_0.addListenerOnce("load", function () {
           this.resume(function () {
-            this.assertEquals(this.__iframe__P_296_0.getSource(), this.__iframe__P_296_0.getWindow().location.href);
+            this.assertEquals(this.__iframe__P_290_0.getSource(), this.__iframe__P_290_0.getWindow().location.href);
           });
         }, this);
 
         this.wait(10000);
       },
       testGetWindow: function testGetWindow() {
-        this.getRoot().add(this.__iframe__P_296_0);
+        this.getRoot().add(this.__iframe__P_290_0);
 
-        this.__iframe__P_296_0.addListener("load", function () {
+        this.__iframe__P_290_0.addListener("load", function () {
           this.resume(function () {
-            this.assertNotNull(this.__iframe__P_296_0.getWindow());
+            this.assertNotNull(this.__iframe__P_290_0.getWindow());
           }, this);
         }, this);
 
         var src = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
 
-        this.__iframe__P_296_0.setSource(src);
+        this.__iframe__P_290_0.setSource(src);
 
         this.wait(10000);
       },
@@ -122,7 +122,7 @@
 
         var src2 = rm.toUri("qx/test/hello.html"); // <body>Hello World!</body>
 
-        var iframe = this.__iframe__P_296_0;
+        var iframe = this.__iframe__P_290_0;
         var container0 = new qx.ui.container.Composite(new qx.ui.layout.VBox());
         var container1 = new qx.ui.container.Composite(new qx.ui.layout.VBox());
         var container2 = new qx.ui.container.Composite(new qx.ui.layout.VBox());
@@ -166,4 +166,4 @@
   qx.test.ui.embed.Iframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Iframe.js.map?dt=1599312842875
+//# sourceMappingURL=Iframe.js.map?dt=1599343226512

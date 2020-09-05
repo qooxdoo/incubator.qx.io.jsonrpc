@@ -377,34 +377,34 @@
        * @type {qx.data.Array} The internal lookup table data structure to get the model item
        * from a row.
        */
-      __lookupTable__P_534_0: null,
+      __lookupTable__P_528_0: null,
 
       /** @type {Array} HashMap which contains all open nodes. */
-      __openNodes__P_534_1: null,
+      __openNodes__P_528_1: null,
 
       /**
        * @type {Array} The internal data structure to get the nesting level from a
        * row.
        */
-      __nestingLevel__P_534_2: null,
+      __nestingLevel__P_528_2: null,
 
       /**
        * @type {qx.util.DeferredCall} Adds this instance to the widget queue on a
        * deferred call.
        */
-      __deferredCall__P_534_3: null,
+      __deferredCall__P_528_3: null,
 
       /** @type {Integer} Holds the max item width from a rendered widget. */
       _itemWidth: 0,
 
       /** @type {Array} internal parent chain form the last selected node */
-      __parentChain__P_534_4: null,
+      __parentChain__P_528_4: null,
 
       /** 
        * @type {String|null} the name of the model property which represents the
        *   open state of a branch.
        */
-      __openProperty__P_534_5: null,
+      __openProperty__P_528_5: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -430,7 +430,7 @@
       },
       // Interface implementation
       openNode: function openNode(node) {
-        this.__openNode__P_534_6(node);
+        this.__openNode__P_528_6(node);
 
         this.buildLookupTable();
       },
@@ -459,14 +459,14 @@
        * @param node {qx.core.Object} Node to open.
        */
       openNodeAndParents: function openNodeAndParents(node) {
-        this.__openNodeAndAllParents__P_534_7(this.getModel(), node);
+        this.__openNodeAndAllParents__P_528_7(this.getModel(), node);
 
         this.buildLookupTable();
       },
       // Interface implementation
       closeNode: function closeNode(node) {
-        if (this.__openNodes__P_534_1.includes(node)) {
-          qx.lang.Array.remove(this.__openNodes__P_534_1, node);
+        if (this.__openNodes__P_528_1.includes(node)) {
+          qx.lang.Array.remove(this.__openNodes__P_528_1, node);
           this.fireDataEvent("close", node);
           this.buildLookupTable();
         }
@@ -482,7 +482,7 @@
       },
       // Interface implementation
       isNodeOpen: function isNodeOpen(node) {
-        return this.__openNodes__P_534_1.includes(node);
+        return this.__openNodes__P_528_1.includes(node);
       },
 
       /**
@@ -495,7 +495,7 @@
        */
       openViaModelChanges: function openViaModelChanges(openProperty) {
         // Save the open property
-        this.__openProperty__P_534_5 = openProperty; // if no name is provided, just remove any prior open-close controller
+        this.__openProperty__P_528_5 = openProperty; // if no name is provided, just remove any prior open-close controller
 
         if (!openProperty) {
           if (this._openCloseController) {
@@ -515,7 +515,7 @@
        * Getter for the open property
        */
       getOpenProperty: function getOpenProperty() {
-        return this.__openProperty__P_534_5;
+        return this.__openProperty__P_528_5;
       },
 
       /*
@@ -528,9 +528,9 @@
        * Initializes the virtual tree.
        */
       _init: function _init() {
-        this.__lookupTable__P_534_0 = new qx.data.Array();
-        this.__openNodes__P_534_1 = [];
-        this.__nestingLevel__P_534_2 = [];
+        this.__lookupTable__P_528_0 = new qx.data.Array();
+        this.__openNodes__P_528_1 = [];
+        this.__nestingLevel__P_528_2 = [];
 
         this._initLayer();
       },
@@ -553,7 +553,7 @@
       },
       // Interface implementation
       getLookupTable: function getLookupTable() {
-        return this.__lookupTable__P_534_0;
+        return this.__lookupTable__P_528_0;
       },
 
       /**
@@ -574,7 +574,7 @@
        * @return {var|null} the row's model data.
        */
       _getDataFromRow: function _getDataFromRow(row) {
-        return this.__lookupTable__P_534_0.getItem(row);
+        return this.__lookupTable__P_528_0.getItem(row);
       },
 
       /**
@@ -583,7 +583,7 @@
        * @return {qx.data.Array} The selectable items.
        */
       _getSelectables: function _getSelectables() {
-        return this.__lookupTable__P_534_0;
+        return this.__lookupTable__P_528_0;
       },
 
       /**
@@ -593,7 +593,7 @@
        * @return {Array} All open nodes.
        */
       getOpenNodes: function getOpenNodes() {
-        return this.__openNodes__P_534_1;
+        return this.__openNodes__P_528_1;
       },
       // Interface implementation
       isNode: function isNode(item) {
@@ -601,7 +601,7 @@
       },
       // Interface implementation
       getLevel: function getLevel(row) {
-        return this.__nestingLevel__P_534_2[row];
+        return this.__nestingLevel__P_528_2[row];
       },
       // Interface implementation
       hasChildren: function hasChildren(node) {
@@ -682,7 +682,7 @@
       },
       // property apply
       _applyModel: function _applyModel(value, old) {
-        this.__openNodes__P_534_1 = [];
+        this.__openNodes__P_528_1 = [];
 
         if (value != null) {
           {
@@ -692,7 +692,7 @@
           }
           value.addListener("changeBubble", this._onChangeBubble, this);
 
-          this.__openNode__P_534_6(value);
+          this.__openNode__P_528_6(value);
         } // If the model changes, an existing OpenCloseController is no longer
         // valid, so dispose it. The user should call openViaModelChanges again.
 
@@ -707,7 +707,7 @@
           old.removeListener("changeBubble", this._onChangeBubble, this);
         }
 
-        this.__applyModelChanges__P_534_8();
+        this.__applyModelChanges__P_528_8();
       },
       // property apply
       _applyDelegate: function _applyDelegate(value, old) {
@@ -750,8 +750,8 @@
             }
           }
 
-          if (this.__lookupTable__P_534_0.indexOf(item) != -1) {
-            this.__applyModelChanges__P_534_8();
+          if (this.__lookupTable__P_528_0.indexOf(item) != -1) {
+            this.__applyModelChanges__P_528_8();
           }
         }
       },
@@ -762,13 +762,13 @@
        * @param event {qx.event.type.Event} The event.
        */
       _onUpdated: function _onUpdated(event) {
-        if (this.__deferredCall__P_534_3 == null) {
-          this.__deferredCall__P_534_3 = new qx.util.DeferredCall(function () {
+        if (this.__deferredCall__P_528_3 == null) {
+          this.__deferredCall__P_528_3 = new qx.util.DeferredCall(function () {
             qx.ui.core.queue.Widget.add(this);
           }, this);
         }
 
-        this.__deferredCall__P_534_3.schedule();
+        this.__deferredCall__P_528_3.schedule();
       },
 
       /**
@@ -779,7 +779,7 @@
       _onOpen: function _onOpen(event) {
         var row = event.getRow();
 
-        var item = this.__lookupTable__P_534_0.getItem(row);
+        var item = this.__lookupTable__P_528_0.getItem(row);
 
         if (this.isNode(item)) {
           if (this.isNodeOpen(item)) {
@@ -865,7 +865,7 @@
        */
       _beforeApplySelection: function _beforeApplySelection(newSelection) {
         if (newSelection.length === 0 && this.getSelectionMode() === "one") {
-          var visibleParent = this.__getVisibleParent__P_534_9();
+          var visibleParent = this.__getVisibleParent__P_528_9();
 
           var row = this.getLookupTable().indexOf(visibleParent);
 
@@ -883,9 +883,9 @@
         var selection = this.getSelection();
 
         if (selection.getLength() > 0 && this.getSelectionMode() === "one") {
-          this.__buildParentChain__P_534_10(selection.getItem(0));
+          this.__buildParentChain__P_528_10(selection.getItem(0));
         } else {
-          this.__parentChain__P_534_4 = [];
+          this.__parentChain__P_528_4 = [];
         }
       },
 
@@ -899,7 +899,7 @@
        * Helper method to apply model changes. Normally build the lookup table and
        * apply the default selection.
        */
-      __applyModelChanges__P_534_8: function __applyModelChanges__P_534_8() {
+      __applyModelChanges__P_528_8: function __applyModelChanges__P_528_8() {
         this.buildLookupTable();
 
         this._applyDefaultSelection();
@@ -917,7 +917,7 @@
 
         this._itemWidth = 0;
         var lookupTable = [];
-        this.__nestingLevel__P_534_2 = [];
+        this.__nestingLevel__P_528_2 = [];
         var nestedLevel = -1;
         var root = this.getModel();
 
@@ -926,24 +926,24 @@
             nestedLevel++;
             lookupTable.push(root);
 
-            this.__nestingLevel__P_534_2.push(nestedLevel);
+            this.__nestingLevel__P_528_2.push(nestedLevel);
           }
 
           if (this.isNodeOpen(root)) {
-            var visibleChildren = this.__getVisibleChildrenFrom__P_534_11(root, nestedLevel);
+            var visibleChildren = this.__getVisibleChildrenFrom__P_528_11(root, nestedLevel);
 
             lookupTable = lookupTable.concat(visibleChildren);
           }
         }
 
-        if (!qx.lang.Array.equals(this.__lookupTable__P_534_0.toArray(), lookupTable)) {
+        if (!qx.lang.Array.equals(this.__lookupTable__P_528_0.toArray(), lookupTable)) {
           this._provider.removeBindings();
 
-          this.__lookupTable__P_534_0.removeAll();
+          this.__lookupTable__P_528_0.removeAll();
 
-          this.__lookupTable__P_534_0.append(lookupTable);
+          this.__lookupTable__P_528_0.append(lookupTable);
 
-          this.__updateRowCount__P_534_12();
+          this.__updateRowCount__P_528_12();
 
           this._updateSelection();
         }
@@ -958,7 +958,7 @@
        * @param nestedLevel {Integer} The nested level from the start node.
        * @return {Array} All visible children form the parent.
        */
-      __getVisibleChildrenFrom__P_534_11: function __getVisibleChildrenFrom__P_534_11(node, nestedLevel) {
+      __getVisibleChildrenFrom__P_528_11: function __getVisibleChildrenFrom__P_528_11(node, nestedLevel) {
         var visible = [];
         nestedLevel++;
 
@@ -990,18 +990,18 @@
           }
 
           if (this.isNode(child)) {
-            this.__nestingLevel__P_534_2.push(nestedLevel);
+            this.__nestingLevel__P_528_2.push(nestedLevel);
 
             visible.push(child);
 
             if (this.isNodeOpen(child)) {
-              var visibleChildren = this.__getVisibleChildrenFrom__P_534_11(child, nestedLevel);
+              var visibleChildren = this.__getVisibleChildrenFrom__P_528_11(child, nestedLevel);
 
               visible = visible.concat(visibleChildren);
             }
           } else {
             if (this.isShowLeafs()) {
-              this.__nestingLevel__P_534_2.push(nestedLevel);
+              this.__nestingLevel__P_528_2.push(nestedLevel);
 
               visible.push(child);
             }
@@ -1019,9 +1019,9 @@
        *
        * @param node {qx.core.Object} Node to set to open nodes.
        */
-      __openNode__P_534_6: function __openNode__P_534_6(node) {
-        if (!this.__openNodes__P_534_1.includes(node)) {
-          this.__openNodes__P_534_1.push(node);
+      __openNode__P_528_6: function __openNode__P_528_6(node) {
+        if (!this.__openNodes__P_528_1.includes(node)) {
+          this.__openNodes__P_528_1.push(node);
 
           this.fireDataEvent("open", node);
         }
@@ -1037,9 +1037,9 @@
        * @return {Boolean} <code>True</code> when the targetNode and his
        *  parents could opened, <code>false</code> otherwise.
        */
-      __openNodeAndAllParents__P_534_7: function __openNodeAndAllParents__P_534_7(startNode, targetNode) {
+      __openNodeAndAllParents__P_528_7: function __openNodeAndAllParents__P_528_7(startNode, targetNode) {
         if (startNode === targetNode) {
-          this.__openNode__P_534_6(targetNode);
+          this.__openNode__P_528_6(targetNode);
 
           return true;
         }
@@ -1057,10 +1057,10 @@
         for (var i = 0; i < children.getLength(); i++) {
           var child = children.getItem(i);
 
-          var result = this.__openNodeAndAllParents__P_534_7(child, targetNode);
+          var result = this.__openNodeAndAllParents__P_528_7(child, targetNode);
 
           if (result === true) {
-            this.__openNode__P_534_6(child);
+            this.__openNode__P_528_6(child);
 
             return true;
           }
@@ -1072,8 +1072,8 @@
       /**
        * Helper method to update the row count.
        */
-      __updateRowCount__P_534_12: function __updateRowCount__P_534_12() {
-        this.getPane().getRowConfig().setItemCount(this.__lookupTable__P_534_0.getLength());
+      __updateRowCount__P_528_12: function __updateRowCount__P_528_12() {
+        this.getPane().getRowConfig().setItemCount(this.__lookupTable__P_528_0.getLength());
         this.getPane().fullUpdate();
       },
 
@@ -1088,20 +1088,20 @@
        * @internal
        */
       getParent: function getParent(item) {
-        var index = this.__lookupTable__P_534_0.indexOf(item);
+        var index = this.__lookupTable__P_528_0.indexOf(item);
 
         if (index < 0) {
           return null;
         }
 
-        var level = this.__nestingLevel__P_534_2[index];
+        var level = this.__nestingLevel__P_528_2[index];
 
         while (index > 0) {
           index--;
-          var levelBefore = this.__nestingLevel__P_534_2[index];
+          var levelBefore = this.__nestingLevel__P_528_2[index];
 
           if (levelBefore < level) {
-            return this.__lookupTable__P_534_0.getItem(index);
+            return this.__lookupTable__P_528_0.getItem(index);
           }
         }
 
@@ -1113,12 +1113,12 @@
        *
        * @param item {var} Item to build parent chain.
        */
-      __buildParentChain__P_534_10: function __buildParentChain__P_534_10(item) {
-        this.__parentChain__P_534_4 = [];
+      __buildParentChain__P_528_10: function __buildParentChain__P_528_10(item) {
+        this.__parentChain__P_528_4 = [];
         var parent = this.getParent(item);
 
         while (parent != null) {
-          this.__parentChain__P_534_4.unshift(parent);
+          this.__parentChain__P_528_4.unshift(parent);
 
           parent = this.getParent(parent);
         }
@@ -1129,21 +1129,21 @@
        *
        * @return {var} The first visible node.
        */
-      __getVisibleParent__P_534_9: function __getVisibleParent__P_534_9() {
-        if (this.__parentChain__P_534_4 == null) {
+      __getVisibleParent__P_528_9: function __getVisibleParent__P_528_9() {
+        if (this.__parentChain__P_528_4 == null) {
           return this.getModel();
         }
 
         var lookupTable = this.getLookupTable();
 
-        var parent = this.__parentChain__P_534_4.pop();
+        var parent = this.__parentChain__P_528_4.pop();
 
         while (parent != null) {
           if (lookupTable.contains(parent)) {
             return parent;
           }
 
-          parent = this.__parentChain__P_534_4.pop();
+          parent = this.__parentChain__P_528_4.pop();
         }
 
         return this.getModel();
@@ -1166,10 +1166,10 @@
         }
       }
 
-      if (!qx.core.ObjectRegistry.inShutDown && this.__deferredCall__P_534_3 != null) {
-        this.__deferredCall__P_534_3.cancel();
+      if (!qx.core.ObjectRegistry.inShutDown && this.__deferredCall__P_528_3 != null) {
+        this.__deferredCall__P_528_3.cancel();
 
-        this.__deferredCall__P_534_3.dispose();
+        this.__deferredCall__P_528_3.dispose();
       }
 
       var model = this.getModel();
@@ -1184,12 +1184,12 @@
 
       this._provider.dispose();
 
-      this.__lookupTable__P_534_0.dispose();
+      this.__lookupTable__P_528_0.dispose();
 
-      this._layer = this._provider = this.__lookupTable__P_534_0 = this.__openNodes__P_534_1 = this.__deferredCall__P_534_3 = null;
+      this._layer = this._provider = this.__lookupTable__P_528_0 = this.__openNodes__P_528_1 = this.__deferredCall__P_528_3 = null;
     }
   });
   qx.ui.tree.VirtualTree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualTree.js.map?dt=1599312862251
+//# sourceMappingURL=VirtualTree.js.map?dt=1599343245995

@@ -40,7 +40,7 @@
   qx.Class.define("qx.test.ui.form.BooleanFormat", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __test__P_299_0: function __test__P_299_0(widget, initValue) {
+      __test__P_293_0: function __test__P_293_0(widget, initValue) {
         // check if the interface is implemented
         this.assertTrue(qx.Class.hasInterface(widget.constructor, qx.ui.form.IBooleanForm), "Interface is not implemented."); // check for the init value
 
@@ -62,29 +62,29 @@
         widget.destroy();
       },
       testCheckBox: function testCheckBox() {
-        this.__test__P_299_0(new qx.ui.form.CheckBox(), false);
+        this.__test__P_293_0(new qx.ui.form.CheckBox(), false);
       },
       testToggleButton: function testToggleButton() {
-        this.__test__P_299_0(new qx.ui.form.ToggleButton(), false);
+        this.__test__P_293_0(new qx.ui.form.ToggleButton(), false);
       },
       testMenuCheckBox: function testMenuCheckBox() {
-        this.__test__P_299_0(new qx.ui.menu.CheckBox(), false);
+        this.__test__P_293_0(new qx.ui.menu.CheckBox(), false);
       },
       testRadioButton: function testRadioButton() {
-        this.__test__P_299_0(new qx.ui.form.RadioButton(), false);
+        this.__test__P_293_0(new qx.ui.form.RadioButton(), false);
       },
       testMenuRadioButton: function testMenuRadioButton() {
-        this.__test__P_299_0(new qx.ui.menu.RadioButton(), false);
+        this.__test__P_293_0(new qx.ui.menu.RadioButton(), false);
       },
       testRadioGroupBox: function testRadioGroupBox() {
-        this.__test__P_299_0(new qx.ui.groupbox.RadioGroupBox(), true);
+        this.__test__P_293_0(new qx.ui.groupbox.RadioGroupBox(), true);
       },
       testCheckGroupBox: function testCheckGroupBox() {
-        this.__test__P_299_0(new qx.ui.groupbox.CheckGroupBox(), true);
+        this.__test__P_293_0(new qx.ui.groupbox.CheckGroupBox(), true);
       }
     }
   });
   qx.test.ui.form.BooleanFormat.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BooleanFormat.js.map?dt=1599312842937
+//# sourceMappingURL=BooleanFormat.js.map?dt=1599343226572

@@ -8511,12 +8511,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/format-justify-center.png": {
+      "qx/icon/Oxygen/128/actions/format-indent-more.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/format-indent-more.png": {
+      "qx/icon/Oxygen/128/actions/format-justify-center.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9511,12 +9511,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/dialog-cancel.png": {
+      "qx/icon/Oxygen/16/actions/dialog-apply.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/dialog-apply.png": {
+      "qx/icon/Oxygen/16/actions/dialog-cancel.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -9756,12 +9756,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/insert-link.png": {
+      "qx/icon/Oxygen/16/actions/insert-text.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/insert-text.png": {
+      "qx/icon/Oxygen/16/actions/insert-link.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10256,12 +10256,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/categories/science.png": {
+      "qx/icon/Oxygen/16/categories/office.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/categories/office.png": {
+      "qx/icon/Oxygen/16/categories/science.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -16471,12 +16471,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/go-previous.png": {
+      "qx/icon/Tango/16/actions/go-top.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/go-top.png": {
+      "qx/icon/Tango/16/actions/go-previous.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -16846,12 +16846,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/apps/preferences-display.png": {
+      "qx/icon/Tango/16/apps/preferences-font.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/apps/preferences-font.png": {
+      "qx/icon/Tango/16/apps/preferences-display.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -17016,12 +17016,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/categories/system.png": {
+      "qx/icon/Tango/16/categories/utilities.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/categories/utilities.png": {
+      "qx/icon/Tango/16/categories/system.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -18016,12 +18016,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/apps/utilities-calculator.png": {
+      "qx/icon/Tango/22/apps/utilities-archiver.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/apps/utilities-archiver.png": {
+      "qx/icon/Tango/22/apps/utilities-calculator.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -18161,17 +18161,17 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/devices/camera-photo.png": {
-        "resourcePath": "resourcePath",
-        "width": 22,
-        "height": 22
-      },
       "qx/icon/Tango/22/devices/camera-web.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
       "qx/icon/Tango/22/devices/computer.png": {
+        "resourcePath": "resourcePath",
+        "width": 22,
+        "height": 22
+      },
+      "qx/icon/Tango/22/devices/camera-photo.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -18246,12 +18246,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/emblems/emblem-favorite.png": {
+      "qx/icon/Tango/22/emblems/emblem-important.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/emblems/emblem-important.png": {
+      "qx/icon/Tango/22/emblems/emblem-favorite.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -21031,12 +21031,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/actions/mail-mark-read.png": {
+      "qx/icon/Tango/64/actions/mail-mark-junk.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/actions/mail-mark-junk.png": {
+      "qx/icon/Tango/64/actions/mail-mark-read.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -21131,12 +21131,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/actions/process-stop.png": {
+      "qx/icon/Tango/64/actions/object-rotate-right.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/actions/object-rotate-right.png": {
+      "qx/icon/Tango/64/actions/process-stop.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -21561,12 +21561,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/devices/input-keyboard.png": {
+      "qx/icon/Tango/64/devices/drive-optical.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/devices/drive-optical.png": {
+      "qx/icon/Tango/64/devices/input-keyboard.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
