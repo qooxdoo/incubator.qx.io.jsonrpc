@@ -1,7 +1,25 @@
+/* ************************************************************************
+
+   qooxdoo - the new era of web development
+
+   http://qooxdoo.org
+
+   Copyright:
+     2020 Christian Boulanger
+
+   License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+   Authors:
+     * Christian Boulanger (cboulanger)
+
+************************************************************************ */
+
 qx.Class.define("qx.test.io.jsonrpc.Protocol",
 {
   extend : qx.dev.unit.TestCase,
-  include : [qx.test.io.jsonrpc.MAssert],
+  include : [qx.test.io.MAssert],
   construct() {
     this.base(arguments);
     this.parser = new qx.io.jsonrpc.protocol.Parser();

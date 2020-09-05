@@ -99,15 +99,15 @@ qx.Class.define("qx.io.graphql.Client", {
       }
       this.__init.body = request.toString();
       let response = await fetch(this.getUrl(), this.__init);
-      if (response.ok) {
-        let responseData = await response.json();
-        let graphQlResponse = new qx.io.graphql.protocol.Response(responseData);
-        if (graphQlResponse.getErrors()) {
-          this._handleErrors(graphQlResponse);
-        }
-      } else {
+      if (!response.ok) {
         throw new qx.io.exception.Transport(response.statusText, response.status);
       }
+      let responseData = await response.json();
+      let graphQlResponse = new qx.io.graphql.protocol.Response(responseData);
+      if (graphQlResponse.getErrors()) {
+        this._handleErrors(graphQlResponse);
+      }
+      return graphQlResponse.getData();
     },
 
     /**

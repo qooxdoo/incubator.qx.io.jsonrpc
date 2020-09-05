@@ -1,7 +1,7 @@
 /**
  * Mixin containing special assert methods
  */
-qx.Mixin.define("qx.test.io.jsonrpc.MAssert",{
+qx.Mixin.define("qx.test.io.MAssert",{
 
   members : {
 
@@ -27,7 +27,7 @@ qx.Mixin.define("qx.test.io.jsonrpc.MAssert",{
       }
       this.assert(qx.dev.unit.Sinon.getSinon().deepEqual(expected, actual), msg);
     },
-  
+
     /**
      * Assert that an message is dispatched via the message bus.
      *

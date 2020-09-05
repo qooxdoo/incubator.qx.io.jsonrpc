@@ -27,7 +27,7 @@ qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
 
   include : [
     qx.dev.unit.MMock,
-    qx.test.io.jsonrpc.MAssert
+    qx.test.io.MAssert
   ],
 
   members : {

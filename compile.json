@@ -52,7 +52,8 @@
     "en"
   ],
   "environment": {
-    "qx.icontheme": "Tango"
+    "qx.icontheme": "Tango",
+    "qx.test.delay.scale": 1
   },
   "libraries": [
     "."
@@ -65,13 +66,18 @@
       "title": "Qooxdoo TestTAPper",
       "environment": {
         "qx.icontheme": "Tango",
-        "testtapper.testNameSpace": "qx.test.io.jsonrpc"
+        "testtapper.testNameSpace": "qx.test.io"
       },
       "include": [
         "qx.*",
         "qx.io.jsonrpc.protocol.*"
       ],
       "exclude": [
+        "qx.test.io.ImageLoader",
+        "qx.test.io.part.*",
+        "qx.test.io.remote.*",
+        "qx.test.io.request.*",
+        "qx.test.io.rest.*"
       ]
     },
     {
