@@ -24,7 +24,7 @@
       /**
        * The states of the element
        */
-      __states__P_469_0: null,
+      __states__P_470_0: null,
 
       /**
        * Adds a state to the element
@@ -32,11 +32,11 @@
        *
        */
       addState: function addState(state) {
-        if (this.__states__P_469_0 === null) {
-          this.__states__P_469_0 = {};
+        if (this.__states__P_470_0 === null) {
+          this.__states__P_470_0 = {};
         }
 
-        this.__states__P_469_0[state] = true;
+        this.__states__P_470_0[state] = true;
         this.addCssClass(state);
       },
 
@@ -47,7 +47,7 @@
        *
        */
       hasState: function hasState(state) {
-        return this.__states__P_469_0 !== null && this.__states__P_469_0[state];
+        return this.__states__P_470_0 !== null && this.__states__P_470_0[state];
       },
 
       /**
@@ -57,7 +57,7 @@
        */
       removeState: function removeState(state) {
         if (this.hasState(state)) {
-          delete this.__states__P_469_0[state];
+          delete this.__states__P_470_0[state];
           this.removeCssClass(state);
         }
       },
@@ -72,8 +72,8 @@
        */
       replaceState: function replaceState(oldState, newState) {
         if (this.hasState(oldState)) {
-          delete this.__states__P_469_0[oldState];
-          this.__states__P_469_0[newState] = true;
+          delete this.__states__P_470_0[oldState];
+          this.__states__P_470_0[newState] = true;
           this.removeCssClass(oldState);
           this.addCssClass(newState);
         } else {
@@ -85,4 +85,4 @@
   qx.ui.mobile.form.MState.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MState.js.map?dt=1598908889413
+//# sourceMappingURL=MState.js.map?dt=1599312857495

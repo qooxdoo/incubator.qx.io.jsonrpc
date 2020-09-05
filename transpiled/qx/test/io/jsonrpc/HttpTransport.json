@@ -147,9 +147,9 @@
           },
           {
             "name": "@param",
-            "body": "{Class|Number} exception If class, the exception class, which must\n be a subclass of qx.io.Exception. If number, the error number",
+            "body": "{Class|Number} exception If class, the exception class, which must\n be a subclass of qx.io.exception.Exception. If number, the error number",
             "paramName": "exception",
-            "description": "If class, the exception class, which must\n be a subclass of qx.io.Exception. If number, the error number",
+            "description": "If class, the exception class, which must\n be a subclass of qx.io.exception.Exception. If number, the error number",
             "type": [
               "Class",
               "Number"

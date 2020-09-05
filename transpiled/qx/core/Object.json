@@ -4031,6 +4031,8 @@
     "qx.event.type.Event",
     "qx.html.Element",
     "qx.io.PartLoader",
+    "qx.io.graphql.Client",
+    "qx.io.graphql.protocol.Message",
     "qx.io.jsonrpc.Client",
     "qx.io.jsonrpc.protocol.Batch",
     "qx.io.jsonrpc.protocol.Message",

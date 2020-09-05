@@ -84,30 +84,30 @@
       this._detailLoader = this._widgetRegistry.getWidgetById("detail_loader");
       this._tabViewController = new qxl.apiviewer.TabViewController(this._widgetRegistry);
 
-      this.__bindTabViewController__P_597_0();
+      this.__bindTabViewController__P_598_0();
 
       this._tree = this._widgetRegistry.getWidgetById("tree");
 
-      this.__bindTree__P_597_1();
+      this.__bindTree__P_598_1();
 
-      this.__bindToolbar__P_597_2();
+      this.__bindToolbar__P_598_2();
 
       var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
 
       var btn_included = this._widgetRegistry.getWidgetById("btn_included");
 
-      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_597_3, this);
-      btn_included.addListener("changeValue", this.__syncMenuButton__P_597_3, this);
+      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_598_3, this);
+      btn_included.addListener("changeValue", this.__syncMenuButton__P_598_3, this);
       this._history = qx.bom.History.getInstance();
 
-      this.__bindHistory__P_597_4();
+      this.__bindHistory__P_598_4();
 
       qx.core.Init.getApplication().getRoot().addListener("pointerdown", function (e) {
-        this.__openInNewTab__P_597_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
+        this.__openInNewTab__P_598_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
       }, this, true);
     },
     members: {
-      __openInNewTab__P_597_5: false,
+      __openInNewTab__P_598_5: false,
       // overridden
       $$logCategory: "application",
 
@@ -143,9 +143,9 @@
             var state = this._history.getState();
 
             if (state) {
-              this.__selectItem__P_597_6(this.__decodeState__P_597_7(state));
+              this.__selectItem__P_598_6(this.__decodeState__P_598_7(state));
             } else {
-              this.__selectItem__P_597_6("");
+              this.__selectItem__P_598_6("");
             }
           });
         });
@@ -154,7 +154,7 @@
       /**
        * binds the events of the TabView controller
        */
-      __bindTabViewController__P_597_0: function __bindTabViewController__P_597_0() {
+      __bindTabViewController__P_598_0: function __bindTabViewController__P_598_0() {
         this._tabViewController.addListener("classLinkTapped", function (evt) {
           this._updateHistory(evt.getData());
         }, this);
@@ -184,7 +184,7 @@
       /**
        * binds the selection event of the package tree.
        */
-      __bindTree__P_597_1: function __bindTree__P_597_1() {
+      __bindTree__P_598_1: function __bindTree__P_598_1() {
         this._tree.addListener("changeSelection", function (evt) {
           var treeNode = evt.getData()[0];
 
@@ -199,7 +199,7 @@
       /**
        * binds the actions of the toolbar buttons.
        */
-      __bindToolbar__P_597_2: function __bindToolbar__P_597_2() {
+      __bindToolbar__P_598_2: function __bindToolbar__P_598_2() {
         var uiModel = qxl.apiviewer.UiModel.getInstance();
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -238,7 +238,7 @@
        * inherited and mixin includes.
        * 
        */
-      __syncMenuButton__P_597_3: function __syncMenuButton__P_597_3() {
+      __syncMenuButton__P_598_3: function __syncMenuButton__P_598_3() {
         var menuButton = this._widgetRegistry.getWidgetById("menubtn_includes");
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -268,12 +268,12 @@
       /**
        * bind history events
        */
-      __bindHistory__P_597_4: function __bindHistory__P_597_4() {
+      __bindHistory__P_598_4: function __bindHistory__P_598_4() {
         this._history.addListener("changeState", function (evt) {
-          var item = this.__decodeState__P_597_7(evt.getData());
+          var item = this.__decodeState__P_598_7(evt.getData());
 
           if (item) {
-            this.__selectItem__P_597_6(item);
+            this.__selectItem__P_598_6(item);
           }
         }, this);
       },
@@ -286,7 +286,7 @@
        */
       _updateHistory: function _updateHistory(className) {
         var newTitle = className + " - " + this._titlePrefix;
-        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_597_8(className), newTitle);
+        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_598_8(className), newTitle);
       },
 
       /**
@@ -302,9 +302,9 @@
 
         return classNode.loadDependedClasses().then(() => {
           if (classNode instanceof qxl.apiviewer.dao.Class) {
-            return this._tabViewController.openClass(classNode, this.__openInNewTab__P_597_5);
+            return this._tabViewController.openClass(classNode, this.__openInNewTab__P_598_5);
           } else {
-            return this._tabViewController.openPackage(classNode, this.__openInNewTab__P_597_5);
+            return this._tabViewController.openPackage(classNode, this.__openInNewTab__P_598_5);
           }
         }).then(() => callback && callback.call(self));
       },
@@ -318,7 +318,7 @@
        * 
        * @lint ignoreDeprecated(alert)
        */
-      __selectItem__P_597_6: function __selectItem__P_597_6(fullItemName) {
+      __selectItem__P_598_6: function __selectItem__P_598_6(fullItemName) {
         qxl.apiviewer.LoadingIndicator.getInstance().show();
         var className = fullItemName;
         var itemName = null;
@@ -376,10 +376,10 @@
           });
         });
       },
-      __encodeState__P_597_8: function __encodeState__P_597_8(state) {
+      __encodeState__P_598_8: function __encodeState__P_598_8(state) {
         return state.replace(/(.*)#(.*)/g, "$1~$2");
       },
-      __decodeState__P_597_7: function __decodeState__P_597_7(encodedState) {
+      __decodeState__P_598_7: function __decodeState__P_598_7(encodedState) {
         return encodedState.replace(/(.*)~(.*)/g, "$1#$2");
       }
     },
@@ -398,4 +398,4 @@
   qxl.apiviewer.Controller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Controller.js.map?dt=1598908900058
+//# sourceMappingURL=Controller.js.map?dt=1599312867193

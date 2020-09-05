@@ -152,7 +152,7 @@
        * @throws {Error} if one of the arguments is not an array
        */
       append: function append(arr) {
-        var arg = this.__toPlainArray__P_366_0(arr);
+        var arg = this.__toPlainArray__P_367_0(arr);
 
         Array.prototype.push.apply(this, arg);
         return this;
@@ -166,7 +166,7 @@
        * @throws {Error} if one of the arguments is not an array
        */
       prepend: function prepend(arr) {
-        var arg = this.__toPlainArray__P_366_0(arr);
+        var arg = this.__toPlainArray__P_367_0(arr);
 
         Array.prototype.splice.apply(this, [0, 0].concat(arg));
         return this;
@@ -179,7 +179,7 @@
        * @param arr {Array} Native or qx.type.BaseArray to convert.
        * @return {Array} A native array.
        */
-      __toPlainArray__P_366_0: function __toPlainArray__P_366_0(arr) {
+      __toPlainArray__P_367_0: function __toPlainArray__P_367_0(arr) {
         // this check is important because Opera throws an uncatchable error if
         // apply is called without an arr as second argument.
         {
@@ -229,4 +229,4 @@
   qx.type.Array.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Array.js.map?dt=1598908880299
+//# sourceMappingURL=Array.js.map?dt=1599312849194

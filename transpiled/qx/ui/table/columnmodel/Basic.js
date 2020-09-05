@@ -54,8 +54,8 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__overallColumnArr__P_515_0 = [];
-      this.__visibleColumnArr__P_515_1 = [];
+      this.__overallColumnArr__P_516_0 = [];
+      this.__visibleColumnArr__P_516_1 = [];
     },
 
     /*
@@ -137,14 +137,14 @@
     *****************************************************************************
     */
     members: {
-      __internalChange__P_515_2: null,
-      __colToXPosMap__P_515_3: null,
-      __visibleColumnArr__P_515_1: null,
-      __overallColumnArr__P_515_0: null,
-      __columnDataArr__P_515_4: null,
-      __headerRenderer__P_515_5: null,
-      __dataRenderer__P_515_6: null,
-      __editorFactory__P_515_7: null,
+      __internalChange__P_516_2: null,
+      __colToXPosMap__P_516_3: null,
+      __visibleColumnArr__P_516_1: null,
+      __overallColumnArr__P_516_0: null,
+      __columnDataArr__P_516_4: null,
+      __headerRenderer__P_516_5: null,
+      __dataRenderer__P_516_6: null,
+      __editorFactory__P_516_7: null,
 
       /**
        * Initializes the column model.
@@ -159,13 +159,13 @@
         {
           this.assertInteger(colCount, "Invalid argument 'colCount'.");
         }
-        this.__columnDataArr__P_515_4 = [];
+        this.__columnDataArr__P_516_4 = [];
         var width = qx.ui.table.columnmodel.Basic.DEFAULT_WIDTH;
-        var headerRenderer = this.__headerRenderer__P_515_5 || (this.__headerRenderer__P_515_5 = new qx.ui.table.columnmodel.Basic.DEFAULT_HEADER_RENDERER());
-        var dataRenderer = this.__dataRenderer__P_515_6 || (this.__dataRenderer__P_515_6 = new qx.ui.table.columnmodel.Basic.DEFAULT_DATA_RENDERER());
-        var editorFactory = this.__editorFactory__P_515_7 || (this.__editorFactory__P_515_7 = new qx.ui.table.columnmodel.Basic.DEFAULT_EDITOR_FACTORY());
-        this.__overallColumnArr__P_515_0 = [];
-        this.__visibleColumnArr__P_515_1 = []; // Get the initially hidden column array, if one was provided. Older
+        var headerRenderer = this.__headerRenderer__P_516_5 || (this.__headerRenderer__P_516_5 = new qx.ui.table.columnmodel.Basic.DEFAULT_HEADER_RENDERER());
+        var dataRenderer = this.__dataRenderer__P_516_6 || (this.__dataRenderer__P_516_6 = new qx.ui.table.columnmodel.Basic.DEFAULT_DATA_RENDERER());
+        var editorFactory = this.__editorFactory__P_516_7 || (this.__editorFactory__P_516_7 = new qx.ui.table.columnmodel.Basic.DEFAULT_EDITOR_FACTORY());
+        this.__overallColumnArr__P_516_0 = [];
+        this.__visibleColumnArr__P_516_1 = []; // Get the initially hidden column array, if one was provided. Older
         // subclasses may not provide the 'table' argument, so we treat them
         // traditionally with no initially hidden columns.
 
@@ -182,26 +182,26 @@
         initiallyHiddenColumns = initiallyHiddenColumns || [];
 
         for (var col = 0; col < colCount; col++) {
-          this.__columnDataArr__P_515_4[col] = {
+          this.__columnDataArr__P_516_4[col] = {
             width: width,
             headerRenderer: headerRenderer,
             dataRenderer: dataRenderer,
             editorFactory: editorFactory
           };
-          this.__overallColumnArr__P_515_0[col] = col;
-          this.__visibleColumnArr__P_515_1[col] = col;
+          this.__overallColumnArr__P_516_0[col] = col;
+          this.__visibleColumnArr__P_516_1[col] = col;
         }
 
-        this.__colToXPosMap__P_515_3 = null; // If any columns are initially hidden, hide them now. Make it an
+        this.__colToXPosMap__P_516_3 = null; // If any columns are initially hidden, hide them now. Make it an
         // internal change so that events are not generated.
 
-        this.__internalChange__P_515_2 = true;
+        this.__internalChange__P_516_2 = true;
 
         for (var hidden = 0; hidden < initiallyHiddenColumns.length; hidden++) {
           this.setColumnVisible(initiallyHiddenColumns[hidden], false);
         }
 
-        this.__internalChange__P_515_2 = false;
+        this.__internalChange__P_516_2 = false;
 
         for (col = 0; col < colCount; col++) {
           var data = {
@@ -219,7 +219,7 @@
        * @return {Array} List of all visible columns
        */
       getVisibleColumns: function getVisibleColumns() {
-        return this.__visibleColumnArr__P_515_1 != null ? this.__visibleColumnArr__P_515_1 : [];
+        return this.__visibleColumnArr__P_516_1 != null ? this.__visibleColumnArr__P_516_1 : [];
       },
 
       /**
@@ -240,12 +240,12 @@
         {
           this.assertInteger(col, "Invalid argument 'col'.");
           this.assertInteger(width, "Invalid argument 'width'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        var oldWidth = this.__columnDataArr__P_515_4[col].width;
+        var oldWidth = this.__columnDataArr__P_516_4[col].width;
 
         if (oldWidth != width) {
-          this.__columnDataArr__P_515_4[col].width = width;
+          this.__columnDataArr__P_516_4[col].width = width;
           var data = {
             col: col,
             newWidth: width,
@@ -265,9 +265,9 @@
       getColumnWidth: function getColumnWidth(col) {
         {
           this.assertInteger(col, "Invalid argument 'col'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        return this.__columnDataArr__P_515_4[col].width;
+        return this.__columnDataArr__P_516_4[col].width;
       },
 
       /**
@@ -283,17 +283,17 @@
         {
           this.assertInteger(col, "Invalid argument 'col'.");
           this.assertInterface(renderer, qx.ui.table.IHeaderRenderer, "Invalid argument 'renderer'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        var oldRenderer = this.__columnDataArr__P_515_4[col].headerRenderer;
+        var oldRenderer = this.__columnDataArr__P_516_4[col].headerRenderer;
 
-        if (oldRenderer !== this.__headerRenderer__P_515_5) {
+        if (oldRenderer !== this.__headerRenderer__P_516_5) {
           oldRenderer.dispose();
         }
 
-        this.__columnDataArr__P_515_4[col].headerRenderer = renderer;
+        this.__columnDataArr__P_516_4[col].headerRenderer = renderer;
 
-        if (!this.__internalChange__P_515_2) {
+        if (!this.__internalChange__P_516_2) {
           this.fireDataEvent("headerCellRendererChanged", {
             col: col
           });
@@ -317,7 +317,7 @@
         var col; // Prevent firing "headerCellRendererChanged" for each column. Instead,
         // we'll fire it once at the end.
 
-        this.__internalChange__P_515_2 = true; // For each listed column...
+        this.__internalChange__P_516_2 = true; // For each listed column...
 
         for (col in renderers) {
           // ... set that column's renderer
@@ -325,7 +325,7 @@
         } // Turn off the internal-change flag so operation returns to normal
 
 
-        this.__internalChange__P_515_2 = false; // Now we can fire the event once. The data indicates which columns
+        this.__internalChange__P_516_2 = false; // Now we can fire the event once. The data indicates which columns
         // changed. Internally to qooxdoo, nothing cares about the event data.
 
         this.fireDataEvent("headerCellRendererChanged", {
@@ -342,9 +342,9 @@
       getHeaderCellRenderer: function getHeaderCellRenderer(col) {
         {
           this.assertInteger(col, "Invalid argument 'col'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        return this.__columnDataArr__P_515_4[col].headerRenderer;
+        return this.__columnDataArr__P_516_4[col].headerRenderer;
       },
 
       /**
@@ -361,12 +361,12 @@
         {
           this.assertInteger(col, "Invalid argument 'col'.");
           this.assertInterface(renderer, qx.ui.table.ICellRenderer, "Invalid argument 'renderer'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        var oldRenderer = this.__columnDataArr__P_515_4[col].dataRenderer;
-        this.__columnDataArr__P_515_4[col].dataRenderer = renderer;
+        var oldRenderer = this.__columnDataArr__P_516_4[col].dataRenderer;
+        this.__columnDataArr__P_516_4[col].dataRenderer = renderer;
 
-        if (oldRenderer !== this.__dataRenderer__P_515_6) {
+        if (oldRenderer !== this.__dataRenderer__P_516_6) {
           return oldRenderer;
         }
 
@@ -382,9 +382,9 @@
       getDataCellRenderer: function getDataCellRenderer(col) {
         {
           this.assertInteger(col, "Invalid argument 'col'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        return this.__columnDataArr__P_515_4[col].dataRenderer;
+        return this.__columnDataArr__P_516_4[col].dataRenderer;
       },
 
       /**
@@ -397,19 +397,19 @@
         {
           this.assertInteger(col, "Invalid argument 'col'.");
           this.assertInterface(factory, qx.ui.table.ICellEditorFactory, "Invalid argument 'factory'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        var oldFactory = this.__columnDataArr__P_515_4[col].editorFactory;
+        var oldFactory = this.__columnDataArr__P_516_4[col].editorFactory;
 
         if (oldFactory === factory) {
           return;
         }
 
-        if (oldFactory !== this.__editorFactory__P_515_7) {
+        if (oldFactory !== this.__editorFactory__P_516_7) {
           oldFactory.dispose();
         }
 
-        this.__columnDataArr__P_515_4[col].editorFactory = factory;
+        this.__columnDataArr__P_516_4[col].editorFactory = factory;
       },
 
       /**
@@ -421,9 +421,9 @@
       getCellEditorFactory: function getCellEditorFactory(col) {
         {
           this.assertInteger(col, "Invalid argument 'col'.");
-          this.assertNotUndefined(this.__columnDataArr__P_515_4[col], "Column not found in table model");
+          this.assertNotUndefined(this.__columnDataArr__P_516_4[col], "Column not found in table model");
         }
-        return this.__columnDataArr__P_515_4[col].editorFactory;
+        return this.__columnDataArr__P_516_4[col].editorFactory;
       },
 
       /**
@@ -437,23 +437,23 @@
        * @return {Map} the "column to x position" map.
        */
       _getColToXPosMap: function _getColToXPosMap() {
-        if (this.__colToXPosMap__P_515_3 == null) {
-          this.__colToXPosMap__P_515_3 = {};
+        if (this.__colToXPosMap__P_516_3 == null) {
+          this.__colToXPosMap__P_516_3 = {};
 
-          for (var overX = 0; overX < this.__overallColumnArr__P_515_0.length; overX++) {
-            var col = this.__overallColumnArr__P_515_0[overX];
-            this.__colToXPosMap__P_515_3[col] = {
+          for (var overX = 0; overX < this.__overallColumnArr__P_516_0.length; overX++) {
+            var col = this.__overallColumnArr__P_516_0[overX];
+            this.__colToXPosMap__P_516_3[col] = {
               overX: overX
             };
           }
 
-          for (var visX = 0; visX < this.__visibleColumnArr__P_515_1.length; visX++) {
-            var col = this.__visibleColumnArr__P_515_1[visX];
-            this.__colToXPosMap__P_515_3[col].visX = visX;
+          for (var visX = 0; visX < this.__visibleColumnArr__P_516_1.length; visX++) {
+            var col = this.__visibleColumnArr__P_516_1[visX];
+            this.__colToXPosMap__P_516_3[col].visX = visX;
           }
         }
 
-        return this.__colToXPosMap__P_515_3;
+        return this.__colToXPosMap__P_516_3;
       },
 
       /**
@@ -462,7 +462,7 @@
        * @return {Integer} the number of visible columns.
        */
       getVisibleColumnCount: function getVisibleColumnCount() {
-        return this.__visibleColumnArr__P_515_1 != null ? this.__visibleColumnArr__P_515_1.length : 0;
+        return this.__visibleColumnArr__P_516_1 != null ? this.__visibleColumnArr__P_516_1.length : 0;
       },
 
       /**
@@ -475,7 +475,7 @@
         {
           this.assertInteger(visXPos, "Invalid argument 'visXPos'.");
         }
-        return this.__visibleColumnArr__P_515_1[visXPos];
+        return this.__visibleColumnArr__P_516_1[visXPos];
       },
 
       /**
@@ -497,7 +497,7 @@
        * @return {Integer} the overall number of columns.
        */
       getOverallColumnCount: function getOverallColumnCount() {
-        return this.__overallColumnArr__P_515_0.length;
+        return this.__overallColumnArr__P_516_0.length;
       },
 
       /**
@@ -510,7 +510,7 @@
         {
           this.assertInteger(overXPos, "Invalid argument 'overXPos'.");
         }
-        return this.__overallColumnArr__P_515_0[overXPos];
+        return this.__overallColumnArr__P_516_0[overXPos];
       },
 
       /**
@@ -564,8 +564,8 @@
 
             var nextVisX;
 
-            for (var x = overX + 1; x < this.__overallColumnArr__P_515_0.length; x++) {
-              var currCol = this.__overallColumnArr__P_515_0[x];
+            for (var x = overX + 1; x < this.__overallColumnArr__P_516_0.length; x++) {
+              var currCol = this.__overallColumnArr__P_516_0[x];
               var currVisX = colToXPosMap[currCol].visX;
 
               if (currVisX != null) {
@@ -577,21 +577,21 @@
 
 
             if (nextVisX == null) {
-              nextVisX = this.__visibleColumnArr__P_515_1.length;
+              nextVisX = this.__visibleColumnArr__P_516_1.length;
             } // Add the column to the visible columns
 
 
-            this.__visibleColumnArr__P_515_1.splice(nextVisX, 0, col);
+            this.__visibleColumnArr__P_516_1.splice(nextVisX, 0, col);
           } else {
             var visX = this.getVisibleX(col);
 
-            this.__visibleColumnArr__P_515_1.splice(visX, 1);
+            this.__visibleColumnArr__P_516_1.splice(visX, 1);
           } // Invalidate the __colToXPosMap
 
 
-          this.__colToXPosMap__P_515_3 = null; // Inform the listeners
+          this.__colToXPosMap__P_516_3 = null; // Inform the listeners
 
-          if (!this.__internalChange__P_515_2) {
+          if (!this.__internalChange__P_516_2) {
             var data = {
               col: col,
               visible: visible
@@ -614,26 +614,26 @@
           this.assertInteger(fromOverXPos, "Invalid argument 'fromOverXPos'.");
           this.assertInteger(toOverXPos, "Invalid argument 'toOverXPos'.");
         }
-        this.__internalChange__P_515_2 = true;
-        var col = this.__overallColumnArr__P_515_0[fromOverXPos];
+        this.__internalChange__P_516_2 = true;
+        var col = this.__overallColumnArr__P_516_0[fromOverXPos];
         var visible = this.isColumnVisible(col);
 
         if (visible) {
           this.setColumnVisible(col, false);
         }
 
-        this.__overallColumnArr__P_515_0.splice(fromOverXPos, 1);
+        this.__overallColumnArr__P_516_0.splice(fromOverXPos, 1);
 
-        this.__overallColumnArr__P_515_0.splice(toOverXPos, 0, col); // Invalidate the __colToXPosMap
+        this.__overallColumnArr__P_516_0.splice(toOverXPos, 0, col); // Invalidate the __colToXPosMap
 
 
-        this.__colToXPosMap__P_515_3 = null;
+        this.__colToXPosMap__P_516_3 = null;
 
         if (visible) {
           this.setColumnVisible(col, true);
         }
 
-        this.__internalChange__P_515_2 = false; // Inform the listeners
+        this.__internalChange__P_516_2 = false; // Inform the listeners
 
         var data = {
           col: col,
@@ -657,14 +657,14 @@
           this.assertArray(newPositions, "Invalid argument 'newPositions'.");
         }
 
-        if (newPositions.length == this.__overallColumnArr__P_515_0.length) {
-          this.__internalChange__P_515_2 = true; // Go through each column an switch visible ones to invisible. Reason is unknown,
+        if (newPositions.length == this.__overallColumnArr__P_516_0.length) {
+          this.__internalChange__P_516_2 = true; // Go through each column an switch visible ones to invisible. Reason is unknown,
           // this just mimicks the behaviour of moveColumn. Possibly useful because setting
           // a column visible later updates a map with its screen coords.
 
           var isVisible = new Array(newPositions.length);
 
-          for (var colIdx = 0; colIdx < this.__overallColumnArr__P_515_0.length; colIdx++) {
+          for (var colIdx = 0; colIdx < this.__overallColumnArr__P_516_0.length; colIdx++) {
             var visible = this.isColumnVisible(colIdx);
             isVisible[colIdx] = visible; //Remember, as this relies on this.__colToXPosMap which is cleared below
 
@@ -674,23 +674,23 @@
           } // Store new position values
 
 
-          this.__overallColumnArr__P_515_0 = qx.lang.Array.clone(newPositions); // Invalidate the __colToXPosMap
+          this.__overallColumnArr__P_516_0 = qx.lang.Array.clone(newPositions); // Invalidate the __colToXPosMap
 
-          this.__colToXPosMap__P_515_3 = null; // Go through each column an switch invisible ones back to visible
+          this.__colToXPosMap__P_516_3 = null; // Go through each column an switch invisible ones back to visible
 
-          for (var colIdx = 0; colIdx < this.__overallColumnArr__P_515_0.length; colIdx++) {
+          for (var colIdx = 0; colIdx < this.__overallColumnArr__P_516_0.length; colIdx++) {
             if (isVisible[colIdx]) {
               this.setColumnVisible(colIdx, true);
             }
           }
 
-          this.__internalChange__P_515_2 = false; // Inform the listeners. Do not add data as all known listeners in qooxdoo
+          this.__internalChange__P_516_2 = false; // Inform the listeners. Do not add data as all known listeners in qooxdoo
           // only take this event to mean "total repaint necesscary". Fabian will look
           // after deprecating the data part of the orderChanged - event
 
           this.fireDataEvent("orderChanged");
         } else {
-          throw new Error("setColumnsOrder: Invalid number of column positions given, expected " + this.__overallColumnArr__P_515_0.length + ", got " + newPositions.length);
+          throw new Error("setColumnsOrder: Invalid number of column positions given, expected " + this.__overallColumnArr__P_516_0.length + ", got " + newPositions.length);
         }
       }
     },
@@ -701,20 +701,20 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      for (var i = 0; i < this.__columnDataArr__P_515_4.length; i++) {
-        this.__columnDataArr__P_515_4[i].headerRenderer.dispose();
+      for (var i = 0; i < this.__columnDataArr__P_516_4.length; i++) {
+        this.__columnDataArr__P_516_4[i].headerRenderer.dispose();
 
-        this.__columnDataArr__P_515_4[i].dataRenderer.dispose();
+        this.__columnDataArr__P_516_4[i].dataRenderer.dispose();
 
-        this.__columnDataArr__P_515_4[i].editorFactory.dispose();
+        this.__columnDataArr__P_516_4[i].editorFactory.dispose();
       }
 
-      this.__overallColumnArr__P_515_0 = this.__visibleColumnArr__P_515_1 = this.__columnDataArr__P_515_4 = this.__colToXPosMap__P_515_3 = null;
+      this.__overallColumnArr__P_516_0 = this.__visibleColumnArr__P_516_1 = this.__columnDataArr__P_516_4 = this.__colToXPosMap__P_516_3 = null;
 
-      this._disposeObjects("__headerRenderer__P_515_5", "__dataRenderer__P_515_6", "__editorFactory__P_515_7");
+      this._disposeObjects("__headerRenderer__P_516_5", "__dataRenderer__P_516_6", "__editorFactory__P_516_7");
     }
   });
   qx.ui.table.columnmodel.Basic.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Basic.js.map?dt=1598908892782
+//# sourceMappingURL=Basic.js.map?dt=1599312860489

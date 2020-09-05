@@ -67,8 +67,8 @@
         "@throws": [
           {
             "name": "@throws",
-            "body": "{qx.io.jsonrpc.exception.Transport}",
-            "type": "qx.io.jsonrpc.exception.Transport",
+            "body": "{qx.io.exception.Transport}",
+            "type": "qx.io.exception.Transport",
             "description": ""
           }
         ]

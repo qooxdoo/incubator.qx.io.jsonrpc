@@ -330,25 +330,25 @@
       */
 
       /** @type {Integer} The computed height */
-      __computedHeightForWidth__P_380_0: null,
+      __computedHeightForWidth__P_381_0: null,
 
       /** @type {Map} The computed size of the layout item */
-      __computedLayout__P_380_1: null,
+      __computedLayout__P_381_1: null,
 
       /** @type {Boolean} Whether the current layout is valid */
-      __hasInvalidLayout__P_380_2: null,
+      __hasInvalidLayout__P_381_2: null,
 
       /** @type {Map} Cached size hint */
-      __sizeHint__P_380_3: null,
+      __sizeHint__P_381_3: null,
 
       /** @type {Boolean} Whether the margins have changed and must be updated */
-      __updateMargin__P_380_4: null,
+      __updateMargin__P_381_4: null,
 
       /** @type {Map} user provided bounds of the widget, which override the layout manager */
-      __userBounds__P_380_5: null,
+      __userBounds__P_381_5: null,
 
       /** @type {Map} The item's layout properties */
-      __layoutProperties__P_380_6: null,
+      __layoutProperties__P_381_6: null,
 
       /**
        * Get the computed location and dimension as computed by
@@ -360,7 +360,7 @@
        *    <code>top</code>.
        */
       getBounds: function getBounds() {
-        return this.__userBounds__P_380_5 || this.__computedLayout__P_380_1 || null;
+        return this.__userBounds__P_381_5 || this.__computedLayout__P_381_1 || null;
       },
 
       /**
@@ -408,10 +408,10 @@
         } // Detect size changes
         // Dynamically create data structure for computed layout
 
-        var computed = this.__computedLayout__P_380_1;
+        var computed = this.__computedLayout__P_381_1;
 
         if (!computed) {
-          computed = this.__computedLayout__P_380_1 = {};
+          computed = this.__computedLayout__P_381_1 = {};
         } // Detect changes
 
 
@@ -430,14 +430,14 @@
         } // Clear invalidation marker
 
 
-        if (this.__hasInvalidLayout__P_380_2) {
+        if (this.__hasInvalidLayout__P_381_2) {
           changes.local = true;
-          delete this.__hasInvalidLayout__P_380_2;
+          delete this.__hasInvalidLayout__P_381_2;
         }
 
-        if (this.__updateMargin__P_380_4) {
+        if (this.__updateMargin__P_381_4) {
           changes.margin = true;
-          delete this.__updateMargin__P_380_4;
+          delete this.__updateMargin__P_381_4;
         }
         /*
          * Height for width support
@@ -454,9 +454,9 @@
         if (this.getHeight() == null && this._hasHeightForWidth()) {
           var flowHeight = this._getHeightForWidth(width);
 
-          if (flowHeight != null && flowHeight !== this.__computedHeightForWidth__P_380_0) {
+          if (flowHeight != null && flowHeight !== this.__computedHeightForWidth__P_381_0) {
             // This variable is used in the next computation of the size hint
-            this.__computedHeightForWidth__P_380_0 = flowHeight; // Re-add to layout queue
+            this.__computedHeightForWidth__P_381_0 = flowHeight; // Re-add to layout queue
 
             qx.ui.core.queue.Layout.add(this);
           }
@@ -482,7 +482,7 @@
        * @return {Boolean} Returns <code>true</code>
        */
       hasValidLayout: function hasValidLayout() {
-        return !this.__hasInvalidLayout__P_380_2;
+        return !this.__hasInvalidLayout__P_381_2;
       },
 
       /**
@@ -500,8 +500,8 @@
        */
       invalidateLayoutCache: function invalidateLayoutCache() {
         // this.debug("Mark layout invalid!");
-        this.__hasInvalidLayout__P_380_2 = true;
-        this.__sizeHint__P_380_3 = null;
+        this.__hasInvalidLayout__P_381_2 = true;
+        this.__sizeHint__P_381_3 = null;
       },
 
       /**
@@ -534,7 +534,7 @@
        *   is required.
        */
       getSizeHint: function getSizeHint(compute) {
-        var hint = this.__sizeHint__P_380_3;
+        var hint = this.__sizeHint__P_381_3;
 
         if (hint) {
           return hint;
@@ -545,10 +545,10 @@
         } // Compute as defined
 
 
-        hint = this.__sizeHint__P_380_3 = this._computeSizeHint(); // Respect height for width
+        hint = this.__sizeHint__P_381_3 = this._computeSizeHint(); // Respect height for width
 
-        if (this._hasHeightForWidth() && this.__computedHeightForWidth__P_380_0 && this.getHeight() == null) {
-          hint.height = this.__computedHeightForWidth__P_380_0;
+        if (this._hasHeightForWidth() && this.__computedHeightForWidth__P_381_0 && this.getHeight() == null) {
+          hint.height = this.__computedHeightForWidth__P_381_0;
         } // normalize width
 
 
@@ -656,7 +656,7 @@
       },
       // property apply
       _applyMargin: function _applyMargin() {
-        this.__updateMargin__P_380_4 = true;
+        this.__updateMargin__P_381_4 = true;
         var parent = this.$$parent;
 
         if (parent) {
@@ -692,7 +692,7 @@
        * @return {Boolean} Whether user bounds are set on this layout item
        */
       hasUserBounds: function hasUserBounds() {
-        return !!this.__userBounds__P_380_5;
+        return !!this.__userBounds__P_381_5;
       },
 
       /**
@@ -705,7 +705,7 @@
        * @param height {Integer} height of the layout item
        */
       setUserBounds: function setUserBounds(left, top, width, height) {
-        this.__userBounds__P_380_5 = {
+        this.__userBounds__P_381_5 = {
           left: left,
           top: top,
           width: width,
@@ -720,7 +720,7 @@
        *
        */
       resetUserBounds: function resetUserBounds() {
-        delete this.__userBounds__P_380_5;
+        delete this.__userBounds__P_381_5;
         qx.ui.core.queue.Layout.add(this);
       },
 
@@ -735,7 +735,7 @@
        *
        * @lint ignoreReferenceField(__emptyProperties)
        */
-      __emptyProperties__P_380_7: {},
+      __emptyProperties__P_381_7: {},
 
       /**
        * Stores the given layout properties
@@ -747,10 +747,10 @@
           return;
         }
 
-        var storage = this.__layoutProperties__P_380_6;
+        var storage = this.__layoutProperties__P_381_6;
 
         if (!storage) {
-          storage = this.__layoutProperties__P_380_6 = {};
+          storage = this.__layoutProperties__P_381_6 = {};
         } // Check values through parent
 
 
@@ -776,7 +776,7 @@
        * @return {Map} Returns a map of layout properties
        */
       getLayoutProperties: function getLayoutProperties() {
-        return this.__layoutProperties__P_380_6 || this.__emptyProperties__P_380_7;
+        return this.__layoutProperties__P_381_6 || this.__emptyProperties__P_381_7;
       },
 
       /**
@@ -784,7 +784,7 @@
        *
        */
       clearLayoutProperties: function clearLayoutProperties() {
-        delete this.__layoutProperties__P_380_6;
+        delete this.__layoutProperties__P_381_6;
       },
 
       /**
@@ -899,10 +899,10 @@
       // overridden
       clone: function clone() {
         var clone = qx.ui.core.LayoutItem.prototype.clone.base.call(this);
-        var props = this.__layoutProperties__P_380_6;
+        var props = this.__layoutProperties__P_381_6;
 
         if (props) {
-          clone.__layoutProperties__P_380_6 = qx.lang.Object.clone(props);
+          clone.__layoutProperties__P_381_6 = qx.lang.Object.clone(props);
         }
 
         return clone;
@@ -919,10 +919,10 @@
       {
         qx.theme.manager.Meta.getInstance().removeListener("changeTheme", this._onChangeTheme, this);
       }
-      this.$$parent = this.$$subparent = this.__layoutProperties__P_380_6 = this.__computedLayout__P_380_1 = this.__userBounds__P_380_5 = this.__sizeHint__P_380_3 = null;
+      this.$$parent = this.$$subparent = this.__layoutProperties__P_381_6 = this.__computedLayout__P_381_1 = this.__userBounds__P_381_5 = this.__sizeHint__P_381_3 = null;
     }
   });
   qx.ui.core.LayoutItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LayoutItem.js.map?dt=1598908881621
+//# sourceMappingURL=LayoutItem.js.map?dt=1599312850444

@@ -101,7 +101,7 @@
      */
     construct: function construct(canvasWidth, canvasHeight) {
       qx.ui.core.Widget.constructor.call(this);
-      this.__deferredDraw__P_410_0 = new qx.util.DeferredCall(this.__redraw__P_410_1, this);
+      this.__deferredDraw__P_411_0 = new qx.util.DeferredCall(this.__redraw__P_411_1, this);
       this.addListener("resize", this._onResize, this);
 
       if (canvasWidth !== undefined) {
@@ -162,7 +162,7 @@
     */
     members: {
       /** @type {qx.util.DeferredCall} */
-      __deferredDraw__P_410_0: null,
+      __deferredDraw__P_411_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -177,7 +177,7 @@
       /**
        * This methods triggers the redraw of the canvas' content
        */
-      __redraw__P_410_1: function __redraw__P_410_1() {
+      __redraw__P_411_1: function __redraw__P_411_1() {
         var canvas = this.getContentElement();
         var height = canvas.getHeight();
         var width = canvas.getWidth();
@@ -195,20 +195,20 @@
       _applyCanvasWidth: function _applyCanvasWidth(value, old) {
         this.getContentElement().setWidth(value);
 
-        this.__deferredDraw__P_410_0.schedule();
+        this.__deferredDraw__P_411_0.schedule();
       },
       // property apply
       _applyCanvasHeight: function _applyCanvasHeight(value, old) {
         this.getContentElement().setHeight(value);
 
-        this.__deferredDraw__P_410_0.schedule();
+        this.__deferredDraw__P_411_0.schedule();
       },
 
       /**
        * Redraw the canvas
        */
       update: function update() {
-        this.__deferredDraw__P_410_0.schedule();
+        this.__deferredDraw__P_411_0.schedule();
       },
 
       /**
@@ -254,10 +254,10 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this._disposeObjects("__deferredDraw__P_410_0");
+      this._disposeObjects("__deferredDraw__P_411_0");
     }
   });
   qx.ui.embed.Canvas.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Canvas.js.map?dt=1598908883883
+//# sourceMappingURL=Canvas.js.map?dt=1599312852452

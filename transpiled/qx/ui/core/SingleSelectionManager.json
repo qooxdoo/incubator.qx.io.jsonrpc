@@ -116,7 +116,7 @@
       },
       "name": "allowEmptySelection",
       "propertyType": "new",
-      "apply": "__applyAllowEmptySelection__P_391_1",
+      "apply": "__applyAllowEmptySelection__P_392_1",
       "init": true,
       "check": "Boolean",
       "defaultValue": true

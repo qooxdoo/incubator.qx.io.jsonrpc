@@ -42,7 +42,7 @@
      * @param loader {qx.Part} The loader of this part.
      */
     construct: function construct(name, packages, loader) {
-      this.__name__P_163_0 = name;
+      this.__name__P_164_0 = name;
       this._readyState = "complete";
       this._packages = packages;
       this._loader = loader;
@@ -58,7 +58,7 @@
       _readyState: null,
       _loader: null,
       _packages: null,
-      __name__P_163_0: null,
+      __name__P_164_0: null,
 
       /**
        * Get the ready state of the part. The value is one of
@@ -83,7 +83,7 @@
        * @return {String} The part name
        */
       getName: function getName() {
-        return this.__name__P_163_0;
+        return this.__name__P_164_0;
       },
 
       /**
@@ -248,4 +248,4 @@
   qx.io.part.Part.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Part.js.map?dt=1598908857970
+//# sourceMappingURL=Part.js.map?dt=1599312829125

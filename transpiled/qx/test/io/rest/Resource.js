@@ -73,9 +73,9 @@
 
         this.injectStub(qx.io.request, "Xhr", req); // Remember request for later disposal
 
-        this.__reqs__P_255_0 = this.__reqs__P_255_0 || [];
+        this.__reqs__P_256_0 = this.__reqs__P_256_0 || [];
 
-        this.__reqs__P_255_0.push(this.req);
+        this.__reqs__P_256_0.push(this.req);
 
         return req;
       },
@@ -90,7 +90,7 @@
         this.getSandbox().restore();
         this.res.dispose();
 
-        this.__reqs__P_255_0.forEach(function (req) {
+        this.__reqs__P_256_0.forEach(function (req) {
           req.dispose();
         });
       },
@@ -886,4 +886,4 @@
   qx.test.io.rest.Resource.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resource.js.map?dt=1598908869460
+//# sourceMappingURL=Resource.js.map?dt=1599312839461

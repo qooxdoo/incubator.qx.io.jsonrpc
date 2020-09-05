@@ -61,40 +61,40 @@
       qx.ui.progressive.structure.Abstract.constructor.call(this, pane); // If no header was specified, use null header
 
       if (!header) {
-        this.__nullHeader__P_499_0 = new qx.ui.progressive.headfoot.Null();
-        this.__header__P_499_1 = this.__nullHeader__P_499_0;
+        this.__nullHeader__P_500_0 = new qx.ui.progressive.headfoot.Null();
+        this.__header__P_500_1 = this.__nullHeader__P_500_0;
       } else {
-        this.__nullHeader__P_499_0 = null;
-        this.__header__P_499_1 = header;
+        this.__nullHeader__P_500_0 = null;
+        this.__header__P_500_1 = header;
       } // If no footer was specified, use a null footer
 
 
       if (!footer) {
-        this.__nullFooter__P_499_2 = new qx.ui.progressive.headfoot.Null();
-        this.__footer__P_499_3 = this.__nullFooter__P_499_2;
+        this.__nullFooter__P_500_2 = new qx.ui.progressive.headfoot.Null();
+        this.__footer__P_500_3 = this.__nullFooter__P_500_2;
       } else {
-        this.__nullFooter__P_499_2 = null;
-        this.__footer__P_499_3 = footer;
+        this.__nullFooter__P_500_2 = null;
+        this.__footer__P_500_3 = footer;
       }
     },
     members: {
-      __header__P_499_1: null,
-      __footer__P_499_3: null,
-      __nullHeader__P_499_0: null,
-      __nullFooter__P_499_2: null,
+      __header__P_500_1: null,
+      __footer__P_500_3: null,
+      __nullHeader__P_500_0: null,
+      __nullFooter__P_500_2: null,
       // overridden
       applyStructure: function applyStructure(progressive) {
         // Tell the header/footer components who their Progressive is
-        this.__header__P_499_1.join(progressive);
+        this.__header__P_500_1.join(progressive);
 
-        this.__footer__P_499_3.join(progressive); // Add the header, pane, and footer to the Progressive.
+        this.__footer__P_500_3.join(progressive); // Add the header, pane, and footer to the Progressive.
 
 
-        progressive.add(this.__header__P_499_1);
+        progressive.add(this.__header__P_500_1);
         progressive.add(this.getPane(), {
           flex: 1
         });
-        progressive.add(this.__footer__P_499_3);
+        progressive.add(this.__footer__P_500_3);
       },
 
       /**
@@ -103,7 +103,7 @@
        * @return {qx.ui.progressive.headfoot.Abstract}
        */
       getHeader: function getHeader() {
-        return this.__header__P_499_1;
+        return this.__header__P_500_1;
       },
 
       /**
@@ -112,26 +112,26 @@
        * @return {qx.ui.progressive.headfoot.Abstract}
        */
       getFooter: function getFooter() {
-        return this.__footer__P_499_3;
+        return this.__footer__P_500_3;
       }
     },
     destruct: function destruct() {
-      if (this.__nullHeader__P_499_0) {
-        this.__nullHeader__P_499_0.dispose();
+      if (this.__nullHeader__P_500_0) {
+        this.__nullHeader__P_500_0.dispose();
 
-        this.__nullHeader__P_499_0 = null;
+        this.__nullHeader__P_500_0 = null;
       }
 
-      if (this.__nullFooter__P_499_2) {
-        this.__nullFooter__P_499_2.dispose();
+      if (this.__nullFooter__P_500_2) {
+        this.__nullFooter__P_500_2.dispose();
 
-        this.__nullFooter__P_499_2 = null;
+        this.__nullFooter__P_500_2 = null;
       }
 
-      this.__header__P_499_1 = this.__footer__P_499_3 = null;
+      this.__header__P_500_1 = this.__footer__P_500_3 = null;
     }
   });
   qx.ui.progressive.structure.Default.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Default.js.map?dt=1598908891335
+//# sourceMappingURL=Default.js.map?dt=1599312859220

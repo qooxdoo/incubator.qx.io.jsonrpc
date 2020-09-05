@@ -1,19 +1,19 @@
 {
-  "className": "qx.io.jsonrpc.exception.Cancel",
-  "packageName": "qx.io.jsonrpc.exception",
-  "name": "Cancel",
-  "superClass": "qx.io.Exception",
+  "className": "qx.io.exception.Protocol",
+  "packageName": "qx.io.exception",
+  "name": "Protocol",
+  "superClass": "qx.io.exception.Exception",
   "interfaces": [],
   "mixins": [],
   "functionName": null,
   "clazz": {
     "location": {
       "start": {
-        "line": 22,
+        "line": 23,
         "column": 0
       },
       "end": {
-        "line": 34,
+        "line": 26,
         "column": 3
       }
     },
@@ -25,41 +25,11 @@
         },
         {
           "name": "@description",
-          "body": "<p>A class for representing a user-initiated cancellation of a request.</p>"
+          "body": "<p>A class for representing errors that occurred on server and are handled\n according to the service protocol (JSON-RPC, GraphQL, etc.)</p>"
         }
       ]
     }
   },
   "type": "class",
-  "construct": {
-    "location": {
-      "start": {
-        "line": 31,
-        "column": 13
-      },
-      "end": {
-        "line": 33,
-        "column": 3
-      }
-    },
-    "jsdoc": {
-      "@description": [
-        {
-          "name": "@description",
-          "body": "<p>Constructor</p>"
-        }
-      ],
-      "@param": [
-        {
-          "name": "@param",
-          "body": "message {String}"
-        },
-        {
-          "name": "@param",
-          "body": "data {*|null}"
-        }
-      ]
-    }
-  },
   "descendants": []
 }

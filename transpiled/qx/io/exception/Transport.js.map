@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/io/exception/Transport.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "exception",
+    "Exception",
+    "statics",
+    "TIMEOUT",
+    "ABORTED",
+    "NO_DATA",
+    "INVALID_MSG_DATA",
+    "CANCELLED",
+    "INVALD_URI",
+    "FAILED",
+    "INVALID_ID",
+    "INVALID_JSON",
+    "DUPLICATE_ID",
+    "UNKNOWN_ID",
+    "Transport"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,2BAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,SAD3B;AAEEC,IAAAA,OAAO,EAAE;AACPC,MAAAA,OAAO,EAAY,CADZ;AAEPC,MAAAA,OAAO,EAAY,CAFZ;AAGPC,MAAAA,OAAO,EAAY,CAHZ;AAIPC,MAAAA,gBAAgB,EAAG,CAJZ;AAKPC,MAAAA,SAAS,EAAU,CALZ;AAMPC,MAAAA,UAAU,EAAS,CANZ;AAOPC,MAAAA,MAAM,EAAa,CAPZ;AAQPC,MAAAA,UAAU,EAAS,CARZ;AAQe;AACtBC,MAAAA,YAAY,EAAO,CATZ;AASe;AACtBC,MAAAA,YAAY,EAAO,EAVZ;AAUgB;AACvBC,MAAAA,UAAU,EAAS,EAXZ,CAWe;;AAXf;AAFX,GADA;AAtBArB,EAAAA,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBc,SAAhB,CAA0BnB,aAA1B,GAA0CA,aAA1C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n *  A class for representing errors that occurred during the request transport.\n *  In the context of HTTP requests, the error code is the HTTP error code.\n */\nqx.Class.define(\"qx.io.exception.Transport\",\n{\n  extend : qx.io.exception.Exception,\n  statics: {\n    TIMEOUT          : 1,\n    ABORTED          : 2,\n    NO_DATA          : 3,\n    INVALID_MSG_DATA : 4,\n    CANCELLED        : 5,\n    INVALD_URI       : 6,\n    FAILED           : 7,\n    INVALID_ID       : 8, // JSON-RPC\n    INVALID_JSON     : 9, // JSON-RPC\n    DUPLICATE_ID     : 10, // JSON-RPC\n    UNKNOWN_ID       : 11 // JSON-RPC\n  }\n});\n"
+  ]
+}

@@ -49,9 +49,9 @@
     },
     members: {
       manager: null,
-      __translationAdded__P_283_0: null,
+      __translationAdded__P_284_0: null,
       setUp: function setUp() {
-        if (!this.__translationAdded__P_283_0) {
+        if (!this.__translationAdded__P_284_0) {
           // add dummy translations
           this.manager.addTranslation("en_QX", {
             "test one": "test one",
@@ -71,7 +71,7 @@
             "test %1 cars": "%1 Autos",
             "key_short_Shift": "Umschalt"
           });
-          this.__translationAdded__P_283_0 = true;
+          this.__translationAdded__P_284_0 = true;
         }
 
         this.manager.setLocale("en_QX");
@@ -122,4 +122,4 @@
   qx.test.ui.LocaleSwitch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LocaleSwitch.js.map?dt=1598908872456
+//# sourceMappingURL=LocaleSwitch.js.map?dt=1599312842093

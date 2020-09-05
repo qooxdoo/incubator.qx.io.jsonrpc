@@ -47,8 +47,8 @@
     */
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__styleCache__P_361_0 = {};
-      this.__aliasMap__P_361_1 = {};
+      this.__styleCache__P_362_0 = {};
+      this.__aliasMap__P_362_1 = {};
     },
 
     /*
@@ -75,14 +75,14 @@
       /**
        * @lint ignoreReferenceField(__defaultStates)
        */
-      __defaultStates__P_361_2: {},
-      __styleCache__P_361_0: null,
-      __aliasMap__P_361_1: null,
+      __defaultStates__P_362_2: {},
+      __styleCache__P_362_0: null,
+      __aliasMap__P_362_1: null,
       // property apply
       _applyTheme: function _applyTheme() {
         // empty the caches
-        this.__aliasMap__P_361_1 = {};
-        this.__styleCache__P_361_0 = {};
+        this.__aliasMap__P_362_1 = {};
+        this.__styleCache__P_362_0 = {};
       },
 
       /*
@@ -101,7 +101,7 @@
        * @param chain {Array} The appearance id chain.
        * @return {String} Resolved ID
        */
-      __resolveId__P_361_3: function __resolveId__P_361_3(id, theme, defaultId, chain) {
+      __resolveId__P_362_3: function __resolveId__P_362_3(id, theme, defaultId, chain) {
         var db = theme.appearances;
         var entry = db[id];
 
@@ -122,7 +122,7 @@
 
               if (typeof alias === "string") {
                 var mapped = alias + divider + end.join(divider);
-                return this.__resolveId__P_361_3(mapped, theme, defaultId, chainCopy);
+                return this.__resolveId__P_362_3(mapped, theme, defaultId, chainCopy);
               }
             }
           } // check if we find a control fitting in the appearance [BUG #4020]
@@ -134,7 +134,7 @@
 
             var subId = end.join(divider);
 
-            var resolved = this.__resolveId__P_361_3(subId, theme, null, chainCopy);
+            var resolved = this.__resolveId__P_362_3(subId, theme, null, chainCopy);
 
             if (resolved) {
               return resolved;
@@ -143,7 +143,7 @@
 
 
           if (defaultId != null) {
-            return this.__resolveId__P_361_3(defaultId, theme, null, chainCopy);
+            return this.__resolveId__P_362_3(defaultId, theme, null, chainCopy);
           } // it's safe to output this message here since we can be sure that the return
           // value is 'null' and something went wrong with the id lookup.
 
@@ -159,9 +159,9 @@
           }
           return null;
         } else if (typeof entry === "string") {
-          return this.__resolveId__P_361_3(entry, theme, defaultId, chainCopy);
+          return this.__resolveId__P_362_3(entry, theme, defaultId, chainCopy);
         } else if (entry.include && !entry.style) {
-          return this.__resolveId__P_361_3(entry.include, theme, defaultId, chainCopy);
+          return this.__resolveId__P_362_3(entry.include, theme, defaultId, chainCopy);
         }
 
         return id;
@@ -182,7 +182,7 @@
         } // Resolve ID
 
 
-        var aliasMap = this.__aliasMap__P_361_1;
+        var aliasMap = this.__aliasMap__P_362_1;
 
         if (!aliasMap[theme.name]) {
           aliasMap[theme.name] = {};
@@ -191,7 +191,7 @@
         var resolved = aliasMap[theme.name][id];
 
         if (!resolved) {
-          resolved = aliasMap[theme.name][id] = this.__resolveId__P_361_3(id, theme, defaultId);
+          resolved = aliasMap[theme.name][id] = this.__resolveId__P_362_3(id, theme, defaultId);
         } // Query theme for ID
 
 
@@ -243,7 +243,7 @@
         } // Using cache if available
 
 
-        var cache = this.__styleCache__P_361_0;
+        var cache = this.__styleCache__P_362_0;
 
         if (cache[theme.name] && cache[theme.name][unique] !== undefined) {
           return cache[theme.name][unique];
@@ -251,7 +251,7 @@
 
 
         if (!states) {
-          states = this.__defaultStates__P_361_2;
+          states = this.__defaultStates__P_362_2;
         } // Compile the appearance
 
 
@@ -321,4 +321,4 @@
   qx.theme.manager.Appearance.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Appearance.js.map?dt=1598908879166
+//# sourceMappingURL=Appearance.js.map?dt=1599312848144

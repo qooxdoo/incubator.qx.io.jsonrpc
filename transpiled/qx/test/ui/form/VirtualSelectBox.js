@@ -35,37 +35,37 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__selectBox__P_324_0 = new qx.ui.form.VirtualSelectBox();
-        this.getRoot().add(this.__selectBox__P_324_0);
+        this.__selectBox__P_325_0 = new qx.ui.form.VirtualSelectBox();
+        this.getRoot().add(this.__selectBox__P_325_0);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.VirtualSelectBox.prototype.tearDown.base.call(this);
 
-        this.__selectBox__P_324_0.destroy();
+        this.__selectBox__P_325_0.destroy();
 
-        this.__selectBox__P_324_0 = null;
+        this.__selectBox__P_325_0 = null;
       },
-      __simulateUiInteraction__P_324_1: function __simulateUiInteraction__P_324_1() {
+      __simulateUiInteraction__P_325_1: function __simulateUiInteraction__P_325_1() {
         // focus -> array key down -> array key down -> enter
-        this.__selectBox__P_324_0.getSelection().setItem(0, this.__selectBox__P_324_0.getModel().getItem(1));
+        this.__selectBox__P_325_0.getSelection().setItem(0, this.__selectBox__P_325_0.getModel().getItem(1));
       },
       testChangeValueEvent: function testChangeValueEvent() {
         var m = qx.data.marshal.Json.createModel(["a", "b"]);
 
-        this.__selectBox__P_324_0.addListenerOnce("changeValue", function (e) {
+        this.__selectBox__P_325_0.addListenerOnce("changeValue", function (e) {
           this.assertIdentical("a", e.getData());
           this.assertNull(e.getOldData());
         }.bind(this));
 
-        this.__selectBox__P_324_0.setModel(m);
+        this.__selectBox__P_325_0.setModel(m);
 
-        this.__selectBox__P_324_0.addListenerOnce("changeValue", function (e) {
+        this.__selectBox__P_325_0.addListenerOnce("changeValue", function (e) {
           this.assertIdentical("b", e.getData());
           this.assertIdentical("a", e.getOldData());
         }.bind(this));
 
-        this.__simulateUiInteraction__P_324_1();
+        this.__simulateUiInteraction__P_325_1();
       },
       testChangeModelWhileNotVisible: function testChangeModelWhileNotVisible() {
         "use strict";
@@ -97,18 +97,18 @@
         var test = this;
         var m = qx.data.marshal.Json.createModel(["asdddddddddddddddddddddddddddddddddddddddddddddddddddd", "dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]);
 
-        this.__selectBox__P_324_0.setAllowGrowDropDown(false);
+        this.__selectBox__P_325_0.setAllowGrowDropDown(false);
 
-        this.__selectBox__P_324_0.setModel(m);
+        this.__selectBox__P_325_0.setModel(m);
 
-        this.__selectBox__P_324_0.setWidth(150);
+        this.__selectBox__P_325_0.setWidth(150);
 
-        this.__selectBox__P_324_0.open();
+        this.__selectBox__P_325_0.open();
 
         this.flush();
         setTimeout(function () {
-          test.assertIdentical(test.__selectBox__P_324_0.getWidth(), test.__selectBox__P_324_0.getBounds().width);
-          test.assertIdentical(test.__selectBox__P_324_0.getWidth(), test.__selectBox__P_324_0.getChildControl('dropdown').getBounds().width);
+          test.assertIdentical(test.__selectBox__P_325_0.getWidth(), test.__selectBox__P_325_0.getBounds().width);
+          test.assertIdentical(test.__selectBox__P_325_0.getWidth(), test.__selectBox__P_325_0.getChildControl('dropdown').getBounds().width);
           test.resume();
         }, 10);
         this.wait();
@@ -119,18 +119,18 @@
         var test = this;
         var m = qx.data.marshal.Json.createModel(["asddddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]);
 
-        this.__selectBox__P_324_0.setAllowGrowDropDown(true);
+        this.__selectBox__P_325_0.setAllowGrowDropDown(true);
 
-        this.__selectBox__P_324_0.setModel(m);
+        this.__selectBox__P_325_0.setModel(m);
 
-        this.__selectBox__P_324_0.setWidth(150);
+        this.__selectBox__P_325_0.setWidth(150);
 
-        this.__selectBox__P_324_0.open();
+        this.__selectBox__P_325_0.open();
 
         this.flush();
         setTimeout(function () {
-          test.assertIdentical(test.__selectBox__P_324_0.getWidth(), test.__selectBox__P_324_0.getBounds().width);
-          test.assertTrue(test.__selectBox__P_324_0.getChildControl('dropdown').getBounds().width > 666, "dropdown could not fit the whole item");
+          test.assertIdentical(test.__selectBox__P_325_0.getWidth(), test.__selectBox__P_325_0.getBounds().width);
+          test.assertTrue(test.__selectBox__P_325_0.getChildControl('dropdown').getBounds().width > 666, "dropdown could not fit the whole item");
           test.resume();
         }, 10);
         this.wait();
@@ -140,4 +140,4 @@
   qx.test.ui.form.VirtualSelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualSelectBox.js.map?dt=1598908874653
+//# sourceMappingURL=VirtualSelectBox.js.map?dt=1599312844117

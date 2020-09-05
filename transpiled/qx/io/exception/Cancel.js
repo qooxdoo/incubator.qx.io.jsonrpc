@@ -5,8 +5,12 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.io.Exception": {
+      "qx.io.exception.Exception": {
+        "construct": true,
         "require": true
+      },
+      "qx.io.exception.Transport": {
+        "construct": true
       }
     }
   };
@@ -31,26 +35,21 @@
   ************************************************************************ */
 
   /**
-   *  A class for representing errors that occurred during the request transport.
-   *  In the context of HTTP requests, the error code is the HTTP error code.
+   *  A class for representing a user-initiated cancellation of a request.
    */
-  qx.Class.define("qx.io.jsonrpc.exception.Transport", {
-    extend: qx.io.Exception,
-    statics: {
-      TIMEOUT: 1,
-      ABORTED: 2,
-      NO_DATA: 3,
-      INVALID_MSG_DATA: 4,
-      CANCELLED: 5,
-      INVALD_URI: 6,
-      FAILED: 7,
-      INVALID_ID: 8,
-      INVALID_JSON: 9,
-      DUPLICATE_ID: 10,
-      UNKNOWN_ID: 11
+  qx.Class.define("qx.io.exception.Cancel", {
+    extend: qx.io.exception.Exception,
+
+    /**
+     * Constructor
+     * @param message {String}
+     * @param data {*|null}
+     */
+    construct: function construct(message, data) {
+      qx.io.exception.Exception.constructor.call(this, message, qx.io.exception.Transport.CANCELLED, data);
     }
   });
-  qx.io.jsonrpc.exception.Transport.$$dbClassInfo = $$dbClassInfo;
+  qx.io.exception.Cancel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Transport.js.map?dt=1598908857610
+//# sourceMappingURL=Cancel.js.map?dt=1599312828589

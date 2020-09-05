@@ -170,7 +170,7 @@
       _createNodes: function _createNodes(parent, level) {
         if (level > 0) {
           for (var i = 0; i < 5; i++) {
-            var item = new qx.test.ui.tree.virtual.Node("Node " + this.__getPrefix__P_341_0(parent) + i);
+            var item = new qx.test.ui.tree.virtual.Node("Node " + this.__getPrefix__P_342_0(parent) + i);
             parent.getChildren().push(item);
 
             this._createNodes(item, level - 1);
@@ -181,11 +181,11 @@
       },
       _createLeafs: function _createLeafs(parent) {
         for (var i = 0; i < 5; i++) {
-          var child = new qx.test.ui.tree.virtual.Leaf("Leaf " + this.__getPrefix__P_341_0(parent) + i);
+          var child = new qx.test.ui.tree.virtual.Leaf("Leaf " + this.__getPrefix__P_342_0(parent) + i);
           parent.getChildren().push(child);
         }
       },
-      __getPrefix__P_341_0: function __getPrefix__P_341_0(item) {
+      __getPrefix__P_342_0: function __getPrefix__P_342_0(item) {
         var name = item.getName();
         var prefix = "";
 
@@ -209,4 +209,4 @@
   qx.test.ui.tree.virtual.AbstractTreeTest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractTreeTest.js.map?dt=1598908876271
+//# sourceMappingURL=AbstractTreeTest.js.map?dt=1599312845563

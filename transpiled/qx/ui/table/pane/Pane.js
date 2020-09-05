@@ -51,10 +51,10 @@
      */
     construct: function construct(paneScroller) {
       qx.ui.core.Widget.constructor.call(this);
-      this.__paneScroller__P_524_0 = paneScroller;
-      this.__lastColCount__P_524_1 = 0;
-      this.__lastRowCount__P_524_2 = 0;
-      this.__rowCache__P_524_3 = [];
+      this.__paneScroller__P_525_0 = paneScroller;
+      this.__lastColCount__P_525_1 = 0;
+      this.__lastRowCount__P_525_2 = 0;
+      this.__rowCache__P_525_3 = [];
     },
 
     /*
@@ -121,15 +121,15 @@
     *****************************************************************************
     */
     members: {
-      __lastRowCount__P_524_2: null,
-      __lastColCount__P_524_1: null,
-      __paneScroller__P_524_0: null,
-      __tableContainer__P_524_4: null,
-      __focusedRow__P_524_5: null,
-      __focusedCol__P_524_6: null,
+      __lastRowCount__P_525_2: null,
+      __lastColCount__P_525_1: null,
+      __paneScroller__P_525_0: null,
+      __tableContainer__P_525_4: null,
+      __focusedRow__P_525_5: null,
+      __focusedCol__P_525_6: null,
       // sparse array to cache rendered rows
-      __rowCache__P_524_3: null,
-      __rowCacheCount__P_524_7: 0,
+      __rowCache__P_525_3: null,
+      __rowCacheCount__P_525_7: 0,
       // property modifier
       _applyFirstVisibleRow: function _applyFirstVisibleRow(value, old) {
         this.updateContent(false, value - old);
@@ -154,7 +154,7 @@
        * @return {qx.ui.table.pane.Scroller} the TablePaneScroller.
        */
       getPaneScroller: function getPaneScroller() {
-        return this.__paneScroller__P_524_0;
+        return this.__paneScroller__P_525_0;
       },
 
       /**
@@ -163,7 +163,7 @@
        * @return {qx.ui.table.Table} the table.
        */
       getTable: function getTable() {
-        return this.__paneScroller__P_524_0.getTable();
+        return this.__paneScroller__P_525_0.getTable();
       },
 
       /**
@@ -175,10 +175,10 @@
        *          If true, no repaint will be done.
        */
       setFocusedCell: function setFocusedCell(col, row, massUpdate) {
-        if (col != this.__focusedCol__P_524_6 || row != this.__focusedRow__P_524_5) {
-          var oldRow = this.__focusedRow__P_524_5;
-          this.__focusedCol__P_524_6 = col;
-          this.__focusedRow__P_524_5 = row; // Update the focused row background
+        if (col != this.__focusedCol__P_525_6 || row != this.__focusedRow__P_525_5) {
+          var oldRow = this.__focusedRow__P_525_5;
+          this.__focusedCol__P_525_6 = col;
+          this.__focusedRow__P_525_5 = row; // Update the focused row background
 
           if (row != oldRow && !massUpdate) {
             if (oldRow !== null) {
@@ -240,7 +240,7 @@
        * @param lastColumn {Integer} The model index of the last column that has changed.
        */
       onTableModelDataChanged: function onTableModelDataChanged(firstRow, lastRow, firstColumn, lastColumn) {
-        this.__rowCacheClear__P_524_8();
+        this.__rowCacheClear__P_525_8();
 
         var paneFirstRow = this.getFirstVisibleRow();
         var rowCount = this.getVisibleRowCount();
@@ -260,17 +260,17 @@
       },
       // property apply method
       _applyMaxCacheLines: function _applyMaxCacheLines(value, old) {
-        if (this.__rowCacheCount__P_524_7 >= value && value !== -1) {
-          this.__rowCacheClear__P_524_8();
+        if (this.__rowCacheCount__P_525_7 >= value && value !== -1) {
+          this.__rowCacheClear__P_525_8();
         }
       },
 
       /**
        * Clear the row cache
        */
-      __rowCacheClear__P_524_8: function __rowCacheClear__P_524_8() {
-        this.__rowCache__P_524_3 = [];
-        this.__rowCacheCount__P_524_7 = 0;
+      __rowCacheClear__P_525_8: function __rowCacheClear__P_525_8() {
+        this.__rowCache__P_525_3 = [];
+        this.__rowCacheCount__P_525_7 = 0;
       },
 
       /**
@@ -282,9 +282,9 @@
        * @return {String|null} The cached row or null if a row with the given
        *     index is not cached.
        */
-      __rowCacheGet__P_524_9: function __rowCacheGet__P_524_9(row, selected, focused) {
-        if (!selected && !focused && this.__rowCache__P_524_3[row]) {
-          return this.__rowCache__P_524_3[row];
+      __rowCacheGet__P_525_9: function __rowCacheGet__P_525_9(row, selected, focused) {
+        if (!selected && !focused && this.__rowCache__P_525_3[row]) {
+          return this.__rowCache__P_525_3[row];
         } else {
           return null;
         }
@@ -298,14 +298,14 @@
        * @param selected {Boolean} Whether the row is currently selected
        * @param focused {Boolean} Whether the row is currently focused
        */
-      __rowCacheSet__P_524_10: function __rowCacheSet__P_524_10(row, rowString, selected, focused) {
+      __rowCacheSet__P_525_10: function __rowCacheSet__P_525_10(row, rowString, selected, focused) {
         var maxCacheLines = this.getMaxCacheLines();
 
-        if (!selected && !focused && !this.__rowCache__P_524_3[row] && maxCacheLines > 0) {
+        if (!selected && !focused && !this.__rowCache__P_525_3[row] && maxCacheLines > 0) {
           this._applyMaxCacheLines(maxCacheLines);
 
-          this.__rowCache__P_524_3[row] = rowString;
-          this.__rowCacheCount__P_524_7 += 1;
+          this.__rowCache__P_525_3[row] = rowString;
+          this.__rowCacheCount__P_525_7 += 1;
         }
       },
 
@@ -321,7 +321,7 @@
        */
       updateContent: function updateContent(completeUpdate, scrollOffset, onlyRow, onlySelectionOrFocusChanged) {
         if (completeUpdate) {
-          this.__rowCacheClear__P_524_8();
+          this.__rowCacheClear__P_525_8();
         }
 
         if (scrollOffset && Math.abs(scrollOffset) <= Math.min(10, this.getVisibleRowCount())) {
@@ -383,7 +383,7 @@
         for (; y < end; y++, row++) {
           cellInfo.row = row;
           cellInfo.selected = selectionModel.isSelectedIndex(row);
-          cellInfo.focusedRow = this.__focusedRow__P_524_5 == row;
+          cellInfo.focusedRow = this.__focusedRow__P_525_5 == row;
           cellInfo.rowData = tableModel.getRowData(row);
           rowRenderer.updateDataRowElement(cellInfo, rowNodes[y]);
         }
@@ -418,7 +418,7 @@
             col: col,
             xPos: x,
             editable: tableModel.isColumnEditable(col),
-            focusedCol: this.__focusedCol__P_524_6 == col,
+            focusedCol: this.__focusedCol__P_525_6 == col,
             styleLeft: left,
             styleWidth: cellWidth
           });
@@ -430,9 +430,9 @@
 
         for (var row = firstRow; row < firstRow + rowCount; row++) {
           var selected = selectionModel.isSelectedIndex(row);
-          var focusedRow = this.__focusedRow__P_524_5 == row;
+          var focusedRow = this.__focusedRow__P_525_5 == row;
 
-          var cachedRow = this.__rowCacheGet__P_524_9(row, selected, focusedRow);
+          var cachedRow = this.__rowCacheGet__P_525_9(row, selected, focusedRow);
 
           if (cachedRow) {
             rowsArr.push(cachedRow);
@@ -505,7 +505,7 @@
           rowHtml.push('</div>');
           var rowString = rowHtml.join("");
 
-          this.__rowCacheSet__P_524_10(row, rowString, selected, focusedRow);
+          this.__rowCacheSet__P_525_10(row, rowString, selected, focusedRow);
 
           rowsArr.push(rowString);
         }
@@ -558,15 +558,15 @@
         } // render new lines
 
 
-        if (!this.__tableContainer__P_524_4) {
-          this.__tableContainer__P_524_4 = document.createElement("div");
+        if (!this.__tableContainer__P_525_4) {
+          this.__tableContainer__P_525_4 = document.createElement("div");
         }
 
         var tableDummy = '<div>';
         tableDummy += this._getRowsHtml(firstRow + addRowBase, Math.abs(rowOffset));
         tableDummy += '</div>';
-        this.__tableContainer__P_524_4.innerHTML = tableDummy;
-        var newTableRows = this.__tableContainer__P_524_4.firstChild.childNodes; // append new lines
+        this.__tableContainer__P_525_4.innerHTML = tableDummy;
+        var newTableRows = this.__tableContainer__P_525_4.firstChild.childNodes; // append new lines
 
         if (rowOffset > 0) {
           for (var i = newTableRows.length - 1; i >= 0; i--) {
@@ -581,10 +581,10 @@
         } // update focus indicator
 
 
-        if (this.__focusedRow__P_524_5 !== null) {
-          this._updateRowStyles(this.__focusedRow__P_524_5 - rowOffset);
+        if (this.__focusedRow__P_525_5 !== null) {
+          this._updateRowStyles(this.__focusedRow__P_525_5 - rowOffset);
 
-          this._updateRowStyles(this.__focusedRow__P_524_5);
+          this._updateRowStyles(this.__focusedRow__P_525_5);
         }
 
         this.fireEvent("paneUpdated");
@@ -630,8 +630,8 @@
         var data = htmlArr.join("");
         elem.innerHTML = data;
         this.setWidth(rowWidth);
-        this.__lastColCount__P_524_1 = colCount;
-        this.__lastRowCount__P_524_2 = rowCount;
+        this.__lastColCount__P_525_1 = colCount;
+        this.__lastRowCount__P_525_2 = rowCount;
         this.fireEvent("paneUpdated");
       }
     },
@@ -642,11 +642,11 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__tableContainer__P_524_4 = this.__paneScroller__P_524_0 = this.__rowCache__P_524_3 = null;
+      this.__tableContainer__P_525_4 = this.__paneScroller__P_525_0 = this.__rowCache__P_525_3 = null;
       this.removeListener("track", this._onTrack, this);
     }
   });
   qx.ui.table.pane.Pane.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Pane.js.map?dt=1598908893488
+//# sourceMappingURL=Pane.js.map?dt=1599312861161

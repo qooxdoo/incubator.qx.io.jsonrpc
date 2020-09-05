@@ -35,7 +35,7 @@
   qx.Class.define("qx.test.ui.form.Color", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __test__P_299_0: function __test__P_299_0(widget) {
+      __test__P_300_0: function __test__P_300_0(widget) {
         // check if the interface is implemented
         this.assertTrue(qx.Class.hasInterface(widget.constructor, qx.ui.form.IColorForm), "Interface is not implemented."); // check for the init value
 
@@ -56,14 +56,14 @@
         widget.destroy();
       },
       testColorSelector: function testColorSelector() {
-        this.__test__P_299_0(new qx.ui.control.ColorSelector());
+        this.__test__P_300_0(new qx.ui.control.ColorSelector());
       },
       testColorPopup: function testColorPopup() {
-        this.__test__P_299_0(new qx.ui.control.ColorPopup());
+        this.__test__P_300_0(new qx.ui.control.ColorPopup());
       }
     }
   });
   qx.test.ui.form.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1598908873426
+//# sourceMappingURL=Color.js.map?dt=1599312842954

@@ -83,9 +83,9 @@
     *****************************************************************************
     */
     members: {
-      __executableBindingIds__P_384_0: null,
-      __semaphore__P_384_1: false,
-      __executeListenerId__P_384_2: null,
+      __executableBindingIds__P_385_0: null,
+      __semaphore__P_385_1: false,
+      __executeListenerId__P_385_2: null,
 
       /**
        * @type {Map} Set of properties, which will by synced from the command to the
@@ -105,10 +105,10 @@
         var cmd = this.getCommand();
 
         if (cmd) {
-          if (this.__semaphore__P_384_1) {
-            this.__semaphore__P_384_1 = false;
+          if (this.__semaphore__P_385_1) {
+            this.__semaphore__P_385_1 = false;
           } else {
-            this.__semaphore__P_384_1 = true;
+            this.__semaphore__P_385_1 = true;
             cmd.execute(this);
           }
         }
@@ -121,15 +121,15 @@
        *
        * @param e {qx.event.type.Event} The execute event of the command.
        */
-      __onCommandExecute__P_384_3: function __onCommandExecute__P_384_3(e) {
+      __onCommandExecute__P_385_3: function __onCommandExecute__P_385_3(e) {
         if (this.isEnabled()) {
-          if (this.__semaphore__P_384_1) {
-            this.__semaphore__P_384_1 = false;
+          if (this.__semaphore__P_385_1) {
+            this.__semaphore__P_385_1 = false;
             return;
           }
 
           if (this.isEnabled()) {
-            this.__semaphore__P_384_1 = true;
+            this.__semaphore__P_385_1 = true;
             this.execute();
           }
         }
@@ -138,18 +138,18 @@
       _applyCommand: function _applyCommand(value, old) {
         // execute forwarding
         if (old != null) {
-          old.removeListenerById(this.__executeListenerId__P_384_2);
+          old.removeListenerById(this.__executeListenerId__P_385_2);
         }
 
         if (value != null) {
-          this.__executeListenerId__P_384_2 = value.addListener("execute", this.__onCommandExecute__P_384_3, this);
+          this.__executeListenerId__P_385_2 = value.addListener("execute", this.__onCommandExecute__P_385_3, this);
         } // binding stuff
 
 
-        var ids = this.__executableBindingIds__P_384_0;
+        var ids = this.__executableBindingIds__P_385_0;
 
         if (ids == null) {
-          this.__executableBindingIds__P_384_0 = ids = {};
+          this.__executableBindingIds__P_385_0 = ids = {};
         }
 
         var selfPropertyValue;
@@ -194,10 +194,10 @@
     destruct: function destruct() {
       this._applyCommand(null, this.getCommand());
 
-      this.__executableBindingIds__P_384_0 = null;
+      this.__executableBindingIds__P_385_0 = null;
     }
   });
   qx.ui.core.MExecutable.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MExecutable.js.map?dt=1598908881777
+//# sourceMappingURL=MExecutable.js.map?dt=1599312850576

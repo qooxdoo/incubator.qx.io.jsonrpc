@@ -37,9 +37,9 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __m__P_245_0: null,
+      __m__P_246_0: null,
       setUp: function setUp() {
-        this.__m__P_245_0 = new qx.event.Messaging();
+        this.__m__P_246_0 = new qx.event.Messaging();
       },
       testTwoChannels: function testTwoChannels() {
         var handlerGet = this.spy();
@@ -51,9 +51,9 @@
           data: "test"
         };
 
-        this.__m__P_245_0.on("GET", "/get", handlerGet, ctx);
+        this.__m__P_246_0.on("GET", "/get", handlerGet, ctx);
 
-        this.__m__P_245_0.emit("GET", "/get", null, data);
+        this.__m__P_246_0.emit("GET", "/get", null, data);
 
         this.assertCalledOnce(handlerGet);
         this.assertCalledOn(handlerGet, ctx);
@@ -64,9 +64,9 @@
         });
         this.assertNotCalled(handlerPost);
 
-        this.__m__P_245_0.on("POST", "/post", handlerPost, ctx);
+        this.__m__P_246_0.on("POST", "/post", handlerPost, ctx);
 
-        this.__m__P_245_0.emit("POST", "/post", null, data);
+        this.__m__P_246_0.emit("POST", "/post", null, data);
 
         this.assertCalledOnce(handlerPost);
         this.assertCalledOn(handlerPost, ctx);
@@ -86,9 +86,9 @@
           data: "test"
         };
 
-        this.__m__P_245_0.on("get", "/", handler, ctx);
+        this.__m__P_246_0.on("get", "/", handler, ctx);
 
-        this.__m__P_245_0.emit("get", "/", null, data);
+        this.__m__P_246_0.emit("get", "/", null, data);
 
         this.assertCalledOnce(handler);
         this.assertCalledOn(handler, ctx);
@@ -107,11 +107,11 @@
           data: "abcdef"
         };
 
-        this.__m__P_245_0.on("xyz", /^xyz/g, handler, ctx);
+        this.__m__P_246_0.on("xyz", /^xyz/g, handler, ctx);
 
-        this.__m__P_245_0.emit("xyz", "xyzabc", null, data);
+        this.__m__P_246_0.emit("xyz", "xyzabc", null, data);
 
-        this.__m__P_245_0.emit("xyz", "abcxyz", null, data);
+        this.__m__P_246_0.emit("xyz", "abcxyz", null, data);
 
         this.assertCalledOnce(handler);
         this.assertCalledOn(handler, ctx);
@@ -124,22 +124,22 @@
       testGetAll: function testGetAll() {
         var handler = this.spy();
 
-        this.__m__P_245_0.on("a", /.*/, handler);
+        this.__m__P_246_0.on("a", /.*/, handler);
 
-        this.__m__P_245_0.emit("a", "xyzabc");
+        this.__m__P_246_0.emit("a", "xyzabc");
 
-        this.__m__P_245_0.emit("a", "abcxyz");
+        this.__m__P_246_0.emit("a", "abcxyz");
 
         this.assertCalledTwice(handler);
       },
       testAny: function testAny() {
         var handler = this.spy();
 
-        this.__m__P_245_0.onAny(/.*/, handler);
+        this.__m__P_246_0.onAny(/.*/, handler);
 
-        this.__m__P_245_0.emit("a", "xyzabc");
+        this.__m__P_246_0.emit("a", "xyzabc");
 
-        this.__m__P_245_0.emit("b", "abcxyz");
+        this.__m__P_246_0.emit("b", "abcxyz");
 
         this.assertCalledTwice(handler);
       },
@@ -152,11 +152,11 @@
           data: "test"
         };
 
-        this.__m__P_245_0.on("GET", "/", handler, ctx);
+        this.__m__P_246_0.on("GET", "/", handler, ctx);
 
-        this.__m__P_245_0.emit("GET", "/", null, data);
+        this.__m__P_246_0.emit("GET", "/", null, data);
 
-        this.__m__P_245_0.emit("GET", "/", null, data);
+        this.__m__P_246_0.emit("GET", "/", null, data);
 
         this.assertCalledTwice(handler);
         this.assertCalledOn(handler, ctx);
@@ -175,9 +175,9 @@
           data: "test"
         };
 
-        this.__m__P_245_0.on("POST", "/{id}/affe", handler, ctx);
+        this.__m__P_246_0.on("POST", "/{id}/affe", handler, ctx);
 
-        this.__m__P_245_0.emit("POST", "/123456/affe", data);
+        this.__m__P_246_0.emit("POST", "/123456/affe", data);
 
         this.assertCalledOnce(handler);
         this.assertCalledOn(handler, ctx);
@@ -196,9 +196,9 @@
           data: "test"
         };
 
-        this.__m__P_245_0.on("POST", "/{id}-{name}/affe", handler);
+        this.__m__P_246_0.on("POST", "/{id}-{name}/affe", handler);
 
-        this.__m__P_245_0.emit("POST", "/123456-xyz/affe", data);
+        this.__m__P_246_0.emit("POST", "/123456-xyz/affe", data);
 
         this.assertCalledOnce(handler);
         this.assertCalledWith(handler, {
@@ -214,33 +214,33 @@
       testRemove: function testRemove() {
         var handler = this.spy();
 
-        var id = this.__m__P_245_0.on("GET", "/", handler);
+        var id = this.__m__P_246_0.on("GET", "/", handler);
 
-        this.__m__P_245_0.emit("GET", "/");
+        this.__m__P_246_0.emit("GET", "/");
 
         this.assertCalledOnce(handler);
 
-        this.__m__P_245_0.remove(id);
+        this.__m__P_246_0.remove(id);
 
-        this.__m__P_245_0.emit("GET", "/");
+        this.__m__P_246_0.emit("GET", "/");
 
         this.assertCalledOnce(handler);
       },
       testHas: function testHas() {
-        this.__m__P_245_0.on("GET", "/affe", function () {});
+        this.__m__P_246_0.on("GET", "/affe", function () {});
 
-        this.__m__P_245_0.on("POST", "/affe", function () {});
+        this.__m__P_246_0.on("POST", "/affe", function () {});
 
-        this.assertTrue(this.__m__P_245_0.has("GET", "/affe"));
-        this.assertTrue(this.__m__P_245_0.has("POST", "/affe"));
-        this.assertFalse(this.__m__P_245_0.has("get", "/affe"));
-        this.assertFalse(this.__m__P_245_0.has("GET", "/banane"));
-        this.assertFalse(this.__m__P_245_0.has("PUT", "/affe"));
-        this.assertFalse(this.__m__P_245_0.has("banane", "/affe"));
+        this.assertTrue(this.__m__P_246_0.has("GET", "/affe"));
+        this.assertTrue(this.__m__P_246_0.has("POST", "/affe"));
+        this.assertFalse(this.__m__P_246_0.has("get", "/affe"));
+        this.assertFalse(this.__m__P_246_0.has("GET", "/banane"));
+        this.assertFalse(this.__m__P_246_0.has("PUT", "/affe"));
+        this.assertFalse(this.__m__P_246_0.has("banane", "/affe"));
       }
     }
   });
   qx.test.event.Messaging.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Messaging.js.map?dt=1598908867871
+//# sourceMappingURL=Messaging.js.map?dt=1599312837927

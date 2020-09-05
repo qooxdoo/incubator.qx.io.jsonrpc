@@ -50,8 +50,8 @@
     members: {
       _cnt: null,
       _failed: null,
-      __tree__P_592_0: null,
-      __model__P_592_1: null,
+      __tree__P_593_0: null,
+      __model__P_593_1: null,
       log: function log(text) {
         console.log(text);
         qx.log.Logger.debug(text);
@@ -66,7 +66,7 @@
       },
       // add an item in the tree
       addTreeItem: function addTreeItem(status, testNumber, testClass, testName, message = "") {
-        let classNode = this.__model__P_592_1.getChildren().toArray().find(item => item.getLabel() === testClass);
+        let classNode = this.__model__P_593_1.getChildren().toArray().find(item => item.getLabel() === testClass);
 
         if (!classNode) {
           classNode = qx.data.marshal.Json.createModel({
@@ -76,7 +76,7 @@
             numberFailed: 0
           });
 
-          this.__model__P_592_1.getChildren().append(classNode);
+          this.__model__P_593_1.getChildren().append(classNode);
         }
 
         let modelItem = qx.data.marshal.Json.createModel({
@@ -87,7 +87,7 @@
         });
         classNode.getChildren().push(modelItem); // update parent nodes
 
-        [classNode, this.__model__P_592_1].forEach(node => {
+        [classNode, this.__model__P_593_1].forEach(node => {
           node.setNumberPassed(node.getChildren().reduce((acc, curr) => acc + curr.getNumberPassed(), 0));
           node.setNumberFailed(node.getChildren().reduce((acc, curr) => acc + curr.getNumberFailed(), 0));
         });
@@ -137,7 +137,7 @@
         //container.setAllowStretchX(false);
 
         scroller.add(container);
-        const tree = this.__tree__P_592_0 = new qx.ui.tree.VirtualTree(null, "label", "children");
+        const tree = this.__tree__P_593_0 = new qx.ui.tree.VirtualTree(null, "label", "children");
         container.add(tree);
         const delegate = {
           bindItem(controller, item, id) {
@@ -151,7 +151,7 @@
 
         };
         tree.setDelegate(delegate);
-        let model = this.__model__P_592_1 = qx.data.marshal.Json.createModel(this.getRootNodeData(), true);
+        let model = this.__model__P_593_1 = qx.data.marshal.Json.createModel(this.getRootNodeData(), true);
         tree.setModel(model); // log pane
 
         let logger = new qxl.logpane.LogPane();
@@ -185,7 +185,7 @@
         return pChain.then(() => {
           this.log(`1..${this._cnt}`);
 
-          this.__model__P_592_1.setLabel("Tests have finished:");
+          this.__model__P_593_1.setLabel("Tests have finished:");
         });
       },
       runAll: function runAll(cfg, clazz) {
@@ -275,4 +275,4 @@
   qxl.testtapper.Application.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Application.js.map?dt=1598908899677
+//# sourceMappingURL=Application.js.map?dt=1599312866880

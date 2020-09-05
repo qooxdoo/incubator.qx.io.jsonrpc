@@ -70,7 +70,7 @@
           var colors = value.colors;
 
           for (var name in colors) {
-            dest[name] = this.__parseColor__P_362_0(colors, name);
+            dest[name] = this.__parseColor__P_363_0(colors, name);
           }
         }
 
@@ -86,14 +86,14 @@
        * @param name {String} The name of the color to check.
        * @return {String} The resolved color as string.
        */
-      __parseColor__P_362_0: function __parseColor__P_362_0(colors, name) {
+      __parseColor__P_363_0: function __parseColor__P_363_0(colors, name) {
         var color = colors[name];
 
         if (typeof color === "string") {
           if (!qx.util.ColorUtil.isCssString(color)) {
             // check for references to in theme colors
             if (colors[color] != undefined) {
-              return this.__parseColor__P_362_0(colors, color);
+              return this.__parseColor__P_363_0(colors, color);
             }
 
             throw new Error("Could not parse color: " + color);
@@ -103,7 +103,7 @@
         } else if (color instanceof Array) {
           return qx.util.ColorUtil.rgbToRgbString(color);
         } else if (color instanceof Function) {
-          return this.__parseColor__P_362_0(colors, color(name));
+          return this.__parseColor__P_363_0(colors, color(name));
         } // this is might already be a rgb or hex color
 
 
@@ -169,4 +169,4 @@
   qx.theme.manager.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1598908879194
+//# sourceMappingURL=Color.js.map?dt=1599312848169

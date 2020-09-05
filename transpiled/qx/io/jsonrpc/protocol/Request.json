@@ -217,7 +217,7 @@
         "@param": [
           {
             "name": "@param",
-            "body": "{qx.io.jsonrpc.exception.Transport} exception"
+            "body": "{qx.io.exception.Transport} exception"
           }
         ]
       },

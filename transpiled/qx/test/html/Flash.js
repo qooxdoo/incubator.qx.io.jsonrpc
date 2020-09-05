@@ -43,24 +43,24 @@
   qx.Class.define("qx.test.html.Flash", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __flash__P_248_0: null,
+      __flash__P_249_0: null,
       setUp: function setUp() {
-        this.__flash__P_248_0 = new qx.html.Flash();
+        this.__flash__P_249_0 = new qx.html.Flash();
       },
       tearDown: function tearDown() {
-        this.__flash__P_248_0.dispose();
+        this.__flash__P_249_0.dispose();
 
-        this.__flash__P_248_0 = null;
+        this.__flash__P_249_0 = null;
       },
       testSetSource: function testSetSource(value) {
-        this.__flash__P_248_0.setSource("movieURL");
+        this.__flash__P_249_0.setSource("movieURL");
 
-        this.assertIdentical("movieURL", this.__flash__P_248_0.getAttributes().movie);
+        this.assertIdentical("movieURL", this.__flash__P_249_0.getAttributes().movie);
       },
       testSetId: function testSetId(value) {
-        this.__flash__P_248_0.setId("flashID");
+        this.__flash__P_249_0.setId("flashID");
 
-        this.assertIdentical("flashID", this.__flash__P_248_0.getAttributes().id);
+        this.assertIdentical("flashID", this.__flash__P_249_0.getAttributes().id);
       },
       testSetVariables: function testSetVariables(value) {
         var map = {
@@ -68,81 +68,81 @@
           b: "valueB"
         };
 
-        this.__flash__P_248_0.setVariables(map);
+        this.__flash__P_249_0.setVariables(map);
 
-        this.assertIdentical(map, this.__flash__P_248_0.getVariables());
+        this.assertIdentical(map, this.__flash__P_249_0.getVariables());
       },
       testSetAttribute: function testSetAttribute(key, value) {
-        this.__flash__P_248_0.setAttribute("attrib1", "hoho");
+        this.__flash__P_249_0.setAttribute("attrib1", "hoho");
 
-        this.__flash__P_248_0.setAttribute("attrib2", "gogo");
+        this.__flash__P_249_0.setAttribute("attrib2", "gogo");
 
-        this.__flash__P_248_0.setAttribute("attrib3", true);
+        this.__flash__P_249_0.setAttribute("attrib3", true);
 
-        this.__flash__P_248_0.setAttribute("attrib4", false);
+        this.__flash__P_249_0.setAttribute("attrib4", false);
 
-        var map = this.__flash__P_248_0.getAttribute();
+        var map = this.__flash__P_249_0.getAttribute();
 
-        this.assertIdentical("hoho", this.__flash__P_248_0.getAttributes().attrib1);
-        this.assertIdentical("gogo", this.__flash__P_248_0.getAttributes().attrib2);
-        this.assertTrue(this.__flash__P_248_0.getAttributes().attrib3);
-        this.assertFalse(this.__flash__P_248_0.getAttributes().attrib4);
+        this.assertIdentical("hoho", this.__flash__P_249_0.getAttributes().attrib1);
+        this.assertIdentical("gogo", this.__flash__P_249_0.getAttributes().attrib2);
+        this.assertTrue(this.__flash__P_249_0.getAttributes().attrib3);
+        this.assertFalse(this.__flash__P_249_0.getAttributes().attrib4);
 
-        this.__flash__P_248_0.setAttribute("attrib1");
+        this.__flash__P_249_0.setAttribute("attrib1");
 
-        this.__flash__P_248_0.setAttribute("attrib3");
+        this.__flash__P_249_0.setAttribute("attrib3");
 
-        this.assertUndefined(this.__flash__P_248_0.getAttributes().attrib1);
-        this.assertIdentical("gogo", this.__flash__P_248_0.getAttributes().attrib2);
-        this.assertUndefined(this.__flash__P_248_0.getAttributes().attrib3);
-        this.assertFalse(this.__flash__P_248_0.getAttributes().attrib4);
+        this.assertUndefined(this.__flash__P_249_0.getAttributes().attrib1);
+        this.assertIdentical("gogo", this.__flash__P_249_0.getAttributes().attrib2);
+        this.assertUndefined(this.__flash__P_249_0.getAttributes().attrib3);
+        this.assertFalse(this.__flash__P_249_0.getAttributes().attrib4);
 
-        this.__flash__P_248_0.setAttribute("attrib2", null);
+        this.__flash__P_249_0.setAttribute("attrib2", null);
 
-        this.__flash__P_248_0.setAttribute("attrib4", null);
+        this.__flash__P_249_0.setAttribute("attrib4", null);
 
-        this.assertUndefined(this.__flash__P_248_0.getAttributes().attrib1);
-        this.assertUndefined(this.__flash__P_248_0.getAttributes().attrib2);
-        this.assertUndefined(this.__flash__P_248_0.getAttributes().attrib3);
-        this.assertUndefined(this.__flash__P_248_0.getAttributes().attrib4);
+        this.assertUndefined(this.__flash__P_249_0.getAttributes().attrib1);
+        this.assertUndefined(this.__flash__P_249_0.getAttributes().attrib2);
+        this.assertUndefined(this.__flash__P_249_0.getAttributes().attrib3);
+        this.assertUndefined(this.__flash__P_249_0.getAttributes().attrib4);
       },
       testSetParam: function testSetParam(key, value) {
-        this.__flash__P_248_0.setParam("param1", "hoho");
+        this.__flash__P_249_0.setParam("param1", "hoho");
 
-        this.__flash__P_248_0.setParam("param2", "gogo");
+        this.__flash__P_249_0.setParam("param2", "gogo");
 
-        this.__flash__P_248_0.setParam("param3", true);
+        this.__flash__P_249_0.setParam("param3", true);
 
-        this.__flash__P_248_0.setParam("param4", false);
+        this.__flash__P_249_0.setParam("param4", false);
 
-        var map = this.__flash__P_248_0.getParams();
+        var map = this.__flash__P_249_0.getParams();
 
-        this.assertIdentical("hoho", this.__flash__P_248_0.getParams().param1);
-        this.assertIdentical("gogo", this.__flash__P_248_0.getParams().param2);
-        this.assertTrue(this.__flash__P_248_0.getParams().param3);
-        this.assertFalse(this.__flash__P_248_0.getParams().param4);
+        this.assertIdentical("hoho", this.__flash__P_249_0.getParams().param1);
+        this.assertIdentical("gogo", this.__flash__P_249_0.getParams().param2);
+        this.assertTrue(this.__flash__P_249_0.getParams().param3);
+        this.assertFalse(this.__flash__P_249_0.getParams().param4);
 
-        this.__flash__P_248_0.setParam("param1");
+        this.__flash__P_249_0.setParam("param1");
 
-        this.__flash__P_248_0.setParam("param3");
+        this.__flash__P_249_0.setParam("param3");
 
-        this.assertUndefined(this.__flash__P_248_0.getParams().param1);
-        this.assertIdentical("gogo", this.__flash__P_248_0.getParams().param2);
-        this.assertUndefined(this.__flash__P_248_0.getParams().param3);
-        this.assertFalse(this.__flash__P_248_0.getParams().param4);
+        this.assertUndefined(this.__flash__P_249_0.getParams().param1);
+        this.assertIdentical("gogo", this.__flash__P_249_0.getParams().param2);
+        this.assertUndefined(this.__flash__P_249_0.getParams().param3);
+        this.assertFalse(this.__flash__P_249_0.getParams().param4);
 
-        this.__flash__P_248_0.setParam("param2", null);
+        this.__flash__P_249_0.setParam("param2", null);
 
-        this.__flash__P_248_0.setParam("param4", null);
+        this.__flash__P_249_0.setParam("param4", null);
 
-        this.assertUndefined(this.__flash__P_248_0.getParams().param1);
-        this.assertUndefined(this.__flash__P_248_0.getParams().param2);
-        this.assertUndefined(this.__flash__P_248_0.getParams().param3);
-        this.assertUndefined(this.__flash__P_248_0.getParams().param4);
+        this.assertUndefined(this.__flash__P_249_0.getParams().param1);
+        this.assertUndefined(this.__flash__P_249_0.getParams().param2);
+        this.assertUndefined(this.__flash__P_249_0.getParams().param3);
+        this.assertUndefined(this.__flash__P_249_0.getParams().param4);
       }
     }
   });
   qx.test.html.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1598908868469
+//# sourceMappingURL=Flash.js.map?dt=1599312838490

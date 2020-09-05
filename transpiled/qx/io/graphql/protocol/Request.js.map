@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/io/graphql/protocol/Request.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "graphql",
+    "protocol",
+    "Message",
+    "properties",
+    "query",
+    "check",
+    "nullable",
+    "init",
+    "variables",
+    "Request"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAiD;AAC/CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBC,OADgB;AAE/CC,IAAAA,UAAU,EAAE;AAEV;;;AAGAC,MAAAA,KAAK,EAAG;AACNC,QAAAA,KAAK,EAAE,QADD;AAENC,QAAAA,QAAQ,EAAE,KAFJ;AAGNC,QAAAA,IAAI,EAAE;AAHA,OALE;;AAWV;;;AAGAC,MAAAA,SAAS,EAAG;AACVH,QAAAA,KAAK,EAAE,QADG;AAEVC,QAAAA,QAAQ,EAAE;AAFA;AAdF;AAFmC,GAAjD;AAtBAd,EAAAA,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBQ,OAAvB,CAA+Bd,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * An Object modelling a GraphQL request based on the GraphQL language\n * (see http://spec.graphql.org/draft/#sec-Language)\n */\nqx.Class.define(\"qx.io.graphql.protocol.Request\",{\n  extend: qx.io.graphql.protocol.Message,\n  properties: {\n\n    /**\n     * The query as a string which will be parsed and executed on the server\n     */\n    query : {\n      check: \"String\",\n      nullable: false,\n      init: \"\"\n    },\n\n    /**\n     * A map of key-value pairs providing the data for the variables in the query\n     */\n    variables : {\n      check: \"Object\",\n      nullable: true\n    }\n  }\n});\n"
+  ]
+}

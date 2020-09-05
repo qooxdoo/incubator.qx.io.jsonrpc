@@ -76,14 +76,14 @@
     */
     construct: function construct() {
       qx.io.remote.transport.Abstract.constructor.call(this);
-      var vUniqueId = ++qx.io.remote.transport.Script.__uniqueId__P_170_0;
+      var vUniqueId = ++qx.io.remote.transport.Script.__uniqueId__P_171_0;
 
       if (vUniqueId >= 2000000000) {
-        qx.io.remote.transport.Script.__uniqueId__P_170_0 = vUniqueId = 1;
+        qx.io.remote.transport.Script.__uniqueId__P_171_0 = vUniqueId = 1;
       }
 
-      this.__element__P_170_1 = null;
-      this.__uniqueId__P_170_0 = vUniqueId;
+      this.__element__P_171_1 = null;
+      this.__uniqueId__P_171_0 = vUniqueId;
     },
 
     /*
@@ -97,7 +97,7 @@
        *
        * @internal
        */
-      __uniqueId__P_170_0: 0,
+      __uniqueId__P_171_0: 0,
 
       /**
        * Registry for all script transport instances.
@@ -202,9 +202,9 @@
     *****************************************************************************
     */
     members: {
-      __lastReadyState__P_170_2: 0,
-      __element__P_170_1: null,
-      __uniqueId__P_170_0: null,
+      __lastReadyState__P_171_2: 0,
+      __element__P_171_1: null,
+      __uniqueId__P_171_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -221,7 +221,7 @@
         //   Adding parameters
         // --------------------------------------
 
-        vUrl += (vUrl.indexOf("?") >= 0 ? "&" : "?") + qx.io.remote.transport.Script.ScriptTransport_ID_PARAM + "=" + this.__uniqueId__P_170_0;
+        vUrl += (vUrl.indexOf("?") >= 0 ? "&" : "?") + qx.io.remote.transport.Script.ScriptTransport_ID_PARAM + "=" + this.__uniqueId__P_171_0;
         var vParameters = this.getParameters();
         var vParametersList = [];
 
@@ -254,19 +254,19 @@
           vUrl += "&" + qx.io.remote.transport.Script.ScriptTransport_DATA_PARAM + "=" + encodeURIComponent(vData);
         }
 
-        qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId__P_170_0] = this;
-        this.__element__P_170_1 = document.createElement("script"); // IE needs this (it ignores the
+        qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId__P_171_0] = this;
+        this.__element__P_171_1 = document.createElement("script"); // IE needs this (it ignores the
         // encoding from the header sent by the
         // server for dynamic script tags)
 
-        this.__element__P_170_1.charset = "utf-8";
-        this.__element__P_170_1.src = vUrl;
+        this.__element__P_171_1.charset = "utf-8";
+        this.__element__P_171_1.src = vUrl;
         {
           if (qx.core.Environment.get("qx.debug.io.remote.data")) {
             this.debug("Request: " + vUrl);
           }
         }
-        document.body.appendChild(this.__element__P_170_1);
+        document.body.appendChild(this.__element__P_171_1);
       },
 
       /**
@@ -286,8 +286,8 @@
         } // Updating internal state
 
 
-        while (this.__lastReadyState__P_170_2 < vReadyState) {
-          this.setState(qx.io.remote.Exchange._nativeMap[++this.__lastReadyState__P_170_2]);
+        while (this.__lastReadyState__P_171_2 < vReadyState) {
+          this.setState(qx.io.remote.Exchange._nativeMap[++this.__lastReadyState__P_171_2]);
         }
       },
 
@@ -436,15 +436,15 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      if (this.__element__P_170_1) {
-        delete qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId__P_170_0];
-        document.body.removeChild(this.__element__P_170_1);
+      if (this.__element__P_171_1) {
+        delete qx.io.remote.transport.Script._instanceRegistry[this.__uniqueId__P_171_0];
+        document.body.removeChild(this.__element__P_171_1);
       }
 
-      this.__element__P_170_1 = this._responseContent = null;
+      this.__element__P_171_1 = this._responseContent = null;
     }
   });
   qx.io.remote.transport.Script.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Script.js.map?dt=1598908858631
+//# sourceMappingURL=Script.js.map?dt=1599312829731

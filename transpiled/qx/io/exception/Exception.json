@@ -1,6 +1,6 @@
 {
-  "className": "qx.io.Exception",
-  "packageName": "qx.io",
+  "className": "qx.io.exception.Exception",
+  "packageName": "qx.io.exception",
   "name": "Exception",
   "superClass": "qx.type.BaseError",
   "interfaces": [],
@@ -66,8 +66,8 @@
     }
   },
   "descendants": [
-    "qx.io.jsonrpc.exception.Cancel",
-    "qx.io.jsonrpc.exception.JsonRpc",
-    "qx.io.jsonrpc.exception.Transport"
+    "qx.io.exception.Cancel",
+    "qx.io.exception.Protocol",
+    "qx.io.exception.Transport"
   ]
 }

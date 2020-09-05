@@ -120,4 +120,4 @@
   qx.module.event.PointerHandler.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PointerHandler.js.map?dt=1598908861532
+//# sourceMappingURL=PointerHandler.js.map?dt=1599312832330

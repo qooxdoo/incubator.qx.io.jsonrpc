@@ -39,7 +39,7 @@
     include: qx.dev.unit.MMock,
     members: {
       testWithSetValueWithArbitraryValue: function testWithSetValueWithArbitraryValue() {
-        var combobox = this.__createComboBox__P_300_0("arbitrary value");
+        var combobox = this.__createComboBox__P_301_0("arbitrary value");
 
         this.getRoot().add(combobox);
         this.flush();
@@ -52,7 +52,7 @@
         this.flush();
       },
       testWithSetValueWith: function testWithSetValueWith() {
-        var combobox = this.__createComboBox__P_300_0("Item 0");
+        var combobox = this.__createComboBox__P_301_0("Item 0");
 
         this.getRoot().add(combobox);
         this.flush();
@@ -71,7 +71,7 @@
         this.flush();
       },
       testWithoutSetValue: function testWithoutSetValue() {
-        var combobox = this.__createComboBox__P_300_0();
+        var combobox = this.__createComboBox__P_301_0();
 
         this.getRoot().add(combobox);
         this.flush();
@@ -84,7 +84,7 @@
         this.flush();
       },
       testFocusTextOnClose: function testFocusTextOnClose() {
-        var combobox = this.__createComboBox__P_300_0();
+        var combobox = this.__createComboBox__P_301_0();
 
         this.getRoot().add(combobox);
         this.flush(); // Open list popup
@@ -104,7 +104,7 @@
         combobox.dispose();
       },
       testNotFocusTextOnCloseWhenInvisibleBefore: function testNotFocusTextOnCloseWhenInvisibleBefore() {
-        var combobox = this.__createComboBox__P_300_0();
+        var combobox = this.__createComboBox__P_301_0();
 
         this.getRoot().add(combobox);
         this.flush(); // Enter value
@@ -118,7 +118,7 @@
         this.getRoot().removeAll();
         combobox.dispose();
       },
-      __createComboBox__P_300_0: function __createComboBox__P_300_0(initValue) {
+      __createComboBox__P_301_0: function __createComboBox__P_301_0(initValue) {
         var comboBox = new qx.ui.form.ComboBox();
 
         if (initValue) {
@@ -136,4 +136,4 @@
   qx.test.ui.form.ComboBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ComboBox.js.map?dt=1598908873455
+//# sourceMappingURL=ComboBox.js.map?dt=1599312842984

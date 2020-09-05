@@ -34,7 +34,7 @@
   /**
    * A generic class for representing exceptions that occur during io operations.
    */
-  qx.Class.define("qx.io.Exception", {
+  qx.Class.define("qx.io.exception.Exception", {
     extend: qx.type.BaseError,
 
     /**
@@ -50,7 +50,7 @@
       this.name = this.classname;
     }
   });
-  qx.io.Exception.$$dbClassInfo = $$dbClassInfo;
+  qx.io.exception.Exception.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Exception.js.map?dt=1598908857408
+//# sourceMappingURL=Exception.js.map?dt=1599312828604

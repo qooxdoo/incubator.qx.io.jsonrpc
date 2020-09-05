@@ -47,7 +47,7 @@
           custom: {
             init: "Some String",
             check: "String",
-            validate: "__validateCustom__P_226_0"
+            validate: "__validateCustom__P_227_0"
           },
           number: {
             init: 18,
@@ -83,7 +83,7 @@
           }
         },
         members: {
-          __validateCustom__P_226_0: function __validateCustom__P_226_0(value) {
+          __validateCustom__P_227_0: function __validateCustom__P_227_0(value) {
             // if the length is lower than 4
             if (value.length < 4) {
               throw new qx.core.ValidationError("Validation Error: String must be longer than three characters. (" + value + ")");
@@ -91,11 +91,11 @@
           }
         }
       });
-      this.__model__P_226_1 = new qx.Model();
+      this.__model__P_227_1 = new qx.Model();
     },
     members: {
       testNumber: function testNumber() {
-        var model = this.__model__P_226_1; // test for some false inputs
+        var model = this.__model__P_227_1; // test for some false inputs
 
         this.assertException(function () {
           model.setNumber("test");
@@ -117,7 +117,7 @@
         this.assertEquals(12.15, model.getNumber());
       },
       testEmail: function testEmail() {
-        var model = this.__model__P_226_1; // test some wrong addresses
+        var model = this.__model__P_227_1; // test some wrong addresses
 
         this.assertException(function () {
           model.setEmail("test");
@@ -140,7 +140,7 @@
         this.assertEquals("ichbineinelangemailadresse@undhabeinelangedomainnochdazu.de", model.getEmail(), "ichbineinelangemailadresse@undhabeinelangedomainnochdazu.de should work!");
       },
       testString: function testString() {
-        var model = this.__model__P_226_1; // test some wrong inputs
+        var model = this.__model__P_227_1; // test some wrong inputs
 
         this.assertException(function () {
           model.setString(1);
@@ -161,7 +161,7 @@
         this.assertEquals("", model.getString(), "An empty string should work!");
       },
       testUrl: function testUrl() {
-        var model = this.__model__P_226_1; // test some wrong inputs
+        var model = this.__model__P_227_1; // test some wrong inputs
 
         this.assertException(function () {
           model.setUrl(1);
@@ -186,7 +186,7 @@
         this.assertEquals("http://www.fake.url:8080/de/1546", model.getUrl(), "http://www.fake.url:8080/de/1546 as string should work!");
       },
       testColor: function testColor() {
-        var model = this.__model__P_226_1; // test some wrong inputs
+        var model = this.__model__P_227_1; // test some wrong inputs
 
         this.assertException(function () {
           model.setColor(1);
@@ -212,7 +212,7 @@
         this.assertEquals("#FFFFFF", model.getColor(), "#FFFFFF is a css color");
       },
       testRange: function testRange() {
-        var model = this.__model__P_226_1; // test some wrong inputs (Rage defined from 1 to 2 including both)
+        var model = this.__model__P_227_1; // test some wrong inputs (Rage defined from 1 to 2 including both)
 
         this.assertException(function () {
           model.setRange(0.999999999);
@@ -229,7 +229,7 @@
         this.assertEquals(1.5, model.getRange(), "1.5 is in the range of 1 and 2.");
       },
       testInArray: function testInArray() {
-        var model = this.__model__P_226_1; // test some wrong inputs (allowed are male and female)
+        var model = this.__model__P_227_1; // test some wrong inputs (allowed are male and female)
 
         this.assertException(function () {
           model.setArray(0.999999999);
@@ -247,7 +247,7 @@
         this.assertEquals("female", model.getArray(), "female is in!");
       },
       testCustom: function testCustom() {
-        var model = this.__model__P_226_1; // test some wrong inputs (String must be longer than 3)
+        var model = this.__model__P_227_1; // test some wrong inputs (String must be longer than 3)
 
         this.assertException(function () {
           model.setCustom("");
@@ -266,7 +266,7 @@
         this.assertEquals("male", model.getCustom(), "male is long enough!");
       },
       testRegExp: function testRegExp() {
-        var model = this.__model__P_226_1; // test some wrong inputs (Only digits)
+        var model = this.__model__P_227_1; // test some wrong inputs (Only digits)
 
         this.assertException(function () {
           model.setRegExp("AFFE!");
@@ -288,4 +288,4 @@
   qx.test.core.Validation.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Validation.js.map?dt=1598908865015
+//# sourceMappingURL=Validation.js.map?dt=1599312835581

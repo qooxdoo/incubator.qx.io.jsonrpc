@@ -97,13 +97,13 @@
         this.setTransitionDuration(transitionDuration);
       }
 
-      this.__snapPointsX__P_453_0 = [];
-      this.__onMoveOffset__P_453_1 = [0, 0];
-      this.__lastOffset__P_453_2 = [0, 0];
-      this.__boundsX__P_453_3 = [0, 0];
-      this.__pages__P_453_4 = [];
-      this.__paginationLabels__P_453_5 = [];
-      var carouselScroller = this.__carouselScroller__P_453_6 = new qx.ui.mobile.container.Composite(new qx.ui.mobile.layout.HBox());
+      this.__snapPointsX__P_454_0 = [];
+      this.__onMoveOffset__P_454_1 = [0, 0];
+      this.__lastOffset__P_454_2 = [0, 0];
+      this.__boundsX__P_454_3 = [0, 0];
+      this.__pages__P_454_4 = [];
+      this.__paginationLabels__P_454_5 = [];
+      var carouselScroller = this.__carouselScroller__P_454_6 = new qx.ui.mobile.container.Composite(new qx.ui.mobile.layout.HBox());
       carouselScroller.setTransformUnit("px");
       carouselScroller.addCssClass("carousel-scroller");
       carouselScroller.addListener("pointerdown", this._onPointerDown, this);
@@ -112,11 +112,11 @@
       carouselScroller.addListener("swipe", this._onSwipe, this);
       this.addListener("touchmove", qx.bom.Event.preventDefault, this);
       this.addListener("appear", this._onContainerUpdate, this);
-      qx.event.Registration.addListener(this.__carouselScroller__P_453_6.getContainerElement(), "transitionEnd", this._onScrollerTransitionEnd, this);
+      qx.event.Registration.addListener(this.__carouselScroller__P_454_6.getContainerElement(), "transitionEnd", this._onScrollerTransitionEnd, this);
       qx.event.Registration.addListener(window, "orientationchange", this._onContainerUpdate, this);
       qx.event.Registration.addListener(window, "resize", this._onContainerUpdate, this);
       qx.event.Registration.addListener(this.getContentElement(), "scroll", this._onNativeScroll, this);
-      var pagination = this.__pagination__P_453_7 = new qx.ui.mobile.container.Composite();
+      var pagination = this.__pagination__P_454_7 = new qx.ui.mobile.container.Composite();
       pagination.setLayout(new qx.ui.mobile.layout.HBox());
       pagination.setTransformUnit("px");
       pagination.addCssClass("carousel-pagination");
@@ -193,20 +193,20 @@
     *****************************************************************************
     */
     members: {
-      __carouselScroller__P_453_6: null,
-      __carouselScrollerWidth__P_453_8: null,
-      __carouselWidth__P_453_9: null,
-      __paginationLabels__P_453_5: null,
-      __pagination__P_453_7: null,
-      __snapPointsX__P_453_0: null,
-      __onMoveOffset__P_453_1: null,
-      __lastOffset__P_453_2: null,
-      __boundsX__P_453_3: null,
-      __pages__P_453_4: null,
-      __showTransition__P_453_10: null,
-      __isPageScrollTarget__P_453_11: null,
-      __deltaX__P_453_12: null,
-      __deltaY__P_453_13: null,
+      __carouselScroller__P_454_6: null,
+      __carouselScrollerWidth__P_454_8: null,
+      __carouselWidth__P_454_9: null,
+      __paginationLabels__P_454_5: null,
+      __pagination__P_454_7: null,
+      __snapPointsX__P_454_0: null,
+      __onMoveOffset__P_454_1: null,
+      __lastOffset__P_454_2: null,
+      __boundsX__P_454_3: null,
+      __pages__P_454_4: null,
+      __showTransition__P_454_10: null,
+      __isPageScrollTarget__P_454_11: null,
+      __deltaX__P_454_12: null,
+      __deltaY__P_454_13: null,
       // overridden
 
       /**
@@ -221,17 +221,17 @@
         }
         page.addCssClass("carousel-page");
 
-        this.__pages__P_453_4.push(page);
+        this.__pages__P_454_4.push(page);
 
-        this.__carouselScroller__P_453_6.add(page, {
+        this.__carouselScroller__P_454_6.add(page, {
           flex: 1
         });
 
         var paginationLabel = this._createPaginationLabel();
 
-        this.__paginationLabels__P_453_5.push(paginationLabel);
+        this.__paginationLabels__P_454_5.push(paginationLabel);
 
-        this.__pagination__P_453_7.add(paginationLabel);
+        this.__pagination__P_454_7.add(paginationLabel);
 
         this._setTransitionDuration(0);
 
@@ -244,17 +244,17 @@
        * @return {qx.ui.mobile.container.Composite} the page which was removed from carousel.
        */
       removePageByIndex: function removePageByIndex(pageIndex) {
-        if (this.__pages__P_453_4 && this.__pages__P_453_4.length > pageIndex) {
+        if (this.__pages__P_454_4 && this.__pages__P_454_4.length > pageIndex) {
           if (pageIndex <= this.getCurrentIndex() && this.getCurrentIndex() !== 0) {
             this.setCurrentIndex(this.getCurrentIndex() - 1);
           }
 
-          var targetPage = this.__pages__P_453_4[pageIndex];
-          var paginationLabel = this.__paginationLabels__P_453_5[pageIndex];
+          var targetPage = this.__pages__P_454_4[pageIndex];
+          var paginationLabel = this.__paginationLabels__P_454_5[pageIndex];
 
-          this.__carouselScroller__P_453_6.remove(targetPage);
+          this.__carouselScroller__P_454_6.remove(targetPage);
 
-          this.__pagination__P_453_7.remove(paginationLabel);
+          this.__pagination__P_454_7.remove(paginationLabel);
 
           paginationLabel.removeListener("tap", this._onPaginationLabelTap, {
             self: this,
@@ -262,9 +262,9 @@
           });
           qx.util.DisposeUtil.destroyContainer(paginationLabel);
 
-          this.__pages__P_453_4.splice(pageIndex, 1);
+          this.__pages__P_454_4.splice(pageIndex, 1);
 
-          this.__paginationLabels__P_453_5.splice(pageIndex, 1);
+          this.__paginationLabels__P_454_5.splice(pageIndex, 1);
 
           this._onContainerUpdate();
 
@@ -275,8 +275,8 @@
       removeAll: function removeAll() {
         var removedPages = [];
 
-        if (this.__pages__P_453_4) {
-          for (var i = this.__pages__P_453_4.length - 1; i >= 0; i--) {
+        if (this.__pages__P_454_4) {
+          for (var i = this.__pages__P_454_4.length - 1; i >= 0; i--) {
             removedPages.push(this.removePageByIndex(i));
           }
         }
@@ -288,8 +288,8 @@
        * Scrolls the carousel to next page.
        */
       nextPage: function nextPage() {
-        if (this.getCurrentIndex() == this.__pages__P_453_4.length - 1) {
-          if (this.isScrollLoop() && this.__pages__P_453_4.length > 1) {
+        if (this.getCurrentIndex() == this.__pages__P_454_4.length - 1) {
+          if (this.isScrollLoop() && this.__pages__P_454_4.length > 1) {
             this._doScrollLoop();
           }
         } else {
@@ -302,7 +302,7 @@
        */
       previousPage: function previousPage() {
         if (this.getCurrentIndex() === 0) {
-          if (this.isScrollLoop() && this.__pages__P_453_4.length > 1) {
+          if (this.isScrollLoop() && this.__pages__P_454_4.length > 1) {
             this._doScrollLoop();
           }
         } else {
@@ -315,8 +315,8 @@
       * @return {Integer} the current page count
       */
       getPageCount: function getPageCount() {
-        if (this.__pages__P_453_4) {
-          return this.__pages__P_453_4.length;
+        if (this.__pages__P_454_4) {
+          return this.__pages__P_454_4.length;
         }
 
         return 0;
@@ -328,18 +328,18 @@
        * @param showTransition {Boolean ? true} flag if a transition should be shown or not
        */
       _scrollToPage: function _scrollToPage(pageIndex, showTransition) {
-        if (pageIndex >= this.__pages__P_453_4.length || pageIndex < 0) {
+        if (pageIndex >= this.__pages__P_454_4.length || pageIndex < 0) {
           return;
         }
 
         this._updatePagination(pageIndex);
 
-        var snapPoint = -pageIndex * this.__carouselWidth__P_453_9;
+        var snapPoint = -pageIndex * this.__carouselWidth__P_454_9;
 
         this._updateScrollerPosition(snapPoint); // Update lastOffset, because snapPoint has changed.
 
 
-        this.__lastOffset__P_453_2[0] = snapPoint;
+        this.__lastOffset__P_454_2[0] = snapPoint;
       },
 
       /**
@@ -359,17 +359,17 @@
       * Event handler for <code>transitionEnd</code> event on carouselScroller.
       */
       _onScrollerTransitionEnd: function _onScrollerTransitionEnd() {
-        var opacity = qx.bom.element.Style.get(this.__carouselScroller__P_453_6.getContainerElement(), "opacity");
+        var opacity = qx.bom.element.Style.get(this.__carouselScroller__P_454_6.getContainerElement(), "opacity");
 
         if (opacity === 0) {
           var pageIndex = null;
 
-          if (this.getCurrentIndex() == this.__pages__P_453_4.length - 1) {
+          if (this.getCurrentIndex() == this.__pages__P_454_4.length - 1) {
             pageIndex = 0;
           }
 
           if (this.getCurrentIndex() === 0) {
-            pageIndex = this.__pages__P_453_4.length - 1;
+            pageIndex = this.__pages__P_454_4.length - 1;
           }
 
           this._setTransitionDuration(0);
@@ -388,7 +388,7 @@
        * @return {qx.ui.mobile.container.Composite} the created pagination label.
        */
       _createPaginationLabel: function _createPaginationLabel() {
-        var paginationIndex = this.__pages__P_453_4.length;
+        var paginationIndex = this.__pages__P_454_4.length;
         var paginationLabel = new qx.ui.mobile.container.Composite();
         var paginationLabelText = new qx.ui.mobile.basic.Label("" + paginationIndex);
         paginationLabel.add(paginationLabelText);
@@ -405,8 +405,8 @@
        * @param opacity {Integer} the target value of the opacity.
        */
       _setScrollersOpacity: function _setScrollersOpacity(opacity) {
-        if (this.__carouselScroller__P_453_6) {
-          qx.bom.element.Style.set(this.__carouselScroller__P_453_6.getContainerElement(), "opacity", opacity);
+        if (this.__carouselScroller__P_454_6) {
+          qx.bom.element.Style.set(this.__carouselScroller__P_454_6.getContainerElement(), "opacity", opacity);
         }
       },
 
@@ -416,11 +416,11 @@
        */
       _applyShowPagination: function _applyShowPagination(value, old) {
         if (value) {
-          if (this.__pages__P_453_4.length > 1) {
-            this.__pagination__P_453_7.show();
+          if (this.__pages__P_454_4.length > 1) {
+            this.__pagination__P_454_7.show();
           }
         } else {
-          this.__pagination__P_453_7.hide();
+          this.__pagination__P_454_7.hide();
         }
       },
 
@@ -440,7 +440,7 @@
         }
 
         var carouselSize = qx.bom.element.Dimension.getSize(this.getContainerElement());
-        this.__carouselWidth__P_453_9 = carouselSize.width;
+        this.__carouselWidth__P_454_9 = carouselSize.width;
 
         if (this.getHeight() !== null) {
           this._setStyle("height", this.getHeight() / 16 + "rem");
@@ -448,20 +448,20 @@
           this._setStyle("height", "100%");
         }
 
-        qx.bom.element.Style.set(this.__carouselScroller__P_453_6.getContentElement(), "width", this.__pages__P_453_4.length * carouselSize.width + "px");
+        qx.bom.element.Style.set(this.__carouselScroller__P_454_6.getContentElement(), "width", this.__pages__P_454_4.length * carouselSize.width + "px");
 
-        for (var i = 0; i < this.__pages__P_453_4.length; i++) {
-          var pageContentElement = this.__pages__P_453_4[i].getContentElement();
+        for (var i = 0; i < this.__pages__P_454_4.length; i++) {
+          var pageContentElement = this.__pages__P_454_4[i].getContentElement();
 
           qx.bom.element.Style.set(pageContentElement, "width", carouselSize.width + "px");
           qx.bom.element.Style.set(pageContentElement, "height", carouselSize.height + "px");
         }
 
-        if (this.__pages__P_453_4.length == 1) {
-          this.__pagination__P_453_7.exclude();
+        if (this.__pages__P_454_4.length == 1) {
+          this.__pagination__P_454_7.exclude();
         } else {
           if (this.isShowPagination()) {
-            this.__pagination__P_453_7.show();
+            this.__pagination__P_454_7.show();
           }
         }
 
@@ -472,7 +472,7 @@
        * Synchronizes the positions of the scroller to the current shown page index.
        */
       _refreshScrollerPosition: function _refreshScrollerPosition() {
-        this.__carouselScrollerWidth__P_453_8 = qx.bom.element.Dimension.getWidth(this.__carouselScroller__P_453_6.getContentElement());
+        this.__carouselScrollerWidth__P_454_8 = qx.bom.element.Dimension.getWidth(this.__carouselScroller__P_454_6.getContentElement());
 
         this._scrollToPage(this.getCurrentIndex());
       },
@@ -493,7 +493,7 @@
        * @return {Number} the horizontal position
        */
       _getScrollerOffset: function _getScrollerOffset() {
-        var transformMatrix = qx.bom.element.Style.get(this.__carouselScroller__P_453_6.getContentElement(), "transform");
+        var transformMatrix = qx.bom.element.Style.get(this.__carouselScroller__P_454_6.getContentElement(), "transform");
         var transformValueArray = transformMatrix.substr(7, transformMatrix.length - 8).split(', ');
         var i = 4; // Check if MSCSSMatrix is used.
 
@@ -513,11 +513,11 @@
           return;
         }
 
-        this.__lastOffset__P_453_2[0] = this._getScrollerOffset();
-        this.__isPageScrollTarget__P_453_11 = null;
-        this.__boundsX__P_453_3[0] = -this.__carouselScrollerWidth__P_453_8 + this.__carouselWidth__P_453_9;
+        this.__lastOffset__P_454_2[0] = this._getScrollerOffset();
+        this.__isPageScrollTarget__P_454_11 = null;
+        this.__boundsX__P_454_3[0] = -this.__carouselScrollerWidth__P_454_8 + this.__carouselWidth__P_454_9;
 
-        this._updateScrollerPosition(this.__lastOffset__P_453_2[0]);
+        this._updateScrollerPosition(this.__lastOffset__P_454_2[0]);
       },
 
       /**
@@ -531,25 +531,25 @@
 
         this._setTransitionDuration(0);
 
-        this.__deltaX__P_453_12 = evt.getDelta().x;
-        this.__deltaY__P_453_13 = evt.getDelta().y;
+        this.__deltaX__P_454_12 = evt.getDelta().x;
+        this.__deltaY__P_454_13 = evt.getDelta().y;
 
-        if (this.__isPageScrollTarget__P_453_11 === null) {
-          this.__isPageScrollTarget__P_453_11 = evt.getDelta().axis == "y";
+        if (this.__isPageScrollTarget__P_454_11 === null) {
+          this.__isPageScrollTarget__P_454_11 = evt.getDelta().axis == "y";
         }
 
-        if (!this.__isPageScrollTarget__P_453_11) {
-          this.__onMoveOffset__P_453_1[0] = Math.floor(this.__deltaX__P_453_12 + this.__lastOffset__P_453_2[0]);
+        if (!this.__isPageScrollTarget__P_454_11) {
+          this.__onMoveOffset__P_454_1[0] = Math.floor(this.__deltaX__P_454_12 + this.__lastOffset__P_454_2[0]);
 
-          if (this.__onMoveOffset__P_453_1[0] >= this.__boundsX__P_453_3[1]) {
-            this.__onMoveOffset__P_453_1[0] = this.__boundsX__P_453_3[1];
+          if (this.__onMoveOffset__P_454_1[0] >= this.__boundsX__P_454_3[1]) {
+            this.__onMoveOffset__P_454_1[0] = this.__boundsX__P_454_3[1];
           }
 
-          if (this.__onMoveOffset__P_453_1[0] <= this.__boundsX__P_453_3[0]) {
-            this.__onMoveOffset__P_453_1[0] = this.__boundsX__P_453_3[0];
+          if (this.__onMoveOffset__P_454_1[0] <= this.__boundsX__P_454_3[0]) {
+            this.__onMoveOffset__P_454_1[0] = this.__boundsX__P_454_3[0];
           }
 
-          this._updateScrollerPosition(this.__onMoveOffset__P_453_1[0]);
+          this._updateScrollerPosition(this.__onMoveOffset__P_454_1[0]);
 
           evt.preventDefault();
         }
@@ -579,7 +579,7 @@
         }
 
         if (evt.getDuration() < 750 && Math.abs(evt.getDistance()) > 50) {
-          var duration = this._calculateTransitionDuration(this.__deltaX__P_453_12, evt.getDuration());
+          var duration = this._calculateTransitionDuration(this.__deltaX__P_454_12, evt.getDuration());
 
           duration = Math.min(this.getTransitionDuration(), duration);
 
@@ -603,7 +603,7 @@
       * @return {Number} the transition duration.
       */
       _calculateTransitionDuration: function _calculateTransitionDuration(deltaX, duration) {
-        var distanceX = this.__carouselWidth__P_453_9 - Math.abs(deltaX);
+        var distanceX = this.__carouselWidth__P_454_9 - Math.abs(deltaX);
         var transitionDuration = distanceX / Math.abs(deltaX) * duration;
         return transitionDuration / 1000;
       },
@@ -625,7 +625,7 @@
       * @param value {Number} the target value of the transitionDuration.
       */
       _setTransitionDuration: function _setTransitionDuration(value) {
-        qx.bom.element.Style.set(this.__carouselScroller__P_453_6.getContentElement(), "transitionDuration", value + "s");
+        qx.bom.element.Style.set(this.__carouselScroller__P_454_6.getContentElement(), "transitionDuration", value + "s");
       },
 
       /**
@@ -639,9 +639,9 @@
         var leastDistance = 10000;
         var nearestPageIndex = 0; // Determine nearest snapPoint.
 
-        for (var i = 0; i < this.__pages__P_453_4.length; i++) {
-          var snapPoint = -i * this.__carouselWidth__P_453_9;
-          var distance = this.__onMoveOffset__P_453_1[0] - snapPoint;
+        for (var i = 0; i < this.__pages__P_454_4.length; i++) {
+          var snapPoint = -i * this.__carouselWidth__P_454_9;
+          var distance = this.__onMoveOffset__P_454_1[0] - snapPoint;
 
           if (Math.abs(distance) < leastDistance) {
             leastDistance = Math.abs(distance);
@@ -663,36 +663,36 @@
        * @param newActiveIndex {Integer} Index of paginationLabel which should have active state
        */
       _updatePagination: function _updatePagination(newActiveIndex) {
-        for (var i = 0; i < this.__paginationLabels__P_453_5.length; i++) {
-          this.__paginationLabels__P_453_5[i].removeCssClass("active");
+        for (var i = 0; i < this.__paginationLabels__P_454_5.length; i++) {
+          this.__paginationLabels__P_454_5[i].removeCssClass("active");
         }
 
-        var newActiveLabel = this.__paginationLabels__P_453_5[newActiveIndex];
+        var newActiveLabel = this.__paginationLabels__P_454_5[newActiveIndex];
 
         if (newActiveLabel && newActiveLabel.getContainerElement()) {
           newActiveLabel.addCssClass("active");
         }
 
-        if (this.__paginationLabels__P_453_5.length) {
-          var paginationStyle = window.getComputedStyle(this.__pagination__P_453_7.getContentElement());
+        if (this.__paginationLabels__P_454_5.length) {
+          var paginationStyle = window.getComputedStyle(this.__pagination__P_454_7.getContentElement());
           var paginationWidth = parseFloat(paginationStyle.width, 10);
 
           if (isNaN(paginationWidth)) {
             return;
           }
 
-          var paginationLabelWidth = paginationWidth / this.__paginationLabels__P_453_5.length;
+          var paginationLabelWidth = paginationWidth / this.__paginationLabels__P_454_5.length;
           var left = null;
-          var translate = this.__carouselWidth__P_453_9 / 2 - newActiveIndex * paginationLabelWidth - paginationLabelWidth / 2;
+          var translate = this.__carouselWidth__P_454_9 / 2 - newActiveIndex * paginationLabelWidth - paginationLabelWidth / 2;
 
-          if (paginationWidth < this.__carouselWidth__P_453_9) {
-            left = this.__carouselWidth__P_453_9 / 2 - paginationWidth / 2 + "px";
+          if (paginationWidth < this.__carouselWidth__P_454_9) {
+            left = this.__carouselWidth__P_454_9 / 2 - paginationWidth / 2 + "px";
             translate = 0;
           }
 
-          qx.bom.element.Style.set(this.__pagination__P_453_7.getContentElement(), "left", left);
+          qx.bom.element.Style.set(this.__pagination__P_454_7.getContentElement(), "left", left);
 
-          this.__pagination__P_453_7.setTranslateX(translate);
+          this.__pagination__P_454_7.setTranslateX(translate);
         }
       },
 
@@ -701,26 +701,26 @@
        * @param x {Integer} scroller's x position.
        */
       _updateScrollerPosition: function _updateScrollerPosition(x) {
-        if (isNaN(x) || this.__carouselScroller__P_453_6.getContentElement() === null) {
+        if (isNaN(x) || this.__carouselScroller__P_454_6.getContentElement() === null) {
           return;
         }
 
-        this.__carouselScroller__P_453_6.setTranslateX(x);
+        this.__carouselScroller__P_454_6.setTranslateX(x);
       },
 
       /**
        * Remove all listeners.
        */
       _removeListeners: function _removeListeners() {
-        this.__carouselScroller__P_453_6.removeListener("pointerdown", this._onPointerDown, this);
+        this.__carouselScroller__P_454_6.removeListener("pointerdown", this._onPointerDown, this);
 
-        this.__carouselScroller__P_453_6.removeListener("track", this._onTrack, this);
+        this.__carouselScroller__P_454_6.removeListener("track", this._onTrack, this);
 
-        this.__carouselScroller__P_453_6.removeListener("pointerup", this._onPointerUp, this);
+        this.__carouselScroller__P_454_6.removeListener("pointerup", this._onPointerUp, this);
 
-        this.__carouselScroller__P_453_6.removeListener("swipe", this._onSwipe, this);
+        this.__carouselScroller__P_454_6.removeListener("swipe", this._onSwipe, this);
 
-        this.__carouselScroller__P_453_6.removeListener("touchmove", qx.bom.Event.preventDefault, this);
+        this.__carouselScroller__P_454_6.removeListener("touchmove", qx.bom.Event.preventDefault, this);
 
         this.removeListener("appear", this._onContainerUpdate, this);
         qx.event.Registration.removeListener(window, "orientationchange", this._onContainerUpdate, this);
@@ -731,14 +731,14 @@
     destruct: function destruct() {
       this._removeListeners();
 
-      this._disposeObjects("__carouselScroller__P_453_6", " __pagination");
+      this._disposeObjects("__carouselScroller__P_454_6", " __pagination");
 
       qx.util.DisposeUtil.destroyContainer(this);
-      qx.util.DisposeUtil.disposeArray(this, "__paginationLabels__P_453_5");
-      this.__pages__P_453_4 = this.__paginationLabels__P_453_5 = this.__snapPointsX__P_453_0 = this.__onMoveOffset__P_453_1 = this.__lastOffset__P_453_2 = this.__boundsX__P_453_3 = this.__isPageScrollTarget__P_453_11 = null;
+      qx.util.DisposeUtil.disposeArray(this, "__paginationLabels__P_454_5");
+      this.__pages__P_454_4 = this.__paginationLabels__P_454_5 = this.__snapPointsX__P_454_0 = this.__onMoveOffset__P_454_1 = this.__lastOffset__P_454_2 = this.__boundsX__P_454_3 = this.__isPageScrollTarget__P_454_11 = null;
     }
   });
   qx.ui.mobile.container.Carousel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Carousel.js.map?dt=1598908888173
+//# sourceMappingURL=Carousel.js.map?dt=1599312856365

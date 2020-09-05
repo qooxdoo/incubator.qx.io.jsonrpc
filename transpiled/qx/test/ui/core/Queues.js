@@ -42,41 +42,41 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __widget1__P_292_0: null,
-      __widget2__P_292_1: null,
-      __widget3__P_292_2: null,
-      __widget4__P_292_3: null,
+      __widget1__P_293_0: null,
+      __widget2__P_293_1: null,
+      __widget3__P_293_2: null,
+      __widget4__P_293_3: null,
       setUp: function setUp() {
         // ensure an empty dispose queue before starting the test
         qx.ui.core.queue.Manager.flush();
-        this.__widget1__P_292_0 = new qx.ui.core.Widget();
-        this.__widget1__P_292_0.$$hash = 10e5;
-        this.__widget2__P_292_1 = new qx.ui.core.Widget();
-        this.__widget2__P_292_1.$$hash = 1000001;
-        this.__widget3__P_292_2 = new qx.ui.core.Widget();
-        this.__widget3__P_292_2.$$hash = 1000002;
-        this.__widget4__P_292_3 = new qx.ui.core.Widget();
-        this.__widget4__P_292_3.$$hash = 1000003;
+        this.__widget1__P_293_0 = new qx.ui.core.Widget();
+        this.__widget1__P_293_0.$$hash = 10e5;
+        this.__widget2__P_293_1 = new qx.ui.core.Widget();
+        this.__widget2__P_293_1.$$hash = 1000001;
+        this.__widget3__P_293_2 = new qx.ui.core.Widget();
+        this.__widget3__P_293_2.$$hash = 1000002;
+        this.__widget4__P_293_3 = new qx.ui.core.Widget();
+        this.__widget4__P_293_3.$$hash = 1000003;
       },
       tearDown: function tearDown() {
         // dispose the widgets
-        this.__widget1__P_292_0.dispose();
+        this.__widget1__P_293_0.dispose();
 
-        this.__widget2__P_292_1.dispose();
+        this.__widget2__P_293_1.dispose();
 
-        this.__widget3__P_292_2.dispose();
+        this.__widget3__P_293_2.dispose();
 
-        this.__widget4__P_292_3.dispose();
+        this.__widget4__P_293_3.dispose();
       },
       testWidgetOrder: function testWidgetOrder() {
-        qx.ui.core.queue.Widget.add(this.__widget4__P_292_3);
-        qx.ui.core.queue.Widget.add(this.__widget3__P_292_2);
-        qx.ui.core.queue.Widget.add(this.__widget2__P_292_1);
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0);
-        var spy1 = this.spy(this.__widget1__P_292_0, "syncWidget");
-        var spy2 = this.spy(this.__widget2__P_292_1, "syncWidget");
-        var spy3 = this.spy(this.__widget3__P_292_2, "syncWidget");
-        var spy4 = this.spy(this.__widget4__P_292_3, "syncWidget");
+        qx.ui.core.queue.Widget.add(this.__widget4__P_293_3);
+        qx.ui.core.queue.Widget.add(this.__widget3__P_293_2);
+        qx.ui.core.queue.Widget.add(this.__widget2__P_293_1);
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0);
+        var spy1 = this.spy(this.__widget1__P_293_0, "syncWidget");
+        var spy2 = this.spy(this.__widget2__P_293_1, "syncWidget");
+        var spy3 = this.spy(this.__widget3__P_293_2, "syncWidget");
+        var spy4 = this.spy(this.__widget4__P_293_3, "syncWidget");
         qx.ui.core.queue.Widget.flush();
         this.assertCalledOnce(spy1);
         this.assertCalledOnce(spy2);
@@ -85,14 +85,14 @@
         this.assertCallOrder(spy4, spy3, spy2, spy1);
       },
       testAppearanceOrder: function testAppearanceOrder() {
-        qx.ui.core.queue.Appearance.add(this.__widget4__P_292_3);
-        qx.ui.core.queue.Appearance.add(this.__widget3__P_292_2);
-        qx.ui.core.queue.Appearance.add(this.__widget2__P_292_1);
-        qx.ui.core.queue.Appearance.add(this.__widget1__P_292_0);
-        var spy1 = this.spy(this.__widget1__P_292_0, "syncAppearance");
-        var spy2 = this.spy(this.__widget2__P_292_1, "syncAppearance");
-        var spy3 = this.spy(this.__widget3__P_292_2, "syncAppearance");
-        var spy4 = this.spy(this.__widget4__P_292_3, "syncAppearance");
+        qx.ui.core.queue.Appearance.add(this.__widget4__P_293_3);
+        qx.ui.core.queue.Appearance.add(this.__widget3__P_293_2);
+        qx.ui.core.queue.Appearance.add(this.__widget2__P_293_1);
+        qx.ui.core.queue.Appearance.add(this.__widget1__P_293_0);
+        var spy1 = this.spy(this.__widget1__P_293_0, "syncAppearance");
+        var spy2 = this.spy(this.__widget2__P_293_1, "syncAppearance");
+        var spy3 = this.spy(this.__widget3__P_293_2, "syncAppearance");
+        var spy4 = this.spy(this.__widget4__P_293_3, "syncAppearance");
         var stub = this.stub(qx.ui.core.queue.Visibility, "isVisible").returns(true);
         qx.ui.core.queue.Appearance.flush();
         stub.restore();
@@ -103,14 +103,14 @@
         this.assertCallOrder(spy4, spy3, spy2, spy1);
       },
       testDisposeOrder: function testDisposeOrder() {
-        qx.ui.core.queue.Dispose.add(this.__widget4__P_292_3);
-        qx.ui.core.queue.Dispose.add(this.__widget3__P_292_2);
-        qx.ui.core.queue.Dispose.add(this.__widget2__P_292_1);
-        qx.ui.core.queue.Dispose.add(this.__widget1__P_292_0);
-        var spy1 = this.spy(this.__widget1__P_292_0, "dispose");
-        var spy2 = this.spy(this.__widget2__P_292_1, "dispose");
-        var spy3 = this.spy(this.__widget3__P_292_2, "dispose");
-        var spy4 = this.spy(this.__widget4__P_292_3, "dispose");
+        qx.ui.core.queue.Dispose.add(this.__widget4__P_293_3);
+        qx.ui.core.queue.Dispose.add(this.__widget3__P_293_2);
+        qx.ui.core.queue.Dispose.add(this.__widget2__P_293_1);
+        qx.ui.core.queue.Dispose.add(this.__widget1__P_293_0);
+        var spy1 = this.spy(this.__widget1__P_293_0, "dispose");
+        var spy2 = this.spy(this.__widget2__P_293_1, "dispose");
+        var spy3 = this.spy(this.__widget3__P_293_2, "dispose");
+        var spy4 = this.spy(this.__widget4__P_293_3, "dispose");
         qx.ui.core.queue.Dispose.flush();
         this.assertCalledOnce(spy1);
         this.assertCalledOnce(spy2);
@@ -119,14 +119,14 @@
         this.assertCallOrder(spy4, spy3, spy2, spy1);
       },
       testVisibilityOrder: function testVisibilityOrder() {
-        qx.ui.core.queue.Visibility.add(this.__widget4__P_292_3);
-        qx.ui.core.queue.Visibility.add(this.__widget3__P_292_2);
-        qx.ui.core.queue.Visibility.add(this.__widget2__P_292_1);
-        qx.ui.core.queue.Visibility.add(this.__widget1__P_292_0);
-        var spy1 = this.spy(this.__widget1__P_292_0, "isRootWidget");
-        var spy2 = this.spy(this.__widget2__P_292_1, "isRootWidget");
-        var spy3 = this.spy(this.__widget3__P_292_2, "isRootWidget");
-        var spy4 = this.spy(this.__widget4__P_292_3, "isRootWidget");
+        qx.ui.core.queue.Visibility.add(this.__widget4__P_293_3);
+        qx.ui.core.queue.Visibility.add(this.__widget3__P_293_2);
+        qx.ui.core.queue.Visibility.add(this.__widget2__P_293_1);
+        qx.ui.core.queue.Visibility.add(this.__widget1__P_293_0);
+        var spy1 = this.spy(this.__widget1__P_293_0, "isRootWidget");
+        var spy2 = this.spy(this.__widget2__P_293_1, "isRootWidget");
+        var spy3 = this.spy(this.__widget3__P_293_2, "isRootWidget");
+        var spy4 = this.spy(this.__widget4__P_293_3, "isRootWidget");
         qx.ui.core.queue.Visibility.flush();
         this.assertCalledOnce(spy1);
         this.assertCalledOnce(spy2);
@@ -135,17 +135,17 @@
         this.assertCallOrder(spy4, spy3, spy2, spy1);
       },
       testWidgetAddJobs: function testWidgetAddJobs() {
-        qx.ui.core.queue.Widget.add(this.__widget4__P_292_3, "job4");
-        qx.ui.core.queue.Widget.add(this.__widget3__P_292_2, "job3");
-        qx.ui.core.queue.Widget.add(this.__widget2__P_292_1);
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job1");
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job1");
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job3");
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job2");
-        var spy1 = this.spy(this.__widget1__P_292_0, "syncWidget");
-        var spy2 = this.spy(this.__widget2__P_292_1, "syncWidget");
-        var spy3 = this.spy(this.__widget3__P_292_2, "syncWidget");
-        var spy4 = this.spy(this.__widget4__P_292_3, "syncWidget");
+        qx.ui.core.queue.Widget.add(this.__widget4__P_293_3, "job4");
+        qx.ui.core.queue.Widget.add(this.__widget3__P_293_2, "job3");
+        qx.ui.core.queue.Widget.add(this.__widget2__P_293_1);
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job1");
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job1");
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job3");
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job2");
+        var spy1 = this.spy(this.__widget1__P_293_0, "syncWidget");
+        var spy2 = this.spy(this.__widget2__P_293_1, "syncWidget");
+        var spy3 = this.spy(this.__widget3__P_293_2, "syncWidget");
+        var spy4 = this.spy(this.__widget4__P_293_3, "syncWidget");
         qx.ui.core.queue.Widget.flush();
         this.assertCalledOnce(spy1, "widgte1");
         this.assertCalledOnce(spy2, "widget2");
@@ -160,14 +160,14 @@
         this.assertTrue(spy4.args[0][0].job4);
       },
       testWidgetRemoveJobs: function testWidgetRemoveJobs() {
-        qx.ui.core.queue.Widget.add(this.__widget2__P_292_1);
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job1");
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job1");
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job3");
-        qx.ui.core.queue.Widget.add(this.__widget1__P_292_0, "job2");
-        qx.ui.core.queue.Widget.remove(this.__widget1__P_292_0, "job1");
-        var spy1 = this.spy(this.__widget1__P_292_0, "syncWidget");
-        var spy2 = this.spy(this.__widget2__P_292_1, "syncWidget");
+        qx.ui.core.queue.Widget.add(this.__widget2__P_293_1);
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job1");
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job1");
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job3");
+        qx.ui.core.queue.Widget.add(this.__widget1__P_293_0, "job2");
+        qx.ui.core.queue.Widget.remove(this.__widget1__P_293_0, "job1");
+        var spy1 = this.spy(this.__widget1__P_293_0, "syncWidget");
+        var spy2 = this.spy(this.__widget2__P_293_1, "syncWidget");
         qx.ui.core.queue.Widget.flush();
         this.assertCalledOnce(spy1, "widgte1");
         this.assertCalledOnce(spy2, "widget2");
@@ -181,4 +181,4 @@
   qx.test.ui.core.Queues.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Queues.js.map?dt=1598908873073
+//# sourceMappingURL=Queues.js.map?dt=1599312842634

@@ -37,11 +37,11 @@
        */
       testPrivatesRenaming: function testPrivatesRenaming() {
         // Can only fail in build version with all optimizations
-        this.assertEquals("__test a", this.__test__P_278_0(), "Variable in a string renamed!");
-        this.assertEquals("__test a test", this.__test__P_278_0() + " test", "Variable in a string renamed!");
+        this.assertEquals("__test a", this.__test__P_279_0(), "Variable in a string renamed!");
+        this.assertEquals("__test a test", this.__test__P_279_0() + " test", "Variable in a string renamed!");
       },
       // needed for testPrivatesRenaming
-      __test__P_278_0: function __test__P_278_0() {
+      __test__P_279_0: function __test__P_279_0() {
         return "__test a";
       }
     }
@@ -49,4 +49,4 @@
   qx.test.toolchain.PrivateOptimization.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PrivateOptimization.js.map?dt=1598908872004
+//# sourceMappingURL=PrivateOptimization.js.map?dt=1599312841695

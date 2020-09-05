@@ -56,8 +56,8 @@
       }
     },
     members: {
-      __itemRenderer__P_479_0: null,
-      __groupRenderer__P_479_1: null,
+      __itemRenderer__P_480_0: null,
+      __groupRenderer__P_480_1: null,
 
       /**
        * Sets the item renderer.
@@ -65,7 +65,7 @@
        * @param renderer {qx.ui.mobile.list.renderer.Abstract} The used item renderer
        */
       _setItemRenderer: function _setItemRenderer(renderer) {
-        this.__itemRenderer__P_479_0 = renderer;
+        this.__itemRenderer__P_480_0 = renderer;
       },
 
       /**
@@ -74,7 +74,7 @@
        * @return {qx.ui.mobile.list.renderer.Abstract} The used item renderer
        */
       _getItemRenderer: function _getItemRenderer() {
-        return this.__itemRenderer__P_479_0;
+        return this.__itemRenderer__P_480_0;
       },
 
       /**
@@ -82,7 +82,7 @@
       * @param renderer {qx.ui.mobile.list.renderer.group.Abstract} the group renderer.
       */
       _setGroupRenderer: function _setGroupRenderer(renderer) {
-        this.__groupRenderer__P_479_1 = renderer;
+        this.__groupRenderer__P_480_1 = renderer;
       },
 
       /**
@@ -90,7 +90,7 @@
       * @return {qx.ui.mobile.list.renderer.group.Abstract} the group renderer.
       */
       _getGroupRenderer: function _getGroupRenderer() {
-        return this.__groupRenderer__P_479_1;
+        return this.__groupRenderer__P_480_1;
       },
 
       /**
@@ -102,12 +102,12 @@
        * @return {Element} the list item element.
        */
       getItemElement: function getItemElement(data, row) {
-        this.__itemRenderer__P_479_0.reset();
+        this.__itemRenderer__P_480_0.reset();
 
         this._configureItem(data, row); // Clone the element and all it's events
 
 
-        var clone = qx.bom.Element.clone(this.__itemRenderer__P_479_0.getContainerElement(), true);
+        var clone = qx.bom.Element.clone(this.__itemRenderer__P_480_0.getContainerElement(), true);
         clone.setAttribute("data-row", row);
         return clone;
       },
@@ -121,12 +121,12 @@
        * @return {Element} the group item element.
        */
       getGroupElement: function getGroupElement(data, group) {
-        this.__groupRenderer__P_479_1.reset();
+        this.__groupRenderer__P_480_1.reset();
 
         this._configureGroupItem(data, group); // Clone the element and all it's events
 
 
-        var clone = qx.bom.Element.clone(this.__groupRenderer__P_479_1.getContainerElement(), true);
+        var clone = qx.bom.Element.clone(this.__groupRenderer__P_480_1.getContainerElement(), true);
         clone.removeAttribute("id");
         clone.setAttribute("data-group", group);
         return clone;
@@ -142,7 +142,7 @@
         var delegate = this.getDelegate();
 
         if (delegate != null && delegate.configureItem != null) {
-          delegate.configureItem(this.__itemRenderer__P_479_0, data, row);
+          delegate.configureItem(this.__itemRenderer__P_480_0, data, row);
         }
       },
 
@@ -155,7 +155,7 @@
         var configureGroupItem = qx.util.Delegate.getMethod(this.getDelegate(), "configureGroupItem");
 
         if (configureGroupItem) {
-          configureGroupItem(this.__groupRenderer__P_479_1, data, group);
+          configureGroupItem(this.__groupRenderer__P_480_1, data, group);
         }
       },
 
@@ -205,10 +205,10 @@
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__itemRenderer__P_479_0", "__groupRenderer__P_479_1");
+      this._disposeObjects("__itemRenderer__P_480_0", "__groupRenderer__P_480_1");
     }
   });
   qx.ui.mobile.list.provider.Provider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Provider.js.map?dt=1598908890183
+//# sourceMappingURL=Provider.js.map?dt=1599312858202

@@ -5,7 +5,7 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.io.Exception": {
+      "qx.io.exception.Exception": {
         "require": true
       }
     }
@@ -31,12 +31,13 @@
   ************************************************************************ */
 
   /**
-   * A class for representing errors that occurred on the jsonrpc server
+   * A class for representing errors that occurred on server and are handled
+   * according to the service protocol (JSON-RPC, GraphQL, etc.)
    */
-  qx.Class.define("qx.io.jsonrpc.exception.JsonRpc", {
-    extend: qx.io.Exception
+  qx.Class.define("qx.io.exception.Protocol", {
+    extend: qx.io.exception.Exception
   });
-  qx.io.jsonrpc.exception.JsonRpc.$$dbClassInfo = $$dbClassInfo;
+  qx.io.exception.Protocol.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=JsonRpc.js.map?dt=1598908857587
+//# sourceMappingURL=Protocol.js.map?dt=1599312828616

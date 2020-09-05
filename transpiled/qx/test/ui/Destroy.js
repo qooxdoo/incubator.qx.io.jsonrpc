@@ -184,7 +184,7 @@
         this.assertDestroy(function () {
           var widget = new qx.ui.form.MenuButton();
 
-          var menu = this.__createMenu__P_281_0();
+          var menu = this.__createMenu__P_282_0();
 
           widget.setMenu(menu);
           this.getRoot().add(widget);
@@ -306,7 +306,7 @@
         this.assertDestroy(function () {
           var widget = new qx.ui.toolbar.MenuButton("juhu");
 
-          var menu = this.__createMenu__P_281_0();
+          var menu = this.__createMenu__P_282_0();
 
           widget.setMenu(menu);
           this.getRoot().add(widget);
@@ -317,7 +317,7 @@
         this.assertDestroy(function () {
           var widget = new qx.ui.toolbar.SplitButton("Juhu");
 
-          var menu = this.__createMenu__P_281_0();
+          var menu = this.__createMenu__P_282_0();
 
           widget.setMenu(menu);
           this.getRoot().add(widget);
@@ -378,7 +378,7 @@
           widget.destroy();
         }, this, "Dispose window");
       },
-      __createMenu__P_281_0: function __createMenu__P_281_0() {
+      __createMenu__P_282_0: function __createMenu__P_282_0() {
         var menu = new qx.ui.menu.Menu();
         menu.add(new qx.ui.menu.Button("Juhu"));
         menu.add(new qx.ui.menu.CheckBox("Juhu"));
@@ -391,4 +391,4 @@
   qx.test.ui.Destroy.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Destroy.js.map?dt=1598908872312
+//# sourceMappingURL=Destroy.js.map?dt=1599312841962

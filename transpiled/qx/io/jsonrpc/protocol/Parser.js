@@ -8,7 +8,7 @@
       "qx.core.Object": {
         "require": true
       },
-      "qx.io.jsonrpc.exception.Transport": {},
+      "qx.io.exception.Transport": {},
       "qx.lang.Type": {},
       "qx.io.jsonrpc.protocol.Batch": {},
       "qx.io.jsonrpc.protocol.Result": {},
@@ -53,19 +53,19 @@
        *
        * @param {String} message
        * @return {qx.io.jsonrpc.protocol.Message}
-       * @throws {qx.io.jsonrpc.exception.Transport}
+       * @throws {qx.io.exception.Transport}
        */
       parse(message) {
         try {
           message = JSON.parse(message);
         } catch (e) {
-          throw new qx.io.jsonrpc.exception.Transport(e.toString(), qx.io.jsonrpc.exception.Transport.INVALID_JSON, {
+          throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.INVALID_JSON, {
             message
           });
         }
 
         if (message === null) {
-          throw new qx.io.jsonrpc.exception.Transport("No data", qx.io.jsonrpc.exception.Transport.NO_DATA);
+          throw new qx.io.exception.Transport("No data", qx.io.exception.Transport.NO_DATA);
         } // batch
 
 
@@ -100,7 +100,7 @@
           return new qx.io.jsonrpc.protocol.Notification(method, params);
         }
 
-        throw new qx.io.jsonrpc.exception.Transport("Cannot parse message data.", qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA, {
+        throw new qx.io.exception.Transport("Cannot parse message data.", qx.io.exception.Transport.INVALID_MSG_DATA, {
           message
         });
       }
@@ -110,4 +110,4 @@
   qx.io.jsonrpc.protocol.Parser.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Parser.js.map?dt=1598908857740
+//# sourceMappingURL=Parser.js.map?dt=1599312828915

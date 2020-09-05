@@ -61,27 +61,27 @@
      */
     construct: function construct(rowCount, columnCount, cellHeight, cellWidth) {
       qx.ui.core.Widget.constructor.call(this);
-      this.__rowConfig__P_548_0 = new qx.ui.virtual.core.Axis(cellHeight, rowCount);
-      this.__columnConfig__P_548_1 = new qx.ui.virtual.core.Axis(cellWidth, columnCount);
-      this.__scrollTop__P_548_2 = 0;
-      this.__scrollLeft__P_548_3 = 0;
-      this.__paneHeight__P_548_4 = 0;
-      this.__paneWidth__P_548_5 = 0;
-      this.__layerWindow__P_548_6 = {};
-      this.__jobs__P_548_7 = {}; // create layer container. The container does not have a layout manager
+      this.__rowConfig__P_549_0 = new qx.ui.virtual.core.Axis(cellHeight, rowCount);
+      this.__columnConfig__P_549_1 = new qx.ui.virtual.core.Axis(cellWidth, columnCount);
+      this.__scrollTop__P_549_2 = 0;
+      this.__scrollLeft__P_549_3 = 0;
+      this.__paneHeight__P_549_4 = 0;
+      this.__paneWidth__P_549_5 = 0;
+      this.__layerWindow__P_549_6 = {};
+      this.__jobs__P_549_7 = {}; // create layer container. The container does not have a layout manager
       // layers are positioned using "setUserBounds"
 
-      this.__layerContainer__P_548_8 = new qx.ui.container.Composite();
+      this.__layerContainer__P_549_8 = new qx.ui.container.Composite();
 
-      this.__layerContainer__P_548_8.setUserBounds(0, 0, 0, 0);
+      this.__layerContainer__P_549_8.setUserBounds(0, 0, 0, 0);
 
-      this._add(this.__layerContainer__P_548_8);
+      this._add(this.__layerContainer__P_549_8);
 
-      this.__layers__P_548_9 = [];
+      this.__layers__P_549_9 = [];
 
-      this.__rowConfig__P_548_0.addListener("change", this.fullUpdate, this);
+      this.__rowConfig__P_549_0.addListener("change", this.fullUpdate, this);
 
-      this.__columnConfig__P_548_1.addListener("change", this.fullUpdate, this);
+      this.__columnConfig__P_549_1.addListener("change", this.fullUpdate, this);
 
       this.addListener("resize", this._onResize, this);
       this.addListenerOnce("appear", this._onAppear, this);
@@ -122,20 +122,20 @@
       }
     },
     members: {
-      __rowConfig__P_548_0: null,
-      __columnConfig__P_548_1: null,
-      __scrollTop__P_548_2: null,
-      __scrollLeft__P_548_3: null,
-      __paneHeight__P_548_4: null,
-      __paneWidth__P_548_5: null,
-      __layerWindow__P_548_6: null,
-      __jobs__P_548_7: null,
-      __layerContainer__P_548_8: null,
-      __layers__P_548_9: null,
-      __dontFireUpdate__P_548_10: null,
-      __columnSizes__P_548_11: null,
-      __rowSizes__P_548_12: null,
-      __pointerDownCoords__P_548_13: null,
+      __rowConfig__P_549_0: null,
+      __columnConfig__P_549_1: null,
+      __scrollTop__P_549_2: null,
+      __scrollLeft__P_549_3: null,
+      __paneHeight__P_549_4: null,
+      __paneWidth__P_549_5: null,
+      __layerWindow__P_549_6: null,
+      __jobs__P_549_7: null,
+      __layerContainer__P_549_8: null,
+      __layers__P_549_9: null,
+      __dontFireUpdate__P_549_10: null,
+      __columnSizes__P_549_11: null,
+      __rowSizes__P_549_12: null,
+      __pointerDownCoords__P_549_13: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -149,7 +149,7 @@
        * @return {qx.ui.virtual.core.Axis} The row configuration.
        */
       getRowConfig: function getRowConfig() {
-        return this.__rowConfig__P_548_0;
+        return this.__rowConfig__P_549_0;
       },
 
       /**
@@ -158,7 +158,7 @@
        * @return {qx.ui.virtual.core.Axis} The column configuration.
        */
       getColumnConfig: function getColumnConfig() {
-        return this.__columnConfig__P_548_1;
+        return this.__columnConfig__P_549_1;
       },
 
       /*
@@ -173,7 +173,7 @@
        * @return {Object[]} The layer container array.
        */
       getChildren: function getChildren() {
-        return [this.__layerContainer__P_548_8];
+        return [this.__layerContainer__P_549_8];
       },
 
       /**
@@ -186,11 +186,11 @@
           this.assertInterface(layer, qx.ui.virtual.core.ILayer);
         }
 
-        this.__layers__P_548_9.push(layer);
+        this.__layers__P_549_9.push(layer);
 
         layer.setUserBounds(0, 0, 0, 0);
 
-        this.__layerContainer__P_548_8.add(layer);
+        this.__layerContainer__P_549_8.add(layer);
       },
 
       /**
@@ -199,7 +199,7 @@
        * @return {qx.ui.virtual.core.ILayer[]} List of the pane's layers.
        */
       getLayers: function getLayers() {
-        return this.__layers__P_548_9;
+        return this.__layers__P_549_9;
       },
 
       /**
@@ -210,8 +210,8 @@
       getVisibleLayers: function getVisibleLayers() {
         var layers = [];
 
-        for (var i = 0; i < this.__layers__P_548_9.length; i++) {
-          var layer = this.__layers__P_548_9[i];
+        for (var i = 0; i < this.__layers__P_549_9.length; i++) {
+          var layer = this.__layers__P_549_9[i];
 
           if (layer.isVisible()) {
             layers.push(layer);
@@ -236,7 +236,7 @@
         var paneSize = this.getInnerSize();
 
         if (paneSize) {
-          return Math.max(0, this.__columnConfig__P_548_1.getTotalSize() - paneSize.width);
+          return Math.max(0, this.__columnConfig__P_549_1.getTotalSize() - paneSize.width);
         }
 
         return 0;
@@ -251,7 +251,7 @@
         var paneSize = this.getInnerSize();
 
         if (paneSize) {
-          return Math.max(0, this.__rowConfig__P_548_0.getTotalSize() - paneSize.height);
+          return Math.max(0, this.__rowConfig__P_549_0.getTotalSize() - paneSize.height);
         }
 
         return 0;
@@ -271,9 +271,9 @@
           value = max;
         }
 
-        if (this.__scrollTop__P_548_2 !== value) {
-          var old = this.__scrollTop__P_548_2;
-          this.__scrollTop__P_548_2 = value;
+        if (this.__scrollTop__P_549_2 !== value) {
+          var old = this.__scrollTop__P_549_2;
+          this.__scrollTop__P_549_2 = value;
 
           this._deferredUpdateScrollPosition();
 
@@ -287,7 +287,7 @@
        * @return {Integer} The vertical scroll offset.
        */
       getScrollY: function getScrollY() {
-        return this.__scrollTop__P_548_2;
+        return this.__scrollTop__P_549_2;
       },
 
       /**
@@ -304,9 +304,9 @@
           value = max;
         }
 
-        if (value !== this.__scrollLeft__P_548_3) {
-          var old = this.__scrollLeft__P_548_3;
-          this.__scrollLeft__P_548_3 = value;
+        if (value !== this.__scrollLeft__P_549_3) {
+          var old = this.__scrollLeft__P_549_3;
+          this.__scrollLeft__P_549_3 = value;
 
           this._deferredUpdateScrollPosition();
 
@@ -320,7 +320,7 @@
        * @return {Integer} The horizontal scroll offset.
        */
       getScrollX: function getScrollX() {
-        return this.__scrollLeft__P_548_3;
+        return this.__scrollLeft__P_549_3;
       },
 
       /**
@@ -331,8 +331,8 @@
        */
       getScrollSize: function getScrollSize() {
         return {
-          width: this.__columnConfig__P_548_1.getTotalSize(),
-          height: this.__rowConfig__P_548_0.getTotalSize()
+          width: this.__columnConfig__P_549_1.getTotalSize(),
+          height: this.__rowConfig__P_549_0.getTotalSize()
         };
       },
 
@@ -360,9 +360,9 @@
           return;
         }
 
-        var itemTop = this.__rowConfig__P_548_0.getItemPosition(row);
+        var itemTop = this.__rowConfig__P_549_0.getItemPosition(row);
 
-        var itemBottom = itemTop + this.__rowConfig__P_548_0.getItemSize(row);
+        var itemBottom = itemTop + this.__rowConfig__P_549_0.getItemSize(row);
 
         var scrollTop = this.getScrollY();
 
@@ -391,9 +391,9 @@
           return;
         }
 
-        var itemLeft = this.__columnConfig__P_548_1.getItemPosition(column);
+        var itemLeft = this.__columnConfig__P_549_1.getItemPosition(column);
 
-        var itemRight = itemLeft + this.__columnConfig__P_548_1.getItemSize(column);
+        var itemRight = itemLeft + this.__columnConfig__P_549_1.getItemSize(column);
 
         var scrollLeft = this.getScrollX();
 
@@ -455,8 +455,8 @@
           return null;
         }
 
-        rowData = this.__rowConfig__P_548_0.getItemAtPosition(this.getScrollY() + documentY - paneLocation.top);
-        columnData = this.__columnConfig__P_548_1.getItemAtPosition(this.getScrollX() + documentX - paneLocation.left);
+        rowData = this.__rowConfig__P_549_0.getItemAtPosition(this.getScrollY() + documentY - paneLocation.top);
+        columnData = this.__columnConfig__P_549_1.getItemAtPosition(this.getScrollX() + documentX - paneLocation.left);
 
         if (!rowData || !columnData) {
           return null;
@@ -501,14 +501,14 @@
           return;
         }
 
-        var paneRight = this.__scrollLeft__P_548_3 + bounds.width;
-        var rightAvailable = this.__paneWidth__P_548_5 - paneRight;
+        var paneRight = this.__scrollLeft__P_549_3 + bounds.width;
+        var rightAvailable = this.__paneWidth__P_549_5 - paneRight;
 
-        if (this.__scrollLeft__P_548_3 - this.__layerWindow__P_548_6.left < Math.min(this.__scrollLeft__P_548_3, minLeft) || this.__layerWindow__P_548_6.right - paneRight < Math.min(rightAvailable, minRight)) {
-          var left = Math.min(this.__scrollLeft__P_548_3, maxLeft);
+        if (this.__scrollLeft__P_549_3 - this.__layerWindow__P_549_6.left < Math.min(this.__scrollLeft__P_549_3, minLeft) || this.__layerWindow__P_549_6.right - paneRight < Math.min(rightAvailable, minRight)) {
+          var left = Math.min(this.__scrollLeft__P_549_3, maxLeft);
           var right = Math.min(rightAvailable, maxRight);
 
-          this._setLayerWindow(layers, this.__scrollLeft__P_548_3 - left, this.__scrollTop__P_548_2, bounds.width + left + right, bounds.height, false);
+          this._setLayerWindow(layers, this.__scrollLeft__P_549_3 - left, this.__scrollTop__P_549_2, bounds.width + left + right, bounds.height, false);
         }
       },
 
@@ -539,14 +539,14 @@
           return;
         }
 
-        var paneBottom = this.__scrollTop__P_548_2 + bounds.height;
-        var belowAvailable = this.__paneHeight__P_548_4 - paneBottom;
+        var paneBottom = this.__scrollTop__P_549_2 + bounds.height;
+        var belowAvailable = this.__paneHeight__P_549_4 - paneBottom;
 
-        if (this.__scrollTop__P_548_2 - this.__layerWindow__P_548_6.top < Math.min(this.__scrollTop__P_548_2, minAbove) || this.__layerWindow__P_548_6.bottom - paneBottom < Math.min(belowAvailable, minBelow)) {
-          var above = Math.min(this.__scrollTop__P_548_2, maxAbove);
+        if (this.__scrollTop__P_549_2 - this.__layerWindow__P_549_6.top < Math.min(this.__scrollTop__P_549_2, minAbove) || this.__layerWindow__P_549_6.bottom - paneBottom < Math.min(belowAvailable, minBelow)) {
+          var above = Math.min(this.__scrollTop__P_549_2, maxAbove);
           var below = Math.min(belowAvailable, maxBelow);
 
-          this._setLayerWindow(layers, this.__scrollLeft__P_548_3, this.__scrollTop__P_548_2 - above, bounds.width, bounds.height + above + below, false);
+          this._setLayerWindow(layers, this.__scrollLeft__P_549_3, this.__scrollTop__P_549_2 - above, bounds.width, bounds.height + above + below, false);
         }
       },
 
@@ -563,11 +563,11 @@
        */
       _onResize: function _onResize() {
         if (this.getContentElement().getDomElement()) {
-          this.__dontFireUpdate__P_548_10 = true;
+          this.__dontFireUpdate__P_549_10 = true;
 
           this._updateScrollPosition();
 
-          this.__dontFireUpdate__P_548_10 = null;
+          this.__dontFireUpdate__P_549_10 = null;
           this.fireEvent("update");
         }
       },
@@ -585,7 +585,7 @@
        * @param e {qx.event.type.Pointer} The incoming pointer event.
        */
       _onPointerDown: function _onPointerDown(e) {
-        this.__pointerDownCoords__P_548_13 = this.getCellAtPosition(e.getDocumentLeft(), e.getDocumentTop());
+        this.__pointerDownCoords__P_549_13 = this.getCellAtPosition(e.getDocumentLeft(), e.getDocumentTop());
       },
 
       /**
@@ -594,7 +594,7 @@
        * @param e {qx.event.type.Pointer} The incoming pointer event.
        */
       _onTap: function _onTap(e) {
-        this.__handlePointerCellEvent__P_548_14(e, "cellTap");
+        this.__handlePointerCellEvent__P_549_14(e, "cellTap");
       },
 
       /**
@@ -603,7 +603,7 @@
        * @param e {qx.event.type.Pointer} The incoming pointer event.
        */
       _onContextmenu: function _onContextmenu(e) {
-        this.__handlePointerCellEvent__P_548_14(e, "cellContextmenu");
+        this.__handlePointerCellEvent__P_549_14(e, "cellContextmenu");
       },
 
       /**
@@ -612,7 +612,7 @@
        * @param e {qx.event.type.Pointer} The incoming pointer event.
        */
       _onDbltap: function _onDbltap(e) {
-        this.__handlePointerCellEvent__P_548_14(e, "cellDbltap");
+        this.__handlePointerCellEvent__P_549_14(e, "cellDbltap");
       },
 
       /**
@@ -624,16 +624,16 @@
         var maxx = this.getScrollMaxX();
         var maxy = this.getScrollMaxY();
 
-        if (this.__scrollLeft__P_548_3 < 0) {
-          this.__scrollLeft__P_548_3 = 0;
-        } else if (this.__scrollLeft__P_548_3 > maxx) {
-          this.__scrollLeft__P_548_3 = maxx;
+        if (this.__scrollLeft__P_549_3 < 0) {
+          this.__scrollLeft__P_549_3 = 0;
+        } else if (this.__scrollLeft__P_549_3 > maxx) {
+          this.__scrollLeft__P_549_3 = maxx;
         }
 
-        if (this.__scrollTop__P_548_2 < 0) {
-          this.__scrollTop__P_548_2 = 0;
-        } else if (this.__scrollTop__P_548_2 > maxy) {
-          this.__scrollTop__P_548_2 = maxy;
+        if (this.__scrollTop__P_549_2 < 0) {
+          this.__scrollTop__P_549_2 = 0;
+        } else if (this.__scrollTop__P_549_2 > maxy) {
+          this.__scrollTop__P_549_2 = maxy;
         }
       },
 
@@ -644,14 +644,14 @@
        * @param e {qx.event.type.Pointer} The pointer event.
        * @param cellEventType {String} The name of the cell event to fire.
        */
-      __handlePointerCellEvent__P_548_14: function __handlePointerCellEvent__P_548_14(e, cellEventType) {
+      __handlePointerCellEvent__P_549_14: function __handlePointerCellEvent__P_549_14(e, cellEventType) {
         var coords = this.getCellAtPosition(e.getDocumentLeft(), e.getDocumentTop());
 
         if (!coords) {
           return;
         }
 
-        var pointerDownCoords = this.__pointerDownCoords__P_548_13;
+        var pointerDownCoords = this.__pointerDownCoords__P_549_13;
 
         if (pointerDownCoords == null || pointerDownCoords.row !== coords.row || pointerDownCoords.column !== coords.column) {
           return;
@@ -667,17 +667,17 @@
       */
       // overridden
       syncWidget: function syncWidget(jobs) {
-        if (this.__jobs__P_548_7._fullUpdate) {
+        if (this.__jobs__P_549_7._fullUpdate) {
           this._checkScrollBounds();
 
           this._fullUpdate();
-        } else if (this.__jobs__P_548_7._updateScrollPosition) {
+        } else if (this.__jobs__P_549_7._updateScrollPosition) {
           this._checkScrollBounds();
 
           this._updateScrollPosition();
         }
 
-        this.__jobs__P_548_7 = {};
+        this.__jobs__P_549_7 = {};
       },
 
       /**
@@ -697,12 +697,12 @@
        *    should be performed of if only the layer window should be updated.
        */
       _setLayerWindow: function _setLayerWindow(layers, left, top, minWidth, minHeight, doFullUpdate) {
-        var rowCellData = this.__rowConfig__P_548_0.getItemAtPosition(top);
+        var rowCellData = this.__rowConfig__P_549_0.getItemAtPosition(top);
 
         if (rowCellData) {
           var firstRow = rowCellData.index;
 
-          var rowSizes = this.__rowConfig__P_548_0.getItemSizes(firstRow, minHeight + rowCellData.offset);
+          var rowSizes = this.__rowConfig__P_549_0.getItemSizes(firstRow, minHeight + rowCellData.offset);
 
           var layerHeight = qx.lang.Array.sum(rowSizes);
           var layerTop = top - rowCellData.offset;
@@ -715,12 +715,12 @@
           var layerBottom = 0;
         }
 
-        var columnCellData = this.__columnConfig__P_548_1.getItemAtPosition(left);
+        var columnCellData = this.__columnConfig__P_549_1.getItemAtPosition(left);
 
         if (columnCellData) {
           var firstColumn = columnCellData.index;
 
-          var columnSizes = this.__columnConfig__P_548_1.getItemSizes(firstColumn, minWidth + columnCellData.offset);
+          var columnSizes = this.__columnConfig__P_549_1.getItemSizes(firstColumn, minWidth + columnCellData.offset);
 
           var layerWidth = qx.lang.Array.sum(columnSizes);
           var layerLeft = left - columnCellData.offset;
@@ -733,20 +733,20 @@
           var layerRight = 0;
         }
 
-        this.__layerWindow__P_548_6 = {
+        this.__layerWindow__P_549_6 = {
           top: layerTop,
           bottom: layerBottom,
           left: layerLeft,
           right: layerRight
         };
 
-        this.__layerContainer__P_548_8.setUserBounds((this.getPaddingLeft() || 0) + (this.__layerWindow__P_548_6.left - this.__scrollLeft__P_548_3), (this.getPaddingTop() || 0) + (this.__layerWindow__P_548_6.top - this.__scrollTop__P_548_2), layerWidth, layerHeight);
+        this.__layerContainer__P_549_8.setUserBounds((this.getPaddingLeft() || 0) + (this.__layerWindow__P_549_6.left - this.__scrollLeft__P_549_3), (this.getPaddingTop() || 0) + (this.__layerWindow__P_549_6.top - this.__scrollTop__P_549_2), layerWidth, layerHeight);
 
-        this.__columnSizes__P_548_11 = columnSizes;
-        this.__rowSizes__P_548_12 = rowSizes;
+        this.__columnSizes__P_549_11 = columnSizes;
+        this.__rowSizes__P_549_12 = rowSizes;
 
-        for (var i = 0; i < this.__layers__P_548_9.length; i++) {
-          var layer = this.__layers__P_548_9[i];
+        for (var i = 0; i < this.__layers__P_549_9.length; i++) {
+          var layer = this.__layers__P_549_9[i];
           layer.setUserBounds(0, 0, layerWidth, layerHeight);
 
           if (doFullUpdate) {
@@ -761,16 +761,16 @@
        * Check whether the pane was resized and fire an {@link #update} event if
        * it was.
        */
-      __checkPaneResize__P_548_15: function __checkPaneResize__P_548_15() {
-        if (this.__dontFireUpdate__P_548_10) {
+      __checkPaneResize__P_549_15: function __checkPaneResize__P_549_15() {
+        if (this.__dontFireUpdate__P_549_10) {
           return;
         }
 
         var scrollSize = this.getScrollSize();
 
-        if (this.__paneHeight__P_548_4 !== scrollSize.height || this.__paneWidth__P_548_5 !== scrollSize.width) {
-          this.__paneHeight__P_548_4 = scrollSize.height;
-          this.__paneWidth__P_548_5 = scrollSize.width;
+        if (this.__paneHeight__P_549_4 !== scrollSize.height || this.__paneWidth__P_549_5 !== scrollSize.width) {
+          this.__paneHeight__P_549_4 = scrollSize.height;
+          this.__paneWidth__P_549_5 = scrollSize.width;
           this.fireEvent("update");
         }
       },
@@ -779,7 +779,7 @@
        * Schedule a full update on all visible layers.
        */
       fullUpdate: function fullUpdate() {
-        this.__jobs__P_548_7._fullUpdate = 1;
+        this.__jobs__P_549_7._fullUpdate = 1;
         qx.ui.core.queue.Widget.add(this);
       },
 
@@ -789,7 +789,7 @@
        * @return {Boolean} Whether a full update is scheduled.
        */
       isUpdatePending: function isUpdatePending() {
-        return !!this.__jobs__P_548_7._fullUpdate;
+        return !!this.__jobs__P_549_7._fullUpdate;
       },
 
       /**
@@ -800,7 +800,7 @@
         var layers = this.getVisibleLayers();
 
         if (layers.length == 0) {
-          this.__checkPaneResize__P_548_15();
+          this.__checkPaneResize__P_549_15();
 
           return;
         }
@@ -811,9 +811,9 @@
           return; // the pane has not yet been rendered -> wait for the appear event
         }
 
-        this._setLayerWindow(layers, this.__scrollLeft__P_548_3, this.__scrollTop__P_548_2, bounds.width, bounds.height, true);
+        this._setLayerWindow(layers, this.__scrollLeft__P_549_3, this.__scrollTop__P_549_2, bounds.width, bounds.height, true);
 
-        this.__checkPaneResize__P_548_15();
+        this.__checkPaneResize__P_549_15();
       },
 
       /**
@@ -821,7 +821,7 @@
        * and left scroll positions.
        */
       _deferredUpdateScrollPosition: function _deferredUpdateScrollPosition() {
-        this.__jobs__P_548_7._updateScrollPosition = 1;
+        this.__jobs__P_549_7._updateScrollPosition = 1;
         qx.ui.core.queue.Widget.add(this);
       },
 
@@ -833,7 +833,7 @@
         var layers = this.getVisibleLayers();
 
         if (layers.length == 0) {
-          this.__checkPaneResize__P_548_15();
+          this.__checkPaneResize__P_549_15();
 
           return;
         }
@@ -846,31 +846,31 @@
 
 
         var paneWindow = {
-          top: this.__scrollTop__P_548_2,
-          bottom: this.__scrollTop__P_548_2 + bounds.height,
-          left: this.__scrollLeft__P_548_3,
-          right: this.__scrollLeft__P_548_3 + bounds.width
+          top: this.__scrollTop__P_549_2,
+          bottom: this.__scrollTop__P_549_2 + bounds.height,
+          left: this.__scrollLeft__P_549_3,
+          right: this.__scrollLeft__P_549_3 + bounds.width
         };
 
-        if (this.__layerWindow__P_548_6.top <= paneWindow.top && this.__layerWindow__P_548_6.bottom >= paneWindow.bottom && this.__layerWindow__P_548_6.left <= paneWindow.left && this.__layerWindow__P_548_6.right >= paneWindow.right) {
+        if (this.__layerWindow__P_549_6.top <= paneWindow.top && this.__layerWindow__P_549_6.bottom >= paneWindow.bottom && this.__layerWindow__P_549_6.left <= paneWindow.left && this.__layerWindow__P_549_6.right >= paneWindow.right) {
           // only update layer container offset
-          this.__layerContainer__P_548_8.setUserBounds((this.getPaddingLeft() || 0) + (this.__layerWindow__P_548_6.left - paneWindow.left), (this.getPaddingTop() || 0) + (this.__layerWindow__P_548_6.top - paneWindow.top), this.__layerWindow__P_548_6.right - this.__layerWindow__P_548_6.left, this.__layerWindow__P_548_6.bottom - this.__layerWindow__P_548_6.top);
+          this.__layerContainer__P_549_8.setUserBounds((this.getPaddingLeft() || 0) + (this.__layerWindow__P_549_6.left - paneWindow.left), (this.getPaddingTop() || 0) + (this.__layerWindow__P_549_6.top - paneWindow.top), this.__layerWindow__P_549_6.right - this.__layerWindow__P_549_6.left, this.__layerWindow__P_549_6.bottom - this.__layerWindow__P_549_6.top);
         } else {
-          this._setLayerWindow(layers, this.__scrollLeft__P_548_3, this.__scrollTop__P_548_2, bounds.width, bounds.height, false);
+          this._setLayerWindow(layers, this.__scrollLeft__P_549_3, this.__scrollTop__P_549_2, bounds.width, bounds.height, false);
         }
 
-        this.__checkPaneResize__P_548_15();
+        this.__checkPaneResize__P_549_15();
       }
     },
     destruct: function destruct() {
-      this._disposeArray("__layers__P_548_9");
+      this._disposeArray("__layers__P_549_9");
 
-      this._disposeObjects("__rowConfig__P_548_0", "__columnConfig__P_548_1", "__layerContainer__P_548_8");
+      this._disposeObjects("__rowConfig__P_549_0", "__columnConfig__P_549_1", "__layerContainer__P_549_8");
 
-      this.__layerWindow__P_548_6 = this.__jobs__P_548_7 = this.__columnSizes__P_548_11 = this.__rowSizes__P_548_12 = null;
+      this.__layerWindow__P_549_6 = this.__jobs__P_549_7 = this.__columnSizes__P_549_11 = this.__rowSizes__P_549_12 = null;
     }
   });
   qx.ui.virtual.core.Pane.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Pane.js.map?dt=1598908896183
+//# sourceMappingURL=Pane.js.map?dt=1599312863598

@@ -123,7 +123,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Event fired when a request results in an error. Event data is an instance of\n {@link qx.io.jsonrpc.exception.Transport}, {@link qx.io.jsonrpc.exception.JsonRpc},\n or {@link qx.io.jsonrpc.exception.Cancel}.\n Event fired when a message is received from the endpoint. Event data\n is an UTF-8 encoded string</p>"
+            "body": "<p>Event fired when a request results in an error. Event data is an instance of\n {@link qx.io.exception.Transport}, {@link qx.io.exception.Protocol},\n or {@link qx.io.exception.Cancel}.\n Event fired when a message is received from the endpoint. Event data\n is an UTF-8 encoded string</p>"
           }
         ]
       },

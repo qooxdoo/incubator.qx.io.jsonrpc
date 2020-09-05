@@ -65,11 +65,11 @@
       qx.ui.table.columnmodel.Basic.constructor.call(this); // We don't want to recursively call ourself based on our resetting of
       // column sizes.  Track when we're resizing.
 
-      this.__bInProgress__P_516_0 = false; // Track when the table has appeared.  We want to ignore resize events
+      this.__bInProgress__P_517_0 = false; // Track when the table has appeared.  We want to ignore resize events
       // until then since we won't be able to determine the available width
       // anyway.
 
-      this.__bAppeared__P_516_1 = false;
+      this.__bAppeared__P_517_1 = false;
     },
 
     /*
@@ -100,9 +100,9 @@
     *****************************************************************************
     */
     members: {
-      __bAppeared__P_516_1: null,
-      __bInProgress__P_516_0: null,
-      __table__P_516_2: null,
+      __bAppeared__P_517_1: null,
+      __bInProgress__P_517_0: null,
+      __table__P_517_2: null,
       // Behavior modifier
       _applyBehavior: function _applyBehavior(value, old) {
         if (old != null) {
@@ -128,8 +128,8 @@
         // Call our superclass
         qx.ui.table.columnmodel.Resize.prototype.init.base.call(this, numColumns, table);
 
-        if (this.__table__P_516_2 == null) {
-          this.__table__P_516_2 = table; // We'll do our column resizing when the table appears, ...
+        if (this.__table__P_517_2 == null) {
+          this.__table__P_517_2 = table; // We'll do our column resizing when the table appears, ...
 
           table.addListener("appear", this._onappear, this); // ... when the inner width of the table changes, ...
 
@@ -159,7 +159,7 @@
        * @return {qx.ui.table.Table} the table widget
        */
       getTable: function getTable() {
-        return this.__table__P_516_2;
+        return this.__table__P_517_2;
       },
 
       /**
@@ -196,12 +196,12 @@
        */
       _onappear: function _onappear(event) {
         // Is this a recursive call?
-        if (this.__bInProgress__P_516_0) {
+        if (this.__bInProgress__P_517_0) {
           // Yup.  Ignore it.
           return;
         }
 
-        this.__bInProgress__P_516_0 = true;
+        this.__bInProgress__P_517_0 = true;
         {
           if (qx.core.Environment.get("qx.tableResizeDebug")) {
             this.debug("onappear");
@@ -210,12 +210,12 @@
 
         this.getBehavior().onAppear(event, event.getType() !== "appear");
 
-        this.__table__P_516_2._updateScrollerWidths();
+        this.__table__P_517_2._updateScrollerWidths();
 
-        this.__table__P_516_2._updateScrollBarVisibility();
+        this.__table__P_517_2._updateScrollBarVisibility();
 
-        this.__bInProgress__P_516_0 = false;
-        this.__bAppeared__P_516_1 = true;
+        this.__bInProgress__P_517_0 = false;
+        this.__bAppeared__P_517_1 = true;
       },
 
       /**
@@ -227,19 +227,19 @@
        */
       _onTableWidthChanged: function _onTableWidthChanged(event) {
         // Is this a recursive call or has the table not yet been rendered?
-        if (this.__bInProgress__P_516_0 || !this.__bAppeared__P_516_1) {
+        if (this.__bInProgress__P_517_0 || !this.__bAppeared__P_517_1) {
           // Yup.  Ignore it.
           return;
         }
 
-        this.__bInProgress__P_516_0 = true;
+        this.__bInProgress__P_517_0 = true;
         {
           if (qx.core.Environment.get("qx.tableResizeDebug")) {
             this.debug("ontablewidthchanged");
           }
         }
         this.getBehavior().onTableWidthChanged(event);
-        this.__bInProgress__P_516_0 = false;
+        this.__bInProgress__P_517_0 = false;
       },
 
       /**
@@ -252,12 +252,12 @@
        */
       _onverticalscrollbarchanged: function _onverticalscrollbarchanged(event) {
         // Is this a recursive call or has the table not yet been rendered?
-        if (this.__bInProgress__P_516_0 || !this.__bAppeared__P_516_1) {
+        if (this.__bInProgress__P_517_0 || !this.__bAppeared__P_517_1) {
           // Yup.  Ignore it.
           return;
         }
 
-        this.__bInProgress__P_516_0 = true;
+        this.__bInProgress__P_517_0 = true;
         {
           if (qx.core.Environment.get("qx.tableResizeDebug")) {
             this.debug("onverticalscrollbarchanged");
@@ -265,13 +265,13 @@
         }
         this.getBehavior().onVerticalScrollBarChanged(event);
         qx.event.Timer.once(function () {
-          if (this.__table__P_516_2 && !this.__table__P_516_2.isDisposed()) {
-            this.__table__P_516_2._updateScrollerWidths();
+          if (this.__table__P_517_2 && !this.__table__P_517_2.isDisposed()) {
+            this.__table__P_517_2._updateScrollerWidths();
 
-            this.__table__P_516_2._updateScrollBarVisibility();
+            this.__table__P_517_2._updateScrollBarVisibility();
           }
         }, this, 0);
-        this.__bInProgress__P_516_0 = false;
+        this.__bInProgress__P_517_0 = false;
       },
 
       /**
@@ -283,19 +283,19 @@
        */
       _oncolumnwidthchanged: function _oncolumnwidthchanged(event) {
         // Is this a recursive call or has the table not yet been rendered?
-        if (this.__bInProgress__P_516_0 || !this.__bAppeared__P_516_1) {
+        if (this.__bInProgress__P_517_0 || !this.__bAppeared__P_517_1) {
           // Yup.  Ignore it.
           return;
         }
 
-        this.__bInProgress__P_516_0 = true;
+        this.__bInProgress__P_517_0 = true;
         {
           if (qx.core.Environment.get("qx.tableResizeDebug")) {
             this.debug("oncolumnwidthchanged");
           }
         }
         this.getBehavior().onColumnWidthChanged(event);
-        this.__bInProgress__P_516_0 = false;
+        this.__bInProgress__P_517_0 = false;
       },
 
       /**
@@ -307,19 +307,19 @@
        */
       _onvisibilitychanged: function _onvisibilitychanged(event) {
         // Is this a recursive call or has the table not yet been rendered?
-        if (this.__bInProgress__P_516_0 || !this.__bAppeared__P_516_1) {
+        if (this.__bInProgress__P_517_0 || !this.__bAppeared__P_517_1) {
           // Yup.  Ignore it.
           return;
         }
 
-        this.__bInProgress__P_516_0 = true;
+        this.__bInProgress__P_517_0 = true;
         {
           if (qx.core.Environment.get("qx.tableResizeDebug")) {
             this.debug("onvisibilitychanged");
           }
         }
         this.getBehavior().onVisibilityChanged(event);
-        this.__bInProgress__P_516_0 = false;
+        this.__bInProgress__P_517_0 = false;
       }
     },
 
@@ -335,10 +335,10 @@
         behavior.dispose();
       }
 
-      this.__table__P_516_2 = null;
+      this.__table__P_517_2 = null;
     }
   });
   qx.ui.table.columnmodel.Resize.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resize.js.map?dt=1598908892836
+//# sourceMappingURL=Resize.js.map?dt=1599312860542

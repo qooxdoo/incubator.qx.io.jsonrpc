@@ -14,8 +14,8 @@
       },
       "qx.core.Assert": {},
       "qx.type.BaseError": {},
-      "qx.io.jsonrpc.exception.Transport": {},
-      "qx.io.jsonrpc.exception.Cancel": {},
+      "qx.io.exception.Transport": {},
+      "qx.io.exception.Cancel": {},
       "qx.io.request.Xhr": {},
       "qx.io.jsonrpc.Client": {
         "defer": "runtime"
@@ -52,7 +52,7 @@
        * Internal implementation of the transport
        * @var {qx.io.request.Xhr}
        */
-      __tranportImpl__P_160_0: null,
+      __tranportImpl__P_161_0: null,
 
       /**
        * Returns the object which implements the transport on the
@@ -64,8 +64,8 @@
        * @return {qx.core.Object}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_160_0 = this._createTransportImpl();
-        return this.__tranportImpl__P_160_0;
+        this.__tranportImpl__P_161_0 = this._createTransportImpl();
+        return this.__tranportImpl__P_161_0;
       },
 
       /**
@@ -79,9 +79,9 @@
        */
       async send(message) {
         qx.core.Assert.assertString(message);
-        const req = this.__tranportImpl__P_160_0 || this.getTransportImpl();
+        const req = this.__tranportImpl__P_161_0 || this.getTransportImpl();
         req.setRequestData(message);
-        this.__tranportImpl__P_160_0 = null; // free the internal reference for the next request
+        this.__tranportImpl__P_161_0 = null; // free the internal reference for the next request
 
         try {
           await req.sendWithPromise();
@@ -89,23 +89,23 @@
           if (e instanceof qx.type.BaseError) {
             switch (e.getComment()) {
               case "timeout":
-                throw new qx.io.jsonrpc.exception.Transport(e.toString(), qx.io.jsonrpc.exception.Transport.TIMEOUT, {
+                throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.TIMEOUT, {
                   message
                 });
 
               case "parseError":
-                throw new qx.io.jsonrpc.exception.Transport(e.toString(), qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA, {
+                throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.INVALID_MSG_DATA, {
                   message
                 });
 
               case "abort":
-                throw new qx.io.jsonrpc.exception.Cancel(e.toString(), {
+                throw new qx.io.exception.Cancel(e.toString(), {
                   message
                 });
 
               case "statusError":
               case "error":
-                throw new qx.io.jsonrpc.exception.Transport(e.toString(), qx.io.jsonrpc.exception.Transport.FAILED, {
+                throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.FAILED, {
                   message
                 });
             }
@@ -151,4 +151,4 @@
   qx.io.jsonrpc.transport.Http.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Http.js.map?dt=1598908857835
+//# sourceMappingURL=Http.js.map?dt=1599312829000

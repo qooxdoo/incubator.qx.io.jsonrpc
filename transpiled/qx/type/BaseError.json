@@ -178,6 +178,6 @@
   "descendants": [
     "qx.core.AssertionError",
     "qx.core.ValidationError",
-    "qx.io.Exception"
+    "qx.io.exception.Exception"
   ]
 }

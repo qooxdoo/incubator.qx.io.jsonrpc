@@ -48,10 +48,10 @@
      * @param password {var} The password to use.
      */
     construct: function construct(username, password) {
-      this.__credentials__P_173_0 = qx.util.Base64.encode(username + ':' + password);
+      this.__credentials__P_174_0 = qx.util.Base64.encode(username + ':' + password);
     },
     members: {
-      __credentials__P_173_0: null,
+      __credentials__P_174_0: null,
 
       /**
        * Headers to include for basic authentication.
@@ -60,7 +60,7 @@
       getAuthHeaders: function getAuthHeaders() {
         return [{
           key: "Authorization",
-          value: "Basic " + this.__credentials__P_173_0
+          value: "Basic " + this.__credentials__P_174_0
         }];
       }
     }
@@ -68,4 +68,4 @@
   qx.io.request.authentication.Basic.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Basic.js.map?dt=1598908858997
+//# sourceMappingURL=Basic.js.map?dt=1599312830036

@@ -60,7 +60,7 @@
        * Little helper to check if the global error handling is enabled.
        * @return {Boolean} <code>true</code>, if it is enabled.
        */
-      __isGlobaErrorHandlingEnabled__P_115_3: function __isGlobaErrorHandlingEnabled__P_115_3() {
+      __isGlobalErrorHandlingEnabled__P_115_3: function __isGlobalErrorHandlingEnabled__P_115_3() {
         if (qx.core && qx.core.Environment) {
           return qx.core.Environment.get("qx.globalErrorHandling");
         } else {
@@ -79,7 +79,7 @@
         this.__callback__P_115_0 = callback || null;
         this.__context__P_115_2 = context || window;
 
-        if (this.__isGlobaErrorHandlingEnabled__P_115_3()) {
+        if (this.__isGlobalErrorHandlingEnabled__P_115_3()) {
           // wrap the original onerror
           if (callback && window.onerror) {
             var wrappedHandler = qx.Bootstrap.bind(this.__onErrorWindow__P_115_4, this);
@@ -138,7 +138,7 @@
        * @return {Function} The function wrapped with error handling code
        */
       observeMethod: function observeMethod(method) {
-        if (this.__isGlobaErrorHandlingEnabled__P_115_3()) {
+        if (this.__isGlobalErrorHandlingEnabled__P_115_3()) {
           var self = this;
           return function () {
             if (!self.__callback__P_115_0) {
@@ -181,4 +181,4 @@
   qx.event.GlobalError.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GlobalError.js.map?dt=1598908854008
+//# sourceMappingURL=GlobalError.js.map?dt=1599312825438

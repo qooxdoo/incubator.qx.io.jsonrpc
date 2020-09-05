@@ -45,7 +45,7 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__groups__P_417_0 = [];
+      this.__groups__P_418_0 = [];
       this._buttons = [];
       this._buttonOptions = [];
       this._validationManager = this._createValidationManager();
@@ -56,7 +56,7 @@
       "change": "qx.event.type.Event"
     },
     members: {
-      __groups__P_417_0: null,
+      __groups__P_418_0: null,
       _validationManager: null,
       _groupCounter: 0,
       _buttons: null,
@@ -87,8 +87,8 @@
        *   will be available in your form renderer specific to the added item.
        */
       add: function add(item, label, validator, name, validatorContext, options) {
-        if (this.__isFirstAdd__P_417_1()) {
-          this.__groups__P_417_0.push({
+        if (this.__isFirstAdd__P_418_1()) {
+          this.__groups__P_418_0.push({
             title: null,
             items: [],
             labels: [],
@@ -99,18 +99,18 @@
         } // save the given arguments
 
 
-        this.__groups__P_417_0[this._groupCounter].items.push(item);
+        this.__groups__P_418_0[this._groupCounter].items.push(item);
 
-        this.__groups__P_417_0[this._groupCounter].labels.push(label);
+        this.__groups__P_418_0[this._groupCounter].labels.push(label);
 
-        this.__groups__P_417_0[this._groupCounter].options.push(options); // if no name is given, use the label without not working character
+        this.__groups__P_418_0[this._groupCounter].options.push(options); // if no name is given, use the label without not working character
 
 
         if (name == null) {
           name = label.replace(/\s+|&|-|\+|\*|\/|\||!|\.|,|:|\?|;|~|%|\{|\}|\(|\)|\[|\]|<|>|=|\^|@|\\/g, "");
         }
 
-        this.__groups__P_417_0[this._groupCounter].names.push(name); // add the item to the validation manager
+        this.__groups__P_418_0[this._groupCounter].names.push(name); // add the item to the validation manager
 
 
         this._validationManager.add(item, validator, validatorContext); // add the item to the reset manager
@@ -132,11 +132,11 @@
        *   given to the renderer.
        */
       addGroupHeader: function addGroupHeader(title, options) {
-        if (!this.__isFirstAdd__P_417_1()) {
+        if (!this.__isFirstAdd__P_418_1()) {
           this._groupCounter++;
         }
 
-        this.__groups__P_417_0.push({
+        this.__groups__P_418_0.push({
           title: title,
           items: [],
           labels: [],
@@ -172,8 +172,8 @@
        *
        * @return {Boolean} true, if nothing has been added jet.
        */
-      __isFirstAdd__P_417_1: function __isFirstAdd__P_417_1() {
-        return this.__groups__P_417_0.length === 0;
+      __isFirstAdd__P_418_1: function __isFirstAdd__P_418_1() {
+        return this.__groups__P_418_0.length === 0;
       },
 
       /*
@@ -189,8 +189,8 @@
        * @return {Boolean} <code>true</code>, if the item could be removed.
        */
       remove: function remove(item) {
-        for (var i = 0; i < this.__groups__P_417_0.length; i++) {
-          var group = this.__groups__P_417_0[i];
+        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
+          var group = this.__groups__P_418_0[i];
 
           for (var j = 0; j < group.items.length; j++) {
             var storedItem = group.items[j];
@@ -226,15 +226,15 @@
        * @return {Boolean} <code>true</code>, if the header could be removed.
        */
       removeGroupHeader: function removeGroupHeader(title) {
-        for (var i = 0; i < this.__groups__P_417_0.length; i++) {
-          var group = this.__groups__P_417_0[i];
+        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
+          var group = this.__groups__P_418_0[i];
 
           if (group.title === title) {
             var targetGroup; // if it's the first group
 
             if (i == 0) {
               // if it's the only group
-              if (this.__groups__P_417_0.length == 1) {
+              if (this.__groups__P_418_0.length == 1) {
                 // remove the title and the header options
                 group.title = null;
                 group.headerOptions = {}; // fire the change event
@@ -243,11 +243,11 @@
                 return true;
               } else {
                 // add to the next
-                targetGroup = this.__groups__P_417_0[i + 1];
+                targetGroup = this.__groups__P_418_0[i + 1];
               }
             } else {
               // add to the previous group
-              targetGroup = this.__groups__P_417_0[i - 1];
+              targetGroup = this.__groups__P_418_0[i - 1];
             } // copy the data over
 
 
@@ -256,7 +256,7 @@
             targetGroup.names = targetGroup.names.concat(group.names);
             targetGroup.options = targetGroup.options.concat(group.options); // delete the group
 
-            this.__groups__P_417_0.splice(i, 1);
+            this.__groups__P_418_0.splice(i, 1);
 
             this._groupCounter--; // fire the change event
 
@@ -300,8 +300,8 @@
       getItems: function getItems() {
         var items = {}; // go threw all groups
 
-        for (var i = 0; i < this.__groups__P_417_0.length; i++) {
-          var group = this.__groups__P_417_0[i]; // get all items
+        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
+          var group = this.__groups__P_418_0[i]; // get all items
 
           for (var j = 0; j < group.names.length; j++) {
             var name = group.names[j];
@@ -319,8 +319,8 @@
        * @return {qx.ui.form.IForm|null} The form item or null.
        */
       getItem: function getItem(name) {
-        for (var i = 0; i < this.__groups__P_417_0.length; i++) {
-          var group = this.__groups__P_417_0[i];
+        for (var i = 0; i < this.__groups__P_418_0.length; i++) {
+          var group = this.__groups__P_418_0[i];
 
           for (var j = 0; j < group.names.length; j++) {
             if (group.names[j] === name) {
@@ -406,7 +406,7 @@
        * @internal
        */
       getGroups: function getGroups() {
-        return this.__groups__P_417_0;
+        return this.__groups__P_418_0;
       },
 
       /**
@@ -461,7 +461,7 @@
     */
     destruct: function destruct() {
       // holding references to widgets --> must set to null
-      this.__groups__P_417_0 = this._buttons = this._buttonOptions = null;
+      this.__groups__P_418_0 = this._buttons = this._buttonOptions = null;
 
       this._validationManager.dispose();
 
@@ -471,4 +471,4 @@
   qx.ui.form.Form.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Form.js.map?dt=1598908884544
+//# sourceMappingURL=Form.js.map?dt=1599312853071

@@ -51,34 +51,34 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __doc__P_249_0: null,
-      __frame__P_249_1: null,
-      __origin__P_249_2: null,
-      __destSource__P_249_3: null,
-      __alredyRun__P_249_4: false,
+      __doc__P_250_0: null,
+      __frame__P_250_1: null,
+      __origin__P_250_2: null,
+      __destSource__P_250_3: null,
+      __alredyRun__P_250_4: false,
       setUp: function setUp() {
         var helper = document.createElement("div");
         document.body.appendChild(helper);
-        this.__doc__P_249_0 = new qx.html.Root(helper);
+        this.__doc__P_250_0 = new qx.html.Root(helper);
 
-        this.__doc__P_249_0.setAttribute("id", "doc");
+        this.__doc__P_250_0.setAttribute("id", "doc");
 
-        var frame = this.__frame__P_249_1 = new qx.html.Iframe();
+        var frame = this.__frame__P_250_1 = new qx.html.Iframe();
 
-        this.__doc__P_249_0.add(frame); // Source in parent directory is not of same origin
+        this.__doc__P_250_0.add(frame); // Source in parent directory is not of same origin
         // when using file protocol – use non-existing file
         // in same directory instead
 
 
         if (window.location.protocol === "file:") {
-          this.__destSource__P_249_3 = "blank.html";
+          this.__destSource__P_250_3 = "blank.html";
         } else {
-          this.__destSource__P_249_3 = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
+          this.__destSource__P_250_3 = qx.util.ResourceManager.getInstance().toUri("qx/static/blank.html");
         }
       },
       "test: set source to URL with same origin": function testSetSourceToURLWithSameOrigin() {
-        var frame = this.__frame__P_249_1;
-        var source = this.__destSource__P_249_3;
+        var frame = this.__frame__P_250_1;
+        var source = this.__destSource__P_250_3;
         frame.addListener("load", function () {
           this.resume(function () {
             var element = frame.getDomElement();
@@ -103,10 +103,10 @@
         this.wait();
       },
       "test: update source on navigate": function testUpdateSourceOnNavigate() {
-        var frame = this.__frame__P_249_1; // As soon as the original frame has loaded,
+        var frame = this.__frame__P_250_1; // As soon as the original frame has loaded,
         // fake user-action and browse
 
-        var source = this.__destSource__P_249_3;
+        var source = this.__destSource__P_250_3;
         frame.addListenerOnce("load", function () {
           qx.html.Element.flush();
           qx.bom.Iframe.setSource(frame.getDomElement(), source);
@@ -118,10 +118,10 @@
         }, this);
       },
       "test: skip setting source if frame is already on URL": function testSkipSettingSourceIfFrameIsAlreadyOnURL() {
-        var frame = this.__frame__P_249_1; // As soon as the original frame has loaded,
+        var frame = this.__frame__P_250_1; // As soon as the original frame has loaded,
         // fake user-action and browse
 
-        var source = this.__destSource__P_249_3;
+        var source = this.__destSource__P_250_3;
         frame.addListenerOnce("load", function () {
           qx.bom.Iframe.setSource(frame.getDomElement(), source);
         });
@@ -150,9 +150,9 @@
         this.wait();
       },
       "test: set null source if frame is cross-origin": function testSetNullSourceIfFrameIsCrossOrigin() {
-        var frame = this.__frame__P_249_1;
+        var frame = this.__frame__P_250_1;
 
-        if (this.__alredyRun__P_249_4) {
+        if (this.__alredyRun__P_250_4) {
           this.skip("This test can only run once. Reload to run again.");
         } // On cross origin
 
@@ -166,7 +166,7 @@
           });
         }, this);
         frame.setSource("http://example.com");
-        this.__alredyRun__P_249_4 = true;
+        this.__alredyRun__P_250_4 = true;
         this.wait();
       },
       tearDown: function tearDown() {
@@ -175,13 +175,13 @@
         document.body.removeChild(div);
         this.getSandbox().restore();
 
-        this.__frame__P_249_1.dispose();
+        this.__frame__P_250_1.dispose();
 
-        this.__frame__P_249_1 = null;
+        this.__frame__P_250_1 = null;
       }
     }
   });
   qx.test.html.Iframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Iframe.js.map?dt=1598908868506
+//# sourceMappingURL=Iframe.js.map?dt=1599312838522

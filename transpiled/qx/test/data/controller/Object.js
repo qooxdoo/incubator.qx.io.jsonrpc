@@ -37,197 +37,197 @@
   qx.Class.define("qx.test.data.controller.Object", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __label1__P_233_0: null,
-      __label2__P_233_1: null,
-      __model__P_233_2: null,
-      __controller__P_233_3: null,
+      __label1__P_234_0: null,
+      __label2__P_234_1: null,
+      __model__P_234_2: null,
+      __controller__P_234_3: null,
       setUp: function setUp() {
-        this.__label1__P_233_0 = new qx.ui.basic.Label();
-        this.__label2__P_233_1 = new qx.ui.basic.Label();
-        this.__model__P_233_2 = new qx.ui.core.Widget();
-        this.__controller__P_233_3 = new qx.data.controller.Object(this.__model__P_233_2);
+        this.__label1__P_234_0 = new qx.ui.basic.Label();
+        this.__label2__P_234_1 = new qx.ui.basic.Label();
+        this.__model__P_234_2 = new qx.ui.core.Widget();
+        this.__controller__P_234_3 = new qx.data.controller.Object(this.__model__P_234_2);
       },
       tearDown: function tearDown() {
-        this.__model__P_233_2.dispose();
+        this.__model__P_234_2.dispose();
 
-        this.__label2__P_233_1.dispose();
+        this.__label2__P_234_1.dispose();
 
-        this.__label1__P_233_0.dispose();
+        this.__label1__P_234_0.dispose();
 
-        this.__controller__P_233_3.dispose();
+        this.__controller__P_234_3.dispose();
       },
       testOneToOne: function testOneToOne() {
         // Tie the label1s content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex"); // set a new zIndex to the model
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex"); // set a new zIndex to the model
 
 
-        this.__model__P_233_2.setZIndex(10); // test for the binding
+        this.__model__P_234_2.setZIndex(10); // test for the binding
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding does not work!");
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding does not work!");
       },
       testOneToTwo: function testOneToTwo() {
         // Tie the label1s content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex"); // Tie the label2s content to the zindex of the model
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex"); // Tie the label2s content to the zindex of the model
 
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "zIndex"); // set a new zIndex to the model
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "zIndex"); // set a new zIndex to the model
 
 
-        this.__model__P_233_2.setZIndex(10); // test for the binding
+        this.__model__P_234_2.setZIndex(10); // test for the binding
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("10", this.__label2__P_233_1.getValue(), "Binding2 does not work!");
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("10", this.__label2__P_234_1.getValue(), "Binding2 does not work!");
       },
       testChangeModel: function testChangeModel() {
         // Tie the labels content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex");
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex");
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "zIndex"); // set an old zIndex
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "zIndex"); // set an old zIndex
 
 
-        this.__model__P_233_2.setZIndex(10); // create a new model with a different zIndex
+        this.__model__P_234_2.setZIndex(10); // create a new model with a different zIndex
 
 
         var newModel = new qx.ui.core.Widget();
         newModel.setZIndex(20); // dispose the old model to check that the controller can handle that
 
-        this.__model__P_233_2.dispose(); // set the new Model
+        this.__model__P_234_2.dispose(); // set the new Model
 
 
-        this.__controller__P_233_3.setModel(newModel); // test for the binding
+        this.__controller__P_234_3.setModel(newModel); // test for the binding
 
 
-        this.assertEquals("20", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("20", this.__label2__P_233_1.getValue(), "Binding2 does not work!");
+        this.assertEquals("20", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("20", this.__label2__P_234_1.getValue(), "Binding2 does not work!");
         newModel.dispose();
       },
       testRemoveOneBinding: function testRemoveOneBinding() {
         // set a zIndex
-        this.__model__P_233_2.setZIndex(20); // Tie the labels content to the zindex of the model
+        this.__model__P_234_2.setZIndex(20); // Tie the labels content to the zindex of the model
 
 
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex");
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex");
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "zIndex"); // test for the binding
-
-
-        this.assertEquals("20", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("20", this.__label2__P_233_1.getValue(), "Binding2 does not work!"); // remove one target
-
-        this.__controller__P_233_3.removeTarget(this.__label1__P_233_0, "value", "zIndex"); // set a new zIndex
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "zIndex"); // test for the binding
 
 
-        this.__model__P_233_2.setZIndex(5); // test for the binding
+        this.assertEquals("20", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("20", this.__label2__P_234_1.getValue(), "Binding2 does not work!"); // remove one target
+
+        this.__controller__P_234_3.removeTarget(this.__label1__P_234_0, "value", "zIndex"); // set a new zIndex
 
 
-        this.assertEquals("20", this.__label1__P_233_0.getValue(), "Binding1 has not been removed!");
-        this.assertEquals("5", this.__label2__P_233_1.getValue(), "Binding2 has been removed!");
+        this.__model__P_234_2.setZIndex(5); // test for the binding
+
+
+        this.assertEquals("20", this.__label1__P_234_0.getValue(), "Binding1 has not been removed!");
+        this.assertEquals("5", this.__label2__P_234_1.getValue(), "Binding2 has been removed!");
       },
       testRemoveUnexistantTarget: function testRemoveUnexistantTarget() {
         // test some cases
-        this.__controller__P_233_3.removeTarget(this.__label1__P_233_0, "value", "zIndex");
+        this.__controller__P_234_3.removeTarget(this.__label1__P_234_0, "value", "zIndex");
 
-        this.__controller__P_233_3.removeTarget(null, "AFFE", "AFFEN"); // set a target for testing
-
-
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex"); // test the same cases again
+        this.__controller__P_234_3.removeTarget(null, "AFFE", "AFFEN"); // set a target for testing
 
 
-        this.__controller__P_233_3.removeTarget(this.__label1__P_233_0, "value", "zIndex");
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex"); // test the same cases again
 
-        this.__controller__P_233_3.removeTarget(null, "AFFE", "AFFEN");
+
+        this.__controller__P_234_3.removeTarget(this.__label1__P_234_0, "value", "zIndex");
+
+        this.__controller__P_234_3.removeTarget(null, "AFFE", "AFFEN");
       },
       testTowToTwo: function testTowToTwo() {
         // set up two links
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex");
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex");
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "visibility"); // set the values
-
-
-        this.__model__P_233_2.setZIndex(11);
-
-        this.__model__P_233_2.setVisibility("visible"); // test for the binding
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "visibility"); // set the values
 
 
-        this.assertEquals("11", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("visible", this.__label2__P_233_1.getValue(), "Binding2 does not work!"); // set new values
+        this.__model__P_234_2.setZIndex(11);
 
-        this.__model__P_233_2.setZIndex(15);
-
-        this.__model__P_233_2.setVisibility("hidden"); // test again for the binding
+        this.__model__P_234_2.setVisibility("visible"); // test for the binding
 
 
-        this.assertEquals("15", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("hidden", this.__label2__P_233_1.getValue(), "Binding2 does not work!");
+        this.assertEquals("11", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("visible", this.__label2__P_234_1.getValue(), "Binding2 does not work!"); // set new values
+
+        this.__model__P_234_2.setZIndex(15);
+
+        this.__model__P_234_2.setVisibility("hidden"); // test again for the binding
+
+
+        this.assertEquals("15", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("hidden", this.__label2__P_234_1.getValue(), "Binding2 does not work!");
       },
       testOneToOneBi: function testOneToOneBi() {
         // Tie the label1s content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", true); // set a new zIndex to the model
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", true); // set a new zIndex to the model
 
 
-        this.__model__P_233_2.setZIndex(10); // test for the binding
+        this.__model__P_234_2.setZIndex(10); // test for the binding
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding does not work!"); // set a new content
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding does not work!"); // set a new content
 
-        this.__label1__P_233_0.setValue("20"); // test the reverse binding
+        this.__label1__P_234_0.setValue("20"); // test the reverse binding
 
 
-        this.assertEquals(20, this.__model__P_233_2.getZIndex(), "Reverse-Binding does not work!");
+        this.assertEquals(20, this.__model__P_234_2.getZIndex(), "Reverse-Binding does not work!");
       },
       testOneToTwoBi: function testOneToTwoBi() {
         // Tie the label1s content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", true); // Tie the label2s content to the zindex of the model
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", true); // Tie the label2s content to the zindex of the model
 
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "zIndex", true); // set a new zIndex to the model
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "zIndex", true); // set a new zIndex to the model
 
 
-        this.__model__P_233_2.setZIndex(10); // test for the binding
+        this.__model__P_234_2.setZIndex(10); // test for the binding
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("10", this.__label2__P_233_1.getValue(), "Binding2 does not work!"); // change one label
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("10", this.__label2__P_234_1.getValue(), "Binding2 does not work!"); // change one label
 
-        this.__label1__P_233_0.setValue("100"); // test for the binding
-
-
-        this.assertEquals(100, this.__model__P_233_2.getZIndex(), "Reverse Binding does not work!");
-        this.assertEquals("100", this.__label2__P_233_1.getValue(), "Binding2 does not work!"); // change the other label
-
-        this.__label2__P_233_1.setValue("200"); // test for the binding
+        this.__label1__P_234_0.setValue("100"); // test for the binding
 
 
-        this.assertEquals(200, this.__model__P_233_2.getZIndex(), "Reverse Binding does not work!");
-        this.assertEquals("200", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
+        this.assertEquals(100, this.__model__P_234_2.getZIndex(), "Reverse Binding does not work!");
+        this.assertEquals("100", this.__label2__P_234_1.getValue(), "Binding2 does not work!"); // change the other label
+
+        this.__label2__P_234_1.setValue("200"); // test for the binding
+
+
+        this.assertEquals(200, this.__model__P_234_2.getZIndex(), "Reverse Binding does not work!");
+        this.assertEquals("200", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
       },
       testChangeModelBi: function testChangeModelBi() {
         // Tie the labels content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", true);
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", true);
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "zIndex", true); // set an old zIndex
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "zIndex", true); // set an old zIndex
 
 
-        this.__model__P_233_2.setZIndex(10); // create a new model with a different zIndex
+        this.__model__P_234_2.setZIndex(10); // create a new model with a different zIndex
 
 
         var newModel = new qx.ui.core.Widget();
         newModel.setZIndex(20); // set the new Model
 
-        this.__controller__P_233_3.setModel(newModel); // test for the binding
+        this.__controller__P_234_3.setModel(newModel); // test for the binding
 
 
-        this.assertEquals("20", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("20", this.__label2__P_233_1.getValue(), "Binding2 does not work!"); // set the zIndex in a label
+        this.assertEquals("20", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("20", this.__label2__P_234_1.getValue(), "Binding2 does not work!"); // set the zIndex in a label
 
-        this.__label2__P_233_1.setValue("11"); // test for the bindings (working and should not work)
+        this.__label2__P_234_1.setValue("11"); // test for the bindings (working and should not work)
 
 
-        this.assertEquals("11", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("11", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
         this.assertEquals(11, newModel.getZIndex(), "Reverse-Binding does not work!");
-        this.assertEquals(10, this.__model__P_233_2.getZIndex(), "Binding has not been removed.");
+        this.assertEquals(10, this.__model__P_234_2.getZIndex(), "Binding has not been removed.");
         newModel.dispose();
       },
       testConverting: function testConverting() {
@@ -242,16 +242,16 @@
           }
         }; // Tie the labels content to the zindex of the model
 
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", false, opt); // set a zIndex and test it
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", false, opt); // set a zIndex and test it
 
 
-        this.__model__P_233_2.setZIndex(11);
+        this.__model__P_234_2.setZIndex(11);
 
-        this.assertEquals("A", this.__label1__P_233_0.getValue(), "Converter does not work!"); // set a zIndex and test it
+        this.assertEquals("A", this.__label1__P_234_0.getValue(), "Converter does not work!"); // set a zIndex and test it
 
-        this.__model__P_233_2.setZIndex(5);
+        this.__model__P_234_2.setZIndex(5);
 
-        this.assertEquals("B", this.__label1__P_233_0.getValue(), "Converter does not work!");
+        this.assertEquals("B", this.__label1__P_234_0.getValue(), "Converter does not work!");
       },
       testConvertingBi: function testConvertingBi() {
         // create the options map for source to target
@@ -275,24 +275,24 @@
           }
         }; // Tie the labels content to the zindex of the model
 
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", true, opt, revOpt); // set a zIndex and test it
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", true, opt, revOpt); // set a zIndex and test it
 
 
-        this.__model__P_233_2.setZIndex(11);
+        this.__model__P_234_2.setZIndex(11);
 
-        this.assertEquals("A", this.__label1__P_233_0.getValue(), "Converter does not work!"); // set a zIndex and test it
+        this.assertEquals("A", this.__label1__P_234_0.getValue(), "Converter does not work!"); // set a zIndex and test it
 
-        this.__model__P_233_2.setZIndex(5);
+        this.__model__P_234_2.setZIndex(5);
 
-        this.assertEquals("B", this.__label1__P_233_0.getValue(), "Converter does not work!"); // change the target and check the model
+        this.assertEquals("B", this.__label1__P_234_0.getValue(), "Converter does not work!"); // change the target and check the model
 
-        this.__label1__P_233_0.setValue("A");
+        this.__label1__P_234_0.setValue("A");
 
-        this.assertEquals(11, this.__model__P_233_2.getZIndex(), "Back-Converter does not work!");
+        this.assertEquals(11, this.__model__P_234_2.getZIndex(), "Back-Converter does not work!");
 
-        this.__label1__P_233_0.setValue("B");
+        this.__label1__P_234_0.setValue("B");
 
-        this.assertEquals(10, this.__model__P_233_2.getZIndex(), "Back-Converter does not work!");
+        this.assertEquals(10, this.__model__P_234_2.getZIndex(), "Back-Converter does not work!");
       },
       testChangeModelCon: function testChangeModelCon() {
         // create the options map
@@ -306,76 +306,76 @@
           }
         }; // Tie the labels content to the zindex of the model
 
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", false, opt);
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", false, opt);
 
-        this.__controller__P_233_3.addTarget(this.__label2__P_233_1, "value", "zIndex", false, opt); // set an old zIndex
+        this.__controller__P_234_3.addTarget(this.__label2__P_234_1, "value", "zIndex", false, opt); // set an old zIndex
 
 
-        this.__model__P_233_2.setZIndex(3); // create a new model with a different zIndex
+        this.__model__P_234_2.setZIndex(3); // create a new model with a different zIndex
 
 
         var newModel = new qx.ui.core.Widget();
         newModel.setZIndex(20); // set the new Model
 
-        this.__controller__P_233_3.setModel(newModel); // test for the binding
+        this.__controller__P_234_3.setModel(newModel); // test for the binding
 
 
-        this.assertEquals("A", this.__label1__P_233_0.getValue(), "Binding1 does not work!");
-        this.assertEquals("A", this.__label2__P_233_1.getValue(), "Binding2 does not work!");
+        this.assertEquals("A", this.__label1__P_234_0.getValue(), "Binding1 does not work!");
+        this.assertEquals("A", this.__label2__P_234_1.getValue(), "Binding2 does not work!");
         newModel.dispose();
       },
       testSetLateModel: function testSetLateModel() {
-        this.__controller__P_233_3.dispose(); // create a blank controller
+        this.__controller__P_234_3.dispose(); // create a blank controller
 
 
-        this.__controller__P_233_3 = new qx.data.controller.Object(); // set the model
+        this.__controller__P_234_3 = new qx.data.controller.Object(); // set the model
 
-        this.__controller__P_233_3.setModel(this.__model__P_233_2); // Tie the label1s content to the zindex of the model
-
-
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex"); // set a new zIndex to the model
+        this.__controller__P_234_3.setModel(this.__model__P_234_2); // Tie the label1s content to the zindex of the model
 
 
-        this.__model__P_233_2.setZIndex(10); // test for the binding
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex"); // set a new zIndex to the model
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding does not work!");
+        this.__model__P_234_2.setZIndex(10); // test for the binding
+
+
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding does not work!");
       },
       testSetModelNull: function testSetModelNull() {
         // Tie the label1s content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex");
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex");
 
-        this.__label1__P_233_0.setValue("test"); // set the model of the controller to null and back
-
-
-        this.__controller__P_233_3.setModel(null); // check if the values have been reseted
+        this.__label1__P_234_0.setValue("test"); // set the model of the controller to null and back
 
 
-        this.assertNull(this.__label1__P_233_0.getValue());
-
-        this.__controller__P_233_3.setModel(this.__model__P_233_2); // set a new zIndex to the model
+        this.__controller__P_234_3.setModel(null); // check if the values have been reseted
 
 
-        this.__model__P_233_2.setZIndex(10); // test for the binding
+        this.assertNull(this.__label1__P_234_0.getValue());
+
+        this.__controller__P_234_3.setModel(this.__model__P_234_2); // set a new zIndex to the model
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding does not work!");
+        this.__model__P_234_2.setZIndex(10); // test for the binding
+
+
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding does not work!");
       },
       testCreateWithoutModel: function testCreateWithoutModel() {
         // create a new controller
-        this.__controller__P_233_3.dispose();
+        this.__controller__P_234_3.dispose();
 
-        this.__controller__P_233_3 = new qx.data.controller.Object(); // Tie the label1s content to the zindex of the model
+        this.__controller__P_234_3 = new qx.data.controller.Object(); // Tie the label1s content to the zindex of the model
 
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex"); // set a new zIndex to the model
-
-
-        this.__model__P_233_2.setZIndex(10);
-
-        this.__controller__P_233_3.setModel(this.__model__P_233_2); // test for the binding
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex"); // set a new zIndex to the model
 
 
-        this.assertEquals("10", this.__label1__P_233_0.getValue(), "Binding does not work!");
+        this.__model__P_234_2.setZIndex(10);
+
+        this.__controller__P_234_3.setModel(this.__model__P_234_2); // test for the binding
+
+
+        this.assertEquals("10", this.__label1__P_234_0.getValue(), "Binding does not work!");
       },
       testTargetArrayBi: function testTargetArrayBi() {
         var selectbox = new qx.ui.form.SelectBox();
@@ -386,41 +386,41 @@
           }));
         }
 
-        this.__controller__P_233_3.addTarget(selectbox, "modelSelection[0]", "zIndex", true); // selectbox --> model
+        this.__controller__P_234_3.addTarget(selectbox, "modelSelection[0]", "zIndex", true); // selectbox --> model
 
 
         selectbox.setSelection([selectbox.getSelectables()[6]]);
-        this.assertEquals(6, this.__model__P_233_2.getZIndex()); // model --> selectbox
+        this.assertEquals(6, this.__model__P_234_2.getZIndex()); // model --> selectbox
 
-        this.__model__P_233_2.setZIndex(3);
+        this.__model__P_234_2.setZIndex(3);
 
         this.assertEquals(3, selectbox.getSelection()[0].getModel());
         selectbox.dispose();
       },
       testDispose: function testDispose() {
         // Tie the label1s content to the zindex of the model
-        this.__controller__P_233_3.addTarget(this.__label1__P_233_0, "value", "zIndex", true); // create a common startbase
+        this.__controller__P_234_3.addTarget(this.__label1__P_234_0, "value", "zIndex", true); // create a common startbase
 
 
-        this.__label1__P_233_0.setZIndex(7); // dispose the controller to remove the bindings
+        this.__label1__P_234_0.setZIndex(7); // dispose the controller to remove the bindings
 
 
-        this.__controller__P_233_3.dispose(); // set a new zIndex to the model
+        this.__controller__P_234_3.dispose(); // set a new zIndex to the model
 
 
-        this.__model__P_233_2.setZIndex(10); // test if the binding has been removed and reseted
+        this.__model__P_234_2.setZIndex(10); // test if the binding has been removed and reseted
 
 
-        this.assertEquals(null, this.__label1__P_233_0.getValue(), "Binding does not work!"); // set a new content
+        this.assertEquals(null, this.__label1__P_234_0.getValue(), "Binding does not work!"); // set a new content
 
-        this.__label1__P_233_0.setValue("20"); // test the reverse binding
+        this.__label1__P_234_0.setValue("20"); // test the reverse binding
 
 
-        this.assertEquals(10, this.__model__P_233_2.getZIndex(), "Reverse-Binding does not work!");
+        this.assertEquals(10, this.__model__P_234_2.getZIndex(), "Reverse-Binding does not work!");
       }
     }
   });
   qx.test.data.controller.Object.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Object.js.map?dt=1598908866106
+//# sourceMappingURL=Object.js.map?dt=1599312836515

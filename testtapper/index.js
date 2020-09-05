@@ -60,7 +60,7 @@ var envinfo = {
   "qx.application": "qxl.testtapper.Application",
   "qx.revision": "",
   "qx.theme": "qx.theme.Simple",
-  "qx.version": "6.0.0-beta-20200830-1953",
+  "qx.version": "6.0.0-beta-20200904-1332",
   "qx.libraryInfoMap": {
     "qx": {
       "name": "qooxdoo framework",
@@ -141,7 +141,7 @@ var envinfo = {
           "email": "dietrich.streifert@visionet.de"
         }
       ],
-      "version": "6.0.0-beta-20200830-1953"
+      "version": "6.0.0-beta-20200904-1332"
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compiler.version": "1.0.0-beta-20200830-1953",
+  "qx.compiler.version": "1.0.0-beta-20200904-1332",
   "qx.icontheme": "Tango",
   "qx.buildType": "source",
   "qx.headless": false,
@@ -319,7 +319,6 @@ qx.$$loader = {
     "uris": [
       "../transpiled/qx/io/jsonrpc/Client.js",
       "../transpiled/qx/io/jsonrpc/transport/ITransport.js",
-      "../transpiled/qx/io/jsonrpc/exception/Transport.js",
       "../transpiled/qx/io/jsonrpc/protocol/Parser.js",
       "../transpiled/qx/io/jsonrpc/protocol/Message.js",
       "../transpiled/qx/io/jsonrpc/protocol/Notification.js",
@@ -327,8 +326,6 @@ qx.$$loader = {
       "../transpiled/qx/io/jsonrpc/protocol/Batch.js",
       "../transpiled/qx/io/jsonrpc/protocol/Result.js",
       "../transpiled/qx/io/jsonrpc/protocol/Error.js",
-      "../transpiled/qx/io/jsonrpc/exception/JsonRpc.js",
-      "../transpiled/qx/io/jsonrpc/exception/Cancel.js",
       "../transpiled/qx/io/jsonrpc/transport/Abstract.js",
       "../transpiled/qx/io/jsonrpc/transport/Http.js"
     ]

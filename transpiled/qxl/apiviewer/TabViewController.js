@@ -43,7 +43,7 @@
       qxl.apiviewer.TabViewController.instance = this;
       this._tabView = widgetRegistry.getWidgetById("tabView");
 
-      this._tabView.addListener("changeSelection", this.__onChangeSelection__P_602_0, this);
+      this._tabView.addListener("changeSelection", this.__onChangeSelection__P_603_0, this);
     },
     events: {
       /** This event if dispatched if one of the internal links is tapped */
@@ -72,12 +72,12 @@
         return page.getChildren()[0].showItem(itemName);
       },
       openPackage: function openPackage(classNode, newTab) {
-        return this.__open__P_602_1(classNode, qxl.apiviewer.ui.tabview.PackagePage, newTab);
+        return this.__open__P_603_1(classNode, qxl.apiviewer.ui.tabview.PackagePage, newTab);
       },
       openClass: function openClass(classNode, newTab) {
-        return this.__open__P_602_1(classNode, qxl.apiviewer.ui.tabview.ClassPage, newTab);
+        return this.__open__P_603_1(classNode, qxl.apiviewer.ui.tabview.ClassPage, newTab);
       },
-      __open__P_602_1: function __open__P_602_1(classNode, clazz, newTab) {
+      __open__P_603_1: function __open__P_603_1(classNode, clazz, newTab) {
         var currentPage = this._tabView.getSelection()[0] || null;
 
         if (currentPage && (!(currentPage instanceof clazz) || newTab)) {
@@ -98,7 +98,7 @@
         currentPage.setUserData("itemName", null);
         return currentPage.setClassNodeAsync(classNode).then(() => qxl.apiviewer.LoadingIndicator.getInstance().hide());
       },
-      __onChangeSelection__P_602_0: function __onChangeSelection__P_602_0(event) {
+      __onChangeSelection__P_603_0: function __onChangeSelection__P_603_0(event) {
         var oldData = event.getOldData();
         var data = event.getData();
         this.fireDataEvent("changeSelection", data, oldData);
@@ -113,4 +113,4 @@
   qxl.apiviewer.TabViewController.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TabViewController.js.map?dt=1598908900351
+//# sourceMappingURL=TabViewController.js.map?dt=1599312867458

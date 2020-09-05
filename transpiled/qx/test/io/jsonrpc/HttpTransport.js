@@ -18,10 +18,10 @@
       "qx.io.jsonrpc.protocol.Request": {},
       "qx.io.request.Xhr": {},
       "qx.lang.Type": {},
-      "qx.io.Exception": {},
+      "qx.io.exception.Exception": {},
       "qx.io.jsonrpc.Client": {},
-      "qx.io.jsonrpc.exception.Transport": {},
-      "qx.io.jsonrpc.exception.JsonRpc": {},
+      "qx.io.exception.Transport": {},
+      "qx.io.exception.Protocol": {},
       "qx.io.request.authentication.Bearer": {},
       "qx.lang.Json": {},
       "qx.io.jsonrpc.protocol.Result": {},
@@ -103,11 +103,11 @@
        * Assert that the given exception is thrown on receiving the given result
        * @param {String} response
        * @param {Class|Number} exception If class, the exception class, which must
-       * be a subclass of qx.io.Exception. If number, the error number
+       * be a subclass of qx.io.exception.Exception. If number, the error number
        */
       assertExceptionThrown: function assertExceptionThrown(response, exception) {
-        if (!(qx.lang.Type.isNumber(exception) || qx.Class.isSubClassOf(exception, qx.io.Exception))) {
-          throw new Error("Second argument must be a Number or a subclass of qx.io.Exception");
+        if (!(qx.lang.Type.isNumber(exception) || qx.Class.isSubClassOf(exception, qx.io.exception.Exception))) {
+          throw new Error("Second argument must be a Number or a subclass of qx.io.exception.Exception");
         }
 
         this.setUpFakeServer(response);
@@ -116,7 +116,7 @@
         const errorCallback = this.spy(err => {
           //console.warn(err);
           if (qx.lang.Type.isNumber(exception)) {
-            if (!(err instanceof qx.io.Exception)) {
+            if (!(err instanceof qx.io.exception.Exception)) {
               throw err;
             }
 
@@ -133,8 +133,8 @@
         client.send(message_out).catch(errorCallback);
         this.wait(100, () => {
           if ( // the request promise will not be called since the promise is already rejected
-          exception === qx.io.jsonrpc.exception.Transport.DUPLICATE_ID // or the send promise will not be rejected because we have a server-side error
-          || exception === qx.io.jsonrpc.exception.JsonRpc) {
+          exception === qx.io.exception.Transport.DUPLICATE_ID // or the send promise will not be rejected because we have a server-side error
+          || exception === qx.io.exception.Protocol) {
             this.assertCalledTwice(errorCallback);
           } else {
             // the error handler will be called three times
@@ -180,7 +180,7 @@
           "result": 19,
           "id": 2
         });
-        this.assertExceptionThrown(response, qx.io.jsonrpc.exception.Transport.UNKNOWN_ID);
+        this.assertExceptionThrown(response, qx.io.exception.Transport.UNKNOWN_ID);
       },
       "test: throw on duplicate response id": function testThrowOnDuplicateResponseId() {
         this.resetId();
@@ -193,7 +193,7 @@
           "result": 19,
           "id": 1
         }]);
-        this.assertExceptionThrown(response, qx.io.jsonrpc.exception.Transport.DUPLICATE_ID);
+        this.assertExceptionThrown(response, qx.io.exception.Transport.DUPLICATE_ID);
       },
       "test: call jsonrpc method and receive response with single result": async function testCallJsonrpcMethodAndReceiveResponseWithSingleResult() {
         this.resetId();
@@ -221,11 +221,11 @@
       },
 
       "test: call jsonrpc method and expect error on invalid reponse "() {
-        this.assertExceptionThrown("helloworld!", qx.io.jsonrpc.exception.Transport.INVALID_JSON);
+        this.assertExceptionThrown("helloworld!", qx.io.exception.Transport.INVALID_JSON);
       },
 
       "test: call jsonrpc method and expect error on invalid reponse - missing result"() {
-        this.assertExceptionThrown("null", qx.io.jsonrpc.exception.Transport.NO_DATA);
+        this.assertExceptionThrown("null", qx.io.exception.Transport.NO_DATA);
       },
 
       "test: call jsonrpc method and expect error response"() {
@@ -238,7 +238,7 @@
           },
           "id": 1
         });
-        this.assertExceptionThrown(response, qx.io.jsonrpc.exception.JsonRpc);
+        this.assertExceptionThrown(response, qx.io.exception.Protocol);
       },
 
       "test: send batched requests"() {
@@ -286,7 +286,7 @@
         }
 
         client.sendBatch(batch).catch(err => {
-          this.assertInstance(err, qx.io.jsonrpc.exception.JsonRpc);
+          this.assertInstance(err, qx.io.exception.Protocol);
         });
         this.wait(100, function () {
           this.assertCalledWith(spies[1].result, 7);
@@ -327,4 +327,4 @@
   qx.test.io.jsonrpc.HttpTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HttpTransport.js.map?dt=1598908868635
+//# sourceMappingURL=HttpTransport.js.map?dt=1599312838629

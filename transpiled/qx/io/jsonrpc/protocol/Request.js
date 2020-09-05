@@ -46,14 +46,14 @@
       /**
        * Static counter for all request ids
        */
-      __current_request_id__P_159_0: 0,
+      __current_request_id__P_160_0: 0,
 
       getCurrentId() {
-        return qx.io.jsonrpc.protocol.Request.__current_request_id__P_159_0;
+        return qx.io.jsonrpc.protocol.Request.__current_request_id__P_160_0;
       },
 
       resetId() {
-        qx.io.jsonrpc.protocol.Request.__current_request_id__P_159_0 = 0;
+        qx.io.jsonrpc.protocol.Request.__current_request_id__P_160_0 = 0;
       }
 
     },
@@ -78,24 +78,24 @@
       qx.io.jsonrpc.protocol.Notification.constructor.call(this, method, params);
 
       if (id === undefined) {
-        id = ++qx.io.jsonrpc.protocol.Request.__current_request_id__P_159_0;
+        id = ++qx.io.jsonrpc.protocol.Request.__current_request_id__P_160_0;
       }
 
       this.set({
         id
       });
-      this.__promise__P_159_1 = new qx.Promise();
+      this.__promise__P_160_1 = new qx.Promise();
     },
 
     members: {
-      __promise__P_159_1: null,
+      __promise__P_160_1: null,
 
       /**
        * Getter for promise which resolves with the result to the request
        * @return {qx.Promise}
        */
       getPromise() {
-        return this.__promise__P_159_1;
+        return this.__promise__P_160_1;
       },
 
       /**
@@ -103,7 +103,7 @@
        * behavior is to reject the request's promise with that exception.
        * Classes inheriting from this class might handle it differently, i.e.
        * by allowing the transport to retry after a timeout occurred.
-       * @param {qx.io.jsonrpc.exception.Transport} exception
+       * @param {qx.io.exception.Transport} exception
        */
       handleTransportException(exception) {
         try {
@@ -118,4 +118,4 @@
   qx.io.jsonrpc.protocol.Request.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Request.js.map?dt=1598908857771
+//# sourceMappingURL=Request.js.map?dt=1599312828943
