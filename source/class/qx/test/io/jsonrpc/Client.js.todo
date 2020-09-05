@@ -172,7 +172,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
       qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "result": 19, "id": 1});
       this.assertResponseThrowsException("logout", [], true, response, {
-        send: qx.io.jsonrpc.exception.Transport
+        send: qx.io.exception.Transport
       });
     },
 
@@ -186,7 +186,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
       qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify("foo");
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        send: qx.io.jsonrpc.exception.Transport
+        send: qx.io.exception.Transport
       });
     },
 
@@ -194,7 +194,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
       qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "id": 1});
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        request: qx.io.jsonrpc.exception.Transport
+        request: qx.io.exception.Transport
       });
     },
 
@@ -202,7 +202,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
       qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", result: "foo", "id": 5});
       this.assertResponseThrowsException("doStuff", [], false, response, {
-        send: qx.io.jsonrpc.exception.Transport
+        send: qx.io.exception.Transport
       });
     },
 
@@ -210,7 +210,7 @@ qx.Class.define("qx.test.io.remote.Rpc",
       qx.io.jsonrpc.Rpc.reset();
       var response = qx.lang.Json.stringify({"jsonrpc": "2.0", "error" : {"code": -32600, "message": "Division by zero!"}, "id": 1});
       this.assertResponseThrowsException("divide", [42, 0], false, response, {
-        request: qx.io.jsonrpc.exception.JsonRpc
+        request: qx.io.exception.Protocol
       });
     },
 

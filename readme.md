@@ -5,10 +5,18 @@
 This incubator contains a proposal to add an extensible JSON-RPC v2 API 
 to qooxdoo.
 
-Development status: beta. The API should be fairly stable.
-
 - API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.jsonrpc
 - Test runner: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/
+
+Development status: beta. The API should be fairly (but not completely!) stable.
+
+**UPDATE**: 
+- In v2.0, the exception API has changed: `qx.io.jsonrpc.exception` has been moved
+  to `qx.io.exception` and generalized, i.e. `qx.io.jsonrpc.exception.JsonRpc` has
+  been renamed to `qx.io.exception.Protocol`.
+- A simple GraphQL client has been added in the `qx.io.graphql` namespace. See
+  the documentation in the API Viewer.
+
 
 ## Installation for use in your project
 

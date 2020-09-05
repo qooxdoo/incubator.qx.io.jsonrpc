@@ -20,7 +20,7 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
   construct(url) {
     this.base(arguments, url);
   },
-  
+
   members: {
 
     /**
@@ -63,27 +63,27 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
         if (e instanceof qx.type.BaseError) {
           switch (e.getComment()) {
             case "timeout":
-              throw new qx.io.jsonrpc.exception.Transport(
+              throw new qx.io.exception.Transport(
                 e.toString(),
-                qx.io.jsonrpc.exception.Transport.TIMEOUT,
+                qx.io.exception.Transport.TIMEOUT,
                 {message}
               );
             case "parseError":
-              throw new qx.io.jsonrpc.exception.Transport(
+              throw new qx.io.exception.Transport(
                 e.toString(),
-                qx.io.jsonrpc.exception.Transport.INVALID_MSG_DATA,
+                qx.io.exception.Transport.INVALID_MSG_DATA,
                 {message}
               );
             case "abort":
-              throw new qx.io.jsonrpc.exception.Cancel(
+              throw new qx.io.exception.Cancel(
                 e.toString(),
                 {message}
               );
             case "statusError":
             case "error":
-              throw new qx.io.jsonrpc.exception.Transport(
+              throw new qx.io.exception.Transport(
                 e.toString(),
-                qx.io.jsonrpc.exception.Transport.FAILED,
+                qx.io.exception.Transport.FAILED,
                 {message}
               );
           }

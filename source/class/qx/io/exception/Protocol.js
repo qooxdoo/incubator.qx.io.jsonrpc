@@ -17,18 +17,10 @@
 ************************************************************************ */
 
 /**
- *  A class for representing a user-initiated cancellation of a request.
+ * A class for representing errors that occurred on server and are handled
+ * according to the service protocol (JSON-RPC, GraphQL, etc.)
  */
-qx.Class.define("qx.io.jsonrpc.exception.Cancel",
+qx.Class.define("qx.io.exception.Protocol",
 {
-  extend : qx.io.Exception,
-
-  /**
-   * Constructor
-   * @param message {String}
-   * @param data {*|null}
-   */
-  construct: function(message, data) {
-    this.base(arguments, message, qx.io.jsonrpc.exception.Transport.CANCELLED, data);
-  }
+  extend : qx.io.exception.Exception
 });

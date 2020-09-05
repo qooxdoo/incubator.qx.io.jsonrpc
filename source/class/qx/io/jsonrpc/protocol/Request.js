@@ -80,7 +80,7 @@ qx.Class.define("qx.io.jsonrpc.protocol.Request", {
      * behavior is to reject the request's promise with that exception.
      * Classes inheriting from this class might handle it differently, i.e.
      * by allowing the transport to retry after a timeout occurred.
-     * @param {qx.io.jsonrpc.exception.Transport} exception
+     * @param {qx.io.exception.Transport} exception
      */
     handleTransportException(exception) {
       try {

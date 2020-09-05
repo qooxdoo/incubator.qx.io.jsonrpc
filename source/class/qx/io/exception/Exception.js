@@ -19,7 +19,7 @@
 /**
  * A generic class for representing exceptions that occur during io operations.
  */
-qx.Class.define("qx.io.Exception",
+qx.Class.define("qx.io.exception.Exception",
 {
   extend : qx.type.BaseError,
 
