@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 45,
+        "line": 64,
         "column": 3
       }
     },
@@ -34,25 +34,38 @@
   "construct": {
     "location": {
       "start": {
-        "line": 24,
+        "line": 29,
         "column": 13
       },
       "end": {
-        "line": 27,
+        "line": 33,
         "column": 3
       }
     },
-    "jsdoc": {}
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<p>Constructor</p>"
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "{Object} data"
+        }
+      ]
+    }
   },
   "members": {
-    "toObject": {
+    "toNormalizedObject": {
       "location": {
         "start": {
-          "line": 41,
+          "line": 39,
           "column": 4
         },
         "end": {
-          "line": 43,
+          "line": 45,
           "column": 5
         }
       },
@@ -60,7 +73,29 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Serialize to a native javascript object</p>"
+            "body": "<p>Return the message data in a spec-conformant native object</p>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "toObject": {
+      "location": {
+        "start": {
+          "line": 60,
+          "column": 4
+        },
+        "end": {
+          "line": 62,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Serialize to a native javascript object. If you need a normalized object\n that conforms to the spec, use {@link #toNormalizedObject}</p>"
           }
         ],
         "@return": [

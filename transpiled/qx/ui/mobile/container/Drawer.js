@@ -96,15 +96,15 @@
       }
 
       qx.core.Init.getApplication().addListener("back", this._onBack, this);
-      this.__parent__P_449_0 = this.getLayoutParent();
+      this.__parent__P_450_0 = this.getLayoutParent();
 
-      this.__parent__P_449_0.addCssClass("drawer-parent");
+      this.__parent__P_450_0.addCssClass("drawer-parent");
 
-      this.__parent__P_449_0.addListener("swipe", this._onParentSwipe, this);
+      this.__parent__P_450_0.addListener("swipe", this._onParentSwipe, this);
 
-      this.__parent__P_449_0.addListener("pointerdown", this._onParentPointerDown, this);
+      this.__parent__P_450_0.addListener("pointerdown", this._onParentPointerDown, this);
 
-      this.__pointerStartPosition__P_449_1 = [0, 0];
+      this.__pointerStartPosition__P_450_1 = [0, 0];
       this.forceHide();
     },
 
@@ -191,10 +191,10 @@
     *****************************************************************************
     */
     members: {
-      __pointerStartPosition__P_449_1: null,
-      __parent__P_449_0: null,
-      __transitionEnabled__P_449_2: null,
-      __inTransition__P_449_3: null,
+      __pointerStartPosition__P_450_1: null,
+      __parent__P_450_0: null,
+      __transitionEnabled__P_450_2: null,
+      __inTransition__P_450_3: null,
       // property apply
       _applyOrientation: function _applyOrientation(value, old) {
         this.removeCssClass(old);
@@ -207,10 +207,10 @@
         this.removeCssClass(old);
         this.addCssClass(value);
 
-        if (this.__parent__P_449_0) {
-          this.__parent__P_449_0.setTranslateX(0);
+        if (this.__parent__P_450_0) {
+          this.__parent__P_450_0.setTranslateX(0);
 
-          this.__parent__P_449_0.setTranslateY(0);
+          this.__parent__P_450_0.setTranslateY(0);
         }
       },
       // property apply
@@ -231,32 +231,32 @@
       },
       // property apply
       _applyTransitionDuration: function _applyTransitionDuration(value, old) {
-        this.__transitionEnabled__P_449_2 = value > 0;
+        this.__transitionEnabled__P_450_2 = value > 0;
       },
 
       /**
        * Shows the drawer.
        */
       show: function show() {
-        if (!this.isHidden() || this.__inTransition__P_449_3 === true) {
+        if (!this.isHidden() || this.__inTransition__P_450_3 === true) {
           return;
         }
 
-        this.__inTransition__P_449_3 = true; // Make drawer visible before "changeVisibility" event is fired, after transition.
+        this.__inTransition__P_450_3 = true; // Make drawer visible before "changeVisibility" event is fired, after transition.
 
         this._setStyle("visibility", "visible");
 
-        this.__parent__P_449_0.addCssClass("blocked");
+        this.__parent__P_450_0.addCssClass("blocked");
 
         if (this.getPositionZ() == "below") {
           if (this.getOrientation() == "left") {
-            this.__parent__P_449_0.setTranslateX(this.getSize());
+            this.__parent__P_450_0.setTranslateX(this.getSize());
           } else if (this.getOrientation() == "right") {
-            this.__parent__P_449_0.setTranslateX(-this.getSize());
+            this.__parent__P_450_0.setTranslateX(-this.getSize());
           } else if (this.getOrientation() == "top") {
-            this.__parent__P_449_0.setTranslateY(this.getSize());
+            this.__parent__P_450_0.setTranslateY(this.getSize());
           } else if (this.getOrientation() == "bottom") {
-            this.__parent__P_449_0.setTranslateY(-this.getSize());
+            this.__parent__P_450_0.setTranslateY(-this.getSize());
           }
         }
 
@@ -272,7 +272,7 @@
 
             this._disableTransition();
 
-            this.__inTransition__P_449_3 = false;
+            this.__inTransition__P_450_3 = false;
             qx.bom.Element.removeListenerById(transitionTarget, listenerId);
           }, this);
           setTimeout(function () {
@@ -280,7 +280,7 @@
           }.bind(this), 0);
         } else {
           qx.ui.mobile.container.Drawer.prototype.show.base.call(this);
-          this.__inTransition__P_449_3 = false;
+          this.__inTransition__P_450_3 = false;
           this.removeCssClass("hidden");
         }
       },
@@ -289,16 +289,16 @@
        * Hides the drawer.
        */
       hide: function hide() {
-        if (this.isHidden() || this.__inTransition__P_449_3 === true) {
+        if (this.isHidden() || this.__inTransition__P_450_3 === true) {
           return;
         }
 
-        this.__inTransition__P_449_3 = true;
+        this.__inTransition__P_450_3 = true;
 
         if (this.getPositionZ() == "below") {
-          this.__parent__P_449_0.setTranslateX(0);
+          this.__parent__P_450_0.setTranslateX(0);
 
-          this.__parent__P_449_0.setTranslateY(0);
+          this.__parent__P_450_0.setTranslateY(0);
         }
 
         if (this.getTransitionDuration() > 0) {
@@ -313,9 +313,9 @@
 
             this._disableTransition();
 
-            this.__parent__P_449_0.removeCssClass("blocked");
+            this.__parent__P_450_0.removeCssClass("blocked");
 
-            this.__inTransition__P_449_3 = false;
+            this.__inTransition__P_450_3 = false;
             qx.bom.Element.removeListenerById(transitionTarget, listenerId);
           }, this);
           setTimeout(function () {
@@ -324,9 +324,9 @@
         } else {
           qx.ui.mobile.container.Drawer.prototype.hide.base.call(this);
           this.addCssClass("hidden");
-          this.__inTransition__P_449_3 = false;
+          this.__inTransition__P_450_3 = false;
 
-          this.__parent__P_449_0.removeCssClass("blocked");
+          this.__parent__P_450_0.removeCssClass("blocked");
         }
       },
 
@@ -339,12 +339,12 @@
         this._disableTransition();
 
         if (this.getPositionZ() == "below") {
-          this.__parent__P_449_0.setTranslateX(0);
+          this.__parent__P_450_0.setTranslateX(0);
 
-          this.__parent__P_449_0.setTranslateY(0);
+          this.__parent__P_450_0.setTranslateY(0);
         }
 
-        this.__parent__P_449_0.removeCssClass("blocked");
+        this.__parent__P_450_0.removeCssClass("blocked");
 
         this.addCssClass("hidden");
       },
@@ -373,7 +373,7 @@
       */
       _getTransitionTarget: function _getTransitionTarget() {
         if (this.getPositionZ() == "below") {
-          return this.__parent__P_449_0;
+          return this.__parent__P_450_0;
         } else {
           return this;
         }
@@ -412,14 +412,14 @@
        * @param evt {qx.module.event.Pointer} Handled pointer event.
        */
       _onParentPointerDown: function _onParentPointerDown(evt) {
-        this.__pointerStartPosition__P_449_1 = [evt.getViewportLeft(), evt.getViewportTop()];
+        this.__pointerStartPosition__P_450_1 = [evt.getViewportLeft(), evt.getViewportTop()];
         var isShown = !this.hasCssClass("hidden");
 
         if (isShown && this.isHideOnParentTap()) {
           var location = qx.bom.element.Location.get(this.getContainerElement());
           var orientation = this.getOrientation();
 
-          if (orientation == "left" && this.__pointerStartPosition__P_449_1[0] > location.right || orientation == "top" && this.__pointerStartPosition__P_449_1[1] > location.bottom || orientation == "bottom" && this.__pointerStartPosition__P_449_1[1] < location.top || orientation == "right" && this.__pointerStartPosition__P_449_1[0] < location.left) {
+          if (orientation == "left" && this.__pointerStartPosition__P_450_1[0] > location.right || orientation == "top" && this.__pointerStartPosition__P_450_1[1] > location.bottom || orientation == "bottom" && this.__pointerStartPosition__P_450_1[1] < location.top || orientation == "right" && this.__pointerStartPosition__P_450_1[0] < location.left) {
             // First event on overlayed page should be ignored.
             evt.preventDefault();
             this.hide();
@@ -438,7 +438,7 @@
         if (isHidden) {
           var location = qx.bom.element.Location.get(this.getContainerElement());
 
-          if (direction == "right" && this.getOrientation() == "left" && this.__pointerStartPosition__P_449_1[0] < location.right + this.getTapOffset() && this.__pointerStartPosition__P_449_1[0] > location.right || direction == "left" && this.getOrientation() == "right" && this.__pointerStartPosition__P_449_1[0] > location.left - this.getTapOffset() && this.__pointerStartPosition__P_449_1[0] < location.left || direction == "down" && this.getOrientation() == "top" && this.__pointerStartPosition__P_449_1[1] < this.getTapOffset() + location.bottom && this.__pointerStartPosition__P_449_1[1] > location.bottom || direction == "up" && this.getOrientation() == "bottom" && this.__pointerStartPosition__P_449_1[1] > location.top - this.getTapOffset() && this.__pointerStartPosition__P_449_1[1] < location.top) {
+          if (direction == "right" && this.getOrientation() == "left" && this.__pointerStartPosition__P_450_1[0] < location.right + this.getTapOffset() && this.__pointerStartPosition__P_450_1[0] > location.right || direction == "left" && this.getOrientation() == "right" && this.__pointerStartPosition__P_450_1[0] > location.left - this.getTapOffset() && this.__pointerStartPosition__P_450_1[0] < location.left || direction == "down" && this.getOrientation() == "top" && this.__pointerStartPosition__P_450_1[1] < this.getTapOffset() + location.bottom && this.__pointerStartPosition__P_450_1[1] > location.bottom || direction == "up" && this.getOrientation() == "bottom" && this.__pointerStartPosition__P_450_1[1] > location.top - this.getTapOffset() && this.__pointerStartPosition__P_450_1[1] < location.top) {
             this.show();
           }
         }
@@ -447,15 +447,15 @@
     destruct: function destruct() {
       qx.core.Init.getApplication().removeListener("back", this._onBack, this);
 
-      this.__parent__P_449_0.removeListener("swipe", this._onParentSwipe, this);
+      this.__parent__P_450_0.removeListener("swipe", this._onParentSwipe, this);
 
-      this.__parent__P_449_0.removeListener("pointerdown", this._onParentPointerDown, this);
+      this.__parent__P_450_0.removeListener("pointerdown", this._onParentPointerDown, this);
 
       qx.util.DisposeUtil.destroyContainer(this);
-      this.__pointerStartPosition__P_449_1 = this.__parent__P_449_0 = this.__transitionEnabled__P_449_2 = null;
+      this.__pointerStartPosition__P_450_1 = this.__parent__P_450_0 = this.__transitionEnabled__P_450_2 = null;
     }
   });
   qx.ui.mobile.container.Drawer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Drawer.js.map?dt=1599343240140
+//# sourceMappingURL=Drawer.js.map?dt=1599462413508

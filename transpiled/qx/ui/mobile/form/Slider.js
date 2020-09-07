@@ -163,7 +163,7 @@
       _containerElementWidth: null,
       _containerElementLeft: null,
       _pixelPerStep: null,
-      __value__P_467_0: 0,
+      __value__P_468_0: 0,
 
       /**
        * Increments the current value.
@@ -303,7 +303,7 @@
        * @param value {Integer} the new value of the slider
        */
       _setValue: function _setValue(value) {
-        this.__value__P_467_0 = value;
+        this.__value__P_468_0 = value;
         qx.bom.AnimationFrame.request(this._refresh, this);
       },
 
@@ -313,7 +313,7 @@
        * @return {Integer} the value of the slider
        */
       _getValue: function _getValue() {
-        return this.__value__P_467_0;
+        return this.__value__P_468_0;
       },
 
       /**
@@ -443,4 +443,4 @@
   qx.ui.mobile.form.Slider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Slider.js.map?dt=1599343241396
+//# sourceMappingURL=Slider.js.map?dt=1599462414789

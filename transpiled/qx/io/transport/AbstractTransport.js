@@ -20,7 +20,7 @@
    * authentication, must be done on the level of the underlying implementation,
    * an abstract API will be added later.
    */
-  qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
+  qx.Class.define("qx.io.transport.AbstractTransport", {
     extend: qx.core.Object,
     type: "abstract",
     properties: {
@@ -50,7 +50,7 @@
     }
 
   });
-  qx.io.jsonrpc.transport.Abstract.$$dbClassInfo = $$dbClassInfo;
+  qx.io.transport.AbstractTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1599343213120
+//# sourceMappingURL=AbstractTransport.js.map?dt=1599462387294

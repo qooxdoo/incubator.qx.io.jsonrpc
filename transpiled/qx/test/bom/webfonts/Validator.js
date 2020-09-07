@@ -35,26 +35,26 @@
     include: [qx.dev.unit.MRequirements],
     members: {
       setUp: function setUp() {
-        this.__nodesBefore__P_225_0 = document.body.childNodes.length;
+        this.__nodesBefore__P_226_0 = document.body.childNodes.length;
 
         this.require(["webFontSupport"]);
 
-        this.__val__P_225_1 = new qx.bom.webfonts.Validator();
+        this.__val__P_226_1 = new qx.bom.webfonts.Validator();
       },
       tearDown: function tearDown() {
-        if (this.__val__P_225_1) {
-          this.__val__P_225_1.dispose();
+        if (this.__val__P_226_1) {
+          this.__val__P_226_1.dispose();
 
-          delete this.__val__P_225_1;
+          delete this.__val__P_226_1;
         }
 
         qx.bom.webfonts.Validator.removeDefaultHelperElements();
-        this.assertEquals(this.__nodesBefore__P_225_0, document.body.childNodes.length, "Validator did not clean up correctly!");
+        this.assertEquals(this.__nodesBefore__P_226_0, document.body.childNodes.length, "Validator did not clean up correctly!");
       },
       testValidFont: function testValidFont() {
-        this.__val__P_225_1.setFontFamily("monospace, courier");
+        this.__val__P_226_1.setFontFamily("monospace, courier");
 
-        this.__val__P_225_1.addListener("changeStatus", function (ev) {
+        this.__val__P_226_1.addListener("changeStatus", function (ev) {
           var result = ev.getData();
           this.resume(function (ev) {
             this.assertTrue(result.valid);
@@ -63,16 +63,16 @@
 
         var that = this;
         window.setTimeout(function () {
-          that.__val__P_225_1.validate();
+          that.__val__P_226_1.validate();
         }, 0);
         this.wait(1000);
       },
       testInvalidFont: function testInvalidFont() {
-        this.__val__P_225_1.setFontFamily("zzzzzzzzzzzzzzz");
+        this.__val__P_226_1.setFontFamily("zzzzzzzzzzzzzzz");
 
-        this.__val__P_225_1.setTimeout(250);
+        this.__val__P_226_1.setTimeout(250);
 
-        this.__val__P_225_1.addListener("changeStatus", function (ev) {
+        this.__val__P_226_1.addListener("changeStatus", function (ev) {
           var result = ev.getData();
           this.resume(function (ev) {
             this.assertFalse(result.valid);
@@ -81,7 +81,7 @@
 
         var that = this;
         window.setTimeout(function () {
-          that.__val__P_225_1.validate();
+          that.__val__P_226_1.validate();
         }, 0);
         this.wait(500);
       }
@@ -90,4 +90,4 @@
   qx.test.bom.webfonts.Validator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Validator.js.map?dt=1599343219114
+//# sourceMappingURL=Validator.js.map?dt=1599462392387

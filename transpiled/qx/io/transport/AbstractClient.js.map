@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/io/transport/AbstractClient.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "type",
+    "statics",
+    "registerTransport",
+    "uriRegExp",
+    "transportClass",
+    "constructor",
+    "__transports",
+    "lang",
+    "Type",
+    "isRegExp",
+    "Error",
+    "Interface",
+    "classImplements",
+    "io",
+    "transport",
+    "ITransport",
+    "push",
+    "properties",
+    "check",
+    "members",
+    "selectTransport",
+    "transportOrUri",
+    "uri",
+    "isString",
+    "registeredTransport",
+    "reverse",
+    "match",
+    "exception",
+    "Transport",
+    "INVALD_URI",
+    "setTransport",
+    "AbstractClient"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;;;;AAQAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAkD;AAChDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MADgC;AAEhDC,IAAAA,IAAI,EAAE,UAF0C;AAIhDC,IAAAA,OAAO,EAAE;AACP;;;;;;;;;AASAC,MAAAA,iBAAiB,CAACC,SAAD,EAAYC,cAAZ,EAA4B;AAC3C,YAAI,CAAC,KAAKC,WAAL,CAAiBC,qBAAtB,EAAoC;AAClC,eAAKD,WAAL,CAAiBC,qBAAjB,GAAgC,EAAhC;AACD;;AACD,YAAI,CAACf,EAAE,CAACgB,IAAH,CAAQC,IAAR,CAAaC,QAAb,CAAsBN,SAAtB,CAAL,EAAuC;AACrC,gBAAM,IAAIO,KAAJ,CAAU,8CAAV,CAAN;AACD;;AACD,YAAI,CAACnB,EAAE,CAACoB,SAAH,CAAaC,eAAb,CAA6BR,cAA7B,EAA6Cb,EAAE,CAACsB,EAAH,CAAMC,SAAN,CAAgBC,UAA7D,CAAL,EAA+E;AAC7E,gBAAM,IAAIL,KAAJ,CAAU,2DAAV,CAAN;AACD;;AACD,aAAKL,WAAL,CAAiBC,qBAAjB,CAA8BU,IAA9B,CAAmC;AAAEb,UAAAA,SAAF;AAAaW,UAAAA,SAAS,EAAEV;AAAxB,SAAnC;AACD;;AArBM,KAJuC;AA6BhDa,IAAAA,UAAU,EAAE;AACV;;;AAGAH,MAAAA,SAAS,EAAE;AACTI,QAAAA,KAAK,EAAG;AADC;AAJD,KA7BoC;AAsChDC,IAAAA,OAAO,EAAE;AAEP;;;;;;;AAOAC,MAAAA,eAAe,CAACC,cAAD,EAAiB;AAC9B,YAAIP,SAAJ;AACA,YAAIQ,GAAJ;;AACA,YAAI/B,EAAE,CAACgB,IAAH,CAAQC,IAAR,CAAae,QAAb,CAAsBF,cAAtB,CAAJ,EAA2C;AACzCC,UAAAA,GAAG,GAAGD,cAAN;;AACA,eAAK,IAAIG,mBAAT,IAAgC,KAAKnB,WAAL,CAAiBC,qBAAjB,CAA8BmB,OAA9B,EAAhC,EAAyE;AACvE,gBAAIH,GAAG,CAACI,KAAJ,CAAUF,mBAAmB,CAACrB,SAA9B,CAAJ,EAA8C;AAC5C;AACAW,cAAAA,SAAS,GAAG,IAAIU,mBAAmB,CAACV,SAAxB,CAAkCQ,GAAlC,CAAZ;AACD;AACF;;AACD,cAAI,CAACR,SAAL,EAAgB;AACd,kBAAM,IAAIvB,EAAE,CAACsB,EAAH,CAAMc,SAAN,CAAgBC,SAApB,CACH,kCAAiCP,cAAe,GAD7C,EAEJ9B,EAAE,CAACsB,EAAH,CAAMc,SAAN,CAAgBC,SAAhB,CAA0BC,UAFtB,CAAN;AAID;AACF,SAdD,MAcO;AACLf,UAAAA,SAAS,GAAGO,cAAZ;AACD;;AACD,aAAKS,YAAL,CAAkBhB,SAAlB;AACD;;AA9BM;AAtCuC,GAAlD;AA1BAvB,EAAAA,EAAE,CAACsB,EAAH,CAAMC,SAAN,CAAgBiB,cAAhB,CAA+BrC,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * This class provides a the base class for all clients that use the\n * transport implementations in this namespace. Since the static method\n * `registerTransport` cannot be inherited by subclasses, they mus proxy it\n * by adding `registerTransport : qx.io.transport.AbstractClient.registerTransport`\n * to their `statics` section.\n *\n */\nqx.Class.define(\"qx.io.transport.AbstractClient\", {\n  extend: qx.core.Object,\n  type: \"abstract\",\n\n  statics: {\n    /**\n     * Register a transport class for use with uris that match the given\n     * regular expression. The client will use the transport which first\n     * matches, starting with the last added transport\n     * @param {RegExp} uriRegExp\n     *    A regular expression which the URI must match\n     * @param {qx.io.transport.ITransport}  transportClass\n     *    The qooxdoo class implementing the transport\n     */\n    registerTransport(uriRegExp, transportClass) {\n      if (!this.constructor.__transports) {\n        this.constructor.__transports = [];\n      }\n      if (!qx.lang.Type.isRegExp(uriRegExp)) {\n        throw new Error(\"First argument must be a regular expression!\");\n      }\n      if (!qx.Interface.classImplements(transportClass, qx.io.transport.ITransport)) {\n        throw new Error(\"Transport class must implement qx.io.transport.ITransport\");\n      }\n      this.constructor.__transports.push({ uriRegExp, transport: transportClass});\n    }\n  },\n\n\n  properties: {\n    /**\n     * The transport object\n     */\n    transport: {\n      check : \"qx.io.transport.ITransport\"\n    }\n  },\n\n  members: {\n\n    /**\n     * Given a transport object implementing {@link qx.io.transport.ITransport}\n     * select that transport; if a string URI is passed, select one that has\n     * been registered for that class of URIs.\n     * @param {qx.io.transport.ITransport|String} transportOrUri\n     * @throws qx.io.exception.Transport\n     */\n    selectTransport(transportOrUri) {\n      let transport;\n      let uri;\n      if (qx.lang.Type.isString(transportOrUri)) {\n        uri = transportOrUri;\n        for (let registeredTransport of this.constructor.__transports.reverse()) {\n          if (uri.match(registeredTransport.uriRegExp)) {\n            // eslint-disable-next-line new-cap\n            transport = new registeredTransport.transport(uri);\n          }\n        }\n        if (!transport) {\n          throw new qx.io.exception.Transport(\n            `No matching transport for URI '${transportOrUri}'`,\n            qx.io.exception.Transport.INVALD_URI\n          );\n        }\n      } else {\n        transport = transportOrUri;\n      }\n      this.setTransport(transport);\n    }\n  }\n});\n"
+  ]
+}

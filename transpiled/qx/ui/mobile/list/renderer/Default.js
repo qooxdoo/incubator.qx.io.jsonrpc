@@ -74,10 +74,10 @@
       this._init();
     },
     members: {
-      __image__P_475_0: null,
-      __title__P_475_1: null,
-      __subtitle__P_475_2: null,
-      __rightContainer__P_475_3: null,
+      __image__P_476_0: null,
+      __title__P_476_1: null,
+      __subtitle__P_476_2: null,
+      __rightContainer__P_476_3: null,
 
       /**
        * Returns the image widget which is used for this renderer.
@@ -85,7 +85,7 @@
        * @return {qx.ui.mobile.basic.Image} The image widget
        */
       getImageWidget: function getImageWidget() {
-        return this.__image__P_475_0;
+        return this.__image__P_476_0;
       },
 
       /**
@@ -94,7 +94,7 @@
        * @return {qx.ui.mobile.basic.Label} The title widget
        */
       getTitleWidget: function getTitleWidget() {
-        return this.__title__P_475_1;
+        return this.__title__P_476_1;
       },
 
       /**
@@ -103,7 +103,7 @@
        * @return {qx.ui.mobile.basic.Label} The subtitle widget
        */
       getSubtitleWidget: function getSubtitleWidget() {
-        return this.__subtitle__P_475_2;
+        return this.__subtitle__P_476_2;
       },
 
       /**
@@ -112,7 +112,7 @@
        * @param source {String} The source to set
        */
       setImage: function setImage(source) {
-        this.__image__P_475_0.setSource(source);
+        this.__image__P_476_0.setSource(source);
       },
 
       /**
@@ -122,9 +122,9 @@
        */
       setTitle: function setTitle(title) {
         if (title && title.translate) {
-          this.__title__P_475_1.setValue(title.translate());
+          this.__title__P_476_1.setValue(title.translate());
         } else {
-          this.__title__P_475_1.setValue(title);
+          this.__title__P_476_1.setValue(title);
         }
       },
 
@@ -135,9 +135,9 @@
        */
       setSubtitle: function setSubtitle(subtitle) {
         if (subtitle && subtitle.translate) {
-          this.__subtitle__P_475_2.setValue(subtitle.translate());
+          this.__subtitle__P_476_2.setValue(subtitle.translate());
         } else {
-          this.__subtitle__P_475_2.setValue(subtitle);
+          this.__subtitle__P_476_2.setValue(subtitle);
         }
       },
 
@@ -146,19 +146,19 @@
        *
        */
       _init: function _init() {
-        this.__image__P_475_0 = this._createImage();
-        this.add(this.__image__P_475_0);
-        this.__rightContainer__P_475_3 = this._createRightContainer();
-        this.add(this.__rightContainer__P_475_3, {
+        this.__image__P_476_0 = this._createImage();
+        this.add(this.__image__P_476_0);
+        this.__rightContainer__P_476_3 = this._createRightContainer();
+        this.add(this.__rightContainer__P_476_3, {
           flex: 1
         });
-        this.__title__P_475_1 = this._createTitle();
+        this.__title__P_476_1 = this._createTitle();
 
-        this.__rightContainer__P_475_3.add(this.__title__P_475_1);
+        this.__rightContainer__P_476_3.add(this.__title__P_476_1);
 
-        this.__subtitle__P_475_2 = this._createSubtitle();
+        this.__subtitle__P_476_2 = this._createSubtitle();
 
-        this.__rightContainer__P_475_3.add(this.__subtitle__P_475_2);
+        this.__rightContainer__P_476_3.add(this.__subtitle__P_476_2);
       },
 
       /**
@@ -207,18 +207,18 @@
       },
       // overridden
       reset: function reset() {
-        this.__image__P_475_0.setSource(null);
+        this.__image__P_476_0.setSource(null);
 
-        this.__title__P_475_1.setValue("");
+        this.__title__P_476_1.setValue("");
 
-        this.__subtitle__P_475_2.setValue("");
+        this.__subtitle__P_476_2.setValue("");
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__image__P_475_0", "__title__P_475_1", "__subtitle__P_475_2", "__rightContainer__P_475_3");
+      this._disposeObjects("__image__P_476_0", "__title__P_476_1", "__subtitle__P_476_2", "__rightContainer__P_476_3");
     }
   });
   qx.ui.mobile.list.renderer.Default.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Default.js.map?dt=1599343241910
+//# sourceMappingURL=Default.js.map?dt=1599462415320

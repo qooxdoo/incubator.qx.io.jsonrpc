@@ -63,9 +63,9 @@
 
       var dropdown = this.getChildControl("dropdown");
       dropdown.getChildControl("list").setSelectionMode("single");
-      this.__selection__P_426_0 = dropdown.getSelection();
+      this.__selection__P_427_0 = dropdown.getSelection();
 
-      this.__selection__P_426_0.addListener("change", this.__onSelectionChange__P_426_1, this);
+      this.__selection__P_427_0.addListener("change", this.__onSelectionChange__P_427_1, this);
 
       this.bind("value", textField, "value");
       textField.bind("value", this, "value"); // forward the focusin and focusout events to the textfield. The textfield
@@ -126,16 +126,16 @@
     },
     members: {
       /** @type {var} Binding id between local value and text field value. */
-      __localBindId__P_426_2: null,
+      __localBindId__P_427_2: null,
 
       /** @type {var} Binding id between text field value and local value. */
-      __textFieldBindId__P_426_3: null,
+      __textFieldBindId__P_427_3: null,
 
       /** @type {qx.data.Array} the drop-down selection. */
-      __selection__P_426_0: null,
+      __selection__P_427_0: null,
 
       /** @type {Boolean} Indicator to ignore selection changes from the list. */
-      __ignoreChangeSelection__P_426_4: null,
+      __ignoreChangeSelection__P_427_4: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -247,7 +247,7 @@
       },
       // overridden
       _beforeOpen: function _beforeOpen() {
-        this.__selectFirstMatch__P_426_5();
+        this.__selectFirstMatch__P_427_5();
       },
       // overridden
       _handleKeyboard: function _handleKeyboard(event) {
@@ -301,15 +301,15 @@
        *
        * @param event {qx.event.type.Data} The change event from the qx.data.Array.
        */
-      __onSelectionChange__P_426_1: function __onSelectionChange__P_426_1(event) {
-        if (this.__ignoreChangeSelection__P_426_4 == true) {
+      __onSelectionChange__P_427_1: function __onSelectionChange__P_427_1(event) {
+        if (this.__ignoreChangeSelection__P_427_4 == true) {
           return;
         }
 
-        var selected = this.__selection__P_426_0.getItem(0);
+        var selected = this.__selection__P_427_0.getItem(0);
 
         if (selected) {
-          selected = this.__convertValue__P_426_6(selected);
+          selected = this.__convertValue__P_427_6(selected);
           this.setValue(selected);
         }
       },
@@ -333,19 +333,19 @@
       /**
        * Selects the first list item that starts with the text field's value.
        */
-      __selectFirstMatch__P_426_5: function __selectFirstMatch__P_426_5() {
+      __selectFirstMatch__P_427_5: function __selectFirstMatch__P_427_5() {
         var value = this.getValue();
         var dropdown = this.getChildControl("dropdown");
         var selection = dropdown.getSelection();
         var selected = selection.getItem(0); // try to preselect the matching item even if there is no current selection
 
-        if (selected === undefined || this.__convertValue__P_426_6(selected) !== value) {
+        if (selected === undefined || this.__convertValue__P_427_6(selected) !== value) {
           // only reset the old selection if there is one
           if (selected !== undefined) {
             // reset the old selection
-            this.__ignoreChangeSelection__P_426_4 = true;
+            this.__ignoreChangeSelection__P_427_4 = true;
             selection.removeAll();
-            this.__ignoreChangeSelection__P_426_4 = false;
+            this.__ignoreChangeSelection__P_427_4 = false;
           } // No calculation is needed when the value is empty
 
 
@@ -360,7 +360,7 @@
           for (var i = 0, l = lookupTable.length; i < l; i++) {
             var modelItem = model.getItem(lookupTable[i]);
 
-            var itemLabel = this.__convertValue__P_426_6(modelItem);
+            var itemLabel = this.__convertValue__P_427_6(modelItem);
 
             if (itemLabel && itemLabel.indexOf(value) == 0) {
               dropdown.setPreselected(modelItem);
@@ -376,7 +376,7 @@
        * @param modelItem {var} The model item to convert.
        * @return {String} The converted value.
        */
-      __convertValue__P_426_6: function __convertValue__P_426_6(modelItem) {
+      __convertValue__P_427_6: function __convertValue__P_427_6(modelItem) {
         var labelOptions = this.getLabelOptions();
         var formatter = this.getDefaultFormat();
         var labelPath = this.getLabelPath();
@@ -406,12 +406,12 @@
       this.removeAllBindings();
       textField.removeAllBindings();
 
-      this.__selection__P_426_0.removeListener("change", this.__onSelectionChange__P_426_1, this);
+      this.__selection__P_427_0.removeListener("change", this.__onSelectionChange__P_427_1, this);
 
-      this.__selection__P_426_0 = null;
+      this.__selection__P_427_0 = null;
     }
   });
   qx.ui.form.VirtualComboBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualComboBox.js.map?dt=1599343237990
+//# sourceMappingURL=VirtualComboBox.js.map?dt=1599462411342

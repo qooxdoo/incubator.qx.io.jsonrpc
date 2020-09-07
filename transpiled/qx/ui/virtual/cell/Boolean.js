@@ -43,7 +43,7 @@
     */
     construct: function construct() {
       qx.ui.virtual.cell.AbstractImage.constructor.call(this);
-      this.__aliasManager__P_539_0 = qx.util.AliasManager.getInstance();
+      this.__aliasManager__P_540_0 = qx.util.AliasManager.getInstance();
     },
 
     /*
@@ -82,24 +82,24 @@
     *****************************************************************************
     */
     members: {
-      __imageTrue__P_539_1: null,
-      __imageFalse__P_539_2: null,
-      __aliasManager__P_539_0: null,
+      __imageTrue__P_540_1: null,
+      __imageFalse__P_540_2: null,
+      __aliasManager__P_540_0: null,
       // property apply
       _applyIconTrue: function _applyIconTrue(value) {
-        this.__imageTrue__P_539_1 = this.__aliasManager__P_539_0.resolve(value);
+        this.__imageTrue__P_540_1 = this.__aliasManager__P_540_0.resolve(value);
       },
       // property apply
       _applyIconFalse: function _applyIconFalse(value) {
-        this.__imageFalse__P_539_2 = this.__aliasManager__P_539_0.resolve(value);
+        this.__imageFalse__P_540_2 = this.__aliasManager__P_540_0.resolve(value);
       },
       // overridden
       _identifyImage: function _identifyImage(value) {
-        return value == true ? this.__imageTrue__P_539_1 : this.__imageFalse__P_539_2;
+        return value == true ? this.__imageTrue__P_540_1 : this.__imageFalse__P_540_2;
       }
     }
   });
   qx.ui.virtual.cell.Boolean.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Boolean.js.map?dt=1599343246942
+//# sourceMappingURL=Boolean.js.map?dt=1599462420367

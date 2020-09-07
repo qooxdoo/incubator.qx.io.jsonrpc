@@ -74,14 +74,14 @@
       }
     },
     members: {
-      __flash__P_289_0: null,
-      __params__P_289_1: null,
-      __variables__P_289_2: null,
+      __flash__P_290_0: null,
+      __params__P_290_1: null,
+      __variables__P_290_2: null,
       setUp: function setUp() {
         this.require(["plugin.flash"]);
 
         this.flush();
-        this.__params__P_289_1 = {
+        this.__params__P_290_1 = {
           wmode: "opaque",
           quality: "best",
           allowScriptAccess: "sameDomain",
@@ -90,18 +90,18 @@
           loop: "true",
           menu: "true"
         };
-        this.__variables__P_289_2 = {
+        this.__variables__P_290_2 = {
           init: "qx.test.ui.embed.Flash.flashCallback",
           flashVar1: "bli bla blub",
           flashVar2: "bulb alb ilb"
         };
-        var flash = this.__flash__P_289_0 = new qx.ui.embed.Flash("qx/test/UnitTestFlash.swf", "flashmovie");
-        flash.setVariables(this.__variables__P_289_2);
+        var flash = this.__flash__P_290_0 = new qx.ui.embed.Flash("qx/test/UnitTestFlash.swf", "flashmovie");
+        flash.setVariables(this.__variables__P_290_2);
         flash.setScale("noscale");
         flash.setPlay(true);
         flash.setLoop(true);
         flash.setMenu(true);
-        this.getRoot().add(this.__flash__P_289_0, {
+        this.getRoot().add(this.__flash__P_290_0, {
           edge: 10
         });
       },
@@ -109,9 +109,9 @@
         qx.test.ui.embed.Flash.isFlashReady = false;
         this.getRoot().removeAll();
 
-        this.__flash__P_289_0.destroy();
+        this.__flash__P_290_0.destroy();
 
-        this.__flash__P_289_0 = null;
+        this.__flash__P_290_0 = null;
       },
       testEvents: function testEvents() {
         // disable event tests for chrome on linux to have travis ci
@@ -128,11 +128,11 @@
         var loaded = this.spy(test, "loaded");
         var timeout = this.spy(test, "timeout");
 
-        this.__flash__P_289_0.addListener("loading", test.loading);
+        this.__flash__P_290_0.addListener("loading", test.loading);
 
-        this.__flash__P_289_0.addListener("loaded", test.loaded);
+        this.__flash__P_290_0.addListener("loaded", test.loaded);
 
-        this.__flash__P_289_0.addListener("timeout", test.timeout);
+        this.__flash__P_290_0.addListener("timeout", test.timeout);
 
         var that = this;
         this.wait(2000, function () {
@@ -175,7 +175,7 @@
       testCreateFlash: function testCreateFlash() {
         var that = this;
         this.wait(2000, function () {
-          var flash = that.__flash__P_289_0.getFlashElement();
+          var flash = that.__flash__P_290_0.getFlashElement();
 
           that.assertNotNull(flash, "DOM element for Flash movie is not created!");
           that.assertIdentical("object", flash.nodeName.toLowerCase()); // general object attribute tests
@@ -194,7 +194,7 @@
           } // test params and flashvars
 
 
-          var params = that.__params__P_289_1;
+          var params = that.__params__P_290_1;
           params.flashvars = "init=qx.test.ui.embed.Flash.flashCallback&flashVar1=bli bla blub&flashVar2=bulb alb ilb";
           var children = flash.childNodes;
 
@@ -219,37 +219,37 @@
         var that = this;
         this.wait(5000, function () {
           that.assertException(function () {
-            that.__flash__P_289_0.setSource("new.swf");
+            that.__flash__P_290_0.setSource("new.swf");
           }, Error, null, "Error expected by calling 'setSource'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setId("newId");
+            that.__flash__P_290_0.setId("newId");
           }, Error, null, "Error expected by calling 'setId'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setQuality("low");
+            that.__flash__P_290_0.setQuality("low");
           }, Error, null, "Error expected by calling 'setQuality'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setScale("excactfit");
+            that.__flash__P_290_0.setScale("excactfit");
           }, Error, null, "Error expected by calling 'setScale'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setWmode("transparent");
+            that.__flash__P_290_0.setWmode("transparent");
           }, Error, null, "Error expected by calling 'setWmode'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setPlay(false);
+            that.__flash__P_290_0.setPlay(false);
           }, Error, null, "Error expected by calling 'setPlay'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setLoop(false);
+            that.__flash__P_290_0.setLoop(false);
           }, Error, null, "Error expected by calling 'setLoop'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setMenu(false);
+            that.__flash__P_290_0.setMenu(false);
           }, Error, null, "Error expected by calling 'setMenu'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setAllowScriptAccess("never");
+            that.__flash__P_290_0.setAllowScriptAccess("never");
           }, Error, null, "Error expected by calling 'setAllowScriptAccess'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setLiveConnect(false);
+            that.__flash__P_290_0.setLiveConnect(false);
           }, Error, null, "Error expected by calling 'setLiveConnect'!");
           that.assertException(function () {
-            that.__flash__P_289_0.setVariables({
+            that.__flash__P_290_0.setVariables({
               key: "value"
             });
           }, Error, null, "Error expected by calling 'setVariables'!");
@@ -270,7 +270,7 @@
             return;
           }
 
-          var flash = that.__flash__P_289_0.getFlashElement();
+          var flash = that.__flash__P_290_0.getFlashElement();
 
           if (flash.echo) {
             result = flash.echo("hello echo!");
@@ -284,4 +284,4 @@
   qx.test.ui.embed.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1599343226479
+//# sourceMappingURL=Flash.js.map?dt=1599462399720

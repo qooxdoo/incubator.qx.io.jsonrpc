@@ -8,7 +8,7 @@
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
-  qx.Interface.define("qx.io.jsonrpc.transport.ITransport", {
+  qx.Interface.define("qx.io.transport.ITransport", {
     properties: {
       /**
        * The URI of the endpoint
@@ -40,13 +40,13 @@
        * Returns the object which implements the transport on the underlying
        * level, so that transport-specific configuration can be done on it.
        * The object might be a new one for each request.
-       * @return {qx.core.Object}
+       * @return {Object}
        */
       getTransportImpl() {}
 
     }
   });
-  qx.io.jsonrpc.transport.ITransport.$$dbClassInfo = $$dbClassInfo;
+  qx.io.transport.ITransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ITransport.js.map?dt=1599343213157
+//# sourceMappingURL=ITransport.js.map?dt=1599462387327

@@ -40,10 +40,10 @@
     construct: function construct() {
       qx.ui.table.model.Abstract.constructor.call(this);
       this._rowArr = [];
-      this.__sortColumnIndex__P_515_0 = -1; // Array of objects, each with property "ascending" and "descending"
+      this.__sortColumnIndex__P_516_0 = -1; // Array of objects, each with property "ascending" and "descending"
 
-      this.__sortMethods__P_515_1 = [];
-      this.__editableColArr__P_515_2 = null;
+      this.__sortMethods__P_516_1 = [];
+      this.__editableColArr__P_516_2 = null;
     },
     properties: {
       /**
@@ -151,11 +151,11 @@
     },
     members: {
       _rowArr: null,
-      __editableColArr__P_515_2: null,
-      __sortableColArr__P_515_3: null,
-      __sortMethods__P_515_1: null,
-      __sortColumnIndex__P_515_0: null,
-      __sortAscending__P_515_4: null,
+      __editableColArr__P_516_2: null,
+      __sortableColArr__P_516_3: null,
+      __sortMethods__P_516_1: null,
+      __sortColumnIndex__P_516_0: null,
+      __sortAscending__P_516_4: null,
       // overridden
       getRowData: function getRowData(rowIndex) {
         var rowData = this._rowArr[rowIndex];
@@ -223,10 +223,10 @@
        * @param editable {Boolean} whether all columns are editable.
        */
       setEditable: function setEditable(editable) {
-        this.__editableColArr__P_515_2 = [];
+        this.__editableColArr__P_516_2 = [];
 
         for (var col = 0; col < this.getColumnCount(); col++) {
-          this.__editableColArr__P_515_2[col] = editable;
+          this.__editableColArr__P_516_2[col] = editable;
         }
 
         this.fireEvent("metaDataChanged");
@@ -240,17 +240,17 @@
        */
       setColumnEditable: function setColumnEditable(columnIndex, editable) {
         if (editable != this.isColumnEditable(columnIndex)) {
-          if (this.__editableColArr__P_515_2 == null) {
-            this.__editableColArr__P_515_2 = [];
+          if (this.__editableColArr__P_516_2 == null) {
+            this.__editableColArr__P_516_2 = [];
           }
 
-          this.__editableColArr__P_515_2[columnIndex] = editable;
+          this.__editableColArr__P_516_2[columnIndex] = editable;
           this.fireEvent("metaDataChanged");
         }
       },
       // overridden
       isColumnEditable: function isColumnEditable(columnIndex) {
-        return this.__editableColArr__P_515_2 ? this.__editableColArr__P_515_2[columnIndex] == true : false;
+        return this.__editableColArr__P_516_2 ? this.__editableColArr__P_516_2[columnIndex] == true : false;
       },
 
       /**
@@ -261,24 +261,24 @@
        */
       setColumnSortable: function setColumnSortable(columnIndex, sortable) {
         if (sortable != this.isColumnSortable(columnIndex)) {
-          if (this.__sortableColArr__P_515_3 == null) {
-            this.__sortableColArr__P_515_3 = [];
+          if (this.__sortableColArr__P_516_3 == null) {
+            this.__sortableColArr__P_516_3 = [];
           }
 
-          this.__sortableColArr__P_515_3[columnIndex] = sortable;
+          this.__sortableColArr__P_516_3[columnIndex] = sortable;
           this.fireEvent("metaDataChanged");
         }
       },
       // overridden
       isColumnSortable: function isColumnSortable(columnIndex) {
-        return this.__sortableColArr__P_515_3 ? this.__sortableColArr__P_515_3[columnIndex] !== false : true;
+        return this.__sortableColArr__P_516_3 ? this.__sortableColArr__P_516_3[columnIndex] !== false : true;
       },
       // overridden
       sortByColumn: function sortByColumn(columnIndex, ascending) {
         // NOTE: We use different comparators for ascending and descending,
         //     because comparators should be really fast.
         var comparator;
-        var sortMethods = this.__sortMethods__P_515_1[columnIndex];
+        var sortMethods = this.__sortMethods__P_516_1[columnIndex];
 
         if (sortMethods) {
           comparator = ascending ? sortMethods.ascending : sortMethods.descending;
@@ -296,8 +296,8 @@
           return comparator(row1, row2, columnIndex);
         });
 
-        this.__sortColumnIndex__P_515_0 = columnIndex;
-        this.__sortAscending__P_515_4 = ascending;
+        this.__sortColumnIndex__P_516_0 = columnIndex;
+        this.__sortAscending__P_516_4 = ascending;
         var data = {
           columnIndex: columnIndex,
           ascending: ascending
@@ -367,7 +367,7 @@
           methods = compare;
         }
 
-        this.__sortMethods__P_515_1[columnIndex] = methods;
+        this.__sortMethods__P_516_1[columnIndex] = methods;
       },
 
       /**
@@ -382,22 +382,22 @@
        *   in {@link #setSortMethods}.
        */
       getSortMethods: function getSortMethods(columnIndex) {
-        return this.__sortMethods__P_515_1[columnIndex];
+        return this.__sortMethods__P_516_1[columnIndex];
       },
 
       /**
        * Clears the sorting.
        */
       clearSorting: function clearSorting() {
-        if (this.__sortColumnIndex__P_515_0 != -1) {
-          this.__sortColumnIndex__P_515_0 = -1;
-          this.__sortAscending__P_515_4 = true;
+        if (this.__sortColumnIndex__P_516_0 != -1) {
+          this.__sortColumnIndex__P_516_0 = -1;
+          this.__sortAscending__P_516_4 = true;
           this.fireEvent("metaDataChanged");
         }
       },
       // overridden
       getSortColumnIndex: function getSortColumnIndex() {
-        return this.__sortColumnIndex__P_515_0;
+        return this.__sortColumnIndex__P_516_0;
       },
 
       /**
@@ -409,11 +409,11 @@
        * @param columnIndex {Integer} index of the column
        */
       _setSortColumnIndex: function _setSortColumnIndex(columnIndex) {
-        this.__sortColumnIndex__P_515_0 = columnIndex;
+        this.__sortColumnIndex__P_516_0 = columnIndex;
       },
       // overridden
       isSortAscending: function isSortAscending() {
-        return this.__sortAscending__P_515_4;
+        return this.__sortAscending__P_516_4;
       },
 
       /**
@@ -427,7 +427,7 @@
        *   <i> false</i> for a descending sort.
        */
       _setSortAscending: function _setSortAscending(ascending) {
-        this.__sortAscending__P_515_4 = ascending;
+        this.__sortAscending__P_516_4 = ascending;
       },
       // overridden
       getRowCount: function getRowCount() {
@@ -456,7 +456,7 @@
             this.fireDataEvent("dataChanged", data);
           }
 
-          if (columnIndex == this.__sortColumnIndex__P_515_0) {
+          if (columnIndex == this.__sortColumnIndex__P_516_0) {
             this.clearSorting();
           }
         }
@@ -682,10 +682,10 @@
       }
     },
     destruct: function destruct() {
-      this._rowArr = this.__editableColArr__P_515_2 = this.__sortMethods__P_515_1 = this.__sortableColArr__P_515_3 = null;
+      this._rowArr = this.__editableColArr__P_516_2 = this.__sortMethods__P_516_1 = this.__sortableColArr__P_516_3 = null;
     }
   });
   qx.ui.table.model.Simple.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Simple.js.map?dt=1599343244691
+//# sourceMappingURL=Simple.js.map?dt=1599462418094

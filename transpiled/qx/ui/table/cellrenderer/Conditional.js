@@ -66,10 +66,10 @@
       this.numericAllowed = ["==", "!=", ">", "<", ">=", "<="];
       this.betweenAllowed = ["between", "!between"];
       this.conditions = [];
-      this.__defaultTextAlign__P_507_0 = align || "";
-      this.__defaultColor__P_507_1 = color || "";
-      this.__defaultFontStyle__P_507_2 = style || "";
-      this.__defaultFontWeight__P_507_3 = weight || "";
+      this.__defaultTextAlign__P_508_0 = align || "";
+      this.__defaultColor__P_508_1 = color || "";
+      this.__defaultFontStyle__P_508_2 = style || "";
+      this.__defaultFontWeight__P_508_3 = weight || "";
     },
 
     /*
@@ -78,17 +78,17 @@
     *****************************************************************************
     */
     members: {
-      __defaultTextAlign__P_507_0: null,
-      __defaultColor__P_507_1: null,
-      __defaultFontStyle__P_507_2: null,
-      __defaultFontWeight__P_507_3: null,
+      __defaultTextAlign__P_508_0: null,
+      __defaultColor__P_508_1: null,
+      __defaultFontStyle__P_508_2: null,
+      __defaultFontWeight__P_508_3: null,
 
       /**
        * Applies the cell styles to the style map.
        * @param condition {Array} The matched condition
        * @param style {Map} map of already applied styles.
        */
-      __applyFormatting__P_507_4: function __applyFormatting__P_507_4(condition, style) {
+      __applyFormatting__P_508_4: function __applyFormatting__P_508_4(condition, style) {
         if (condition[1] != null) {
           style["text-align"] = condition[1];
         }
@@ -226,10 +226,10 @@
         var cond_test;
         var compareValue;
         var style = {
-          "text-align": this.__defaultTextAlign__P_507_0,
-          "color": this.__defaultColor__P_507_1,
-          "font-style": this.__defaultFontStyle__P_507_2,
-          "font-weight": this.__defaultFontWeight__P_507_3
+          "text-align": this.__defaultTextAlign__P_508_0,
+          "color": this.__defaultColor__P_508_1,
+          "font-style": this.__defaultFontStyle__P_508_2,
+          "font-weight": this.__defaultFontWeight__P_508_3
         };
 
         for (i in this.conditions) {
@@ -320,7 +320,7 @@
 
 
           if (cond_test == true) {
-            this.__applyFormatting__P_507_4(this.conditions[i], style);
+            this.__applyFormatting__P_508_4(this.conditions[i], style);
           }
         }
 
@@ -348,4 +348,4 @@
   qx.ui.table.cellrenderer.Conditional.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Conditional.js.map?dt=1599343243961
+//# sourceMappingURL=Conditional.js.map?dt=1599462417347

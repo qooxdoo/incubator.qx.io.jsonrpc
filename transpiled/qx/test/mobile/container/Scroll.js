@@ -71,4 +71,4 @@
   qx.test.mobile.container.Scroll.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Scroll.js.map?dt=1599343224019
+//# sourceMappingURL=Scroll.js.map?dt=1599462397096

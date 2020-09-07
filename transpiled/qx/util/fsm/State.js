@@ -180,11 +180,11 @@
         // If we find one of our properties, call its setter.
         switch (field) {
           case "onentry":
-            this.setOnentry(this.__bindIfFunction__P_583_0(stateInfo[field], context));
+            this.setOnentry(this.__bindIfFunction__P_584_0(stateInfo[field], context));
             break;
 
           case "onexit":
-            this.setOnexit(this.__bindIfFunction__P_583_0(stateInfo[field], context));
+            this.setOnexit(this.__bindIfFunction__P_584_0(stateInfo[field], context));
             break;
 
           case "autoActionsBeforeOnentry":
@@ -424,7 +424,7 @@
        * list in a State.
        */
       name: {
-        transform: "__transformName__P_583_1",
+        transform: "__transformName__P_584_1",
         nullable: true
       },
 
@@ -435,7 +435,7 @@
        * to change this dynamically.
        */
       onentry: {
-        transform: "__transformOnentry__P_583_2",
+        transform: "__transformOnentry__P_584_2",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -447,7 +447,7 @@
        * to change this dynamically.
        */
       onexit: {
-        transform: "__transformOnexit__P_583_3",
+        transform: "__transformOnexit__P_584_3",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -481,7 +481,7 @@
        *     </pre>
        */
       autoActionsBeforeOnentry: {
-        transform: "__transformAutoActionsBeforeOnentry__P_583_4",
+        transform: "__transformAutoActionsBeforeOnentry__P_584_4",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -516,7 +516,7 @@
        *     </pre>
        */
       autoActionsAfterOnentry: {
-        transform: "__transformAutoActionsAfterOnentry__P_583_5",
+        transform: "__transformAutoActionsAfterOnentry__P_584_5",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -550,7 +550,7 @@
        *     </pre>
        */
       autoActionsBeforeOnexit: {
-        transform: "__transformAutoActionsBeforeOnexit__P_583_6",
+        transform: "__transformAutoActionsBeforeOnexit__P_584_6",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -585,7 +585,7 @@
        *     </pre>
        */
       autoActionsAfterOnexit: {
-        transform: "__transformAutoActionsAfterOnexit__P_583_7",
+        transform: "__transformAutoActionsAfterOnexit__P_584_7",
         nullable: true,
         init: function init(fsm, event) {}
       },
@@ -597,7 +597,7 @@
        * (but highly NOT recommended) to change this dynamically.
        */
       events: {
-        transform: "__transformEvents__P_583_8",
+        transform: "__transformEvents__P_584_8",
         nullable: true
       }
     },
@@ -609,7 +609,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformName__P_583_1: function __transformName__P_583_1(value) {
+      __transformName__P_584_1: function __transformName__P_584_1(value) {
         // Ensure that we got a valid state name
         if (typeof value != "string" || value.length < 1) {
           throw new Error("Invalid state name");
@@ -625,7 +625,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformOnentry__P_583_2: function __transformOnentry__P_583_2(value) {
+      __transformOnentry__P_584_2: function __transformOnentry__P_584_2(value) {
         // Validate the onentry function
         switch (typeof value) {
           case "undefined":
@@ -648,7 +648,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformOnexit__P_583_3: function __transformOnexit__P_583_3(value) {
+      __transformOnexit__P_584_3: function __transformOnexit__P_584_3(value) {
         // Validate the onexit function
         switch (typeof value) {
           case "undefined":
@@ -671,7 +671,7 @@
        * @return {var} the final value
        * @throws {Error} when an invalid value is detected
        */
-      __transformEvents__P_583_8: function __transformEvents__P_583_8(value) {
+      __transformEvents__P_584_8: function __transformEvents__P_584_8(value) {
         // Validate that events is an object
         if (typeof value != "object") {
           throw new Error("events must be an object");
@@ -718,7 +718,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsBeforeOnentry__P_583_4: function __transformAutoActionsBeforeOnentry__P_583_4(value) {
+      __transformAutoActionsBeforeOnentry__P_584_4: function __transformAutoActionsBeforeOnentry__P_584_4(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsBeforeOnentry", value, this.getUserData("context"));
       },
 
@@ -728,7 +728,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsAfterOnentry__P_583_5: function __transformAutoActionsAfterOnentry__P_583_5(value) {
+      __transformAutoActionsAfterOnentry__P_584_5: function __transformAutoActionsAfterOnentry__P_584_5(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsAfterOnentry", value, this.getUserData("context"));
       },
 
@@ -738,7 +738,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsBeforeOnexit__P_583_6: function __transformAutoActionsBeforeOnexit__P_583_6(value) {
+      __transformAutoActionsBeforeOnexit__P_584_6: function __transformAutoActionsBeforeOnexit__P_584_6(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsBeforeOnexit", value, this.getUserData("context"));
       },
 
@@ -748,7 +748,7 @@
        * @param value {var} Current value
        * @return {var} the final value
        */
-      __transformAutoActionsAfterOnexit__P_583_7: function __transformAutoActionsAfterOnexit__P_583_7(value) {
+      __transformAutoActionsAfterOnexit__P_584_7: function __transformAutoActionsAfterOnexit__P_584_7(value) {
         return qx.util.fsm.State._commonTransformAutoActions("autoActionsAfterOnexit", value, this.getUserData("context"));
       },
 
@@ -766,7 +766,7 @@
        *   be called in the specified context. Otherwise, f is returned
        *   unaltered.
        */
-      __bindIfFunction__P_583_0: function __bindIfFunction__P_583_0(f, context) {
+      __bindIfFunction__P_584_0: function __bindIfFunction__P_584_0(f, context) {
         // Is the first parameter a function?
         if (typeof f == "function") {
           // Yup. Bind it to the specified context.
@@ -799,4 +799,4 @@
   qx.util.fsm.State.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=State.js.map?dt=1599343250186
+//# sourceMappingURL=State.js.map?dt=1599462423956

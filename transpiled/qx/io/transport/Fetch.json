@@ -1,21 +1,21 @@
 {
-  "className": "qx.io.jsonrpc.transport.Http",
-  "packageName": "qx.io.jsonrpc.transport",
-  "name": "Http",
-  "superClass": "qx.io.jsonrpc.transport.Abstract",
+  "className": "qx.io.transport.Fetch",
+  "packageName": "qx.io.transport",
+  "name": "Fetch",
+  "superClass": "qx.io.transport.AbstractTransport",
   "interfaces": [
-    "qx.io.jsonrpc.transport.ITransport"
+    "qx.io.transport.ITransport"
   ],
   "mixins": [],
   "functionName": null,
   "clazz": {
     "location": {
       "start": {
-        "line": 11,
+        "line": 5,
         "column": 0
       },
       "end": {
-        "line": 125,
+        "line": 90,
         "column": 3
       }
     },
@@ -23,7 +23,7 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<p>The implementation of a JSON-RPC transport for JSON-RPC via HTTP\n The HTTP transport implementation is based on the {@link qx.io.request} API,\n so any special configuration of the HTTP request must be done on the\n underlying implementation of {@link qx.io.request.AbstractRequest}.\n More abstract support for authentication will be added later.</p>"
+          "body": "<p>The implementation of a HTTP Transport using the Fetch API,\n See https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch</p>"
         }
       ]
     }
@@ -32,11 +32,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 20,
+        "line": 14,
         "column": 2
       },
       "end": {
-        "line": 22,
+        "line": 16,
         "column": 3
       }
     },
@@ -62,27 +62,13 @@
     "__tranportImpl": {
       "location": {
         "start": {
-          "line": 30,
+          "line": 20,
           "column": 4
         },
         "end": {
-          "line": 30,
-          "column": 25
+          "line": 20,
+          "column": 24
         }
-      },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>Internal implementation of the transport</p>"
-          }
-        ],
-        "@var": [
-          {
-            "name": "@var",
-            "body": "{qx.io.request.Xhr}"
-          }
-        ]
       },
       "type": "variable",
       "access": "private"
@@ -90,11 +76,11 @@
     "getTransportImpl": {
       "location": {
         "start": {
-          "line": 41,
+          "line": 31,
           "column": 4
         },
         "end": {
-          "line": 44,
+          "line": 34,
           "column": 5
         }
       },
@@ -102,7 +88,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Returns the object which implements the transport on the\n underlying level, so that transport-specific configuration\n can be done on it. Note that since in the HTTP transport,\n this object cannot be reused, it will return a new object\n each time which will be used in the immediately next request.</p>"
+            "body": "<p>Returns the object which implements the transport on the\n underlying level, so that transport-specific configuration\n can be done on it. In the case of the Fetch API, the\n \"implementation\" is a configuration object which will be\n passed to the <code>fetch</code> method as second parameter.</p>"
           }
         ],
         "@return": [
@@ -116,19 +102,19 @@
       },
       "type": "function",
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.ITransport",
+      "overriddenFrom": "qx.io.transport.ITransport",
       "appearsIn": [
-        "qx.io.jsonrpc.transport.ITransport"
+        "qx.io.transport.ITransport"
       ]
     },
     "send": {
       "location": {
         "start": {
-          "line": 55,
+          "line": 46,
           "column": 4
         },
         "end": {
-          "line": 96,
+          "line": 68,
           "column": 5
         }
       },
@@ -152,23 +138,29 @@
             "type": "qx.Promise",
             "description": " Promise that resolves (with no data)\n when the message has been successfully sent out, and rejects\n when there is an error or a cancellation up to that point."
           }
+        ],
+        "@ignore": [
+          {
+            "name": "@ignore",
+            "body": "fetch"
+          }
         ]
       },
       "type": "function",
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.ITransport",
+      "overriddenFrom": "qx.io.transport.ITransport",
       "appearsIn": [
-        "qx.io.jsonrpc.transport.ITransport"
+        "qx.io.transport.ITransport"
       ]
     },
     "_createTransportImpl": {
       "location": {
         "start": {
-          "line": 111,
+          "line": 76,
           "column": 4
         },
         "end": {
-          "line": 119,
+          "line": 84,
           "column": 5
         }
       },
@@ -176,14 +168,14 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Factory method to create a request object. By default, a POST\n request will be made, and the expected response type will be\n \"application/json\", but differently to the standard behavior,\n the response will not be parsed into a javascript object.\n Classes extending this one may override this method to obtain\n a Request object with different parameters and/or different\n authentication settings. The object must be a subclass of {@link\n qx.io.request.AbstractRequest} or implement its public API.</p>"
+            "body": "<p>Factory method to create a request object. In this implementation,\n it returns an object that will be used as the <code>init</code> parameter of the\n fetch method.</p>"
           }
         ],
         "@return": [
           {
             "name": "@return",
-            "body": "{qx.io.jsonrpc.Request}",
-            "type": "qx.io.jsonrpc.Request",
+            "body": "{Object}",
+            "type": "Object",
             "description": ""
           }
         ]
@@ -198,7 +190,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -223,7 +215,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -249,7 +241,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -267,7 +259,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -292,7 +284,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -318,7 +310,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -336,7 +328,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "get",
       "jsdoc": {
         "@description": [
@@ -360,7 +352,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "set",
       "jsdoc": {
         "@description": [
@@ -385,7 +377,7 @@
       "mixin": false,
       "inherited": true,
       "access": "public",
-      "overriddenFrom": "qx.io.jsonrpc.transport.Abstract",
+      "overriddenFrom": "qx.io.transport.AbstractTransport",
       "property": "reset",
       "jsdoc": {
         "@description": [
@@ -400,11 +392,11 @@
   "defer": {
     "location": {
       "start": {
-        "line": 122,
+        "line": 87,
         "column": 2
       },
       "end": {
-        "line": 124,
+        "line": 89,
         "column": 3
       }
     }

@@ -120,7 +120,7 @@
         var theme = this.getTheme();
 
         if (theme !== null && theme.fonts[value]) {
-          var font = this.__getFontClass__P_359_0(theme.fonts[value]);
+          var font = this.__getFontClass__P_360_0(theme.fonts[value]);
 
           var fo = new font(); // Inject information about custom charcter set tests before we apply the
           // complete blob in one.
@@ -155,7 +155,7 @@
         var theme = this.getTheme();
 
         if (theme !== null && value && theme.fonts[value]) {
-          var font = this.__getFontClass__P_359_0(theme.fonts[value]);
+          var font = this.__getFontClass__P_360_0(theme.fonts[value]);
 
           var fo = new font(); // Inject information about custom charcter set tests before we apply the
           // complete blob in one.
@@ -177,7 +177,7 @@
        * @param fonts {Map} all fonts of the theme
        * @param fontName {String} font name to include
        */
-      __resolveInclude__P_359_1: function __resolveInclude__P_359_1(fonts, fontName) {
+      __resolveInclude__P_360_1: function __resolveInclude__P_360_1(fonts, fontName) {
         if (fonts[fontName].include) {
           // get font infos out of the font theme
           var fontToInclude = fonts[fonts[fontName].include]; // delete 'include' key - not part of the merge
@@ -186,7 +186,7 @@
           delete fonts[fontName].include;
           fonts[fontName] = qx.lang.Object.mergeWith(fonts[fontName], fontToInclude, false);
 
-          this.__resolveInclude__P_359_1(fonts, fontName);
+          this.__resolveInclude__P_360_1(fonts, fontName);
         }
       },
       // apply method
@@ -205,10 +205,10 @@
 
           for (var key in source) {
             if (source[key].include && source[source[key].include]) {
-              this.__resolveInclude__P_359_1(source, key);
+              this.__resolveInclude__P_360_1(source, key);
             }
 
-            var font = this.__getFontClass__P_359_0(source[key]);
+            var font = this.__getFontClass__P_360_0(source[key]);
 
             var fo = new font(); // Inject information about custom charcter set tests before we apply the
             // complete blob in one.
@@ -231,7 +231,7 @@
        * @param config {Map} The font's configuration map
        * @return {Class}
        */
-      __getFontClass__P_359_0: function __getFontClass__P_359_0(config) {
+      __getFontClass__P_360_0: function __getFontClass__P_360_0(config) {
         if (config.sources) {
           return qx.bom.webfonts.WebFont;
         }
@@ -252,4 +252,4 @@
   qx.theme.manager.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1599343232038
+//# sourceMappingURL=Font.js.map?dt=1599462405135

@@ -1,6 +1,6 @@
 {
-  "className": "qx.io.jsonrpc.transport.ITransport",
-  "packageName": "qx.io.jsonrpc.transport",
+  "className": "qx.io.transport.ITransport",
+  "packageName": "qx.io.transport",
   "name": "ITransport",
   "superClass": null,
   "interfaces": [],
@@ -124,8 +124,8 @@
         "@return": [
           {
             "name": "@return",
-            "body": "{qx.core.Object}",
-            "type": "qx.core.Object",
+            "body": "{Object}",
+            "type": "Object",
             "description": ""
           }
         ]

@@ -55,7 +55,7 @@
     extend: qx.test.ui.LayoutTestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __testRequired__P_299_0: function __testRequired__P_299_0(widget) {
+      __testRequired__P_300_0: function __testRequired__P_300_0(widget) {
         // check if the interface is implemented
         this.assert(qx.Class.hasInterface(widget.constructor, qx.ui.form.IForm), "Interface not implemented."); // test for the default (false)
 
@@ -73,7 +73,7 @@
         this.assertTrue(widget.getRequired(), "Setting of the required flag did not work.");
         widget.dispose();
       },
-      __testValid__P_299_1: function __testValid__P_299_1(widget, where) {
+      __testValid__P_300_1: function __testValid__P_300_1(widget, where) {
         // check if the interface is implemented
         this.assert(qx.Class.hasInterface(widget.constructor, qx.ui.form.IForm), "Interface not implemented.");
         this.getRoot().add(widget); // test for the default (true)
@@ -107,7 +107,7 @@
           var self = this;
           window.setTimeout(function () {
             self.resume(function () {
-              this.__testInvalidBorder__P_299_2(widget);
+              this.__testInvalidBorder__P_300_2(widget);
 
               widget.destroy();
             }, self);
@@ -117,7 +117,7 @@
 
         widget.destroy();
       },
-      __testInvalidBorder__P_299_2: function __testInvalidBorder__P_299_2(widget) {
+      __testInvalidBorder__P_300_2: function __testInvalidBorder__P_300_2(widget) {
         this.flush(); // check for the invalid decorator
 
         this.assertNotEquals(-1, widget.getDecorator().indexOf("invalid"), "Decorator not set!"); // check the focus
@@ -127,100 +127,100 @@
         this.assertNotEquals(-1, widget.getDecorator().indexOf("invalid"), "Decorator not set!");
       },
       testRequiredSpinner: function testRequiredSpinner() {
-        this.__testRequired__P_299_0(new qx.ui.form.Spinner());
+        this.__testRequired__P_300_0(new qx.ui.form.Spinner());
       },
       testValidSpinner: function testValidSpinner() {
-        this.__testValid__P_299_1(new qx.ui.form.Spinner());
+        this.__testValid__P_300_1(new qx.ui.form.Spinner());
       },
       testRequiredSlider: function testRequiredSlider() {
-        this.__testRequired__P_299_0(new qx.ui.form.Slider());
+        this.__testRequired__P_300_0(new qx.ui.form.Slider());
       },
       testValidSlider: function testValidSlider() {
-        this.__testValid__P_299_1(new qx.ui.form.Slider());
+        this.__testValid__P_300_1(new qx.ui.form.Slider());
       },
       testRequiredTextField: function testRequiredTextField() {
-        this.__testRequired__P_299_0(new qx.ui.form.TextField());
+        this.__testRequired__P_300_0(new qx.ui.form.TextField());
       },
       testValidTextField: function testValidTextField() {
-        this.__testValid__P_299_1(new qx.ui.form.TextField());
+        this.__testValid__P_300_1(new qx.ui.form.TextField());
       },
       testRequiredTextArea: function testRequiredTextArea() {
-        this.__testRequired__P_299_0(new qx.ui.form.TextArea());
+        this.__testRequired__P_300_0(new qx.ui.form.TextArea());
       },
       testValidTextArea: function testValidTextArea() {
-        this.__testValid__P_299_1(new qx.ui.form.TextArea());
+        this.__testValid__P_300_1(new qx.ui.form.TextArea());
       },
       testRequiredPasswordField: function testRequiredPasswordField() {
-        this.__testRequired__P_299_0(new qx.ui.form.PasswordField());
+        this.__testRequired__P_300_0(new qx.ui.form.PasswordField());
       },
       testValidPasswordField: function testValidPasswordField() {
-        this.__testValid__P_299_1(new qx.ui.form.PasswordField());
+        this.__testValid__P_300_1(new qx.ui.form.PasswordField());
       },
       testRequiredComboBox: function testRequiredComboBox() {
-        this.__testRequired__P_299_0(new qx.ui.form.ComboBox());
+        this.__testRequired__P_300_0(new qx.ui.form.ComboBox());
       },
       testValidComboBox: function testValidComboBox() {
-        this.__testValid__P_299_1(new qx.ui.form.ComboBox());
+        this.__testValid__P_300_1(new qx.ui.form.ComboBox());
       },
       testRequiredSelectBox: function testRequiredSelectBox() {
-        this.__testRequired__P_299_0(new qx.ui.form.SelectBox());
+        this.__testRequired__P_300_0(new qx.ui.form.SelectBox());
       },
       testValidSelectBox: function testValidSelectBox() {
-        this.__testValid__P_299_1(new qx.ui.form.SelectBox());
+        this.__testValid__P_300_1(new qx.ui.form.SelectBox());
       },
       testRequiredCheckBox: function testRequiredCheckBox() {
-        this.__testRequired__P_299_0(new qx.ui.form.CheckBox());
+        this.__testRequired__P_300_0(new qx.ui.form.CheckBox());
       },
       testValidCheckBox: function testValidCheckBox() {
-        this.__testValid__P_299_1(new qx.ui.form.CheckBox(), "dont");
+        this.__testValid__P_300_1(new qx.ui.form.CheckBox(), "dont");
       },
       testValidRadioButton: function testValidRadioButton() {
-        this.__testValid__P_299_1(new qx.ui.form.RadioButton(), "dont");
+        this.__testValid__P_300_1(new qx.ui.form.RadioButton(), "dont");
       },
       testRequiredRadioButton: function testRequiredRadioButton() {
-        this.__testRequired__P_299_0(new qx.ui.form.RadioButton());
+        this.__testRequired__P_300_0(new qx.ui.form.RadioButton());
       },
       testValidGroupBox: function testValidGroupBox() {
-        this.__testValid__P_299_1(new qx.ui.groupbox.GroupBox(), "dont");
+        this.__testValid__P_300_1(new qx.ui.groupbox.GroupBox(), "dont");
       },
       testRequiredGroupBox: function testRequiredGroupBox() {
-        this.__testRequired__P_299_0(new qx.ui.groupbox.GroupBox());
+        this.__testRequired__P_300_0(new qx.ui.groupbox.GroupBox());
       },
       testValidRadioGroupBox: function testValidRadioGroupBox() {
-        this.__testValid__P_299_1(new qx.ui.groupbox.RadioGroupBox(), "dont");
+        this.__testValid__P_300_1(new qx.ui.groupbox.RadioGroupBox(), "dont");
       },
       testRequiredRadioGroupBox: function testRequiredRadioGroupBox() {
-        this.__testRequired__P_299_0(new qx.ui.groupbox.RadioGroupBox());
+        this.__testRequired__P_300_0(new qx.ui.groupbox.RadioGroupBox());
       },
       testValidCheckGroupBox: function testValidCheckGroupBox() {
-        this.__testValid__P_299_1(new qx.ui.groupbox.CheckGroupBox(), "dont");
+        this.__testValid__P_300_1(new qx.ui.groupbox.CheckGroupBox(), "dont");
       },
       testRequiredCheckGroupBox: function testRequiredCheckGroupBox() {
-        this.__testRequired__P_299_0(new qx.ui.groupbox.CheckGroupBox());
+        this.__testRequired__P_300_0(new qx.ui.groupbox.CheckGroupBox());
       },
       testValidList: function testValidList() {
-        this.__testValid__P_299_1(new qx.ui.form.List());
+        this.__testValid__P_300_1(new qx.ui.form.List());
       },
       testRequiredList: function testRequiredList() {
-        this.__testRequired__P_299_0(new qx.ui.form.List());
+        this.__testRequired__P_300_0(new qx.ui.form.List());
       },
       testValidTree: function testValidTree() {
-        this.__testValid__P_299_1(new qx.ui.tree.Tree());
+        this.__testValid__P_300_1(new qx.ui.tree.Tree());
       },
       testRequiredTree: function testRequiredTree() {
-        this.__testRequired__P_299_0(new qx.ui.tree.Tree());
+        this.__testRequired__P_300_0(new qx.ui.tree.Tree());
       },
       testRequiredDateField: function testRequiredDateField() {
-        this.__testRequired__P_299_0(new qx.ui.form.DateField());
+        this.__testRequired__P_300_0(new qx.ui.form.DateField());
       },
       testValidDateField: function testValidDateField() {
-        this.__testValid__P_299_1(new qx.ui.form.DateField());
+        this.__testValid__P_300_1(new qx.ui.form.DateField());
       },
       testRequiredDateChooser: function testRequiredDateChooser() {
-        this.__testRequired__P_299_0(new qx.ui.form.DateField());
+        this.__testRequired__P_300_0(new qx.ui.form.DateField());
       },
       testValidDateChooser: function testValidDateChooser() {
-        this.__testValid__P_299_1(new qx.ui.form.DateField());
+        this.__testValid__P_300_1(new qx.ui.form.DateField());
       },
       testValidRadioGroup: function testValidRadioGroup() {
         var group = new qx.ui.form.RadioGroup();
@@ -258,10 +258,10 @@
         rb.destroy();
       },
       testRequiredRadioGroup: function testRequiredRadioGroup() {
-        this.__testRequired__P_299_0(new qx.ui.form.RadioGroup());
+        this.__testRequired__P_300_0(new qx.ui.form.RadioGroup());
       },
       testRequiredRadioButtonGroup: function testRequiredRadioButtonGroup() {
-        this.__testRequired__P_299_0(new qx.ui.form.RadioButtonGroup());
+        this.__testRequired__P_300_0(new qx.ui.form.RadioButtonGroup());
       },
       testValidRadioButtonGroup: function testValidRadioButtonGroup() {
         var cont = new qx.ui.form.RadioButtonGroup();
@@ -314,4 +314,4 @@
   qx.test.ui.form.Form.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Form.js.map?dt=1599343226780
+//# sourceMappingURL=Form.js.map?dt=1599462400028

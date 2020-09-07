@@ -57,9 +57,9 @@
     include: [qx.dev.unit.MMock, qx.dev.unit.MRequirements],
     members: {
       setUp: function setUp() {
-        this.__keys__P_216_0 = qx.core.Environment.get("css.animation");
+        this.__keys__P_217_0 = qx.core.Environment.get("css.animation");
 
-        if (this.__keys__P_216_0 == null) {
+        if (this.__keys__P_217_0 == null) {
           // skip the test
           throw new qx.dev.unit.RequirementError("css.animation");
         }
@@ -90,4 +90,4 @@
   qx.test.bom.element.AnimationHandle.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AnimationHandle.js.map?dt=1599343218132
+//# sourceMappingURL=AnimationHandle.js.map?dt=1599462391376

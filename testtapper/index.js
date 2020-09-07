@@ -145,8 +145,8 @@ var envinfo = {
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
-      "summary": "Qooxdoo JSON-RPC v2 API",
-      "description": "This adds a extensible API for JSON-RPC via different transports",
+      "summary": "Support for transport-agnostic I/O protocols",
+      "description": "Framework for transport-agnostic high-level i/o protocols such as the JSON-RPC v2 or GraphQL",
       "homepage": "https://qooxdoo.org",
       "license": "MIT license",
       "authors": [
@@ -155,7 +155,7 @@ var envinfo = {
           "email": "info@bibliograph.org"
         }
       ],
-      "version": "1.0.0"
+      "version": "2.0.0-alpha"
     },
     "qxl.testtapper": {
       "name": "Commandline Testrunner for Qooxdoo Apps",
@@ -233,6 +233,8 @@ var envinfo = {
   "qx.buildType": "source",
   "qx.headless": false,
   "testtapper.testNameSpace": "qx.test.io",
+  "qx.io.graphql.debug": true,
+  "qx.io.jsonrpc.debug": true,
   "excludeFromAPIViewer": [
     "qxl.*",
     "q",
@@ -319,16 +321,13 @@ qx.$$loader = {
   "2": {
     "uris": [
       "../transpiled/qx/io/jsonrpc/Client.js",
-      "../transpiled/qx/io/jsonrpc/transport/ITransport.js",
       "../transpiled/qx/io/jsonrpc/protocol/Parser.js",
       "../transpiled/qx/io/jsonrpc/protocol/Message.js",
       "../transpiled/qx/io/jsonrpc/protocol/Notification.js",
       "../transpiled/qx/io/jsonrpc/protocol/Request.js",
       "../transpiled/qx/io/jsonrpc/protocol/Batch.js",
       "../transpiled/qx/io/jsonrpc/protocol/Result.js",
-      "../transpiled/qx/io/jsonrpc/protocol/Error.js",
-      "../transpiled/qx/io/jsonrpc/transport/Abstract.js",
-      "../transpiled/qx/io/jsonrpc/transport/Http.js"
+      "../transpiled/qx/io/jsonrpc/protocol/Error.js"
     ]
   },
   "3": {

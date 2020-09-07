@@ -189,17 +189,17 @@
     *****************************************************************************
     */
     members: {
-      __offset__P_395_0: 2,
-      __originalMinSize__P_395_1: 0,
+      __offset__P_396_0: 2,
+      __originalMinSize__P_396_1: 0,
       // overridden
       _computeSizeHint: function _computeSizeHint() {
         var hint = qx.ui.core.scroll.ScrollBar.prototype._computeSizeHint.base.call(this);
 
         if (this.getOrientation() === "horizontal") {
-          this.__originalMinSize__P_395_1 = hint.minWidth;
+          this.__originalMinSize__P_396_1 = hint.minWidth;
           hint.minWidth = 0;
         } else {
-          this.__originalMinSize__P_395_1 = hint.minHeight;
+          this.__originalMinSize__P_396_1 = hint.minHeight;
           hint.minHeight = 0;
         }
 
@@ -210,7 +210,7 @@
         var changes = qx.ui.core.scroll.ScrollBar.prototype.renderLayout.base.call(this, left, top, width, height);
         var horizontal = this.getOrientation() === "horizontal";
 
-        if (this.__originalMinSize__P_395_1 >= (horizontal ? width : height)) {
+        if (this.__originalMinSize__P_396_1 >= (horizontal ? width : height)) {
           this.getChildControl("button-begin").setVisibility("hidden");
           this.getChildControl("button-end").setVisibility("hidden");
         } else {
@@ -429,11 +429,11 @@
         var sliderSize = this.getChildControl("slider").getInnerSize();
 
         if (this.getOrientation() == "vertical") {
-          if (sliderSize.height < knobHint.minHeight + this.__offset__P_395_0) {
+          if (sliderSize.height < knobHint.minHeight + this.__offset__P_396_0) {
             hideKnob = true;
           }
         } else {
-          if (sliderSize.width < knobHint.minWidth + this.__offset__P_395_0) {
+          if (sliderSize.width < knobHint.minWidth + this.__offset__P_396_0) {
             hideKnob = true;
           }
         }
@@ -449,4 +449,4 @@
   qx.ui.core.scroll.ScrollBar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ScrollBar.js.map?dt=1599343235452
+//# sourceMappingURL=ScrollBar.js.map?dt=1599462408741

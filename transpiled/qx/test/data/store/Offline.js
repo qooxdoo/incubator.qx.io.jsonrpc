@@ -55,8 +55,8 @@
     extend: qx.dev.unit.TestCase,
     include: [qx.dev.unit.MRequirements, qx.dev.unit.MMock],
     members: {
-      __store__P_242_0: null,
-      __testKey__P_242_1: "qx-unit-test",
+      __store__P_243_0: null,
+      __testKey__P_243_1: "qx-unit-test",
       hasLocalStorage: function hasLocalStorage() {
         return qx.core.Environment.get("html.storage.local");
       },
@@ -69,17 +69,17 @@
       tearDown: function tearDown() {
         this.getSandbox().restore();
 
-        if (this.__store__P_242_0) {
-          this.__store__P_242_0.dispose();
+        if (this.__store__P_243_0) {
+          this.__store__P_243_0.dispose();
         } // erase the data from the storages
 
 
-        qx.bom.Storage.getLocal().removeItem(this.__testKey__P_242_1);
+        qx.bom.Storage.getLocal().removeItem(this.__testKey__P_243_1);
       },
-      __initDefaultStore__P_242_2: function __initDefaultStore__P_242_2() {
-        this.__store__P_242_0 = new qx.data.store.Offline(this.__testKey__P_242_1, "local");
+      __initDefaultStore__P_243_2: function __initDefaultStore__P_243_2() {
+        this.__store__P_243_0 = new qx.data.store.Offline(this.__testKey__P_243_1, "local");
       },
-      __createDefaultModel__P_242_3: function __createDefaultModel__P_242_3() {
+      __createDefaultModel__P_243_3: function __createDefaultModel__P_243_3() {
         return qx.data.marshal.Json.createModel({
           a: "a"
         }, true);
@@ -92,57 +92,57 @@
           store = new qx.data.store.Offline();
         }); // fallback for the storage is local
 
-        store = new qx.data.store.Offline(this.__testKey__P_242_1);
+        store = new qx.data.store.Offline(this.__testKey__P_243_1);
         this.assertEquals(store._storage, qx.bom.Storage.getLocal());
         store.dispose(); // assert no exception
 
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        this.assertEquals(this.__testKey__P_242_1, this.__store__P_242_0.getKey());
+        this.assertEquals(this.__testKey__P_243_1, this.__store__P_243_0.getKey());
       },
       testCreateWithDelegate: function testCreateWithDelegate() {
         var del = {};
         var spy = this.spy(qx.data.marshal, "Json");
-        var store = new qx.data.store.Offline(this.__testKey__P_242_1, "local", del);
+        var store = new qx.data.store.Offline(this.__testKey__P_243_1, "local", del);
         this.assertCalledWith(spy, del);
         store.dispose();
       },
       testCheckEmptyModel: function testCheckEmptyModel() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        this.assertNull(this.__store__P_242_0.getModel());
+        this.assertNull(this.__store__P_243_0.getModel());
 
-        var model = this.__createDefaultModel__P_242_3();
+        var model = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
-        this.__store__P_242_0.setModel(null);
+        this.__store__P_243_0.setModel(null);
 
         this.wait(1000, function () {
-          this.assertNull(this.__store__P_242_0.getModel());
+          this.assertNull(this.__store__P_243_0.getModel());
           model.dispose();
         }.bind(this));
       },
       testSetModel: function testSetModel() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        var model = this.__createDefaultModel__P_242_3();
+        var model = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
         this.wait(1000, function () {
-          this.assertEquals("a", this.__store__P_242_0.getModel().getA());
+          this.assertEquals("a", this.__store__P_243_0.getModel().getA());
           model.dispose();
         }.bind(this));
       },
       testSetModelDebounce: function testSetModelDebounce() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        var storeModelCallback = this.spy(this.__store__P_242_0._storage, "setItem");
+        var storeModelCallback = this.spy(this.__store__P_243_0._storage, "setItem");
 
-        var model = this.__createDefaultModel__P_242_3();
+        var model = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
         model.setA('b');
         model.setA('c');
@@ -151,37 +151,37 @@
         }, this);
       },
       testChangeModel: function testChangeModel() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        var model = this.__createDefaultModel__P_242_3();
+        var model = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
         this.wait(1000, function () {
-          this.assertEquals("a", this.__store__P_242_0.getModel().getA());
+          this.assertEquals("a", this.__store__P_243_0.getModel().getA());
           model.setA("A");
-          this.assertEquals("A", this.__store__P_242_0.getModel().getA());
+          this.assertEquals("A", this.__store__P_243_0.getModel().getA());
           model.dispose();
         }.bind(this));
       },
       testModelWriteRead: function testModelWriteRead() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        var model = this.__createDefaultModel__P_242_3();
+        var model = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
         this.wait(1000, function () {
-          this.assertEquals("a", this.__store__P_242_0.getModel().getA()); // dispose the store to test the load of the model
+          this.assertEquals("a", this.__store__P_243_0.getModel().getA()); // dispose the store to test the load of the model
 
-          this.__store__P_242_0.dispose();
+          this.__store__P_243_0.dispose();
 
           model.dispose();
 
-          this.__initDefaultStore__P_242_2();
+          this.__initDefaultStore__P_243_2();
 
-          this.assertNotNull(this.__store__P_242_0.getModel());
-          this.assertEquals("a", this.__store__P_242_0.getModel().getA());
+          this.assertNotNull(this.__store__P_243_0.getModel());
+          this.assertEquals("a", this.__store__P_243_0.getModel().getA());
         }.bind(this));
       },
       testModelRead: function testModelRead() {
@@ -189,65 +189,65 @@
           b: "b"
         });
 
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        this.assertNotUndefined(this.__store__P_242_0.getModel());
-        this.assertFunction(this.__store__P_242_0.getModel().getB);
-        this.assertEquals("b", this.__store__P_242_0.getModel().getB());
+        this.assertNotUndefined(this.__store__P_243_0.getModel());
+        this.assertFunction(this.__store__P_243_0.getModel().getB);
+        this.assertEquals("b", this.__store__P_243_0.getModel().getB());
       },
       testUpdateModel: function testUpdateModel() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        var model = this.__createDefaultModel__P_242_3();
+        var model = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
         this.wait(1000, function () {
-          this.assertEquals("a", this.__store__P_242_0.getModel().getA()); // dispose the store to test the load of the model
+          this.assertEquals("a", this.__store__P_243_0.getModel().getA()); // dispose the store to test the load of the model
 
-          this.__store__P_242_0.dispose();
+          this.__store__P_243_0.dispose();
 
           model.dispose();
 
-          this.__initDefaultStore__P_242_2();
+          this.__initDefaultStore__P_243_2();
 
-          this.assertNotNull(this.__store__P_242_0.getModel());
+          this.assertNotNull(this.__store__P_243_0.getModel());
 
-          this.__store__P_242_0.getModel().setA("b");
+          this.__store__P_243_0.getModel().setA("b");
 
           this.wait(1000, function () {
-            this.assertEquals("b", this.__store__P_242_0.getModel().getA(), "1"); // dispose the store to test the load of the model
+            this.assertEquals("b", this.__store__P_243_0.getModel().getA(), "1"); // dispose the store to test the load of the model
 
-            this.__store__P_242_0.dispose();
+            this.__store__P_243_0.dispose();
 
-            this.__initDefaultStore__P_242_2();
+            this.__initDefaultStore__P_243_2();
 
-            this.assertNotNull(this.__store__P_242_0.getModel());
-            this.assertEquals("b", this.__store__P_242_0.getModel().getA(), "2");
+            this.assertNotNull(this.__store__P_243_0.getModel());
+            this.assertEquals("b", this.__store__P_243_0.getModel().getA(), "2");
           }.bind(this));
         }.bind(this));
       },
       testReplaceModel: function testReplaceModel() {
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        var model1 = this.__createDefaultModel__P_242_3();
+        var model1 = this.__createDefaultModel__P_243_3();
 
-        this.__store__P_242_0.setModel(model1);
+        this.__store__P_243_0.setModel(model1);
 
         var model2 = qx.data.marshal.Json.createModel({
           x: "x"
         }, true);
 
-        this.__store__P_242_0.setModel(model2);
+        this.__store__P_243_0.setModel(model2);
 
         this.wait(1000, function () {
-          this.__initDefaultStore__P_242_2();
+          this.__initDefaultStore__P_243_2();
 
-          this.assertNotNull(this.__store__P_242_0.getModel());
-          this.assertFunction(this.__store__P_242_0.getModel().getX);
-          this.assertEquals("x", this.__store__P_242_0.getModel().getX()); // get rid of all the created stuff
+          this.assertNotNull(this.__store__P_243_0.getModel());
+          this.assertFunction(this.__store__P_243_0.getModel().getX);
+          this.assertEquals("x", this.__store__P_243_0.getModel().getX()); // get rid of all the created stuff
 
-          this.__store__P_242_0.dispose();
+          this.__store__P_243_0.dispose();
 
           model1.dispose();
           model2.dispose();
@@ -262,14 +262,14 @@
         };
         var model = qx.data.marshal.Json.createModel(data, true);
 
-        this.__initDefaultStore__P_242_2();
+        this.__initDefaultStore__P_243_2();
 
-        this.__store__P_242_0.setModel(model);
+        this.__store__P_243_0.setModel(model);
 
         this.wait(1000, function () {
-          this.assertEquals(1, this.__store__P_242_0.getModel().getA().getItem(0).getB());
-          this.assertEquals(true, this.__store__P_242_0.getModel().getA().getItem(0).getC());
-          this.assertEquals("a", this.__store__P_242_0.getModel().getA().getItem(2));
+          this.assertEquals(1, this.__store__P_243_0.getModel().getA().getItem(0).getB());
+          this.assertEquals(true, this.__store__P_243_0.getModel().getA().getItem(0).getC());
+          this.assertEquals("a", this.__store__P_243_0.getModel().getA().getItem(2));
           model.dispose();
         }.bind(this));
       }
@@ -278,4 +278,4 @@
   qx.test.data.store.Offline.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Offline.js.map?dt=1599343221729
+//# sourceMappingURL=Offline.js.map?dt=1599462394839

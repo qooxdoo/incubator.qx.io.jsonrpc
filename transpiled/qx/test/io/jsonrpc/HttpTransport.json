@@ -28,7 +28,7 @@
         },
         {
           "name": "@description",
-          "body": "<p>Tests for qx.io.jsonrpc.transport.Http\n Based on qx.test.io.request.Xhr</p>"
+          "body": "<p>Tests for qx.io.transport.Xhr\n Based on qx.test.io.request.Xhr</p>"
         }
       ]
     }

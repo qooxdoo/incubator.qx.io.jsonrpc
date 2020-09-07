@@ -50,10 +50,10 @@
         widget = this._getWidget();
       }
 
-      widget.addListener("drag", this.__onDrag__P_378_0, this);
-      widget.addListener("dragend", this.__onDragend__P_378_1, this);
-      this.__xDirs__P_378_2 = ["left", "right"];
-      this.__yDirs__P_378_3 = ["top", "bottom"];
+      widget.addListener("drag", this.__onDrag__P_379_0, this);
+      widget.addListener("dragend", this.__onDragend__P_379_1, this);
+      this.__xDirs__P_379_2 = ["left", "right"];
+      this.__yDirs__P_379_3 = ["top", "bottom"];
     },
 
     /*
@@ -87,9 +87,9 @@
     *****************************************************************************
     */
     members: {
-      __dragScrollTimer__P_378_4: null,
-      __xDirs__P_378_2: null,
-      __yDirs__P_378_3: null,
+      __dragScrollTimer__P_379_4: null,
+      __xDirs__P_379_2: null,
+      __yDirs__P_379_3: null,
 
       /**
        * Finds the first scrollable parent (in the parent chain).
@@ -171,9 +171,9 @@
        * @return {String} Returns 'y' or 'x'.
        */
       _getAxis: function _getAxis(edgeType) {
-        if (this.__xDirs__P_378_2.indexOf(edgeType) !== -1) {
+        if (this.__xDirs__P_379_2.indexOf(edgeType) !== -1) {
           return "x";
-        } else if (this.__yDirs__P_378_3.indexOf(edgeType) !== -1) {
+        } else if (this.__yDirs__P_379_3.indexOf(edgeType) !== -1) {
           return "y";
         } else {
           throw new Error("Invalid edge type given (" + edgeType + "). Must be: 'left', 'right', 'top' or 'bottom'");
@@ -187,9 +187,9 @@
        * @return {Number} The threshold of the x or y axis.
        */
       _getThresholdByEdgeType: function _getThresholdByEdgeType(edgeType) {
-        if (this.__xDirs__P_378_2.indexOf(edgeType) !== -1) {
+        if (this.__xDirs__P_379_2.indexOf(edgeType) !== -1) {
           return this.getDragScrollThresholdX();
-        } else if (this.__yDirs__P_378_3.indexOf(edgeType) !== -1) {
+        } else if (this.__yDirs__P_379_3.indexOf(edgeType) !== -1) {
           return this.getDragScrollThresholdY();
         }
       },
@@ -272,7 +272,7 @@
             amount = this._calculateScrollAmount(scrollbarSize, exceedanceAmount);
 
         if (this._isScrollbarExceedingMaxPos(scrollbar, axis, amount)) {
-          this.__dragScrollTimer__P_378_4.stop();
+          this.__dragScrollTimer__P_379_4.stop();
         }
 
         scrollbar.scrollBy(amount);
@@ -289,10 +289,10 @@
        *
        * @param e {qx.event.type.Drag} The drag event instance.
        */
-      __onDrag__P_378_0: function __onDrag__P_378_0(e) {
-        if (this.__dragScrollTimer__P_378_4) {
+      __onDrag__P_379_0: function __onDrag__P_379_0(e) {
+        if (this.__dragScrollTimer__P_379_4) {
           // stop last scroll action
-          this.__dragScrollTimer__P_378_4.stop();
+          this.__dragScrollTimer__P_379_4.stop();
         }
 
         var target;
@@ -341,17 +341,17 @@
           if (this._isScrollbarVisible(scrollable, axis)) {
             exceedanceAmount = this._calculateThresholdExceedance(diff[edgeType], this._getThresholdByEdgeType(edgeType));
 
-            if (this.__dragScrollTimer__P_378_4) {
-              this.__dragScrollTimer__P_378_4.dispose();
+            if (this.__dragScrollTimer__P_379_4) {
+              this.__dragScrollTimer__P_379_4.dispose();
             }
 
-            this.__dragScrollTimer__P_378_4 = new qx.event.Timer(50);
+            this.__dragScrollTimer__P_379_4 = new qx.event.Timer(50);
 
-            this.__dragScrollTimer__P_378_4.addListener("interval", function (scrollable, axis, amount) {
+            this.__dragScrollTimer__P_379_4.addListener("interval", function (scrollable, axis, amount) {
               this._scrollBy(scrollable, axis, amount);
             }.bind(this, scrollable, axis, exceedanceAmount));
 
-            this.__dragScrollTimer__P_378_4.start();
+            this.__dragScrollTimer__P_379_4.start();
 
             e.stopPropagation();
             return;
@@ -366,19 +366,19 @@
        *
        * @param e {qx.event.type.Drag} The drag event instance.
        */
-      __onDragend__P_378_1: function __onDragend__P_378_1(e) {
-        if (this.__dragScrollTimer__P_378_4) {
-          this.__dragScrollTimer__P_378_4.stop();
+      __onDragend__P_379_1: function __onDragend__P_379_1(e) {
+        if (this.__dragScrollTimer__P_379_4) {
+          this.__dragScrollTimer__P_379_4.stop();
         }
       }
     },
     destruct: function destruct() {
-      if (this.__dragScrollTimer__P_378_4) {
-        this.__dragScrollTimer__P_378_4.dispose();
+      if (this.__dragScrollTimer__P_379_4) {
+        this.__dragScrollTimer__P_379_4.dispose();
       }
     }
   });
   qx.ui.core.MDragDropScrolling.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MDragDropScrolling.js.map?dt=1599343234271
+//# sourceMappingURL=MDragDropScrolling.js.map?dt=1599462407444

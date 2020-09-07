@@ -33,43 +33,43 @@
   qx.Class.define("qx.test.ui.Widget", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __widget__P_280_0: null,
+      __widget__P_281_0: null,
       setUp: function setUp() {
-        this.__widget__P_280_0 = new qx.ui.core.Widget();
+        this.__widget__P_281_0 = new qx.ui.core.Widget();
       },
       tearDown: function tearDown() {
-        this.__widget__P_280_0.destroy();
+        this.__widget__P_281_0.destroy();
       },
       testAddState: function testAddState() {
-        this.__widget__P_280_0.addState("test");
+        this.__widget__P_281_0.addState("test");
 
-        this.assertTrue(this.__widget__P_280_0.hasState("test"));
+        this.assertTrue(this.__widget__P_281_0.hasState("test"));
       },
       testRemoveState: function testRemoveState() {
-        this.__widget__P_280_0.addState("test");
+        this.__widget__P_281_0.addState("test");
 
-        this.assertTrue(this.__widget__P_280_0.hasState("test"));
+        this.assertTrue(this.__widget__P_281_0.hasState("test"));
 
-        this.__widget__P_280_0.removeState("test");
+        this.__widget__P_281_0.removeState("test");
 
-        this.assertFalse(this.__widget__P_280_0.hasState("test"));
+        this.assertFalse(this.__widget__P_281_0.hasState("test"));
       },
       testReplaceState: function testReplaceState() {
-        this.__widget__P_280_0.addState("test");
+        this.__widget__P_281_0.addState("test");
 
-        this.assertTrue(this.__widget__P_280_0.hasState("test"));
+        this.assertTrue(this.__widget__P_281_0.hasState("test"));
 
-        this.__widget__P_280_0.replaceState("test", "affe");
+        this.__widget__P_281_0.replaceState("test", "affe");
 
-        this.assertTrue(this.__widget__P_280_0.hasState("affe"));
-        this.assertFalse(this.__widget__P_280_0.hasState("test"));
+        this.assertTrue(this.__widget__P_281_0.hasState("affe"));
+        this.assertFalse(this.__widget__P_281_0.hasState("test"));
       },
       testWidgetThatContainsItself: function testWidgetThatContainsItself() {
-        this.assertFalse(qx.ui.core.Widget.contains(this.__widget__P_280_0, this.__widget__P_280_0));
+        this.assertFalse(qx.ui.core.Widget.contains(this.__widget__P_281_0, this.__widget__P_281_0));
       }
     }
   });
   qx.test.ui.Widget.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Widget.js.map?dt=1599343225752
+//# sourceMappingURL=Widget.js.map?dt=1599462398869

@@ -54,18 +54,18 @@
       qx.core.Object.constructor.call(this); // If no pane was specified. Create one.
 
       if (!pane) {
-        this.__container__P_493_0 = new qx.ui.core.Widget();
-        this.__pane__P_493_1 = this.__container__P_493_0;
+        this.__container__P_494_0 = new qx.ui.core.Widget();
+        this.__pane__P_494_1 = this.__container__P_494_0;
       } else {
-        this.__container__P_493_0 = null;
-        this.__pane__P_493_1 = pane;
+        this.__container__P_494_0 = null;
+        this.__pane__P_494_1 = pane;
       }
 
-      this.__pane__P_493_1.getContentElement().setStyle("overflowY", "auto");
+      this.__pane__P_494_1.getContentElement().setStyle("overflowY", "auto");
     },
     members: {
-      __container__P_493_0: null,
-      __pane__P_493_1: null,
+      __container__P_494_0: null,
+      __pane__P_494_1: null,
 
       /**
        * Apply the structure typically defined in the constructor to the
@@ -84,18 +84,18 @@
        * @return {qx.ui.core.Widget}
        */
       getPane: function getPane() {
-        return this.__pane__P_493_1;
+        return this.__pane__P_494_1;
       }
     },
     destruct: function destruct() {
-      if (this.__container__P_493_0) {
-        this.__container__P_493_0.dispose();
+      if (this.__container__P_494_0) {
+        this.__container__P_494_0.dispose();
       }
 
-      this.__container__P_493_0 = this.__pane__P_493_1 = null;
+      this.__container__P_494_0 = this.__pane__P_494_1 = null;
     }
   });
   qx.ui.progressive.structure.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1599343242935
+//# sourceMappingURL=Abstract.js.map?dt=1599462416304

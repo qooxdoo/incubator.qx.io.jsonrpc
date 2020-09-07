@@ -1,25 +1,13 @@
 (function () {
   var $$dbClassInfo = {
     "dependsOn": {
-      "qx.core.Environment": {
-        "defer": "load",
-        "require": true
-      },
       "qx.Class": {
         "usage": "dynamic",
         "require": true
       },
-      "qx.core.Object": {
+      "qx.io.transport.AbstractClient": {
         "construct": true,
         "require": true
-      },
-      "qx.lang.Type": {
-        "construct": true
-      },
-      "qx.Interface": {},
-      "qx.io.jsonrpc.transport.ITransport": {},
-      "qx.io.exception.Transport": {
-        "construct": true
       },
       "qx.io.jsonrpc.protocol.Parser": {
         "construct": true
@@ -28,17 +16,12 @@
       "qx.io.jsonrpc.protocol.Request": {},
       "qx.io.jsonrpc.protocol.Message": {},
       "qx.io.jsonrpc.protocol.Batch": {},
+      "qx.io.exception.Transport": {},
       "qx.io.jsonrpc.protocol.Notification": {},
       "qx.Promise": {},
       "qx.io.jsonrpc.protocol.Result": {},
       "qx.io.jsonrpc.protocol.Error": {},
       "qx.io.exception.Protocol": {}
-    },
-    "environment": {
-      "provided": [],
-      "required": {
-        "qx.io.jsonrpc.debug": {}
-      }
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -66,38 +49,9 @@
    * transport used (based on the URI passed).
    */
   qx.Class.define("qx.io.jsonrpc.Client", {
-    extend: qx.core.Object,
+    extend: qx.io.transport.AbstractClient,
     statics: {
-      __transports__P_159_0: null,
-
-      /**
-       * Register a transport class for use with uris that match the given
-       * regular expression. The client will use the transport which first
-       * matches, starting with the last added transport
-       * @param {RegExp} uriRegExp
-       *    A regular expression which the URI must match
-       * @param {qx.io.jsonrpc.transport.ITransport}  transportClass
-       *    The qooxdoo class implementing the transport
-       */
-      registerTransport(uriRegExp, transportClass) {
-        if (qx.io.jsonrpc.Client.__transports__P_159_0 === null) {
-          qx.io.jsonrpc.Client.__transports__P_159_0 = [];
-        }
-
-        if (!qx.lang.Type.isRegExp(uriRegExp)) {
-          throw new Error("First argument must be a regular expression!");
-        }
-
-        if (!qx.Interface.classImplements(transportClass, qx.io.jsonrpc.transport.ITransport)) {
-          throw new Error("Transport class must implement qx.io.jsonrpc.transport.ITransport");
-        }
-
-        qx.io.jsonrpc.Client.__transports__P_159_0.push({
-          uriRegExp,
-          transport: transportClass
-        });
-      }
-
+      registerTransport: qx.io.transport.AbstractClient.registerTransport
     },
     events: {
       /**
@@ -127,8 +81,8 @@
     },
 
     /**
-     * @param {qx.io.jsonrpc.transport.ITransport|String} transportOrUri
-     *    Transport object, which must implement {@link qx.io.jsonrpc.transport.ITransport}
+     * @param {qx.io.transport.ITransport|String} transportOrUri
+     *    Transport object, which must implement {@link qx.io.transport.ITransport}
      *    or a string URI, which will trigger auto-detection of transport, as long as an
      *    appropriate transport has been registered with the static `registerTransport()` function.
      * @param {String?} methodPrefix
@@ -137,28 +91,8 @@
      *    Optional parser object, which needs to be an instance of a subclass of {@link qx.io.jsonrpc.protocol.Parser}
      */
     construct: function construct(transportOrUri, methodPrefix, parser) {
-      qx.core.Object.constructor.call(this);
-      let transport;
-      let uri;
-
-      if (qx.lang.Type.isString(transportOrUri)) {
-        uri = transportOrUri;
-
-        for (let registeredTransport of qx.io.jsonrpc.Client.__transports__P_159_0.reverse()) {
-          if (uri.match(registeredTransport.uriRegExp)) {
-            // eslint-disable-next-line new-cap
-            transport = new registeredTransport.transport(uri);
-          }
-        }
-
-        if (!transport) {
-          throw new qx.io.exception.Transport(`No matching transport for URI '${transportOrUri}'`, qx.io.exception.Transport.INVALD_URI);
-        }
-      } else {
-        transport = transportOrUri;
-      }
-
-      this.setTransport(transport); // listen for incoming messages
+      qx.io.transport.AbstractClient.constructor.call(this);
+      this.selectTransport(transportOrUri); // listen for incoming messages
 
       this.getTransport().addListener("message", evt => this.handleIncoming(evt.getData()));
 
@@ -173,7 +107,7 @@
       }
 
       this.setParser(parser);
-      this.__requests__P_159_1 = [];
+      this.__requests__P_158_0 = [];
     },
     properties: {
       /**
@@ -182,13 +116,6 @@
       methodPrefix: {
         check: "String",
         nullable: true
-      },
-
-      /**
-       * The transport object
-       */
-      transport: {
-        check: "qx.io.jsonrpc.transport.ITransport"
       },
 
       /**
@@ -202,7 +129,7 @@
       /**
        * A cache of the requests which have been sent out and are still pending
        */
-      __requests__P_159_1: null,
+      __requests__P_158_0: null,
 
       /**
        * If a service name has been configured, prepend it to the method name
@@ -230,7 +157,7 @@
       _throwTransportException(exception) {
         this.fireDataEvent("error", exception);
 
-        this.__requests__P_159_1.forEach(request => {
+        this.__requests__P_158_0.forEach(request => {
           if (request instanceof qx.io.jsonrpc.protocol.Request) {
             request.handleTransportException(exception);
           }
@@ -259,21 +186,20 @@
         requests.forEach(request => {
           let id = request.getId();
 
-          if (this.__requests__P_159_1[id] !== undefined) {
+          if (this.__requests__P_158_0[id] !== undefined) {
             throw new qx.io.exception.Transport(`Request ID ${id} is already in use`, qx.io.exception.Transport.INVALID_ID, {
               request: message.toObject()
             });
           }
 
-          this.__requests__P_159_1[id] = request;
+          this.__requests__P_158_0[id] = request;
         }); // inform listeners
 
         this.fireDataEvent("outgoingRequest", message); // debugging
 
-        if (qx.core.Environment.get("qx.io.jsonrpc.debug")) {
+        {
           this.debug(">>> Outgoing json-rpc message: " + message);
         } // send it async, using transport-specific implementation
-
 
         return this.getTransport().send(message.toString());
       },
@@ -329,10 +255,9 @@
        * @param {String} json JSON data
        */
       handleIncoming(json) {
-        if (qx.core.Environment.get("qx.io.jsonrpc.debug")) {
+        {
           this.debug("<<< Incoming json-rpc message: " + json);
         }
-
         let message;
 
         try {
@@ -379,7 +304,7 @@
         if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
           // handle results and errors, which are responses to sent requests
           id = message.getId();
-          request = this.__requests__P_159_1[id];
+          request = this.__requests__P_158_0[id];
 
           if (request === undefined) {
             // no request with this id exists
@@ -411,7 +336,7 @@
         } // mark request as handled (and remove reference so it can be gc'ed)
 
 
-        this.__requests__P_159_1[id] = true;
+        this.__requests__P_158_0[id] = true;
       }
 
     },
@@ -422,4 +347,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1599343212961
+//# sourceMappingURL=Client.js.map?dt=1599462385916

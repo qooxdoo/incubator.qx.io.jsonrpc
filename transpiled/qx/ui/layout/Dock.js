@@ -200,8 +200,8 @@
     *****************************************************************************
     */
     members: {
-      __children__P_433_0: null,
-      __edges__P_433_1: null,
+      __children__P_434_0: null,
+      __edges__P_434_1: null,
       // overridden
       verifyLayoutProperty: function verifyLayoutProperty(item, name, value) {
         this.assertInArray(name, ["flex", "edge", "height", "width"], "The property '" + name + "' is not supported by the Dock layout!");
@@ -228,7 +228,7 @@
        *
        * @lint ignoreReferenceField(__edgeMap)
        */
-      __edgeMap__P_433_2: {
+      __edgeMap__P_434_2: {
         north: 1,
         south: 2,
         west: 3,
@@ -241,7 +241,7 @@
        *
        * @lint ignoreReferenceField(__alignMap)
        */
-      __alignMap__P_433_3: {
+      __alignMap__P_434_3: {
         1: "top",
         2: "bottom",
         3: "left",
@@ -252,7 +252,7 @@
        * Rebuilds cache for sorted children list.
        *
        */
-      __rebuildCache__P_433_4: function __rebuildCache__P_433_4() {
+      __rebuildCache__P_434_4: function __rebuildCache__P_434_4() {
         var all = this._getLayoutChildren();
 
         var child, center;
@@ -291,16 +291,16 @@
           result.push(center);
         }
 
-        this.__children__P_433_0 = result; // Cache edges for faster access
+        this.__children__P_434_0 = result; // Cache edges for faster access
 
         var edges = [];
 
         for (var i = 0; i < length; i++) {
           edge = result[i].getLayoutProperties().edge;
-          edges[i] = this.__edgeMap__P_433_2[edge] || 5;
+          edges[i] = this.__edgeMap__P_434_2[edge] || 5;
         }
 
-        this.__edges__P_433_1 = edges; // Clear invalidation marker
+        this.__edges__P_434_1 = edges; // Clear invalidation marker
 
         delete this._invalidChildrenCache;
       },
@@ -314,12 +314,12 @@
       renderLayout: function renderLayout(availWidth, availHeight, padding) {
         // Rebuild flex/width caches
         if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_433_4();
+          this.__rebuildCache__P_434_4();
         }
 
         var util = qx.ui.layout.Util;
-        var children = this.__children__P_433_0;
-        var edges = this.__edges__P_433_1;
+        var children = this.__children__P_434_0;
+        var edges = this.__edges__P_434_1;
         var length = children.length;
         var flexibles, child, hint, props, flex, grow, width, height, offset;
         var widths = [];
@@ -512,7 +512,7 @@
         var left, top, width, height, used, edge;
         var separatorLeft, separatorTop, separatorWidth, separatorHeight;
         var marginTop, marginBottom, marginLeft, marginRight;
-        var alignMap = this.__alignMap__P_433_3;
+        var alignMap = this.__alignMap__P_434_3;
 
         for (var i = 0; i < length; i++) {
           // Cache child data
@@ -707,11 +707,11 @@
       _computeSizeHint: function _computeSizeHint() {
         // Rebuild flex/width caches
         if (this._invalidChildrenCache) {
-          this.__rebuildCache__P_433_4();
+          this.__rebuildCache__P_434_4();
         }
 
-        var children = this.__children__P_433_0;
-        var edges = this.__edges__P_433_1;
+        var children = this.__children__P_434_0;
+        var edges = this.__edges__P_434_1;
         var length = children.length;
         var hint, child;
         var marginX, marginY;
@@ -829,10 +829,10 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__edges__P_433_1 = this.__children__P_433_0 = null;
+      this.__edges__P_434_1 = this.__children__P_434_0 = null;
     }
   });
   qx.ui.layout.Dock.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Dock.js.map?dt=1599343238788
+//# sourceMappingURL=Dock.js.map?dt=1599462412135

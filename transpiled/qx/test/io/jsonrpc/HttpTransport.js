@@ -50,7 +50,7 @@
   ************************************************************************ */
 
   /**
-   * Tests for qx.io.jsonrpc.transport.Http
+   * Tests for qx.io.transport.Xhr
    * Based on qx.test.io.request.Xhr
    */
   qx.Class.define("qx.test.io.jsonrpc.HttpTransport", {
@@ -327,4 +327,4 @@
   qx.test.io.jsonrpc.HttpTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HttpTransport.js.map?dt=1599343222957
+//# sourceMappingURL=HttpTransport.js.map?dt=1599462396119

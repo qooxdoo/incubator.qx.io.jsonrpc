@@ -69,8 +69,8 @@
     include: [qx.ui.decoration.MSingleBorder, qx.ui.decoration.MBackgroundImage],
     construct: function construct() {
       // override the methods of single border and background image
-      this._getDefaultInsetsForBorder = this.__getDefaultInsetsForDoubleBorder__P_402_0;
-      this._styleBorder = this.__styleDoubleBorder__P_402_1;
+      this._getDefaultInsetsForBorder = this.__getDefaultInsetsForDoubleBorder__P_403_0;
+      this._styleBorder = this.__styleDoubleBorder__P_403_1;
     },
 
     /*
@@ -178,7 +178,7 @@
        *
        * @param styles {Map} A map to add the styles.
        */
-      __styleDoubleBorder__P_402_1: function __styleDoubleBorder__P_402_1(styles) {
+      __styleDoubleBorder__P_403_1: function __styleDoubleBorder__P_403_1(styles) {
         var propName = qx.core.Environment.get("css.boxshadow");
         var color, innerColor, innerWidth;
 
@@ -245,7 +245,7 @@
         var innerOpacity = this.getInnerOpacity();
 
         if (innerOpacity < 1) {
-          this.__processInnerOpacity__P_402_2(innerColor, innerOpacity);
+          this.__processInnerOpacity__P_403_2(innerColor, innerOpacity);
         } // inner border
 
 
@@ -322,7 +322,7 @@
        * @param innerColor {Map} map of top, right, bottom and left colors
        * @param innerOpacity {Number} alpha value
        */
-      __processInnerOpacity__P_402_2: function __processInnerOpacity__P_402_2(innerColor, innerOpacity) {
+      __processInnerOpacity__P_403_2: function __processInnerOpacity__P_403_2(innerColor, innerOpacity) {
         if (!qx.core.Environment.get("css.rgba")) {
           {
             qx.log.Logger.warn("innerOpacity is configured but the browser doesn't support RGBA colors.");
@@ -351,7 +351,7 @@
        * @return {Map} A map containing the default insets.
        *   (top, right, bottom, left)
        */
-      __getDefaultInsetsForDoubleBorder__P_402_0: function __getDefaultInsetsForDoubleBorder__P_402_0() {
+      __getDefaultInsetsForDoubleBorder__P_403_0: function __getDefaultInsetsForDoubleBorder__P_403_0() {
         return {
           top: this.getWidthTop() + this.getInnerWidthTop(),
           right: this.getWidthRight() + this.getInnerWidthRight(),
@@ -364,4 +364,4 @@
   qx.ui.decoration.MDoubleBorder.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MDoubleBorder.js.map?dt=1599343236039
+//# sourceMappingURL=MDoubleBorder.js.map?dt=1599462409362

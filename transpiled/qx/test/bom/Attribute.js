@@ -59,7 +59,7 @@
   qx.Class.define("qx.test.bom.Attribute", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __maxLengthValues__P_206_0: null,
+      __maxLengthValues__P_207_0: null,
       setUp: function setUp() {
         var div = document.createElement("div");
         div.id = "el";
@@ -75,7 +75,7 @@
         var img = document.createElement("img");
         this._img = img;
         document.body.appendChild(img);
-        this.__maxLengthValues__P_206_0 = {
+        this.__maxLengthValues__P_207_0 = {
           "mshtml": 2147483647,
           "default": -1
         };
@@ -111,9 +111,9 @@
         var Attribute = qx.bom.element.Attribute;
 
         if (qx.core.Environment.get("browser.name") == "edge") {
-          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_206_0.mshtml);
+          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_207_0.mshtml);
         } else if (qx.core.Environment.get("browser.name") == "chrome" || qx.core.Environment.get("browser.name") == "safari") {
-          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_206_0["default"]);
+          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_207_0["default"]);
         } else {
           this.assertNull(Attribute.get(this._input, "maxLength"));
         }
@@ -154,20 +154,20 @@
         var Attribute = qx.bom.element.Attribute;
         Attribute.set(this._input, "maxLength", 10);
         Attribute.set(this._input, "maxLength", null);
-        var maxLengthValue = qx.core.Environment.select("engine.name", this.__maxLengthValues__P_206_0);
+        var maxLengthValue = qx.core.Environment.select("engine.name", this.__maxLengthValues__P_207_0);
 
         if (qx.core.Environment.get("browser.name") == "edge") {
-          maxLengthValue = this.__maxLengthValues__P_206_0.mshtml;
+          maxLengthValue = this.__maxLengthValues__P_207_0.mshtml;
         } else if (qx.core.Environment.get("browser.name") == "chrome" || qx.core.Environment.get("browser.name") == "safari") {
-          maxLengthValue = this.__maxLengthValues__P_206_0["default"];
+          maxLengthValue = this.__maxLengthValues__P_207_0["default"];
         }
 
         this.assertEquals(maxLengthValue, this._input["maxLength"]);
 
         if (qx.core.Environment.get("browser.name") == "edge") {
-          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_206_0.mshtml);
+          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_207_0.mshtml);
         } else if (qx.core.Environment.get("browser.name") == "chrome" || qx.core.Environment.get("browser.name") == "safari") {
-          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_206_0["default"]);
+          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_207_0["default"]);
         } else {
           this.assertNull(Attribute.get(this._input, "maxLength"));
         }
@@ -185,9 +185,9 @@
         Attribute.reset(this._input, "maxLength");
 
         if (qx.core.Environment.get("browser.name") == "edge") {
-          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_206_0.mshtml);
+          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_207_0.mshtml);
         } else if (qx.core.Environment.get("browser.name") == "chrome" || qx.core.Environment.get("browser.name") == "safari") {
-          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_206_0["default"]);
+          this.assertEquals(Attribute.get(this._input, "maxLength"), this.__maxLengthValues__P_207_0["default"]);
         } else {
           this.assertNull(Attribute.get(this._input, "maxLength"));
         }
@@ -222,4 +222,4 @@
   qx.test.bom.Attribute.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Attribute.js.map?dt=1599343217412
+//# sourceMappingURL=Attribute.js.map?dt=1599462390631

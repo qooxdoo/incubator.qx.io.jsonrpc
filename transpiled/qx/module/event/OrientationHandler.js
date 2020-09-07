@@ -63,12 +63,12 @@
           throw new Error("The 'orientationchange' event is only available on window objects!");
         }
 
-        if (!element.__orientationHandler__P_199_0) {
+        if (!element.__orientationHandler__P_200_0) {
           if (!element.$$emitter) {
             element.$$emitter = new qx.event.Emitter();
           }
 
-          element.__orientationHandler__P_199_0 = new qx.event.handler.OrientationCore(element, element.$$emitter);
+          element.__orientationHandler__P_200_0 = new qx.event.handler.OrientationCore(element, element.$$emitter);
         }
       },
 
@@ -78,9 +78,9 @@
        * @param element {Element} DOM element
        */
       unregister: function unregister(element) {
-        if (element.__orientationHandler__P_199_0) {
+        if (element.__orientationHandler__P_200_0) {
           if (!element.$$emitter) {
-            element.__orientationHandler__P_199_0 = null;
+            element.__orientationHandler__P_200_0 = null;
           } else {
             var hasListener = false;
             var listeners = element.$$emitter.getListeners();
@@ -91,7 +91,7 @@
             });
 
             if (!hasListener) {
-              element.__orientationHandler__P_199_0 = null;
+              element.__orientationHandler__P_200_0 = null;
             }
           }
         }
@@ -104,4 +104,4 @@
   qx.module.event.OrientationHandler.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=OrientationHandler.js.map?dt=1599343216444
+//# sourceMappingURL=OrientationHandler.js.map?dt=1599462389549

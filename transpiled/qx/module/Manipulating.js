@@ -81,7 +81,7 @@
        * @param duration {Number} The animation's duration in ms
        * @return {q} The collection for chaining.
        */
-      __animateScroll__P_192_0: function __animateScroll__P_192_0(property, value, duration) {
+      __animateScroll__P_193_0: function __animateScroll__P_193_0(property, value, duration) {
         var desc = qx.lang.Object.clone(qx.module.Manipulating._animationDescription[property], true);
         desc.keyFrames[100][property] = value;
         return this.animate(desc, duration);
@@ -94,7 +94,7 @@
        * @return {qxWeb} Collection
        * @internal
        */
-      __getCollectionFromArgument__P_192_1: function __getCollectionFromArgument__P_192_1(arg) {
+      __getCollectionFromArgument__P_193_1: function __getCollectionFromArgument__P_193_1(arg) {
         var coll; // Collection/array of DOM elements
 
         if (qx.lang.Type.isArray(arg)) {
@@ -122,14 +122,14 @@
        * @return {Element} innermost element
        * @internal
        */
-      __getInnermostElement__P_192_2: function __getInnermostElement__P_192_2(element) {
+      __getInnermostElement__P_193_2: function __getInnermostElement__P_193_2(element) {
         if (element.childNodes.length == 0) {
           return element;
         }
 
         for (var i = 0, l = element.childNodes.length; i < l; i++) {
           if (element.childNodes[i].nodeType === 1) {
-            return this.__getInnermostElement__P_192_2(element.childNodes[i]);
+            return this.__getInnermostElement__P_193_2(element.childNodes[i]);
           }
         }
 
@@ -144,7 +144,7 @@
        * @return {Element[]} Array of elements
        * @internal
        */
-      __getElementArray__P_192_3: function __getElementArray__P_192_3(arg) {
+      __getElementArray__P_193_3: function __getElementArray__P_193_3(arg) {
         if (!qx.lang.Type.isArray(arg)) {
           var fromSelector = qxWeb(arg);
           arg = fromSelector.length > 0 ? fromSelector : [arg];
@@ -238,7 +238,7 @@
        * @return {qxWeb} The collection for chaining
        */
       appendTo: function appendTo(parent) {
-        parent = qx.module.Manipulating.__getElementArray__P_192_3(parent);
+        parent = qx.module.Manipulating.__getElementArray__P_193_3(parent);
 
         for (var i = 0, l = parent.length; i < l; i++) {
           this._forEachElement(function (item, j) {
@@ -266,7 +266,7 @@
        * @return {qxWeb} The collection for chaining
        */
       insertBefore: function insertBefore(target) {
-        target = qx.module.Manipulating.__getElementArray__P_192_3(target);
+        target = qx.module.Manipulating.__getElementArray__P_193_3(target);
 
         for (var i = 0, l = target.length; i < l; i++) {
           this._forEachElement(function (item, index) {
@@ -294,7 +294,7 @@
        * @return {qxWeb} The collection for chaining
        */
       insertAfter: function insertAfter(target) {
-        target = qx.module.Manipulating.__getElementArray__P_192_3(target);
+        target = qx.module.Manipulating.__getElementArray__P_193_3(target);
 
         for (var i = 0, l = target.length; i < l; i++) {
           for (var j = this.length - 1; j >= 0; j--) {
@@ -326,7 +326,7 @@
        * @return {qxWeb} The collection for chaining
        */
       wrap: function wrap(wrapper) {
-        wrapper = qx.module.Manipulating.__getCollectionFromArgument__P_192_1(wrapper);
+        wrapper = qx.module.Manipulating.__getCollectionFromArgument__P_193_1(wrapper);
 
         if (wrapper.length == 0) {
           return this;
@@ -336,7 +336,7 @@
           var clonedwrapper = wrapper.eq(0).clone(true);
           qx.dom.Element.insertAfter(clonedwrapper[0], item);
 
-          var innermost = qx.module.Manipulating.__getInnermostElement__P_192_2(clonedwrapper[0]);
+          var innermost = qx.module.Manipulating.__getInnermostElement__P_193_2(clonedwrapper[0]);
 
           qx.dom.Element.insertEnd(item, innermost);
         });
@@ -506,7 +506,7 @@
         var Node = qx.dom.Node;
 
         if (duration && qx.bom.element && qx.bom.element.AnimationJs) {
-          qx.module.Manipulating.__animateScroll__P_192_0.bind(this, "scrollLeft", value, duration)();
+          qx.module.Manipulating.__animateScroll__P_193_0.bind(this, "scrollLeft", value, duration)();
         }
 
         for (var i = 0, l = this.length, obj; i < l; i++) {
@@ -538,7 +538,7 @@
         var Node = qx.dom.Node;
 
         if (duration && qx.bom.element && qx.bom.element.AnimationJs) {
-          qx.module.Manipulating.__animateScroll__P_192_0.bind(this, "scrollTop", value, duration)();
+          qx.module.Manipulating.__animateScroll__P_193_0.bind(this, "scrollTop", value, duration)();
         }
 
         for (var i = 0, l = this.length, obj; i < l; i++) {
@@ -594,4 +594,4 @@
   qx.module.Manipulating.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Manipulating.js.map?dt=1599343215902
+//# sourceMappingURL=Manipulating.js.map?dt=1599462389029

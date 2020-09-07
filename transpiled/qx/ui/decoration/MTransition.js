@@ -151,4 +151,4 @@
   qx.ui.decoration.MTransition.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MTransition.js.map?dt=1599343236159
+//# sourceMappingURL=MTransition.js.map?dt=1599462409488

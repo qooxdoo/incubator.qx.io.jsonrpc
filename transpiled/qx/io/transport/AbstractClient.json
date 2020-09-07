@@ -1,7 +1,7 @@
 {
-  "className": "qx.io.jsonrpc.transport.Abstract",
-  "packageName": "qx.io.jsonrpc.transport",
-  "name": "Abstract",
+  "className": "qx.io.transport.AbstractClient",
+  "packageName": "qx.io.transport",
+  "name": "AbstractClient",
   "superClass": "qx.core.Object",
   "interfaces": [],
   "mixins": [],
@@ -9,11 +9,11 @@
   "clazz": {
     "location": {
       "start": {
-        "line": 8,
+        "line": 27,
         "column": 0
       },
       "end": {
-        "line": 39,
+        "line": 97,
         "column": 3
       }
     },
@@ -21,7 +21,11 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<p>Abstract class for JSON-RPC transports\n For the moment, any special configuration of the transport, such as\n authentication, must be done on the level of the underlying implementation,\n an abstract API will be added later.</p>"
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n      2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        },
+        {
+          "name": "@description",
+          "body": "<p>This class provides a the base class for all clients that use the\n transport implementations in this namespace. Since the static method\n <code>registerTransport</code> cannot be inherited by subclasses, they mus proxy it\n by adding <code>registerTransport : qx.io.transport.AbstractClient.registerTransport</code>\n to their <code>statics</code> section.</p>"
         }
       ]
     }
@@ -30,15 +34,15 @@
   "isAbstract": true,
   "isStatic": false,
   "isSingleton": false,
-  "properties": {
-    "endpoint": {
+  "statics": {
+    "registerTransport": {
       "location": {
         "start": {
-          "line": 17,
+          "line": 41,
           "column": 4
         },
         "end": {
-          "line": 20,
+          "line": 52,
           "column": 5
         }
       },
@@ -46,14 +50,53 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>The uri of the endpoint</p>"
+            "body": "<p>Register a transport class for use with uris that match the given\n regular expression. The client will use the transport which first\n matches, starting with the last added transport</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{RegExp} uriRegExp\n    A regular expression which the URI must match",
+            "paramName": "uriRegExp",
+            "description": "A regular expression which the URI must match",
+            "type": "RegExp"
+          },
+          {
+            "name": "@param",
+            "body": "{qx.io.transport.ITransport}  transportClass\n    The qooxdoo class implementing the transport",
+            "paramName": "transportClass",
+            "description": "The qooxdoo class implementing the transport",
+            "type": "qx.io.transport.ITransport"
           }
         ]
       },
-      "name": "endpoint",
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "properties": {
+    "transport": {
+      "location": {
+        "start": {
+          "line": 60,
+          "column": 4
+        },
+        "end": {
+          "line": 62,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>The transport object</p>"
+          }
+        ]
+      },
+      "name": "transport",
       "propertyType": "new",
-      "event": "changeEndpoint",
-      "check": "String"
+      "check": "qx.io.transport.ITransport"
     },
     "qxOwner": {
       "type": "property",
@@ -88,57 +131,41 @@
       }
     }
   },
-  "events": {
-    "message": {
+  "members": {
+    "selectTransport": {
       "location": {
         "start": {
-          "line": 28,
+          "line": 74,
           "column": 4
         },
         "end": {
-          "line": 28,
-          "column": 36
+          "line": 95,
+          "column": 5
         }
       },
       "jsdoc": {
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Event fired when a message is received from the endpoint. Event data\n is an UTF-8 encoded string</p>"
+            "body": "<p>Given a transport object implementing {@link qx.io.transport.ITransport}\n select that transport; if a string URI is passed, select one that has\n been registered for that class of URIs.</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{qx.io.transport.ITransport|String} transportOrUri"
+          }
+        ],
+        "@throws": [
+          {
+            "name": "@throws",
+            "body": "qx.io.exception.Transport"
           }
         ]
       },
-      "name": "message",
-      "type": "qx.event.type.Data"
-    }
-  },
-  "construct": {
-    "location": {
-      "start": {
-        "line": 35,
-        "column": 2
-      },
-      "end": {
-        "line": 38,
-        "column": 3
-      }
+      "type": "function",
+      "access": "public"
     },
-    "jsdoc": {
-      "@description": [
-        {
-          "name": "@description",
-          "body": "<p>Constructor</p>"
-        }
-      ],
-      "@param": [
-        {
-          "name": "@param",
-          "body": "{String} endpoint"
-        }
-      ]
-    }
-  },
-  "members": {
     "getQxOwner": {
       "type": "function",
       "name": "getQxOwner",
@@ -275,9 +302,9 @@
         ]
       }
     },
-    "getEndpoint": {
+    "getTransport": {
       "type": "function",
-      "name": "getEndpoint",
+      "name": "getTransport",
       "abstract": false,
       "mixin": false,
       "inherited": false,
@@ -287,21 +314,21 @@
         "@description": [
           {
             "name": "@description",
-            "body": "Gets the (computed) value of the property <code>endpoint</code>.\n\nFor further details take a look at the property definition: {@link #endpoint}."
+            "body": "Gets the (computed) value of the property <code>transport</code>.\n\nFor further details take a look at the property definition: {@link #transport}."
           }
         ],
         "@return": [
           {
             "name": "@return",
-            "type": "String",
-            "desc": "Returns the value for endpoint"
+            "type": "qx.io.transport.ITransport",
+            "desc": "Returns the value for transport"
           }
         ]
       }
     },
-    "setEndpoint": {
+    "setTransport": {
       "type": "function",
-      "name": "setEndpoint",
+      "name": "setTransport",
       "abstract": false,
       "mixin": false,
       "inherited": false,
@@ -311,22 +338,22 @@
         "@description": [
           {
             "name": "@description",
-            "body": "Sets the user value of the property <code>endpoint</code>.\n\nFor further details take a look at the property definition: {@link #endpoint}."
+            "body": "Sets the user value of the property <code>transport</code>.\n\nFor further details take a look at the property definition: {@link #transport}."
           }
         ],
         "@param": [
           {
             "name": "@param",
-            "type": "String",
+            "type": "qx.io.transport.ITransport",
             "paramName": "value",
-            "desc": "Value for endpoint"
+            "desc": "Value for transport"
           }
         ]
       }
     },
-    "resetEndpoint": {
+    "resetTransport": {
       "type": "function",
-      "name": "resetEndpoint",
+      "name": "resetTransport",
       "abstract": false,
       "mixin": false,
       "inherited": false,
@@ -336,13 +363,14 @@
         "@description": [
           {
             "name": "@description",
-            "body": "Resets the user value of the property <code>endpoint</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #endpoint}."
+            "body": "Resets the user value of the property <code>transport</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #transport}."
           }
         ]
       }
     }
   },
   "descendants": [
-    "qx.io.jsonrpc.transport.Http"
+    "qx.io.graphql.Client",
+    "qx.io.jsonrpc.Client"
   ]
 }

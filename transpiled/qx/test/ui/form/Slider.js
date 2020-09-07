@@ -34,34 +34,34 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__slider__P_314_0 = new qx.ui.form.Slider();
+        this.__slider__P_315_0 = new qx.ui.form.Slider();
 
-        this.__slider__P_314_0.setWidth(100);
+        this.__slider__P_315_0.setWidth(100);
 
-        this.getRoot().add(this.__slider__P_314_0);
+        this.getRoot().add(this.__slider__P_315_0);
         this.flush();
       },
       tearDown: function tearDown() {
-        this.__slider__P_314_0.destroy();
+        this.__slider__P_315_0.destroy();
       },
       testKnobPositionAfterBlur: function testKnobPositionAfterBlur() {
-        this.__slider__P_314_0.setValue(0);
+        this.__slider__P_315_0.setValue(0);
 
         this.flush();
 
-        var pos0 = this.__slider__P_314_0.getChildControl("knob").getContentElement().getStyle("left");
+        var pos0 = this.__slider__P_315_0.getChildControl("knob").getContentElement().getStyle("left");
 
-        this.__slider__P_314_0.setValue(30);
-
-        this.flush();
-
-        var pos30 = this.__slider__P_314_0.getChildControl("knob").getContentElement().getStyle("left");
-
-        this.__slider__P_314_0.focus();
+        this.__slider__P_315_0.setValue(30);
 
         this.flush();
 
-        var posFocus = this.__slider__P_314_0.getChildControl("knob").getContentElement().getStyle("left");
+        var pos30 = this.__slider__P_315_0.getChildControl("knob").getContentElement().getStyle("left");
+
+        this.__slider__P_315_0.focus();
+
+        this.flush();
+
+        var posFocus = this.__slider__P_315_0.getChildControl("knob").getContentElement().getStyle("left");
 
         this.assertNotEquals(pos0, posFocus);
         this.assertEquals(pos30, posFocus);
@@ -75,47 +75,47 @@
         this.assertIdentical(newSlider3.getOrientation(), "vertical");
       },
       testSlideMethods: function testSlideMethods() {
-        var min = this.__slider__P_314_0.getMinimum();
+        var min = this.__slider__P_315_0.getMinimum();
 
-        var max = this.__slider__P_314_0.getMaximum();
+        var max = this.__slider__P_315_0.getMaximum();
 
-        this.__slider__P_314_0.slideToBegin();
+        this.__slider__P_315_0.slideToBegin();
 
-        this.assertIdentical(this.__slider__P_314_0.getValue(), min);
+        this.assertIdentical(this.__slider__P_315_0.getValue(), min);
 
-        this.__slider__P_314_0.slideToEnd();
+        this.__slider__P_315_0.slideToEnd();
 
-        this.assertIdentical(this.__slider__P_314_0.getValue(), max);
+        this.assertIdentical(this.__slider__P_315_0.getValue(), max);
 
-        var singleStep = this.__slider__P_314_0.getSingleStep();
+        var singleStep = this.__slider__P_315_0.getSingleStep();
 
-        var before = this.__slider__P_314_0.getValue();
+        var before = this.__slider__P_315_0.getValue();
 
-        this.__slider__P_314_0.slideForward();
+        this.__slider__P_315_0.slideForward();
 
-        this.assertIdentical(this.__slider__P_314_0.getValue(), Math.min(before + singleStep, max));
-        before = this.__slider__P_314_0.getValue();
+        this.assertIdentical(this.__slider__P_315_0.getValue(), Math.min(before + singleStep, max));
+        before = this.__slider__P_315_0.getValue();
 
-        this.__slider__P_314_0.slideBack();
+        this.__slider__P_315_0.slideBack();
 
-        this.assertIdentical(this.__slider__P_314_0.getValue(), Math.max(before - singleStep, min));
+        this.assertIdentical(this.__slider__P_315_0.getValue(), Math.max(before - singleStep, min));
 
-        var pageStep = this.__slider__P_314_0.getPageStep();
+        var pageStep = this.__slider__P_315_0.getPageStep();
 
-        before = this.__slider__P_314_0.getValue();
+        before = this.__slider__P_315_0.getValue();
 
-        this.__slider__P_314_0.slidePageForward();
+        this.__slider__P_315_0.slidePageForward();
 
-        this.assertIdentical(this.__slider__P_314_0.getValue(), Math.min(before + pageStep, max));
-        before = this.__slider__P_314_0.getValue();
+        this.assertIdentical(this.__slider__P_315_0.getValue(), Math.min(before + pageStep, max));
+        before = this.__slider__P_315_0.getValue();
 
-        this.__slider__P_314_0.slidePageBack();
+        this.__slider__P_315_0.slidePageBack();
 
-        this.assertIdentical(this.__slider__P_314_0.getValue(), Math.max(before - pageStep, min));
+        this.assertIdentical(this.__slider__P_315_0.getValue(), Math.max(before - pageStep, min));
       }
     }
   });
   qx.test.ui.form.Slider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Slider.js.map?dt=1599343227476
+//# sourceMappingURL=Slider.js.map?dt=1599462400766

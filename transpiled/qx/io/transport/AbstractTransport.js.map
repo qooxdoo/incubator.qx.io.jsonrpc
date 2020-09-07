@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/io/transport/AbstractTransport.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "core",
+    "Object",
+    "type",
+    "properties",
+    "endpoint",
+    "check",
+    "event",
+    "events",
+    "construct",
+    "setEndpoint",
+    "io",
+    "transport",
+    "AbstractTransport"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;AAOAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EAAqD;AAEnDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,IAAH,CAAQC,MAFmC;AAGnDC,IAAAA,IAAI,EAAE,UAH6C;AAKnDC,IAAAA,UAAU,EAAG;AACX;;;AAGAC,MAAAA,QAAQ,EAAG;AACTC,QAAAA,KAAK,EAAG,QADC;AAETC,QAAAA,KAAK,EAAG;AAFC;AAJA,KALsC;AAenDC,IAAAA,MAAM,EAAG;AACP;;;;AAIA,iBAAY;AALL,KAf0C;;AAuBnD;;;;AAIAC,IAAAA,SAAS,CAACJ,QAAD,EAAW;AAClB;AACA,WAAKK,WAAL,CAAiBL,QAAjB;AACD;;AA9BkD,GAArD;AAPAX,EAAAA,EAAE,CAACiB,EAAH,CAAMC,SAAN,CAAgBC,iBAAhB,CAAkChB,aAAlC,GAAkDA,aAAlD",
+  "sourcesContent": [
+    "/**\n * Abstract class for JSON-RPC transports\n *\n * For the moment, any special configuration of the transport, such as\n * authentication, must be done on the level of the underlying implementation,\n * an abstract API will be added later.\n */\nqx.Class.define(\"qx.io.transport.AbstractTransport\", {\n\n  extend: qx.core.Object,\n  type: \"abstract\",\n\n  properties : {\n    /**\n     * The uri of the endpoint\n     */\n    endpoint : {\n      check : \"String\",\n      event : \"changeEndpoint\"\n    }\n  },\n\n  events : {\n    /**\n     * Event fired when a message is received from the endpoint. Event data\n     * is an UTF-8 encoded string\n     */\n    \"message\" : \"qx.event.type.Data\"\n  },\n\n  /**\n   * Constructor\n   * @param {String} endpoint\n   */\n  construct(endpoint) {\n    this.base(arguments);\n    this.setEndpoint(endpoint);\n  }\n});\n"
+  ]
+}

@@ -2,7 +2,7 @@
   "className": "qx.io.graphql.Client",
   "packageName": "qx.io.graphql",
   "name": "Client",
-  "superClass": "qx.core.Object",
+  "superClass": "qx.io.transport.AbstractClient",
   "interfaces": [],
   "mixins": [],
   "functionName": null,
@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 131,
+        "line": 112,
         "column": 3
       }
     },
@@ -31,14 +31,54 @@
     }
   },
   "type": "class",
+  "statics": {
+    "registerTransport": {
+      "location": {
+        "start": {
+          "line": 32,
+          "column": 4
+        },
+        "end": {
+          "line": 32,
+          "column": 72
+        }
+      },
+      "type": "variable",
+      "access": "public"
+    }
+  },
+  "events": {
+    "error": {
+      "location": {
+        "start": {
+          "line": 41,
+          "column": 4
+        },
+        "end": {
+          "line": 41,
+          "column": 34
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Event fired when a request results in an error. Event data is an instance of\n {@link qx.io.exception.Transport}, {@link qx.io.exception.Protocol},\n or {@link qx.io.exception.Cancel}.</p>"
+          }
+        ]
+      },
+      "name": "error",
+      "type": "qx.event.type.Data"
+    }
+  },
   "construct": {
     "location": {
       "start": {
-        "line": 38,
+        "line": 50,
         "column": 13
       },
       "end": {
-        "line": 48,
+        "line": 53,
         "column": 3
       }
     },
@@ -52,164 +92,26 @@
       "@param": [
         {
           "name": "@param",
-          "body": "{String} url The url of the GraphQL endpoint",
-          "paramName": "url",
-          "description": "The url of the GraphQL endpoint",
-          "type": "String"
-        },
-        {
-          "name": "@param",
-          "body": "{object} init A map of configuration values, see\n https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch\n This parameter is used to configure the underlying fetch\n API and might be removed in a future. If you provide custom headers, you must\n set \"Content-Type\" and \"Accept\" to \"application/json\" yourself.",
-          "paramName": "init",
-          "description": "A map of configuration values, see\n https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch\n This parameter is used to configure the underlying fetch\n API and might be removed in a future. If you provide custom headers, you must\n set \"Content-Type\" and \"Accept\" to \"application/json\" yourself.",
-          "type": "object"
+          "body": "{qx.io.transport.ITransport|String} transportOrUri\n    Transport object, which must implement {@link qx.io.transport.ITransport}\n    or a string URI, which will trigger auto-detection of transport, as long as an\n    appropriate transport has been registered with the static `registerTransport()` function.",
+          "paramName": "transportOrUri",
+          "description": "Transport object, which must implement {@link qx.io.transport.ITransport}\n    or a string URI, which will trigger auto-detection of transport, as long as an\n    appropriate transport has been registered with the static `registerTransport()` function.",
+          "type": [
+            "qx.io.transport.ITransport",
+            "String"
+          ]
         }
       ]
     }
   },
-  "properties": {
-    "url": {
-      "location": {
-        "start": {
-          "line": 54,
-          "column": 4
-        },
-        "end": {
-          "line": 56,
-          "column": 5
-        }
-      },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>The URL of the GraphQl endpoint</p>"
-          }
-        ]
-      },
-      "name": "url",
-      "propertyType": "new",
-      "check": "String"
-    },
-    "authentication": {
-      "location": {
-        "start": {
-          "line": 61,
-          "column": 4
-        },
-        "end": {
-          "line": 64,
-          "column": 5
-        }
-      },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>Optional authentication object</p>"
-          }
-        ]
-      },
-      "name": "authentication",
-      "propertyType": "new",
-      "nullable": true,
-      "allowNull": true,
-      "check": "qx.io.request.authentication.IAuthentication"
-    },
-    "qxOwner": {
-      "type": "property",
-      "name": "qxOwner",
-      "abstract": false,
-      "mixin": true,
-      "access": "public",
-      "overriddenFrom": "qx.core.MObjectId",
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>The owning object</p>"
-          }
-        ]
-      }
-    },
-    "qxObjectId": {
-      "type": "property",
-      "name": "qxObjectId",
-      "abstract": false,
-      "mixin": true,
-      "access": "public",
-      "overriddenFrom": "qx.core.MObjectId",
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>{String} The ID of the object.</p>"
-          }
-        ]
-      }
-    }
-  },
-  "events": {
-    "error": {
-      "location": {
-        "start": {
-          "line": 75,
-          "column": 4
-        },
-        "end": {
-          "line": 75,
-          "column": 34
-        }
-      },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>Event fired when a request results in an error. Event data is an instance of\n {@link qx.io.exception.Transport}, {@link qx.io.exception.Protocol},\n or {@link qx.io.exception.Cancel}.\n Event fired when a message is received from the endpoint. Event data\n is an UTF-8 encoded string</p>"
-          }
-        ]
-      },
-      "name": "error",
-      "type": "qx.event.type.Data"
-    }
-  },
   "members": {
-    "__init": {
-      "location": {
-        "start": {
-          "line": 84,
-          "column": 4
-        },
-        "end": {
-          "line": 84,
-          "column": 17
-        }
-      },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>Stores the <code>init</code> parameter of the constructor</p>"
-          }
-        ],
-        "@type": [
-          {
-            "name": "@type",
-            "body": "{Object}"
-          }
-        ]
-      },
-      "type": "variable",
-      "access": "private"
-    },
     "send": {
       "location": {
         "start": {
-          "line": 93,
+          "line": 63,
           "column": 4
         },
         "end": {
-          "line": 111,
+          "line": 87,
           "column": 5
         }
       },
@@ -236,12 +138,6 @@
             "type": "qx.Promise",
             "description": " Promise that resolves with the data"
           }
-        ],
-        "@ignore": [
-          {
-            "name": "@ignore",
-            "body": "fetch"
-          }
         ]
       },
       "type": "function",
@@ -250,11 +146,11 @@
     "_handleErrors": {
       "location": {
         "start": {
-          "line": 122,
+          "line": 99,
           "column": 4
         },
         "end": {
-          "line": 129,
+          "line": 106,
           "column": 5
         }
       },
@@ -272,6 +168,14 @@
             "paramName": "response",
             "description": "The response object",
             "type": "qx.io.graphql.protocol.Response"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.io.exception.Protocol}",
+            "type": "qx.io.exception.Protocol",
+            "description": ""
           }
         ]
       },
@@ -414,134 +318,68 @@
         ]
       }
     },
-    "getUrl": {
+    "getTransport": {
       "type": "function",
-      "name": "getUrl",
+      "name": "getTransport",
       "abstract": false,
       "mixin": false,
-      "inherited": false,
+      "inherited": true,
       "access": "public",
       "property": "get",
       "jsdoc": {
         "@description": [
           {
             "name": "@description",
-            "body": "Gets the (computed) value of the property <code>url</code>.\n\nFor further details take a look at the property definition: {@link #url}."
+            "body": "Gets the (computed) value of the property <code>transport</code>.\n\nFor further details take a look at the property definition: {@link #transport}."
           }
         ],
         "@return": [
           {
             "name": "@return",
-            "type": "String",
-            "desc": "Returns the value for url"
+            "type": "qx.io.transport.ITransport",
+            "desc": "Returns the value for transport"
           }
         ]
       }
     },
-    "setUrl": {
+    "setTransport": {
       "type": "function",
-      "name": "setUrl",
+      "name": "setTransport",
       "abstract": false,
       "mixin": false,
-      "inherited": false,
+      "inherited": true,
       "access": "public",
       "property": "set",
       "jsdoc": {
         "@description": [
           {
             "name": "@description",
-            "body": "Sets the user value of the property <code>url</code>.\n\nFor further details take a look at the property definition: {@link #url}."
+            "body": "Sets the user value of the property <code>transport</code>.\n\nFor further details take a look at the property definition: {@link #transport}."
           }
         ],
         "@param": [
           {
             "name": "@param",
-            "type": "String",
+            "type": "qx.io.transport.ITransport",
             "paramName": "value",
-            "desc": "Value for url"
+            "desc": "Value for transport"
           }
         ]
       }
     },
-    "resetUrl": {
+    "resetTransport": {
       "type": "function",
-      "name": "resetUrl",
+      "name": "resetTransport",
       "abstract": false,
       "mixin": false,
-      "inherited": false,
+      "inherited": true,
       "access": "public",
       "property": "reset",
       "jsdoc": {
         "@description": [
           {
             "name": "@description",
-            "body": "Resets the user value of the property <code>url</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #url}."
-          }
-        ]
-      }
-    },
-    "getAuthentication": {
-      "type": "function",
-      "name": "getAuthentication",
-      "abstract": false,
-      "mixin": false,
-      "inherited": false,
-      "access": "public",
-      "property": "get",
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "Gets the (computed) value of the property <code>authentication</code>.\n\nFor further details take a look at the property definition: {@link #authentication}."
-          }
-        ],
-        "@return": [
-          {
-            "name": "@return",
-            "type": "qx.io.request.authentication.IAuthentication",
-            "desc": "Returns the value for authentication"
-          }
-        ]
-      }
-    },
-    "setAuthentication": {
-      "type": "function",
-      "name": "setAuthentication",
-      "abstract": false,
-      "mixin": false,
-      "inherited": false,
-      "access": "public",
-      "property": "set",
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "Sets the user value of the property <code>authentication</code>.\n\nFor further details take a look at the property definition: {@link #authentication}."
-          }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "type": "qx.io.request.authentication.IAuthentication",
-            "paramName": "value",
-            "desc": "Value for authentication"
-          }
-        ]
-      }
-    },
-    "resetAuthentication": {
-      "type": "function",
-      "name": "resetAuthentication",
-      "abstract": false,
-      "mixin": false,
-      "inherited": false,
-      "access": "public",
-      "property": "reset",
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "Resets the user value of the property <code>authentication</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #authentication}."
+            "body": "Resets the user value of the property <code>transport</code>.\n\nThe computed value falls back to the next available value e.g. appearance, init or inheritance value depending on the property configuration and value availability.\n\nFor further details take a look at the property definition: {@link #transport}."
           }
         ]
       }

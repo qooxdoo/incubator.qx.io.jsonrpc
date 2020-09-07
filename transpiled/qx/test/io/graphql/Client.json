@@ -15,7 +15,7 @@
         "column": 0
       },
       "end": {
-        "line": 65,
+        "line": 90,
         "column": 5
       }
     },
@@ -58,14 +58,56 @@
     }
   },
   "members": {
-    "test: run successful query": {
+    "runQuery": {
       "location": {
         "start": {
-          "line": 31,
+          "line": 32,
           "column": 6
         },
         "end": {
-          "line": 63,
+          "line": 36,
+          "column": 7
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "test: run successful query": {
+      "location": {
+        "start": {
+          "line": 38,
+          "column": 6
+        },
+        "end": {
+          "line": 66,
+          "column": 7
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "test: expect protocol error": {
+      "location": {
+        "start": {
+          "line": 68,
+          "column": 6
+        },
+        "end": {
+          "line": 77,
+          "column": 7
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "test: expect transport error": {
+      "location": {
+        "start": {
+          "line": 79,
+          "column": 6
+        },
+        "end": {
+          "line": 88,
           "column": 7
         }
       },

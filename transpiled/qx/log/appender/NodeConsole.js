@@ -39,12 +39,12 @@
       /**
        * process.stdout
        */
-      __OUT__P_186_0: null,
+      __OUT__P_187_0: null,
 
       /**
        * process.stderr
        */
-      __ERR__P_186_1: null,
+      __ERR__P_187_1: null,
 
       /**
        * Writes a message to the shell. Errors will be sent to STDERR, everything
@@ -55,9 +55,9 @@
        */
       log: function log(logMessage, level) {
         if (level == "error") {
-          this.__ERR__P_186_1.write(logMessage + '\n');
+          this.__ERR__P_187_1.write(logMessage + '\n');
         } else {
-          this.__OUT__P_186_0.write(logMessage + '\n');
+          this.__OUT__P_187_0.write(logMessage + '\n');
         }
       },
 
@@ -123,12 +123,12 @@
      */
     defer: function defer(statics) {
       if (typeof process !== "undefined") {
-        statics.__OUT__P_186_0 = process.stdout;
-        statics.__ERR__P_186_1 = process.stderr;
+        statics.__OUT__P_187_0 = process.stdout;
+        statics.__ERR__P_187_1 = process.stderr;
       }
     }
   });
   qx.log.appender.NodeConsole.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NodeConsole.js.map?dt=1599343215378
+//# sourceMappingURL=NodeConsole.js.map?dt=1599462388475

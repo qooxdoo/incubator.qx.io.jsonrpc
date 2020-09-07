@@ -15,7 +15,9 @@
       "qx.io.graphql.Client": {
         "construct": true
       },
-      "qx.io.graphql.protocol.Request": {}
+      "qx.io.graphql.protocol.Request": {},
+      "qx.io.exception.Protocol": {},
+      "qx.io.exception.Transport": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -50,18 +52,21 @@
     },
 
     members: {
-      async "test: run successful query"() {
-        let query = `query {
-          Country(name: "Switzerland") {
-            name, nativeName, flag {svgFile},
-            officialLanguages {name}
-          }
-        }`;
+      async runQuery(query, expected) {
         let req = new qx.io.graphql.protocol.Request({
           query
         });
         let result = await this.client.send(req);
-        let expected = {
+        this.assertDeepEquals(expected, result);
+      },
+
+      async "test: run successful query"() {
+        await this.runQuery(`query {
+          Country(name: "Switzerland") {
+            name, nativeName, flag {svgFile},
+            officialLanguages {name}
+          }
+        }`, {
           "Country": [{
             "name": "Switzerland",
             "nativeName": "Schweiz",
@@ -76,8 +81,31 @@
               "name": "German"
             }]
           }]
-        };
-        this.assertDeepEquals(expected, result);
+        });
+      },
+
+      async "test: expect protocol error"() {
+        try {
+          await this.runQuery(`query { invalid}`);
+        } catch (e) {
+          this.assertInstance(e, qx.io.exception.Protocol);
+          this.assertEquals("Cannot query field \"invalid\" on type \"Query\".", e.message);
+          return;
+        }
+
+        throw new Error("Query should throw qx.io.exception.Protocol");
+      },
+
+      async "test: expect transport error"() {
+        try {
+          let client = new qx.io.graphql.Client("https://doesnotexist.org/" + Math.random());
+          let response = await client.send("query: { doesnotmatter }");
+        } catch (e) {
+          this.assertInstance(e, qx.io.exception.Transport);
+          return;
+        }
+
+        throw new Error("Query should throw qx.io.exception.Transport");
       }
 
     }
@@ -85,4 +113,4 @@
   qx.test.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1599343222904
+//# sourceMappingURL=Client.js.map?dt=1599462396064

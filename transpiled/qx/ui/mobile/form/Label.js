@@ -158,7 +158,7 @@
     *****************************************************************************
     */
     members: {
-      __forWidget__P_463_0: null,
+      __forWidget__P_464_0: null,
       // overridden
       _getTagName: function _getTagName() {
         return "label";
@@ -200,16 +200,16 @@
        *
        */
       setLabelFor: function setLabelFor(elementId) {
-        if (this.__forWidget__P_463_0) {
-          this.__forWidget__P_463_0.removeListener("changeEnabled", this._changeEnabled, this);
+        if (this.__forWidget__P_464_0) {
+          this.__forWidget__P_464_0.removeListener("changeEnabled", this._changeEnabled, this);
         }
 
-        this.__forWidget__P_463_0 = qx.ui.mobile.core.Widget.getWidgetById(elementId);
+        this.__forWidget__P_464_0 = qx.ui.mobile.core.Widget.getWidgetById(elementId);
 
-        if (this.__forWidget__P_463_0) {
-          this.__forWidget__P_463_0.addListener("changeEnabled", this._changeEnabled, this);
+        if (this.__forWidget__P_464_0) {
+          this.__forWidget__P_464_0.addListener("changeEnabled", this._changeEnabled, this);
 
-          this.setEnabled(this.__forWidget__P_463_0.getEnabled());
+          this.setEnabled(this.__forWidget__P_464_0.getEnabled());
         }
 
         this._setAttribute("for", elementId);
@@ -220,8 +220,8 @@
        * @param evt {qx.event.type.Pointer} The tap event.
        */
       _onTap: function _onTap(evt) {
-        if (this.__forWidget__P_463_0 && qx.core.Environment.get("event.dispatchevent")) {
-          var target = this.__forWidget__P_463_0.getContentElement();
+        if (this.__forWidget__P_464_0 && qx.core.Environment.get("event.dispatchevent")) {
+          var target = this.__forWidget__P_464_0.getContentElement();
 
           qx.event.Registration.fireEvent(target, "tap", qx.event.type.Tap, [evt.getNativeEvent(), target, null, true, true]);
         }
@@ -244,10 +244,10 @@
     destruct: function destruct() {
       this.removeListener("tap", this._onTap, this);
 
-      if (this.__forWidget__P_463_0) {
-        this.__forWidget__P_463_0.removeListener("changeEnabled", this._changeEnabled, this);
+      if (this.__forWidget__P_464_0) {
+        this.__forWidget__P_464_0.removeListener("changeEnabled", this._changeEnabled, this);
 
-        this.__forWidget__P_463_0 = null;
+        this.__forWidget__P_464_0 = null;
       }
 
       {
@@ -258,4 +258,4 @@
   qx.ui.mobile.form.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1599343241142
+//# sourceMappingURL=Label.js.map?dt=1599462414519

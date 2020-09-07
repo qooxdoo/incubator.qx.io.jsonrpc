@@ -48,7 +48,9 @@
        * a valid response, the data entry in the response should be null"
        */
       data: {
-        check: "Object"
+        check: "Object",
+        nullable: true,
+        init: null
       },
 
       /**
@@ -72,4 +74,4 @@
   qx.io.graphql.protocol.Response.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Response.js.map?dt=1599343212880
+//# sourceMappingURL=Response.js.map?dt=1599462385851

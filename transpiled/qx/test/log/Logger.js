@@ -57,12 +57,12 @@
     },
     members: {
       setUp: function setUp() {
-        this.__initialLogLevel__P_253_0 = qx.log.Logger.getLevel();
+        this.__initialLogLevel__P_254_0 = qx.log.Logger.getLevel();
       },
       tearDown: function tearDown() {
-        qx.log.Logger.setLevel(this.__initialLogLevel__P_253_0);
+        qx.log.Logger.setLevel(this.__initialLogLevel__P_254_0);
       },
-      __testLogException__P_253_1: function __testLogException__P_253_1(exception) {
+      __testLogException__P_254_1: function __testLogException__P_254_1(exception) {
         var appender = new qx.log.appender.RingBuffer();
         qx.log.Logger.setLevel("debug");
         qx.log.Logger.clear();
@@ -82,12 +82,12 @@
       testLogException: function testLogException() {
         var exception = this.newException();
 
-        this.__testLogException__P_253_1(exception);
+        this.__testLogException__P_254_1(exception);
       },
       testLogDOMException: function testLogDOMException() {
         var exception = this.newDOMException();
 
-        this.__testLogException__P_253_1(exception);
+        this.__testLogException__P_254_1(exception);
       },
       testKonstantDeprecation: function testKonstantDeprecation() {
         // call the method to see if its not throwing an error
@@ -149,4 +149,4 @@
   qx.test.log.Logger.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Logger.js.map?dt=1599343223598
+//# sourceMappingURL=Logger.js.map?dt=1599462396761

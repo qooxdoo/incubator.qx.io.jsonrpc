@@ -262,7 +262,7 @@
         var start = new Date();
 
         for (var i = 0; i < this.SETUP_ITER; i++) {
-          this.axis.__ranges__P_340_0 = null;
+          this.axis.__ranges__P_341_0 = null;
           this.axis.getItemAtPosition(0);
         }
 
@@ -279,7 +279,7 @@
         var start = new Date();
 
         for (var i = 0; i < this.SETUP_ITER; i++) {
-          this.axis.__ranges__P_340_0 = null;
+          this.axis.__ranges__P_341_0 = null;
           this.axis.getItemAtPosition(0);
         }
 
@@ -325,4 +325,4 @@
   qx.test.ui.virtual.Axis.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Axis.js.map?dt=1599343229646
+//# sourceMappingURL=Axis.js.map?dt=1599462402895

@@ -418,4 +418,4 @@
   qx.ui.treevirtual.MNode.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MNode.js.map?dt=1599343246427
+//# sourceMappingURL=MNode.js.map?dt=1599462419838

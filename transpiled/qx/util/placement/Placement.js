@@ -47,7 +47,7 @@
     extend: qx.core.Object,
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__defaultAxis__P_585_0 = qx.util.placement.DirectAxis;
+      this.__defaultAxis__P_586_0 = qx.util.placement.DirectAxis;
     },
     properties: {
       /**
@@ -81,7 +81,7 @@
       }
     },
     statics: {
-      __instance__P_585_1: null,
+      __instance__P_586_1: null,
 
       /**
        * DOM and widget independent method to compute the location
@@ -119,7 +119,7 @@
        *   <code>left</code> and <code>top</code>.
        */
       compute: function compute(size, area, target, offsets, position, modeX, modeY) {
-        this.__instance__P_585_1 = this.__instance__P_585_1 || new qx.util.placement.Placement();
+        this.__instance__P_586_1 = this.__instance__P_586_1 || new qx.util.placement.Placement();
         var splitted = position.split("-");
         var edge = splitted[0];
         var align = splitted[1];
@@ -135,18 +135,18 @@
           }
         }
 
-        this.__instance__P_585_1.set({
-          axisX: this.__getAxis__P_585_2(modeX),
-          axisY: this.__getAxis__P_585_2(modeY),
+        this.__instance__P_586_1.set({
+          axisX: this.__getAxis__P_586_2(modeX),
+          axisY: this.__getAxis__P_586_2(modeY),
           edge: edge,
           align: align
         });
 
-        return this.__instance__P_585_1.compute(size, area, target, offsets);
+        return this.__instance__P_586_1.compute(size, area, target, offsets);
       },
-      __direct__P_585_3: null,
-      __keepAlign__P_585_4: null,
-      __bestFit__P_585_5: null,
+      __direct__P_586_3: null,
+      __keepAlign__P_586_4: null,
+      __bestFit__P_586_5: null,
 
       /**
        * Get the axis implementation for the given mode
@@ -155,19 +155,19 @@
        *   <code>best-fit</code>
        * @return {qx.util.placement.AbstractAxis}
        */
-      __getAxis__P_585_2: function __getAxis__P_585_2(mode) {
+      __getAxis__P_586_2: function __getAxis__P_586_2(mode) {
         switch (mode) {
           case "direct":
-            this.__direct__P_585_3 = this.__direct__P_585_3 || qx.util.placement.DirectAxis;
-            return this.__direct__P_585_3;
+            this.__direct__P_586_3 = this.__direct__P_586_3 || qx.util.placement.DirectAxis;
+            return this.__direct__P_586_3;
 
           case "keep-align":
-            this.__keepAlign__P_585_4 = this.__keepAlign__P_585_4 || qx.util.placement.KeepAlignAxis;
-            return this.__keepAlign__P_585_4;
+            this.__keepAlign__P_586_4 = this.__keepAlign__P_586_4 || qx.util.placement.KeepAlignAxis;
+            return this.__keepAlign__P_586_4;
 
           case "best-fit":
-            this.__bestFit__P_585_5 = this.__bestFit__P_585_5 || qx.util.placement.BestFitAxis;
-            return this.__bestFit__P_585_5;
+            this.__bestFit__P_586_5 = this.__bestFit__P_586_5 || qx.util.placement.BestFitAxis;
+            return this.__bestFit__P_586_5;
 
           default:
             throw new Error("Invalid 'mode' argument!'");
@@ -175,7 +175,7 @@
       }
     },
     members: {
-      __defaultAxis__P_585_0: null,
+      __defaultAxis__P_586_0: null,
 
       /**
        * DOM and widget independent method to compute the location
@@ -215,7 +215,7 @@
           this.assertNumber(offsets.left, "offsets.left");
         }
 
-        var axisX = this.getAxisX() || this.__defaultAxis__P_585_0;
+        var axisX = this.getAxisX() || this.__defaultAxis__P_586_0;
 
         var left = axisX.computeStart(size.width, {
           start: target.left,
@@ -223,9 +223,9 @@
         }, {
           start: offsets.left,
           end: offsets.right
-        }, area.width, this.__getPositionX__P_585_6());
+        }, area.width, this.__getPositionX__P_586_6());
 
-        var axisY = this.getAxisY() || this.__defaultAxis__P_585_0;
+        var axisY = this.getAxisY() || this.__defaultAxis__P_586_0;
 
         var top = axisY.computeStart(size.height, {
           start: target.top,
@@ -233,7 +233,7 @@
         }, {
           start: offsets.top,
           end: offsets.bottom
-        }, area.height, this.__getPositionY__P_585_7());
+        }, area.height, this.__getPositionY__P_586_7());
         return {
           left: left,
           top: top
@@ -245,7 +245,7 @@
        *
        * @return {String} the position
        */
-      __getPositionX__P_585_6: function __getPositionX__P_585_6() {
+      __getPositionX__P_586_6: function __getPositionX__P_586_6() {
         var edge = this.getEdge();
         var align = this.getAlign();
 
@@ -267,7 +267,7 @@
        *
        * @return {String} the position
        */
-      __getPositionY__P_585_7: function __getPositionY__P_585_7() {
+      __getPositionY__P_586_7: function __getPositionY__P_586_7() {
         var edge = this.getEdge();
         var align = this.getAlign();
 
@@ -285,10 +285,10 @@
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__defaultAxis__P_585_0");
+      this._disposeObjects("__defaultAxis__P_586_0");
     }
   });
   qx.util.placement.Placement.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Placement.js.map?dt=1599343250323
+//# sourceMappingURL=Placement.js.map?dt=1599462424091

@@ -45,10 +45,10 @@
     include: qx.dev.unit.MMock,
     members: {
       /** @type {qx.test.ui.core.AbstractScrollArea.fixture.CustomWidget} */
-      __widget__P_283_0: null,
+      __widget__P_284_0: null,
 
       /** @type {qx.ui.container.Composite} */
-      __outer__P_283_1: null,
+      __outer__P_284_1: null,
       setUp: function setUp() {
         qx.Class.define("qx.test.ui.core.AbstractScrollArea.fixture.CustomWidget", {
           extend: qx.ui.core.scroll.AbstractScrollArea,
@@ -71,18 +71,18 @@
             }
           }
         });
-        this.__outer__P_283_1 = new qx.ui.container.Composite(new qx.ui.layout.Grow());
+        this.__outer__P_284_1 = new qx.ui.container.Composite(new qx.ui.layout.Grow());
 
-        this.__outer__P_283_1.set({
+        this.__outer__P_284_1.set({
           maxWidth: 100,
           maxHeight: 100
         });
 
-        this.__widget__P_283_0 = new qx.test.ui.core.AbstractScrollArea.fixture.CustomWidget();
+        this.__widget__P_284_0 = new qx.test.ui.core.AbstractScrollArea.fixture.CustomWidget();
 
-        this.__outer__P_283_1.add(this.__widget__P_283_0);
+        this.__outer__P_284_1.add(this.__widget__P_284_0);
 
-        this.getRoot().add(this.__outer__P_283_1);
+        this.getRoot().add(this.__outer__P_284_1);
         qx.test.ui.core.AbstractScrollArea.prototype.setUp.base.call(this);
       },
       tearDown: function tearDown() {
@@ -113,10 +113,10 @@
       "test default behaviour": function testDefaultBehaviour() {
         var inner = new qx.ui.core.Widget();
 
-        this.__widget__P_283_0.setSingleChild(inner);
+        this.__widget__P_284_0.setSingleChild(inner);
 
         this.flush();
-        this.assertBounds(inner, this.__widget__P_283_0);
+        this.assertBounds(inner, this.__widget__P_284_0);
       },
       "test smaller widget than container": function testSmallerWidgetThanContainer() {
         var inner = new qx.ui.core.Widget();
@@ -125,12 +125,12 @@
           minHeight: 80
         });
 
-        this.__widget__P_283_0.setSingleChild(inner);
+        this.__widget__P_284_0.setSingleChild(inner);
 
         this.flush();
-        this.assertBounds(inner, this.__widget__P_283_0);
-        this.assertFalse(this.__widget__P_283_0.hasScrollBar('x'));
-        this.assertFalse(this.__widget__P_283_0.hasScrollBar('y'));
+        this.assertBounds(inner, this.__widget__P_284_0);
+        this.assertFalse(this.__widget__P_284_0.hasScrollBar('x'));
+        this.assertFalse(this.__widget__P_284_0.hasScrollBar('y'));
       },
       "test bigger widget than container": function testBiggerWidgetThanContainer() {
         var inner = new qx.ui.core.Widget();
@@ -139,7 +139,7 @@
           minHeight: 120
         });
 
-        this.__widget__P_283_0.setSingleChild(inner);
+        this.__widget__P_284_0.setSingleChild(inner);
 
         this.flush();
         this.assertBounds({
@@ -147,15 +147,15 @@
           top: 0,
           width: 100,
           height: 100
-        }, this.__widget__P_283_0);
+        }, this.__widget__P_284_0);
         this.assertBounds({
           left: 0,
           top: 0,
           width: 120,
           height: 120
         }, inner);
-        this.assertTrue(this.__widget__P_283_0.hasScrollBar('x'));
-        this.assertTrue(this.__widget__P_283_0.hasScrollBar('y'));
+        this.assertTrue(this.__widget__P_284_0.hasScrollBar('x'));
+        this.assertTrue(this.__widget__P_284_0.hasScrollBar('y'));
       },
       "test bigger preferred widget than container": function testBiggerPreferredWidgetThanContainer() {
         var inner = new qx.ui.core.Widget();
@@ -164,7 +164,7 @@
           height: 120
         });
 
-        this.__widget__P_283_0.setSingleChild(inner);
+        this.__widget__P_284_0.setSingleChild(inner);
 
         this.flush();
         this.assertBounds({
@@ -172,15 +172,15 @@
           top: 0,
           width: 100,
           height: 100
-        }, this.__widget__P_283_0);
+        }, this.__widget__P_284_0);
         this.assertBounds({
           left: 0,
           top: 0,
           width: 100,
           height: 100
         }, inner);
-        this.assertFalse(this.__widget__P_283_0.hasScrollBar('x'));
-        this.assertFalse(this.__widget__P_283_0.hasScrollBar('y'));
+        this.assertFalse(this.__widget__P_284_0.hasScrollBar('x'));
+        this.assertFalse(this.__widget__P_284_0.hasScrollBar('y'));
       },
       "test bigger widget than smaller preferred container": function testBiggerWidgetThanSmallerPreferredContainer() {
         var inner = new qx.ui.core.Widget();
@@ -189,16 +189,16 @@
           minHeight: 120
         });
 
-        this.__widget__P_283_0.setSingleChild(inner);
+        this.__widget__P_284_0.setSingleChild(inner);
 
-        this.__outer__P_283_1.set({
+        this.__outer__P_284_1.set({
           width: 100,
           height: 100
         });
 
-        this.__outer__P_283_1.resetMaxWidth();
+        this.__outer__P_284_1.resetMaxWidth();
 
-        this.__outer__P_283_1.resetMaxHeight();
+        this.__outer__P_284_1.resetMaxHeight();
 
         this.flush();
         this.assertBounds({
@@ -206,19 +206,19 @@
           top: 0,
           width: 100,
           height: 100
-        }, this.__widget__P_283_0);
+        }, this.__widget__P_284_0);
         this.assertBounds({
           left: 0,
           top: 0,
           width: 120,
           height: 120
         }, inner);
-        this.assertTrue(this.__widget__P_283_0.hasScrollBar('x'));
-        this.assertTrue(this.__widget__P_283_0.hasScrollBar('y'));
+        this.assertTrue(this.__widget__P_284_0.hasScrollBar('x'));
+        this.assertTrue(this.__widget__P_284_0.hasScrollBar('y'));
       }
     }
   });
   qx.test.ui.core.AbstractScrollArea.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractScrollArea.js.map?dt=1599343226096
+//# sourceMappingURL=AbstractScrollArea.js.map?dt=1599462399307

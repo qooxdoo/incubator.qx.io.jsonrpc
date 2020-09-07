@@ -5,11 +5,11 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.io.jsonrpc.transport.Abstract": {
+      "qx.io.transport.AbstractTransport": {
         "construct": true,
         "require": true
       },
-      "qx.io.jsonrpc.transport.ITransport": {
+      "qx.io.transport.ITransport": {
         "require": true
       },
       "qx.core.Assert": {},
@@ -25,18 +25,16 @@
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
 
   /**
-   * The implementation of a JSON-RPC transport for JSON-RPC via HTTP
-   *
-   * The HTTP transport implementation is based on the {@link qx.io.request} API,
+   * The implementation of a HTTP Transport using the {@link qx.io.request} API,
    * so any special configuration of the HTTP request must be done on the
    * underlying implementation of {@link qx.io.request.AbstractRequest}.
    *
    * More abstract support for authentication will be added later.
    *
    */
-  qx.Class.define("qx.io.jsonrpc.transport.Http", {
-    extend: qx.io.jsonrpc.transport.Abstract,
-    implement: qx.io.jsonrpc.transport.ITransport,
+  qx.Class.define("qx.io.transport.Xhr", {
+    extend: qx.io.transport.AbstractTransport,
+    implement: qx.io.transport.ITransport,
 
     /**
      * Constructor.
@@ -44,7 +42,7 @@
      * @param {String} url The URL of the http endpoint
      */
     construct(url) {
-      qx.io.jsonrpc.transport.Abstract.constructor.call(this, url);
+      qx.io.transport.AbstractTransport.constructor.call(this, url);
     },
 
     members: {
@@ -52,7 +50,7 @@
        * Internal implementation of the transport
        * @var {qx.io.request.Xhr}
        */
-      __tranportImpl__P_161_0: null,
+      __tranportImpl__P_177_0: null,
 
       /**
        * Returns the object which implements the transport on the
@@ -64,8 +62,8 @@
        * @return {qx.core.Object}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_161_0 = this._createTransportImpl();
-        return this.__tranportImpl__P_161_0;
+        this.__tranportImpl__P_177_0 = this._createTransportImpl();
+        return this.__tranportImpl__P_177_0;
       },
 
       /**
@@ -79,9 +77,9 @@
        */
       async send(message) {
         qx.core.Assert.assertString(message);
-        const req = this.__tranportImpl__P_161_0 || this.getTransportImpl();
+        const req = this.__tranportImpl__P_177_0 || this.getTransportImpl();
         req.setRequestData(message);
-        this.__tranportImpl__P_161_0 = null; // free the internal reference for the next request
+        this.__tranportImpl__P_177_0 = null; // free the internal reference for the next request
 
         try {
           await req.sendWithPromise();
@@ -144,11 +142,11 @@
     },
 
     defer() {
-      qx.io.jsonrpc.Client.registerTransport(/^http/, qx.io.jsonrpc.transport.Http);
+      qx.io.jsonrpc.Client.registerTransport(/^http/, qx.io.transport.Xhr);
     }
 
   });
-  qx.io.jsonrpc.transport.Http.$$dbClassInfo = $$dbClassInfo;
+  qx.io.transport.Xhr.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Http.js.map?dt=1599343213145
+//# sourceMappingURL=Xhr.js.map?dt=1599462387355

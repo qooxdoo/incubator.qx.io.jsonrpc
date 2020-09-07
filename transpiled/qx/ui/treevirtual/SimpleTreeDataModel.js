@@ -136,7 +136,7 @@
       this._nodeArr.push(qx.ui.treevirtual.MTreePrimitive._getEmptyTree()); // Track which columns are editable
 
 
-      this.__editableColArr__P_535_0 = null;
+      this.__editableColArr__P_536_0 = null;
     },
     properties: {
       /**
@@ -159,10 +159,10 @@
     *****************************************************************************
     */
     members: {
-      __tree__P_535_1: null,
-      __editableColArr__P_535_0: null,
-      __tempTreeData__P_535_2: null,
-      __recalculateLastChildFlags__P_535_3: null,
+      __tree__P_536_1: null,
+      __editableColArr__P_536_0: null,
+      __tempTreeData__P_536_2: null,
+      __recalculateLastChildFlags__P_536_3: null,
 
       /** Rows, resorted into tree order as necessary */
       _rowArr: null,
@@ -191,7 +191,7 @@
        *
        */
       setTree: function setTree(tree) {
-        this.__tree__P_535_1 = tree;
+        this.__tree__P_536_1 = tree;
       },
 
       /**
@@ -200,7 +200,7 @@
        * @return {qx.ui.treevirtual.TreeVirtual}
        */
       getTree: function getTree() {
-        return this.__tree__P_535_1;
+        return this.__tree__P_536_1;
       },
 
       /**
@@ -211,10 +211,10 @@
        *
        */
       setEditable: function setEditable(editable) {
-        this.__editableColArr__P_535_0 = [];
+        this.__editableColArr__P_536_0 = [];
 
         for (var col = 0; col < this.getColumnCount(); col++) {
-          this.__editableColArr__P_535_0[col] = editable;
+          this.__editableColArr__P_536_0[col] = editable;
         }
 
         this.fireEvent("metaDataChanged");
@@ -232,21 +232,21 @@
        */
       setColumnEditable: function setColumnEditable(columnIndex, editable) {
         if (editable != this.isColumnEditable(columnIndex)) {
-          if (this.__editableColArr__P_535_0 == null) {
-            this.__editableColArr__P_535_0 = [];
+          if (this.__editableColArr__P_536_0 == null) {
+            this.__editableColArr__P_536_0 = [];
           }
 
-          this.__editableColArr__P_535_0[columnIndex] = editable;
+          this.__editableColArr__P_536_0[columnIndex] = editable;
           this.fireEvent("metaDataChanged");
         }
       },
       // overridden
       isColumnEditable: function isColumnEditable(columnIndex) {
         if (columnIndex == this._treeColumn) {
-          return this.__tree__P_535_1.getAllowNodeEdit();
+          return this.__tree__P_536_1.getAllowNodeEdit();
         }
 
-        return this.__editableColArr__P_535_0 ? this.__editableColArr__P_535_0[columnIndex] == true : false;
+        return this.__editableColArr__P_536_0 ? this.__editableColArr__P_536_0[columnIndex] == true : false;
       },
       // overridden
       isColumnSortable: function isColumnSortable(columnIndex) {
@@ -344,7 +344,7 @@
         var node = this.getNodeFromRow(rowIndex);
 
         if (columnIndex === this._treeColumn) {
-          if (!this.__tree__P_535_1.getAllowNodeEdit() || value["label"] === undefined) {
+          if (!this.__tree__P_536_1.getAllowNodeEdit() || value["label"] === undefined) {
             return;
           } // only allow to set the node label via this method, clone the original node
 
@@ -568,14 +568,14 @@
        *   {@link #addLeaf}.
        * @param level {Integer} the level in the hierarchy
        */
-      __inorder__P_535_4: function __inorder__P_535_4(nodeId, level) {
+      __inorder__P_536_4: function __inorder__P_536_4(nodeId, level) {
         var filter = this.getFilter();
         var child = null;
         var childNodeId; // For each child of the specified node...
 
         var numChildren = this._nodeArr[nodeId].children.length;
         var index = 0;
-        var children = this.__tempTreeData__P_535_2[nodeId] = [];
+        var children = this.__tempTreeData__P_536_2[nodeId] = [];
 
         for (var i = 0; i < numChildren; i++) {
           // Determine the node id of this child
@@ -584,7 +584,7 @@
           child = this._nodeArr[childNodeId]; // Skip deleted nodes or apply the filter
 
           if (child == null || filter && !filter.call(this, child)) {
-            this.__recalculateLastChildFlags__P_535_3 = true;
+            this.__recalculateLastChildFlags__P_536_3 = true;
             continue;
           } // Remember the children so that we can add the lastChild flags later
 
@@ -597,8 +597,8 @@
           // Otherwise we will have to recalculate the last child flags, as
           // the parent or sibling node might become the first child.
 
-          if (!this.__recalculateLastChildFlags__P_535_3) {
-            this.__setLastChildFlag__P_535_5(child, i == numChildren - 1);
+          if (!this.__recalculateLastChildFlags__P_536_3) {
+            this.__setLastChildFlag__P_536_5(child, i == numChildren - 1);
           } // Ensure there's an entry in the columnData array for each column
 
 
@@ -646,7 +646,7 @@
 
           if (child.bOpened) {
             // ... then add its children too.
-            this.__inorder__P_535_4(childNodeId, level + 1);
+            this.__inorder__P_536_4(childNodeId, level + 1);
           }
 
           index++;
@@ -661,20 +661,20 @@
        *   A node identifier, as previously returned by {@link #addBranch} or
        *   {@link #addLeaf}.
        */
-      __calculateLastChildFlags__P_535_6: function __calculateLastChildFlags__P_535_6(nodeId) {
-        var tempTreeData = this.__tempTreeData__P_535_2;
+      __calculateLastChildFlags__P_536_6: function __calculateLastChildFlags__P_536_6(nodeId) {
+        var tempTreeData = this.__tempTreeData__P_536_2;
         var children = tempTreeData[nodeId];
         var numChildren = children.length;
 
         for (var i = 0; i < numChildren; i++) {
           var child = children[i];
 
-          this.__setLastChildFlag__P_535_5(child, i == numChildren - 1);
+          this.__setLastChildFlag__P_536_5(child, i == numChildren - 1);
 
           var hasChildren = tempTreeData[child.nodeId] && tempTreeData[child.nodeId].length > 0;
 
           if (hasChildren) {
-            this.__calculateLastChildFlags__P_535_6(child.nodeId);
+            this.__calculateLastChildFlags__P_536_6(child.nodeId);
           }
         }
       },
@@ -685,7 +685,7 @@
        * @param node {Object} the node object
        * @param isLastChild {Boolean} whether the node is the last child
        */
-      __setLastChildFlag__P_535_5: function __setLastChildFlag__P_535_5(node, isLastChild) {
+      __setLastChildFlag__P_536_5: function __setLastChildFlag__P_536_5(node, isLastChild) {
         // Determine if we're the last child of our parent
         node.lastChild = [isLastChild]; // Get our parent.
 
@@ -701,10 +701,10 @@
       /**
        * Renders the tree data.
        */
-      __render__P_535_7: function __render__P_535_7() {
+      __render__P_536_7: function __render__P_536_7() {
         // Reset the __tempTreeData
-        this.__tempTreeData__P_535_2 = [];
-        this.__recalculateLastChildFlags__P_535_3 = false; // Reset the row array
+        this.__tempTreeData__P_536_2 = [];
+        this.__recalculateLastChildFlags__P_536_3 = false; // Reset the row array
 
         this._rowArr = []; // Reset the _nodeArr -> _rowArr map
 
@@ -713,16 +713,16 @@
         this._selections = {}; // Begin in-order traversal of the tree from the root to regenerate
         // _rowArr.
 
-        this.__inorder__P_535_4(0, 1); // Reset the lastChild flags when needed, so that the tree can render the
+        this.__inorder__P_536_4(0, 1); // Reset the lastChild flags when needed, so that the tree can render the
         // tree lines right.
 
 
-        if (this.__recalculateLastChildFlags__P_535_3) {
-          this.__calculateLastChildFlags__P_535_6(0);
+        if (this.__recalculateLastChildFlags__P_536_3) {
+          this.__calculateLastChildFlags__P_536_6(0);
         } // Give the memory free
 
 
-        this.__tempTreeData__P_535_2 = null; // Inform the listeners
+        this.__tempTreeData__P_536_2 = null; // Inform the listeners
 
         if (this.hasListener("dataChanged")) {
           var data = {
@@ -765,7 +765,7 @@
         } // Re-render the row array
 
 
-        this.__render__P_535_7(); // Set selections in the selection model now
+        this.__render__P_536_7(); // Set selections in the selection model now
 
 
         var selectionModel = this.getTree().getSelectionModel();
@@ -903,7 +903,7 @@
               } // Get the tree to which this data model is attached
 
 
-              var tree = this.__tree__P_535_1; // Are we opening or closing?
+              var tree = this.__tree__P_536_1; // Are we opening or closing?
 
               if (node.bOpened) {
                 // We're closing.  If there are listeners, generate a treeClose
@@ -1025,11 +1025,11 @@
        * @return {Boolean} If the node has edit permitted
        */
       isNodeEditable: function isNodeEditable(rowIndex) {
-        return this.__tree__P_535_1.getAllowNodeEdit() && this.getNodeFromRow(rowIndex).bCanEdit;
+        return this.__tree__P_536_1.getAllowNodeEdit() && this.getNodeFromRow(rowIndex).bCanEdit;
       }
     },
     destruct: function destruct() {
-      this._rowArr = this._nodeArr = this._nodeRowMap = this._selections = this.__tree__P_535_1 = this.__tempTreeData__P_535_2 = null;
+      this._rowArr = this._nodeArr = this._nodeRowMap = this._selections = this.__tree__P_536_1 = this.__tempTreeData__P_536_2 = null;
     },
     defer: function defer(statics) {
       // For backward compatibility, ensure the Type values are available from
@@ -1040,4 +1040,4 @@
   qx.ui.treevirtual.SimpleTreeDataModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1599343246667
+//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1599462420084

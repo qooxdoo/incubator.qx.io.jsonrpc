@@ -57,8 +57,8 @@
         this.setDefaultLineSize(lineSize);
       }
 
-      this.__lineColors__P_548_0 = [];
-      this.__lineSizes__P_548_1 = [];
+      this.__lineColors__P_549_0 = [];
+      this.__lineSizes__P_549_1 = [];
       this._isHorizontal = (orientation || "horizontal") == "horizontal";
     },
 
@@ -90,10 +90,10 @@
     */
     members: {
       /** Stores the colors for deviant grid lines. */
-      __lineColors__P_548_0: null,
+      __lineColors__P_549_0: null,
 
       /** Stores the width/height for deviant grid lines. */
-      __lineSizes__P_548_1: null,
+      __lineSizes__P_549_1: null,
 
       /**
        * Whether horizontal lines are rendered
@@ -115,9 +115,9 @@
           qx.core.Assert.assertPositiveNumber(index);
           qx.core.Assert.assertString(color);
         }
-        this.__lineColors__P_548_0[index] = color;
+        this.__lineColors__P_549_0[index] = color;
 
-        if (this.__isLineRendered__P_548_2(index)) {
+        if (this.__isLineRendered__P_549_2(index)) {
           this.updateLayerData();
         }
       },
@@ -133,9 +133,9 @@
           qx.core.Assert.assertPositiveInteger(index);
           qx.core.Assert.assertPositiveInteger(size);
         }
-        this.__lineSizes__P_548_1[index] = size;
+        this.__lineSizes__P_549_1[index] = size;
 
-        if (this.__isLineRendered__P_548_2(index)) {
+        if (this.__isLineRendered__P_549_2(index)) {
           this.updateLayerData();
         }
       },
@@ -147,7 +147,7 @@
        * @param index {Integer} The line's index
        * @return {Boolean} Whether the line is rendered
        */
-      __isLineRendered__P_548_2: function __isLineRendered__P_548_2(index) {
+      __isLineRendered__P_549_2: function __isLineRendered__P_549_2(index) {
         if (this._isHorizontal) {
           var firstColumn = this.getFirstColumn();
           var lastColumn = firstColumn + this.getColumnSizes().length - 1;
@@ -166,7 +166,7 @@
        * @return {PositiveInteger} The size.
        */
       getLineSize: function getLineSize(index) {
-        return this.__lineSizes__P_548_1[index] || this.getDefaultLineSize();
+        return this.__lineSizes__P_549_1[index] || this.getDefaultLineSize();
       },
 
       /**
@@ -176,7 +176,7 @@
        * @return {String} The color.
        */
       getLineColor: function getLineColor(index) {
-        return this.__lineColors__P_548_0[index] || this.getDefaultLineColor();
+        return this.__lineColors__P_549_0[index] || this.getDefaultLineColor();
       },
 
       /**
@@ -186,7 +186,7 @@
        * @param firstRow {Integer} The first visible row
        * @param rowSizes {Array} An array containing the row sizes.
        */
-      __renderHorizontalLines__P_548_3: function __renderHorizontalLines__P_548_3(htmlArr, firstRow, rowSizes) {
+      __renderHorizontalLines__P_549_3: function __renderHorizontalLines__P_549_3(htmlArr, firstRow, rowSizes) {
         var top = 0;
         var color, height;
 
@@ -205,7 +205,7 @@
        * @param firstColumn {Integer} The first visible column
        * @param columnSizes {Array} An array containing the column sizes.
        */
-      __renderVerticalLines__P_548_4: function __renderVerticalLines__P_548_4(htmlArr, firstColumn, columnSizes) {
+      __renderVerticalLines__P_549_4: function __renderVerticalLines__P_549_4(htmlArr, firstColumn, columnSizes) {
         var left = 0;
         var color, width;
 
@@ -221,9 +221,9 @@
         var html = [];
 
         if (this._isHorizontal) {
-          this.__renderHorizontalLines__P_548_3(html, firstRow, rowSizes);
+          this.__renderHorizontalLines__P_549_3(html, firstRow, rowSizes);
         } else {
-          this.__renderVerticalLines__P_548_4(html, firstColumn, columnSizes);
+          this.__renderVerticalLines__P_549_4(html, firstColumn, columnSizes);
         }
 
         this.getContentElement().setAttribute("html", html.join(""));
@@ -245,10 +245,10 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this.__lineColors__P_548_0 = this.__lineSizes__P_548_1 = null;
+      this.__lineColors__P_549_0 = this.__lineSizes__P_549_1 = null;
     }
   });
   qx.ui.virtual.layer.GridLines.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GridLines.js.map?dt=1599343247544
+//# sourceMappingURL=GridLines.js.map?dt=1599462421127

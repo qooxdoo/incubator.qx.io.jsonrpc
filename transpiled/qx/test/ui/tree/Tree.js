@@ -241,7 +241,7 @@
         this.assertIdentical(item1, this._tree.getPreviousNodeOf(item4), "check: 1 before 4");
         this.assertIdentical(item1, this._tree.getNextNodeOf(item3), "check: 1 after 3");
       },
-      __printChildren__P_334_0: function __printChildren__P_334_0(children) {
+      __printChildren__P_335_0: function __printChildren__P_335_0(children) {
         var result = "";
 
         for (var i = 0; i < children.length; i++) {
@@ -259,4 +259,4 @@
   qx.test.ui.tree.Tree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Tree.js.map?dt=1599343229122
+//# sourceMappingURL=Tree.js.map?dt=1599462402374
