@@ -2,21 +2,26 @@
 
 ![Build and Deploy](https://github.com/qooxdoo/incubator.qx.io.jsonrpc/workflows/Build%20and%20Deploy/badge.svg)
 
-This incubator contains a proposal to add an extensible JSON-RPC v2 API 
-to qooxdoo.
+This incubator contains a proposal to add a framework for transport-agnostic 
+higher-level i/o protocols to the `qx.io` namespace. 
 
-- API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.jsonrpc
+- API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io
 - Test runner: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/
 
-Development status: beta. The API should be fairly (but not completely!) stable.
+It is called incubator.qx.io.jsonrpc because v1.0 implemented this protocol only.
 
-**UPDATE**: 
-- In v2.0, the exception API has changed: `qx.io.jsonrpc.exception` has been moved
-  to `qx.io.exception` and generalized, i.e. `qx.io.jsonrpc.exception.JsonRpc` has
-  been renamed to `qx.io.exception.Protocol`.
-- A simple GraphQL client has been added in the `qx.io.graphql` namespace. See
-  the documentation in the API Viewer.
+This is v2.0.0-alpha, which abstracts the exception and transport APIs and adds
+a GraphQl implementation in the `qx.io.graphql` namespace based on these APIs
+(See the documentation in the API Viewer). 
 
+It contains the following **breaking changes**: 
+ 
+- `qx.io.jsonrpc.exception` has been moved to `qx.io.exception`
+and generalized, i.e. `qx.io.jsonrpc.exception.JsonRpc` has been
+renamed to `qx.io.exception.Protocol`. 
+
+- The same applies to the `qx.io.jsonrpc.transport`
+namespace, which has been moved to `qx.io.transport`
 
 ## Installation for use in your project
 
@@ -47,15 +52,30 @@ npx qx package install qooxdoo/qxl.apiviewer --save=0
 
 ## Usage
 
-This namespace provides an API implementing the [JSON Remote Procedure Call
-(JSON-RPC) version 2 specification](https://www.jsonrpc.org/specification).
+### Transport layer
 
-JSON-RPC v2 is transport-agnostic. We provide a high-level
-API interface (qx.io.jsonrpc.Client), a transport interface
-(qx.io.jsonrpc.transport.ITransport) and an HTTP transport implementation.
-Other transports based on websockets or other mechanisms can be added later.
+The APIs in this incubator abstract the transport layer in a way
+that it can support any transport that can send and receive a
+UTF-8 encoded strings over the network no matter whether this is
+implemented in a request/response style (such as HTTP) or a fully
+duplex communication channel such as WebSockets or the [PostMessage
+API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+Any transport must implement `qx.io.transport.ITransport`.
 
-### Outgoing requests
+This transport layer is used by implementations of the JSON-RPC and GraphQL 
+protocols. 
+
+### JSON-RPC
+
+The `qx.io.jsonrpc` namespace provides an API implementing
+the [JSON Remote Procedure Call (JSON-RPC) version 2
+specification](https://www.jsonrpc.org/specification).
+
+We provide a high-level API interface (qx.io.jsonrpc.Client),
+and an HTTP transport implementation. Other transports
+based on websockets or other mechanisms can be added later.
+
+#### Outgoing requests
 
 Here is an example for making a JSON-RPC request to a server endpoint: 
 
@@ -92,7 +112,7 @@ or using a batch:
 })();
 ```
 
-### Request promises
+#### Request promises
 
 It is possible to resolve the promises of batched JSON-RPC requests individually,
 i.e., the promises can be passed to other parts of the code to be `await`ed 
@@ -124,9 +144,34 @@ async function doSomethingWithPromise(promise) {
 })();
 ``` 
 
+#### Incoming requests
+
+The client also supports *incoming* requests as part of the server
+response. To receive them, register a listener for the `incomingRequest`
+event. For the HTTP transport, notifications can be sent by the server
+as part of the response to client requests. Once a WebSocket transport
+has been added, the duplex JSON-RPC traffic can be implemented this way.
+
+### GraphQL
+
+The GraphQL implementation is still under construction, docs will be added. 
+
+Example:
+
+```javascript
+    let client = new qx.io.graphql.Client("https://countries-274616.ew.r.appspot.com/");
+    let query = `query {
+      Country(name: $country) {
+        name, nativeName, flag {svgFile},
+        officialLanguages {name}
+      }
+    }`
+    let response = await client.send(query, {country:"Belgium"});
+```
+
 ### Customizing the transport / Authentication
 
-The high-level Client API does not handle transport-specific issues like
+The high-level Client API does not (yet) handle transport-specific issues like
 authentication - this needs to be done in the transport layer. For example,
 to use HTTP Bearer authentication, do this:
 
@@ -155,10 +200,4 @@ which registers the behavior for your particular class of URIs:
 registered for a certain endpoint pattern, i.e. from then on, all clients
 created with urls that start with "http" will use that custom behavior.
 
-### Incoming requests
 
-The client also supports *incoming* requests as part of the server
-response. To receive them, register a listener for the `incomingRequest`
-event. For the HTTP transport, notifications can be sent by the server
-as part of the response to client requests. Once a WebSocket transport
-has been added, the duplex JSON-RPC traffic can be implemented this way.

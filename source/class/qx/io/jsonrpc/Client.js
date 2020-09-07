@@ -22,38 +22,13 @@
  */
 qx.Class.define("qx.io.jsonrpc.Client",
 {
-  extend : qx.core.Object,
+  extend : qx.io.transport.AbstractClient,
 
   statics: {
-
-    __transports: null,
-
-    /**
-     * Register a transport class for use with uris that match the given
-     * regular expression. The client will use the transport which first
-     * matches, starting with the last added transport
-     * @param {RegExp} uriRegExp
-     *    A regular expression which the URI must match
-     * @param {qx.io.jsonrpc.transport.ITransport}  transportClass
-     *    The qooxdoo class implementing the transport
-     */
-    registerTransport(uriRegExp, transportClass) {
-      if (qx.io.jsonrpc.Client.__transports === null) {
-        qx.io.jsonrpc.Client.__transports = [];
-      }
-      if (!qx.lang.Type.isRegExp(uriRegExp)) {
-        throw new Error("First argument must be a regular expression!");
-      }
-      if (!qx.Interface.classImplements(transportClass, qx.io.jsonrpc.transport.ITransport)) {
-        throw new Error("Transport class must implement qx.io.jsonrpc.transport.ITransport");
-      }
-      qx.io.jsonrpc.Client.__transports.push({ uriRegExp, transport: transportClass});
-    }
-
+    registerTransport : qx.io.transport.AbstractClient.registerTransport
   },
 
   events : {
-
     /**
      * Event fired before a request message is sent to the server.
      * Event data is the {@link qx.io.jsonrpc.protocol.Message} to
@@ -81,8 +56,8 @@ qx.Class.define("qx.io.jsonrpc.Client",
   },
 
   /**
-   * @param {qx.io.jsonrpc.transport.ITransport|String} transportOrUri
-   *    Transport object, which must implement {@link qx.io.jsonrpc.transport.ITransport}
+   * @param {qx.io.transport.ITransport|String} transportOrUri
+   *    Transport object, which must implement {@link qx.io.transport.ITransport}
    *    or a string URI, which will trigger auto-detection of transport, as long as an
    *    appropriate transport has been registered with the static `registerTransport()` function.
    * @param {String?} methodPrefix
@@ -92,47 +67,22 @@ qx.Class.define("qx.io.jsonrpc.Client",
    */
   construct : function(transportOrUri, methodPrefix, parser) {
     this.base(arguments);
-    let transport;
-    let uri;
-    if (qx.lang.Type.isString(transportOrUri)) {
-      uri = transportOrUri;
-      for (let registeredTransport of qx.io.jsonrpc.Client.__transports.reverse()) {
-        if (uri.match(registeredTransport.uriRegExp)) {
-          // eslint-disable-next-line new-cap
-          transport = new registeredTransport.transport(uri);
-        }
-      }
-      if (!transport) {
-        throw new qx.io.exception.Transport(
-          `No matching transport for URI '${transportOrUri}'`,
-          qx.io.exception.Transport.INVALD_URI
-        );
-      }
-    } else {
-      transport = transportOrUri;
-    }
-    this.setTransport(transport);
-
+    this.selectTransport(transportOrUri);
     // listen for incoming messages
     this.getTransport().addListener("message", evt => this.handleIncoming(evt.getData()));
-
     if (!methodPrefix) {
       methodPrefix = "";
     }
     this.setMethodPrefix(methodPrefix);
-
     if (!parser) {
       parser = new qx.io.jsonrpc.protocol.Parser();
     }
     this.setParser(parser);
-
     this.__requests = [];
   },
 
-
   properties :
   {
-
     /**
      * An optional string which is prepended to the method name.
      */
@@ -140,14 +90,6 @@ qx.Class.define("qx.io.jsonrpc.Client",
     {
       check : "String",
       nullable : true
-    },
-
-    /**
-     * The transport object
-     */
-    transport:
-    {
-      check : "qx.io.jsonrpc.transport.ITransport"
     },
 
     /**

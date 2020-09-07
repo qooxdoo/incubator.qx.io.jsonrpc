@@ -25,43 +25,11 @@
  *
  */
 qx.Class.define("qx.io.graphql.Client", {
-  extend: qx.core.Object,
 
-  /**
-   * @param {String} url The url of the GraphQL endpoint
-   * @param {object} init A map of configuration values, see
-   * https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
-   * This parameter is used to configure the underlying fetch
-   * API and might be removed in a future. If you provide custom headers, you must
-   * set "Content-Type" and "Accept" to "application/json" yourself.
-   */
-  construct: function (url, init={}) {
-    this.base(arguments);
-    this.setUrl(url);
-    let headers = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    };
-    init.method = "POST";
-    init.headers = init.headers || headers;
-    this.__init = init;
-  },
+  extend: qx.io.transport.AbstractClient,
 
-  properties: {
-    /**
-     * The URL of the GraphQl endpoint
-     */
-    url: {
-      check: "String"
-    },
-
-    /**
-     * Optional authentication object
-     */
-    authentication: {
-      check: "qx.io.request.authentication.IAuthentication",
-      nullable: true
-    }
+  statics: {
+    registerTransport : qx.io.transport.AbstractClient.registerTransport
   },
 
   events: {
@@ -69,45 +37,53 @@ qx.Class.define("qx.io.graphql.Client", {
      * Event fired when a request results in an error. Event data is an instance of
      * {@link qx.io.exception.Transport}, {@link qx.io.exception.Protocol},
      * or {@link qx.io.exception.Cancel}.
-     * Event fired when a message is received from the endpoint. Event data
-     * is an UTF-8 encoded string
      */
     "error" : "qx.event.type.Data"
   },
 
-  members: {
+  /**
+   * @param {qx.io.transport.ITransport|String} transportOrUri
+   *    Transport object, which must implement {@link qx.io.transport.ITransport}
+   *    or a string URI, which will trigger auto-detection of transport, as long as an
+   *    appropriate transport has been registered with the static `registerTransport()` function.
+   */
+  construct: function (transportOrUri) {
+    this.base(arguments);
+    this.selectTransport(transportOrUri);
+  },
 
-    /**
-     * Stores the `init` parameter of the constructor
-     * @type {Object}
-     */
-    __init : null,
+  members: {
 
     /**
      * Send the given GraphQl query. See https://graphql.org/learn/queries/
      *
      * @param {qx.io.graphql.protocol.Request} request The GraphQl request object.
      * @return {qx.Promise} Promise that resolves with the data
-     * @ignore(fetch)
      */
     async send(request) {
-      let auth = this.getAuthentication();
-      if (auth) {
-        auth.getAuthHeaders().forEach(header => {
-          this.__init.headers[header.key] = header.value
+      let transport = this.getTransport();
+      return new Promise((resolve, reject) => {
+        transport.addListenerOnce("message", evt => {
+          try{
+            if (qx.core.Environment.get("qx.io.graphql.debug")) {
+              this.debug( "<<< Received: " + evt.getData());
+            }
+            let responseData = qx.lang.Json.parse(evt.getData());
+            let graphQlResponse = new qx.io.graphql.protocol.Response(responseData);
+            if (graphQlResponse.getErrors()) {
+              return reject(this._handleErrors(graphQlResponse));
+            }
+            return resolve(graphQlResponse.getData());
+          } catch (e) {
+            this.error(e);
+            return reject(new qx.io.exception.Transport(e.message));
+          }
         });
-      }
-      this.__init.body = request.toString();
-      let response = await fetch(this.getUrl(), this.__init);
-      if (!response.ok) {
-        throw new qx.io.exception.Transport(response.statusText, response.status);
-      }
-      let responseData = await response.json();
-      let graphQlResponse = new qx.io.graphql.protocol.Response(responseData);
-      if (graphQlResponse.getErrors()) {
-        this._handleErrors(graphQlResponse);
-      }
-      return graphQlResponse.getData();
+        if (qx.core.Environment.get("qx.io.graphql.debug")) {
+          this.debug(">>>> Sending " + request.toString());
+        }
+        transport.send(request.toString()).catch(reject);
+      });
     },
 
     /**
@@ -118,6 +94,7 @@ qx.Class.define("qx.io.graphql.Client", {
      * event data contain the original response object in the `data` property
      *
      * @param {qx.io.graphql.protocol.Response} response The response object
+     * @return {qx.io.exception.Protocol}
      */
     _handleErrors(response) {
       let errors = response.getErrors();
@@ -125,7 +102,11 @@ qx.Class.define("qx.io.graphql.Client", {
         let exception = new qx.io.exception.Protocol(error.message, null, response.toObject());
         this.fireDataEvent("error", exception);
       });
-      throw new qx.io.exception.Protocol(errors[0].message, null, response.toObject());
+      return new qx.io.exception.Protocol(errors[0].message, null, response.toObject());
     }
+  },
+
+  environment: {
+    "qx.io.graphql.debug" : false
   }
 });

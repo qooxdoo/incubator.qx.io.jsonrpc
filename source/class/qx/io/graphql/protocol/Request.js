@@ -40,5 +40,7 @@ qx.Class.define("qx.io.graphql.protocol.Request",{
       check: "Object",
       nullable: true
     }
-  }
+  },
+
+
 });

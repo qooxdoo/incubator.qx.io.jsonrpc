@@ -28,16 +28,20 @@ qx.Class.define("qx.test.io.graphql.Client",
       this.client = new qx.io.graphql.Client(this.constructor.TEST_ENDPOINT);
     },
     members : {
+
+      async runQuery(query, expected) {
+        let req = new qx.io.graphql.protocol.Request({query});
+        let result = await this.client.send(req);
+        this.assertDeepEquals(expected, result)
+      },
+
       async "test: run successful query"() {
-        let query = `query {
+        await this.runQuery(`query {
           Country(name: "Switzerland") {
             name, nativeName, flag {svgFile},
             officialLanguages {name}
           }
-        }`;
-        let req = new qx.io.graphql.protocol.Request({query});
-        let result = await this.client.send(req);
-        let expected = {
+        }`, {
           "Country": [
             {
               "name": "Switzerland",
@@ -58,8 +62,29 @@ qx.Class.define("qx.test.io.graphql.Client",
               ]
             }
           ]
-        };
-        this.assertDeepEquals(expected, result)
+        });
+      },
+
+      async "test: expect protocol error"() {
+        try {
+          await this.runQuery(`query { invalid}`);
+        } catch (e) {
+          this.assertInstance(e, qx.io.exception.Protocol);
+          this.assertEquals("Cannot query field \"invalid\" on type \"Query\".", e.message);
+          return;
+        }
+        throw new Error("Query should throw qx.io.exception.Protocol");
+      },
+
+      async "test: expect transport error"() {
+        try {
+          let client = new qx.io.graphql.Client("https://doesnotexist.org/"+Math.random());
+          let response = await client.send("query: { doesnotmatter }");
+        } catch (e) {
+          this.assertInstance(e, qx.io.exception.Transport);
+          return;
+        }
+        throw new Error("Query should throw qx.io.exception.Transport");
       }
     }
   });

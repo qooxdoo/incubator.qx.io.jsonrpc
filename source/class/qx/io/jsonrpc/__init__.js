@@ -5,7 +5,7 @@
  *
  * <p>JSON-RPC v2 is transport-agnostic. We provide a high-level
  * API interface (qx.io.jsonrpc.Client), a transport interface
- * (qx.io.jsonrpc.transport.ITransport) and an HTTP transport implementation.
+ * (qx.io.transport.ITransport) and an HTTP transport implementation.
  * Other transports based on websockets or other mechanisms can be added later.</p>
  *
  * <p>Please refer to

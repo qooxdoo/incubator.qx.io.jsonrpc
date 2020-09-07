@@ -35,7 +35,9 @@ qx.Class.define("qx.io.graphql.protocol.Response",{
      * a valid response, the data entry in the response should be null"
      */
     data : {
-      check: "Object"
+      check: "Object",
+      nullable: true,
+      init: null
     },
 
     /**

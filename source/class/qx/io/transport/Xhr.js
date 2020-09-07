@@ -1,16 +1,14 @@
 /**
- * The implementation of a JSON-RPC transport for JSON-RPC via HTTP
- *
- * The HTTP transport implementation is based on the {@link qx.io.request} API,
+ * The implementation of a HTTP Transport using the {@link qx.io.request} API,
  * so any special configuration of the HTTP request must be done on the
  * underlying implementation of {@link qx.io.request.AbstractRequest}.
  *
  * More abstract support for authentication will be added later.
  *
  */
-qx.Class.define("qx.io.jsonrpc.transport.Http", {
-  extend: qx.io.jsonrpc.transport.Abstract,
-  implement : qx.io.jsonrpc.transport.ITransport,
+qx.Class.define("qx.io.transport.Xhr", {
+  extend: qx.io.transport.AbstractTransport,
+  implement : qx.io.transport.ITransport,
 
   /**
    * Constructor.
@@ -120,6 +118,6 @@ qx.Class.define("qx.io.jsonrpc.transport.Http", {
   },
 
   defer() {
-    qx.io.jsonrpc.Client.registerTransport(/^http/, qx.io.jsonrpc.transport.Http);
+    qx.io.jsonrpc.Client.registerTransport(/^http/, qx.io.transport.Xhr);
   }
 });

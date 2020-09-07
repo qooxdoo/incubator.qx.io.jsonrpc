@@ -5,7 +5,7 @@
  * authentication, must be done on the level of the underlying implementation,
  * an abstract API will be added later.
  */
-qx.Class.define("qx.io.jsonrpc.transport.Abstract", {
+qx.Class.define("qx.io.transport.AbstractTransport", {
 
   extend: qx.core.Object,
   type: "abstract",

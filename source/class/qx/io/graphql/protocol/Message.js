@@ -21,21 +21,40 @@
  */
 qx.Class.define("qx.io.graphql.protocol.Message",{
   extend: qx.core.Object,
+
+  /**
+   * Constructor
+   * @param {Object} data
+   */
   construct: function(data) {
     this.base(arguments);
+    qx.core.Assert.assertObject(data);
     this.set(data);
   },
   members : {
+
     /**
-     * Serialize to JSON string
-     * @return {String}
+     * Return the message data in a spec-conformant native object
      */
-    toString() {
-      return qx.util.Serializer.toJson(this);
+    toNormalizedObject() {
+      let data = this.toObject();
+      if (!data.errors) {
+        delete data.errors;
+      }
+      return data;
     },
 
     /**
-     * Serialize to a native javascript object
+     * Serialize to a spec-conformant JSON string
+     * @return {String}
+     */
+    toString() {
+      return qx.lang.Json.stringify(this.toNormalizedObject());
+    },
+
+    /**
+     * Serialize to a native javascript object. If you need a normalized object
+     * that conforms to the spec, use {@link #toNormalizedObject}
      * @return {Object}
      */
     toObject() {

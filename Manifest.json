@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/qooxdoo/qooxdoo-compiler/master/source/resource/qx/tool/schema/Manifest-1-0-0.json",
   "info": {
     "name": "incubator.qx.io.jsonrpc",
-    "summary": "Qooxdoo JSON-RPC v2 API",
-    "description": "This adds a extensible API for JSON-RPC via different transports",
+    "summary": "Support for transport-agnostic I/O protocols",
+    "description": "Framework for transport-agnostic high-level i/o protocols such as the JSON-RPC v2 or GraphQL",
     "homepage": "https://qooxdoo.org",
     "license": "MIT license",
     "authors": [
@@ -12,7 +12,7 @@
         "email": "info@bibliograph.org"
       }
     ],
-    "version": "1.0.0"
+    "version": "2.0.0-alpha"
   },
   "provides": {
     "namespace": "qx.io",
