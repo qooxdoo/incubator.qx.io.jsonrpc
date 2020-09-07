@@ -784,7 +784,7 @@
    */
   qx.Class.define("qx.io.transport.Fetch", {
     extend: qx.io.transport.AbstractTransport,
-    implement: qx.io.transport.ITransport,
+    implement: [qx.io.transport.ITransport],
 
     /**
      * Constructor.
@@ -115542,7 +115542,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1599463069884
+//# sourceMappingURL=package-7.js.map?dt=1599488415542
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

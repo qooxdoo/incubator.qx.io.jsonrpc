@@ -77,4 +77,4 @@
   qx.test.ui.form.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1599463029895
+//# sourceMappingURL=List.js.map?dt=1599488367614

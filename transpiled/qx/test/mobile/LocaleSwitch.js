@@ -180,4 +180,4 @@
   qx.test.mobile.LocaleSwitch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LocaleSwitch.js.map?dt=1599463026004
+//# sourceMappingURL=LocaleSwitch.js.map?dt=1599488362458

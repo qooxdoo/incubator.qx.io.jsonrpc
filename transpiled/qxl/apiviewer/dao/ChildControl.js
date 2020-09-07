@@ -46,4 +46,4 @@
   qxl.apiviewer.dao.ChildControl.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ChildControl.js.map?dt=1599463058822
+//# sourceMappingURL=ChildControl.js.map?dt=1599488403126

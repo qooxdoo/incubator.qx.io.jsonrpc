@@ -244,4 +244,4 @@
   qx.test.mobile.list.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1599463026890
+//# sourceMappingURL=List.js.map?dt=1599488363508

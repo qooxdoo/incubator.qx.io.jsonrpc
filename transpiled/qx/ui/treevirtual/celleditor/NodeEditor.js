@@ -90,4 +90,4 @@
   qx.ui.treevirtual.celleditor.NodeEditor.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=NodeEditor.js.map?dt=1599463053265
+//# sourceMappingURL=NodeEditor.js.map?dt=1599488396022

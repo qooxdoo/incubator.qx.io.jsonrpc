@@ -270,4 +270,4 @@
   qx.test.data.controller.FormWithArrayAndModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FormWithArrayAndModel.js.map?dt=1599463021972
+//# sourceMappingURL=FormWithArrayAndModel.js.map?dt=1599488357527

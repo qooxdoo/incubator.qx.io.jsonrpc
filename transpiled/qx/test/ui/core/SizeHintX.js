@@ -56,4 +56,4 @@
   qx.test.ui.core.SizeHintX.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SizeHintX.js.map?dt=1599463028978
+//# sourceMappingURL=SizeHintX.js.map?dt=1599488366337

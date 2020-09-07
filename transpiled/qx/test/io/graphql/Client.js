@@ -60,7 +60,16 @@
         this.assertDeepEquals(expected, result);
       },
 
-      async "test: run successful query"() {
+      async runQueryWithVariables(query, variables, expected) {
+        let req = new qx.io.graphql.protocol.Request({
+          query
+        });
+        req.marshalVariables(variables);
+        let result = await this.client.send(req);
+        this.assertDeepEquals(expected, result);
+      },
+
+      async "test: execute query"() {
         await this.runQuery(`query {
           Country(name: "Switzerland") {
             name, nativeName, flag {svgFile},
@@ -79,6 +88,28 @@
               "name": "French"
             }, {
               "name": "German"
+            }]
+          }]
+        });
+      },
+
+      async "test: execute query with variables"() {
+        await this.runQueryWithVariables(`query($country:String!) {
+         Country(name: $country) {
+           nativeName
+           officialLanguages { name }
+         }
+       }`, {
+          "country": "Belgium"
+        }, {
+          "Country": [{
+            "nativeName": "België",
+            "officialLanguages": [{
+              "name": "German"
+            }, {
+              "name": "French"
+            }, {
+              "name": "Dutch"
             }]
           }]
         });
@@ -113,4 +144,4 @@
   qx.test.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1599463025044
+//# sourceMappingURL=Client.js.map?dt=1599488361315

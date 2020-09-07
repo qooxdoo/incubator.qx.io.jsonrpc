@@ -20,11 +20,20 @@
     "check",
     "nullable",
     "init",
+    "event",
     "variables",
+    "members",
+    "marshalVariables",
+    "map",
+    "setVariables",
+    "data",
+    "marshal",
+    "Json",
+    "createModel",
     "Request"
   ],
-  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAiD;AAC/CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBC,OADgB;AAE/CC,IAAAA,UAAU,EAAE;AAEV;;;AAGAC,MAAAA,KAAK,EAAG;AACNC,QAAAA,KAAK,EAAE,QADD;AAENC,QAAAA,QAAQ,EAAE,KAFJ;AAGNC,QAAAA,IAAI,EAAE;AAHA,OALE;;AAWV;;;AAGAC,MAAAA,SAAS,EAAG;AACVH,QAAAA,KAAK,EAAE,QADG;AAEVC,QAAAA,QAAQ,EAAE;AAFA;AAdF;AAFmC,GAAjD;AAtBAd,EAAAA,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBQ,OAAvB,CAA+Bd,aAA/B,GAA+CA,aAA/C",
+  "mappings": ";;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;AAIAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAiD;AAC/CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBC,OADgB;AAE/CC,IAAAA,UAAU,EAAE;AAEV;;;AAGAC,MAAAA,KAAK,EAAG;AACNC,QAAAA,KAAK,EAAE,QADD;AAENC,QAAAA,QAAQ,EAAE,KAFJ;AAGNC,QAAAA,IAAI,EAAE,EAHA;AAINC,QAAAA,KAAK,EAAE;AAJD,OALE;;AAYV;;;AAGAC,MAAAA,SAAS,EAAG;AACVJ,QAAAA,KAAK,EAAE,gBADG;AAEVC,QAAAA,QAAQ,EAAE,IAFA;AAGVE,QAAAA,KAAK,EAAE;AAHG;AAfF,KAFmC;AAwB/CE,IAAAA,OAAO,EAAE;AACP;;;;;AAKAC,MAAAA,gBAAgB,CAACC,GAAD,EAAM;AACpB,aAAKC,YAAL,CAAkBrB,EAAE,CAACsB,IAAH,CAAQC,OAAR,CAAgBC,IAAhB,CAAqBC,WAArB,CAAiCL,GAAjC,CAAlB;AACD;;AARM;AAxBsC,GAAjD;AAtBApB,EAAAA,EAAE,CAACO,EAAH,CAAMC,OAAN,CAAcC,QAAd,CAAuBiB,OAAvB,CAA+BvB,aAA/B,GAA+CA,aAA/C",
   "sourcesContent": [
-    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * An Object modelling a GraphQL request based on the GraphQL language\n * (see http://spec.graphql.org/draft/#sec-Language)\n */\nqx.Class.define(\"qx.io.graphql.protocol.Request\",{\n  extend: qx.io.graphql.protocol.Message,\n  properties: {\n\n    /**\n     * The query as a string which will be parsed and executed on the server\n     */\n    query : {\n      check: \"String\",\n      nullable: false,\n      init: \"\"\n    },\n\n    /**\n     * A map of key-value pairs providing the data for the variables in the query\n     */\n    variables : {\n      check: \"Object\",\n      nullable: true\n    }\n  },\n\n\n});\n"
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n      2020 Christian Boulanger\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * An Object modelling a GraphQL request based on the GraphQL language\n * (see http://spec.graphql.org/draft/#sec-Language)\n */\nqx.Class.define(\"qx.io.graphql.protocol.Request\",{\n  extend: qx.io.graphql.protocol.Message,\n  properties: {\n\n    /**\n     * The query as a string which will be parsed and executed on the server\n     */\n    query : {\n      check: \"String\",\n      nullable: false,\n      init: \"\",\n      event: \"changeQuery\"\n    },\n\n    /**\n     * A qooxdoo object that maps variable names to variable values\n     */\n    variables : {\n      check: \"qx.core.Object\",\n      nullable: true,\n      event: \"changeVariables\"\n    }\n  },\n\n  members: {\n    /**\n     * Set the variables from a native javascript object, which will be\n     * marshaled into a qooxdoo object which can be used in databinding\n     * @param {Object} map\n     */\n    marshalVariables(map) {\n      this.setVariables(qx.data.marshal.Json.createModel(map));\n    }\n  }\n});\n"
   ]
 }

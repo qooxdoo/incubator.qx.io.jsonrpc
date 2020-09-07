@@ -60,4 +60,4 @@
   qx.ui.decoration.IDecorator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=IDecorator.js.map?dt=1599463040312
+//# sourceMappingURL=IDecorator.js.map?dt=1599488380174

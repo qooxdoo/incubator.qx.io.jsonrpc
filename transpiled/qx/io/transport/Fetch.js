@@ -27,7 +27,7 @@
    */
   qx.Class.define("qx.io.transport.Fetch", {
     extend: qx.io.transport.AbstractTransport,
-    implement: qx.io.transport.ITransport,
+    implement: [qx.io.transport.ITransport],
 
     /**
      * Constructor.
@@ -119,4 +119,4 @@
   qx.io.transport.Fetch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Fetch.js.map?dt=1599463015054
+//# sourceMappingURL=Fetch.js.map?dt=1599488348673

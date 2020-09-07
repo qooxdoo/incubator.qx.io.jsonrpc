@@ -111,4 +111,4 @@
   qx.test.ui.tree.virtual.TreeItem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TreeItem.js.map?dt=1599463032671
+//# sourceMappingURL=TreeItem.js.map?dt=1599488370803

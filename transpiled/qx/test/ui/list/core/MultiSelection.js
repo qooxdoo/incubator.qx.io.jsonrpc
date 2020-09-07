@@ -184,4 +184,4 @@
   qx.test.ui.list.core.MultiSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MultiSelection.js.map?dt=1599463031233
+//# sourceMappingURL=MultiSelection.js.map?dt=1599488369190

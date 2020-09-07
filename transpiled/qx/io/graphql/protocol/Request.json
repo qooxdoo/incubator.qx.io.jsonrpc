@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 46,
+        "line": 57,
         "column": 3
       }
     },
@@ -39,7 +39,7 @@
           "column": 4
         },
         "end": {
-          "line": 34,
+          "line": 35,
           "column": 5
         }
       },
@@ -53,6 +53,7 @@
       },
       "name": "query",
       "propertyType": "new",
+      "event": "changeQuery",
       "nullable": false,
       "init": "",
       "allowNull": false,
@@ -62,11 +63,11 @@
     "variables": {
       "location": {
         "start": {
-          "line": 39,
+          "line": 40,
           "column": 4
         },
         "end": {
-          "line": 42,
+          "line": 44,
           "column": 5
         }
       },
@@ -74,15 +75,16 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>A map of key-value pairs providing the data for the variables in the query</p>"
+            "body": "<p>A qooxdoo object that maps variable names to variable values</p>"
           }
         ]
       },
       "name": "variables",
       "propertyType": "new",
+      "event": "changeVariables",
       "nullable": true,
       "allowNull": true,
-      "check": "Object"
+      "check": "qx.core.Object"
     },
     "qxOwner": {
       "type": "property",
@@ -118,6 +120,34 @@
     }
   },
   "members": {
+    "marshalVariables": {
+      "location": {
+        "start": {
+          "line": 53,
+          "column": 4
+        },
+        "end": {
+          "line": 55,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Set the variables from a native javascript object, which will be\n marshaled into a qooxdoo object which can be used in databinding</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{Object} map"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
     "getQxOwner": {
       "type": "function",
       "name": "getQxOwner",
@@ -338,7 +368,7 @@
         "@return": [
           {
             "name": "@return",
-            "type": "Object",
+            "type": "qx.core.Object",
             "desc": "Returns the value for variables"
           }
         ]
@@ -362,7 +392,7 @@
         "@param": [
           {
             "name": "@param",
-            "type": "Object",
+            "type": "qx.core.Object",
             "paramName": "value",
             "desc": "Value for variables"
           }

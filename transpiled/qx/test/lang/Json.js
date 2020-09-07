@@ -231,4 +231,4 @@
   qx.test.lang.Json.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Json.js.map?dt=1599463025247
+//# sourceMappingURL=Json.js.map?dt=1599488361576

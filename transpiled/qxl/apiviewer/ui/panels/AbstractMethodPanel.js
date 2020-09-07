@@ -252,4 +252,4 @@
   qxl.apiviewer.ui.panels.AbstractMethodPanel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractMethodPanel.js.map?dt=1599463059588
+//# sourceMappingURL=AbstractMethodPanel.js.map?dt=1599488404107

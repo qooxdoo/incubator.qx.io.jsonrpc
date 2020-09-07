@@ -87,4 +87,4 @@
   qx.io.graphql.protocol.Message.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Message.js.map?dt=1599463013423
+//# sourceMappingURL=Message.js.map?dt=1599488346649

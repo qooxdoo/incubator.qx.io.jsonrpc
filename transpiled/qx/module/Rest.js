@@ -61,4 +61,4 @@
   qx.module.Rest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Rest.js.map?dt=1599463017245
+//# sourceMappingURL=Rest.js.map?dt=1599488351217

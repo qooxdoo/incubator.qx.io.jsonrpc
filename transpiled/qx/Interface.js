@@ -593,4 +593,4 @@
   qx.Interface.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Interface.js.map?dt=1599462998785
+//# sourceMappingURL=Interface.js.map?dt=1599488328352

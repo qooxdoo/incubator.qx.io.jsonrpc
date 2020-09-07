@@ -7,7 +7,8 @@
       },
       "qx.io.graphql.protocol.Message": {
         "require": true
-      }
+      },
+      "qx.data.marshal.Json": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -43,19 +44,32 @@
       query: {
         check: "String",
         nullable: false,
-        init: ""
+        init: "",
+        event: "changeQuery"
       },
 
       /**
-       * A map of key-value pairs providing the data for the variables in the query
+       * A qooxdoo object that maps variable names to variable values
        */
       variables: {
-        check: "Object",
-        nullable: true
+        check: "qx.core.Object",
+        nullable: true,
+        event: "changeVariables"
       }
+    },
+    members: {
+      /**
+       * Set the variables from a native javascript object, which will be
+       * marshaled into a qooxdoo object which can be used in databinding
+       * @param {Object} map
+       */
+      marshalVariables(map) {
+        this.setVariables(qx.data.marshal.Json.createModel(map));
+      }
+
     }
   });
   qx.io.graphql.protocol.Request.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Request.js.map?dt=1599463013438
+//# sourceMappingURL=Request.js.map?dt=1599488346673

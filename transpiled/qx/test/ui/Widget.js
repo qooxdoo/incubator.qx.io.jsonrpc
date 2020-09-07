@@ -72,4 +72,4 @@
   qx.test.ui.Widget.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Widget.js.map?dt=1599463028320
+//# sourceMappingURL=Widget.js.map?dt=1599488365488

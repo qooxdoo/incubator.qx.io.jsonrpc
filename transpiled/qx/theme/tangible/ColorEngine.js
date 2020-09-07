@@ -209,4 +209,4 @@
   qx.theme.tangible.ColorEngine.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ColorEngine.js.map?dt=1599463036510
+//# sourceMappingURL=ColorEngine.js.map?dt=1599488375487

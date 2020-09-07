@@ -73,4 +73,4 @@
   qx.test.ui.command.Group.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Group.js.map?dt=1599463028629
+//# sourceMappingURL=Group.js.map?dt=1599488365885
