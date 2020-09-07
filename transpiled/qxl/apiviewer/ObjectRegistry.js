@@ -44,4 +44,4 @@
   qxl.apiviewer.ObjectRegistry.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ObjectRegistry.js.map?dt=1599462425813
+//# sourceMappingURL=ObjectRegistry.js.map?dt=1599463059532
