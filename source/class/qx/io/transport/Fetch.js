@@ -4,7 +4,7 @@
  */
 qx.Class.define("qx.io.transport.Fetch", {
   extend: qx.io.transport.AbstractTransport,
-  implement : qx.io.transport.ITransport,
+  implement: [qx.io.transport.ITransport],
 
   /**
    * Constructor.

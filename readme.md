@@ -1,4 +1,4 @@
-# Qooxdoo JSON-RPC API Incubator
+# Qooxdoo transport-agnostic high-level I/O APIs (JSON-RPC, GraphQl) 
 
 ![Build and Deploy](https://github.com/qooxdoo/incubator.qx.io.jsonrpc/workflows/Build%20and%20Deploy/badge.svg)
 
@@ -161,13 +161,16 @@ Example:
 
 ```javascript
     let client = new qx.io.graphql.Client("https://countries-274616.ew.r.appspot.com/");
-    let query = `query {
-      Country(name: $country) {
-        name, nativeName, flag {svgFile},
-        officialLanguages {name}
-      }
-    }`
-    let response = await client.send(query, {country:"Belgium"});
+    let query = `query($country:String!) {
+       Country(name: $country) {
+         nativeName
+         officialLanguages { name }
+       }
+     }`;
+    let request = new qx.io.qx.io.graphql.protocol.Request();
+    request.setQuery(query);
+    request.marshalVariables({country:"Belgium"});
+    let response = await client.send(request);
 ```
 
 ### Customizing the transport / Authentication
