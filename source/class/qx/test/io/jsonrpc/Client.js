@@ -18,10 +18,9 @@
 ************************************************************************ */
 
 /**
- * Tests for qx.io.transport.Xhr
- * Based on qx.test.io.request.Xhr
+ * Tests for qx.io.jsonrpc.Client with a qx.test.io.request.Xhr transport
  */
-qx.Class.define("qx.test.io.jsonrpc.HttpTransport",
+qx.Class.define("qx.test.io.jsonrpc.Client",
 {
   extend : qx.dev.unit.TestCase,
 

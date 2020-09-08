@@ -21,7 +21,8 @@ and generalized, i.e. `qx.io.jsonrpc.exception.JsonRpc` has been
 renamed to `qx.io.exception.Protocol`. 
 
 - The same applies to the `qx.io.jsonrpc.transport`
-namespace, which has been moved to `qx.io.transport`
+namespace, which has been moved to `qx.io.transport`. `qx.io.jsonrpc.transport.Http`
+has been renamed `qx.io.transport.Xhr`.
 
 ## Installation for use in your project
 
@@ -167,7 +168,7 @@ Example:
          officialLanguages { name }
        }
      }`;
-    let request = new qx.io.qx.io.graphql.protocol.Request();
+    let request = new qx.io.graphql.protocol.Request();
     request.setQuery(query);
     request.marshalVariables({country:"Belgium"});
     let response = await client.send(request);
