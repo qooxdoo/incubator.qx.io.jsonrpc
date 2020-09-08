@@ -189,8 +189,8 @@ client.sendRequest("method-needing-authentication", [1,2,3]);
 ```
 
 Instead, you can also to create a class that inherits
-from `qx.io.jsonrpc.transport.Http` and overrides
-`qx.io.jsonrpc.transport.Http#_createTransportImpl`. To make
+from `qx.io.transport.Http` and overrides
+`qx.io.transport.Http#_createTransportImpl`. To make
 the client use this transport, provide a `defer` section
 which registers the behavior for your particular class of URIs:
 
