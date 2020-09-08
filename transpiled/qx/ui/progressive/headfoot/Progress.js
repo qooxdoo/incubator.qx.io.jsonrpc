@@ -162,4 +162,4 @@
   qx.ui.progressive.headfoot.Progress.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Progress.js.map?dt=1599578784495
+//# sourceMappingURL=Progress.js.map?dt=1599595332680

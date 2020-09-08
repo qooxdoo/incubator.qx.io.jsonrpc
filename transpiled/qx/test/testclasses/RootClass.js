@@ -32,4 +32,4 @@
   qx.test.testclasses.RootClass.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RootClass.js.map?dt=1599578766261
+//# sourceMappingURL=RootClass.js.map?dt=1599595314537

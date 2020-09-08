@@ -225,4 +225,4 @@
   qx.bom.client.OperatingSystem.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=OperatingSystem.js.map?dt=1599578744439
+//# sourceMappingURL=OperatingSystem.js.map?dt=1599595293429

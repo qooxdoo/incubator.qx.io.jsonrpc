@@ -398,4 +398,4 @@
   qxl.apiviewer.Controller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Controller.js.map?dt=1599578793017
+//# sourceMappingURL=Controller.js.map?dt=1599595341345

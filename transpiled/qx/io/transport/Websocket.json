@@ -15,7 +15,7 @@
         "column": 0
       },
       "end": {
-        "line": 96,
+        "line": 97,
         "column": 3
       }
     },
@@ -68,13 +68,27 @@
     "__tranportImpl": {
       "location": {
         "start": {
-          "line": 22,
+          "line": 25,
           "column": 4
         },
         "end": {
-          "line": 22,
+          "line": 25,
           "column": 24
         }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{WebSocket}"
+          }
+        ]
       },
       "type": "variable",
       "access": "private"
@@ -82,11 +96,11 @@
     "getTransportImpl": {
       "location": {
         "start": {
-          "line": 33,
+          "line": 34,
           "column": 4
         },
         "end": {
-          "line": 36,
+          "line": 39,
           "column": 5
         }
       },
@@ -94,7 +108,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Returns the object which implements the transport on the\n underlying level, so that transport-specific configuration\n can be done on it. In the case of the Fetch API, the\n \"implementation\" is a configuration object which will be\n passed to the <code>fetch</code> method as second parameter.</p>"
+            "body": "<p>Returns the object which implements the transport on the\n underlying level, so that transport-specific configuration\n can be done on it.</p>"
           }
         ],
         "@return": [
@@ -116,11 +130,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 48,
+          "line": 51,
           "column": 4
         },
         "end": {
-          "line": 56,
+          "line": 57,
           "column": 5
         }
       },
@@ -162,11 +176,11 @@
     "_createTransportImpl": {
       "location": {
         "start": {
-          "line": 62,
+          "line": 63,
           "column": 4
         },
         "end": {
-          "line": 85,
+          "line": 86,
           "column": 5
         }
       },
@@ -398,11 +412,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 88,
+        "line": 89,
         "column": 2
       },
       "end": {
-        "line": 91,
+        "line": 92,
         "column": 3
       }
     }
@@ -410,11 +424,11 @@
   "defer": {
     "location": {
       "start": {
-        "line": 93,
+        "line": 94,
         "column": 2
       },
       "end": {
-        "line": 95,
+        "line": 96,
         "column": 3
       }
     }

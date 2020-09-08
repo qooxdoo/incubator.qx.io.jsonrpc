@@ -700,4 +700,4 @@
   qx.io.rest.Resource.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resource.js.map?dt=1599578755127
+//# sourceMappingURL=Resource.js.map?dt=1599595303625

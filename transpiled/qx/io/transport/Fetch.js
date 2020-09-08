@@ -39,6 +39,9 @@
     },
 
     members: {
+      /**
+       * @type {Object}
+       */
       __tranportImpl__P_176_0: null,
 
       /**
@@ -48,10 +51,13 @@
        * "implementation" is a configuration object which will be
        * passed to the `fetch` method as second parameter.
        *
-       * @return {qx.core.Object}
+       * @return {Object}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_176_0 = this.__tranportImpl__P_176_0 || this._createTransportImpl();
+        if (!this.__tranportImpl__P_176_0) {
+          this.__tranportImpl__P_176_0 = this._createTransportImpl();
+        }
+
         return this.__tranportImpl__P_176_0;
       },
 
@@ -119,4 +125,4 @@
   qx.io.transport.Fetch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Fetch.js.map?dt=1599578755185
+//# sourceMappingURL=Fetch.js.map?dt=1599595303686

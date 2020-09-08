@@ -187,4 +187,4 @@
   qx.ui.table.selection.Manager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Manager.js.map?dt=1599578787288
+//# sourceMappingURL=Manager.js.map?dt=1599595335524

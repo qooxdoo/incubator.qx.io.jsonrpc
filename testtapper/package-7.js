@@ -796,6 +796,9 @@
     },
 
     members: {
+      /**
+       * @type {Object}
+       */
       __tranportImpl__P_176_0: null,
 
       /**
@@ -805,10 +808,13 @@
        * "implementation" is a configuration object which will be
        * passed to the `fetch` method as second parameter.
        *
-       * @return {qx.core.Object}
+       * @return {Object}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_176_0 = this.__tranportImpl__P_176_0 || this._createTransportImpl();
+        if (!this.__tranportImpl__P_176_0) {
+          this.__tranportImpl__P_176_0 = this._createTransportImpl();
+        }
+
         return this.__tranportImpl__P_176_0;
       },
 
@@ -918,19 +924,23 @@
     },
 
     members: {
+      /**
+       * @type {WebSocket}
+       */
       __tranportImpl__P_177_0: null,
 
       /**
        * Returns the object which implements the transport on the
        * underlying level, so that transport-specific configuration
-       * can be done on it. In the case of the Fetch API, the
-       * "implementation" is a configuration object which will be
-       * passed to the `fetch` method as second parameter.
+       * can be done on it.
        *
        * @return {WebSocket}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_177_0 = this.__tranportImpl__P_177_0 || this._createTransportImpl();
+        if (!this.__tranportImpl__P_177_0) {
+          this.__tranportImpl__P_177_0 = this._createTransportImpl();
+        }
+
         return this.__tranportImpl__P_177_0;
       },
 
@@ -948,9 +958,7 @@
         let ws = this.getTransportImpl();
 
         if (!ws.readyState !== WebSocket.OPEN) {
-          await new Promise(resolve => {
-            ws.addEventListener("open", resolve);
-          });
+          await new Promise(resolve => ws.addEventListener("open", resolve));
         }
 
         ws.send(message);
@@ -61855,7 +61863,7 @@
   });
   qx.test.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1599578803752
+//# sourceMappingURL=package-7.js.map?dt=1599595352256
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

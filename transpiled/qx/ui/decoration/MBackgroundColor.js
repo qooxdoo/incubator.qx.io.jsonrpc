@@ -80,4 +80,4 @@
   qx.ui.decoration.MBackgroundColor.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MBackgroundColor.js.map?dt=1599578777412
+//# sourceMappingURL=MBackgroundColor.js.map?dt=1599595325578

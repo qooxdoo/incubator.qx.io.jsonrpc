@@ -266,4 +266,4 @@
   qxl.logpane.LogPane.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LogPane.js.map?dt=1599578792862
+//# sourceMappingURL=LogPane.js.map?dt=1599595341190

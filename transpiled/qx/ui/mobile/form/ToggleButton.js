@@ -233,4 +233,4 @@
   qx.ui.mobile.form.ToggleButton.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ToggleButton.js.map?dt=1599578783419
+//# sourceMappingURL=ToggleButton.js.map?dt=1599595331606

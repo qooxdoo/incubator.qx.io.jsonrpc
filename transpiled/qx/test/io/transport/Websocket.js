@@ -59,4 +59,4 @@
   qx.test.io.transport.Websocket.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Websocket.js.map?dt=1599578764151
+//# sourceMappingURL=Websocket.js.map?dt=1599595312465

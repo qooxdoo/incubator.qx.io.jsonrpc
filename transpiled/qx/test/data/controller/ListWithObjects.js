@@ -506,4 +506,4 @@
   qx.test.data.controller.ListWithObjects.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ListWithObjects.js.map?dt=1599578761725
+//# sourceMappingURL=ListWithObjects.js.map?dt=1599595310183

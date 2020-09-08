@@ -40,19 +40,23 @@
     },
 
     members: {
+      /**
+       * @type {WebSocket}
+       */
       __tranportImpl__P_177_0: null,
 
       /**
        * Returns the object which implements the transport on the
        * underlying level, so that transport-specific configuration
-       * can be done on it. In the case of the Fetch API, the
-       * "implementation" is a configuration object which will be
-       * passed to the `fetch` method as second parameter.
+       * can be done on it.
        *
        * @return {WebSocket}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_177_0 = this.__tranportImpl__P_177_0 || this._createTransportImpl();
+        if (!this.__tranportImpl__P_177_0) {
+          this.__tranportImpl__P_177_0 = this._createTransportImpl();
+        }
+
         return this.__tranportImpl__P_177_0;
       },
 
@@ -70,9 +74,7 @@
         let ws = this.getTransportImpl();
 
         if (!ws.readyState !== WebSocket.OPEN) {
-          await new Promise(resolve => {
-            ws.addEventListener("open", resolve);
-          });
+          await new Promise(resolve => ws.addEventListener("open", resolve));
         }
 
         ws.send(message);
@@ -126,4 +128,4 @@
   qx.io.transport.Websocket.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Websocket.js.map?dt=1599578755216
+//# sourceMappingURL=Websocket.js.map?dt=1599595303718

@@ -120,4 +120,4 @@
   qx.test.ui.selection.TreeSingleSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TreeSingleSelection.js.map?dt=1599578769957
+//# sourceMappingURL=TreeSingleSelection.js.map?dt=1599595318175
