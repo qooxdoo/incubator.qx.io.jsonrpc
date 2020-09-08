@@ -77,4 +77,4 @@
   qx.test.mobile.dialog.Popup.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Popup.js.map?dt=1599546980146
+//# sourceMappingURL=Popup.js.map?dt=1599578765331

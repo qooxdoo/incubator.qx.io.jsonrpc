@@ -122,4 +122,4 @@
   qx.test.mobile.container.Carousel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Carousel.js.map?dt=1599546979940
+//# sourceMappingURL=Carousel.js.map?dt=1599578765139

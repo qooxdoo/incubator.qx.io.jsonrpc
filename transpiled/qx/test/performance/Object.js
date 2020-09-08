@@ -22,14 +22,14 @@
     members: {
       CREATE_ITERATIONS: 100000,
       testObjectCreate: function testObjectCreate() {
-        var objects = this.__objects__P_264_0 = [];
+        var objects = this.__objects__P_265_0 = [];
         var self = this;
         this.measure("create qx.core.Object", function () {
           for (var i = 0; i < self.CREATE_ITERATIONS; i++) {
             objects.push(new qx.core.Object());
           }
         }, function () {
-          self._disposeArray("__objects__P_264_0");
+          self._disposeArray("__objects__P_265_0");
         }, this.CREATE_ITERATIONS);
       },
       testToHashCode: function testToHashCode() {
@@ -52,4 +52,4 @@
   qx.test.performance.Object.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Object.js.map?dt=1599546980779
+//# sourceMappingURL=Object.js.map?dt=1599578765917

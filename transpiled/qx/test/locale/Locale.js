@@ -59,18 +59,18 @@
     extend: qx.dev.unit.TestCase,
     include: qx.locale.MTranslation,
     members: {
-      __defaultLocale__P_252_0: null,
-      __listenerId__P_252_1: null,
+      __defaultLocale__P_253_0: null,
+      __listenerId__P_253_1: null,
       setUp: function setUp() {
         var manager = qx.locale.Manager.getInstance();
-        this.__defaultLocale__P_252_0 = manager.getLocale();
+        this.__defaultLocale__P_253_0 = manager.getLocale();
       },
       tearDown: function tearDown() {
         var manager = qx.locale.Manager.getInstance();
-        manager.setLocale(this.__defaultLocale__P_252_0);
+        manager.setLocale(this.__defaultLocale__P_253_0);
 
-        if (this.__listenerId__P_252_1) {
-          manager.removeListenerById(this.__listenerId__P_252_1);
+        if (this.__listenerId__P_253_1) {
+          manager.removeListenerById(this.__listenerId__P_253_1);
         }
       },
       testTranslation: function testTranslation() {
@@ -135,7 +135,7 @@
 
         var fired = false;
         var evtLocale = "";
-        this.__listenerId__P_252_1 = manager.addListener("changeLocale", function (e) {
+        this.__listenerId__P_253_1 = manager.addListener("changeLocale", function (e) {
           fired = true;
           evtLocale = e.getData();
         }); // change locale
@@ -220,4 +220,4 @@
   qx.test.locale.Locale.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Locale.js.map?dt=1599546979562
+//# sourceMappingURL=Locale.js.map?dt=1599578764805

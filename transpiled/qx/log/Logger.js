@@ -86,7 +86,7 @@
         CONFIGURATION
       ---------------------------------------------------------------------------
       */
-      __level__P_183_0: "debug",
+      __level__P_184_0: "debug",
 
       /**
        * Configures the minimum log level required for new messages.
@@ -94,7 +94,7 @@
        * @param value {String} One of "debug", "info", "warn" or "error".
        */
       setLevel: function setLevel(value) {
-        this.__level__P_183_0 = value;
+        this.__level__P_184_0 = value;
       },
 
       /**
@@ -104,7 +104,7 @@
        * @return {Integer} Debug level
        */
       getLevel: function getLevel() {
-        return this.__level__P_183_0;
+        return this.__level__P_184_0;
       },
 
       /**
@@ -113,7 +113,7 @@
        * @param value {Integer} Any positive integer
        */
       setTreshold: function setTreshold(value) {
-        this.__buffer__P_183_1.setMaxMessages(value);
+        this.__buffer__P_184_1.setMaxMessages(value);
       },
 
       /**
@@ -123,7 +123,7 @@
        * @return {Integer} Treshold value
        */
       getTreshold: function getTreshold() {
-        return this.__buffer__P_183_1.getMaxMessages();
+        return this.__buffer__P_184_1.getMaxMessages();
       },
 
       /*
@@ -133,16 +133,16 @@
       */
 
       /** @type {Map} Map of all known appenders by ID */
-      __appenders__P_183_2: [],
+      __appenders__P_184_2: [],
 
       /** @type {Map} Map of all known appenders by name */
-      __appendersByName__P_183_3: {},
+      __appendersByName__P_184_3: {},
 
       /** @type {Array} Array of filters to apply when selecting appenders to append to */
-      __filters__P_183_4: [],
+      __filters__P_184_4: [],
 
       /** @type {Integer} Last free appender ID */
-      __id__P_183_5: 0,
+      __id__P_184_5: 0,
 
       /**
        * Registers the given appender and inserts the last cached messages.
@@ -159,18 +159,18 @@
         } // Register appender
 
 
-        var id = this.__id__P_183_5++;
+        var id = this.__id__P_184_5++;
         var appenderName = appender.appenderName || appender.classname;
-        this.__appenders__P_183_2[id] = appender;
-        this.__appendersByName__P_183_3[appenderName] = appender;
+        this.__appenders__P_184_2[id] = appender;
+        this.__appendersByName__P_184_3[appenderName] = appender;
         appender.$$id = id; // Insert previous messages
 
-        var entries = this.__buffer__P_183_1.getAllLogEvents();
+        var entries = this.__buffer__P_184_1.getAllLogEvents();
 
         for (var i = 0, l = entries.length; i < l; i++) {
           var entry = entries[i];
 
-          var appenders = this.__getAppenders__P_183_6(entry.loggerName, entry.level);
+          var appenders = this.__getAppenders__P_184_6(entry.loggerName, entry.level);
 
           if (appenders[appenderName]) {
             appender.process(entry);
@@ -191,8 +191,8 @@
         }
 
         var appenderName = appender.appenderName || appender.classname;
-        delete this.__appendersByName__P_183_3[appenderName];
-        delete this.__appenders__P_183_2[id];
+        delete this.__appendersByName__P_184_3[appenderName];
+        delete this.__appenders__P_184_2[id];
         delete appender.$$id;
       },
 
@@ -244,9 +244,9 @@
           logger = new RegExp(logger);
         }
 
-        this.__filters__P_183_4.push({
+        this.__filters__P_184_4.push({
           loggerMatch: logger,
-          level: level || this.__level__P_183_0,
+          level: level || this.__level__P_184_0,
           appenderName: appenderName
         });
       },
@@ -255,7 +255,7 @@
        * Reset all filters
        */
       resetFilters: function resetFilters() {
-        this.__filters__P_183_4 = [];
+        this.__filters__P_184_4 = [];
       },
 
       /*
@@ -273,7 +273,7 @@
        *   does not keep references to other objects.
        */
       debug: function debug(object, message) {
-        qx.log.Logger.__log__P_183_7("debug", arguments);
+        qx.log.Logger.__log__P_184_7("debug", arguments);
       },
 
       /**
@@ -285,7 +285,7 @@
        *   does not keep references to other objects.
        */
       info: function info(object, message) {
-        qx.log.Logger.__log__P_183_7("info", arguments);
+        qx.log.Logger.__log__P_184_7("info", arguments);
       },
 
       /**
@@ -297,7 +297,7 @@
        *   does not keep references to other objects.
        */
       warn: function warn(object, message) {
-        qx.log.Logger.__log__P_183_7("warn", arguments);
+        qx.log.Logger.__log__P_184_7("warn", arguments);
       },
 
       /**
@@ -309,7 +309,7 @@
        *   does not keep references to other objects.
        */
       error: function error(object, message) {
-        qx.log.Logger.__log__P_183_7("error", arguments);
+        qx.log.Logger.__log__P_184_7("error", arguments);
       },
 
       /**
@@ -326,7 +326,7 @@
           var args = qx.lang.Array.fromArguments(arguments);
           args.push(trace.join("\n"));
 
-          qx.log.Logger.__log__P_183_7("trace", args);
+          qx.log.Logger.__log__P_184_7("trace", args);
         }
       },
 
@@ -450,7 +450,7 @@
        *
        */
       clear: function clear() {
-        this.__buffer__P_183_1.clearHistory();
+        this.__buffer__P_184_1.clearHistory();
       },
 
       /*
@@ -460,10 +460,10 @@
       */
 
       /** @type {qx.log.appender.RingBuffer} Message buffer of previously fired messages. */
-      __buffer__P_183_1: new qx.log.appender.RingBuffer(50),
+      __buffer__P_184_1: new qx.log.appender.RingBuffer(50),
 
       /** @type {Map} Numeric translation of log levels */
-      __levels__P_183_8: {
+      __levels__P_184_8: {
         trace: 0,
         debug: 1,
         info: 2,
@@ -472,7 +472,7 @@
       },
 
       /** @type {Map} cache of appenders for a given logger and level */
-      __appendersCache__P_183_9: {},
+      __appendersCache__P_184_9: {},
 
       /**
        * Detects the name of the logger to use for an object
@@ -480,7 +480,7 @@
        * @param object {Object} Contextual object (either instance or static class)
        * @return {String} Logger name
        */
-      __getLoggerName__P_183_10: function __getLoggerName__P_183_10(object) {
+      __getLoggerName__P_184_10: function __getLoggerName__P_184_10(object) {
         if (object) {
           if (object.classname) {
             return object.classname;
@@ -502,9 +502,9 @@
        * @return {Boolean} True if the logger is enabled
        */
       isLoggerEnabled: function isLoggerEnabled(level, object) {
-        var loggerName = this.__getLoggerName__P_183_10(object);
+        var loggerName = this.__getLoggerName__P_184_10(object);
 
-        var appenders = this.__getAppenders__P_183_6(loggerName, level);
+        var appenders = this.__getAppenders__P_184_6(loggerName, level);
 
         return !!Object.keys(appenders).length;
       },
@@ -516,13 +516,13 @@
        * @param args {Array} List of other arguments, where the first is
        *   taken as the context object.
        */
-      __log__P_183_7: function __log__P_183_7(level, args) {
+      __log__P_184_7: function __log__P_184_7(level, args) {
         // Get object and determine appenders
         var object = args.length < 2 ? null : args[0];
 
-        var loggerName = this.__getLoggerName__P_183_10(object);
+        var loggerName = this.__getLoggerName__P_184_10(object);
 
-        var appenders = this.__getAppenders__P_183_6(loggerName, level);
+        var appenders = this.__getAppenders__P_184_6(loggerName, level);
 
         if (!Object.keys(appenders).length) {
           return;
@@ -533,7 +533,7 @@
         var items = [];
 
         for (var i = start, l = args.length; i < l; i++) {
-          items.push(this.__serialize__P_183_11(args[i], true));
+          items.push(this.__serialize__P_184_11(args[i], true));
         } // Build entry
 
 
@@ -560,7 +560,7 @@
           }
         }
 
-        this.__buffer__P_183_1.process(entry); // Send to appenders
+        this.__buffer__P_184_1.process(entry); // Send to appenders
 
 
         for (var classname in appenders) {
@@ -575,21 +575,21 @@
        * @param level {String} the minimum logging level to use the appender
        * @return {Array} list of appenders
        */
-      __getAppenders__P_183_6: function __getAppenders__P_183_6(className, level) {
-        var levels = this.__levels__P_183_8; // If no filters, then all appenders apply
+      __getAppenders__P_184_6: function __getAppenders__P_184_6(className, level) {
+        var levels = this.__levels__P_184_8; // If no filters, then all appenders apply
 
-        if (!this.__filters__P_183_4.length) {
+        if (!this.__filters__P_184_4.length) {
           // Check the default level
-          if (levels[level] < levels[this.__level__P_183_0]) {
+          if (levels[level] < levels[this.__level__P_184_0]) {
             return [];
           }
 
-          return this.__appendersByName__P_183_3;
+          return this.__appendersByName__P_184_3;
         } // Check the cache
 
 
         var cacheId = className + "|" + level;
-        var appenders = this.__appendersCache__P_183_9[cacheId];
+        var appenders = this.__appendersCache__P_184_9[cacheId];
 
         if (appenders !== undefined) {
           return appenders;
@@ -597,8 +597,8 @@
 
         var appenders = {};
 
-        for (var i = 0; i < this.__filters__P_183_4.length; i++) {
-          var filter = this.__filters__P_183_4[i]; // Filters only apply to certain levels
+        for (var i = 0; i < this.__filters__P_184_4.length; i++) {
+          var filter = this.__filters__P_184_4[i]; // Filters only apply to certain levels
 
           if (levels[level] < levels[filter.level]) {
             continue;
@@ -612,14 +612,14 @@
 
           if (!filter.loggerMatch || filter.loggerMatch.test(className)) {
             if (filter.appenderName) {
-              appenders[filter.appenderName] = this.__appendersByName__P_183_3[filter.appenderName];
+              appenders[filter.appenderName] = this.__appendersByName__P_184_3[filter.appenderName];
             } else {
-              return this.__appendersCache__P_183_9[cacheId] = this.__appendersByName__P_183_3;
+              return this.__appendersCache__P_184_9[cacheId] = this.__appendersByName__P_184_3;
             }
           }
         }
 
-        return this.__appendersCache__P_183_9[cacheId] = appenders;
+        return this.__appendersCache__P_184_9[cacheId] = appenders;
       },
 
       /**
@@ -631,7 +631,7 @@
        *   "function", "array", "error", "map",
        *   "class", "instance", "node", "stringify", "unknown"
        */
-      __detect__P_183_12: function __detect__P_183_12(value) {
+      __detect__P_184_12: function __detect__P_184_12(value) {
         if (value === undefined) {
           return "undefined";
         } else if (value === null) {
@@ -680,8 +680,8 @@
        * @return {Map} Contains the keys <code>type</code>, <code>text</code> and
        * <code>trace</code>.
        */
-      __serialize__P_183_11: function __serialize__P_183_11(value, deep) {
-        var type = this.__detect__P_183_12(value);
+      __serialize__P_184_11: function __serialize__P_184_11(value, deep) {
+        var type = this.__detect__P_184_12(value);
 
         var text = "unknown";
         var trace = [];
@@ -741,7 +741,7 @@
                   break;
                 }
 
-                text.push(this.__serialize__P_183_11(value[i], false));
+                text.push(this.__serialize__P_184_11(value[i], false));
               }
             } else {
               text = "[...(" + value.length + ")]";
@@ -771,7 +771,7 @@
 
 
                 key = sorted[i];
-                temp = this.__serialize__P_183_11(value[key], false);
+                temp = this.__serialize__P_184_11(value[key], false);
                 temp.key = key;
                 text.push(temp);
               }
@@ -799,7 +799,7 @@
       var logs = qx.Bootstrap.$$logs;
 
       for (var i = 0; i < logs.length; i++) {
-        statics.__log__P_183_7(logs[i][0], logs[i][1]);
+        statics.__log__P_184_7(logs[i][0], logs[i][1]);
       }
 
       qx.Bootstrap.debug = statics.debug;
@@ -812,4 +812,4 @@
   qx.log.Logger.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Logger.js.map?dt=1599546970575
+//# sourceMappingURL=Logger.js.map?dt=1599578756247

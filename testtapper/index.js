@@ -358,7 +358,7 @@ qx.$$loader = {
   },
   "8": {
     "uris": [
-      "../transpiled/qx/test/io/jsonrpc/HttpTransport.js",
+      "../transpiled/qx/test/io/jsonrpc/Client.js",
       "../transpiled/qx/test/io/jsonrpc/Protocol.js"
     ]
   },

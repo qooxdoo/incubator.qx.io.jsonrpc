@@ -35,24 +35,24 @@
     construct: function construct(type, config) {
       qx.event.type.Pointer.constructor.call(this);
       this.setType(type);
-      this.__config__P_342_0 = config;
+      this.__config__P_343_0 = config;
     },
     members: {
       clone: function clone() {
         return this;
       },
       getDocumentLeft: function getDocumentLeft() {
-        return this.__config__P_342_0.documentLeft || 0;
+        return this.__config__P_343_0.documentLeft || 0;
       },
       getDocumentTop: function getDocumentTop() {
-        return this.__config__P_342_0.documentTop || 0;
+        return this.__config__P_343_0.documentTop || 0;
       }
     },
     destruct: function destruct() {
-      this.__config__P_342_0 = null;
+      this.__config__P_343_0 = null;
     }
   });
   qx.test.ui.virtual.PointerEventMock.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PointerEventMock.js.map?dt=1599546986535
+//# sourceMappingURL=PointerEventMock.js.map?dt=1599578771160

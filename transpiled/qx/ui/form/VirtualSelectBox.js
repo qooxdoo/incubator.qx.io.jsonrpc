@@ -71,11 +71,11 @@
 
       this.addListener("pointerover", this._onPointerOver, this);
       this.addListener("pointerout", this._onPointerOut, this);
-      this.__bindings__P_428_0 = [];
+      this.__bindings__P_429_0 = [];
       this.initSelection(this.getChildControl("dropdown").getSelection());
-      this.__searchTimer__P_428_1 = new qx.event.Timer(500);
+      this.__searchTimer__P_429_1 = new qx.event.Timer(500);
 
-      this.__searchTimer__P_428_1.addListener("interval", this.__preselect__P_428_2, this);
+      this.__searchTimer__P_429_1.addListener("interval", this.__preselect__P_429_2, this);
 
       this.getSelection().addListener("change", this._updateSelectionValue, this);
     },
@@ -116,15 +116,15 @@
     },
     members: {
       /** @type {String} The search value to {@link #__preselect} an item. */
-      __searchValue__P_428_3: "",
+      __searchValue__P_429_3: "",
 
       /**
        * @type {qx.event.Timer} The time which triggers the search for pre-selection.
        */
-      __searchTimer__P_428_1: null,
+      __searchTimer__P_429_1: null,
 
       /** @type {Array} Contains the id from all bindings. */
-      __bindings__P_428_0: null,
+      __bindings__P_429_0: null,
 
       /**
        * @param selected {var|null} Item to select as value.
@@ -225,20 +225,20 @@
 
         var id = this.bind(modelPath, atom, "model", null);
 
-        this.__bindings__P_428_0.push(id);
+        this.__bindings__P_429_0.push(id);
 
         var labelSourcePath = this._getBindPath("selection", this.getLabelPath());
 
         id = this.bind(labelSourcePath, atom, "label", this.getLabelOptions());
 
-        this.__bindings__P_428_0.push(id);
+        this.__bindings__P_429_0.push(id);
 
         if (this.getIconPath() != null) {
           var iconSourcePath = this._getBindPath("selection", this.getIconPath());
 
           id = this.bind(iconSourcePath, atom, "icon", this.getIconOptions());
 
-          this.__bindings__P_428_0.push(id);
+          this.__bindings__P_429_0.push(id);
         }
       },
 
@@ -247,8 +247,8 @@
        * widget. For e.q. remove the bound drop-down selection.
        */
       _removeBindings: function _removeBindings() {
-        while (this.__bindings__P_428_0.length > 0) {
-          var id = this.__bindings__P_428_0.pop();
+        while (this.__bindings__P_429_0.length > 0) {
+          var id = this.__bindings__P_429_0.pop();
 
           this.removeBinding(id);
         }
@@ -275,9 +275,9 @@
 
         switch (action) {
           case "search":
-            this.__searchValue__P_428_3 += this.__convertKeyIdentifier__P_428_4(event.getKeyIdentifier());
+            this.__searchValue__P_429_3 += this.__convertKeyIdentifier__P_429_4(event.getKeyIdentifier());
 
-            this.__searchTimer__P_428_1.restart();
+            this.__searchTimer__P_429_1.restart();
 
             break;
 
@@ -357,10 +357,10 @@
        * Preselects an item in the drop-down, when item starts with the
        * __searchValue value.
        */
-      __preselect__P_428_2: function __preselect__P_428_2() {
-        this.__searchTimer__P_428_1.stop();
+      __preselect__P_429_2: function __preselect__P_429_2() {
+        this.__searchTimer__P_429_1.stop();
 
-        var searchValue = this.__searchValue__P_428_3;
+        var searchValue = this.__searchValue__P_429_3;
 
         if (searchValue === null || searchValue === "") {
           return;
@@ -406,7 +406,7 @@
           }
         }
 
-        this.__searchValue__P_428_3 = "";
+        this.__searchValue__P_429_3 = "";
       },
 
       /**
@@ -416,7 +416,7 @@
        * @param keyIdentifier {String} The keyIdentifier to convert.
        * @return {String} The converted keyIdentifier.
        */
-      __convertKeyIdentifier__P_428_4: function __convertKeyIdentifier__P_428_4(keyIdentifier) {
+      __convertKeyIdentifier__P_429_4: function __convertKeyIdentifier__P_429_4(keyIdentifier) {
         if (keyIdentifier === "Space") {
           return " ";
         } else {
@@ -440,14 +440,14 @@
 
       this.getSelection().removeListener("change", this._updateSelectionValue, this);
 
-      this.__searchTimer__P_428_1.removeListener("interval", this.__preselect__P_428_2, this);
+      this.__searchTimer__P_429_1.removeListener("interval", this.__preselect__P_429_2, this);
 
-      this.__searchTimer__P_428_1.dispose();
+      this.__searchTimer__P_429_1.dispose();
 
-      this.__searchTimer__P_428_1 = null;
+      this.__searchTimer__P_429_1 = null;
     }
   });
   qx.ui.form.VirtualSelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualSelectBox.js.map?dt=1599546995499
+//# sourceMappingURL=VirtualSelectBox.js.map?dt=1599578779707

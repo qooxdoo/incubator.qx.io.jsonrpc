@@ -35,30 +35,30 @@
     extend: qx.test.ui.LayoutTestCase,
     members: {
       setUp: function setUp() {
-        this.__radioButtonGroup__P_310_0 = new qx.ui.form.RadioButtonGroup();
-        this.__radioButtons__P_310_1 = [];
+        this.__radioButtonGroup__P_311_0 = new qx.ui.form.RadioButtonGroup();
+        this.__radioButtons__P_311_1 = [];
         var radioButton;
 
         for (var i = 0, j = 10; i < j; i++) {
           radioButton = new qx.ui.form.RadioButton("option " + i);
           radioButton.setModel("option" + i);
 
-          this.__radioButtons__P_310_1.push(radioButton);
+          this.__radioButtons__P_311_1.push(radioButton);
 
-          this.__radioButtonGroup__P_310_0.add(radioButton);
+          this.__radioButtonGroup__P_311_0.add(radioButton);
         }
       },
       tearDown: function tearDown() {
         qx.test.ui.form.RadioButtonGroup.prototype.tearDown.base.call(this);
 
-        this.__radioButtonGroup__P_310_0.removeAll();
+        this.__radioButtonGroup__P_311_0.removeAll();
 
-        this.__radioButtons__P_310_1 = null;
+        this.__radioButtons__P_311_1 = null;
       },
       testRemoveAll: function testRemoveAll() {
-        this.__radioButtonGroup__P_310_0.removeAll();
+        this.__radioButtonGroup__P_311_0.removeAll();
 
-        var amountOfRadioButtons = this.__radioButtonGroup__P_310_0.getRadioGroup().getItems().length;
+        var amountOfRadioButtons = this.__radioButtonGroup__P_311_0.getRadioGroup().getItems().length;
 
         this.assertEquals(0, amountOfRadioButtons, "There are still some radio buttons left.");
       }
@@ -67,4 +67,4 @@
   qx.test.ui.form.RadioButtonGroup.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RadioButtonGroup.js.map?dt=1599546983655
+//# sourceMappingURL=RadioButtonGroup.js.map?dt=1599578768611

@@ -66,17 +66,17 @@
     extend: qx.dev.unit.TestCase,
     include: [qx.dev.unit.MRequirements, qx.dev.unit.MMock],
     members: {
-      __store__P_242_0: null,
+      __store__P_243_0: null,
       setUp: function setUp() {
         this.require(["php"]);
 
-        this.__store__P_242_0 = new qx.data.store.Jsonp();
+        this.__store__P_243_0 = new qx.data.store.Jsonp();
         this.url = qx.util.ResourceManager.getInstance().toUri("qx/test/jsonp_primitive.php");
       },
       tearDown: function tearDown() {
         this.getSandbox().restore();
 
-        this.__store__P_242_0.dispose();
+        this.__store__P_243_0.dispose();
 
         if (this.request) {
           // From prototype
@@ -121,9 +121,9 @@
         store.dispose();
       },
       testWholePrimitive: function testWholePrimitive() {
-        this.__store__P_242_0.addListener("loaded", function () {
+        this.__store__P_243_0.addListener("loaded", function () {
           this.resume(function () {
-            var model = this.__store__P_242_0.getModel();
+            var model = this.__store__P_243_0.getModel();
 
             this.assertEquals("String", model.getString(), "The model is not created how it should!");
             this.assertEquals(12, model.getNumber(), "The model is not created how it should!");
@@ -134,7 +134,7 @@
 
         var url = this.url;
 
-        this.__store__P_242_0.setUrl(url);
+        this.__store__P_243_0.setUrl(url);
 
         this.wait();
       },
@@ -186,25 +186,25 @@
         this.setUpFakeRequest();
         var url = this.url;
 
-        this.__store__P_242_0.addListener("loaded", function () {
+        this.__store__P_243_0.addListener("loaded", function () {
           this.resume(function () {
-            this.__store__P_242_0.dispose();
+            this.__store__P_243_0.dispose();
 
             this.assertCalled(this.request.dispose);
           }, this);
         }, this);
 
-        this.__store__P_242_0.setUrl(url);
+        this.__store__P_243_0.setUrl(url);
       },
       testErrorEvent: function testErrorEvent() {
         // do not test that for IE and Opera because of the missing
         // error handler for script tags
         if (!(qx.core.Environment.get("browser.name") == "ie") && !(qx.core.Environment.get("browser.name") == "opera")) {
-          this.__store__P_242_0.addListener("error", function () {
+          this.__store__P_243_0.addListener("error", function () {
             this.resume(function () {}, this);
           }, this);
 
-          this.__store__P_242_0.setUrl("affe");
+          this.__store__P_243_0.setUrl("affe");
 
           this.wait();
         }
@@ -214,4 +214,4 @@
   qx.test.data.store.Jsonp.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Jsonp.js.map?dt=1599546977658
+//# sourceMappingURL=Jsonp.js.map?dt=1599578762914

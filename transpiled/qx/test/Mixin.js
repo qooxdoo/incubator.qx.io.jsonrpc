@@ -218,8 +218,8 @@
               var s = "";
 
               if (!dontRecurs) {
-                this.__b__P_203_0 = new qx.Patch2();
-                s += "++" + this.__b__P_203_0.foo(true) + "____P_203_1";
+                this.__b__P_204_0 = new qx.Patch2();
+                s += "++" + this.__b__P_204_0.foo(true) + "____P_204_1";
               }
 
               s += qx.MPatch.$$members.foo.base.call(this);
@@ -248,7 +248,7 @@
         var o = new qx.Patch1();
         this.assertEquals("++bar__foo", o.foo());
 
-        o.__b__P_203_0.dispose();
+        o.__b__P_204_0.dispose();
 
         o.dispose();
       },
@@ -301,4 +301,4 @@
   qx.test.Mixin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Mixin.js.map?dt=1599546972542
+//# sourceMappingURL=Mixin.js.map?dt=1599578758110

@@ -89,38 +89,38 @@
       });
     },
     members: {
-      __a__P_239_0: null,
-      __b1__P_239_1: null,
-      __b2__P_239_2: null,
-      __label__P_239_3: null,
+      __a__P_240_0: null,
+      __b1__P_240_1: null,
+      __b2__P_240_2: null,
+      __label__P_240_3: null,
       setUp: function setUp() {
-        this.__a__P_239_0 = new qx.test.MultiBinding().set({
+        this.__a__P_240_0 = new qx.test.MultiBinding().set({
           name: "a",
           lab: new qx.test.data.singlevalue.TextFieldDummy(""),
           array: new qx.data.Array(["one", "two", "three"])
         });
-        this.__b1__P_239_1 = new qx.test.MultiBinding().set({
+        this.__b1__P_240_1 = new qx.test.MultiBinding().set({
           name: "b1",
           lab: new qx.test.data.singlevalue.TextFieldDummy(""),
           array: new qx.data.Array(["one", "two", "three"])
         });
-        this.__b2__P_239_2 = new qx.test.MultiBinding().set({
+        this.__b2__P_240_2 = new qx.test.MultiBinding().set({
           name: "b2",
           lab: new qx.test.data.singlevalue.TextFieldDummy(""),
           array: new qx.data.Array(["one", "two", "three"])
         });
-        this.__label__P_239_3 = new qx.test.data.singlevalue.TextFieldDummy(); // remove all bindings
+        this.__label__P_240_3 = new qx.test.data.singlevalue.TextFieldDummy(); // remove all bindings
 
         qx.data.SingleValueBinding.removeAllBindings();
       },
       tearDown: function tearDown() {
-        this.__b1__P_239_1.dispose();
+        this.__b1__P_240_1.dispose();
 
-        this.__b2__P_239_2.dispose();
+        this.__b2__P_240_2.dispose();
 
-        this.__a__P_239_0.dispose();
+        this.__a__P_240_0.dispose();
 
-        this.__label__P_239_3.dispose();
+        this.__label__P_240_3.dispose();
       },
       testConverterChainBroken: function testConverterChainBroken() {
         var m = qx.data.marshal.Json.createModel({
@@ -171,25 +171,25 @@
       testDepthOf2: function testDepthOf2() {
         // create a hierarchy
         // a --> b1
-        this.__a__P_239_0.setChild(this.__b1__P_239_1); // create the binding
+        this.__a__P_240_0.setChild(this.__b1__P_240_1); // create the binding
         // a --> b1 --> label
 
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.name", this.__label__P_239_3, "value"); // just set the name of the second component
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.name", this.__label__P_240_3, "value"); // just set the name of the second component
 
-        this.__b1__P_239_1.setName("B1");
+        this.__b1__P_240_1.setName("B1");
 
-        this.assertEquals("B1", this.__label__P_239_3.getValue(), "Deep binding does not work with updating the first parameter."); // change the second component
+        this.assertEquals("B1", this.__label__P_240_3.getValue(), "Deep binding does not work with updating the first parameter."); // change the second component
         // a --> b2 --> label
 
-        this.__a__P_239_0.setChild(this.__b2__P_239_2);
+        this.__a__P_240_0.setChild(this.__b2__P_240_2);
 
-        this.assertEquals("b2", this.__label__P_239_3.getValue(), "Deep binding does not work with updating the first parameter."); // check for the null value
+        this.assertEquals("b2", this.__label__P_240_3.getValue(), "Deep binding does not work with updating the first parameter."); // check for the null value
         // a --> null
 
-        this.__a__P_239_0.setChild(null);
+        this.__a__P_240_0.setChild(null);
 
-        this.assertNull(this.__label__P_239_3.getValue(), "Binding does not work with null.");
+        this.assertNull(this.__label__P_240_3.getValue(), "Binding does not work with null.");
       },
       testDepthOf3: function testDepthOf3(attribute) {
         // create a hierarchy
@@ -201,39 +201,39 @@
         }); // a --> b1 --> c1 --> label
         //       b2 --> c2
 
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChild(c1);
+        this.__b1__P_240_1.setChild(c1);
 
-        this.__b2__P_239_2.setChild(c2); // create the binding
+        this.__b2__P_240_2.setChild(c2); // create the binding
 
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.child.name", this.__label__P_239_3, "value"); // just set the name of the last component
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.child.name", this.__label__P_240_3, "value"); // just set the name of the last component
 
         c1.setName("C1");
-        this.assertEquals("C1", this.__label__P_239_3.getValue(), "Deep binding does not work with updating the third parameter."); // change the middle child
+        this.assertEquals("C1", this.__label__P_240_3.getValue(), "Deep binding does not work with updating the third parameter."); // change the middle child
         // a --> b2 --> c2 --> label
 
-        this.__a__P_239_0.setChild(this.__b2__P_239_2);
+        this.__a__P_240_0.setChild(this.__b2__P_240_2);
 
-        this.assertEquals("c2", this.__label__P_239_3.getValue(), "Deep binding does not work with updating the second parameter."); // set the middle child to null
+        this.assertEquals("c2", this.__label__P_240_3.getValue(), "Deep binding does not work with updating the second parameter."); // set the middle child to null
         // a --> null
 
-        this.__a__P_239_0.setChild(null);
+        this.__a__P_240_0.setChild(null);
 
-        this.assertNull(this.__label__P_239_3.getValue(), "Deep binding does not work with first null child."); // set only two childs
+        this.assertNull(this.__label__P_240_3.getValue(), "Deep binding does not work with first null child."); // set only two childs
         // a --> b1 --> null
 
-        this.__b1__P_239_1.setChild(null);
+        this.__b1__P_240_1.setChild(null);
 
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.assertNull(this.__label__P_239_3.getValue(), "Deep binding does not work with second null child."); // set the childs in a row
+        this.assertNull(this.__label__P_240_3.getValue(), "Deep binding does not work with second null child."); // set the childs in a row
         // a --> b1 --> c1 --> label
 
-        this.__b1__P_239_1.setChild(c1);
+        this.__b1__P_240_1.setChild(c1);
 
-        this.assertEquals("C1", this.__label__P_239_3.getValue(), "Deep binding does not work with updating the third parameter.");
+        this.assertEquals("C1", this.__label__P_240_3.getValue(), "Deep binding does not work with updating the third parameter.");
       },
       testDepthOf5: function testDepthOf5(attribute) {
         // create a hierarchy
@@ -247,23 +247,23 @@
           name: "e"
         }); // a --> b1 --> c --> d --> e --> label
 
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChild(c);
+        this.__b1__P_240_1.setChild(c);
 
         c.setChild(d);
         d.setChild(e); // create the binding
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.child.child.child.name", this.__label__P_239_3, "value"); // test if the binding did work
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.child.child.child.name", this.__label__P_240_3, "value"); // test if the binding did work
 
-        this.assertEquals("e", this.__label__P_239_3.getValue(), "Deep binding does not work with updating the third parameter.");
+        this.assertEquals("e", this.__label__P_240_3.getValue(), "Deep binding does not work with updating the third parameter.");
       },
       testWrongDeep: function testWrongDeep() {
         // create a hierarchy
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        var a = this.__a__P_239_0;
-        var label = this.__label__P_239_3; // only in source version
+        var a = this.__a__P_240_0;
+        var label = this.__label__P_240_3; // only in source version
 
         {
           // set a wrong first parameter in the chain
@@ -278,199 +278,199 @@
       },
       testSingle: function testSingle() {
         // set only one property in the chain
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__label__P_239_3, "value"); // chech the initial value
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__label__P_240_3, "value"); // chech the initial value
 
-        this.assertEquals("a", this.__label__P_239_3.getValue(), "Single property names don't work!"); // check the binding
+        this.assertEquals("a", this.__label__P_240_3.getValue(), "Single property names don't work!"); // check the binding
 
-        this.__a__P_239_0.setName("A");
+        this.__a__P_240_0.setName("A");
 
-        this.assertEquals("A", this.__label__P_239_3.getValue(), "Single property names don't work!");
+        this.assertEquals("A", this.__label__P_240_3.getValue(), "Single property names don't work!");
       },
       testDebug: function testDebug(attribute) {
         // build the structure
-        this.__a__P_239_0.setChild(this.__b1__P_239_1); // bind the stuff together
+        this.__a__P_240_0.setChild(this.__b1__P_240_1); // bind the stuff together
 
 
-        var id = qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.name", this.__label__P_239_3, "value"); // log this binding in the console
+        var id = qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.name", this.__label__P_240_3, "value"); // log this binding in the console
 
-        qx.data.SingleValueBinding.showBindingInLog(this.__a__P_239_0, id);
+        qx.data.SingleValueBinding.showBindingInLog(this.__a__P_240_0, id);
       },
       testRemove: function testRemove() {
         // build the structure
-        this.__a__P_239_0.setChild(this.__b1__P_239_1); // bind the stuff together
+        this.__a__P_240_0.setChild(this.__b1__P_240_1); // bind the stuff together
 
 
-        var id = qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.name", this.__label__P_239_3, "value"); // check the binding
+        var id = qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.name", this.__label__P_240_3, "value"); // check the binding
 
-        this.__b1__P_239_1.setName("A");
+        this.__b1__P_240_1.setName("A");
 
-        this.assertEquals("A", this.__label__P_239_3.getValue(), "Single property names don't work!"); // remove the binding
+        this.assertEquals("A", this.__label__P_240_3.getValue(), "Single property names don't work!"); // remove the binding
 
-        qx.data.SingleValueBinding.removeBindingFromObject(this.__a__P_239_0, id); // check the binding again
+        qx.data.SingleValueBinding.removeBindingFromObject(this.__a__P_240_0, id); // check the binding again
 
-        this.__a__P_239_0.setName("A2");
+        this.__a__P_240_0.setName("A2");
 
-        this.assertEquals("A", this.__label__P_239_3.getValue(), "Removing does not work!"); // smoke Test for the remove
+        this.assertEquals("A", this.__label__P_240_3.getValue(), "Removing does not work!"); // smoke Test for the remove
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.name", this.__label__P_239_3, "value");
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.name", this.__label__P_239_3, "value");
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "child.name", this.__label__P_239_3, "value");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.name", this.__label__P_240_3, "value");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.name", this.__label__P_240_3, "value");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "child.name", this.__label__P_240_3, "value");
         qx.data.SingleValueBinding.removeAllBindings();
       },
       testArrayDeep: function testArrayDeep() {
-        this.__a__P_239_0.getArray().dispose();
+        this.__a__P_240_0.getArray().dispose();
 
-        this.__a__P_239_0.setArray(new qx.data.Array([this.__b1__P_239_1]));
+        this.__a__P_240_0.setArray(new qx.data.Array([this.__b1__P_240_1]));
 
-        this.__b1__P_239_1.setChild(this.__b2__P_239_2);
+        this.__b1__P_240_1.setChild(this.__b2__P_240_2);
 
-        this.__b2__P_239_2.setChild(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChild(this.__b1__P_240_1);
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "array[0].child.name", this.__label__P_239_3, "value");
-        this.assertEquals("b2", this.__label__P_239_3.getValue(), "Deep binding does not work.");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "array[0].child.name", this.__label__P_240_3, "value");
+        this.assertEquals("b2", this.__label__P_240_3.getValue(), "Deep binding does not work.");
 
-        this.__a__P_239_0.getArray().pop();
+        this.__a__P_240_0.getArray().pop();
 
-        this.assertNull(this.__label__P_239_3.getValue(), "Deep binding does not work.");
+        this.assertNull(this.__label__P_240_3.getValue(), "Deep binding does not work.");
 
-        this.__a__P_239_0.getArray().push(this.__b2__P_239_2);
+        this.__a__P_240_0.getArray().push(this.__b2__P_240_2);
 
-        this.assertEquals("b1", this.__label__P_239_3.getValue(), "Deep binding does not work.");
+        this.assertEquals("b1", this.__label__P_240_3.getValue(), "Deep binding does not work.");
 
-        this.__b1__P_239_1.setName("B1");
+        this.__b1__P_240_1.setName("B1");
 
-        this.assertEquals("B1", this.__label__P_239_3.getValue(), "Deep binding does not work.");
+        this.assertEquals("B1", this.__label__P_240_3.getValue(), "Deep binding does not work.");
       },
       testDeepTarget: function testDeepTarget() {
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__b1__P_239_1, "lab.value");
-        this.assertEquals("a", this.__b1__P_239_1.getLab().getValue(), "Deep binding on the target does not work.");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__b1__P_240_1, "lab.value");
+        this.assertEquals("a", this.__b1__P_240_1.getLab().getValue(), "Deep binding on the target does not work.");
       },
       testDeepTarget2: function testDeepTarget2() {
-        this.__b2__P_239_2.setChild(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChild(this.__b1__P_240_1);
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__b2__P_239_2, "child.lab.value");
-        this.assertEquals("a", this.__b1__P_239_1.getLab().getValue(), "Deep binding on the target does not work.");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__b2__P_240_2, "child.lab.value");
+        this.assertEquals("a", this.__b1__P_240_1.getLab().getValue(), "Deep binding on the target does not work.");
       },
       testDeepTargetNull: function testDeepTargetNull() {
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__b2__P_239_2, "child.lab.value");
-        this.assertEquals("", this.__b1__P_239_1.getLab().getValue(), "Deep binding on the target does not work.");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__b2__P_240_2, "child.lab.value");
+        this.assertEquals("", this.__b1__P_240_1.getLab().getValue(), "Deep binding on the target does not work.");
       },
       testDeepTargetArray: function testDeepTargetArray() {
-        this.__a__P_239_0.getArray().dispose();
+        this.__a__P_240_0.getArray().dispose();
 
-        this.__a__P_239_0.setArray(new qx.data.Array([this.__b1__P_239_1]));
+        this.__a__P_240_0.setArray(new qx.data.Array([this.__b1__P_240_1]));
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__a__P_239_0, "array[0].lab.value");
-        this.assertEquals("a", this.__b1__P_239_1.getLab().getValue(), "Deep binding on the target does not work.");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__a__P_240_0, "array[0].lab.value");
+        this.assertEquals("a", this.__b1__P_240_1.getLab().getValue(), "Deep binding on the target does not work.");
       },
       testDeepTargetArrayLast: function testDeepTargetArrayLast() {
-        this.__a__P_239_0.getArray().dispose();
+        this.__a__P_240_0.getArray().dispose();
 
-        this.__a__P_239_0.setArray(new qx.data.Array([this.__b1__P_239_1]));
+        this.__a__P_240_0.setArray(new qx.data.Array([this.__b1__P_240_1]));
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__a__P_239_0, "array[last].lab.value");
-        this.assertEquals("a", this.__b1__P_239_1.getLab().getValue(), "Deep binding on the target does not work.");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__a__P_240_0, "array[last].lab.value");
+        this.assertEquals("a", this.__b1__P_240_1.getLab().getValue(), "Deep binding on the target does not work.");
       },
       testDeepTargetChange: function testDeepTargetChange() {
-        var oldLabel = this.__b1__P_239_1.getLab();
+        var oldLabel = this.__b1__P_240_1.getLab();
 
         var newLabel = new qx.test.data.singlevalue.TextFieldDummy("x");
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__b1__P_239_1, "lab.value");
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__b1__P_240_1, "lab.value");
 
-        this.__b1__P_239_1.setLab(newLabel);
+        this.__b1__P_240_1.setLab(newLabel);
 
-        this.assertEquals("a", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("a", this.__b1__P_240_1.getLab().getValue());
 
-        this.__a__P_239_0.setName("l");
+        this.__a__P_240_0.setName("l");
 
         this.assertEquals("a", oldLabel.getValue());
-        this.assertEquals("l", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("l", this.__b1__P_240_1.getLab().getValue());
         newLabel.dispose();
         oldLabel.dispose();
       },
       testDeepTargetChangeConverter: function testDeepTargetChangeConverter() {
-        var oldLabel = this.__b1__P_239_1.getLab();
+        var oldLabel = this.__b1__P_240_1.getLab();
 
         var newLabel = new qx.test.data.singlevalue.TextFieldDummy("x");
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__b1__P_239_1, "lab.value", {
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__b1__P_240_1, "lab.value", {
           converter: function converter(data) {
             return data + "...";
           }
         });
 
-        this.__b1__P_239_1.setLab(newLabel);
+        this.__b1__P_240_1.setLab(newLabel);
 
-        this.assertEquals("a...", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("a...", this.__b1__P_240_1.getLab().getValue());
 
-        this.__a__P_239_0.setName("l");
+        this.__a__P_240_0.setName("l");
 
         this.assertEquals("a...", oldLabel.getValue());
-        this.assertEquals("l...", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("l...", this.__b1__P_240_1.getLab().getValue());
         newLabel.dispose();
         oldLabel.dispose();
       },
       testDeepTargetChange3: function testDeepTargetChange3() {
         // set up the target chain
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChild(this.__b2__P_239_2);
+        this.__b1__P_240_1.setChild(this.__b2__P_240_2);
 
-        this.__b2__P_239_2.setChild(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChild(this.__b1__P_240_1);
 
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "child.child.lab.value"); // check the default set
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "child.child.lab.value"); // check the default set
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b2__P_239_2.getLab().getValue()); // change the child of __a
+        this.assertEquals("123", this.__b2__P_240_2.getLab().getValue()); // change the child of __a
 
-        this.__a__P_239_0.setChild(this.__b2__P_239_2);
+        this.__a__P_240_0.setChild(this.__b2__P_240_2);
 
-        this.assertEquals("123", this.__b1__P_239_1.getLab().getValue()); // set another label value
+        this.assertEquals("123", this.__b1__P_240_1.getLab().getValue()); // set another label value
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("123", this.__b2__P_239_2.getLab().getValue());
-        this.assertEquals("456", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("123", this.__b2__P_240_2.getLab().getValue());
+        this.assertEquals("456", this.__b1__P_240_1.getLab().getValue());
       },
       testDeepTargetChange3Remove: function testDeepTargetChange3Remove() {
         // set up the target chain
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChild(this.__b2__P_239_2);
+        this.__b1__P_240_1.setChild(this.__b2__P_240_2);
 
-        this.__b2__P_239_2.setChild(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChild(this.__b1__P_240_1);
 
-        var id = qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "child.child.lab.value"); // check the default set
+        var id = qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "child.child.lab.value"); // check the default set
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b2__P_239_2.getLab().getValue(), "0");
-        qx.data.SingleValueBinding.removeBindingFromObject(this.__label__P_239_3, id); // change the child of __a
+        this.assertEquals("123", this.__b2__P_240_2.getLab().getValue(), "0");
+        qx.data.SingleValueBinding.removeBindingFromObject(this.__label__P_240_3, id); // change the child of __a
 
-        this.__a__P_239_0.setChild(this.__b2__P_239_2);
+        this.__a__P_240_0.setChild(this.__b2__P_240_2);
 
-        this.assertEquals("", this.__b1__P_239_1.getLab().getValue(), "listener still there"); // set another label value
+        this.assertEquals("", this.__b1__P_240_1.getLab().getValue(), "listener still there"); // set another label value
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("123", this.__b2__P_239_2.getLab().getValue(), "1");
-        this.assertEquals("", this.__b1__P_239_1.getLab().getValue(), "2");
+        this.assertEquals("123", this.__b2__P_240_2.getLab().getValue(), "1");
+        this.assertEquals("", this.__b1__P_240_1.getLab().getValue(), "2");
       },
       testDeepTargetChangeArray: function testDeepTargetChangeArray() {
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "array[0]");
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "array[0]");
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__a__P_239_0.getArray().getItem(0));
+        this.assertEquals("123", this.__a__P_240_0.getArray().getItem(0));
         var newArray = new qx.data.Array([0, 1, 0]);
 
-        var oldArray = this.__a__P_239_0.getArray();
+        var oldArray = this.__a__P_240_0.getArray();
 
-        this.__a__P_239_0.setArray(newArray);
+        this.__a__P_240_0.setArray(newArray);
 
-        this.assertEquals("123", this.__a__P_239_0.getArray().getItem(0), "initial set");
+        this.assertEquals("123", this.__a__P_240_0.getArray().getItem(0), "initial set");
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
         this.assertEquals("456", newArray.getItem(0));
         this.assertEquals("123", oldArray.getItem(0));
@@ -478,20 +478,20 @@
         newArray.dispose();
       },
       testDeepTargetChangeArrayLast: function testDeepTargetChangeArrayLast() {
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "array[last]");
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "array[last]");
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__a__P_239_0.getArray().getItem(2));
+        this.assertEquals("123", this.__a__P_240_0.getArray().getItem(2));
         var newArray = new qx.data.Array([0, 1, 0]);
 
-        var oldArray = this.__a__P_239_0.getArray();
+        var oldArray = this.__a__P_240_0.getArray();
 
-        this.__a__P_239_0.setArray(newArray);
+        this.__a__P_240_0.setArray(newArray);
 
-        this.assertEquals("123", this.__a__P_239_0.getArray().getItem(2), "initial set");
+        this.assertEquals("123", this.__a__P_240_0.getArray().getItem(2), "initial set");
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
         this.assertEquals("456", newArray.getItem(2));
         this.assertEquals("123", oldArray.getItem(2));
@@ -500,133 +500,133 @@
       },
       testDeepTargetChange3Array: function testDeepTargetChange3Array() {
         // set up the target chain
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChild(this.__b2__P_239_2);
+        this.__b1__P_240_1.setChild(this.__b2__P_240_2);
 
-        this.__b2__P_239_2.setChild(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChild(this.__b1__P_240_1);
 
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "child.child.array[0]"); // check the default set
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "child.child.array[0]"); // check the default set
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b2__P_239_2.getArray().getItem(0)); // change the child of __a
+        this.assertEquals("123", this.__b2__P_240_2.getArray().getItem(0)); // change the child of __a
 
-        this.__a__P_239_0.setChild(this.__b2__P_239_2);
+        this.__a__P_240_0.setChild(this.__b2__P_240_2);
 
-        this.assertEquals("123", this.__b1__P_239_1.getArray().getItem(0)); // set another label value
+        this.assertEquals("123", this.__b1__P_240_1.getArray().getItem(0)); // set another label value
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("456", this.__b1__P_239_1.getArray().getItem(0));
-        this.assertEquals("123", this.__b2__P_239_2.getArray().getItem(0), "binding still exists");
+        this.assertEquals("456", this.__b1__P_240_1.getArray().getItem(0));
+        this.assertEquals("123", this.__b2__P_240_2.getArray().getItem(0), "binding still exists");
       },
       testDeepTargetChangeMiddleArray: function testDeepTargetChangeMiddleArray() {
-        var oldArray = this.__a__P_239_0.getArray();
+        var oldArray = this.__a__P_240_0.getArray();
 
-        var array = new qx.data.Array([this.__b1__P_239_1, this.__b2__P_239_2]);
+        var array = new qx.data.Array([this.__b1__P_240_1, this.__b2__P_240_2]);
 
-        this.__a__P_239_0.setArray(array);
+        this.__a__P_240_0.setArray(array);
 
         oldArray.dispose();
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "array[0].lab.value");
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "array[0].lab.value");
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("123", this.__b1__P_240_1.getLab().getValue());
         array.reverse();
-        this.assertEquals("123", this.__b2__P_239_2.getLab().getValue());
+        this.assertEquals("123", this.__b2__P_240_2.getLab().getValue());
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("456", this.__b2__P_239_2.getLab().getValue());
-        this.assertEquals("123", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("456", this.__b2__P_240_2.getLab().getValue());
+        this.assertEquals("123", this.__b1__P_240_1.getLab().getValue());
       },
       testDeepTargetChangeMiddleArrayLast: function testDeepTargetChangeMiddleArrayLast() {
-        var oldArray = this.__a__P_239_0.getArray();
+        var oldArray = this.__a__P_240_0.getArray();
 
-        var array = new qx.data.Array([this.__b2__P_239_2, this.__b1__P_239_1]);
+        var array = new qx.data.Array([this.__b2__P_240_2, this.__b1__P_240_1]);
 
-        this.__a__P_239_0.setArray(array);
+        this.__a__P_240_0.setArray(array);
 
         oldArray.dispose();
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "array[last].lab.value");
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "array[last].lab.value");
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("123", this.__b1__P_240_1.getLab().getValue());
         array.reverse();
-        this.assertEquals("123", this.__b2__P_239_2.getLab().getValue());
+        this.assertEquals("123", this.__b2__P_240_2.getLab().getValue());
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("456", this.__b2__P_239_2.getLab().getValue());
-        this.assertEquals("123", this.__b1__P_239_1.getLab().getValue());
+        this.assertEquals("456", this.__b2__P_240_2.getLab().getValue());
+        this.assertEquals("123", this.__b1__P_240_1.getLab().getValue());
       },
       testDeepTargetChangeWithoutEvent: function testDeepTargetChangeWithoutEvent() {
-        this.__a__P_239_0.setChildWithout(this.__b1__P_239_1);
+        this.__a__P_240_0.setChildWithout(this.__b1__P_240_1);
 
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "childWithout.name");
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "childWithout.name");
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b1__P_239_1.getName());
+        this.assertEquals("123", this.__b1__P_240_1.getName());
 
-        this.__a__P_239_0.setChildWithout(this.__b2__P_239_2);
+        this.__a__P_240_0.setChildWithout(this.__b2__P_240_2);
 
-        this.assertEquals("b2", this.__b2__P_239_2.getName());
+        this.assertEquals("b2", this.__b2__P_240_2.getName());
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("456", this.__b2__P_239_2.getName());
-        this.assertEquals("123", this.__b1__P_239_1.getName());
+        this.assertEquals("456", this.__b2__P_240_2.getName());
+        this.assertEquals("123", this.__b1__P_240_1.getName());
       },
       testDeepTargetChangeWithoutEvent3: function testDeepTargetChangeWithoutEvent3() {
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChildWithout(this.__b2__P_239_2);
+        this.__b1__P_240_1.setChildWithout(this.__b2__P_240_2);
 
-        this.__b2__P_239_2.setChildWithout(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChildWithout(this.__b1__P_240_1);
 
-        qx.data.SingleValueBinding.bind(this.__label__P_239_3, "value", this.__a__P_239_0, "child.childWithout.name");
+        qx.data.SingleValueBinding.bind(this.__label__P_240_3, "value", this.__a__P_240_0, "child.childWithout.name");
 
-        this.__label__P_239_3.setValue("123");
+        this.__label__P_240_3.setValue("123");
 
-        this.assertEquals("123", this.__b2__P_239_2.getName());
+        this.assertEquals("123", this.__b2__P_240_2.getName());
 
-        this.__a__P_239_0.setChild(this.__b2__P_239_2);
+        this.__a__P_240_0.setChild(this.__b2__P_240_2);
 
-        this.assertEquals("123", this.__b1__P_239_1.getName());
+        this.assertEquals("123", this.__b1__P_240_1.getName());
 
-        this.__b2__P_239_2.setChildWithout(this.__a__P_239_0);
+        this.__b2__P_240_2.setChildWithout(this.__a__P_240_0);
 
-        this.assertEquals("a", this.__a__P_239_0.getName());
+        this.assertEquals("a", this.__a__P_240_0.getName());
 
-        this.__label__P_239_3.setValue("456");
+        this.__label__P_240_3.setValue("456");
 
-        this.assertEquals("456", this.__a__P_239_0.getName());
-        this.assertEquals("123", this.__b1__P_239_1.getName());
+        this.assertEquals("456", this.__a__P_240_0.getName());
+        this.assertEquals("123", this.__b1__P_240_1.getName());
       },
       testDeepTargetChange3ResetNotNull: function testDeepTargetChange3ResetNotNull() {
         // set up the target chain
-        this.__a__P_239_0.setChild(this.__b1__P_239_1);
+        this.__a__P_240_0.setChild(this.__b1__P_240_1);
 
-        this.__b1__P_239_1.setChild(this.__b2__P_239_2);
+        this.__b1__P_240_1.setChild(this.__b2__P_240_2);
 
-        this.__b2__P_239_2.setChild(this.__b1__P_239_1);
+        this.__b2__P_240_2.setChild(this.__b1__P_240_1);
 
-        this.__a__P_239_0.setName(null);
+        this.__a__P_240_0.setName(null);
 
-        qx.data.SingleValueBinding.bind(this.__a__P_239_0, "name", this.__a__P_239_0, "child.child.name");
-        this.assertEquals(this.__a__P_239_0.getName(), this.__b2__P_239_2.getName());
+        qx.data.SingleValueBinding.bind(this.__a__P_240_0, "name", this.__a__P_240_0, "child.child.name");
+        this.assertEquals(this.__a__P_240_0.getName(), this.__b2__P_240_2.getName());
 
-        this.__a__P_239_0.setName("nnnnn");
+        this.__a__P_240_0.setName("nnnnn");
 
-        this.assertEquals(this.__a__P_239_0.getName(), this.__b2__P_239_2.getName());
+        this.assertEquals(this.__a__P_240_0.getName(), this.__b2__P_240_2.getName());
 
-        this.__a__P_239_0.setName(null);
+        this.__a__P_240_0.setName(null);
 
-        this.assertEquals(this.__a__P_239_0.getName(), this.__b2__P_239_2.getName());
+        this.assertEquals(this.__a__P_240_0.getName(), this.__b2__P_240_2.getName());
       },
 
       /**
@@ -669,4 +669,4 @@
   qx.test.data.singlevalue.Deep.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Deep.js.map?dt=1599546977346
+//# sourceMappingURL=Deep.js.map?dt=1599578762614

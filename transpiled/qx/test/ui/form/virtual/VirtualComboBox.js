@@ -34,26 +34,26 @@
   qx.Class.define("qx.test.ui.form.virtual.VirtualComboBox", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __comboBox__P_321_0: null,
-      __model__P_321_1: null,
+      __comboBox__P_322_0: null,
+      __model__P_322_1: null,
       setUp: function setUp() {
         qx.test.ui.form.virtual.VirtualComboBox.prototype.setUp.base.call(this);
-        this.__comboBox__P_321_0 = new qx.ui.form.VirtualComboBox();
-        this.getRoot().add(this.__comboBox__P_321_0);
+        this.__comboBox__P_322_0 = new qx.ui.form.VirtualComboBox();
+        this.getRoot().add(this.__comboBox__P_322_0);
         this.flush();
       },
       tearDown: function tearDown() {
         qx.test.ui.form.virtual.VirtualComboBox.prototype.tearDown.base.call(this);
 
-        this.__comboBox__P_321_0.destroy();
+        this.__comboBox__P_322_0.destroy();
 
-        this.__comboBox__P_321_0 = null;
+        this.__comboBox__P_322_0 = null;
 
-        this.__model__P_321_1.dispose();
+        this.__model__P_322_1.dispose();
 
         this.flush();
       },
-      __createSimpleModel__P_321_2: function __createSimpleModel__P_321_2() {
+      __createSimpleModel__P_322_2: function __createSimpleModel__P_322_2() {
         var model = new qx.data.Array();
 
         for (var i = 0; i < 100; i++) {
@@ -62,7 +62,7 @@
 
         return model;
       },
-      __createRichModel__P_321_3: function __createRichModel__P_321_3() {
+      __createRichModel__P_322_3: function __createRichModel__P_322_3() {
         var model = new qx.data.Array();
 
         for (var i = 0; i < 100; i++) {
@@ -71,7 +71,7 @@
 
         return model;
       },
-      __createNestedModel__P_321_4: function __createNestedModel__P_321_4() {
+      __createNestedModel__P_322_4: function __createNestedModel__P_322_4() {
         var rawData = [{
           firstname: "James",
           lastname: "Kirk"
@@ -86,47 +86,47 @@
         return model;
       },
       testPreselectOnOpen: function testPreselectOnOpen() {
-        this.__model__P_321_1 = this.__createSimpleModel__P_321_2();
+        this.__model__P_322_1 = this.__createSimpleModel__P_322_2();
 
-        this.__comboBox__P_321_0.setModel(this.__model__P_321_1);
+        this.__comboBox__P_322_0.setModel(this.__model__P_322_1);
 
-        this.__comboBox__P_321_0.setValue("i");
-
-        this.flush();
-
-        this.__comboBox__P_321_0.open();
+        this.__comboBox__P_322_0.setValue("i");
 
         this.flush();
 
-        this.__comboBox__P_321_0.close();
+        this.__comboBox__P_322_0.open();
+
+        this.flush();
+
+        this.__comboBox__P_322_0.close();
 
         this.flush(); // Preselection may not change the actual value
 
-        this.assertNotEquals("item 1", this.__comboBox__P_321_0.getValue());
-        this.assertEquals("i", this.__comboBox__P_321_0.getValue());
+        this.assertNotEquals("item 1", this.__comboBox__P_322_0.getValue());
+        this.assertEquals("i", this.__comboBox__P_322_0.getValue());
       },
       testSelectFirstMatch: function testSelectFirstMatch() {
-        this.__model__P_321_1 = this.__createSimpleModel__P_321_2();
+        this.__model__P_322_1 = this.__createSimpleModel__P_322_2();
 
-        this.__comboBox__P_321_0.setModel(this.__model__P_321_1);
+        this.__comboBox__P_322_0.setModel(this.__model__P_322_1);
 
-        this.__comboBox__P_321_0.setValue("item 4");
-
-        this.flush();
-
-        this.__comboBox__P_321_0.open();
+        this.__comboBox__P_322_0.setValue("item 4");
 
         this.flush();
 
-        var preselected = this.__comboBox__P_321_0.getChildControl("dropdown")._preselected;
+        this.__comboBox__P_322_0.open();
+
+        this.flush();
+
+        var preselected = this.__comboBox__P_322_0.getChildControl("dropdown")._preselected;
 
         this.assertEquals("item 4", preselected);
-        this.assertEquals("item 4", this.__comboBox__P_321_0.getValue());
+        this.assertEquals("item 4", this.__comboBox__P_322_0.getValue());
       },
       testSelectFirstMatchWithSortedModel: function testSelectFirstMatchWithSortedModel() {
-        this.__model__P_321_1 = this.__createSimpleModel__P_321_2();
+        this.__model__P_322_1 = this.__createSimpleModel__P_322_2();
 
-        this.__comboBox__P_321_0.setModel(this.__model__P_321_1);
+        this.__comboBox__P_322_0.setModel(this.__model__P_322_1);
 
         var delegate = {
           // invert sort order
@@ -135,20 +135,20 @@
           }
         };
 
-        this.__comboBox__P_321_0.setDelegate(delegate);
+        this.__comboBox__P_322_0.setDelegate(delegate);
 
-        this.__comboBox__P_321_0.setValue("item 4");
-
-        this.flush();
-
-        this.__comboBox__P_321_0.open();
+        this.__comboBox__P_322_0.setValue("item 4");
 
         this.flush();
 
-        var preselected = this.__comboBox__P_321_0.getChildControl("dropdown")._preselected;
+        this.__comboBox__P_322_0.open();
+
+        this.flush();
+
+        var preselected = this.__comboBox__P_322_0.getChildControl("dropdown")._preselected;
 
         this.assertEquals("item 49", preselected);
-        this.assertEquals("item 4", this.__comboBox__P_321_0.getValue()); // The virtual list uses a timeout to asynchronously flush the layout
+        this.assertEquals("item 4", this.__comboBox__P_322_0.getValue()); // The virtual list uses a timeout to asynchronously flush the layout
         // queue and scroll the (pre)selected item into view. tearDown is called
         // before this timer's callback so the list container tries to scroll a
         // disposed widget which causes an exception. To get around this, we use
@@ -161,9 +161,9 @@
         this.wait(200);
       },
       testSelectFirstMatchWithFilteredModel: function testSelectFirstMatchWithFilteredModel() {
-        this.__model__P_321_1 = this.__createSimpleModel__P_321_2();
+        this.__model__P_322_1 = this.__createSimpleModel__P_322_2();
 
-        this.__comboBox__P_321_0.setModel(this.__model__P_321_1);
+        this.__comboBox__P_322_0.setModel(this.__model__P_322_1);
 
         var delegate = {
           // remove even-numbered items
@@ -173,25 +173,25 @@
           }
         };
 
-        this.__comboBox__P_321_0.setDelegate(delegate);
+        this.__comboBox__P_322_0.setDelegate(delegate);
 
-        this.__comboBox__P_321_0.setValue("item 22");
+        this.__comboBox__P_322_0.setValue("item 22");
 
         this.flush();
 
-        this.__comboBox__P_321_0.open();
+        this.__comboBox__P_322_0.open();
 
         this.flush(); // item 22 is not in the list, nothing should be preselected
 
-        var preselected = this.__comboBox__P_321_0.getChildControl("dropdown")._preselected;
+        var preselected = this.__comboBox__P_322_0.getChildControl("dropdown")._preselected;
 
         this.assertNull(preselected);
-        this.assertEquals("item 22", this.__comboBox__P_321_0.getValue());
+        this.assertEquals("item 22", this.__comboBox__P_322_0.getValue());
       },
       testSelectFirstMatchWithFormatter: function testSelectFirstMatchWithFormatter() {
-        this.__model__P_321_1 = this.__createRichModel__P_321_3();
+        this.__model__P_322_1 = this.__createRichModel__P_322_3();
 
-        this.__comboBox__P_321_0.setModel(this.__model__P_321_1);
+        this.__comboBox__P_322_0.setModel(this.__model__P_322_1);
 
         var delegate = {
           configureItem: function configureItem(item) {
@@ -199,9 +199,9 @@
           }
         };
 
-        this.__comboBox__P_321_0.setDelegate(delegate);
+        this.__comboBox__P_322_0.setDelegate(delegate);
 
-        this.__comboBox__P_321_0.setDefaultFormat(function (data) {
+        this.__comboBox__P_322_0.setDefaultFormat(function (data) {
           if (data) {
             data = qx.lang.String.stripTags(data);
             data = qx.bom.String.unescape(data);
@@ -210,52 +210,52 @@
           return data;
         });
 
-        this.__comboBox__P_321_0.setValue("item 4");
+        this.__comboBox__P_322_0.setValue("item 4");
 
         this.flush();
 
-        this.__comboBox__P_321_0.open();
+        this.__comboBox__P_322_0.open();
 
         this.flush();
 
-        var preselected = this.__comboBox__P_321_0.getChildControl("dropdown")._preselected;
+        var preselected = this.__comboBox__P_322_0.getChildControl("dropdown")._preselected;
 
         this.assertEquals("<b>item 4</b>", preselected);
-        this.assertEquals("item 4", this.__comboBox__P_321_0.getValue());
+        this.assertEquals("item 4", this.__comboBox__P_322_0.getValue());
       },
       testSelectFirstMatchByLabelPath: function testSelectFirstMatchByLabelPath() {
-        this.__model__P_321_1 = this.__createNestedModel__P_321_4();
+        this.__model__P_322_1 = this.__createNestedModel__P_322_4();
 
-        this.__comboBox__P_321_0.setLabelPath("lastname");
+        this.__comboBox__P_322_0.setLabelPath("lastname");
 
-        this.__comboBox__P_321_0.setModel(this.__model__P_321_1);
+        this.__comboBox__P_322_0.setModel(this.__model__P_322_1);
 
-        this.__comboBox__P_321_0.setValue("Si");
-
-        this.flush();
-
-        this.__comboBox__P_321_0.open();
+        this.__comboBox__P_322_0.setValue("Si");
 
         this.flush();
 
-        var preselected = this.__comboBox__P_321_0.getChildControl("dropdown")._preselected.getLastname();
+        this.__comboBox__P_322_0.open();
+
+        this.flush();
+
+        var preselected = this.__comboBox__P_322_0.getChildControl("dropdown")._preselected.getLastname();
 
         this.assertEquals("Sisko", preselected);
-        this.assertEquals("Si", this.__comboBox__P_321_0.getValue());
+        this.assertEquals("Si", this.__comboBox__P_322_0.getValue());
       },
       testEmptySelection: function testEmptySelection() {
-        this.__comboBox__P_321_0.setLabelPath("label");
+        this.__comboBox__P_322_0.setLabelPath("label");
 
         var rawData = [{
           label: "foo"
         }];
-        var model = this.__model__P_321_1 = qx.data.marshal.Json.createModel(rawData);
+        var model = this.__model__P_322_1 = qx.data.marshal.Json.createModel(rawData);
 
-        this.__comboBox__P_321_0.setModel(model);
+        this.__comboBox__P_322_0.setModel(model);
 
-        var selection = this.__comboBox__P_321_0.getChildControl("dropdown").getSelection();
+        var selection = this.__comboBox__P_322_0.getChildControl("dropdown").getSelection();
 
-        selection.push(this.__comboBox__P_321_0.getModel().getItem(0));
+        selection.push(this.__comboBox__P_322_0.getModel().getItem(0));
         selection.removeAll();
       },
       testOpenWithUnrenderedWidget: function testOpenWithUnrenderedWidget() {
@@ -268,4 +268,4 @@
   qx.test.ui.form.virtual.VirtualComboBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VirtualComboBox.js.map?dt=1599546984076
+//# sourceMappingURL=VirtualComboBox.js.map?dt=1599578769013

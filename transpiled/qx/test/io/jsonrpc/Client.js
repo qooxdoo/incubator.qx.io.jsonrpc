@@ -50,10 +50,9 @@
   ************************************************************************ */
 
   /**
-   * Tests for qx.io.transport.Xhr
-   * Based on qx.test.io.request.Xhr
+   * Tests for qx.io.jsonrpc.Client with a qx.test.io.request.Xhr transport
    */
-  qx.Class.define("qx.test.io.jsonrpc.HttpTransport", {
+  qx.Class.define("qx.test.io.jsonrpc.Client", {
     extend: qx.dev.unit.TestCase,
     include: [qx.dev.unit.MMock, qx.test.io.MAssert],
     members: {
@@ -324,7 +323,7 @@
       }
     }
   });
-  qx.test.io.jsonrpc.HttpTransport.$$dbClassInfo = $$dbClassInfo;
+  qx.test.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HttpTransport.js.map?dt=1599546978972
+//# sourceMappingURL=Client.js.map?dt=1599578764114

@@ -484,7 +484,7 @@
        * @param value {number} Value to check
        * @return {Boolean} whether the value is <code>-0</code>
        */
-      __isNegativeZero__P_227_0: function __isNegativeZero__P_227_0(value) {
+      __isNegativeZero__P_228_0: function __isNegativeZero__P_228_0(value) {
         return value === 0 && 1 / value < 0; // 1/-0 => -Infinity
       },
 
@@ -494,7 +494,7 @@
        * @param value {number} Value to check
        * @return {Boolean} whether the value is <code>+0</code>
        */
-      __isPositiveZero__P_227_1: function __isPositiveZero__P_227_1(value) {
+      __isPositiveZero__P_228_1: function __isPositiveZero__P_228_1(value) {
         return value === 0 && 1 / value > 0; // 1/+0 => +Infinity
       },
       testWrongIsEqualDefinitions: function testWrongIsEqualDefinitions() {
@@ -558,9 +558,9 @@
         this.assertEventFired(object, "changeProp", function () {
           object.setProp(-0);
         }, function (e) {
-          var isNegativeZero = self.__isNegativeZero__P_227_0(e.getData());
+          var isNegativeZero = self.__isNegativeZero__P_228_0(e.getData());
 
-          var isPositiveZero = self.__isPositiveZero__P_227_1(e.getOldData());
+          var isPositiveZero = self.__isPositiveZero__P_228_1(e.getOldData());
 
           self.assertTrue(isNegativeZero, "Wrong data in the event!");
           self.assertTrue(isPositiveZero, "Wrong old data in the event!");
@@ -598,9 +598,9 @@
         this.assertEventFired(object, "changeProp", function () {
           object.setProp(-0);
         }, function (e) {
-          var isNegativeZero = self.__isNegativeZero__P_227_0(e.getData());
+          var isNegativeZero = self.__isNegativeZero__P_228_0(e.getData());
 
-          var isPositiveZero = self.__isPositiveZero__P_227_1(e.getOldData());
+          var isPositiveZero = self.__isPositiveZero__P_228_1(e.getOldData());
 
           self.assertTrue(isNegativeZero, "Wrong data in the event!");
           self.assertTrue(isPositiveZero, "Wrong old data in the event!");
@@ -616,11 +616,11 @@
               check: "Number",
               nullable: true,
               event: "changeProp",
-              isEqual: "__fooBar__P_227_2"
+              isEqual: "__fooBar__P_228_2"
             }
           },
           members: {
-            __fooBar__P_227_2: function __fooBar__P_227_2(foo, bar) {
+            __fooBar__P_228_2: function __fooBar__P_228_2(foo, bar) {
               return Object.is(foo, bar);
             }
           }
@@ -641,9 +641,9 @@
         this.assertEventFired(object, "changeProp", function () {
           object.setProp(-0);
         }, function (e) {
-          var isNegativeZero = self.__isNegativeZero__P_227_0(e.getData());
+          var isNegativeZero = self.__isNegativeZero__P_228_0(e.getData());
 
-          var isPositiveZero = self.__isPositiveZero__P_227_1(e.getOldData());
+          var isPositiveZero = self.__isPositiveZero__P_228_1(e.getOldData());
 
           self.assertTrue(isNegativeZero, "Wrong data in the event!");
           self.assertTrue(isPositiveZero, "Wrong old data in the event!");
@@ -664,7 +664,7 @@
             }
           },
           members: {
-            __checkCtx__P_227_3: function __checkCtx__P_227_3(foo, bar) {
+            __checkCtx__P_228_3: function __checkCtx__P_228_3(foo, bar) {
               context = this;
             }
           }
@@ -705,11 +705,11 @@
               check: "Number",
               nullable: true,
               event: "changeProp",
-              isEqual: "__checkCtx__P_227_3"
+              isEqual: "__checkCtx__P_228_3"
             }
           },
           members: {
-            __checkCtx__P_227_3: function __checkCtx__P_227_3(foo, bar) {
+            __checkCtx__P_228_3: function __checkCtx__P_228_3(foo, bar) {
               context = this;
             }
           }
@@ -725,7 +725,7 @@
         qx.Class.define("qx.Super", {
           extend: qx.core.Object,
           members: {
-            __checkCtx__P_227_3: function __checkCtx__P_227_3(foo, bar) {
+            __checkCtx__P_228_3: function __checkCtx__P_228_3(foo, bar) {
               context = this;
             }
           }
@@ -737,7 +737,7 @@
               check: "Number",
               nullable: true,
               event: "changeProp",
-              isEqual: "__checkCtx__P_227_3"
+              isEqual: "__checkCtx__P_228_3"
             }
           }
         });
@@ -759,18 +759,18 @@
               check: "qx.data.Array",
               nullable: true,
               event: "changeProp",
-              transform: "__transform__P_227_4"
+              transform: "__transform__P_228_4"
             },
             propTwo: {
               check: "qx.data.Array",
               nullable: true,
               event: "changePropTwo",
-              transform: "__transform__P_227_4",
+              transform: "__transform__P_228_4",
               deferredInit: true
             }
           },
           members: {
-            __transform__P_227_4: function __transform__P_227_4(value, oldValue) {
+            __transform__P_228_4: function __transform__P_228_4(value, oldValue) {
               if (oldValue === undefined) return value;
               if (!value) oldValue.removeAll();else oldValue.replace(value);
               return oldValue;
@@ -798,4 +798,4 @@
   qx.test.core.Property.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Property.js.map?dt=1599546975291
+//# sourceMappingURL=Property.js.map?dt=1599578760678

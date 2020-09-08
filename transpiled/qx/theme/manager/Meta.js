@@ -109,7 +109,7 @@
 
         this._activateEvents();
       },
-      __timer__P_361_0: null,
+      __timer__P_362_0: null,
 
       /**
        * Fires <code>changeTheme</code> event.
@@ -223,4 +223,4 @@
   qx.theme.manager.Meta.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Meta.js.map?dt=1599546988847
+//# sourceMappingURL=Meta.js.map?dt=1599578773405

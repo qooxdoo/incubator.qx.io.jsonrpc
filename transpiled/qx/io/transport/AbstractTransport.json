@@ -344,6 +344,7 @@
   },
   "descendants": [
     "qx.io.transport.Fetch",
+    "qx.io.transport.Websocket",
     "qx.io.transport.Xhr"
   ]
 }

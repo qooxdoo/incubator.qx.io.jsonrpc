@@ -83,8 +83,8 @@
     },
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__rules__P_359_0 = [];
-      this.__legacyIe__P_359_1 = qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9;
+      this.__rules__P_360_0 = [];
+      this.__legacyIe__P_360_1 = qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9;
     },
 
     /*
@@ -108,9 +108,9 @@
     *****************************************************************************
     */
     members: {
-      __dynamic__P_359_2: null,
-      __rules__P_359_0: null,
-      __legacyIe__P_359_1: false,
+      __dynamic__P_360_2: null,
+      __rules__P_360_0: null,
+      __legacyIe__P_360_1: false,
 
       /**
        * Returns the name which will be / is used as css class name.
@@ -169,9 +169,9 @@
               innerCss += innerKey + ":" + innerStyles[innerKey] + ";";
             }
 
-            var innerSelector = this.__legacyIe__P_359_1 ? selector : selector + (inner ? ":" : "");
+            var innerSelector = this.__legacyIe__P_360_1 ? selector : selector + (inner ? ":" : "");
 
-            this.__rules__P_359_0.push(innerSelector + key);
+            this.__rules__P_360_0.push(innerSelector + key);
 
             sheet.addRule(innerSelector + key, innerCss);
             return;
@@ -183,7 +183,7 @@
         if (css) {
           sheet.addRule(selector, css);
 
-          this.__rules__P_359_0.push(selector);
+          this.__rules__P_360_0.push(selector);
         }
 
         return value;
@@ -195,13 +195,13 @@
        */
       removeAllCssClasses: function removeAllCssClasses() {
         // remove old rules
-        for (var i = 0; i < this.__rules__P_359_0.length; i++) {
-          var selector = this.__rules__P_359_0[i];
+        for (var i = 0; i < this.__rules__P_360_0.length; i++) {
+          var selector = this.__rules__P_360_0[i];
           qx.ui.style.Stylesheet.getInstance().removeRule(selector);
         }
 
         ;
-        this.__rules__P_359_0 = [];
+        this.__rules__P_360_0 = [];
       },
 
       /**
@@ -219,10 +219,10 @@
           return value;
         }
 
-        var cache = this.__dynamic__P_359_2;
+        var cache = this.__dynamic__P_360_2;
 
         if (!cache) {
-          cache = this.__dynamic__P_359_2 = {};
+          cache = this.__dynamic__P_360_2 = {};
         }
 
         var resolved = cache[value];
@@ -309,7 +309,7 @@
        * @internal
        */
       isCached: function isCached(decorator) {
-        return !this.__dynamic__P_359_2 ? false : qx.lang.Object.contains(this.__dynamic__P_359_2, decorator);
+        return !this.__dynamic__P_360_2 ? false : qx.lang.Object.contains(this.__dynamic__P_360_2, decorator);
       },
       // property apply
       _applyTheme: function _applyTheme(value, old) {
@@ -329,9 +329,9 @@
           }
         }
 
-        this._disposeMap("__dynamic__P_359_2");
+        this._disposeMap("__dynamic__P_360_2");
 
-        this.__dynamic__P_359_2 = {};
+        this.__dynamic__P_360_2 = {};
       },
 
       /**
@@ -351,9 +351,9 @@
 
         this.removeAllCssClasses();
 
-        this._disposeMap("__dynamic__P_359_2");
+        this._disposeMap("__dynamic__P_360_2");
 
-        this.__dynamic__P_359_2 = {};
+        this.__dynamic__P_360_2 = {};
       },
 
       /**
@@ -385,4 +385,4 @@
   qx.theme.manager.Decoration.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Decoration.js.map?dt=1599546988745
+//# sourceMappingURL=Decoration.js.map?dt=1599578773316

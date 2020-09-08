@@ -101,43 +101,43 @@
       });
     },
     members: {
-      __form__P_301_0: null,
-      __tf1__P_301_1: null,
-      __tf2__P_301_2: null,
+      __form__P_302_0: null,
+      __tf1__P_302_1: null,
+      __tf2__P_302_2: null,
       setUp: function setUp() {
-        this.__form__P_301_0 = new qx.ui.form.Form();
-        this.__tf1__P_301_1 = new qx.ui.form.TextField();
-        this.__tf2__P_301_2 = new qx.ui.form.TextField();
+        this.__form__P_302_0 = new qx.ui.form.Form();
+        this.__tf1__P_302_1 = new qx.ui.form.TextField();
+        this.__tf2__P_302_2 = new qx.ui.form.TextField();
       },
       tearDown: function tearDown() {
-        this.__tf2__P_301_2.dispose();
+        this.__tf2__P_302_2.dispose();
 
-        this.__tf1__P_301_1.dispose();
+        this.__tf1__P_302_1.dispose();
 
-        this.__form__P_301_0.dispose();
+        this.__form__P_302_0.dispose();
       },
       testValidationContext: function testValidationContext() {
         var self = this; // add the widgets
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2", function () {
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2", function () {
           self.assertEquals(1, this.a);
         }, null, {
           a: 1
         });
 
-        this.__form__P_301_0.validate();
+        this.__form__P_302_0.validate();
       },
       testAddTwo: function testAddTwo() {
         // add the widgets
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // get the view
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[0].items[1], this.__tf2__P_301_2); // check the names
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[0].items[1], this.__tf2__P_302_2); // check the names
 
         this.assertEquals(view.groups[0].names[0], "TF1");
         this.assertEquals(view.groups[0].names[1], "TF2");
@@ -145,62 +145,62 @@
       },
       testRemove: function testRemove() {
         // add the widgets
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // get the view
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[0].items[1], this.__tf2__P_301_2);
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[0].items[1], this.__tf2__P_302_2);
         view.dispose(); // remove twice to see if the remove is reported correctly
 
-        this.assertTrue(this.__form__P_301_0.remove(this.__tf1__P_301_1));
-        this.assertFalse(this.__form__P_301_0.remove(this.__tf1__P_301_1)); // get the view
+        this.assertTrue(this.__form__P_302_0.remove(this.__tf1__P_302_1));
+        this.assertFalse(this.__form__P_302_0.remove(this.__tf1__P_302_1)); // get the view
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf2__P_301_2);
+        this.assertEquals(view.groups[0].items[0], this.__tf2__P_302_2);
         view.dispose();
       },
       testAddTwoWithValidator: function testAddTwoWithValidator() {
         // add the widgets
-        this.__tf1__P_301_1.setRequired(true);
+        this.__tf1__P_302_1.setRequired(true);
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2", qx.util.Validate.email()); // validation should fail
-
-
-        this.assertFalse(this.__form__P_301_0.validate());
-        this.assertFalse(this.__tf1__P_301_1.getValid());
-        this.assertFalse(this.__tf2__P_301_2.getValid()); // correct the values
-
-        this.__tf1__P_301_1.setValue("a");
-
-        this.__tf2__P_301_2.setValue("ab@cd.ef"); // validation should be ok
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2", qx.util.Validate.email()); // validation should fail
 
 
-        this.assertTrue(this.__form__P_301_0.validate());
-        this.assertTrue(this.__tf1__P_301_1.getValid());
-        this.assertTrue(this.__tf2__P_301_2.getValid()); // check the validation manager itself
+        this.assertFalse(this.__form__P_302_0.validate());
+        this.assertFalse(this.__tf1__P_302_1.getValid());
+        this.assertFalse(this.__tf2__P_302_2.getValid()); // correct the values
 
-        this.assertTrue(this.__form__P_301_0.getValidationManager().validate());
+        this.__tf1__P_302_1.setValue("a");
+
+        this.__tf2__P_302_2.setValue("ab@cd.ef"); // validation should be ok
+
+
+        this.assertTrue(this.__form__P_302_0.validate());
+        this.assertTrue(this.__tf1__P_302_1.getValid());
+        this.assertTrue(this.__tf2__P_302_2.getValid()); // check the validation manager itself
+
+        this.assertTrue(this.__form__P_302_0.getValidationManager().validate());
       },
       testAddTwoWithHeader: function testAddTwoWithHeader() {
-        this.__form__P_301_0.addGroupHeader("affe"); // add the widgets
+        this.__form__P_302_0.addGroupHeader("affe"); // add the widgets
 
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // get the view
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[0].items[1], this.__tf2__P_301_2); // check the names
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[0].items[1], this.__tf2__P_302_2); // check the names
 
         this.assertEquals(view.groups[0].names[0], "TF1");
         this.assertEquals(view.groups[0].names[1], "TF2"); // check the title
@@ -209,48 +209,48 @@
         view.dispose();
       },
       testRemoveHeader: function testRemoveHeader() {
-        this.__form__P_301_0.addGroupHeader("affe0");
+        this.__form__P_302_0.addGroupHeader("affe0");
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addGroupHeader("affe1");
+        this.__form__P_302_0.addGroupHeader("affe1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // get the view
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[1].items[0], this.__tf2__P_301_2); // check the title
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[1].items[0], this.__tf2__P_302_2); // check the title
 
         this.assertEquals("affe0", view.groups[0].title);
         this.assertEquals("affe1", view.groups[1].title);
         view.dispose(); // remove twice to see if the remove is reported correctly
 
-        this.assertTrue(this.__form__P_301_0.removeGroupHeader("affe1"));
-        this.assertFalse(this.__form__P_301_0.removeGroupHeader("affe1")); // get the view
+        this.assertTrue(this.__form__P_302_0.removeGroupHeader("affe1"));
+        this.assertFalse(this.__form__P_302_0.removeGroupHeader("affe1")); // get the view
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[0].items[1], this.__tf2__P_301_2);
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[0].items[1], this.__tf2__P_302_2);
         this.assertEquals("affe0", view.groups[0].title);
         view.dispose();
       },
       testAddTwoWithTwoGroups: function testAddTwoWithTwoGroups() {
-        this.__form__P_301_0.addGroupHeader("affe");
+        this.__form__P_302_0.addGroupHeader("affe");
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addGroupHeader("affee");
+        this.__form__P_302_0.addGroupHeader("affee");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // get the view
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[1].items[0], this.__tf2__P_301_2); // check the names
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[1].items[0], this.__tf2__P_302_2); // check the names
 
         this.assertEquals(view.groups[0].names[0], "TF1");
         this.assertEquals(view.groups[1].names[0], "TF2"); // check the title
@@ -263,12 +263,12 @@
         var b1 = new qx.ui.form.Button();
         var b2 = new qx.ui.form.RepeatButton();
 
-        this.__form__P_301_0.addButton(b1);
+        this.__form__P_302_0.addButton(b1);
 
-        this.__form__P_301_0.addButton(b2); // get the view
+        this.__form__P_302_0.addButton(b2); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the buttons
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the buttons
 
         this.assertEquals(b1, view.buttons[0].button);
         this.assertEquals(b2, view.buttons[1].button);
@@ -280,21 +280,21 @@
         var b1 = new qx.ui.form.Button();
         var b2 = new qx.ui.form.RepeatButton();
 
-        this.__form__P_301_0.addButton(b1);
+        this.__form__P_302_0.addButton(b1);
 
-        this.__form__P_301_0.addButton(b2); // get the view
+        this.__form__P_302_0.addButton(b2); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the buttons
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the buttons
 
         this.assertEquals(b1, view.buttons[0].button);
         this.assertEquals(b2, view.buttons[1].button);
         view.dispose(); // remove twice to see if the remove is reported correctly
 
-        this.assertTrue(this.__form__P_301_0.removeButton(b1));
-        this.assertFalse(this.__form__P_301_0.removeButton(b1)); // get the view
+        this.assertTrue(this.__form__P_302_0.removeButton(b1));
+        this.assertFalse(this.__form__P_302_0.removeButton(b1)); // get the view
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the button
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the button
 
         this.assertEquals(b2, view.buttons[0].button);
         view.dispose();
@@ -305,19 +305,19 @@
         var b1 = new qx.ui.form.Button();
         var b2 = new qx.ui.form.RepeatButton(); // add the widgets
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addButton(b1);
+        this.__form__P_302_0.addButton(b1);
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2");
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2");
 
-        this.__form__P_301_0.addButton(b2); // get the view
+        this.__form__P_302_0.addButton(b2); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
-        this.assertEquals(view.groups[0].items[0], this.__tf1__P_301_1);
-        this.assertEquals(view.groups[0].items[1], this.__tf2__P_301_2); // check the names
+        this.assertEquals(view.groups[0].items[0], this.__tf1__P_302_1);
+        this.assertEquals(view.groups[0].items[1], this.__tf2__P_302_2); // check the names
 
         this.assertEquals(view.groups[0].names[0], "TF1");
         this.assertEquals(view.groups[0].names[1], "TF2"); // check the buttons
@@ -330,16 +330,16 @@
       },
       testAddTwoWithOptions: function testAddTwoWithOptions() {
         // add the widgets
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1", null, "tf1", null, {
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1", null, "tf1", null, {
           a: 1
         });
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2", null, "tf2", null, {
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2", null, "tf2", null, {
           a: 2
         }); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the items
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the items
 
         this.assertEquals(1, view.groups[0].options[0].a);
         this.assertEquals(2, view.groups[0].options[1].a);
@@ -349,20 +349,20 @@
         var b1 = new qx.ui.form.Button();
         var b2 = new qx.ui.form.RepeatButton(); // add the widgets
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addButton(b1, {
+        this.__form__P_302_0.addButton(b1, {
           a: 1
         });
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2");
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2");
 
-        this.__form__P_301_0.addButton(b2, {
+        this.__form__P_302_0.addButton(b2, {
           a: 2
         }); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the buttons options
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the buttons options
 
         this.assertEquals(1, view.buttons[0].options.a);
         this.assertEquals(2, view.buttons[1].options.a);
@@ -371,20 +371,20 @@
         view.dispose();
       },
       testAddTwoWithHeaderOptions: function testAddTwoWithHeaderOptions() {
-        this.__form__P_301_0.addGroupHeader("affe", {
+        this.__form__P_302_0.addGroupHeader("affe", {
           a: 1
         });
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addGroupHeader("affee", {
+        this.__form__P_302_0.addGroupHeader("affee", {
           a: 2
         });
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // get the view
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // get the view
 
 
-        var view = new qx.test.DummyFormRenderer(this.__form__P_301_0); // check the title
+        var view = new qx.test.DummyFormRenderer(this.__form__P_302_0); // check the title
 
         this.assertEquals(1, view.groups[0].headerOptions.a);
         this.assertEquals(2, view.groups[1].headerOptions.a);
@@ -392,25 +392,25 @@
       },
       testResetter: function testResetter() {
         // set the init values of the textfields
-        this.__tf1__P_301_1.setValue("aaaa");
+        this.__tf1__P_302_1.setValue("aaaa");
 
-        this.__tf2__P_301_2.setValue("bbbb"); // add the widgets
-
-
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
-
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2"); // set some other values
+        this.__tf2__P_302_2.setValue("bbbb"); // add the widgets
 
 
-        this.__tf1__P_301_1.setValue("111");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__tf2__P_301_2.setValue("222");
-
-        this.__form__P_301_0.reset(); // check
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2"); // set some other values
 
 
-        this.assertEquals("aaaa", this.__tf1__P_301_1.getValue());
-        this.assertEquals("bbbb", this.__tf2__P_301_2.getValue());
+        this.__tf1__P_302_1.setValue("111");
+
+        this.__tf2__P_302_2.setValue("222");
+
+        this.__form__P_302_0.reset(); // check
+
+
+        this.assertEquals("aaaa", this.__tf1__P_302_1.getValue());
+        this.assertEquals("bbbb", this.__tf2__P_302_2.getValue());
       },
       testAll: function testAll() {
         var widgets = [];
@@ -431,14 +431,14 @@
         widgets.push(new qx.ui.groupbox.RadioGroupBox()); // add all
 
         for (var i = 0; i < widgets.length; i++) {
-          this.__form__P_301_0.add(widgets[i], "name" + i);
+          this.__form__P_302_0.add(widgets[i], "name" + i);
         } // reset
 
 
-        this.__form__P_301_0.reset(); // validate
+        this.__form__P_302_0.reset(); // validate
 
 
-        this.assertTrue(this.__form__P_301_0.validate()); // get rid of the widgets
+        this.assertTrue(this.__form__P_302_0.validate()); // get rid of the widgets
 
         for (var i = 0; i < widgets.length; i++) {
           widgets[i].dispose();
@@ -446,81 +446,81 @@
       },
       testGetItems: function testGetItems() {
         // add the widgets
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1", null, "a");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1", null, "a");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2", null, "b");
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2", null, "b");
 
-        var items = this.__form__P_301_0.getItems();
+        var items = this.__form__P_302_0.getItems();
 
-        this.assertEquals(items.a, this.__tf1__P_301_1);
-        this.assertEquals(items.b, this.__tf2__P_301_2);
+        this.assertEquals(items.a, this.__tf1__P_302_1);
+        this.assertEquals(items.b, this.__tf2__P_302_2);
       },
       testGetItemsFallback: function testGetItemsFallback() {
         // add the widgets
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "T F 2");
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "T F 2");
 
-        var items = this.__form__P_301_0.getItems();
+        var items = this.__form__P_302_0.getItems();
 
-        this.assertEquals(items.TF1, this.__tf1__P_301_1);
-        this.assertEquals(items.TF2, this.__tf2__P_301_2);
+        this.assertEquals(items.TF1, this.__tf1__P_302_1);
+        this.assertEquals(items.TF2, this.__tf2__P_302_2);
       },
       testGetItemsMixedWithGroups: function testGetItemsMixedWithGroups() {
         // add the widgets
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2", null, "b");
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2", null, "b");
 
-        this.__form__P_301_0.addGroupHeader("x");
+        this.__form__P_302_0.addGroupHeader("x");
 
         var tf3 = new qx.ui.form.TextField();
 
-        this.__form__P_301_0.add(tf3, "TF3");
+        this.__form__P_302_0.add(tf3, "TF3");
 
-        var items = this.__form__P_301_0.getItems();
+        var items = this.__form__P_302_0.getItems();
 
-        this.assertEquals(items.TF1, this.__tf1__P_301_1);
-        this.assertEquals(items.b, this.__tf2__P_301_2);
+        this.assertEquals(items.TF1, this.__tf1__P_302_1);
+        this.assertEquals(items.b, this.__tf2__P_302_2);
         this.assertEquals(items.TF3, tf3);
         tf3.destroy();
       },
       testRedefineResetter: function testRedefineResetter() {
         // just call the method and check if its not throwing an error
         // all other stuff is tested in the resetter unit tests
-        this.__form__P_301_0.redefineResetter();
+        this.__form__P_302_0.redefineResetter();
       },
       testEvent: function testEvent() {
         var handler = this.spy();
 
-        this.__form__P_301_0.addListener("change", handler);
+        this.__form__P_302_0.addListener("change", handler);
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
         this.assertCalledOnce(handler);
 
-        this.__form__P_301_0.addGroupHeader("GROUP");
+        this.__form__P_302_0.addGroupHeader("GROUP");
 
         this.assertCalledTwice(handler);
 
-        this.__form__P_301_0.add(this.__tf2__P_301_2, "TF2");
+        this.__form__P_302_0.add(this.__tf2__P_302_2, "TF2");
 
         this.assertEquals(3, handler.callCount);
 
-        this.__form__P_301_0.remove(this.__tf1__P_301_1);
+        this.__form__P_302_0.remove(this.__tf1__P_302_1);
 
         this.assertEquals(4, handler.callCount);
 
-        this.__form__P_301_0.removeGroupHeader("GROUP");
+        this.__form__P_302_0.removeGroupHeader("GROUP");
 
         this.assertEquals(5, handler.callCount);
         var b = new qx.ui.form.Button();
 
-        this.__form__P_301_0.addButton(b);
+        this.__form__P_302_0.addButton(b);
 
         this.assertEquals(6, handler.callCount);
 
-        this.__form__P_301_0.removeButton(b);
+        this.__form__P_302_0.removeButton(b);
 
         this.assertEquals(7, handler.callCount);
         b.dispose();
@@ -528,40 +528,40 @@
       testSingleRenderer: function testSingleRenderer() {
         var b1 = new qx.ui.form.Button(); // add the widgets
 
-        this.__form__P_301_0.addGroupHeader("header");
+        this.__form__P_302_0.addGroupHeader("header");
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addButton(b1); // just check if the renderer is created without an error
+        this.__form__P_302_0.addButton(b1); // just check if the renderer is created without an error
 
 
-        new qx.ui.form.renderer.Single(this.__form__P_301_0).dispose();
+        new qx.ui.form.renderer.Single(this.__form__P_302_0).dispose();
         b1.dispose();
       },
       testSinglePlaceholderRenderer: function testSinglePlaceholderRenderer() {
         var b1 = new qx.ui.form.Button(); // add the widgets
 
-        this.__form__P_301_0.addGroupHeader("header");
+        this.__form__P_302_0.addGroupHeader("header");
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addButton(b1); // just check if the renderer is created without an error
+        this.__form__P_302_0.addButton(b1); // just check if the renderer is created without an error
 
 
-        new qx.ui.form.renderer.SinglePlaceholder(this.__form__P_301_0).dispose();
+        new qx.ui.form.renderer.SinglePlaceholder(this.__form__P_302_0).dispose();
         b1.dispose();
       },
       testDoubleRenderer: function testDoubleRenderer() {
         var b1 = new qx.ui.form.Button(); // add the widgets
 
-        this.__form__P_301_0.addGroupHeader("header");
+        this.__form__P_302_0.addGroupHeader("header");
 
-        this.__form__P_301_0.add(this.__tf1__P_301_1, "TF1");
+        this.__form__P_302_0.add(this.__tf1__P_302_1, "TF1");
 
-        this.__form__P_301_0.addButton(b1); // just check if the renderer is created without an error
+        this.__form__P_302_0.addButton(b1); // just check if the renderer is created without an error
 
 
-        new qx.ui.form.renderer.Double(this.__form__P_301_0).dispose();
+        new qx.ui.form.renderer.Double(this.__form__P_302_0).dispose();
         b1.dispose();
       },
       testGetItem: function testGetItem() {
@@ -569,17 +569,17 @@
         var f2 = new qx.ui.form.TextField();
         var f3 = new qx.ui.form.TextField();
 
-        this.__form__P_301_0.add(f1, "a");
+        this.__form__P_302_0.add(f1, "a");
 
-        this.__form__P_301_0.add(f2, "c");
+        this.__form__P_302_0.add(f2, "c");
 
-        this.__form__P_301_0.add(f3, "label", null, "x");
+        this.__form__P_302_0.add(f3, "label", null, "x");
 
-        this.assertIdentical(f1, this.__form__P_301_0.getItem("a"));
-        this.assertNull(this.__form__P_301_0.getItem("b"));
-        this.assertIdentical(f2, this.__form__P_301_0.getItem("c"));
-        this.assertNull(this.__form__P_301_0.getItem("label"));
-        this.assertIdentical(f3, this.__form__P_301_0.getItem("x"));
+        this.assertIdentical(f1, this.__form__P_302_0.getItem("a"));
+        this.assertNull(this.__form__P_302_0.getItem("b"));
+        this.assertIdentical(f2, this.__form__P_302_0.getItem("c"));
+        this.assertNull(this.__form__P_302_0.getItem("label"));
+        this.assertIdentical(f3, this.__form__P_302_0.getItem("x"));
         [f1, f2, f3].forEach(function (o) {
           o.dispose();
         });
@@ -589,4 +589,4 @@
   qx.test.ui.form.FormManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FormManager.js.map?dt=1599546983195
+//# sourceMappingURL=FormManager.js.map?dt=1599578768177

@@ -37,38 +37,38 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __delegate__P_351_0: null,
+      __delegate__P_352_0: null,
       setUp: function setUp() {
-        this.__delegate__P_351_0 = {
+        this.__delegate__P_352_0 = {
           STATIC: true,
           myMethod: function myMethod() {}
         };
       },
       tearDown: function tearDown() {
-        this.__delegate__P_351_0 = null;
+        this.__delegate__P_352_0 = null;
       },
       testGetMethod: function testGetMethod() {
-        this.assertNotNull(qx.util.Delegate.getMethod(this.__delegate__P_351_0, "myMethod"));
-        this.assertFunction(qx.util.Delegate.getMethod(this.__delegate__P_351_0, "myMethod"));
-        this.assertNull(qx.util.Delegate.getMethod(this.__delegate__P_351_0, "STATIC"));
-        this.assertNull(qx.util.Delegate.getMethod(this.__delegate__P_351_0, "banana"));
+        this.assertNotNull(qx.util.Delegate.getMethod(this.__delegate__P_352_0, "myMethod"));
+        this.assertFunction(qx.util.Delegate.getMethod(this.__delegate__P_352_0, "myMethod"));
+        this.assertNull(qx.util.Delegate.getMethod(this.__delegate__P_352_0, "STATIC"));
+        this.assertNull(qx.util.Delegate.getMethod(this.__delegate__P_352_0, "banana"));
       },
       testContainsMethod: function testContainsMethod() {
-        this.assertTrue(qx.util.Delegate.containsMethod(this.__delegate__P_351_0, "myMethod"));
-        this.assertFalse(qx.util.Delegate.containsMethod(this.__delegate__P_351_0, "STATIC"));
-        this.assertFalse(qx.util.Delegate.containsMethod(this.__delegate__P_351_0, "banana"));
+        this.assertTrue(qx.util.Delegate.containsMethod(this.__delegate__P_352_0, "myMethod"));
+        this.assertFalse(qx.util.Delegate.containsMethod(this.__delegate__P_352_0, "STATIC"));
+        this.assertFalse(qx.util.Delegate.containsMethod(this.__delegate__P_352_0, "banana"));
       },
       testMethodCall: function testMethodCall() {
-        var spy = this.spy(this.__delegate__P_351_0, "myMethod");
-        var myMethod = qx.util.Delegate.getMethod(this.__delegate__P_351_0, "myMethod");
+        var spy = this.spy(this.__delegate__P_352_0, "myMethod");
+        var myMethod = qx.util.Delegate.getMethod(this.__delegate__P_352_0, "myMethod");
         myMethod(99, 89, 99);
         this.assertCalled(spy);
         this.assertCalledWith(spy, 99, 89, 99);
-        this.assertCalledOn(spy, this.__delegate__P_351_0);
+        this.assertCalledOn(spy, this.__delegate__P_352_0);
       }
     }
   });
   qx.test.util.Delegate.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Delegate.js.map?dt=1599546987484
+//# sourceMappingURL=Delegate.js.map?dt=1599578772132

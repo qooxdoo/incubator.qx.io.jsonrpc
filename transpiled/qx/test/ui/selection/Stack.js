@@ -35,7 +35,7 @@
   qx.Class.define("qx.test.ui.selection.Stack", {
     extend: qx.test.ui.selection.AbstractSingleSelectonTest,
     members: {
-      __radioButtons__P_331_0: null,
+      __radioButtons__P_332_0: null,
       setUp: function setUp() {
         var length = 10;
         this._notInSelection = [];
@@ -75,7 +75,7 @@
         this.getRoot().add(this._widget);
 
         for (var i = 0; i < length; i++) {
-          var item = this.__createItem__P_331_1("Page" + i, colors[i]);
+          var item = this.__createItem__P_332_1("Page" + i, colors[i]);
 
           this._widget.add(item);
 
@@ -110,7 +110,7 @@
       _createTestElement: function _createTestElement(name) {
         return new qx.ui.tabview.Page(name);
       },
-      __createItem__P_331_1: function __createItem__P_331_1(name, colors) {
+      __createItem__P_332_1: function __createItem__P_332_1(name, colors) {
         var item = new qx.ui.basic.Label(name).set({
           width: 300,
           height: 300,
@@ -127,4 +127,4 @@
   qx.test.ui.selection.Stack.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Stack.js.map?dt=1599546984988
+//# sourceMappingURL=Stack.js.map?dt=1599578769869

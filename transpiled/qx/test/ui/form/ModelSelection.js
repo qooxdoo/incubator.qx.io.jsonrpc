@@ -40,7 +40,7 @@
   qx.Class.define("qx.test.ui.form.ModelSelection", {
     extend: qx.test.ui.LayoutTestCase,
     members: {
-      __testGetSingle__P_307_0: function __testGetSingle__P_307_0(widget, children) {
+      __testGetSingle__P_308_0: function __testGetSingle__P_308_0(widget, children) {
         var children = children || widget.getChildren(); // check the model selection
 
         widget.setSelection([children[0]]);
@@ -49,7 +49,7 @@
         widget.setSelection([children[2]]);
         this.assertEquals(3, widget.getModelSelection().getItem(0));
       },
-      __testGetMulti__P_307_1: function __testGetMulti__P_307_1(widget, children) {
+      __testGetMulti__P_308_1: function __testGetMulti__P_308_1(widget, children) {
         var children = children || widget.getChildren(); // check the model selection
 
         widget.setSelection([children[0]]);
@@ -60,7 +60,7 @@
         this.assertTrue(widget.getModelSelection().contains(2));
         this.assertTrue(widget.getModelSelection().contains(3));
       },
-      __testSetSingle__P_307_2: function __testSetSingle__P_307_2(widget, children) {
+      __testSetSingle__P_308_2: function __testSetSingle__P_308_2(widget, children) {
         var children = children || widget.getChildren(); // check the set selection
 
         widget.setModelSelection([2]);
@@ -69,7 +69,7 @@
         widget.setModelSelection([3]);
         this.assertEquals(children[2], widget.getSelection()[0]);
       },
-      __testSetMulti__P_307_3: function __testSetMulti__P_307_3(widget, children) {
+      __testSetMulti__P_308_3: function __testSetMulti__P_308_3(widget, children) {
         var children = children || widget.getChildren(); // check the set selection
 
         widget.setModelSelection([2]);
@@ -80,49 +80,49 @@
         this.assertTrue(widget.getSelection().includes(children[1]));
         this.assertTrue(widget.getSelection().includes(children[2]));
       },
-      __createSelectBox__P_307_4: function __createSelectBox__P_307_4() {
+      __createSelectBox__P_308_4: function __createSelectBox__P_308_4() {
         var box = new qx.ui.form.SelectBox();
 
-        this.__addListItems__P_307_5(box);
+        this.__addListItems__P_308_5(box);
 
         return box;
       },
-      __createList__P_307_6: function __createList__P_307_6() {
+      __createList__P_308_6: function __createList__P_308_6() {
         var list = new qx.ui.form.List();
 
-        this.__addListItems__P_307_5(list);
+        this.__addListItems__P_308_5(list);
 
         return list;
       },
-      __addListItems__P_307_5: function __addListItems__P_307_5(widget) {
+      __addListItems__P_308_5: function __addListItems__P_308_5(widget) {
         for (var i = 0; i < 3; i++) {
           var l = new qx.ui.form.ListItem("I" + (i + 1));
           l.setModel(i + 1);
           widget.add(l);
         }
       },
-      __createRadioGroup__P_307_7: function __createRadioGroup__P_307_7() {
+      __createRadioGroup__P_308_7: function __createRadioGroup__P_308_7() {
         var group = new qx.ui.form.RadioGroup();
 
-        this.__addRadioButton__P_307_8(group);
+        this.__addRadioButton__P_308_8(group);
 
         return group;
       },
-      __createRadioButtonGroup__P_307_9: function __createRadioButtonGroup__P_307_9() {
+      __createRadioButtonGroup__P_308_9: function __createRadioButtonGroup__P_308_9() {
         var group = new qx.ui.form.RadioButtonGroup();
 
-        this.__addRadioButton__P_307_8(group);
+        this.__addRadioButton__P_308_8(group);
 
         return group;
       },
-      __addRadioButton__P_307_8: function __addRadioButton__P_307_8(widget) {
+      __addRadioButton__P_308_8: function __addRadioButton__P_308_8(widget) {
         for (var i = 0; i < 3; i++) {
           var r = new qx.ui.form.RadioButton();
           r.setModel(i + 1);
           widget.add(r);
         }
       },
-      __createTree__P_307_10: function __createTree__P_307_10() {
+      __createTree__P_308_10: function __createTree__P_308_10() {
         var tree = new qx.ui.tree.Tree();
         var t2 = new qx.ui.tree.TreeFolder().set({
           model: 3
@@ -141,7 +141,7 @@
         t1.setOpen(true);
         return tree;
       },
-      __getRidOf__P_307_11: function __getRidOf__P_307_11(box) {
+      __getRidOf__P_308_11: function __getRidOf__P_308_11(box) {
         var children = box.getChildren();
 
         for (var i = 0; i < children.length; i++) {
@@ -151,114 +151,114 @@
         box.dispose();
       },
       testSelectBoxGetSingle: function testSelectBoxGetSingle() {
-        var box = this.__createSelectBox__P_307_4();
+        var box = this.__createSelectBox__P_308_4();
 
-        this.__testGetSingle__P_307_0(box);
+        this.__testGetSingle__P_308_0(box);
 
-        this.__getRidOf__P_307_11(box);
+        this.__getRidOf__P_308_11(box);
       },
       testSelectBoxSetSingle: function testSelectBoxSetSingle() {
-        var box = this.__createSelectBox__P_307_4();
+        var box = this.__createSelectBox__P_308_4();
 
-        this.__testSetSingle__P_307_2(box);
+        this.__testSetSingle__P_308_2(box);
 
-        this.__getRidOf__P_307_11(box);
+        this.__getRidOf__P_308_11(box);
       },
       testListGetSingle: function testListGetSingle() {
-        var list = this.__createList__P_307_6();
+        var list = this.__createList__P_308_6();
 
-        this.__testGetSingle__P_307_0(list);
+        this.__testGetSingle__P_308_0(list);
 
-        this.__getRidOf__P_307_11(list);
+        this.__getRidOf__P_308_11(list);
       },
       testListSetSingle: function testListSetSingle() {
-        var list = this.__createList__P_307_6();
+        var list = this.__createList__P_308_6();
 
-        this.__testSetSingle__P_307_2(list);
+        this.__testSetSingle__P_308_2(list);
 
-        this.__getRidOf__P_307_11(list);
+        this.__getRidOf__P_308_11(list);
       },
       testListGetMulti: function testListGetMulti() {
-        var list = this.__createList__P_307_6();
+        var list = this.__createList__P_308_6();
 
         list.setSelectionMode("multi");
 
-        this.__testGetMulti__P_307_1(list);
+        this.__testGetMulti__P_308_1(list);
 
-        this.__getRidOf__P_307_11(list);
+        this.__getRidOf__P_308_11(list);
       },
       testListSetMulti: function testListSetMulti() {
-        var list = this.__createList__P_307_6();
+        var list = this.__createList__P_308_6();
 
         list.setSelectionMode("multi");
 
-        this.__testSetMulti__P_307_3(list);
+        this.__testSetMulti__P_308_3(list);
 
-        this.__getRidOf__P_307_11(list);
+        this.__getRidOf__P_308_11(list);
       },
       testRadioGroupGetSingle: function testRadioGroupGetSingle() {
-        var group = this.__createRadioGroup__P_307_7();
+        var group = this.__createRadioGroup__P_308_7();
 
-        this.__testGetSingle__P_307_0(group);
+        this.__testGetSingle__P_308_0(group);
 
-        this.__getRidOf__P_307_11(group);
+        this.__getRidOf__P_308_11(group);
       },
       testRadioGroupSetSingle: function testRadioGroupSetSingle() {
-        var group = this.__createRadioGroup__P_307_7();
+        var group = this.__createRadioGroup__P_308_7();
 
-        this.__testSetSingle__P_307_2(group);
+        this.__testSetSingle__P_308_2(group);
 
-        this.__getRidOf__P_307_11(group);
+        this.__getRidOf__P_308_11(group);
       },
       testRadioButtonGroupGetSingle: function testRadioButtonGroupGetSingle() {
-        var group = this.__createRadioButtonGroup__P_307_9();
+        var group = this.__createRadioButtonGroup__P_308_9();
 
-        this.__testGetSingle__P_307_0(group);
+        this.__testGetSingle__P_308_0(group);
 
-        this.__getRidOf__P_307_11(group);
+        this.__getRidOf__P_308_11(group);
       },
       testRadioButtonGroupSetSingle: function testRadioButtonGroupSetSingle() {
-        var group = this.__createRadioButtonGroup__P_307_9();
+        var group = this.__createRadioButtonGroup__P_308_9();
 
-        this.__testSetSingle__P_307_2(group);
+        this.__testSetSingle__P_308_2(group);
 
-        this.__getRidOf__P_307_11(group);
+        this.__getRidOf__P_308_11(group);
       },
       testTreeGetSingle: function testTreeGetSingle() {
-        var widget = this.__createTree__P_307_10();
+        var widget = this.__createTree__P_308_10();
 
         var children = widget.getItems(true);
 
-        this.__testGetSingle__P_307_0(widget, children);
+        this.__testGetSingle__P_308_0(widget, children);
 
         widget.destroy();
       },
       testTreeSetSingle: function testTreeSetSingle() {
-        var widget = this.__createTree__P_307_10();
+        var widget = this.__createTree__P_308_10();
 
         var children = widget.getItems(true);
 
-        this.__testSetSingle__P_307_2(widget, children);
+        this.__testSetSingle__P_308_2(widget, children);
 
         widget.destroy();
       },
       testTreeGetMulti: function testTreeGetMulti() {
-        var widget = this.__createTree__P_307_10();
+        var widget = this.__createTree__P_308_10();
 
         widget.setSelectionMode("multi");
         var children = widget.getItems(true);
 
-        this.__testGetMulti__P_307_1(widget, children);
+        this.__testGetMulti__P_308_1(widget, children);
 
         widget.destroy();
       },
       testTreeSetMulti: function testTreeSetMulti() {
-        var widget = this.__createTree__P_307_10();
+        var widget = this.__createTree__P_308_10();
 
         widget.setSelectionMode("multi");
         var children = widget.getItems(true);
 
-        this.__testSetMulti__P_307_3(widget, children);
+        this.__testSetMulti__P_308_3(widget, children);
 
         widget.destroy();
       }
@@ -267,4 +267,4 @@
   qx.test.ui.form.ModelSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ModelSelection.js.map?dt=1599546983559
+//# sourceMappingURL=ModelSelection.js.map?dt=1599578768513

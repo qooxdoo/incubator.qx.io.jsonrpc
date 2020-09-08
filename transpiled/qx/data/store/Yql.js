@@ -56,4 +56,4 @@
   qx.data.store.Yql.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Yql.js.map?dt=1599546962373
+//# sourceMappingURL=Yql.js.map?dt=1599578748651

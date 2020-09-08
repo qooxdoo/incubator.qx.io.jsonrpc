@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/test/io/transport/Websocket.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "setUp",
+    "url",
+    "transport",
+    "io",
+    "Websocket",
+    "message",
+    "Promise",
+    "resolve",
+    "reject",
+    "addListenerOnce",
+    "evt",
+    "assertEquals",
+    "getData",
+    "send",
+    "then",
+    "catch",
+    "test"
+  ],
+  "mappings": ";;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;;AAmBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAkD;AAChDC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QAD4B;AAGhDC,IAAAA,OAAO,EAAE;AAEPC,MAAAA,KAAK,GAAG;AACN,YAAIC,GAAG,GAAG,0BAAV;AACA,aAAKC,SAAL,GAAiB,IAAIb,EAAE,CAACc,EAAH,CAAMD,SAAN,CAAgBE,SAApB,CAA8BH,GAA9B,CAAjB;AACD,OALM;;AAOP,YAAM,uEAAN,GAAgF;AAC9E,YAAII,OAAO,GAAG,cAAd;AACA,cAAM,IAAIhB,EAAE,CAACiB,OAAP,CAAe,CAACC,OAAD,EAAUC,MAAV,KAAqB;AACxC,eAAKN,SAAL,CAAeO,eAAf,CAA+B,SAA/B,EAA0CC,GAAG,IAAI;AAC/C,iBAAKC,YAAL,CAAkBN,OAAlB,EAA2BK,GAAG,CAACE,OAAJ,EAA3B;AACD,WAFD;AAGA,eAAKV,SAAL,CAAeW,IAAf,CAAoBR,OAApB,EACGS,IADH,CACQP,OADR,EAEGQ,KAFH,CAESP,MAFT;AAGD,SAPK,CAAN;AAQD;;AAjBM;AAHuC,GAAlD;AAtBAnB,EAAAA,EAAE,CAAC2B,IAAH,CAAQb,EAAR,CAAWD,SAAX,CAAqBE,SAArB,CAA+BZ,aAA/B,GAA+CA,aAA/C",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2011 1&1 Internet AG, Germany, http://www.1und1.de & contributors\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Tristan Koch (tristankoch)\n     * Christian Boulanger (cboulanger)\n\n************************************************************************ */\n\n/**\n * Tests for the websocket transport\n */\nqx.Class.define(\"qx.test.io.transport.Websocket\", {\n  extend: qx.dev.unit.TestCase,\n\n  members: {\n\n    setUp() {\n      let url = \"wss://echo.websocket.org\";\n      this.transport = new qx.io.transport.Websocket(url);\n    },\n\n    async \"test: send message to public websocket echo server and check response\"() {\n      let message = \"Hello World!\";\n      await new qx.Promise((resolve, reject) => {\n        this.transport.addListenerOnce(\"message\", evt => {\n          this.assertEquals(message, evt.getData());\n        });\n        this.transport.send(message)\n          .then(resolve)\n          .catch(reject);\n      });\n    }\n  }\n});\n"
+  ]
+}

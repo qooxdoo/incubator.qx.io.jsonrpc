@@ -83,9 +83,9 @@
       this._init();
     },
     members: {
-      __image__P_477_0: null,
-      __title__P_477_1: null,
-      __rightContainer__P_477_2: null,
+      __image__P_478_0: null,
+      __title__P_478_1: null,
+      __rightContainer__P_478_2: null,
 
       /**
        * Returns the image widget which is used for this renderer.
@@ -93,7 +93,7 @@
        * @return {qx.ui.mobile.basic.Image} The image widget
        */
       getImageWidget: function getImageWidget() {
-        return this.__image__P_477_0;
+        return this.__image__P_478_0;
       },
 
       /**
@@ -102,7 +102,7 @@
        * @return {qx.ui.mobile.basic.Label} The title widget
        */
       getTitleWidget: function getTitleWidget() {
-        return this.__title__P_477_1;
+        return this.__title__P_478_1;
       },
 
       /**
@@ -111,7 +111,7 @@
        * @param source {String} The source to set
        */
       setImage: function setImage(source) {
-        this.__image__P_477_0.setSource(source);
+        this.__image__P_478_0.setSource(source);
       },
 
       /**
@@ -121,9 +121,9 @@
        */
       setTitle: function setTitle(title) {
         if (title && title.translate) {
-          this.__title__P_477_1.setValue(title.translate());
+          this.__title__P_478_1.setValue(title.translate());
         } else {
-          this.__title__P_477_1.setValue(title);
+          this.__title__P_478_1.setValue(title);
         }
       },
 
@@ -140,15 +140,15 @@
        *
        */
       _init: function _init() {
-        this.__image__P_477_0 = this._createImage();
-        this.add(this.__image__P_477_0);
-        this.__rightContainer__P_477_2 = this._createRightContainer();
-        this.add(this.__rightContainer__P_477_2, {
+        this.__image__P_478_0 = this._createImage();
+        this.add(this.__image__P_478_0);
+        this.__rightContainer__P_478_2 = this._createRightContainer();
+        this.add(this.__rightContainer__P_478_2, {
           flex: 1
         });
-        this.__title__P_477_1 = this._createTitle();
+        this.__title__P_478_1 = this._createTitle();
 
-        this.__rightContainer__P_477_2.add(this.__title__P_477_1);
+        this.__rightContainer__P_478_2.add(this.__title__P_478_1);
       },
 
       /**
@@ -185,16 +185,16 @@
       },
       // overridden
       reset: function reset() {
-        this.__image__P_477_0.setSource(null);
+        this.__image__P_478_0.setSource(null);
 
-        this.__title__P_477_1.setValue("");
+        this.__title__P_478_1.setValue("");
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__image__P_477_0", "__title__P_477_1", "__rightContainer__P_477_2");
+      this._disposeObjects("__image__P_478_0", "__title__P_478_1", "__rightContainer__P_478_2");
     }
   });
   qx.ui.mobile.list.renderer.group.Default.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Default.js.map?dt=1599547000050
+//# sourceMappingURL=Default.js.map?dt=1599578783920

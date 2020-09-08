@@ -40,64 +40,64 @@
     extend: qx.dev.unit.TestCase,
     include: [qx.dev.unit.MMock, qx.dev.unit.MRequirements],
     members: {
-      __ee__P_246_0: null,
+      __ee__P_247_0: null,
       setUp: function setUp() {
-        this.__ee__P_246_0 = new qx.event.Emitter();
+        this.__ee__P_247_0 = new qx.event.Emitter();
       },
       testOnOff: function testOnOff() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.on("test", spy, this);
+        this.__ee__P_247_0.on("test", spy, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
         this.assertCalledOn(spy, this);
 
-        this.__ee__P_246_0.off("test", spy, this);
+        this.__ee__P_247_0.off("test", spy, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
       },
       testOnOffById: function testOnOffById() {
         var spy = this.spy();
 
-        var id = this.__ee__P_246_0.on("test", spy, this);
+        var id = this.__ee__P_247_0.on("test", spy, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.offById(id);
+        this.__ee__P_247_0.offById(id);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
       },
       testOffReturnId: function testOffReturnId() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.on("test", spy, this);
+        this.__ee__P_247_0.on("test", spy, this);
 
-        var id = this.__ee__P_246_0.on("test2", spy, this);
+        var id = this.__ee__P_247_0.on("test2", spy, this);
 
-        var returnId = this.__ee__P_246_0.off("test2", spy, this);
+        var returnId = this.__ee__P_247_0.off("test2", spy, this);
 
         this.assertEquals(id, returnId);
       },
       testAddRemove: function testAddRemove() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.addListener("test", spy, this);
+        this.__ee__P_247_0.addListener("test", spy, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.removeListener("test", spy, this);
+        this.__ee__P_247_0.removeListener("test", spy, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
       },
@@ -110,26 +110,26 @@
 
         var f = eval("f = async function(){};");
 
-        this.__ee__P_246_0.addListener("test", f, this);
+        this.__ee__P_247_0.addListener("test", f, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
-        this.__ee__P_246_0.removeListener("test", f, this);
+        this.__ee__P_247_0.removeListener("test", f, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
       },
       testAddRemoveById: function testAddRemoveById() {
         var spy = this.spy();
 
-        var id = this.__ee__P_246_0.addListener("test", spy, this);
+        var id = this.__ee__P_247_0.addListener("test", spy, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.removeListenerById(id);
+        this.__ee__P_247_0.removeListenerById(id);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
       },
@@ -137,18 +137,18 @@
         var spy1 = this.spy();
         var spy2 = this.spy();
 
-        this.__ee__P_246_0.on("test", spy1);
+        this.__ee__P_247_0.on("test", spy1);
 
-        this.__ee__P_246_0.on("test", spy2);
+        this.__ee__P_247_0.on("test", spy2);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy1);
         this.assertCalledOnce(spy2);
 
-        this.__ee__P_246_0.off("test", spy1);
+        this.__ee__P_247_0.off("test", spy1);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy1);
         this.assertCalledTwice(spy2);
@@ -157,16 +157,16 @@
         var spy1 = this.spy();
         var spy2 = this.spy();
 
-        this.__ee__P_246_0.on("test1", spy1);
+        this.__ee__P_247_0.on("test1", spy1);
 
-        this.__ee__P_246_0.on("test2", spy2);
+        this.__ee__P_247_0.on("test2", spy2);
 
-        this.__ee__P_246_0.emit("test1");
+        this.__ee__P_247_0.emit("test1");
 
         this.assertCalledOnce(spy1);
         this.assertNotCalled(spy2);
 
-        this.__ee__P_246_0.emit("test2");
+        this.__ee__P_247_0.emit("test2");
 
         this.assertCalledOnce(spy1);
         this.assertCalledOnce(spy2);
@@ -174,78 +174,78 @@
       testOnce: function testOnce() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.once("test", spy);
+        this.__ee__P_247_0.once("test", spy);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
       },
       testAddListenerOnce: function testAddListenerOnce() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.addListenerOnce("test", spy);
+        this.__ee__P_247_0.addListenerOnce("test", spy);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
       },
       testOnAny: function testOnAny() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.on("*", spy);
+        this.__ee__P_247_0.on("*", spy);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.emit("test2");
+        this.__ee__P_247_0.emit("test2");
 
         this.assertCalledTwice(spy);
       },
       testAddListenerAny: function testAddListenerAny() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.addListener("*", spy);
+        this.__ee__P_247_0.addListener("*", spy);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertCalledOnce(spy);
 
-        this.__ee__P_246_0.emit("test2");
+        this.__ee__P_247_0.emit("test2");
 
         this.assertCalledTwice(spy);
       },
       testEmitData: function testEmitData() {
         var spy = this.spy();
 
-        this.__ee__P_246_0.on("test", spy);
+        this.__ee__P_247_0.on("test", spy);
 
-        this.__ee__P_246_0.emit("test", 123);
+        this.__ee__P_247_0.emit("test", 123);
 
         this.assertCalledWith(spy, 123);
       },
       testEmitOrder: function testEmitOrder() {
         var i = 0;
 
-        this.__ee__P_246_0.on("test", function () {
+        this.__ee__P_247_0.on("test", function () {
           i++;
           this.assertEquals(1, i);
         }, this);
 
-        this.__ee__P_246_0.on("test", function () {
+        this.__ee__P_247_0.on("test", function () {
           i++;
           this.assertEquals(2, i);
         }, this);
 
-        this.__ee__P_246_0.emit("test");
+        this.__ee__P_247_0.emit("test");
 
         this.assertEquals(2, i);
       }
@@ -254,4 +254,4 @@
   qx.test.event.Emitter.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Emitter.js.map?dt=1599546978085
+//# sourceMappingURL=Emitter.js.map?dt=1599578763320

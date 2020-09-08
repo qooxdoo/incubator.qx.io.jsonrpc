@@ -38,14 +38,14 @@
     include: [qx.dev.unit.MMock],
     members: {
       setUp: function setUp() {
-        this.__frame__P_206_0 = new qx.bom.AnimationFrame();
+        this.__frame__P_207_0 = new qx.bom.AnimationFrame();
       },
       testStart: function testStart() {
         var clb = this.spy();
 
-        this.__frame__P_206_0.once("frame", clb);
+        this.__frame__P_207_0.once("frame", clb);
 
-        this.__frame__P_206_0.startSequence(300);
+        this.__frame__P_207_0.startSequence(300);
 
         this.wait(500, function () {
           this.assertCalledOnce(clb);
@@ -55,11 +55,11 @@
       testCancel: function testCancel() {
         var clb = this.spy();
 
-        this.__frame__P_206_0.once("frame", clb);
+        this.__frame__P_207_0.once("frame", clb);
 
-        this.__frame__P_206_0.startSequence(300);
+        this.__frame__P_207_0.startSequence(300);
 
-        this.__frame__P_206_0.cancelSequence();
+        this.__frame__P_207_0.cancelSequence();
 
         this.wait(500, function () {
           this.assertNotCalled(clb);
@@ -70,4 +70,4 @@
   qx.test.bom.AnimationFrame.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AnimationFrame.js.map?dt=1599546972858
+//# sourceMappingURL=AnimationFrame.js.map?dt=1599578758416

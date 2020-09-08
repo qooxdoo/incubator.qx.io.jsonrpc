@@ -24,16 +24,16 @@
       CREATE_ITTERATIONS: 5000,
       RENDER_ITTERATIONS: 5000,
       RESIZE_ITTERATIONS: 10000,
-      __el__P_266_0: null,
+      __el__P_267_0: null,
       setUp: function setUp() {
-        this.__el__P_266_0 = qx.dom.Element.create("div", {
+        this.__el__P_267_0 = qx.dom.Element.create("div", {
           "id": "testRoot"
         });
-        document.body.appendChild(this.__el__P_266_0);
+        document.body.appendChild(this.__el__P_267_0);
       },
       tearDown: function tearDown() {
-        document.body.removeChild(this.__el__P_266_0);
-        this.__el__P_266_0 = null;
+        document.body.removeChild(this.__el__P_267_0);
+        this.__el__P_267_0 = null;
       },
       createDivs: function createDivs(count) {
         var divs = [];
@@ -48,7 +48,7 @@
           divs.push(div);
         }
 
-        this.__el__P_266_0.appendChild(container);
+        this.__el__P_267_0.appendChild(container);
 
         return divs;
       },
@@ -88,4 +88,4 @@
   qx.test.performance.decorator.AbstractDecorator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractDecorator.js.map?dt=1599546980846
+//# sourceMappingURL=AbstractDecorator.js.map?dt=1599578765973

@@ -39,25 +39,25 @@
       testTwiceClickForm: function testTwiceClickForm() {
         var item = new qx.ui.form.RadioButton();
 
-        this.__testTwiceClick__P_280_0(item);
+        this.__testTwiceClick__P_281_0(item);
 
         item.destroy();
       },
       testTwiceClickMenu: function testTwiceClickMenu() {
         var item = new qx.ui.menu.RadioButton();
 
-        this.__testTwiceClick__P_280_0(item);
+        this.__testTwiceClick__P_281_0(item);
 
         item.destroy();
       },
       testTwiceClickToolbar: function testTwiceClickToolbar() {
         var item = new qx.ui.toolbar.RadioButton();
 
-        this.__testTwiceClick__P_280_0(item);
+        this.__testTwiceClick__P_281_0(item);
 
         item.destroy();
       },
-      __testTwiceClick__P_280_0: function __testTwiceClick__P_280_0(widget) {
+      __testTwiceClick__P_281_0: function __testTwiceClick__P_281_0(widget) {
         this.assertFalse(widget.getValue()); // execute the widget
 
         widget.execute();
@@ -69,25 +69,25 @@
       testTwiceClickEmptySelectionForm: function testTwiceClickEmptySelectionForm() {
         var item = new qx.ui.form.RadioButton();
 
-        this.__testTwiceClickEmptySelection__P_280_1(item);
+        this.__testTwiceClickEmptySelection__P_281_1(item);
 
         item.destroy();
       },
       testTwiceClickEmptySelectionMenu: function testTwiceClickEmptySelectionMenu() {
         var item = new qx.ui.menu.RadioButton();
 
-        this.__testTwiceClickEmptySelection__P_280_1(item);
+        this.__testTwiceClickEmptySelection__P_281_1(item);
 
         item.destroy();
       },
       testTwiceClickEmptySelectionToolbar: function testTwiceClickEmptySelectionToolbar() {
         var item = new qx.ui.toolbar.RadioButton();
 
-        this.__testTwiceClickEmptySelection__P_280_1(item);
+        this.__testTwiceClickEmptySelection__P_281_1(item);
 
         item.destroy();
       },
-      __testTwiceClickEmptySelection__P_280_1: function __testTwiceClickEmptySelection__P_280_1(widget) {
+      __testTwiceClickEmptySelection__P_281_1: function __testTwiceClickEmptySelection__P_281_1(widget) {
         var grp = new qx.ui.form.RadioGroup();
         grp.setAllowEmptySelection(true);
         widget.setGroup(grp);
@@ -105,4 +105,4 @@
   qx.test.ui.RadioItems.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RadioItems.js.map?dt=1599546981922
+//# sourceMappingURL=RadioItems.js.map?dt=1599578766990

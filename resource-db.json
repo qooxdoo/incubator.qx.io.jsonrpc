@@ -6901,12 +6901,12 @@
         "width": 4,
         "height": 4
       },
-      "qx/decoration/Modern/groupbox/groupbox-br.png": {
+      "qx/decoration/Modern/groupbox/groupbox-bl.png": {
         "resourcePath": "resourcePath",
         "width": 4,
         "height": 4
       },
-      "qx/decoration/Modern/groupbox/groupbox-bl.png": {
+      "qx/decoration/Modern/groupbox/groupbox-br.png": {
         "resourcePath": "resourcePath",
         "width": 4,
         "height": 4
@@ -8381,12 +8381,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/dialog-apply.png": {
+      "qx/icon/Oxygen/128/actions/contact-new.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/contact-new.png": {
+      "qx/icon/Oxygen/128/actions/dialog-apply.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8526,17 +8526,17 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/format-justify-left.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Oxygen/128/actions/format-justify-right.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Oxygen/128/actions/format-text-bold.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Oxygen/128/actions/format-justify-left.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8571,17 +8571,17 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/go-down.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Oxygen/128/actions/go-first.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Oxygen/128/actions/go-home.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Oxygen/128/actions/go-down.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8706,12 +8706,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/media-playback-start.png": {
+      "qx/icon/Oxygen/128/actions/media-playback-pause.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/media-playback-pause.png": {
+      "qx/icon/Oxygen/128/actions/media-playback-start.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8901,17 +8901,17 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/office-address-book.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Oxygen/128/apps/office-calendar.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Oxygen/128/apps/office-chart.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Oxygen/128/apps/office-address-book.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8941,17 +8941,17 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/office-project.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Oxygen/128/apps/office-spreadsheet.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Oxygen/128/apps/office-web.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Oxygen/128/apps/office-project.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9081,17 +9081,17 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/utilities-system-monitor.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Oxygen/128/apps/utilities-terminal.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Oxygen/128/apps/utilities-text-editor.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Oxygen/128/apps/utilities-system-monitor.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9396,17 +9396,17 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/places/network-workgroup.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
       "qx/icon/Oxygen/128/places/user-desktop.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Oxygen/128/places/user-home.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
+      "qx/icon/Oxygen/128/places/network-workgroup.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9501,12 +9501,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/check-spelling.png": {
+      "qx/icon/Oxygen/16/actions/contact-new.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/contact-new.png": {
+      "qx/icon/Oxygen/16/actions/check-spelling.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -9866,12 +9866,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/object-flip-horizontal.png": {
+      "qx/icon/Oxygen/16/actions/media-skip-forward.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/media-skip-forward.png": {
+      "qx/icon/Oxygen/16/actions/object-flip-horizontal.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -9981,12 +9981,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/internet-feed-reader.png": {
+      "qx/icon/Oxygen/16/apps/internet-mail.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/internet-mail.png": {
+      "qx/icon/Oxygen/16/apps/internet-feed-reader.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10006,12 +10006,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/media-audio-player.png": {
+      "qx/icon/Oxygen/16/apps/internet-web-browser.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/internet-web-browser.png": {
+      "qx/icon/Oxygen/16/apps/media-audio-player.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10021,12 +10021,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/media-video-player.png": {
+      "qx/icon/Oxygen/16/apps/office-address-book.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/office-address-book.png": {
+      "qx/icon/Oxygen/16/apps/media-video-player.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10111,12 +10111,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/preferences-network.png": {
+      "qx/icon/Oxygen/16/apps/preferences-locale.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/preferences-locale.png": {
+      "qx/icon/Oxygen/16/apps/preferences-network.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10146,12 +10146,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/utilities-archiver.png": {
+      "qx/icon/Oxygen/16/apps/utilities-calculator.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/apps/utilities-calculator.png": {
+      "qx/icon/Oxygen/16/apps/utilities-archiver.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10411,12 +10411,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/emotes/face-raspberry.png": {
+      "qx/icon/Oxygen/16/emotes/face-sad.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/emotes/face-sad.png": {
+      "qx/icon/Oxygen/16/emotes/face-raspberry.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10556,17 +10556,17 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/status/dialog-password.png": {
-        "resourcePath": "resourcePath",
-        "width": 16,
-        "height": 16
-      },
       "qx/icon/Oxygen/16/status/dialog-warning.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
       "qx/icon/Oxygen/16/status/image-loading.png": {
+        "resourcePath": "resourcePath",
+        "width": 16,
+        "height": 16
+      },
+      "qx/icon/Oxygen/16/status/dialog-password.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10731,17 +10731,17 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/actions/edit-paste.png": {
-        "resourcePath": "resourcePath",
-        "width": 22,
-        "height": 22
-      },
       "qx/icon/Oxygen/22/actions/edit-redo.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
       "qx/icon/Oxygen/22/actions/edit-select-all.png": {
+        "resourcePath": "resourcePath",
+        "width": 22,
+        "height": 22
+      },
+      "qx/icon/Oxygen/22/actions/edit-paste.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11291,12 +11291,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/apps/utilities-graphics-viewer.png": {
+      "qx/icon/Oxygen/22/apps/utilities-dictionary.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/apps/utilities-dictionary.png": {
+      "qx/icon/Oxygen/22/apps/utilities-graphics-viewer.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11346,17 +11346,17 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/categories/accessories.png": {
-        "resourcePath": "resourcePath",
-        "width": 22,
-        "height": 22
-      },
       "qx/icon/Oxygen/22/categories/development.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
       "qx/icon/Oxygen/22/categories/engineering.png": {
+        "resourcePath": "resourcePath",
+        "width": 22,
+        "height": 22
+      },
+      "qx/icon/Oxygen/22/categories/accessories.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11571,17 +11571,17 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/mimetypes/media-audio.png": {
-        "resourcePath": "resourcePath",
-        "width": 22,
-        "height": 22
-      },
       "qx/icon/Oxygen/22/mimetypes/media-image.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
       "qx/icon/Oxygen/22/mimetypes/media-video.png": {
+        "resourcePath": "resourcePath",
+        "width": 22,
+        "height": 22
+      },
+      "qx/icon/Oxygen/22/mimetypes/media-audio.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11796,17 +11796,17 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/actions/document-print-preview.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
       "qx/icon/Oxygen/32/actions/document-print.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
       "qx/icon/Oxygen/32/actions/document-properties.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
+      "qx/icon/Oxygen/32/actions/document-print-preview.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -11956,17 +11956,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/actions/go-last.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
       "qx/icon/Oxygen/32/actions/go-home.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/actions/go-next.png": {
+      "qx/icon/Oxygen/32/actions/go-last.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -11977,6 +11972,11 @@
         "height": 32
       },
       "qx/icon/Oxygen/32/actions/go-top.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
+      "qx/icon/Oxygen/32/actions/go-next.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12626,12 +12626,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/emblems/emblem-important.png": {
+      "qx/icon/Oxygen/32/emblems/emblem-favorite.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/emblems/emblem-favorite.png": {
+      "qx/icon/Oxygen/32/emblems/emblem-important.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12651,12 +12651,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/emotes/face-plain.png": {
+      "qx/icon/Oxygen/32/emotes/face-laugh.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/emotes/face-laugh.png": {
+      "qx/icon/Oxygen/32/emotes/face-plain.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12682,11 +12682,6 @@
         "height": 32
       },
       "qx/icon/Oxygen/32/emotes/face-surprise.png": {
-        "resourcePath": "resourcePath",
-        "width": 32,
-        "height": 32
-      },
-      "qx/icon/Oxygen/32/mimetypes/archive.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12722,6 +12717,11 @@
         "height": 32
       },
       "qx/icon/Oxygen/32/mimetypes/office-document.png": {
+        "resourcePath": "resourcePath",
+        "width": 32,
+        "height": 32
+      },
+      "qx/icon/Oxygen/32/mimetypes/archive.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12966,22 +12966,22 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/edit-cut.png": {
-        "resourcePath": "resourcePath",
-        "width": 48,
-        "height": 48
-      },
       "qx/icon/Oxygen/48/actions/edit-delete.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/edit-paste.png": {
+      "qx/icon/Oxygen/48/actions/edit-find.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/edit-find.png": {
+      "qx/icon/Oxygen/48/actions/edit-cut.png": {
+        "resourcePath": "resourcePath",
+        "width": 48,
+        "height": 48
+      },
+      "qx/icon/Oxygen/48/actions/edit-paste.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -13051,12 +13051,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/format-text-italic.png": {
+      "qx/icon/Oxygen/48/actions/format-text-strikethrough.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/format-text-strikethrough.png": {
+      "qx/icon/Oxygen/48/actions/format-text-italic.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -13131,12 +13131,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/insert-text.png": {
+      "qx/icon/Oxygen/48/actions/insert-link.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/insert-link.png": {
+      "qx/icon/Oxygen/48/actions/insert-text.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -13321,12 +13321,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/zoom-fit-best.png": {
+      "qx/icon/Oxygen/48/actions/window-new.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/actions/window-new.png": {
+      "qx/icon/Oxygen/48/actions/zoom-fit-best.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -13361,17 +13361,17 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/apps/internet-mail.png": {
-        "resourcePath": "resourcePath",
-        "width": 48,
-        "height": 48
-      },
       "qx/icon/Oxygen/48/apps/internet-messenger.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
       "qx/icon/Oxygen/48/apps/internet-telephony.png": {
+        "resourcePath": "resourcePath",
+        "width": 48,
+        "height": 48
+      },
+      "qx/icon/Oxygen/48/apps/internet-mail.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -13606,12 +13606,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/categories/games.png": {
+      "qx/icon/Oxygen/48/categories/engineering.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/categories/engineering.png": {
+      "qx/icon/Oxygen/48/categories/games.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -13956,12 +13956,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/status/mail-unread.png": {
+      "qx/icon/Oxygen/48/status/mail-replied.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/status/mail-replied.png": {
+      "qx/icon/Oxygen/48/status/mail-unread.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -14026,12 +14026,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Oxygen/64/actions/document-new.png": {
+      "qx/icon/Oxygen/64/actions/dialog-ok.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Oxygen/64/actions/dialog-ok.png": {
+      "qx/icon/Oxygen/64/actions/document-new.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -14091,17 +14091,17 @@
         "width": 64,
         "height": 64
       },
+      "qx/icon/Oxygen/64/actions/edit-cut.png": {
+        "resourcePath": "resourcePath",
+        "width": 64,
+        "height": 64
+      },
       "qx/icon/Oxygen/64/actions/edit-delete.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
       "qx/icon/Oxygen/64/actions/edit-find.png": {
-        "resourcePath": "resourcePath",
-        "width": 64,
-        "height": 64
-      },
-      "qx/icon/Oxygen/64/actions/edit-cut.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -15011,17 +15011,17 @@
         "width": 64,
         "height": 64
       },
+      "qx/icon/Oxygen/64/places/folder.png": {
+        "resourcePath": "resourcePath",
+        "width": 64,
+        "height": 64
+      },
       "qx/icon/Oxygen/64/places/network-server.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
       "qx/icon/Oxygen/64/places/network-workgroup.png": {
-        "resourcePath": "resourcePath",
-        "width": 64,
-        "height": 64
-      },
-      "qx/icon/Oxygen/64/places/folder.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -15166,12 +15166,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/actions/document-print-preview.png": {
+      "qx/icon/Tango/128/actions/document-open.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/actions/document-open.png": {
+      "qx/icon/Tango/128/actions/document-print-preview.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -15356,17 +15356,17 @@
         "width": 128,
         "height": 128
       },
+      "qx/icon/Tango/128/actions/go-up.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
       "qx/icon/Tango/128/actions/help-about.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Tango/128/actions/help-contents.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/actions/go-up.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -15566,12 +15566,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/actions/window-new.png": {
+      "qx/icon/Tango/128/actions/window-close.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/actions/window-close.png": {
+      "qx/icon/Tango/128/actions/window-new.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -15761,12 +15761,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/preferences-wallpaper.png": {
+      "qx/icon/Tango/128/apps/preferences-users.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/preferences-users.png": {
+      "qx/icon/Tango/128/apps/preferences-wallpaper.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -16081,17 +16081,17 @@
         "width": 128,
         "height": 128
       },
+      "qx/icon/Tango/128/mimetypes/media-video.png": {
+        "resourcePath": "resourcePath",
+        "width": 128,
+        "height": 128
+      },
       "qx/icon/Tango/128/mimetypes/office-calendar.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
       "qx/icon/Tango/128/mimetypes/office-contact.png": {
-        "resourcePath": "resourcePath",
-        "width": 128,
-        "height": 128
-      },
-      "qx/icon/Tango/128/mimetypes/media-video.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -16301,12 +16301,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/document-properties.png": {
+      "qx/icon/Tango/16/actions/document-print.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/document-print.png": {
+      "qx/icon/Tango/16/actions/document-properties.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -16361,12 +16361,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/edit-select-all.png": {
+      "qx/icon/Tango/16/actions/edit-redo.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/edit-redo.png": {
+      "qx/icon/Tango/16/actions/edit-select-all.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -16571,12 +16571,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/media-eject.png": {
+      "qx/icon/Tango/16/actions/mail-send.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Tango/16/actions/mail-send.png": {
+      "qx/icon/Tango/16/actions/media-eject.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -17561,12 +17561,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/actions/go-down.png": {
+      "qx/icon/Tango/22/actions/go-bottom.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/actions/go-bottom.png": {
+      "qx/icon/Tango/22/actions/go-down.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -17706,12 +17706,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/actions/media-playback-stop.png": {
+      "qx/icon/Tango/22/actions/media-playback-start.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Tango/22/actions/media-playback-start.png": {
+      "qx/icon/Tango/22/actions/media-playback-stop.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -21521,16 +21521,6 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Tango/64/emblems/emblem-favorite.png": {
-        "resourcePath": "resourcePath",
-        "width": 64,
-        "height": 64
-      },
-      "qx/icon/Tango/64/emblems/emblem-important.png": {
-        "resourcePath": "resourcePath",
-        "width": 64,
-        "height": 64
-      },
       "qx/icon/Tango/64/devices/audio-card.png": {
         "resourcePath": "resourcePath",
         "width": 64,
@@ -21627,6 +21617,16 @@
         "height": 64
       },
       "qx/icon/Tango/64/devices/scanner.png": {
+        "resourcePath": "resourcePath",
+        "width": 64,
+        "height": 64
+      },
+      "qx/icon/Tango/64/emblems/emblem-favorite.png": {
+        "resourcePath": "resourcePath",
+        "width": 64,
+        "height": 64
+      },
+      "qx/icon/Tango/64/emblems/emblem-important.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64

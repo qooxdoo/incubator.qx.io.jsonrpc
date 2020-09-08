@@ -58,208 +58,208 @@
     extend: qx.dev.unit.TestCase,
     include: qx.dev.unit.MMock,
     members: {
-      __cmd__P_282_0: null,
-      __button__P_282_1: null,
-      __toolbarButton__P_282_2: null,
-      __menuButton__P_282_3: null,
+      __cmd__P_283_0: null,
+      __button__P_283_1: null,
+      __toolbarButton__P_283_2: null,
+      __menuButton__P_283_3: null,
       setUp: function setUp() {
-        this.__cmd__P_282_0 = new qx.ui.command.Command();
-        this.__button__P_282_1 = new qx.ui.form.Button("a");
+        this.__cmd__P_283_0 = new qx.ui.command.Command();
+        this.__button__P_283_1 = new qx.ui.form.Button("a");
 
-        this.__button__P_282_1.setCommand(this.__cmd__P_282_0);
+        this.__button__P_283_1.setCommand(this.__cmd__P_283_0);
 
-        this.__toolbarButton__P_282_2 = new qx.ui.toolbar.Button("b");
+        this.__toolbarButton__P_283_2 = new qx.ui.toolbar.Button("b");
 
-        this.__toolbarButton__P_282_2.setCommand(this.__cmd__P_282_0);
+        this.__toolbarButton__P_283_2.setCommand(this.__cmd__P_283_0);
 
-        this.__menuButton__P_282_3 = new qx.ui.menu.Button("c");
+        this.__menuButton__P_283_3 = new qx.ui.menu.Button("c");
 
-        this.__menuButton__P_282_3.setCommand(this.__cmd__P_282_0);
+        this.__menuButton__P_283_3.setCommand(this.__cmd__P_283_0);
 
         qx.locale.Manager.getInstance().setLocale("en");
       },
       tearDown: function tearDown() {
-        this.__cmd__P_282_0.dispose();
+        this.__cmd__P_283_0.dispose();
 
-        this.__button__P_282_1.destroy();
+        this.__button__P_283_1.destroy();
 
-        this.__toolbarButton__P_282_2.destroy();
+        this.__toolbarButton__P_283_2.destroy();
 
-        this.__menuButton__P_282_3.destroy();
+        this.__menuButton__P_283_3.destroy();
 
         qx.locale.Manager.getInstance().resetLocale();
       },
       testLabel: function testLabel() {
         // set a label
-        this.__cmd__P_282_0.setLabel("a");
+        this.__cmd__P_283_0.setLabel("a");
 
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__button__P_282_1.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__menuButton__P_282_3.getLabel()); // set null
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__button__P_283_1.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__menuButton__P_283_3.getLabel()); // set null
 
-        this.__cmd__P_282_0.setLabel(null);
+        this.__cmd__P_283_0.setLabel(null);
 
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__button__P_282_1.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__menuButton__P_282_3.getLabel()); // set a second string
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__button__P_283_1.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__menuButton__P_283_3.getLabel()); // set a second string
 
-        this.__cmd__P_282_0.setLabel("b");
+        this.__cmd__P_283_0.setLabel("b");
 
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__button__P_282_1.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__menuButton__P_282_3.getLabel()); // reset
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__button__P_283_1.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__menuButton__P_283_3.getLabel()); // reset
 
-        this.__cmd__P_282_0.resetLabel();
+        this.__cmd__P_283_0.resetLabel();
 
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__button__P_282_1.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals(this.__cmd__P_282_0.getLabel(), this.__menuButton__P_282_3.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__button__P_283_1.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals(this.__cmd__P_283_0.getLabel(), this.__menuButton__P_283_3.getLabel());
       },
       testEnabled: function testEnabled() {
         if (qx.core.Environment.get("qx.command.bindEnabled")) {
           // set disabled
-          this.__cmd__P_282_0.setEnabled(false);
+          this.__cmd__P_283_0.setEnabled(false);
 
-          this.assertEquals(this.__cmd__P_282_0.getEnabled(), this.__button__P_282_1.getEnabled());
-          this.assertEquals(this.__cmd__P_282_0.getEnabled(), this.__toolbarButton__P_282_2.getEnabled());
-          this.assertEquals(this.__cmd__P_282_0.getEnabled(), this.__menuButton__P_282_3.getEnabled()); // set enabled
+          this.assertEquals(this.__cmd__P_283_0.getEnabled(), this.__button__P_283_1.getEnabled());
+          this.assertEquals(this.__cmd__P_283_0.getEnabled(), this.__toolbarButton__P_283_2.getEnabled());
+          this.assertEquals(this.__cmd__P_283_0.getEnabled(), this.__menuButton__P_283_3.getEnabled()); // set enabled
 
-          this.__cmd__P_282_0.setEnabled(true);
+          this.__cmd__P_283_0.setEnabled(true);
 
-          this.assertEquals(this.__cmd__P_282_0.getEnabled(), this.__button__P_282_1.getEnabled());
-          this.assertEquals(this.__cmd__P_282_0.getEnabled(), this.__toolbarButton__P_282_2.getEnabled());
-          this.assertEquals(this.__cmd__P_282_0.getEnabled(), this.__menuButton__P_282_3.getEnabled());
+          this.assertEquals(this.__cmd__P_283_0.getEnabled(), this.__button__P_283_1.getEnabled());
+          this.assertEquals(this.__cmd__P_283_0.getEnabled(), this.__toolbarButton__P_283_2.getEnabled());
+          this.assertEquals(this.__cmd__P_283_0.getEnabled(), this.__menuButton__P_283_3.getEnabled());
         } else {
           this.skip("Skipped because binding the Enabled property has been deprecated");
         }
       },
       testIcon: function testIcon() {
         // set a string
-        this.__cmd__P_282_0.setIcon("a");
+        this.__cmd__P_283_0.setIcon("a");
 
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__button__P_282_1.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__toolbarButton__P_282_2.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__menuButton__P_282_3.getIcon()); // set null
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__button__P_283_1.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__toolbarButton__P_283_2.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__menuButton__P_283_3.getIcon()); // set null
 
-        this.__cmd__P_282_0.setIcon(null);
+        this.__cmd__P_283_0.setIcon(null);
 
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__button__P_282_1.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__toolbarButton__P_282_2.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__menuButton__P_282_3.getIcon()); // set a second string
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__button__P_283_1.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__toolbarButton__P_283_2.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__menuButton__P_283_3.getIcon()); // set a second string
 
-        this.__cmd__P_282_0.setIcon("b");
+        this.__cmd__P_283_0.setIcon("b");
 
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__button__P_282_1.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__toolbarButton__P_282_2.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__menuButton__P_282_3.getIcon()); // reset
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__button__P_283_1.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__toolbarButton__P_283_2.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__menuButton__P_283_3.getIcon()); // reset
 
-        this.__cmd__P_282_0.resetIcon();
+        this.__cmd__P_283_0.resetIcon();
 
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__button__P_282_1.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__toolbarButton__P_282_2.getIcon());
-        this.assertEquals(this.__cmd__P_282_0.getIcon(), this.__menuButton__P_282_3.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__button__P_283_1.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__toolbarButton__P_283_2.getIcon());
+        this.assertEquals(this.__cmd__P_283_0.getIcon(), this.__menuButton__P_283_3.getIcon());
       },
       testToolTipText: function testToolTipText() {
         // set a string
-        this.__cmd__P_282_0.setToolTipText("a");
+        this.__cmd__P_283_0.setToolTipText("a");
 
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__button__P_282_1.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__toolbarButton__P_282_2.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__menuButton__P_282_3.getToolTipText()); // set null
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__button__P_283_1.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__toolbarButton__P_283_2.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__menuButton__P_283_3.getToolTipText()); // set null
 
-        this.__cmd__P_282_0.setIcon(null);
+        this.__cmd__P_283_0.setIcon(null);
 
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__button__P_282_1.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__toolbarButton__P_282_2.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__menuButton__P_282_3.getToolTipText()); // set a second string
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__button__P_283_1.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__toolbarButton__P_283_2.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__menuButton__P_283_3.getToolTipText()); // set a second string
 
-        this.__cmd__P_282_0.setIcon("b");
+        this.__cmd__P_283_0.setIcon("b");
 
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__button__P_282_1.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__toolbarButton__P_282_2.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__menuButton__P_282_3.getToolTipText()); // reset
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__button__P_283_1.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__toolbarButton__P_283_2.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__menuButton__P_283_3.getToolTipText()); // reset
 
-        this.__cmd__P_282_0.resetIcon();
+        this.__cmd__P_283_0.resetIcon();
 
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__button__P_282_1.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__toolbarButton__P_282_2.getToolTipText());
-        this.assertEquals(this.__cmd__P_282_0.getToolTipText(), this.__menuButton__P_282_3.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__button__P_283_1.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__toolbarButton__P_283_2.getToolTipText());
+        this.assertEquals(this.__cmd__P_283_0.getToolTipText(), this.__menuButton__P_283_3.getToolTipText());
       },
       testRemoveCommand: function testRemoveCommand() {
         // remove the command (has been set in the setUp method)
-        this.__button__P_282_1.setCommand(null);
+        this.__button__P_283_1.setCommand(null);
 
-        this.__toolbarButton__P_282_2.setCommand(null);
+        this.__toolbarButton__P_283_2.setCommand(null);
 
-        this.__menuButton__P_282_3.setCommand(null); // set a label
-
-
-        this.__cmd__P_282_0.setLabel("x"); // check if the label has been set
+        this.__menuButton__P_283_3.setCommand(null); // set a label
 
 
-        this.assertEquals("a", this.__button__P_282_1.getLabel());
-        this.assertEquals("b", this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals("c", this.__menuButton__P_282_3.getLabel());
+        this.__cmd__P_283_0.setLabel("x"); // check if the label has been set
+
+
+        this.assertEquals("a", this.__button__P_283_1.getLabel());
+        this.assertEquals("b", this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals("c", this.__menuButton__P_283_3.getLabel());
       },
       testValue: function testValue() {
         var menuCheckBox = new qx.ui.menu.CheckBox();
         var menuRadioButton = new qx.ui.menu.RadioButton();
         var toggleButton = new qx.ui.form.ToggleButton(); // set the command
 
-        menuRadioButton.setCommand(this.__cmd__P_282_0);
-        menuCheckBox.setCommand(this.__cmd__P_282_0);
-        toggleButton.setCommand(this.__cmd__P_282_0); // set the value
+        menuRadioButton.setCommand(this.__cmd__P_283_0);
+        menuCheckBox.setCommand(this.__cmd__P_283_0);
+        toggleButton.setCommand(this.__cmd__P_283_0); // set the value
 
-        this.__cmd__P_282_0.setValue(true);
+        this.__cmd__P_283_0.setValue(true);
 
-        this.assertEquals(this.__cmd__P_282_0.getValue(), menuCheckBox.getValue());
-        this.assertEquals(this.__cmd__P_282_0.getValue(), menuRadioButton.getValue());
-        this.assertEquals(this.__cmd__P_282_0.getValue(), toggleButton.getValue()); // set the value
+        this.assertEquals(this.__cmd__P_283_0.getValue(), menuCheckBox.getValue());
+        this.assertEquals(this.__cmd__P_283_0.getValue(), menuRadioButton.getValue());
+        this.assertEquals(this.__cmd__P_283_0.getValue(), toggleButton.getValue()); // set the value
 
-        this.__cmd__P_282_0.setValue(false);
+        this.__cmd__P_283_0.setValue(false);
 
-        this.assertEquals(this.__cmd__P_282_0.getValue(), menuCheckBox.getValue());
-        this.assertEquals(this.__cmd__P_282_0.getValue(), menuRadioButton.getValue());
-        this.assertEquals(this.__cmd__P_282_0.getValue(), toggleButton.getValue());
+        this.assertEquals(this.__cmd__P_283_0.getValue(), menuCheckBox.getValue());
+        this.assertEquals(this.__cmd__P_283_0.getValue(), menuRadioButton.getValue());
+        this.assertEquals(this.__cmd__P_283_0.getValue(), toggleButton.getValue());
         toggleButton.dispose();
         menuCheckBox.dispose();
         menuRadioButton.dispose();
       },
       testMenu: function testMenu() {
         var splitButton = new qx.ui.form.SplitButton();
-        splitButton.setCommand(this.__cmd__P_282_0);
+        splitButton.setCommand(this.__cmd__P_283_0);
         var menu = new qx.ui.menu.Menu(); // set the menu
 
-        this.__cmd__P_282_0.setMenu(menu);
+        this.__cmd__P_283_0.setMenu(menu);
 
         this.assertEquals(menu, splitButton.getMenu());
-        this.assertEquals(menu, this.__menuButton__P_282_3.getMenu()); // reset the menu
+        this.assertEquals(menu, this.__menuButton__P_283_3.getMenu()); // reset the menu
 
-        this.__cmd__P_282_0.resetMenu();
+        this.__cmd__P_283_0.resetMenu();
 
         this.assertNull(splitButton.getMenu());
-        this.assertNull(this.__menuButton__P_282_3.getMenu());
+        this.assertNull(this.__menuButton__P_283_3.getMenu());
         splitButton.dispose();
         menu.destroy();
       },
       testInit: function testInit() {
         // check if the init values after setting the command was added
-        this.assertEquals("a", this.__button__P_282_1.getLabel());
-        this.assertEquals("b", this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals("c", this.__menuButton__P_282_3.getLabel()); // add a new command
+        this.assertEquals("a", this.__button__P_283_1.getLabel());
+        this.assertEquals("b", this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals("c", this.__menuButton__P_283_3.getLabel()); // add a new command
 
         var cmd = new qx.ui.command.Command();
         cmd.setLabel("x");
 
-        this.__button__P_282_1.setCommand(cmd);
+        this.__button__P_283_1.setCommand(cmd);
 
-        this.__toolbarButton__P_282_2.setCommand(cmd);
+        this.__toolbarButton__P_283_2.setCommand(cmd);
 
-        this.__menuButton__P_282_3.setCommand(cmd);
+        this.__menuButton__P_283_3.setCommand(cmd);
 
-        this.assertEquals(cmd.getLabel(), this.__button__P_282_1.getLabel());
-        this.assertEquals(cmd.getLabel(), this.__toolbarButton__P_282_2.getLabel());
-        this.assertEquals(cmd.getLabel(), this.__menuButton__P_282_3.getLabel());
+        this.assertEquals(cmd.getLabel(), this.__button__P_283_1.getLabel());
+        this.assertEquals(cmd.getLabel(), this.__toolbarButton__P_283_2.getLabel());
+        this.assertEquals(cmd.getLabel(), this.__menuButton__P_283_3.getLabel());
         cmd.dispose();
       },
       testIconAsToolTipText: function testIconAsToolTipText() {
@@ -321,4 +321,4 @@
   qx.test.ui.command.Command.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Command.js.map?dt=1599546982195
+//# sourceMappingURL=Command.js.map?dt=1599578767250
