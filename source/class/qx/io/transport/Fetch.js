@@ -17,6 +17,9 @@ qx.Class.define("qx.io.transport.Fetch", {
 
   members: {
 
+    /**
+     * @type {Object}
+     */
     __tranportImpl: null,
 
     /**
@@ -26,10 +29,12 @@ qx.Class.define("qx.io.transport.Fetch", {
      * "implementation" is a configuration object which will be
      * passed to the `fetch` method as second parameter.
      *
-     * @return {qx.core.Object}
+     * @return {Object}
      */
     getTransportImpl() {
-      this.__tranportImpl = this.__tranportImpl || this._createTransportImpl();
+      if (!this.__tranportImpl) {
+        this.__tranportImpl = this._createTransportImpl();
+      }
       return this.__tranportImpl;
     },
 

@@ -19,19 +19,22 @@ qx.Class.define("qx.io.transport.Websocket", {
 
   members: {
 
+    /**
+     * @type {WebSocket}
+     */
     __tranportImpl: null,
 
     /**
      * Returns the object which implements the transport on the
      * underlying level, so that transport-specific configuration
-     * can be done on it. In the case of the Fetch API, the
-     * "implementation" is a configuration object which will be
-     * passed to the `fetch` method as second parameter.
+     * can be done on it.
      *
      * @return {WebSocket}
      */
     getTransportImpl() {
-      this.__tranportImpl = this.__tranportImpl || this._createTransportImpl();
+      if (!this.__tranportImpl) {
+        this.__tranportImpl = this._createTransportImpl();
+      }
       return this.__tranportImpl;
     },
 
@@ -48,9 +51,7 @@ qx.Class.define("qx.io.transport.Websocket", {
     async send(message) {
       let ws = this.getTransportImpl();
       if (!ws.readyState !== WebSocket.OPEN) {
-        await new Promise(resolve => {
-          ws.addEventListener("open", resolve)
-        });
+        await new Promise(resolve => ws.addEventListener("open", resolve));
       }
       ws.send(message);
     },
