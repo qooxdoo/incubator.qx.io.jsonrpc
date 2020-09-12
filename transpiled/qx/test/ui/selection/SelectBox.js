@@ -89,4 +89,4 @@
   qx.test.ui.selection.SelectBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SelectBox.js.map?dt=1599595318089
+//# sourceMappingURL=SelectBox.js.map?dt=1599905736392
