@@ -25,4 +25,4 @@
   qx.test.performance.widget.RichLabel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RichLabel.js.map?dt=1599905732460
+//# sourceMappingURL=RichLabel.js.map?dt=1600416857309

@@ -57,4 +57,4 @@
   qx.ui.mobile.container.INavigation.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=INavigation.js.map?dt=1599905748906
+//# sourceMappingURL=INavigation.js.map?dt=1600416875517

@@ -321,4 +321,4 @@
   qx.theme.manager.Appearance.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Appearance.js.map?dt=1599905739922
+//# sourceMappingURL=Appearance.js.map?dt=1600416865570

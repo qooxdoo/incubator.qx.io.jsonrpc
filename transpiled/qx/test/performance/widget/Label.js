@@ -23,4 +23,4 @@
   qx.test.performance.widget.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1599905732450
+//# sourceMappingURL=Label.js.map?dt=1600416857291

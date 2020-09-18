@@ -47,4 +47,4 @@
   qx.theme.tangible.ColorDark.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ColorDark.js.map?dt=1599905740860
+//# sourceMappingURL=ColorDark.js.map?dt=1600416866662

@@ -40,4 +40,4 @@
   qx.test.ui.list.fixture.GroupMock.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GroupMock.js.map?dt=1599905736196
+//# sourceMappingURL=GroupMock.js.map?dt=1600416861402

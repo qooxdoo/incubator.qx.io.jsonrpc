@@ -288,4 +288,4 @@
   qx.Annotation.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Annotation.js.map?dt=1599905703527
+//# sourceMappingURL=Annotation.js.map?dt=1600416826384

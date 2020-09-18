@@ -87,4 +87,4 @@
   qx.ui.mobile.list.renderer.group.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1599905750936
+//# sourceMappingURL=Abstract.js.map?dt=1600416877703

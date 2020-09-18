@@ -176,4 +176,4 @@
   qx.test.ui.tree.virtual.Sorting.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Sorting.js.map?dt=1599905737231
+//# sourceMappingURL=Sorting.js.map?dt=1600416862636
