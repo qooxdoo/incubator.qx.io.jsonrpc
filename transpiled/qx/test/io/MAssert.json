@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 45,
+        "line": 60,
         "column": 3
       }
     },
@@ -109,6 +109,42 @@
             "optional": true,
             "defaultValue": "\"\"",
             "type": "String"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "assertContains": {
+      "location": {
+        "start": {
+          "line": 51,
+          "column": 4
+        },
+        "end": {
+          "line": 58,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Asserts that a string fragment is contained in a result</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{String} expectedFragment"
+          },
+          {
+            "name": "@param",
+            "body": "{String} actual"
+          },
+          {
+            "name": "@param",
+            "body": "{String?} msg"
           }
         ]
       },

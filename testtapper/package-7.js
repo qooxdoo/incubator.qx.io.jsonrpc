@@ -61712,6 +61712,23 @@
        */
       assertMessageDispatched: function assertMessageDispatched(name, data, msg) {
         throw new Error("Needs to be implemented");
+      },
+
+      /**
+       * Asserts that a string fragment is contained in a result
+       * @param {String} expectedFragment
+       * @param {String} actual
+       * @param {String?} msg
+       */
+      assertContains: function assertContains(expectedFragment, actual, msg) {
+        this.assertString(expectedFragment);
+        this.assertString(actual);
+
+        if (!msg) {
+          msg = `Failed to assert that '${actual}' contains '${expectedFragment}'.`;
+        }
+
+        this.assert(actual.includes(expectedFragment), msg);
       }
     }
   });
@@ -61863,7 +61880,7 @@
   });
   qx.test.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1600416900122
+//# sourceMappingURL=package-7.js.map?dt=1600461143985
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

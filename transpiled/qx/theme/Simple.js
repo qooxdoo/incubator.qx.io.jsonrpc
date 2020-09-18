@@ -58,4 +58,4 @@
   qx.theme.Simple.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Simple.js.map?dt=1600416865045
+//# sourceMappingURL=Simple.js.map?dt=1600461108613

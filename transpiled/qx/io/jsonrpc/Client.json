@@ -167,11 +167,11 @@
     "methodPrefix": {
       "location": {
         "start": {
-          "line": 89,
+          "line": 90,
           "column": 4
         },
         "end": {
-          "line": 93,
+          "line": 94,
           "column": 5
         }
       },
@@ -179,7 +179,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>An optional string which is prepended to the method name.</p>"
+            "body": "<p>An optional string which is prepended to the method name by the {@link #sendRequest}\n and {@link #sendNotification} methods</p>"
           }
         ]
       },
@@ -192,11 +192,11 @@
     "parser": {
       "location": {
         "start": {
-          "line": 98,
+          "line": 99,
           "column": 4
         },
         "end": {
-          "line": 100,
+          "line": 101,
           "column": 5
         }
       },
@@ -249,11 +249,11 @@
     "__requests": {
       "location": {
         "start": {
-          "line": 109,
+          "line": 110,
           "column": 4
         },
         "end": {
-          "line": 109,
+          "line": 110,
           "column": 21
         }
       },
@@ -271,11 +271,11 @@
     "_prependMethodPrefix": {
       "location": {
         "start": {
-          "line": 117,
+          "line": 119,
           "column": 4
         },
         "end": {
-          "line": 124,
+          "line": 126,
           "column": 5
         }
       },
@@ -283,7 +283,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>If a service name has been configured, prepend it to the method name</p>"
+            "body": "<p>If a service name has been configured, prepend it to the method name,\n unless it has already been prefixed</p>"
           }
         ],
         "@param": [
@@ -313,11 +313,11 @@
     "_throwTransportException": {
       "location": {
         "start": {
-          "line": 132,
+          "line": 134,
           "column": 4
         },
         "end": {
-          "line": 140,
+          "line": 142,
           "column": 5
         }
       },
@@ -349,11 +349,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 150,
+          "line": 152,
           "column": 4
         },
         "end": {
-          "line": 178,
+          "line": 180,
           "column": 5
         }
       },
@@ -385,11 +385,11 @@
     "sendRequest": {
       "location": {
         "start": {
-          "line": 188,
+          "line": 190,
           "column": 4
         },
         "end": {
-          "line": 192,
+          "line": 194,
           "column": 5
         }
       },
@@ -397,7 +397,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Sends a single JSON-RPC request. If a service name has been configured,\n it is prepended to the method name with a dot.</p>"
+            "body": "<p>Sends a single JSON-RPC request. If a method prefix name has been configured,\n it will be prepended to the method name.</p>"
           }
         ],
         "@param": [
@@ -425,11 +425,11 @@
     "sendNotification": {
       "location": {
         "start": {
-          "line": 202,
+          "line": 203,
           "column": 4
         },
         "end": {
-          "line": 205,
+          "line": 206,
           "column": 5
         }
       },
@@ -437,7 +437,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Sends a single JSON-RPC notification. If a service name has been configured,\n it is prepended to the method name with a dot.</p>"
+            "body": "<p>Sends a single JSON-RPC notification. Will use the method prefix</p>"
           }
         ],
         "@param": [
@@ -477,7 +477,7 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Send the given message batch. If a service name has been configured,\n it is prepended to the method name in each message with a dot.</p>"
+            "body": "<p>Send the given message batch. Will use the method prefix.</p>"
           }
         ],
         "@param": [

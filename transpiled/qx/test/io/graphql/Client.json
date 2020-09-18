@@ -219,6 +219,37 @@
         ]
       }
     },
+    "assertContains": {
+      "type": "function",
+      "name": "assertContains",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.test.io.MAssert",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "<p>Asserts that a string fragment is contained in a result</p>"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "{String} expectedFragment"
+          },
+          {
+            "name": "@param",
+            "body": "{String} actual"
+          },
+          {
+            "name": "@param",
+            "body": "{String?} msg"
+          }
+        ]
+      }
+    },
     "getQxOwner": {
       "type": "function",
       "name": "getQxOwner",

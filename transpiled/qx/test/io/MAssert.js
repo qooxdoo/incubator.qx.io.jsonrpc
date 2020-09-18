@@ -52,10 +52,27 @@
        */
       assertMessageDispatched: function assertMessageDispatched(name, data, msg) {
         throw new Error("Needs to be implemented");
+      },
+
+      /**
+       * Asserts that a string fragment is contained in a result
+       * @param {String} expectedFragment
+       * @param {String} actual
+       * @param {String?} msg
+       */
+      assertContains: function assertContains(expectedFragment, actual, msg) {
+        this.assertString(expectedFragment);
+        this.assertString(actual);
+
+        if (!msg) {
+          msg = `Failed to assert that '${actual}' contains '${expectedFragment}'.`;
+        }
+
+        this.assert(actual.includes(expectedFragment), msg);
       }
     }
   });
   qx.test.io.MAssert.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MAssert.js.map?dt=1600416855091
+//# sourceMappingURL=MAssert.js.map?dt=1600461098333

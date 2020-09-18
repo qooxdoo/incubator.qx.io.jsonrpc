@@ -1,6 +1,6 @@
 qx.$$packageData['0'] = {
   "locales": {
-    "C": {
+    "en": {
       "alternateQuotationEnd": "’",
       "alternateQuotationStart": "‘",
       "quotationEnd": "”",
@@ -128,7 +128,7 @@ qx.$$packageData['0'] = {
         "time zone"
       ]
     },
-    "en": {
+    "C": {
       "alternateQuotationEnd": "’",
       "alternateQuotationStart": "‘",
       "quotationEnd": "”",
@@ -630,6 +630,30 @@ qx.$$packageData['0'] = {
       "png",
       "qx"
     ],
+    "qx/decoration/Classic/menu/checkbox-invert.gif": [
+      16,
+      7,
+      "gif",
+      "qx"
+    ],
+    "qx/decoration/Classic/menu/checkbox.gif": [
+      16,
+      7,
+      "gif",
+      "qx"
+    ],
+    "qx/decoration/Classic/menu/radiobutton-invert.gif": [
+      16,
+      5,
+      "gif",
+      "qx"
+    ],
+    "qx/decoration/Classic/menu/radiobutton.gif": [
+      16,
+      5,
+      "gif",
+      "qx"
+    ],
     "qx/decoration/Classic/form/checkbox-checked-disabled.png": [
       14,
       14,
@@ -886,30 +910,6 @@ qx.$$packageData['0'] = {
       14,
       14,
       "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/menu/checkbox-invert.gif": [
-      16,
-      7,
-      "gif",
-      "qx"
-    ],
-    "qx/decoration/Classic/menu/checkbox.gif": [
-      16,
-      7,
-      "gif",
-      "qx"
-    ],
-    "qx/decoration/Classic/menu/radiobutton-invert.gif": [
-      16,
-      5,
-      "gif",
-      "qx"
-    ],
-    "qx/decoration/Classic/menu/radiobutton.gif": [
-      16,
-      5,
-      "gif",
       "qx"
     ],
     "qx/decoration/Classic/shadow/shadow-b.png": [
