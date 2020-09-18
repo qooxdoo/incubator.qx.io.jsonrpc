@@ -1,7 +1,7 @@
 /**
  * Mixin containing special assert methods
  */
-qx.Mixin.define("qx.test.io.MAssert",{
+qx.Mixin.define("qx.test.io.MAssert", {
 
   members : {
 
