@@ -40,6 +40,21 @@ qx.Mixin.define("qx.test.io.MAssert", {
      */
     assertMessageDispatched : function(name, data, msg) {
       throw new Error("Needs to be implemented");
+    },
+  
+    /**
+     * Asserts that a string fragment is contained in a result
+     * @param {String} expectedFragment
+     * @param {String} actual
+     * @param {String?} msg
+     */
+    assertContains: function(expectedFragment, actual, msg) {
+      this.assertString(expectedFragment);
+      this.assertString(actual);
+      if (!msg) {
+        msg = `Failed to assert that '${actual}' contains '${expectedFragment}'.`;
+      }
+      this.assert(actual.includes(expectedFragment), msg);
     }
   }
 });

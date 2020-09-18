@@ -84,7 +84,8 @@ qx.Class.define("qx.io.jsonrpc.Client",
   properties :
   {
     /**
-     * An optional string which is prepended to the method name.
+     * An optional string which is prepended to the method name by the {@link #sendRequest}
+     * and {@link #sendNotification} methods
      */
     methodPrefix :
     {
@@ -109,7 +110,8 @@ qx.Class.define("qx.io.jsonrpc.Client",
     __requests : null,
 
     /**
-     * If a service name has been configured, prepend it to the method name
+     * If a service name has been configured, prepend it to the method name,
+     * unless it has already been prefixed
      * @param {String} method
      * @return {String}
      * @private
@@ -117,8 +119,8 @@ qx.Class.define("qx.io.jsonrpc.Client",
     _prependMethodPrefix(method) {
       qx.core.Assert.assertString(method);
       let methodPrefix = this.getMethodPrefix();
-      if (methodPrefix && !method.startsWith(methodPrefix + ".")) {
-        return `${methodPrefix}.${method}`;
+      if (methodPrefix && !method.startsWith(methodPrefix)) {
+        return `${methodPrefix}${method}`;
       }
       return method;
     },
@@ -178,8 +180,8 @@ qx.Class.define("qx.io.jsonrpc.Client",
     },
 
     /**
-     * Sends a single JSON-RPC request. If a service name has been configured,
-     * it is prepended to the method name with a dot.
+     * Sends a single JSON-RPC request. If a method prefix name has been configured,
+     * it will be prepended to the method name.
      * @param {String} method
      * @param {Array|Object?} params
      * @return {qx.Promise} Promise that resolves with the result to that request,
@@ -192,8 +194,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
     },
 
     /**
-     * Sends a single JSON-RPC notification. If a service name has been configured,
-     * it is prepended to the method name with a dot.
+     * Sends a single JSON-RPC notification. Will use the method prefix
      * @param {String} method
      * @param {Array|Object?} params
      * @return {qx.Promise} Promise that resolves immediately, (i.e. when the
@@ -205,8 +206,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
     },
 
     /**
-     * Send the given message batch. If a service name has been configured,
-     * it is prepended to the method name in each message with a dot.
+     * Send the given message batch. Will use the method prefix.
      * @param {qx.io.jsonrpc.protocol.Batch} batch
      * @return {qx.Promise} Promise that resolves with an array of the responses
      * to all requests in the batch, or rejects with any error that occurs.
