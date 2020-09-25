@@ -27,7 +27,7 @@ has been renamed `qx.io.transport.Xhr`.
 ## Installation for use in your project
 
 ```bash
-npx qx install qooxdoo/incubator.qx.io.jsonrpc
+npx qx package install qooxdoo/incubator.qx.io.jsonrpc
 ```
 
 ## Installation & testing (development)
