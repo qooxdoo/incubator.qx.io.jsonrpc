@@ -24,15 +24,14 @@ jobs:
         id: meta
         run: |
           CODEOWNERS="$(cat .github/CODEOWNERS)"
-          echo "CODEOWNERS: $CODEOWNERS"
-          echo "::set-output name=CODEOWNERS::${CODEOWNERS}"
+          echo "::set-output name=CODEOWNERS::$(echo $CODEOWNERS)"
 
       - name: Check Metadata
         run: |
           echo "${{ steps.meta.CODEOWNERS }}"
           echo "${{ github.ref }}"
           echo "${{ github.actor }}"
-          echo "${{ contains(steps.meta.CODEOWNERS, github.actor) }}"
+          echo "${{ contains(steps.meta.outputs.CODEOWNERS, github.actor) }}"
 
       - name: Deploy (only owner)
         uses: peaceiris/actions-gh-pages@v3
