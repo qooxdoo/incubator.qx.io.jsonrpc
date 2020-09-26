@@ -24,7 +24,7 @@ jobs:
         id: meta
         run: |
           CODEOWNERS="$(cat .github/CODEOWNERS)"
-          echo "::set-output name=CODEOWNERS::$(echo '$CODEOWNERS')"
+          echo "::set-output name=CODEOWNERS::$(echo "'"$CODEOWNERS"'")"
 
       - name: Check Metadata
         run: |
