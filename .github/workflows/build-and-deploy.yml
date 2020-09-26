@@ -22,9 +22,9 @@ jobs:
           npm install @qooxdoo/compiler
           npx qx compile
 
-      - name: Deploy
+      - name: Deploy (only owner)
         uses: peaceiris/actions-gh-pages@v3
-        if: success()
+        if: success() && github.actor == github.repository_owner
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./compiled/source
