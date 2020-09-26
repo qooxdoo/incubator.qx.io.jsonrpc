@@ -77,6 +77,22 @@ We provide a high-level API interface (qx.io.jsonrpc.Client),
 and an HTTP transport implementation. Other transports
 based on websockets or other mechanisms can be added later.
 
+#### Selecting a transport
+
+Since JSON-RPC is transport-agnostic, the transport has to be selected manually.
+The easiest way to do this is to use a compiler hint in the docblock of your
+application class or any class that uses JSON-RPC. For http transport, this would
+be 
+
+```
+/**
+ * @use(qx.io.transport.Xhr)
+ */
+qx.Class.define("...
+```
+
+
+
 #### Outgoing requests
 
 Here is an example for making a JSON-RPC request to a server endpoint: 
