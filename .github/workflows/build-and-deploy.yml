@@ -19,11 +19,23 @@ jobs:
         run: |
           npm install @qooxdoo/compiler
           npx qx compile
-          echo "${{ github.actor }} == ${{ github.repository_owner }} ?"
+
+      - name: Read Metadata
+        id: meta
+        run: |
+            CODEOWNERS="$(cat .github/CODEOWNERS)"
+            echo "::set-output name=CODEOWNERS::${CODEOWNERS}"
+
+      - name: Check Metadata
+        run: |
+          echo "${{ steps.meta.CODEOWNERS }}"
+          echo "${{ github.ref }}"
+          echo "${{ github.actor }}"
+          echo "${{ contains(steps.meta.CODEOWNERS, github.actor) }}"
 
       - name: Deploy (only owner)
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/master' && success() && github.actor == github.repository_owner
+        if: github.ref == 'refs/heads/master' && success()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./compiled/source
