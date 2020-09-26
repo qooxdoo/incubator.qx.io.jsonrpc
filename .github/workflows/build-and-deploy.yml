@@ -2,8 +2,6 @@ name: Build and Deploy
 on:
   # run when the master branch is updated
   push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -21,10 +19,11 @@ jobs:
         run: |
           npm install @qooxdoo/compiler
           npx qx compile
+          echo "${{ github.actor }} == ${{ github.repository_owner }} ?"
 
       - name: Deploy (only owner)
         uses: peaceiris/actions-gh-pages@v3
-        if: success() && github.actor == github.repository_owner
+        if: github.ref == 'refs/heads/master' && success() && github.actor == github.repository_owner
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./compiled/source
