@@ -24,11 +24,11 @@ jobs:
         id: meta
         run: |
           CODEOWNERS="$(cat .github/CODEOWNERS)"
-          echo "::set-output name=CODEOWNERS::$(echo \"$CODEOWNERS\")"
+          echo "::set-output name=CODEOWNERS::$(echo $CODEOWNERS)"
 
       - name: Check Metadata
         run: |
-          echo "${{ steps.meta.outputs.CODEOWNERS }}"
+          echo '${{ steps.meta.outputs.CODEOWNERS }}'
           echo "${{ github.ref }}"
           echo "${{ github.actor }}"
           echo "${{ contains(steps.meta.outputs.CODEOWNERS, github.actor) }}"
