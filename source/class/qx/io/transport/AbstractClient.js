@@ -75,6 +75,9 @@ qx.Class.define("qx.io.transport.AbstractClient", {
       let transport;
       let uri;
       if (qx.lang.Type.isString(transportOrUri)) {
+        if (!this.constructor.__transports) {
+          throw new Error("No transport has been registered. Put @use(qx.io.transport.X) in the doc block of your class, X being the transport class of your choice (such as qx.io.transport.Xhr for http transport).");
+        }
         uri = transportOrUri;
         for (let registeredTransport of this.constructor.__transports.reverse()) {
           if (uri.match(registeredTransport.uriRegExp)) {
@@ -83,12 +86,12 @@ qx.Class.define("qx.io.transport.AbstractClient", {
           }
         }
         if (!transport) {
-          throw new qx.io.exception.Transport(
-            `No matching transport for URI '${transportOrUri}'`,
-            qx.io.exception.Transport.INVALD_URI
-          );
+          throw new qx.io.exception.Transport(`No matching transport for URI '${transportOrUri}'`, qx.io.exception.Transport.INVALD_URI);
         }
       } else {
+        if (!(transportOrUri instanceof qx.core.Object) || !qx.Interface.classImplements(transportOrUri.constructor, qx.io.transport.ITransport)) {
+          throw new Error("Argument must be an qooxdoo object implementing qx.io.transport.ITransport");
+        }
         transport = transportOrUri;
       }
       this.setTransport(transport);
