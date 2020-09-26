@@ -57,4 +57,4 @@
   qx.application.Basic.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Basic.js.map?dt=1601100931829
+//# sourceMappingURL=Basic.js.map?dt=1601118667640

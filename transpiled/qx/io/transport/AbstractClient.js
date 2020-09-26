@@ -96,6 +96,10 @@
         let uri;
 
         if (qx.lang.Type.isString(transportOrUri)) {
+          if (!this.constructor.__transports__P_175_0) {
+            throw new Error("No transport has been registered. Put @use(qx.io.transport.X) in the doc block of your class, X being the transport class of your choice (such as qx.io.transport.Xhr for http transport).");
+          }
+
           uri = transportOrUri;
 
           for (let registeredTransport of this.constructor.__transports__P_175_0.reverse()) {
@@ -109,6 +113,10 @@
             throw new qx.io.exception.Transport(`No matching transport for URI '${transportOrUri}'`, qx.io.exception.Transport.INVALD_URI);
           }
         } else {
+          if (!(transportOrUri instanceof qx.core.Object) || !qx.Interface.classImplements(transportOrUri.constructor, qx.io.transport.ITransport)) {
+            throw new Error("Argument must be an qooxdoo object implementing qx.io.transport.ITransport");
+          }
+
           transport = transportOrUri;
         }
 
@@ -120,4 +128,4 @@
   qx.io.transport.AbstractClient.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractClient.js.map?dt=1601100942696
+//# sourceMappingURL=AbstractClient.js.map?dt=1601118680478
