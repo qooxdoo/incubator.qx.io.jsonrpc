@@ -49,7 +49,18 @@ qx.Class.define("qx.io.graphql.protocol.Message",{
      * @return {String}
      */
     toString() {
-      return qx.lang.Json.stringify(this.toNormalizedObject());
+      return qx.lang.Json.stringify(this.toObject(), this._jsonReplacer);
+    },
+
+    /**
+     * This method does nothing. It can be overrided by subclasses
+     * to shape the final JSON object as needed.
+     *
+     * @param key {String} The key of the member to be replaced
+     * @param value {var} The member value to be replaced
+     */
+    _jsonReplacer: function(key, value) {
+      return value;
     },
 
     /**

@@ -37,7 +37,7 @@ qx.Class.define("qx.test.io.graphql.Client",
 
       async runQueryWithVariables(query, variables, expected) {
         let req = new qx.io.graphql.protocol.Request({query});
-        req.marshalVariables(variables);
+        req.setVariables(variables);
         let result = await this.client.send(req);
         this.assertDeepEquals(expected, result)
       },
@@ -103,8 +103,10 @@ qx.Class.define("qx.test.io.graphql.Client",
 
       async "test: expect transport error"() {
         try {
-          let client = new qx.io.graphql.Client("https://doesnotexist.org/"+Math.random());
-          let response = await client.send("query: { doesnotmatter }");
+          const client = new qx.io.graphql.Client("https://doesnotexist.org/"+Math.random());
+          const query = "query { doesnotmatter }";
+          const request = new qx.io.graphql.protocol.Request({query});
+          const response = await client.send(request);
         } catch (e) {
           this.assertInstance(e, qx.io.exception.Transport);
           return;

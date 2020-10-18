@@ -56,5 +56,12 @@ qx.Class.define("qx.io.graphql.protocol.Response",{
       check: value => qx.lang.Type.isArray(value) && value.length && value.every(item => Boolean(item.message)),
       nullable: true
     }
+  },
+
+  members: {
+    _jsonReplacer: function(key, value) {
+      // whatever the key is, if is null, remove it
+      return value ? value : undefined;
+    }
   }
 });
