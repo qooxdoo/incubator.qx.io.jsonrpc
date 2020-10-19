@@ -47,15 +47,11 @@ qx.Class.define("qx.io.graphql.protocol.Request",{
   },
 
   members: {
-    /**
-     * Serialize to a spec-conformant JSON string
-     * @return {String}
-     */
+    // overriden
     toString() {
       return qx.lang.Json.stringify(this.toObject(), this._jsonReplacer);
     },
 
-    // overriden
     _jsonReplacer: function(key, value) {
       // Special case. If the variables key is an object, return it's JSON
       // representation, otherwise remove that key from the final JSON
