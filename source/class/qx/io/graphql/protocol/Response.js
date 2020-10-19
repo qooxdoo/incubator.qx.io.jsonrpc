@@ -19,7 +19,7 @@
 /**
  * An Object modelling a GraphQL response (see http://spec.graphql.org/draft/#sec-Response-Format)
  */
-qx.Class.define("qx.io.graphql.protocol.Response",{
+qx.Class.define("qx.io.graphql.protocol.Response", {
   extend: qx.io.graphql.protocol.Message,
 
   properties: {

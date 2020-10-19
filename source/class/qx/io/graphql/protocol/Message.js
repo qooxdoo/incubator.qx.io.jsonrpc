@@ -19,7 +19,7 @@
 /**
  * Abstract parent class for GraphQL messages and responses
  */
-qx.Class.define("qx.io.graphql.protocol.Message",{
+qx.Class.define("qx.io.graphql.protocol.Message", {
   extend: qx.core.Object,
 
   /**
@@ -32,18 +32,6 @@ qx.Class.define("qx.io.graphql.protocol.Message",{
     this.set(data);
   },
   members : {
-
-    /**
-     * Return the message data in a spec-conformant native object
-     */
-    toNormalizedObject() {
-      let data = this.toObject();
-      if (!data.errors) {
-        delete data.errors;
-      }
-      return data;
-    },
-
     /**
      * Serialize to a spec-conformant JSON string
      * @return {String}
