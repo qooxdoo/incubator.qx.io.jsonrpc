@@ -13,16 +13,12 @@
         "column": 0
       },
       "end": {
-        "line": 57,
+        "line": 86,
         "column": 3
       }
     },
     "jsdoc": {
       "@description": [
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n      2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
         {
           "name": "@description",
           "body": "<p>An Object modelling a GraphQL request based on the GraphQL language\n (see http://spec.graphql.org/draft/#sec-Language)</p>"
@@ -67,7 +63,7 @@
           "column": 4
         },
         "end": {
-          "line": 44,
+          "line": 46,
           "column": 5
         }
       },
@@ -120,14 +116,28 @@
     }
   },
   "members": {
-    "marshalVariables": {
+    "_jsonReplacer": {
       "location": {
         "start": {
-          "line": 53,
+          "line": 55,
           "column": 4
         },
         "end": {
-          "line": 55,
+          "line": 63,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_transformVariables": {
+      "location": {
+        "start": {
+          "line": 70,
+          "column": 4
+        },
+        "end": {
+          "line": 76,
           "column": 5
         }
       },
@@ -135,18 +145,26 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>Set the variables from a native javascript object, which will be\n marshaled into a qooxdoo object which can be used in databinding</p>"
-          }
-        ],
-        "@param": [
-          {
-            "name": "@param",
-            "body": "{Object} map"
+            "body": "<p>Transforms the variables object to a qooxdoo model. Called automaticaly\n when the variables property is set.</p>"
           }
         ]
       },
       "type": "function",
-      "access": "public"
+      "access": "protected"
+    },
+    "_validateVariables": {
+      "location": {
+        "start": {
+          "line": 78,
+          "column": 4
+        },
+        "end": {
+          "line": 84,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "protected"
     },
     "getQxOwner": {
       "type": "function",

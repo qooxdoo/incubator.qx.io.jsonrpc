@@ -2,13 +2,13 @@
   "libraries": {
     "qx.io": "2.0.0-alpha",
     "qxl.testtapper": "0.5.0",
-    "qxl.versionlabel": "1.0.0-beta.3",
     "qxl.apiviewer": "1.0.0-beta.9",
+    "qxl.versionlabel": "1.0.0-beta.3",
     "qxl.logpane": "1.0.0-beta.3",
-    "qx": "6.0.0-beta-20200904-1332"
+    "qx": "6.0.0-beta-20201003-1033"
   },
-  "environmentHash": "e19e5358495c0cc04055171ddc624325e577f683",
-  "compilerVersion": "1.0.0-beta-20200904-1332",
+  "environmentHash": "e70dbba81119e58e62367ca92753b05c13998c79",
+  "compilerVersion": "1.0.0-beta-20201003-1033",
   "classInfo": {
     "qx.Annotation": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -4212,7 +4212,7 @@
       "hasDefer": null
     },
     "qx.data.store.Graphql": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -4298,7 +4298,7 @@
       "hasDefer": null
     },
     "qx.data.store.Jsonrpc": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7717,7 +7717,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Cancel": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7741,7 +7741,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Exception": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7759,7 +7759,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Protocol": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7779,7 +7779,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Transport": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7799,7 +7799,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.Client": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.782Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7821,7 +7821,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Message": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7844,7 +7844,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Request": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7854,7 +7854,11 @@
         "qx.io.graphql.protocol.Message": {
           "load": true
         },
+        "qx.lang.Json": {},
+        "qx.util.Serializer": {},
         "qx.data.marshal.Json": {},
+        "qx.lang.Type": {},
+        "qx.core.ValidationError": {},
         "qx.core.Object": {
           "load": true
         },
@@ -7868,7 +7872,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Response": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7892,7 +7896,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.Client": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7923,7 +7927,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Batch": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7948,7 +7952,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Error": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7969,7 +7973,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Message": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7987,7 +7991,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Notification": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8005,7 +8009,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Parser": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8029,7 +8033,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Request": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8054,7 +8058,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Result": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8657,7 +8661,7 @@
       "hasDefer": null
     },
     "qx.io.request.authentication.Bearer": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8724,7 +8728,7 @@
       "hasDefer": null
     },
     "qx.io.transport.AbstractClient": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8745,7 +8749,7 @@
       "hasDefer": null
     },
     "qx.io.transport.AbstractTransport": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8763,7 +8767,7 @@
       "hasDefer": null
     },
     "qx.io.transport.Fetch": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8794,7 +8798,7 @@
       "hasDefer": true
     },
     "qx.io.transport.ITransport": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Interface": {
@@ -8808,7 +8812,7 @@
       "hasDefer": null
     },
     "qx.io.transport.Websocket": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8838,7 +8842,7 @@
       "hasDefer": true
     },
     "qx.io.transport.Xhr": {
-      "mtime": "2020-09-26T11:10:28.852Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14791,7 +14795,7 @@
       ]
     },
     "qx.test.io.MAssert": {
-      "mtime": "2020-09-26T11:10:28.856Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Mixin": {
@@ -14822,7 +14826,7 @@
       "hasDefer": null
     },
     "qx.test.io.graphql.Client": {
-      "mtime": "2020-09-26T11:10:28.856Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14850,8 +14854,32 @@
       "implement": [],
       "hasDefer": null
     },
+    "qx.test.io.graphql.Request": {
+      "mtime": "2020-10-20T06:53:03.786Z",
+      "libraryName": "qx.io",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qx.dev.unit.TestCase": {
+          "load": true
+        },
+        "qx.test.io.MAssert": {
+          "load": true
+        },
+        "qx.io.graphql.protocol.Request": {},
+        "qx.data.marshal.Json": {}
+      },
+      "extends": "qx.dev.unit.TestCase",
+      "include": [
+        "qx.test.io.MAssert"
+      ],
+      "implement": [],
+      "hasDefer": null
+    },
     "qx.test.io.jsonrpc.Client": {
-      "mtime": "2020-09-26T11:10:28.856Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14889,7 +14917,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.Protocol": {
-      "mtime": "2020-09-26T11:10:28.856Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14918,7 +14946,7 @@
       "hasDefer": null
     },
     "qx.test.io.transport.Websocket": {
-      "mtime": "2020-09-26T11:10:28.856Z",
+      "mtime": "2020-10-20T06:53:03.786Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -31323,12 +31351,12 @@
         {
           "msgid": "one row",
           "msgid_plural": "%1 rows",
-          "lineNo": 2010
+          "lineNo": 2030
         },
         {
           "msgid": "one of one row",
           "msgid_plural": "%1 of %2 rows",
-          "lineNo": 2012
+          "lineNo": 2032
         }
       ]
     },
@@ -36084,93 +36112,12 @@
       "include": [],
       "implement": [],
       "hasDefer": null,
-      "unresolved": [
-        {
-          "name": "testName.join",
-          "locations": [
-            {
-              "start": {
-                "line": 201,
-                "column": 66
-              },
-              "end": {
-                "line": 201,
-                "column": 79
-              }
-            },
-            {
-              "start": {
-                "line": 201,
-                "column": 66
-              },
-              "end": {
-                "line": 201,
-                "column": 79
-              }
-            },
-            {
-              "start": {
-                "line": 201,
-                "column": 66
-              },
-              "end": {
-                "line": 201,
-                "column": 79
-              }
-            },
-            {
-              "start": {
-                "line": 229,
-                "column": 56
-              },
-              "end": {
-                "line": 229,
-                "column": 69
-              }
-            },
-            {
-              "start": {
-                "line": 229,
-                "column": 56
-              },
-              "end": {
-                "line": 229,
-                "column": 69
-              }
-            },
-            {
-              "start": {
-                "line": 229,
-                "column": 56
-              },
-              "end": {
-                "line": 229,
-                "column": 69
-              }
-            }
-          ]
-        }
-      ],
       "assets": [
         "qxl/testtapper/run.js",
         "qx/icon/Oxygen/16/actions/dialog-ok.png",
         "qx/icon/Oxygen/16/actions/dialog-cancel.png",
         "qx/icon/Tango/16/places/folder.png",
         "qx/icon/Tango/16/places/folder-open.png"
-      ],
-      "markers": [
-        {
-          "msgId": "qx.tool.compiler.symbol.unresolved",
-          "pos": {
-            "start": {
-              "line": 201,
-              "column": 66
-            }
-          },
-          "args": [
-            "testName.join"
-          ]
-        }
       ]
     },
     "qxl.apiviewer.Application": {
@@ -36591,7 +36538,58 @@
       "extends": "qx.core.Object",
       "include": [],
       "implement": [],
-      "hasDefer": null
+      "hasDefer": null,
+      "unresolved": [
+        {
+          "name": "qx.$$appRoot",
+          "locations": [
+            {
+              "start": {
+                "line": 54,
+                "column": 41
+              },
+              "end": {
+                "line": 54,
+                "column": 53
+              }
+            },
+            {
+              "start": {
+                "line": 54,
+                "column": 41
+              },
+              "end": {
+                "line": 54,
+                "column": 53
+              }
+            },
+            {
+              "start": {
+                "line": 54,
+                "column": 41
+              },
+              "end": {
+                "line": 54,
+                "column": 53
+              }
+            }
+          ]
+        }
+      ],
+      "markers": [
+        {
+          "msgId": "qx.tool.compiler.symbol.unresolved",
+          "pos": {
+            "start": {
+              "line": 54,
+              "column": 41
+            }
+          },
+          "args": [
+            "qx.$$appRoot"
+          ]
+        }
+      ]
     },
     "qxl.apiviewer.Appearance": {
       "mtime": "2020-03-26T11:31:02.000Z",

@@ -19,14 +19,7 @@
         "column": 3
       }
     },
-    "jsdoc": {
-      "@description": [
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2013 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Richard Sternagel (rsternagel)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        }
-      ]
-    }
+    "jsdoc": {}
   },
   "type": "class",
   "members": {
@@ -69,26 +62,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>setRequestHeader()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>getRequestHeader()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -103,26 +77,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>setUrl()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>getUrl()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -137,26 +92,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>setMethod()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>getMethod()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -171,26 +107,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>setRequestData()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>getRequestData()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -205,26 +122,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>_setResponse()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>getResponse()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -239,26 +137,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>setTimeout()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>getTimeout()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -273,26 +152,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>useCaching</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>isCaching</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -307,22 +167,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>setParser()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -337,22 +182,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>_serializeData()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -367,22 +197,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>send()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -537,22 +352,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>abort()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -567,22 +367,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>dispose()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -597,22 +382,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>addListenerOnce()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -627,26 +397,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>_onReadyStateChange()</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>__onReadyStateDone()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -689,22 +440,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onLoadEnd()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -719,22 +455,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onAbort()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -749,22 +470,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onTimeout()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -779,22 +485,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onError()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -1679,5 +1370,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

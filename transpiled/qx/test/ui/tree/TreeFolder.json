@@ -21,10 +21,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2004-2010 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Tristan Koch (tristankoch)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
           "body": ""
         }
       ],
@@ -165,22 +161,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Icon for when \"closed\" with all variations of \"icon\" and \"iconClosed\" property</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -237,22 +218,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Icon when \"opened\" with all variations of \"icon\" and \"iconClosed\" property</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -309,26 +275,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Icon when \"opened\", then \"closed\" with all variations of \"icon\" and</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>\"iconClosed\" property</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -385,26 +332,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Icon when \"closed\", then \"opened\" with all variations of \"icon\" and</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>\"iconClosed\" property</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -475,22 +403,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Helper methods</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "private"
     },
@@ -815,5 +728,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

@@ -8,7 +8,11 @@
       "qx.io.graphql.protocol.Message": {
         "require": true
       },
-      "qx.data.marshal.Json": {}
+      "qx.lang.Json": {},
+      "qx.util.Serializer": {},
+      "qx.data.marshal.Json": {},
+      "qx.lang.Type": {},
+      "qx.core.ValidationError": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -54,22 +58,49 @@
       variables: {
         check: "qx.core.Object",
         nullable: true,
-        event: "changeVariables"
+        event: "changeVariables",
+        transform: "_transformVariables",
+        validate: "_validateVariables"
       }
     },
     members: {
-      /**
-       * Set the variables from a native javascript object, which will be
-       * marshaled into a qooxdoo object which can be used in databinding
-       * @param {Object} map
-       */
-      marshalVariables(map) {
-        this.setVariables(qx.data.marshal.Json.createModel(map));
-      }
+      // overriden
+      toString() {
+        return qx.lang.Json.stringify(this.toObject(), this._jsonReplacer);
+      },
 
+      _jsonReplacer: function _jsonReplacer(key, value) {
+        // Special case. If the variables key is an object, return it's JSON
+        // representation, otherwise remove that key from the final JSON
+        if (key === "variables") {
+          return value !== null ? qx.util.Serializer.toJson(value) : undefined;
+        } // everything else s returned as it is
+
+
+        return value;
+      },
+
+      /**
+       * Transforms the variables object to a qooxdoo model. Called automaticaly
+       * when the variables property is set.
+       */
+      _transformVariables: function _transformVariables(val) {
+        let model = null;
+
+        if (![null, undefined].includes(val)) {
+          model = qx.data.marshal.Json.createModel(val);
+        }
+
+        return model;
+      },
+      _validateVariables: function _validateVariables(val) {
+        if (!qx.lang.Type.isObject(val) && val !== null) {
+          throw new qx.core.ValidationError("Validation Error: " + val + " is not an object or null.");
+        }
+      }
     }
   });
   qx.io.graphql.protocol.Request.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Request.js.map?dt=1601118679098
+//# sourceMappingURL=Request.js.map?dt=1603176823499

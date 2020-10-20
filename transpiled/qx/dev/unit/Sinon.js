@@ -3991,8 +3991,12 @@
           LOADING: 3,
           DONE: 4
         }); // Borrowed from JSpec
-        // @ignore(DOMParser)
-        // @ignore(ActiveXObject)
+
+        /**
+         * @ignore(DOMParser)
+         * @ignore(ActiveXObject)
+         */
+        // 
 
         FakeXMLHttpRequest.parseXML = function parseXML(text) {
           var xmlDoc;
@@ -4928,4 +4932,4 @@
   qx.dev.unit.Sinon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Sinon.js.map?dt=1601118675485
+//# sourceMappingURL=Sinon.js.map?dt=1603176820692

@@ -21,14 +21,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2016 Visionet GmbH, http://www.visionet.de\n     2016 OETIKER+PARTNER AG, https://www.oetiker.ch\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Dietrich Streifert (level420)\n Tobias Oetiker (oetiker)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n*****************************************************************\n</code></pre>"
-        },
-        {
-          "name": "@description",
           "body": ""
         }
       ],
@@ -411,5 +403,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

@@ -88059,6 +88059,16 @@
         apply: "_applyResetSelectionOnTapBelowRows"
       },
 
+      /**
+       * If set then defines the minimum height of the focus indicator when editing
+       */
+      minCellEditHeight: {
+        check: "Integer",
+        nullable: true,
+        init: null,
+        apply: "_applyMinCellEditHeight"
+      },
+
       /** The renderer to use for styling the rows. */
       dataRowRenderer: {
         check: "qx.ui.table.IRowRenderer",
@@ -88283,6 +88293,14 @@
 
         for (var i = 0; i < scrollerArr.length; i++) {
           scrollerArr[i].getHeader().setHeight(value);
+        }
+      },
+      // property modifier
+      _applyMinCellEditHeight: function _applyMinCellEditHeight(value) {
+        var scrollerArr = this._getPaneScrollerArr();
+
+        for (var i = 0; i < scrollerArr.length; i++) {
+          scrollerArr[i].setMinCellEditHeight(value);
         }
       },
 
@@ -91052,7 +91070,7 @@
       },
       // interface implementation
       createDataCellHtml: function createDataCellHtml(cellInfo, htmlArr) {
-        htmlArr.push('<div class="', this._getCellClass(cellInfo), '" style="', 'left:', cellInfo.styleLeft, 'px;', this._getCellSizeStyle(cellInfo.styleWidth, cellInfo.styleHeight, this._insetX, this._insetY), this._getCellStyle(cellInfo), '" ', this._getCellAttributes(cellInfo), '>' + this._getContentHtml(cellInfo), '</div>');
+        htmlArr.push('<div class="', this._getCellClass(cellInfo), '" style="', 'left:', cellInfo.styleLeft, 'px;', this._getCellSizeStyle(cellInfo.styleWidth, cellInfo.styleHeight, this._insetX, this._insetY), this._getCellStyle(cellInfo), '" ', 'data-qx-table-cell-row="', cellInfo.row, '" ', 'data-qx-table-cell-col="', cellInfo.col, '" ', this._getCellAttributes(cellInfo), '>' + this._getContentHtml(cellInfo), '</div>');
       }
     },
     destruct: function destruct() {
@@ -92047,7 +92065,7 @@
        * @param newPositions {Integer[]} Array mapping the index of a column in table model to its wanted overall
        *                            position on screen (both zero based). If the table models holds
        *                            col0, col1, col2 and col3 and you give [1,3,2,0], the new column order
-       *                            will be col3, col0, col2, col1
+       *                            will be col1, col3, col2, col0
        */
       setColumnsOrder: function setColumnsOrder(newPositions) {
         {
@@ -92362,8 +92380,12 @@
         var rowCount = this.getVisibleRowCount();
 
         if (lastRow == -1 || lastRow >= paneFirstRow && firstRow < paneFirstRow + rowCount) {
-          // The change intersects this pane
-          this.updateContent();
+          // The change intersects this pane, check if a full or partial update is required
+          if (firstRow === lastRow && this.getTable().getTableModel().getRowCount() > 1) {
+            this.updateContent(false, null, firstRow, false);
+          } else {
+            this.updateContent();
+          }
         }
       },
 
@@ -92444,6 +92466,8 @@
           this._scrollContent(scrollOffset);
         } else if (onlySelectionOrFocusChanged && !this.getTable().getAlwaysUpdateCells()) {
           this._updateRowStyles(onlyRow);
+        } else if (typeof onlyRow == "number" && onlyRow >= 0) {
+          this._updateSingleRow(onlyRow);
         } else {
           this._updateAllRows();
         }
@@ -92702,6 +92726,47 @@
 
           this._updateRowStyles(this.__focusedRow__P_521_5);
         }
+
+        this.fireEvent("paneUpdated");
+      },
+      _updateSingleRow: function _updateSingleRow(row) {
+        var elem = this.getContentElement().getDomElement();
+
+        if (!elem || !elem.firstChild) {
+          // pane has not yet been rendered, just exit
+          return;
+        }
+
+        var visibleRowCount = this.getVisibleRowCount();
+        var firstRow = this.getFirstVisibleRow();
+
+        if (row < firstRow || row > firstRow + visibleRowCount) {
+          // No need to redraw it
+          return;
+        }
+
+        var modelRowCount = this.getTable().getTableModel().getRowCount();
+        var tableBody = elem.firstChild;
+        var tableChildNodes = tableBody.childNodes;
+        var offset = row - firstRow;
+        var rowElem = tableChildNodes[offset];
+
+        if (row > modelRowCount || typeof rowElem == "undefined") {
+          this._updateAllRows();
+
+          return;
+        } // render new lines
+
+
+        if (!this.__tableContainer__P_521_4) {
+          this.__tableContainer__P_521_4 = document.createElement("div");
+        }
+
+        this.__tableContainer__P_521_4.innerHTML = "<div>" + this._getRowsHtml(row, 1) + "</div>";
+        var newTableRows = this.__tableContainer__P_521_4.firstChild.childNodes;
+        tableBody.replaceChild(newTableRows[0], rowElem); // update focus indicator
+
+        this._updateRowStyles(null);
 
         this.fireEvent("paneUpdated");
       },
@@ -93370,7 +93435,7 @@
 
     /*
     *****************************************************************************
-       PROPERTIES
+       EVENTS
     *****************************************************************************
     */
     events: {
@@ -93513,6 +93578,15 @@
       appearance: {
         refine: true,
         init: "table-scroller"
+      },
+
+      /**
+       * If set then defines the minimum height of the focus indicator when editing
+       */
+      minCellEditHeight: {
+        check: "Integer",
+        init: null,
+        nullable: true
       }
     },
 
@@ -94942,6 +95016,8 @@
               e.stopPropagation();
             }, this);
 
+            this._updateFocusIndicator(true);
+
             this.__focusIndicator__P_522_7.add(this._cellEditor);
 
             this.__focusIndicator__P_522_7.addState("editing");
@@ -94977,8 +95053,8 @@
 
       /**
        * Writes the editor's value to the model
-       * 
-       * @param cancel {Boolean ? false} Whether to also cancel 
+       *
+       * @param cancel {Boolean ? false} Whether to also cancel
        *      editing before firing the 'dateEdited' event.
        */
       flushEditor: function flushEditor(cancel) {
@@ -95019,6 +95095,8 @@
 
               this.__focusIndicatorPointerDownListener__P_522_27 = null;
             }
+
+            this._updateFocusIndicator();
           }
 
           this._cellEditor.destroy();
@@ -95384,15 +95462,16 @@
       /**
        * Updates the location and the visibility of the focus indicator.
        *
+       * @param editing {Boolean ? false} True if editing the cell
        */
-      _updateFocusIndicator: function _updateFocusIndicator() {
+      _updateFocusIndicator: function _updateFocusIndicator(editing) {
         var table = this.getTable();
 
         if (!table.getEnabled()) {
           return;
         }
 
-        this.__focusIndicator__P_522_7.moveToCell(this.__focusedCol__P_522_23, this.__focusedRow__P_522_24);
+        this.__focusIndicator__P_522_7.moveToCell(this.__focusedCol__P_522_23, this.__focusedRow__P_522_24, editing);
       }
     },
 
@@ -96568,8 +96647,10 @@
       setRows: function setRows(rowArr, startIndex, clearSorting) {
         if (startIndex == null) {
           startIndex = 0;
-        } // Prepare the rowArr so it can be used for apply
+        } // store the original length before we alter rowArr for use in splice.apply
 
+
+        var rowArrLength = rowArr.length; // Prepare the rowArr so it can be used for apply
 
         rowArr.splice(0, 0, startIndex, rowArr.length); // Replace rows
 
@@ -96577,7 +96658,7 @@
 
         var data = {
           firstRow: startIndex,
-          lastRow: this._rowArr.length - 1,
+          lastRow: startIndex + rowArrLength - 1,
           firstColumn: 0,
           lastColumn: this.getColumnCount() - 1
         };
@@ -96767,8 +96848,9 @@
        *
        * @param col {Integer?null} The table column
        * @param row {Integer?null} The table row
+       * @param editing {Boolean?null} Whether or not the cell is being edited
        */
-      moveToCell: function moveToCell(col, row) {
+      moveToCell: function moveToCell(col, row, editing) {
         // check if the focus indicator is shown and if the new column is
         // editable. if not, just exclude the indicator because the pointer events
         // should go to the cell itself linked with HTML links [BUG #4250]
@@ -96786,7 +96868,7 @@
         } else {
           var xPos = this.__scroller__P_518_0.getTablePaneModel().getX(col);
 
-          if (xPos == -1) {
+          if (xPos === -1) {
             this.hide();
             this.setRow(null);
             this.setColumn(null);
@@ -96817,7 +96899,15 @@
               }
             }
 
-            this.setUserBounds(paneModel.getColumnLeft(col) - (wt - 1), (row - firstRow) * rowHeight - (wr - 1), columnModel.getColumnWidth(col) + (wt + wb - 3), rowHeight + (wl + wr - 2));
+            var userHeight = rowHeight + (wl + wr - 2);
+            var userTop = (row - firstRow) * rowHeight - (wr - 1);
+
+            if (editing && this.__scroller__P_518_0.getMinCellEditHeight() && this.__scroller__P_518_0.getMinCellEditHeight() > userHeight) {
+              userTop -= Math.floor((this.__scroller__P_518_0.getMinCellEditHeight() - userHeight) / 2);
+              userHeight = this.__scroller__P_518_0.getMinCellEditHeight();
+            }
+
+            this.setUserBounds(paneModel.getColumnLeft(col) - (wt - 1), userTop, columnModel.getColumnWidth(col) + (wt + wb - 3), userHeight);
             this.show();
             this.setRow(row);
             this.setColumn(col);
@@ -98217,11 +98307,19 @@
         var imageHints; // Retrieve the ID
 
         rm = qx.util.ResourceManager.getInstance();
-        ids = rm.getIds(this.__iconUrlTrue__P_508_1); // If ID was found, we'll use its first (likely only) element here.
 
-        if (ids) {
-          id = ids[0]; // Get the natural size of the image
+        if (rm.has(this.__iconUrlTrue__P_508_1)) {
+          id = this.__iconUrlTrue__P_508_1;
+        } else {
+          ids = rm.getIds(this.__iconUrlTrue__P_508_1); // If ID was found, we'll use its first (likely only) element here.
 
+          if (ids) {
+            id = ids[0];
+          }
+        }
+
+        if (id) {
+          // Get the natural size of the image
           w = rm.getImageWidth(id);
           h = rm.getImageHeight(id);
         } // Create the size portion of the hint.
@@ -115678,7 +115776,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1601118726755
+//# sourceMappingURL=package-7.js.map?dt=1603176865358
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

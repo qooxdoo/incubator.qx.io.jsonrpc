@@ -23,14 +23,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\nhttp://qooxdoo.org\nCopyright:\n  2007-2008 1&amp;1 Internet AG, Germany, http://www.1und1.de\nLicense:\n     MIT: https://opensource.org/licenses/MIT\n  See the LICENSE file in the project's top-level directory for details.\nAuthors:\n Fabian Jakobs (fjakobs)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n*****************************************************************\n</code></pre>"
-        },
-        {
-          "name": "@description",
           "body": ""
         }
       ],
@@ -436,5 +428,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

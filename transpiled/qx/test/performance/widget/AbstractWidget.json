@@ -628,6 +628,7 @@
       }
     }
   },
+  "events": {},
   "descendants": [
     "qx.test.performance.widget.Button",
     "qx.test.performance.widget.Label",

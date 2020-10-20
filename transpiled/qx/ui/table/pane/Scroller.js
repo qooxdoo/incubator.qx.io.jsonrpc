@@ -256,7 +256,7 @@
 
     /*
     *****************************************************************************
-       PROPERTIES
+       EVENTS
     *****************************************************************************
     */
     events: {
@@ -399,6 +399,15 @@
       appearance: {
         refine: true,
         init: "table-scroller"
+      },
+
+      /**
+       * If set then defines the minimum height of the focus indicator when editing
+       */
+      minCellEditHeight: {
+        check: "Integer",
+        init: null,
+        nullable: true
       }
     },
 
@@ -1828,6 +1837,8 @@
               e.stopPropagation();
             }, this);
 
+            this._updateFocusIndicator(true);
+
             this.__focusIndicator__P_522_7.add(this._cellEditor);
 
             this.__focusIndicator__P_522_7.addState("editing");
@@ -1863,8 +1874,8 @@
 
       /**
        * Writes the editor's value to the model
-       * 
-       * @param cancel {Boolean ? false} Whether to also cancel 
+       *
+       * @param cancel {Boolean ? false} Whether to also cancel
        *      editing before firing the 'dateEdited' event.
        */
       flushEditor: function flushEditor(cancel) {
@@ -1905,6 +1916,8 @@
 
               this.__focusIndicatorPointerDownListener__P_522_27 = null;
             }
+
+            this._updateFocusIndicator();
           }
 
           this._cellEditor.destroy();
@@ -2270,15 +2283,16 @@
       /**
        * Updates the location and the visibility of the focus indicator.
        *
+       * @param editing {Boolean ? false} True if editing the cell
        */
-      _updateFocusIndicator: function _updateFocusIndicator() {
+      _updateFocusIndicator: function _updateFocusIndicator(editing) {
         var table = this.getTable();
 
         if (!table.getEnabled()) {
           return;
         }
 
-        this.__focusIndicator__P_522_7.moveToCell(this.__focusedCol__P_522_23, this.__focusedRow__P_522_24);
+        this.__focusIndicator__P_522_7.moveToCell(this.__focusedCol__P_522_23, this.__focusedRow__P_522_24, editing);
       }
     },
 
@@ -2305,4 +2319,4 @@
   qx.ui.table.pane.Scroller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Scroller.js.map?dt=1601118710801
+//# sourceMappingURL=Scroller.js.map?dt=1603176848663

@@ -17,14 +17,7 @@
         "column": 5
       }
     },
-    "jsdoc": {
-      "@description": [
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n http://qooxdoo.org\n Copyright:\n 2004-2014 1&amp;1 Internet AG, Germany, http://www.1und1.de\n License:\n     MIT: https://opensource.org/licenses/MIT\n See the LICENSE file in the project's top-level directory for details.\n Authors:\n Tobias Oberrauch <a href=\"&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;:&#x74;&#111;&#x62;&#x69;&#97;&#x73;&#46;&#111;&#x62;&#101;&#x72;&#114;&#x61;&#x75;&#x63;&#x68;&#x40;&#x31;&#117;&#x6e;&#100;&#49;.&#x64;&#101;\">t&#x6f;&#98;&#x69;&#97;&#115;&#46;&#111;&#x62;&#101;r&#114;&#97;&#117;&#99;&#x68;&#64;&#x31;&#117;&#110;d1&#46;&#x64;&#101;</a>\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        }
-      ]
-    }
+    "jsdoc": {}
   },
   "type": "class",
   "members": {
@@ -353,5 +346,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

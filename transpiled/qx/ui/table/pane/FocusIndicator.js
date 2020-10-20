@@ -92,8 +92,9 @@
        *
        * @param col {Integer?null} The table column
        * @param row {Integer?null} The table row
+       * @param editing {Boolean?null} Whether or not the cell is being edited
        */
-      moveToCell: function moveToCell(col, row) {
+      moveToCell: function moveToCell(col, row, editing) {
         // check if the focus indicator is shown and if the new column is
         // editable. if not, just exclude the indicator because the pointer events
         // should go to the cell itself linked with HTML links [BUG #4250]
@@ -111,7 +112,7 @@
         } else {
           var xPos = this.__scroller__P_518_0.getTablePaneModel().getX(col);
 
-          if (xPos == -1) {
+          if (xPos === -1) {
             this.hide();
             this.setRow(null);
             this.setColumn(null);
@@ -142,7 +143,15 @@
               }
             }
 
-            this.setUserBounds(paneModel.getColumnLeft(col) - (wt - 1), (row - firstRow) * rowHeight - (wr - 1), columnModel.getColumnWidth(col) + (wt + wb - 3), rowHeight + (wl + wr - 2));
+            var userHeight = rowHeight + (wl + wr - 2);
+            var userTop = (row - firstRow) * rowHeight - (wr - 1);
+
+            if (editing && this.__scroller__P_518_0.getMinCellEditHeight() && this.__scroller__P_518_0.getMinCellEditHeight() > userHeight) {
+              userTop -= Math.floor((this.__scroller__P_518_0.getMinCellEditHeight() - userHeight) / 2);
+              userHeight = this.__scroller__P_518_0.getMinCellEditHeight();
+            }
+
+            this.setUserBounds(paneModel.getColumnLeft(col) - (wt - 1), userTop, columnModel.getColumnWidth(col) + (wt + wb - 3), userHeight);
             this.show();
             this.setRow(row);
             this.setColumn(col);
@@ -157,4 +166,4 @@
   qx.ui.table.pane.FocusIndicator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FocusIndicator.js.map?dt=1601118710404
+//# sourceMappingURL=FocusIndicator.js.map?dt=1603176848326

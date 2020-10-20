@@ -246,4 +246,4 @@
   qx.test.ui.list.core.SingleSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SingleSelection.js.map?dt=1601118694403
+//# sourceMappingURL=SingleSelection.js.map?dt=1603176835536

@@ -225,10 +225,23 @@
               } else if (width > size.maxWidth) {
                 width = size.maxWidth;
               }
+            } // AlignX support.
+
+
+            if (left == null && right == null) {
+              switch (child.getAlignX()) {
+                case "center":
+                  left = (availWidth - size.width) / 2 - marginRight;
+                  break;
+
+                case "right":
+                  right = 0;
+                  break;
+              }
             }
 
             if (right != null) {
-              left = availWidth - width - right - marginRight - marginLeft;
+              left = availWidth - width - right - marginRight;
             } else if (left == null) {
               left = marginLeft;
             } else {
@@ -262,10 +275,23 @@
               } else if (height > size.maxHeight) {
                 height = size.maxHeight;
               }
+            } // AlignY support.
+
+
+            if (top == null && bottom == null) {
+              switch (child.getAlignY()) {
+                case "middle":
+                  top = (availHeight - size.height) / 2 - marginBottom;
+                  break;
+
+                case "bottom":
+                  bottom = 0;
+                  break;
+              }
             }
 
             if (bottom != null) {
-              top = availHeight - height - bottom - marginBottom - marginTop;
+              top = availHeight - height - bottom - marginBottom;
             } else if (top == null) {
               top = marginTop;
             } else {
@@ -353,4 +379,4 @@
   qx.ui.layout.Canvas.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Canvas.js.map?dt=1601118704375
+//# sourceMappingURL=Canvas.js.map?dt=1603176843702

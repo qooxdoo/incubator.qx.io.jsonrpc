@@ -123,11 +123,19 @@
         var imageHints; // Retrieve the ID
 
         rm = qx.util.ResourceManager.getInstance();
-        ids = rm.getIds(this.__iconUrlTrue__P_508_1); // If ID was found, we'll use its first (likely only) element here.
 
-        if (ids) {
-          id = ids[0]; // Get the natural size of the image
+        if (rm.has(this.__iconUrlTrue__P_508_1)) {
+          id = this.__iconUrlTrue__P_508_1;
+        } else {
+          ids = rm.getIds(this.__iconUrlTrue__P_508_1); // If ID was found, we'll use its first (likely only) element here.
 
+          if (ids) {
+            id = ids[0];
+          }
+        }
+
+        if (id) {
+          // Get the natural size of the image
           w = rm.getImageWidth(id);
           h = rm.getImageHeight(id);
         } // Create the size portion of the hint.
@@ -176,4 +184,4 @@
   qx.ui.table.cellrenderer.Boolean.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Boolean.js.map?dt=1601118709595
+//# sourceMappingURL=Boolean.js.map?dt=1603176847673

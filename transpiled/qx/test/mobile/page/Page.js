@@ -141,4 +141,4 @@
   qx.test.mobile.page.Page.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Page.js.map?dt=1601118690547
+//# sourceMappingURL=Page.js.map?dt=1603176832588

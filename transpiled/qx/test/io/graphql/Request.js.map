@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/test/io/graphql/Request.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "include",
+    "test",
+    "io",
+    "MAssert",
+    "members",
+    "query",
+    "variables",
+    "request",
+    "graphql",
+    "protocol",
+    "Request",
+    "setVariables",
+    "expected",
+    "assertEquals",
+    "toString",
+    "model",
+    "data",
+    "marshal",
+    "Json",
+    "createModel",
+    "source",
+    "bind",
+    "setSource",
+    "assertMatch"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,4BAAhB,EAA8C;AAC5CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,GAAH,CAAOC,IAAP,CAAYC,QADwB;AAE5CC,IAAAA,OAAO,EAAE,CAACV,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWC,OAAZ,CAFmC;AAI5CC,IAAAA,OAAO,EAAE;AAEP,gDAA0C,2CAAW;AACnD,cAAMC,KAAK,GAAG,2BAAd;AACA,cAAMC,SAAS,GAAG;AAAC,qBAAW;AAAZ,SAAlB;AAEA,cAAMC,OAAO,GAAG,IAAIjB,EAAE,CAACY,EAAH,CAAMM,OAAN,CAAcC,QAAd,CAAuBC,OAA3B,CAAmC;AAACL,UAAAA;AAAD,SAAnC,CAAhB;AACAE,QAAAA,OAAO,CAACI,YAAR,CAAqBL,SAArB;AAEA,cAAMM,QAAQ,GAAG,iGAAjB;AACA,aAAKC,YAAL,CAAkBD,QAAlB,EAA4BL,OAAO,CAACO,QAAR,EAA5B;AACD,OAXM;AAaP,gDAA0C,2CAAW;AACnD,cAAMT,KAAK,GAAG,2BAAd;AACA,cAAME,OAAO,GAAG,IAAIjB,EAAE,CAACY,EAAH,CAAMM,OAAN,CAAcC,QAAd,CAAuBC,OAA3B,CAAmC;AAACL,UAAAA;AAAD,SAAnC,CAAhB;AAEA,cAAMO,QAAQ,GAAG,2CAAjB;AACA,aAAKC,YAAL,CAAkBD,QAAlB,EAA4BL,OAAO,CAACO,QAAR,EAA5B;AACD,OAnBM;AAqBP,sCAAgC,mCAAW;AACzC,cAAMT,KAAK,GAAG,2BAAd;AACA,cAAMC,SAAS,GAAG;AAAC,qBAAW;AAAZ,SAAlB;AACA,cAAMC,OAAO,GAAG,IAAIjB,EAAE,CAACY,EAAH,CAAMM,OAAN,CAAcC,QAAd,CAAuBC,OAA3B,CAAmC;AAACL,UAAAA;AAAD,SAAnC,CAAhB;AACAE,QAAAA,OAAO,CAACI,YAAR,CAAqBL,SAArB;AAEA,cAAMS,KAAK,GAAGzB,EAAE,CAAC0B,IAAH,CAAQC,OAAR,CAAgBC,IAAhB,CAAqBC,WAArB,CAAiC;AAACC,UAAAA,MAAM,EAAE;AAAT,SAAjC,CAAd;AACAL,QAAAA,KAAK,CAACM,IAAN,CAAW,QAAX,EAAqBd,OAArB,EAA8B,mBAA9B;AACAQ,QAAAA,KAAK,CAACO,SAAN,CAAgB,cAAhB;AAEA,aAAKC,WAAL,CAAiBhB,OAAO,CAACO,QAAR,EAAjB,EAAqC,cAArC;AACD;AAhCM;AAJmC,GAA9C;AAAAxB,EAAAA,EAAE,CAACW,IAAH,CAAQC,EAAR,CAAWM,OAAX,CAAmBE,OAAnB,CAA2BjB,aAA3B,GAA2CA,aAA3C",
+  "sourcesContent": [
+    "qx.Class.define(\"qx.test.io.graphql.Request\", {\n  extend: qx.dev.unit.TestCase,\n  include: [qx.test.io.MAssert],\n\n  members: {\n\n    \"test: request can be converted to json\": function() {\n      const query = \"query { SomeRandomStuff }\";\n      const variables = {\"testKey\": \"testValue\"};\n\n      const request = new qx.io.graphql.protocol.Request({query});\n      request.setVariables(variables);\n\n      const expected = \"{\\\"query\\\":\\\"query { SomeRandomStuff }\\\",\\\"variables\\\":\\\"{\\\\\\\"testKey\\\\\\\":\\\\\\\"testValue\\\\\\\"}\\\"}\";\n      this.assertEquals(expected, request.toString());\n    },\n\n    \"test: no variables in the final string\": function() {\n      const query = \"query { SomeRandomStuff }\";\n      const request = new qx.io.graphql.protocol.Request({query});\n\n      const expected = \"{\\\"query\\\":\\\"query { SomeRandomStuff }\\\"}\";\n      this.assertEquals(expected, request.toString());\n    },\n\n    \"test: variables can be bound\": function() {\n      const query = \"query { SomeRandomStuff }\";\n      const variables = {\"testKey\": \"testValue\"};\n      const request = new qx.io.graphql.protocol.Request({query});\n      request.setVariables(variables);\n\n      const model = qx.data.marshal.Json.createModel({source: \"test\"});\n      model.bind(\"source\", request, \"variables.testKey\");\n      model.setSource(\"newTestValue\");\n\n      this.assertMatch(request.toString(), /newTestValue/);\n    }\n  }\n});\n\n"
+  ]
+}

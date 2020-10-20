@@ -44,16 +44,12 @@
   },
   "events": {
     "message": {
-      "location": {
-        "start": {
-          "line": 16,
-          "column": 4
-        },
-        "end": {
-          "line": 16,
-          "column": 35
-        }
-      },
+      "type": "event",
+      "name": "message",
+      "abstract": true,
+      "mixin": false,
+      "access": "public",
+      "overriddenFrom": null,
       "jsdoc": {
         "@description": [
           {
@@ -61,9 +57,7 @@
             "body": "<p>Event fired when a message is received from the endpoint. Event data\n is an UTF-8 encoded string</p>"
           }
         ]
-      },
-      "name": "message",
-      "type": "qx.event.type.Data"
+      }
     }
   },
   "members": {

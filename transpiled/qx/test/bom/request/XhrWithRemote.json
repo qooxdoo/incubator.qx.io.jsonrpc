@@ -25,14 +25,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2004-2011 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Tristan Koch (tristankoch)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n*****************************************************************\n</code></pre>"
-        },
-        {
-          "name": "@description",
           "body": ""
         }
       ],
@@ -112,22 +104,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Basic</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -282,174 +259,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>\"test: GET simultaneously\": function() {</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>var count = 1,</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   upTo = 20,\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   startedAt = new Date(),\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   duration = 0,\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   that = this;\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>for (var i=0; i&lt;upTo; i++) {</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code> (function() {\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   var req = new qx.bom.request.Xhr(),\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       url = that.noCache(that.getUrl(\"qx/test/xmlhttp/loading.php\")) + \"&amp;duration=2\";\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   req.onreadystatechange = function() {\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>     if (req.readyState != 4) {\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       return;\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>     }\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>     that.resume(function() {\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       duration = (new Date() - startedAt) / 1000;\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       that.debug(\"Request #\" + count + \" completed (\" +  duration + \")\");\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       if (count == upTo) {\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>         return;\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       }\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       ++count;\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>       that.wait();\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>     });\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   }\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   req.open(\"GET\", url);\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code>   req.send();\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<pre><code> })();\n</code></pre>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>}</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>this.wait(15000 + 1000);</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>},</p>"
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -492,14 +302,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>BUGFIXES</p>"
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -570,22 +373,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onreadystatechange()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -642,22 +430,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onerror()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -700,22 +473,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>ontimeout()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -758,22 +516,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>onloadend()</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -788,22 +531,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Call order</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -832,22 +560,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Disposing</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -2272,5 +1985,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

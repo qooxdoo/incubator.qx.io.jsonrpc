@@ -21,10 +21,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2004-2010 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Adrian Olaru (adrianolaru)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
           "body": ""
         }
       ],
@@ -304,58 +300,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>On safari this test fails, if we are running the</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>complete testsuite and the test is not the first</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>test in qx.test.bom.media.MediaTestCase. By naming</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>it with a blank behind test it is enqueued as the first</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>test and the test run succeeds.</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          },
-          {
-            "name": "@description",
-            "body": "<p>Note that the tests in qx.test.bom.media.MediaTestCase</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>are started seperately or this test is restarted after</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>it failed, then it succeeds.</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>This is some weird timing or caching issue which could</p>"
-          },
-          {
-            "name": "@description",
-            "body": "<p>not be solved otherwise.</p>"
-          },
-          {
-            "name": "@description",
-            "body": ""
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "public"
     },
@@ -634,6 +579,7 @@
       }
     }
   },
+  "events": {},
   "descendants": [
     "qx.test.bom.media.Audio",
     "qx.test.bom.media.Video"

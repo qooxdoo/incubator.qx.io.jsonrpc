@@ -256,7 +256,7 @@
       verifyLayoutProperty: function verifyLayoutProperty(item, name, value) {
         this.assert(name === "flex" || name === "width", "The property '" + name + "' is not supported by the HBox layout!");
 
-        if (name == "width") {
+        if (name === "width") {
           this.assertMatch(value, qx.ui.layout.Util.PERCENT_VALUE);
         } else {
           // flex
@@ -278,11 +278,12 @@
 
         var spacing = this.getSpacing();
         var separator = this.getSeparator();
+        var gaps;
 
         if (separator) {
-          var gaps = util.computeHorizontalSeparatorGaps(children, spacing, separator);
+          gaps = util.computeHorizontalSeparatorGaps(children, spacing, separator);
         } else {
-          var gaps = util.computeHorizontalGaps(children, spacing, true);
+          gaps = util.computeHorizontalGaps(children, spacing, true);
         } // First run to cache children data and compute allocated width
 
 
@@ -449,11 +450,12 @@
 
         var spacing = this.getSpacing();
         var separator = this.getSeparator();
+        var gaps;
 
         if (separator) {
-          var gaps = util.computeHorizontalSeparatorGaps(children, spacing, separator);
+          gaps = util.computeHorizontalSeparatorGaps(children, spacing, separator);
         } else {
-          var gaps = util.computeHorizontalGaps(children, spacing, true);
+          gaps = util.computeHorizontalGaps(children, spacing, true);
         } // Return hint
 
 
@@ -478,4 +480,4 @@
   qx.ui.layout.HBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HBox.js.map?dt=1601118704749
+//# sourceMappingURL=HBox.js.map?dt=1603176843992

@@ -17,14 +17,7 @@
         "column": 3
       }
     },
-    "jsdoc": {
-      "@description": [
-        {
-          "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2009 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Adrian Olaru (adrianolaru)\n   ======================================================================\n   This class contains code based on the following work:\n Cross-Browser Split\n     http://stevenlevithan.com/demo/split.cfm\n     Copyright:\n       (c) 2006-2007, Steven Levithan <a href=\"http://stevenlevithan.com\">http://stevenlevithan.com</a>\n     License:\n       MIT: http://www.opensource.org/licenses/mit-license.php\n     Authors:\n Steven Levithan\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        }
-      ]
-    }
+    "jsdoc": {}
   },
   "type": "class",
   "members": {
@@ -331,5 +324,6 @@
       }
     }
   },
+  "events": {},
   "descendants": []
 }

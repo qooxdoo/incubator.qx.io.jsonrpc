@@ -21,10 +21,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2020 Christian Boulanger\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Boulanger (cboulanger)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
           "body": "<p>A class for representing errors that occurred during the request transport.\n  In the context of HTTP requests, the error code is the HTTP error code.</p>"
         }
       ]
@@ -155,14 +151,7 @@
           "column": 24
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>JSON-RPC</p>"
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "variable",
       "access": "public"
     },
@@ -177,14 +166,7 @@
           "column": 25
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>JSON-RPC</p>"
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "variable",
       "access": "public"
     },
@@ -199,14 +181,7 @@
           "column": 25
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<p>JSON-RPC</p>"
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "variable",
       "access": "public"
     }

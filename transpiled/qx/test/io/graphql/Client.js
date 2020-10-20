@@ -64,7 +64,7 @@
         let req = new qx.io.graphql.protocol.Request({
           query
         });
-        req.marshalVariables(variables);
+        req.setVariables(variables);
         let result = await this.client.send(req);
         this.assertDeepEquals(expected, result);
       },
@@ -129,8 +129,12 @@
 
       async "test: expect transport error"() {
         try {
-          let client = new qx.io.graphql.Client("https://doesnotexist.org/" + Math.random());
-          let response = await client.send("query: { doesnotmatter }");
+          const client = new qx.io.graphql.Client("https://doesnotexist.org/" + Math.random());
+          const query = "query { doesnotmatter }";
+          const request = new qx.io.graphql.protocol.Request({
+            query
+          });
+          const response = await client.send(request);
         } catch (e) {
           this.assertInstance(e, qx.io.exception.Transport);
           return;
@@ -144,4 +148,4 @@
   qx.test.io.graphql.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1601118688932
+//# sourceMappingURL=Client.js.map?dt=1603176831299

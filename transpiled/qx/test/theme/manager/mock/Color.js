@@ -23,4 +23,4 @@
   qx.test.theme.manager.mock.Color.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Color.js.map?dt=1601118691243
+//# sourceMappingURL=Color.js.map?dt=1603176833117

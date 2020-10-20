@@ -304,7 +304,7 @@
        */
       format: function format(pattern, args) {
         var str = pattern;
-        var regexp = /%(\d+)|%{(\S*)}/g;
+        var regexp = /%(\d+)|%{(\S[^}\s]*)}/g;
 
         if (!Array.isArray(args)) {
           args = [args];
@@ -397,4 +397,4 @@
   qx.lang.String.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=String.js.map?dt=1601118681001
+//# sourceMappingURL=String.js.map?dt=1603176825007

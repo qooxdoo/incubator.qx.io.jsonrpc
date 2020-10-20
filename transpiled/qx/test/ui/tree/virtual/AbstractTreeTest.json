@@ -24,10 +24,6 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>qooxdoo - the new era of web development\n   http://qooxdoo.org\n   Copyright:\n     2011 1&amp;1 Internet AG, Germany, http://www.1und1.de\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n   Authors:\n Christian Hagendorn (chris_schmidt)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
-        },
-        {
-          "name": "@description",
           "body": ""
         }
       ],
@@ -164,14 +160,7 @@
           "column": 5
         }
       },
-      "jsdoc": {
-        "@description": [
-          {
-            "name": "@description",
-            "body": "<pre><code>---------------------------------------------------------------------------\n  HELPER METHODS TO CREATE A TREE STRUCTURE\n---------------------------------------------------------------------------\n</code></pre>"
-          }
-        ]
-      },
+      "jsdoc": {},
       "type": "function",
       "access": "protected"
     },
@@ -1101,6 +1090,7 @@
     },
     "jsdoc": {}
   },
+  "events": {},
   "descendants": [
     "qx.test.ui.tree.virtual.MultiSelection",
     "qx.test.ui.tree.virtual.SingleSelection",

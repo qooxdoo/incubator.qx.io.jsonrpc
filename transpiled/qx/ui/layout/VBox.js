@@ -278,11 +278,12 @@
 
         var spacing = this.getSpacing();
         var separator = this.getSeparator();
+        var gaps;
 
         if (separator) {
-          var gaps = util.computeVerticalSeparatorGaps(children, spacing, separator);
+          gaps = util.computeVerticalSeparatorGaps(children, spacing, separator);
         } else {
-          var gaps = util.computeVerticalGaps(children, spacing, true);
+          gaps = util.computeVerticalGaps(children, spacing, true);
         } // First run to cache children data and compute allocated height
 
 
@@ -448,11 +449,12 @@
 
         var spacing = this.getSpacing();
         var separator = this.getSeparator();
+        var gaps;
 
         if (separator) {
-          var gaps = util.computeVerticalSeparatorGaps(children, spacing, separator);
+          gaps = util.computeVerticalSeparatorGaps(children, spacing, separator);
         } else {
-          var gaps = util.computeVerticalGaps(children, spacing, true);
+          gaps = util.computeVerticalGaps(children, spacing, true);
         } // Return hint
 
 
@@ -477,4 +479,4 @@
   qx.ui.layout.VBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=VBox.js.map?dt=1601118704899
+//# sourceMappingURL=VBox.js.map?dt=1603176844098

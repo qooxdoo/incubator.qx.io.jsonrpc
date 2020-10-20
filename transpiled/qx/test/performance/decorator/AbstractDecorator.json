@@ -666,6 +666,7 @@
       }
     }
   },
+  "events": {},
   "descendants": [
     "qx.test.performance.decorator.Background",
     "qx.test.performance.decorator.BackgroundScale",
