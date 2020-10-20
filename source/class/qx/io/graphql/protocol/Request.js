@@ -40,18 +40,47 @@ qx.Class.define("qx.io.graphql.protocol.Request",{
     variables : {
       check: "qx.core.Object",
       nullable: true,
-      event: "changeVariables"
+      event: "changeVariables",
+      transform: "_transformVariables",
+      validate: "_validateVariables"
     }
   },
 
   members: {
+    // overriden
+    toString() {
+      return qx.lang.Json.stringify(this.toObject(), this._jsonReplacer);
+    },
+
+    _jsonReplacer: function(key, value) {
+      // Special case. If the variables key is an object, return it's JSON
+      // representation, otherwise remove that key from the final JSON
+      if (key === "variables") {
+        return value !== null ? qx.util.Serializer.toJson(value) : undefined;
+      }
+      // everything else s returned as it is
+      return value;
+    },
+
+
     /**
-     * Set the variables from a native javascript object, which will be
-     * marshaled into a qooxdoo object which can be used in databinding
-     * @param {Object} map
+     * Transforms the variables object to a qooxdoo model. Called automaticaly
+     * when the variables property is set.
      */
-    marshalVariables(map) {
-      this.setVariables(qx.data.marshal.Json.createModel(map));
+    _transformVariables: function(val) {
+      let model = null;
+      if (![null, undefined].includes(val)) {
+        model = qx.data.marshal.Json.createModel(val);
+      }
+      return model;
+    },
+
+    _validateVariables: function(val) {
+      if (!qx.lang.Type.isObject(val) && (val !== null)) {
+        throw new qx.core.ValidationError(
+          "Validation Error: " + val + " is not an object or null."
+        );
+      }
     }
   }
 });
