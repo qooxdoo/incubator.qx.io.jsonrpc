@@ -8,7 +8,8 @@
       "qxl.apiviewer.ui.panels.InfoPanel": {
         "require": true
       },
-      "qxl.apiviewer.dao.Package": {}
+      "qxl.apiviewer.dao.Package": {},
+      "qx.Promise": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -75,7 +76,7 @@
        */
       update: function update(classViewer, currentClassDocNode) {
         if (!this.getElement()) {
-          return;
+          return qx.Promise.resolve(false);
         }
 
         return this.setDocNodeAsync(currentClassDocNode).then(() => {
@@ -93,4 +94,4 @@
   qxl.apiviewer.ui.panels.PackagePanel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PackagePanel.js.map?dt=1603176854128
+//# sourceMappingURL=PackagePanel.js.map?dt=1605962055263

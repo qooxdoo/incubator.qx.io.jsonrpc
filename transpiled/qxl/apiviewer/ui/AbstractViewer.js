@@ -57,6 +57,7 @@
        * Fabian Jakobs (fjakobs)
        * Jonathan Weiß (jonathan_rass)
        * John Spackman (johnspackman)
+       * Henner Kollmann (hkollmann)
   
   ************************************************************************ */
   qx.Class.define("qxl.apiviewer.ui.AbstractViewer", {
@@ -167,15 +168,19 @@
         }
       }
     },
+    events: {
+      "synced": "qx.event.type.Event"
+    },
     members: {
       _infoPanelHash: null,
       _infoPanels: null,
+      __valid__P_605_0: false,
       _init: function _init(pkg) {
-        this.__initHtml__P_604_0();
+        this.__initHtml__P_605_1();
 
         this.addListenerOnce("appear", () => this._syncHtml());
       },
-      __initHtml__P_604_0: function __initHtml__P_604_0() {
+      __initHtml__P_605_1: function __initHtml__P_605_1() {
         var html = new qx.util.StringBuilder();
         html.add("<div style=\"padding:24px;\">"); // Add title
 
@@ -218,7 +223,7 @@
        * HtmlEmbed element initialization routine.
        *
        */
-      _syncHtml: function _syncHtml() {
+      _syncHtml: async function _syncHtml() {
         var oldTitleElem = this._titleElem;
         var element = this.getContentElement().getDomElement().firstChild;
         var divArr = element.childNodes;
@@ -234,8 +239,14 @@
         }
 
         if (oldTitleElem !== this._titleElem && this.getDocNode()) {
-          this._applyDocNode(this.getDocNode());
+          await this._applyDocNode(this.getDocNode());
         }
+
+        this.__valid__P_605_0 = true;
+        this.fireEvent("synced");
+      },
+      isValid: function isValid() {
+        return this.__valid__P_605_0;
       },
       addInfoPanel: function addInfoPanel(panel) {
         this._infoPanelHash[panel.toHashCode()] = panel;
@@ -292,7 +303,7 @@
        */
       _applyDocNode: function _applyDocNode(classNode) {
         if (!this._titleElem) {
-          return;
+          return null;
         }
 
         this._titleElem.innerHTML = this._getTitleHtml(classNode);
@@ -325,6 +336,8 @@
         } catch (exc) {
           this.error("Toggling info body failed", exc);
         }
+
+        return null;
       },
 
       /**
@@ -400,4 +413,4 @@
   qxl.apiviewer.ui.AbstractViewer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractViewer.js.map?dt=1603176854086
+//# sourceMappingURL=AbstractViewer.js.map?dt=1605962055210

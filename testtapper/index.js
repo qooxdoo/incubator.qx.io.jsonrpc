@@ -60,7 +60,7 @@ var envinfo = {
   "qx.application": "qxl.testtapper.Application",
   "qx.revision": "",
   "qx.theme": "qx.theme.Simple",
-  "qx.version": "6.0.0-beta-20201003-1033",
+  "qx.version": "6.0.0-beta-20201119-2000",
   "qx.libraryInfoMap": {
     "qx": {
       "name": "qooxdoo framework",
@@ -141,7 +141,7 @@ var envinfo = {
           "email": "dietrich.streifert@visionet.de"
         }
       ],
-      "version": "6.0.0-beta-20201003-1033"
+      "version": "6.0.0-beta-20201119-2000"
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
@@ -173,7 +173,7 @@ var envinfo = {
           "email": "tobi@oetiker.ch"
         }
       ],
-      "version": "0.5.0",
+      "version": "0.5.2",
       "sourceViewUri": "https://github.com/qooxdoo/qxl.testtapper/blob//source/class/#L"
     },
     "qxl.logpane": {
@@ -196,7 +196,7 @@ var envinfo = {
           "email": "Henner DOT Kollmann AT gmx DOT de"
         }
       ],
-      "version": "1.0.0-beta.3"
+      "version": "1.0.1"
     }
   },
   "true": true,
@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compiler.version": "1.0.0-beta-20201003-1033",
+  "qx.compiler.version": "1.0.0-beta-20201119-2000",
   "qx.icontheme": "Tango",
   "qx.test.delay.scale": 1,
   "qx.buildType": "source",

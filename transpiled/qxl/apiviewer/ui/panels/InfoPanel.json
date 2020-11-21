@@ -9,11 +9,11 @@
   "clazz": {
     "location": {
       "start": {
-        "line": 31,
+        "line": 32,
         "column": 0
       },
       "end": {
-        "line": 1228,
+        "line": 1247,
         "column": 3
       }
     },
@@ -53,11 +53,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 44,
+        "line": 45,
         "column": 13
       },
       "end": {
-        "line": 49,
+        "line": 50,
         "column": 3
       }
     },
@@ -83,11 +83,11 @@
     "element": {
       "location": {
         "start": {
-          "line": 54,
+          "line": 55,
           "column": 4
         },
         "end": {
-          "line": 59,
+          "line": 60,
           "column": 5
         }
       },
@@ -109,11 +109,11 @@
     "isOpen": {
       "location": {
         "start": {
-          "line": 62,
+          "line": 63,
           "column": 4
         },
         "end": {
-          "line": 65,
+          "line": 66,
           "column": 5
         }
       },
@@ -134,11 +134,11 @@
     "docNode": {
       "location": {
         "start": {
-          "line": 67,
+          "line": 68,
           "column": 4
         },
         "end": {
-          "line": 70,
+          "line": 71,
           "column": 5
         }
       },
@@ -185,11 +185,11 @@
     "_labelText": {
       "location": {
         "start": {
-          "line": 75,
+          "line": 76,
           "column": 4
         },
         "end": {
-          "line": 75,
+          "line": 76,
           "column": 20
         }
       },
@@ -199,11 +199,11 @@
     "_icon": {
       "location": {
         "start": {
-          "line": 76,
+          "line": 77,
           "column": 4
         },
         "end": {
-          "line": 76,
+          "line": 77,
           "column": 15
         }
       },
@@ -213,11 +213,11 @@
     "getPanelTitle": {
       "location": {
         "start": {
-          "line": 83,
+          "line": 84,
           "column": 4
         },
         "end": {
-          "line": 85,
+          "line": 86,
           "column": 5
         }
       },
@@ -243,11 +243,11 @@
     "getPanelIcon": {
       "location": {
         "start": {
-          "line": 92,
+          "line": 93,
           "column": 4
         },
         "end": {
-          "line": 94,
+          "line": 95,
           "column": 5
         }
       },
@@ -273,11 +273,11 @@
     "canDisplayItem": {
       "location": {
         "start": {
-          "line": 101,
+          "line": 102,
           "column": 4
         },
         "end": {
-          "line": 103,
+          "line": 104,
           "column": 5
         }
       },
@@ -303,11 +303,11 @@
     "getItemTypeHtml": {
       "location": {
         "start": {
-          "line": 116,
+          "line": 117,
           "column": 4
         },
         "end": {
-          "line": 118,
+          "line": 119,
           "column": 5
         }
       },
@@ -355,11 +355,11 @@
     "getItemTitleHtml": {
       "location": {
         "start": {
-          "line": 131,
+          "line": 132,
           "column": 4
         },
         "end": {
-          "line": 133,
+          "line": 134,
           "column": 5
         }
       },
@@ -407,11 +407,11 @@
     "getItemTextHtml": {
       "location": {
         "start": {
-          "line": 148,
+          "line": 149,
           "column": 4
         },
         "end": {
-          "line": 150,
+          "line": 151,
           "column": 5
         }
       },
@@ -466,11 +466,11 @@
     "getItemTooltip": {
       "location": {
         "start": {
-          "line": 152,
+          "line": 153,
           "column": 4
         },
         "end": {
-          "line": 154,
+          "line": 155,
           "column": 5
         }
       },
@@ -480,11 +480,11 @@
     "getItemHtml": {
       "location": {
         "start": {
-          "line": 167,
+          "line": 168,
           "column": 4
         },
         "end": {
-          "line": 224,
+          "line": 226,
           "column": 5
         }
       },
@@ -532,11 +532,11 @@
     "itemHasDetails": {
       "location": {
         "start": {
-          "line": 238,
+          "line": 240,
           "column": 4
         },
         "end": {
-          "line": 240,
+          "line": 242,
           "column": 5
         }
       },
@@ -584,11 +584,11 @@
     "__encodeObject": {
       "location": {
         "start": {
-          "line": 242,
+          "line": 244,
           "column": 4
         },
         "end": {
-          "line": 244,
+          "line": 246,
           "column": 5
         }
       },
@@ -598,11 +598,11 @@
     "getPanelHtml": {
       "location": {
         "start": {
-          "line": 251,
+          "line": 253,
           "column": 4
         },
         "end": {
-          "line": 263,
+          "line": 265,
           "column": 5
         }
       },
@@ -628,11 +628,11 @@
     "_getPanelItems": {
       "location": {
         "start": {
-          "line": 275,
+          "line": 277,
           "column": 4
         },
         "end": {
-          "line": 307,
+          "line": 309,
           "column": 5
         }
       },
@@ -674,11 +674,11 @@
     "_canShowInherited": {
       "location": {
         "start": {
-          "line": 309,
+          "line": 311,
           "column": 4
         },
         "end": {
-          "line": 311,
+          "line": 313,
           "column": 5
         }
       },
@@ -688,11 +688,11 @@
     "getPanelItemObjects": {
       "location": {
         "start": {
-          "line": 313,
+          "line": 315,
           "column": 4
         },
         "end": {
-          "line": 315,
+          "line": 317,
           "column": 5
         }
       },
@@ -702,11 +702,11 @@
     "__filterItems": {
       "location": {
         "start": {
-          "line": 330,
+          "line": 332,
           "column": 4
         },
         "end": {
-          "line": 346,
+          "line": 348,
           "column": 5
         }
       },
@@ -762,11 +762,11 @@
     "_displayNodes": {
       "location": {
         "start": {
-          "line": 348,
+          "line": 350,
           "column": 4
         },
         "end": {
-          "line": 368,
+          "line": 370,
           "column": 5
         }
       },
@@ -776,11 +776,11 @@
     "update": {
       "location": {
         "start": {
-          "line": 379,
+          "line": 381,
           "column": 4
         },
         "end": {
-          "line": 402,
+          "line": 404,
           "column": 5
         }
       },
@@ -822,11 +822,11 @@
     "_applyElement": {
       "location": {
         "start": {
-          "line": 404,
+          "line": 406,
           "column": 4
         },
         "end": {
-          "line": 407,
+          "line": 409,
           "column": 5
         }
       },
@@ -839,11 +839,11 @@
     "getTitleElement": {
       "location": {
         "start": {
-          "line": 410,
+          "line": 412,
           "column": 4
         },
         "end": {
-          "line": 412,
+          "line": 414,
           "column": 5
         }
       },
@@ -861,11 +861,11 @@
     "getBodyElement": {
       "location": {
         "start": {
-          "line": 415,
+          "line": 417,
           "column": 4
         },
         "end": {
-          "line": 417,
+          "line": 419,
           "column": 5
         }
       },
@@ -883,11 +883,11 @@
     "getItemElement": {
       "location": {
         "start": {
-          "line": 429,
+          "line": 432,
           "column": 4
         },
         "end": {
-          "line": 440,
+          "line": 449,
           "column": 5
         }
       },
@@ -935,11 +935,11 @@
     "toggleShowItemDetails": {
       "location": {
         "start": {
-          "line": 453,
+          "line": 462,
           "column": 4
         },
         "end": {
-          "line": 490,
+          "line": 499,
           "column": 5
         }
       },
@@ -980,11 +980,11 @@
     "_postProcessLinks": {
       "location": {
         "start": {
-          "line": 498,
+          "line": 507,
           "column": 4
         },
         "end": {
-          "line": 535,
+          "line": 544,
           "column": 5
         }
       },
@@ -1426,11 +1426,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 544,
+        "line": 553,
         "column": 12
       },
       "end": {
-        "line": 546,
+        "line": 555,
         "column": 3
       }
     },
@@ -1447,11 +1447,11 @@
     "ITEM_SPEC_REGEX": {
       "location": {
         "start": {
-          "line": 554,
+          "line": 563,
           "column": 4
         },
         "end": {
-          "line": 554,
+          "line": 563,
           "column": 67
         }
       },
@@ -1469,11 +1469,11 @@
     "SENTENCE_END_REGEX": {
       "location": {
         "start": {
-          "line": 557,
+          "line": 566,
           "column": 4
         },
         "end": {
-          "line": 557,
+          "line": 566,
           "column": 40
         }
       },
@@ -1491,11 +1491,11 @@
     "resolveLinkAttributes": {
       "location": {
         "start": {
-          "line": 569,
+          "line": 578,
           "column": 4
         },
         "end": {
-          "line": 587,
+          "line": 596,
           "column": 5
         }
       },
@@ -1539,11 +1539,11 @@
     "createItemLinkHtml": {
       "location": {
         "start": {
-          "line": 605,
+          "line": 614,
           "column": 4
         },
         "end": {
-          "line": 765,
+          "line": 778,
           "column": 5
         }
       },
@@ -1605,11 +1605,11 @@
     "createSeeAlsoHtml": {
       "location": {
         "start": {
-          "line": 774,
+          "line": 787,
           "column": 4
         },
         "end": {
-          "line": 801,
+          "line": 814,
           "column": 5
         }
       },
@@ -1644,11 +1644,11 @@
     "createInheritedFromHtml": {
       "location": {
         "start": {
-          "line": 813,
+          "line": 826,
           "column": 4
         },
         "end": {
-          "line": 821,
+          "line": 840,
           "column": 5
         }
       },
@@ -1690,11 +1690,11 @@
     "createOverwriddenFromHtml": {
       "location": {
         "start": {
-          "line": 830,
+          "line": 849,
           "column": 4
         },
         "end": {
-          "line": 839,
+          "line": 858,
           "column": 5
         }
       },
@@ -1729,11 +1729,11 @@
     "createIncludedFromHtml": {
       "location": {
         "start": {
-          "line": 851,
+          "line": 870,
           "column": 4
         },
         "end": {
-          "line": 862,
+          "line": 880,
           "column": 5
         }
       },
@@ -1775,11 +1775,11 @@
     "__getItemFromClassHierarchy": {
       "location": {
         "start": {
-          "line": 875,
+          "line": 893,
           "column": 4
         },
         "end": {
-          "line": 889,
+          "line": 907,
           "column": 5
         }
       },
@@ -1821,11 +1821,11 @@
     "createDescriptionHtml": {
       "location": {
         "start": {
-          "line": 904,
+          "line": 922,
           "column": 4
         },
         "end": {
-          "line": 914,
+          "line": 932,
           "column": 5
         }
       },
@@ -1879,11 +1879,11 @@
     "__extractFirstSentence": {
       "location": {
         "start": {
-          "line": 923,
+          "line": 941,
           "column": 4
         },
         "end": {
-          "line": 940,
+          "line": 957,
           "column": 5
         }
       },
@@ -1918,11 +1918,11 @@
     "descriptionHasDetails": {
       "location": {
         "start": {
-          "line": 950,
+          "line": 967,
           "column": 4
         },
         "end": {
-          "line": 956,
+          "line": 973,
           "column": 5
         }
       },
@@ -1957,11 +1957,11 @@
     "createTypeHtml": {
       "location": {
         "start": {
-          "line": 971,
+          "line": 988,
           "column": 4
         },
         "end": {
-          "line": 1032,
+          "line": 1051,
           "column": 5
         }
       },
@@ -2012,11 +2012,11 @@
     "createErrorHtml": {
       "location": {
         "start": {
-          "line": 1043,
+          "line": 1062,
           "column": 4
         },
         "end": {
-          "line": 1073,
+          "line": 1092,
           "column": 5
         }
       },
@@ -2058,11 +2058,11 @@
     "createDeprecationHtml": {
       "location": {
         "start": {
-          "line": 1085,
+          "line": 1104,
           "column": 4
         },
         "end": {
-          "line": 1102,
+          "line": 1121,
           "column": 5
         }
       },
@@ -2104,11 +2104,11 @@
     "createAccessHtml": {
       "location": {
         "start": {
-          "line": 1111,
+          "line": 1130,
           "column": 4
         },
         "end": {
-          "line": 1132,
+          "line": 1151,
           "column": 5
         }
       },
@@ -2143,11 +2143,11 @@
     "createInfoRequiredByHtml": {
       "location": {
         "start": {
-          "line": 1141,
+          "line": 1160,
           "column": 4
         },
         "end": {
-          "line": 1152,
+          "line": 1171,
           "column": 5
         }
       },
@@ -2182,11 +2182,11 @@
     "createSourceLinkHtml": {
       "location": {
         "start": {
-          "line": 1161,
+          "line": 1180,
           "column": 4
         },
         "end": {
-          "line": 1183,
+          "line": 1202,
           "column": 5
         }
       },
@@ -2221,11 +2221,11 @@
     "setTitleClass": {
       "location": {
         "start": {
-          "line": 1195,
+          "line": 1214,
           "column": 4
         },
         "end": {
-          "line": 1199,
+          "line": 1218,
           "column": 5
         }
       },
@@ -2267,11 +2267,11 @@
     "getItemCssClasses": {
       "location": {
         "start": {
-          "line": 1208,
+          "line": 1227,
           "column": 4
         },
         "end": {
-          "line": 1225,
+          "line": 1244,
           "column": 5
         }
       },

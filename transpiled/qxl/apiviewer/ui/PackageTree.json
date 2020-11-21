@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 241,
+        "line": 239,
         "column": 5
       }
     },
@@ -34,7 +34,7 @@
         "column": 16
       },
       "end": {
-        "line": 50,
+        "line": 48,
         "column": 5
       }
     },
@@ -44,11 +44,11 @@
     "__root": {
       "location": {
         "start": {
-          "line": 62,
+          "line": 60,
           "column": 4
         },
         "end": {
-          "line": 62,
+          "line": 60,
           "column": 17
         }
       },
@@ -58,11 +58,11 @@
     "setTreeData": {
       "location": {
         "start": {
-          "line": 72,
+          "line": 70,
           "column": 4
         },
         "end": {
-          "line": 82,
+          "line": 80,
           "column": 5
         }
       },
@@ -97,11 +97,11 @@
     "selectTreeNodeByClassName": {
       "location": {
         "start": {
-          "line": 92,
+          "line": 90,
           "column": 4
         },
         "end": {
-          "line": 141,
+          "line": 139,
           "column": 5
         }
       },
@@ -142,11 +142,11 @@
     "__getPackageNodeOpener": {
       "location": {
         "start": {
-          "line": 155,
+          "line": 153,
           "column": 4
         },
         "end": {
-          "line": 164,
+          "line": 162,
           "column": 5
         }
       },
@@ -195,11 +195,11 @@
     "__fillPackageNode": {
       "location": {
         "start": {
-          "line": 178,
+          "line": 176,
           "column": 4
         },
         "end": {
-          "line": 226,
+          "line": 224,
           "column": 5
         }
       },
@@ -5685,11 +5685,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 237,
+        "line": 235,
         "column": 15
       },
       "end": {
-        "line": 240,
+        "line": 238,
         "column": 5
       }
     },

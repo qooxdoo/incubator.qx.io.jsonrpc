@@ -9,10 +9,8 @@
         "construct": true,
         "require": true
       },
-      "qx.ui.core.queue.Manager": {},
       "qxl.apiviewer.ui.tabview.PackagePage": {},
-      "qxl.apiviewer.ui.tabview.ClassPage": {},
-      "qxl.apiviewer.LoadingIndicator": {}
+      "qxl.apiviewer.ui.tabview.ClassPage": {}
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
@@ -34,6 +32,7 @@
      Authors:
        * John Spackman (johnspackman)
        * Fabian Jakobs (fjakobs)
+       * Henner Kollmann (hkollmann)
   
   ************************************************************************ */
   qx.Class.define("qxl.apiviewer.TabViewController", {
@@ -51,6 +50,18 @@
       "changeSelection": "qx.event.type.Data"
     },
     members: {
+      isLoaded: function isLoaded(callback) {
+        var page = this._tabView.getSelection()[0];
+
+        var child = page.getChildren()[0];
+
+        if (child.isValid()) {
+          callback();
+          return;
+        }
+
+        child.addListenerOnce("synced", callback);
+      },
       showTabView: function showTabView() {
         this._tabView.show();
       },
@@ -64,12 +75,11 @@
         this.fireDataEvent("classLinkTapped", itemName);
       },
       showItem: function showItem(itemName) {
-        qx.ui.core.queue.Manager.flush();
-
         var page = this._tabView.getSelection()[0];
 
         page.setUserData("itemName", itemName);
-        return page.getChildren()[0].showItem(itemName);
+        var child = page.getChildren()[0];
+        return child.showItem(itemName);
       },
       openPackage: function openPackage(classNode, newTab) {
         return this.__open__P_599_1(classNode, qxl.apiviewer.ui.tabview.PackagePage, newTab);
@@ -88,6 +98,7 @@
         }
 
         if (!currentPage) {
+          /* eslint-disable-next-line new-cap */
           currentPage = new clazz(classNode);
 
           this._tabView.add(currentPage);
@@ -96,7 +107,7 @@
         this._tabView.setSelection([currentPage]);
 
         currentPage.setUserData("itemName", null);
-        return currentPage.setClassNodeAsync(classNode).then(() => qxl.apiviewer.LoadingIndicator.getInstance().hide());
+        return currentPage.setClassNodeAsync(classNode);
       },
       __onChangeSelection__P_599_0: function __onChangeSelection__P_599_0(event) {
         var oldData = event.getOldData();
@@ -113,4 +124,4 @@
   qxl.apiviewer.TabViewController.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TabViewController.js.map?dt=1603176853577
+//# sourceMappingURL=TabViewController.js.map?dt=1605962054580

@@ -141,7 +141,8 @@
         desc: "Method/Property overrides the Method/Property of the super class"
       }];
       var length = this.__legend__P_597_0.length;
-      var entry, imageUrl;
+      var entry;
+      var imageUrl;
 
       for (var i = 0; i < length; i++) {
         entry = this.__legend__P_597_0[i];
@@ -191,4 +192,4 @@
   qxl.apiviewer.ui.LegendView.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LegendView.js.map?dt=1603176853515
+//# sourceMappingURL=LegendView.js.map?dt=1605962054503

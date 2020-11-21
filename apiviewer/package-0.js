@@ -1,6 +1,6 @@
 qx.$$packageData['0'] = {
   "locales": {
-    "C": {
+    "en": {
       "alternateQuotationEnd": "’",
       "alternateQuotationStart": "‘",
       "quotationEnd": "”",
@@ -128,7 +128,7 @@ qx.$$packageData['0'] = {
         "time zone"
       ]
     },
-    "en": {
+    "C": {
       "alternateQuotationEnd": "’",
       "alternateQuotationStart": "‘",
       "quotationEnd": "”",
@@ -1086,6 +1086,18 @@ qx.$$packageData['0'] = {
       "png",
       "qx"
     ],
+    "qx/decoration/Classic/tree/minus.gif": [
+      19,
+      16,
+      "gif",
+      "qx"
+    ],
+    "qx/decoration/Classic/tree/plus.gif": [
+      19,
+      16,
+      "gif",
+      "qx"
+    ],
     "qx/decoration/Classic/treevirtual/cross.gif": [
       19,
       16,
@@ -1179,18 +1191,6 @@ qx.$$packageData['0'] = {
     "qx/decoration/Classic/window/restore.gif": [
       8,
       9,
-      "gif",
-      "qx"
-    ],
-    "qx/decoration/Classic/tree/minus.gif": [
-      19,
-      16,
-      "gif",
-      "qx"
-    ],
-    "qx/decoration/Classic/tree/plus.gif": [
-      19,
-      16,
       "gif",
       "qx"
     ],
@@ -2441,6 +2441,18 @@ qx.$$packageData['0'] = {
       null,
       "php",
       "qx"
+    ],
+    "qxl/apiviewer/app.png": [
+      180,
+      180,
+      "png",
+      "qxl.apiviewer"
+    ],
+    "qxl/apiviewer/favicon.png": [
+      32,
+      32,
+      "png",
+      "qxl.apiviewer"
     ],
     "qxl/apiviewer/css/apiviewer.css": [
       null,

@@ -1,14 +1,14 @@
 {
   "libraries": {
     "qx.io": "2.0.0-alpha",
-    "qxl.testtapper": "0.5.0",
-    "qxl.apiviewer": "1.0.0-beta.9",
-    "qxl.versionlabel": "1.0.0-beta.3",
-    "qxl.logpane": "1.0.0-beta.3",
-    "qx": "6.0.0-beta-20201003-1033"
+    "qxl.testtapper": "0.5.2",
+    "qxl.versionlabel": "1.0.1",
+    "qxl.logpane": "1.0.1",
+    "qxl.apiviewer": "1.0.14",
+    "qx": "6.0.0-beta-20201119-2000"
   },
-  "environmentHash": "e70dbba81119e58e62367ca92753b05c13998c79",
-  "compilerVersion": "1.0.0-beta-20201003-1033",
+  "environmentHash": "34d582847d37415659f4fa3161a3ae8c977e1331",
+  "compilerVersion": "1.0.0-beta-20201119-2000",
   "classInfo": {
     "qx.Annotation": {
       "mtime": "1985-10-26T08:15:00.000Z",
@@ -1865,6 +1865,8 @@
           "ecmascript.string.startsWith",
           "ecmascript.string.endsWith",
           "ecmascript.string.trim",
+          "ecmascript.string.codePointAt",
+          "ecmascript.string.fromCodePoint",
           "ecmascript.function.async",
           "ecmascript.mutationobserver",
           "ecmascript.bigint",
@@ -4212,7 +4214,7 @@
       "hasDefer": null
     },
     "qx.data.store.Graphql": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -4298,7 +4300,7 @@
       "hasDefer": null
     },
     "qx.data.store.Jsonrpc": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7717,7 +7719,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Cancel": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7741,7 +7743,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Exception": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7759,7 +7761,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Protocol": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7779,7 +7781,7 @@
       "hasDefer": null
     },
     "qx.io.exception.Transport": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7799,7 +7801,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.Client": {
-      "mtime": "2020-10-20T06:53:03.782Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7821,7 +7823,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Message": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7844,7 +7846,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Request": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7872,7 +7874,7 @@
       "hasDefer": null
     },
     "qx.io.graphql.protocol.Response": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7896,7 +7898,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.Client": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7927,7 +7929,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Batch": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7952,7 +7954,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Error": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7973,7 +7975,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Message": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -7991,7 +7993,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Notification": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8009,7 +8011,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Parser": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8033,7 +8035,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Request": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8058,7 +8060,7 @@
       "hasDefer": null
     },
     "qx.io.jsonrpc.protocol.Result": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8661,7 +8663,7 @@
       "hasDefer": null
     },
     "qx.io.request.authentication.Bearer": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8728,7 +8730,7 @@
       "hasDefer": null
     },
     "qx.io.transport.AbstractClient": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.850Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8749,7 +8751,7 @@
       "hasDefer": null
     },
     "qx.io.transport.AbstractTransport": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8767,7 +8769,7 @@
       "hasDefer": null
     },
     "qx.io.transport.Fetch": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8798,7 +8800,7 @@
       "hasDefer": true
     },
     "qx.io.transport.ITransport": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Interface": {
@@ -8812,7 +8814,7 @@
       "hasDefer": null
     },
     "qx.io.transport.Websocket": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -8842,7 +8844,7 @@
       "hasDefer": true
     },
     "qx.io.transport.Xhr": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -9245,6 +9247,12 @@
           "ecmascript.string.endsWith": {
             "defer": true,
             "className": "qx.bom.client.EcmaScript"
+          },
+          "ecmascript.string.codePointAt": {
+            "defer": true
+          },
+          "ecmascript.string.fromCodePoint": {
+            "defer": true
           }
         }
       },
@@ -14795,7 +14803,7 @@
       ]
     },
     "qx.test.io.MAssert": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Mixin": {
@@ -14826,7 +14834,7 @@
       "hasDefer": null
     },
     "qx.test.io.graphql.Client": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14855,7 +14863,7 @@
       "hasDefer": null
     },
     "qx.test.io.graphql.Request": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14879,7 +14887,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.Client": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14917,7 +14925,7 @@
       "hasDefer": null
     },
     "qx.test.io.jsonrpc.Protocol": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -14946,7 +14954,7 @@
       "hasDefer": null
     },
     "qx.test.io.transport.Websocket": {
-      "mtime": "2020-10-20T06:53:03.786Z",
+      "mtime": "2020-11-21T12:32:38.854Z",
       "libraryName": "qx.io",
       "dependsOn": {
         "qx.Class": {
@@ -36083,7 +36091,7 @@
       "hasDefer": null
     },
     "qxl.testtapper.Application": {
-      "mtime": "2020-03-17T05:15:06.000Z",
+      "mtime": "2020-07-23T06:13:22.000Z",
       "libraryName": "qxl.testtapper",
       "dependsOn": {
         "qx.Class": {
@@ -36121,7 +36129,7 @@
       ]
     },
     "qxl.apiviewer.Application": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.core.Environment": {
@@ -36164,7 +36172,7 @@
       ]
     },
     "qxl.apiviewer.Theme": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Theme": {
@@ -36243,7 +36251,7 @@
       "hasDefer": null
     },
     "qxl.testtapper.TreeItem": {
-      "mtime": "2020-03-17T05:15:06.000Z",
+      "mtime": "2020-07-23T06:13:22.000Z",
       "libraryName": "qxl.testtapper",
       "dependsOn": {
         "qx.Class": {
@@ -36265,7 +36273,7 @@
       "hasDefer": null
     },
     "qxl.logpane.LogPane": {
-      "mtime": "2019-07-30T12:28:06.000Z",
+      "mtime": "2020-05-18T02:50:48.000Z",
       "libraryName": "qxl.logpane",
       "dependsOn": {
         "qx.core.Environment": {
@@ -36344,7 +36352,7 @@
       ]
     },
     "qxl.apiviewer.MWidgetRegistry": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Mixin": {
@@ -36358,7 +36366,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.Viewer": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36504,7 +36512,7 @@
       ]
     },
     "qxl.apiviewer.Controller": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36538,61 +36546,10 @@
       "extends": "qx.core.Object",
       "include": [],
       "implement": [],
-      "hasDefer": null,
-      "unresolved": [
-        {
-          "name": "qx.$$appRoot",
-          "locations": [
-            {
-              "start": {
-                "line": 54,
-                "column": 41
-              },
-              "end": {
-                "line": 54,
-                "column": 53
-              }
-            },
-            {
-              "start": {
-                "line": 54,
-                "column": 41
-              },
-              "end": {
-                "line": 54,
-                "column": 53
-              }
-            },
-            {
-              "start": {
-                "line": 54,
-                "column": 41
-              },
-              "end": {
-                "line": 54,
-                "column": 53
-              }
-            }
-          ]
-        }
-      ],
-      "markers": [
-        {
-          "msgId": "qx.tool.compiler.symbol.unresolved",
-          "pos": {
-            "start": {
-              "line": 54,
-              "column": 41
-            }
-          },
-          "args": [
-            "qx.$$appRoot"
-          ]
-        }
-      ]
+      "hasDefer": null
     },
     "qxl.apiviewer.Appearance": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Theme": {
@@ -36609,7 +36566,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.PackageTree": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36641,7 +36598,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.SearchView": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36684,12 +36641,12 @@
       "translations": [
         {
           "msgid": "Hint: You can use regular expressions in the search field.",
-          "lineNo": 636
+          "lineNo": 635
         }
       ]
     },
     "qxl.apiviewer.ui.LegendView": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36725,7 +36682,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.DetailFrameTabView": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36745,7 +36702,7 @@
       "hasDefer": null
     },
     "qxl.versionlabel.VersionLabel": {
-      "mtime": "2019-07-30T12:37:18.000Z",
+      "mtime": "2020-05-18T02:46:40.000Z",
       "libraryName": "qxl.versionlabel",
       "dependsOn": {
         "qx.core.Environment": {
@@ -36794,7 +36751,7 @@
       "hasDefer": true
     },
     "qxl.apiviewer.ClassLoader": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36811,10 +36768,10 @@
       "extends": "qx.core.Object",
       "include": [],
       "implement": [],
-      "hasDefer": null
+      "hasDefer": true
     },
     "qxl.apiviewer.TabViewController": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36825,10 +36782,8 @@
           "load": true,
           "construct": true
         },
-        "qx.ui.core.queue.Manager": {},
         "qxl.apiviewer.ui.tabview.PackagePage": {},
-        "qxl.apiviewer.ui.tabview.ClassPage": {},
-        "qxl.apiviewer.LoadingIndicator": {}
+        "qxl.apiviewer.ui.tabview.ClassPage": {}
       },
       "extends": "qx.core.Object",
       "include": [],
@@ -36836,7 +36791,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.Class": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36854,8 +36809,8 @@
         "qxl.apiviewer.RequestUtil": {},
         "qxl.apiviewer.dao.Method": {},
         "qxl.apiviewer.dao.Constant": {},
-        "qxl.apiviewer.dao.Property": {},
         "qxl.apiviewer.dao.Event": {},
+        "qxl.apiviewer.dao.Property": {},
         "qxl.apiviewer.dao.ChildControl": {},
         "qx.Promise": {},
         "qx.lang.Array": {},
@@ -36869,7 +36824,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.Package": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36889,7 +36844,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.UiModel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36906,7 +36861,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.LoadingIndicator": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36921,12 +36876,6 @@
         },
         "qxl.apiviewer.MWidgetRegistry": {
           "construct": true
-        },
-        "qx.html.Element": {
-          "construct": true
-        },
-        "qx.util.ResourceManager": {
-          "construct": true
         }
       },
       "extends": "qx.core.Object",
@@ -36935,7 +36884,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.TreeUtil": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36953,7 +36902,7 @@
       "hasDefer": true
     },
     "qxl.apiviewer.ui.tabview.PackagePage": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -36977,7 +36926,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.tabview.ClassPage": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37001,7 +36950,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.Node": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37019,7 +36968,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.RequestUtil": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37038,7 +36987,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.Method": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37065,7 +37014,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.Constant": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37085,8 +37034,30 @@
       "implement": [],
       "hasDefer": null
     },
+    "qxl.apiviewer.dao.Event": {
+      "mtime": "2020-11-03T07:32:38.000Z",
+      "libraryName": "qxl.apiviewer",
+      "dependsOn": {
+        "qx.Class": {
+          "load": true,
+          "usage": "dynamic"
+        },
+        "qxl.apiviewer.dao.ClassItem": {
+          "load": true,
+          "construct": true
+        },
+        "qxl.apiviewer.dao.Class": {},
+        "qxl.apiviewer.dao.Node": {
+          "load": true
+        }
+      },
+      "extends": "qxl.apiviewer.dao.ClassItem",
+      "include": [],
+      "implement": [],
+      "hasDefer": null
+    },
     "qxl.apiviewer.dao.Property": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37108,30 +37079,8 @@
       "implement": [],
       "hasDefer": null
     },
-    "qxl.apiviewer.dao.Event": {
-      "mtime": "2020-03-26T11:31:02.000Z",
-      "libraryName": "qxl.apiviewer",
-      "dependsOn": {
-        "qx.Class": {
-          "load": true,
-          "usage": "dynamic"
-        },
-        "qxl.apiviewer.dao.ClassItem": {
-          "load": true,
-          "construct": true
-        },
-        "qxl.apiviewer.dao.Class": {},
-        "qxl.apiviewer.dao.Node": {
-          "load": true
-        }
-      },
-      "extends": "qxl.apiviewer.dao.ClassItem",
-      "include": [],
-      "implement": [],
-      "hasDefer": null
-    },
     "qxl.apiviewer.dao.ChildControl": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37152,7 +37101,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.tabview.AbstractPage": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37179,7 +37128,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.PackageViewer": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37215,7 +37164,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.ClassViewer": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.module.event.GestureHandler": {
@@ -37266,7 +37215,6 @@
         "qx.bom.element.Scroll": {},
         "qx.bom.element.Style": {},
         "qxl.apiviewer.TreeUtil": {},
-        "qx.lang.String": {},
         "qx.event.Timer": {},
         "qxl.apiviewer.UiModel": {},
         "qx.ui.embed.Html": {
@@ -37292,7 +37240,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.ClassItem": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37314,7 +37262,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.dao.Param": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37335,7 +37283,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.AbstractViewer": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.core.Environment": {
@@ -37379,7 +37327,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.ClassPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37391,6 +37339,7 @@
           "construct": true
         },
         "qxl.apiviewer.dao.Class": {},
+        "qx.Promise": {},
         "qx.core.Object": {
           "load": true
         },
@@ -37404,7 +37353,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.PackagePanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37415,6 +37364,7 @@
           "load": true
         },
         "qxl.apiviewer.dao.Package": {},
+        "qx.Promise": {},
         "qx.core.Object": {
           "load": true
         },
@@ -37428,7 +37378,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.InfoPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.module.event.GestureHandler": {
@@ -37463,6 +37413,7 @@
         "qx.util.ResourceManager": {},
         "qx.lang.Array": {},
         "qxl.apiviewer.ui.AbstractViewer": {},
+        "qx.Promise": {},
         "qxl.apiviewer.UiModel": {},
         "qxl.apiviewer.dao.ClassItem": {},
         "qx.bom.client.Engine": {}
@@ -37484,7 +37435,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.ConstructorPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37506,7 +37457,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.EventPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37532,7 +37483,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.StaticMethodsPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37554,7 +37505,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.ConstantPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37582,7 +37533,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.PropertyPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37611,7 +37562,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.MethodPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37633,7 +37584,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.ChildControlsPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37659,7 +37610,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ObjectRegistry": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37674,7 +37625,7 @@
       "hasDefer": null
     },
     "qxl.apiviewer.ui.panels.AbstractMethodPanel": {
-      "mtime": "2020-03-26T11:31:02.000Z",
+      "mtime": "2020-11-03T07:32:38.000Z",
       "libraryName": "qxl.apiviewer",
       "dependsOn": {
         "qx.Class": {
@@ -37701,7 +37652,7 @@
     }
   },
   "manglePrefixes": {
-    "nextPrefix": 608,
+    "nextPrefix": 609,
     "classPrefixes": {
       "qx.Annotation": "__P_2_",
       "qx.Bootstrap": "__P_3_",
@@ -38301,15 +38252,16 @@
       "qxl.apiviewer.ui.LegendView": "__P_597_",
       "qxl.apiviewer.ClassLoader": "__P_598_",
       "qxl.apiviewer.TabViewController": "__P_599_",
-      "qxl.apiviewer.dao.Package": "__P_600_",
-      "qxl.apiviewer.LoadingIndicator": "__P_601_",
-      "qxl.apiviewer.ui.tabview.AbstractPage": "__P_602_",
-      "qxl.apiviewer.ui.ClassViewer": "__P_603_",
-      "qxl.apiviewer.ui.AbstractViewer": "__P_604_",
-      "qxl.apiviewer.ui.panels.InfoPanel": "__P_605_",
-      "qxl.apiviewer.ui.panels.ConstantPanel": "__P_606_",
-      "qxl.apiviewer.ui.panels.PropertyPanel": "__P_607_",
-      "qxl.apiviewer.ObjectRegistry": "__P_608_"
+      "qxl.apiviewer.dao.Class": "__P_600_",
+      "qxl.apiviewer.dao.Package": "__P_601_",
+      "qxl.apiviewer.LoadingIndicator": "__P_602_",
+      "qxl.apiviewer.ui.tabview.AbstractPage": "__P_603_",
+      "qxl.apiviewer.ui.ClassViewer": "__P_604_",
+      "qxl.apiviewer.ui.AbstractViewer": "__P_605_",
+      "qxl.apiviewer.ui.panels.InfoPanel": "__P_606_",
+      "qxl.apiviewer.ui.panels.ConstantPanel": "__P_607_",
+      "qxl.apiviewer.ui.panels.PropertyPanel": "__P_608_",
+      "qxl.apiviewer.ObjectRegistry": "__P_609_"
     }
   }
 }

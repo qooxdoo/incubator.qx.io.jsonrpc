@@ -9,11 +9,11 @@
   "clazz": {
     "location": {
       "start": {
-        "line": 29,
+        "line": 30,
         "column": 0
       },
       "end": {
-        "line": 742,
+        "line": 739,
         "column": 5
       }
     },
@@ -36,11 +36,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 42,
+        "line": 43,
         "column": 16
       },
       "end": {
-        "line": 55,
+        "line": 56,
         "column": 5
       }
     },
@@ -50,11 +50,11 @@
     "PRIMITIVES": {
       "location": {
         "start": {
-          "line": 68,
+          "line": 69,
           "column": 4
         },
         "end": {
-          "line": 103,
+          "line": 104,
           "column": 5
         }
       },
@@ -72,11 +72,11 @@
     "MDC_LINKS": {
       "location": {
         "start": {
-          "line": 105,
+          "line": 106,
           "column": 4
         },
         "end": {
-          "line": 126,
+          "line": 127,
           "column": 5
         }
       },
@@ -86,11 +86,11 @@
     "SOURCE_VIEW_MACROS": {
       "location": {
         "start": {
-          "line": 134,
+          "line": 135,
           "column": 4
         },
         "end": {
-          "line": 156,
+          "line": 157,
           "column": 5
         }
       },
@@ -108,11 +108,11 @@
     "createImageHtml": {
       "location": {
         "start": {
-          "line": 168,
+          "line": 169,
           "column": 4
         },
         "end": {
-          "line": 180,
+          "line": 181,
           "column": 5
         }
       },
@@ -167,11 +167,11 @@
     "createOverlayImageHtml": {
       "location": {
         "start": {
-          "line": 195,
+          "line": 196,
           "column": 4
         },
         "end": {
-          "line": 226,
+          "line": 227,
           "column": 5
         }
       },
@@ -238,11 +238,11 @@
     "getSourceUri": {
       "location": {
         "start": {
-          "line": 240,
+          "line": 241,
           "column": 4
         },
         "end": {
-          "line": 278,
+          "line": 279,
           "column": 5
         }
       },
@@ -279,11 +279,11 @@
     "_getTitleHtml": {
       "location": {
         "start": {
-          "line": 301,
+          "line": 302,
           "column": 4
         },
         "end": {
-          "line": 338,
+          "line": 339,
           "column": 5
         }
       },
@@ -322,7 +322,7 @@
     "_getTocHtml": {
       "location": {
         "start": {
-          "line": 341,
+          "line": 342,
           "column": 4
         },
         "end": {
@@ -502,7 +502,7 @@
           "column": 4
         },
         "end": {
-          "line": 672,
+          "line": 670,
           "column": 5
         }
       },
@@ -537,11 +537,11 @@
     "__enableSection": {
       "location": {
         "start": {
-          "line": 681,
+          "line": 679,
           "column": 4
         },
         "end": {
-          "line": 710,
+          "line": 706,
           "column": 5
         }
       },
@@ -575,11 +575,11 @@
     "_getPanelForItemNode": {
       "location": {
         "start": {
-          "line": 719,
+          "line": 715,
           "column": 4
         },
         "end": {
-          "line": 727,
+          "line": 724,
           "column": 5
         }
       },
@@ -5413,11 +5413,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 739,
+        "line": 736,
         "column": 15
       },
       "end": {
-        "line": 741,
+        "line": 738,
         "column": 5
       }
     },

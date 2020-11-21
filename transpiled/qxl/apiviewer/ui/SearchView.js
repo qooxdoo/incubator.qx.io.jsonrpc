@@ -50,6 +50,7 @@
      Authors:
        * Stefan Kloiber (skloiber)
        * Jonathan Weiß (jonathan_rass)
+       * Henner Kollmann (hkollmann)
   
   ************************************************************************ */
 
@@ -307,7 +308,7 @@
        */
       _searchResult: function _searchResult(svalue) {
         // Trim search string
-        var svalue = svalue.trim(); // Hide the note if text is typed into to search field.
+        svalue = svalue.trim(); // Hide the note if text is typed into to search field.
         //      if (svalue.length > 0) {
         //        this.__note.hide();
         //      } else {
@@ -340,6 +341,8 @@
 
         try {
           var search = this._validateInput(svalue);
+          /* eslint-disable-next-line no-new */
+
 
           new RegExp(search[0]);
         } catch (ex) {
@@ -404,10 +407,10 @@
         var sresult = []; // Match object
 
         var mo = new RegExp(svalue, /^.*[A-Z].*$/.test(svalue) ? "" : "i");
-        var index = this.apiindex.__index____P_596_6;
-        var fullNames = this.apiindex.__fullNames____P_596_7;
-        var types = this.apiindex.__types____P_596_8;
-        var namespaceFilter = this.namespaceTextField.getValue() != null ? this.namespaceTextField.getValue().trim() : "";
+        var index = this.apiindex.index;
+        var fullNames = this.apiindex.fullNames;
+        var types = this.apiindex.types;
+        var namespaceFilter = this.namespaceTextField.getValue() ? this.namespaceTextField.getValue().trim() : "";
         var namespaceRegexp = new RegExp(".*");
 
         if (namespaceFilter.length > 0) {
@@ -423,7 +426,7 @@
         for (var key in index) {
           if (mo.test(key)) {
             if (spath) {
-              for (var i = 0, l = index[key].length; i < l; i++) {
+              for (let i = 0, l = index[key].length; i < l; i++) {
                 var fullname = fullNames[index[key][i][1]];
 
                 if (namespaceRegexp && namespaceRegexp.test(fullname)) {
@@ -438,7 +441,7 @@
                 }
               }
             } else {
-              for (var i = 0, l = index[key].length; i < l; i++) {
+              for (let i = 0, l = index[key].length; i < l; i++) {
                 elemtype = types[index[key][i][0]].toUpperCase();
                 fullname = fullNames[index[key][i][1]];
 
@@ -582,6 +585,7 @@
 
         req.setProhibitCaching(false);
         req.addListener("completed", function (evt) {
+          /* eslint-disable-next-line no-eval */
           this.apiindex = eval("(" + evt.getContent() + ")");
 
           if (this.__searchTerm__P_596_5) {
@@ -616,13 +620,13 @@
 
           if (/protected/.test(itemType)) {
             uiModel.setShowProtected(true);
-          } // Display private stated items
-          else if (/private/.test(itemType)) {
-              uiModel.setShowPrivate(true);
-            } // Display internal stated items
-            else if (/internal/.test(itemType)) {
-                uiModel.setShowInternal(true);
-              } // Highlight item
+          } else if (/private/.test(itemType)) {
+            // Display private stated items
+            uiModel.setShowPrivate(true);
+          } else if (/internal/.test(itemType)) {
+            // Display internal stated items
+            uiModel.setShowInternal(true);
+          } // Highlight item
 
 
           if (elemType.indexOf("method") != -1 || elemType.indexOf("property") != -1 || elemType.indexOf("event") != -1 || elemType.indexOf("constant") != -1 || elemType.indexOf("childcontrol") != -1) {
@@ -637,7 +641,7 @@
 
         this._tableModel.setColumns(["", ""]);
       },
-      __initNote__P_596_9: function __initNote__P_596_9(table) {
+      __initNote__P_596_6: function __initNote__P_596_6(table) {
         this.__note__P_596_1 = new qx.ui.popup.Popup(new qx.ui.layout.Canvas()).set({
           autoHide: false,
           width: 170
@@ -656,13 +660,13 @@
 
         this.__note__P_596_1.show();
       },
-      __handleNote__P_596_10: function __handleNote__P_596_10(e) {
+      __handleNote__P_596_7: function __handleNote__P_596_7(e) {
         if (this.__note__P_596_1) {
           if ((this.sinput.getValue() || "").trim().length == 0) {
             this.__note__P_596_1.show();
           }
         } else {
-          this.__initNote__P_596_9();
+          this.__initNote__P_596_6();
         }
       }
     },
@@ -683,4 +687,4 @@
   qxl.apiviewer.ui.SearchView.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SearchView.js.map?dt=1603176853495
+//# sourceMappingURL=SearchView.js.map?dt=1605962054479

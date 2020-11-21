@@ -66,12 +66,12 @@
           return this._loadingPromise;
         }
 
-        var url = qxl.apiviewer.ClassLoader.getBaseUri() + "/transpiled/" + this._packageName.replace(/\./g, "/") + "/package.html";
+        var url = qxl.apiviewer.ClassLoader.getBaseUri() + this._packageName.replace(/\./g, "/") + "/package.html";
         return this._loadingPromise = qxl.apiviewer.RequestUtil.get(url).then(content => {
           this._desc = content;
           this._loaded = true;
         }).catch(e => {
-          console.error("Couldn't load file: " + url + " " + e.message);
+          this.error("Couldn't load file: " + url + " " + e.message);
           this._loaded = true;
         });
       },
@@ -116,7 +116,7 @@
       }
     },
     statics: {
-      __rootPackage__P_600_0: null,
+      __rootPackage__P_601_0: null,
 
       /**
        * Locates a package by name
@@ -125,10 +125,10 @@
        * @return {Package?}
        */
       getPackage: function getPackage(name, create) {
-        var root = qxl.apiviewer.dao.Package.__rootPackage__P_600_0;
+        var root = qxl.apiviewer.dao.Package.__rootPackage__P_601_0;
 
         if (!root) {
-          root = qxl.apiviewer.dao.Package.__rootPackage__P_600_0 = new qxl.apiviewer.dao.Package("");
+          root = qxl.apiviewer.dao.Package.__rootPackage__P_601_0 = new qxl.apiviewer.dao.Package("");
         }
 
         if (!name) {
@@ -182,4 +182,4 @@
   qxl.apiviewer.dao.Package.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Package.js.map?dt=1603176853677
+//# sourceMappingURL=Package.js.map?dt=1605962054716

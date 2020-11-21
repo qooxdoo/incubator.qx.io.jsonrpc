@@ -126,7 +126,8 @@
         this.assertEquals("\n", qx.bom.String.escape("\n"));
         this.assertEquals("Hello", qx.bom.String.escape("Hello"));
         this.assertEquals("juhu &lt;&gt;", qx.bom.String.escape("juhu <>"));
-        this.assertEquals("&lt;div id='1'&gt;&amp;nbsp; &euro;&lt;/div&gt;", qx.bom.String.escape("<div id='1'>&nbsp; €</div>")); // textToHtml
+        this.assertEquals("&lt;div id='1'&gt;&amp;nbsp; &euro;&lt;/div&gt;", qx.bom.String.escape("<div id='1'>&nbsp; €</div>"));
+        this.assertEquals("&#127774; 1", qx.bom.String.escape("🌞 1")); // textToHtml
 
         this.assertEquals("&lt;div id='1'&gt;<br> &nbsp;&amp;nbsp; &euro;&lt;/div&gt;", qx.bom.String.fromText("<div id='1'>\n  &nbsp; €</div>")); // htmlToText
 
@@ -136,6 +137,7 @@
         this.assertEquals("Hello", qx.bom.String.unescape("Hello"));
         this.assertEquals("juhu <>", qx.bom.String.unescape("juhu &lt;&gt;"));
         this.assertEquals("<div id='1'>&nbsp; €</div>", qx.bom.String.unescape("&lt;div id='1'&gt;&amp;nbsp; &euro;&lt;/div&gt;"));
+        this.assertEquals("🌞 1", qx.bom.String.unescape("&#127774; 1"));
         this.assertEquals(">&zzzz;x", qx.bom.String.unescape("&gt;&zzzz;x"));
         this.assertEquals("€", qx.bom.String.unescape("&#x20AC;"));
         this.assertEquals("€", qx.bom.String.unescape("&#X20AC;")); // escape XML
@@ -196,6 +198,25 @@
         this.assertIdentical(qx.lang.String.trimLeft(str), "foo bar     ");
         this.assertIdentical(qx.lang.String.trimRight(str), "     foo bar");
       },
+      testCodePointAt: function testCodePointAt() {
+        this.assertEquals("abc".codePointAt(0), 97);
+        this.assertEquals("abc".codePointAt(1), 98);
+        this.assertEquals("abc".codePointAt(2), 99);
+        this.assertEquals("abc".codePointAt(3), undefined);
+        this.assertEquals("☃★♲".codePointAt(0), 9731);
+        this.assertEquals("☃★♲".codePointAt(1), 9733);
+        this.assertEquals("☃★♲".codePointAt(2), 9842);
+        this.assertEquals("☃★♲".codePointAt(3), undefined);
+      },
+      testFromCodePoint: function testFromCodePoint() {
+        this.assertEquals(String.fromCodePoint(42), "*");
+        this.assertEquals(String.fromCodePoint(65, 90), "AZ");
+        this.assertEquals(String.fromCodePoint(0x404), "Є");
+        this.assertEquals(String.fromCodePoint(0x2F804), "\uD87E\uDC04");
+        this.assertEquals(String.fromCodePoint(194564), "\uD87E\uDC04");
+        this.assertEquals(String.fromCodePoint(0x1D306, 0x61, 0x1D307), "\uD834\uDF06a\uD834\uDF07");
+        this.assertEquals(String.fromCodePoint(9731, 9733, 9842), "☃★♲");
+      },
       testStripScripts: function testStripScripts() {
         var str = "This is a <script>foobar</script>test";
         this.assertIdentical(qx.lang.String.stripScripts(str), "This is a test");
@@ -210,4 +231,4 @@
   qx.test.lang.String.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=String.js.map?dt=1603176831577
+//# sourceMappingURL=String.js.map?dt=1605962027160

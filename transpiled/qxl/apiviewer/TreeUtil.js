@@ -66,7 +66,7 @@
        *           is <code>null</code> or has no such child.
        */
       getChild: function getChild(docNode, childType) {
-        if (docNode != null && docNode.children != null) {
+        if (docNode && docNode.children) {
           for (var i = 0; i < docNode.children.length; i++) {
             if (docNode.children[i].type == childType) {
               return docNode.children[i];
@@ -86,7 +86,7 @@
        * @return {Map} the wanted child or <code>code</code> if there is no such child.
        */
       getChildByAttribute: function getChildByAttribute(docNode, attributeName, attributeValue) {
-        if (docNode.children != null) {
+        if (docNode.children) {
           for (var i = 0; i < docNode.children.length; i++) {
             var node = docNode.children[i];
 
@@ -156,7 +156,7 @@
           constName = "ICON_EVENT";
         } else if (node instanceof dao.Method) {
           if (node.isConstructor()) {
-            var constName = "ICON_CTOR";
+            constName = "ICON_CTOR";
           } else {
             constName = "ICON_METHOD";
 
@@ -231,14 +231,14 @@
 
           iconUrl = [qxl.apiviewer.TreeUtil[itemName]];
 
-          if (iconUrl[0] == null) {
+          if (iconUrl[0] === null) {
             throw new Error("Unknown img constant: " + itemName);
           }
 
           for (var i = startIndex; i < iconParts.length; i++) {
             var iconPart = qxl.apiviewer.TreeUtil["OVERLAY_" + iconParts[i]];
 
-            if (iconPart == null) {
+            if (iconPart === null) {
               throw new Error("Unknown img constant: OVERLAY_" + iconParts[i]);
             }
 
@@ -392,4 +392,4 @@
   qxl.apiviewer.TreeUtil.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TreeUtil.js.map?dt=1603176853743
+//# sourceMappingURL=TreeUtil.js.map?dt=1605962054796

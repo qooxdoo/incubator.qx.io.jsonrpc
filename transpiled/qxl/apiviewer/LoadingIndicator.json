@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 48,
+        "line": 50,
         "column": 5
       }
     },
@@ -30,7 +30,7 @@
         "column": 15
       },
       "end": {
-        "line": 36,
+        "line": 38,
         "column": 5
       }
     },
@@ -40,11 +40,11 @@
     "__blocker": {
       "location": {
         "start": {
-          "line": 40,
+          "line": 42,
           "column": 4
         },
         "end": {
-          "line": 40,
+          "line": 42,
           "column": 20
         }
       },
@@ -54,11 +54,11 @@
     "show": {
       "location": {
         "start": {
-          "line": 41,
+          "line": 43,
           "column": 4
         },
         "end": {
-          "line": 43,
+          "line": 45,
           "column": 5
         }
       },
@@ -68,11 +68,11 @@
     "hide": {
       "location": {
         "start": {
-          "line": 44,
+          "line": 46,
           "column": 4
         },
         "end": {
-          "line": 46,
+          "line": 48,
           "column": 5
         }
       },

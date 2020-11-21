@@ -47190,6 +47190,12 @@
       focus: function focus() {
         qx.ui.form.DateField.prototype.focus.base.call(this);
         this.getChildControl("textfield").getFocusElement().focus();
+      },
+      // overridden
+      tabFocus: function tabFocus() {
+        var field = this.getChildControl("textfield");
+        field.getFocusElement().focus();
+        field.selectAllText();
       }
     },
     destruct: function destruct() {
@@ -96140,6 +96146,12 @@
           }
         }
 
+        if (obj1 == null && obj2 !== null) {
+          return -1;
+        } else if (obj2 == null && obj1 !== null) {
+          return 1;
+        }
+
         return obj1 > obj2 ? 1 : obj1 == obj2 ? 0 : -1;
       },
 
@@ -96161,6 +96173,12 @@
           if (result != null) {
             return result;
           }
+        }
+
+        if (obj1 == null && obj2 !== null) {
+          return -1;
+        } else if (obj2 == null && obj1 !== null) {
+          return 1;
         }
 
         return obj1 > obj2 ? 1 : obj1 == obj2 ? 0 : -1;
@@ -96187,6 +96205,12 @@
           }
         }
 
+        if (obj1 == null && obj2 !== null) {
+          return 1;
+        } else if (obj2 == null && obj1 !== null) {
+          return -1;
+        }
+
         return obj1 < obj2 ? 1 : obj1 == obj2 ? 0 : -1;
       },
 
@@ -96208,6 +96232,12 @@
           if (result != null) {
             return result;
           }
+        }
+
+        if (obj1 == null && obj2 !== null) {
+          return 1;
+        } else if (obj2 == null && obj1 !== null) {
+          return -1;
         }
 
         return obj1 < obj2 ? 1 : obj1 == obj2 ? 0 : -1;
@@ -115776,7 +115806,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1603176865358
+//# sourceMappingURL=package-7.js.map?dt=1605962069650
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

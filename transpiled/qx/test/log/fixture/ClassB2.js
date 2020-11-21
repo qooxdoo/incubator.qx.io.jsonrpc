@@ -24,4 +24,4 @@
   qx.test.log.fixture.ClassB2.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ClassB2.js.map?dt=1603176831929
+//# sourceMappingURL=ClassB2.js.map?dt=1605962027620

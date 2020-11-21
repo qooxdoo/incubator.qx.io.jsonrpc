@@ -53,6 +53,7 @@
        * Andreas Ecker (ecker)
        * Fabian Jakobs (fjakobs)
        * Jonathan Weiß (jonathan_rass)
+       * Henner Kollmann (hkollmann)
   
   ************************************************************************ */
 
@@ -73,14 +74,16 @@
     /**
      * @param widgetRegistry
      *          {Viewer} the GUI
+     *
+     * @ignore (qx.$$appRoot)
+     *
      */
-    // @ignore (qx.$$appRoot)
     construct: function construct(widgetRegistry) {
       qx.core.Object.constructor.call(this);
       this._widgetRegistry = qxl.apiviewer.MWidgetRegistry;
       this._titlePrefix = "API Documentation";
       document.title = this._titlePrefix;
-      qxl.apiviewer.ClassLoader.setBaseUri(qx.$$appRoot + "..");
+      qxl.apiviewer.ClassLoader.setBaseUri(`${qx.$$appRoot}../resource/${qxl.apiviewer.ClassLoader.RESOURCEPATH}/`);
       this._detailLoader = this._widgetRegistry.getWidgetById("detail_loader");
       this._tabViewController = new qxl.apiviewer.TabViewController(this._widgetRegistry);
 
@@ -130,11 +133,11 @@
           {
             this.debug("Time to build data tree: " + (end.getTime() - start.getTime()) + "ms");
           }
-          var start = new Date();
+          start = new Date();
 
           this._tree.setTreeData(rootPackage);
 
-          var end = new Date();
+          end = new Date();
           {
             this.debug("Time to update tree: " + (end.getTime() - start.getTime()) + "ms");
           }
@@ -170,10 +173,10 @@
             var nodeName = page.getUserData("nodeName");
             var itemName = page.getUserData("itemName");
 
-            if (itemName != null) {
-              this._updateHistory(nodeName + "#" + itemName);
-            } else {
+            if (itemName === null) {
               this._updateHistory(nodeName);
+            } else {
+              this._updateHistory(nodeName + "#" + itemName);
             }
           } else {
             this._tree.resetSelection();
@@ -249,19 +252,19 @@
         var showMixins = btn_included.getValue();
 
         if (showMixins && showInherited) {
-          menuButton.setIcon('qxl/apiviewer/image/inherited_and_mixins_included.gif');
+          menuButton.setIcon("qxl/apiviewer/image/inherited_and_mixins_included.gif");
         }
 
         if (showInherited && !showMixins) {
-          menuButton.setIcon('qxl/apiviewer/image/method_public_inherited18.gif');
+          menuButton.setIcon("qxl/apiviewer/image/method_public_inherited18.gif");
         }
 
         if (!showInherited && showMixins) {
-          menuButton.setIcon('qxl/apiviewer/image/overlay_mixin18.gif');
+          menuButton.setIcon("qxl/apiviewer/image/overlay_mixin18.gif");
         }
 
         if (!showInherited && !showMixins) {
-          menuButton.setIcon('qxl/apiviewer/image/includes.gif');
+          menuButton.setIcon("qxl/apiviewer/image/includes.gif");
         }
       },
 
@@ -295,18 +298,20 @@
        * @param classNode
        *          {qxl.apiviewer.dao.Class} class node to display
        */
-      _selectClass: function _selectClass(classNode, callback, self) {
+      _selectClass: async function _selectClass(classNode, callback, self) {
         this._detailLoader.exclude();
 
         this._tabViewController.showTabView();
 
-        return classNode.loadDependedClasses().then(() => {
-          if (classNode instanceof qxl.apiviewer.dao.Class) {
-            return this._tabViewController.openClass(classNode, this.__openInNewTab__P_594_5);
-          } else {
-            return this._tabViewController.openPackage(classNode, this.__openInNewTab__P_594_5);
-          }
-        }).then(() => callback && callback.call(self));
+        await classNode.loadDependedClasses();
+
+        if (classNode instanceof qxl.apiviewer.dao.Class) {
+          await this._tabViewController.openClass(classNode, this.__openInNewTab__P_594_5);
+        } else {
+          await this._tabViewController.openPackage(classNode, this.__openInNewTab__P_594_5);
+        }
+
+        callback && callback.call(self);
       },
 
       /**
@@ -316,7 +321,6 @@
        *          {String} the full name of the item to select. (e.g.
        *          "qx.mypackage.MyClass" or "qx.mypackage.MyClass#myProperty")
        * 
-       * @lint ignoreDeprecated(alert)
        */
       __selectItem__P_594_6: function __selectItem__P_594_6(fullItemName) {
         qxl.apiviewer.LoadingIndicator.getInstance().show();
@@ -341,8 +345,7 @@
           this._ignoreTreeSelection = false;
 
           if (!couldSelectTreeNode) {
-            this.error("Unknown class: " + className); //alert("Unknown class: " + className);
-
+            this.error("Unknown class: " + className);
             qxl.apiviewer.LoadingIndicator.getInstance().hide();
             return;
           }
@@ -350,29 +353,30 @@
           var sel = this._tree.getSelection();
 
           var nodeName = sel[0].getUserData("nodeName") || className;
-          /**
-           * @lint ignoreDeprecated(alert)
-           */
-
           this._ignoreTabViewSelection = true;
 
           this._selectClass(qxl.apiviewer.ClassLoader.getClassOrPackage(nodeName), () => {
             if (itemName) {
-              if (!this._tabViewController.showItem(itemName)) {
-                this.error("Unknown item of class '" + className + "': " + itemName); //alert("Unknown item of class '"+ className +"': " + itemName);
+              this._tabViewController.isLoaded(() => {
+                if (!this._tabViewController.showItem(itemName)) {
+                  this.error("Unknown item of class '" + className + "': " + itemName);
+                  qxl.apiviewer.LoadingIndicator.getInstance().hide();
+
+                  this._updateHistory(className);
+
+                  this._ignoreTabViewSelection = false;
+                  return;
+                }
+
+                this._updateHistory(fullItemName);
 
                 qxl.apiviewer.LoadingIndicator.getInstance().hide();
-
-                this._updateHistory(className);
-
                 this._ignoreTabViewSelection = false;
-                return;
-              }
+              });
+            } else {
+              qxl.apiviewer.LoadingIndicator.getInstance().hide();
+              this._ignoreTabViewSelection = false;
             }
-
-            this._updateHistory(fullItemName);
-
-            this._ignoreTabViewSelection = false;
           });
         });
       },
@@ -398,4 +402,4 @@
   qxl.apiviewer.Controller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Controller.js.map?dt=1603176853371
+//# sourceMappingURL=Controller.js.map?dt=1605962054326

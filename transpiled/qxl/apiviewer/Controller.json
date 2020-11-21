@@ -9,11 +9,11 @@
   "clazz": {
     "location": {
       "start": {
-        "line": 30,
+        "line": 31,
         "column": 0
       },
       "end": {
-        "line": 374,
+        "line": 358,
         "column": 3
       }
     },
@@ -30,11 +30,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 45,
+        "line": 47,
         "column": 14
       },
       "end": {
-        "line": 78,
+        "line": 79,
         "column": 3
       }
     },
@@ -57,6 +57,12 @@
           "description": " the GUI",
           "type": "qxl.apiviewer.Viewer"
         }
+      ],
+      "@ignore": [
+        {
+          "name": "@ignore",
+          "body": "qx.$$appRoot"
+        }
       ]
     }
   },
@@ -64,11 +70,11 @@
     "__openInNewTab": {
       "location": {
         "start": {
-          "line": 83,
+          "line": 84,
           "column": 4
         },
         "end": {
-          "line": 83,
+          "line": 84,
           "column": 26
         }
       },
@@ -78,11 +84,11 @@
     "$$logCategory": {
       "location": {
         "start": {
-          "line": 86,
+          "line": 87,
           "column": 4
         },
         "end": {
-          "line": 86,
+          "line": 87,
           "column": 33
         }
       },
@@ -93,11 +99,11 @@
     "load": {
       "location": {
         "start": {
-          "line": 94,
+          "line": 95,
           "column": 4
         },
         "end": {
-          "line": 121,
+          "line": 122,
           "column": 5
         }
       },
@@ -124,7 +130,7 @@
     "__bindTabViewController": {
       "location": {
         "start": {
-          "line": 126,
+          "line": 127,
           "column": 4
         },
         "end": {
@@ -150,7 +156,7 @@
           "column": 4
         },
         "end": {
-          "line": 170,
+          "line": 168,
           "column": 5
         }
       },
@@ -168,11 +174,11 @@
     "__bindToolbar": {
       "location": {
         "start": {
-          "line": 176,
+          "line": 174,
           "column": 4
         },
         "end": {
-          "line": 203,
+          "line": 200,
           "column": 5
         }
       },
@@ -190,11 +196,11 @@
     "__syncMenuButton": {
       "location": {
         "start": {
-          "line": 211,
+          "line": 208,
           "column": 4
         },
         "end": {
-          "line": 235,
+          "line": 226,
           "column": 5
         }
       },
@@ -212,11 +218,11 @@
     "__bindHistory": {
       "location": {
         "start": {
-          "line": 240,
+          "line": 231,
           "column": 4
         },
         "end": {
-          "line": 248,
+          "line": 238,
           "column": 5
         }
       },
@@ -234,11 +240,11 @@
     "_updateHistory": {
       "location": {
         "start": {
-          "line": 258,
+          "line": 248,
           "column": 4
         },
         "end": {
-          "line": 262,
+          "line": 251,
           "column": 5
         }
       },
@@ -265,11 +271,11 @@
     "_selectClass": {
       "location": {
         "start": {
-          "line": 271,
+          "line": 260,
           "column": 4
         },
         "end": {
-          "line": 284,
+          "line": 270,
           "column": 5
         }
       },
@@ -296,11 +302,11 @@
     "__selectItem": {
       "location": {
         "start": {
-          "line": 296,
+          "line": 281,
           "column": 4
         },
         "end": {
-          "line": 349,
+          "line": 334,
           "column": 5
         }
       },
@@ -319,12 +325,6 @@
             "description": " the full name of the item to select. (e.g.\n          \"qx.mypackage.MyClass\" or \"qx.mypackage.MyClass#myProperty\")",
             "type": "String"
           }
-        ],
-        "@lint": [
-          {
-            "name": "@lint",
-            "body": "ignoreDeprecated(alert)"
-          }
         ]
       },
       "type": "function",
@@ -333,11 +333,11 @@
     "__encodeState": {
       "location": {
         "start": {
-          "line": 352,
+          "line": 337,
           "column": 4
         },
         "end": {
-          "line": 354,
+          "line": 339,
           "column": 5
         }
       },
@@ -347,11 +347,11 @@
     "__decodeState": {
       "location": {
         "start": {
-          "line": 356,
+          "line": 341,
           "column": 4
         },
         "end": {
-          "line": 358,
+          "line": 343,
           "column": 5
         }
       },
@@ -498,11 +498,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 369,
+        "line": 354,
         "column": 13
       },
       "end": {
-        "line": 373,
+        "line": 357,
         "column": 3
       }
     },

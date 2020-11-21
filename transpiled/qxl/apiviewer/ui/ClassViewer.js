@@ -49,7 +49,6 @@
       "qx.bom.element.Scroll": {},
       "qx.bom.element.Style": {},
       "qxl.apiviewer.TreeUtil": {},
-      "qx.lang.String": {},
       "qx.event.Timer": {},
       "qxl.apiviewer.UiModel": {}
     },
@@ -87,6 +86,7 @@
        * Fabian Jakobs (fjakobs)
        * Jonathan Weiß (jonathan_rass)
        * John Spackman (johnspackman)
+       * Henner Kollmann (hkollmann)
   
   ************************************************************************ */
 
@@ -238,9 +238,9 @@
         var style;
 
         if (qx.core.Environment.get("engine.name") == "webkit") {
-          html = "<span style=\"display:inline;position:relative;top:-2px;width:" + width + "px;height:" + height + "px" + (styleAttributes == null ? "" : ";" + styleAttributes) + "\">";
+          html = "<span style=\"display:inline;position:relative;top:-2px;width:" + width + "px;height:" + height + "px" + (styleAttributes ? ";" + styleAttributes : "") + "\">";
         } else {
-          html = "<span style=\"display:inline-block;display:inline;padding-right:18px;position:relative;top:-2px;left:0;width:" + width + "px;height:" + height + "px" + (styleAttributes == null ? "" : ";" + styleAttributes) + "\">";
+          html = "<span style=\"display:inline-block;display:inline;padding-right:18px;position:relative;top:-2px;left:0;width:" + width + "px;height:" + height + "px" + (styleAttributes ? ";" + styleAttributes : "") + "\">";
         }
 
         if (qx.core.Environment.get("engine.name") == "webkit") {
@@ -254,7 +254,7 @@
         for (var i = 0; i < imgUrlArr.length; i++) {
           html += "<img";
 
-          if (toolTip != null) {
+          if (toolTip) {
             html += " title=\"" + toolTip + "\"";
           }
 
@@ -391,7 +391,7 @@
           tocItem.innerHTML = qxl.apiviewer.ui.ClassViewer.createImageHtml(panel.getPanelIcon(), panel.getPanelTitle()) + " ";
           q(tocItem).on("tap", function (firstItem) {
             return function () {
-              this.__enableSection__P_603_0(firstItem, firstItem.getName());
+              this.__enableSection__P_604_0(firstItem, firstItem.getName());
 
               qx.bom.element.Scroll.intoView(panel.getTitleElement(), null, "left", "top");
 
@@ -454,21 +454,21 @@
 
 
         if (classNode.getType() === "interface") {
-          classHtml.add(this.__getInterfaceHierarchyHtml__P_603_1(classNode));
+          classHtml.add(this.__getInterfaceHierarchyHtml__P_604_1(classNode));
         } else {
-          classHtml.add(this.__getClassHierarchyHtml__P_603_2(classNode));
+          classHtml.add(this.__getClassHierarchyHtml__P_604_2(classNode));
         }
 
         return classNode.getChildClasses().then(childClasses => {
-          classHtml.add(this.__getDependentClassesHtml__P_603_3(childClasses, "Direct " + subObjectsName + ":"));
-          classHtml.add(this.__getDependentClassesHtml__P_603_3(classNode.getInterfaces(), "Implemented interfaces:"));
-          classHtml.add(this.__getDependentClassesHtml__P_603_3(classNode.getMixins(), "Included mixins:"));
+          classHtml.add(this.__getDependentClassesHtml__P_604_3(childClasses, "Direct " + subObjectsName + ":"));
+          classHtml.add(this.__getDependentClassesHtml__P_604_3(classNode.getInterfaces(), "Implemented interfaces:"));
+          classHtml.add(this.__getDependentClassesHtml__P_604_3(classNode.getMixins(), "Included mixins:"));
           return classNode.getImplementations();
         }).then(classes => {
-          classHtml.add(this.__getDependentClassesHtml__P_603_3(classes, "Implementations of this interface:"));
+          classHtml.add(this.__getDependentClassesHtml__P_604_3(classes, "Implementations of this interface:"));
           return classNode.getIncluder();
         }).then(classes => {
-          classHtml.add(this.__getDependentClassesHtml__P_603_3(classes, "Classes including this mixin:"));
+          classHtml.add(this.__getDependentClassesHtml__P_604_3(classes, "Classes including this mixin:"));
 
           if (classNode.isDeprecated()) {
             classHtml.add("<h2 class=\"warning\">", "Deprecated:", "</h2>");
@@ -509,7 +509,7 @@
        * @param title {String} headline
        * @return {String} HTML Fragement
        */
-      __getDependentClassesHtml__P_603_3: function __getDependentClassesHtml__P_603_3(dependentClasses, title) {
+      __getDependentClassesHtml__P_604_3: function __getDependentClassesHtml__P_604_3(dependentClasses, title) {
         var result = "";
 
         if (dependentClasses.length > 0) {
@@ -535,7 +535,7 @@
        * @param classNode {qxl.apiviewer.dao.Class} class node
        * @return {String} HTML fragemnt
        */
-      __getClassHierarchyHtml__P_603_2: function __getClassHierarchyHtml__P_603_2(classNode) {
+      __getClassHierarchyHtml__P_604_2: function __getClassHierarchyHtml__P_604_2(classNode) {
         var ClassViewer = qxl.apiviewer.ui.ClassViewer; // Create the class hierarchy
 
         var classHtml = new qx.util.StringBuilder("<h2>", "Inheritance hierarchy:", "</h2>");
@@ -577,7 +577,7 @@
        * @param classNode {qxl.apiviewer.dao.Class} class node
        * @return {String} HTML fragemnt
        */
-      __getInterfaceHierarchyHtml__P_603_1: function __getInterfaceHierarchyHtml__P_603_1(classNode) {
+      __getInterfaceHierarchyHtml__P_604_1: function __getInterfaceHierarchyHtml__P_604_1(classNode) {
         var ClassViewer = qxl.apiviewer.ui.ClassViewer;
         var TreeUtil = qxl.apiviewer.TreeUtil;
         var InfoPanel = qxl.apiviewer.ui.panels.InfoPanel;
@@ -585,7 +585,7 @@
         var html = new qx.util.StringBuilder(); // show nothing if we don't have a hierarchy
 
         if (hierarchy.length <= 1) {
-          return;
+          return html;
         }
 
         html.add("<h2>", "Inheritance hierarchy:", "</h2>");
@@ -637,8 +637,7 @@
           itemNode = this.getDocNode().getConstructor();
         } else if (itemName.indexOf("!") != -1) {
           var parts = itemName.split("!");
-          let upname = "get" + qx.lang.String.firstUp(nameMap[parts[1]]);
-          itemNode = this.getDocNode()[upname](parts[0]);
+          itemNode = this.getDocNode().getItemByListAndName(nameMap[parts[1]], parts[0]);
 
           if (!itemNode) {
             itemNode = this.getDocNode().getItem(parts[0]);
@@ -652,7 +651,7 @@
         } // Show properties, private or protected methods if they are hidden
 
 
-        this.__enableSection__P_603_0(itemNode, itemName);
+        this.__enableSection__P_604_0(itemNode, itemName);
 
         var panel = this._getPanelForItemNode(itemNode);
 
@@ -691,7 +690,7 @@
        * @param itemName {String} the name of the item to highlight.
        * @param itemName {String} The doc node of the item
        */
-      __enableSection__P_603_0: function __enableSection__P_603_0(itemNode, itemName) {
+      __enableSection__P_604_0: function __enableSection__P_604_0(itemNode, itemName) {
         var uiModel = qxl.apiviewer.UiModel.getInstance(); // Check for property
 
         if (itemNode.isFromProperty && itemNode.isFromProperty()) {
@@ -717,10 +716,10 @@
 
           if (itemNode.isInternal()) {
             uiModel.setShowInternal(true);
-          } // Check for protected
-          else if (itemNode.isProtected()) {
-              uiModel.setShowProtected(true);
-            }
+          } else if (itemNode.isProtected()) {
+            // Check for protected
+            uiModel.setShowProtected(true);
+          }
         }
       },
 
@@ -740,6 +739,8 @@
             return panel;
           }
         }
+
+        return null;
       }
     },
 
@@ -755,4 +756,4 @@
   qxl.apiviewer.ui.ClassViewer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ClassViewer.js.map?dt=1603176854000
+//# sourceMappingURL=ClassViewer.js.map?dt=1605962055110

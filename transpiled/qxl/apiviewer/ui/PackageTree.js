@@ -57,8 +57,7 @@
       this.__root__P_595_0.setOpen(true);
 
       this.setRoot(this.__root__P_595_0);
-      this.setSelection([this.__root__P_595_0]); // TODO: Is this workaround still needed?
-      // Workaround: Since navigating in qx.ui.tree.Tree doesn't work, we've to
+      this.setSelection([this.__root__P_595_0]); // Workaround: Since navigating in qx.ui.tree.Tree doesn't work, we've to
       // maintain a hash that keeps the tree nodes for class names
 
       this._classTreeNodeHash = {};
@@ -99,7 +98,7 @@
        * @return {Boolean} Whether the class name was valid and could be selected.
        */
       selectTreeNodeByClassName: function selectTreeNodeByClassName(className) {
-        if (this._docTree == null) {
+        if (!this._docTree) {
           // The doc tree has not been loaded yet
           // -> Remember the wanted class and show when loading is done
           this._wantedClassName = className;
@@ -249,4 +248,4 @@
   qxl.apiviewer.ui.PackageTree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PackageTree.js.map?dt=1603176853421
+//# sourceMappingURL=PackageTree.js.map?dt=1605962054382
