@@ -5,24 +5,12 @@
 This incubator contains a proposal to add a framework for transport-agnostic 
 higher-level i/o protocols to the `qx.io` namespace. 
 
+Status: Stable (v2.0.0, see [release notes](#release-notes) for breaking changes).
+
 - API: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io
 - Test runner: http://www.qooxdoo.org/incubator.qx.io.jsonrpc/
 
 It is called incubator.qx.io.jsonrpc because v1.0 implemented this protocol only.
-
-This is v2.0.0-alpha, which abstracts the exception and transport APIs and adds
-a GraphQl implementation in the `qx.io.graphql` namespace based on these APIs
-(See the documentation in the API Viewer). 
-
-It contains the following **breaking changes**: 
- 
-- `qx.io.jsonrpc.exception` has been moved to `qx.io.exception`
-and generalized, i.e. `qx.io.jsonrpc.exception.JsonRpc` has been
-renamed to `qx.io.exception.Protocol`. 
-
-- The same applies to the `qx.io.jsonrpc.transport`
-namespace, which has been moved to `qx.io.transport`. `qx.io.jsonrpc.transport.Http`
-has been renamed `qx.io.transport.Xhr`.
 
 ## Installation for use in your project
 
@@ -170,26 +158,6 @@ event. For the HTTP transport, notifications can be sent by the server
 as part of the response to client requests. Once a WebSocket transport
 has been added, the duplex JSON-RPC traffic can be implemented this way.
 
-### GraphQL
-
-The GraphQL implementation is still under construction, docs will be added. 
-
-Example:
-
-```javascript
-    let client = new qx.io.graphql.Client("https://countries-274616.ew.r.appspot.com/");
-    let query = `query($country:String!) {
-       Country(name: $country) {
-         nativeName
-         officialLanguages { name }
-       }
-     }`;
-    let request = new qx.io.graphql.protocol.Request();
-    request.setQuery(query);
-    request.marshalVariables({country:"Belgium"});
-    let response = await client.send(request);
-```
-
 ### Customizing the transport / Authentication
 
 The high-level Client API does not (yet) handle transport-specific issues like
@@ -221,4 +189,46 @@ which registers the behavior for your particular class of URIs:
 registered for a certain endpoint pattern, i.e. from then on, all clients
 created with urls that start with "http" will use that custom behavior.
 
+### GraphQL
 
+The GraphQL implementation is still under construction, docs will be added. 
+
+Example:
+
+```javascript
+    let client = new qx.io.graphql.Client("https://countries-274616.ew.r.appspot.com/");
+    let query = `query($country:String!) {
+       Country(name: $country) {
+         nativeName
+         officialLanguages { name }
+       }
+     }`;
+    let request = new qx.io.graphql.protocol.Request();
+    request.setQuery(query);
+    request.setVariables({country:"Belgium"});
+    let response = await client.send(request);
+```
+
+## Release notes
+
+### v2.0.0
+
+- The exception and transport APIs have been abstracted so that 
+they can be used in other protocols.
+
+- Adds a GraphQl implementation in the `qx.io.graphql` namespace
+based on these APIs (See the documentation in the API Viewer).
+
+**Breaking changes**: 
+ 
+- `qx.io.jsonrpc.exception` has been moved to `qx.io.exception`
+and generalized, i.e. `qx.io.jsonrpc.exception.JsonRpc` has been
+renamed to `qx.io.exception.Protocol`. 
+
+- The same applies to the `qx.io.jsonrpc.transport`
+namespace, which has been moved to `qx.io.transport`. `qx.io.jsonrpc.transport.Http`
+has been renamed `qx.io.transport.Xhr`.
+
+### v1.0.0
+
+Initial release, featuring a JSONRPC implementation.
