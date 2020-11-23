@@ -92,4 +92,4 @@
   qx.theme.tangible.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1605962036842
+//# sourceMappingURL=Font.js.map?dt=1606149390932

@@ -60,7 +60,7 @@ var envinfo = {
   "qx.application": "qxl.testtapper.Application",
   "qx.revision": "",
   "qx.theme": "qx.theme.Simple",
-  "qx.version": "6.0.0-beta-20201119-2000",
+  "qx.version": "6.0.0-beta-20201123-0729",
   "qx.libraryInfoMap": {
     "qx": {
       "name": "qooxdoo framework",
@@ -141,7 +141,7 @@ var envinfo = {
           "email": "dietrich.streifert@visionet.de"
         }
       ],
-      "version": "6.0.0-beta-20201119-2000"
+      "version": "6.0.0-beta-20201123-0729"
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
@@ -227,7 +227,7 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compiler.version": "1.0.0-beta-20201119-2000",
+  "qx.compiler.version": "1.0.0-beta-20201123-0729",
   "qx.icontheme": "Tango",
   "qx.test.delay.scale": 1,
   "qx.buildType": "source",

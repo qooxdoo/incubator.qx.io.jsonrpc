@@ -10,11 +10,6 @@
         "resourcePath": "resourcePath"
       }
     },
-    "qxl.versionlabel": {
-      "dummy.txt": {
-        "resourcePath": "resourcePath"
-      }
-    },
     "qxl.logpane": {
       "dummy.txt": {
         "resourcePath": "resourcePath"
@@ -563,6 +558,11 @@
             -396
           ]
         }
+      }
+    },
+    "qxl.versionlabel": {
+      "dummy.txt": {
+        "resourcePath": "resourcePath"
       }
     },
     "qx": {
@@ -8961,12 +8961,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/office-web.png": {
+      "qx/icon/Oxygen/128/apps/office-writer.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/office-writer.png": {
+      "qx/icon/Oxygen/128/apps/office-web.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9396,12 +9396,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/places/folder.png": {
+      "qx/icon/Oxygen/128/places/network-server.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/places/network-server.png": {
+      "qx/icon/Oxygen/128/places/folder.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -12556,12 +12556,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/devices/camera-web.png": {
+      "qx/icon/Oxygen/32/devices/computer.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/devices/computer.png": {
+      "qx/icon/Oxygen/32/devices/camera-web.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -13721,12 +13721,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/devices/media-optical.png": {
+      "qx/icon/Oxygen/48/devices/multimedia-player.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/devices/multimedia-player.png": {
+      "qx/icon/Oxygen/48/devices/media-optical.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -15011,12 +15011,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Oxygen/64/places/folder-open.png": {
+      "qx/icon/Oxygen/64/places/folder-remote.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Oxygen/64/places/folder-remote.png": {
+      "qx/icon/Oxygen/64/places/folder-open.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -15606,12 +15606,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/internet-blog.png": {
+      "qx/icon/Tango/128/apps/internet-download-manager.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/internet-download-manager.png": {
+      "qx/icon/Tango/128/apps/internet-blog.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -15696,12 +15696,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/office-presentation.png": {
+      "qx/icon/Tango/128/apps/office-project.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/office-project.png": {
+      "qx/icon/Tango/128/apps/office-presentation.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128

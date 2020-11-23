@@ -229,4 +229,4 @@
   qx.util.ExtendedColor.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ExtendedColor.js.map?dt=1605962052769
+//# sourceMappingURL=ExtendedColor.js.map?dt=1606149404783

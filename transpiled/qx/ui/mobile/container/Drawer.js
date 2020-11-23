@@ -458,4 +458,4 @@
   qx.ui.mobile.container.Drawer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Drawer.js.map?dt=1605962043728
+//# sourceMappingURL=Drawer.js.map?dt=1606149397007

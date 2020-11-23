@@ -118,4 +118,4 @@
   qx.test.ui.form.Slider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Slider.js.map?dt=1605962031375
+//# sourceMappingURL=Slider.js.map?dt=1606149386311

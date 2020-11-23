@@ -296,4 +296,4 @@
   qx.ui.decoration.MSingleBorder.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MSingleBorder.js.map?dt=1605962039982
+//# sourceMappingURL=MSingleBorder.js.map?dt=1606149393794
