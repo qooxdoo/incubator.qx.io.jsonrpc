@@ -10,11 +10,6 @@
         "resourcePath": "resourcePath"
       }
     },
-    "qxl.logpane": {
-      "dummy.txt": {
-        "resourcePath": "resourcePath"
-      }
-    },
     "qxl.apiviewer": {
       "qxl/apiviewer/app.png": {
         "resourcePath": "resourcePath",
@@ -561,6 +556,11 @@
       }
     },
     "qxl.versionlabel": {
+      "dummy.txt": {
+        "resourcePath": "resourcePath"
+      }
+    },
+    "qxl.logpane": {
       "dummy.txt": {
         "resourcePath": "resourcePath"
       }
@@ -8366,12 +8366,12 @@
       "qx/website/scss/ui/_widget.scss": {
         "resourcePath": "resourcePath"
       },
-      "qx/icon/Oxygen/128/actions/application-exit.png": {
+      "qx/icon/Oxygen/128/actions/address-book-new.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/address-book-new.png": {
+      "qx/icon/Oxygen/128/actions/application-exit.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8521,12 +8521,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/format-justify-center.png": {
+      "qx/icon/Oxygen/128/actions/format-indent-more.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/format-indent-more.png": {
+      "qx/icon/Oxygen/128/actions/format-justify-center.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8731,12 +8731,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/media-seek-backward.png": {
+      "qx/icon/Oxygen/128/actions/media-record.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/media-record.png": {
+      "qx/icon/Oxygen/128/actions/media-seek-backward.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -8746,12 +8746,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/media-skip-forward.png": {
+      "qx/icon/Oxygen/128/actions/media-skip-backward.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/actions/media-skip-backward.png": {
+      "qx/icon/Oxygen/128/actions/media-skip-forward.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9041,12 +9041,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/utilities-color-chooser.png": {
+      "qx/icon/Oxygen/128/apps/utilities-character-map.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/apps/utilities-character-map.png": {
+      "qx/icon/Oxygen/128/apps/utilities-color-chooser.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9251,12 +9251,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/devices/scanner.png": {
+      "qx/icon/Oxygen/128/devices/printer.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/devices/printer.png": {
+      "qx/icon/Oxygen/128/devices/scanner.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9281,12 +9281,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/emotes/face-laugh.png": {
+      "qx/icon/Oxygen/128/emotes/face-kiss.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/emotes/face-kiss.png": {
+      "qx/icon/Oxygen/128/emotes/face-laugh.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9296,12 +9296,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/emotes/face-sad.png": {
+      "qx/icon/Oxygen/128/emotes/face-raspberry.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/emotes/face-raspberry.png": {
+      "qx/icon/Oxygen/128/emotes/face-sad.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9326,12 +9326,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/mimetypes/media-audio.png": {
+      "qx/icon/Oxygen/128/mimetypes/executable.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Oxygen/128/mimetypes/executable.png": {
+      "qx/icon/Oxygen/128/mimetypes/media-audio.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -9501,12 +9501,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/bookmark-new.png": {
+      "qx/icon/Oxygen/16/actions/appointment-new.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/appointment-new.png": {
+      "qx/icon/Oxygen/16/actions/bookmark-new.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -9666,12 +9666,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/format-text-bold.png": {
+      "qx/icon/Oxygen/16/actions/format-justify-right.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/format-justify-right.png": {
+      "qx/icon/Oxygen/16/actions/format-text-bold.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -9686,12 +9686,12 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/format-text-strikethrough.png": {
+      "qx/icon/Oxygen/16/actions/format-text-italic.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/actions/format-text-italic.png": {
+      "qx/icon/Oxygen/16/actions/format-text-strikethrough.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10426,17 +10426,17 @@
         "width": 16,
         "height": 16
       },
-      "qx/icon/Oxygen/16/emotes/face-smile-big.png": {
-        "resourcePath": "resourcePath",
-        "width": 16,
-        "height": 16
-      },
       "qx/icon/Oxygen/16/emotes/face-sad.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
       },
       "qx/icon/Oxygen/16/emotes/face-smile.png": {
+        "resourcePath": "resourcePath",
+        "width": 16,
+        "height": 16
+      },
+      "qx/icon/Oxygen/16/emotes/face-smile-big.png": {
         "resourcePath": "resourcePath",
         "width": 16,
         "height": 16
@@ -10981,12 +10981,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/actions/media-seek-backward.png": {
+      "qx/icon/Oxygen/22/actions/media-record.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/actions/media-record.png": {
+      "qx/icon/Oxygen/22/actions/media-seek-backward.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11106,17 +11106,17 @@
         "width": 22,
         "height": 22
       },
+      "qx/icon/Oxygen/22/apps/internet-blog.png": {
+        "resourcePath": "resourcePath",
+        "width": 22,
+        "height": 22
+      },
       "qx/icon/Oxygen/22/apps/internet-download-manager.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
       "qx/icon/Oxygen/22/apps/internet-feed-reader.png": {
-        "resourcePath": "resourcePath",
-        "width": 22,
-        "height": 22
-      },
-      "qx/icon/Oxygen/22/apps/internet-blog.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11196,12 +11196,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/apps/office-project.png": {
+      "qx/icon/Oxygen/22/apps/office-presentation.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/apps/office-presentation.png": {
+      "qx/icon/Oxygen/22/apps/office-project.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11391,12 +11391,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/categories/science.png": {
+      "qx/icon/Oxygen/22/categories/office.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/categories/office.png": {
+      "qx/icon/Oxygen/22/categories/science.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11561,12 +11561,12 @@
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/emotes/face-surprise.png": {
+      "qx/icon/Oxygen/22/emotes/face-smile.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
       },
-      "qx/icon/Oxygen/22/emotes/face-smile.png": {
+      "qx/icon/Oxygen/22/emotes/face-surprise.png": {
         "resourcePath": "resourcePath",
         "width": 22,
         "height": 22
@@ -11906,12 +11906,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/actions/format-justify-fill.png": {
+      "qx/icon/Oxygen/32/actions/format-justify-left.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/actions/format-justify-left.png": {
+      "qx/icon/Oxygen/32/actions/format-justify-fill.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12231,12 +12231,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/apps/internet-blog.png": {
+      "qx/icon/Oxygen/32/apps/internet-download-manager.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/apps/internet-download-manager.png": {
+      "qx/icon/Oxygen/32/apps/internet-blog.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -12751,12 +12751,12 @@
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/mimetypes/text-plain.png": {
+      "qx/icon/Oxygen/32/mimetypes/text-html.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
       },
-      "qx/icon/Oxygen/32/mimetypes/text-html.png": {
+      "qx/icon/Oxygen/32/mimetypes/text-plain.png": {
         "resourcePath": "resourcePath",
         "width": 32,
         "height": 32
@@ -13356,12 +13356,12 @@
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/apps/internet-blog.png": {
+      "qx/icon/Oxygen/48/apps/internet-download-manager.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
       },
-      "qx/icon/Oxygen/48/apps/internet-download-manager.png": {
+      "qx/icon/Oxygen/48/apps/internet-blog.png": {
         "resourcePath": "resourcePath",
         "width": 48,
         "height": 48
@@ -14591,12 +14591,12 @@
         "width": 64,
         "height": 64
       },
-      "qx/icon/Oxygen/64/apps/office-writer.png": {
+      "qx/icon/Oxygen/64/apps/preferences-accessibility.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
       },
-      "qx/icon/Oxygen/64/apps/preferences-accessibility.png": {
+      "qx/icon/Oxygen/64/apps/office-writer.png": {
         "resourcePath": "resourcePath",
         "width": 64,
         "height": 64
@@ -15606,12 +15606,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/internet-blog.png": {
+      "qx/icon/Tango/128/apps/internet-download-manager.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/internet-download-manager.png": {
+      "qx/icon/Tango/128/apps/internet-blog.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
@@ -15626,12 +15626,12 @@
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/internet-messenger.png": {
+      "qx/icon/Tango/128/apps/internet-telephony.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128
       },
-      "qx/icon/Tango/128/apps/internet-telephony.png": {
+      "qx/icon/Tango/128/apps/internet-messenger.png": {
         "resourcePath": "resourcePath",
         "width": 128,
         "height": 128

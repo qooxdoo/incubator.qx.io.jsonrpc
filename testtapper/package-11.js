@@ -5571,7 +5571,7 @@
   });
   qxl.logpane.LogPane.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-11.js.map?dt=1606150504300
+//# sourceMappingURL=package-11.js.map?dt=1606150659037
 qx.$$packageData['11'] = {
   "locales": {},
   "resources": {},
