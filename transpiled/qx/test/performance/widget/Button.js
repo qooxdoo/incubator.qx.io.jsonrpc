@@ -23,4 +23,4 @@
   qx.test.performance.widget.Button.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Button.js.map?dt=1606149384050
+//# sourceMappingURL=Button.js.map?dt=1606150460256

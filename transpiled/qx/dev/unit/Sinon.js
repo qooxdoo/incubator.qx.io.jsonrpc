@@ -4932,4 +4932,4 @@
   qx.dev.unit.Sinon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Sinon.js.map?dt=1606149370619
+//# sourceMappingURL=Sinon.js.map?dt=1606150444570
