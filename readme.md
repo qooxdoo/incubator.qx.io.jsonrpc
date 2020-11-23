@@ -48,38 +48,35 @@ that it can support any transport that can send and receive a
 UTF-8 encoded strings over the network no matter whether this is
 implemented in a request/response style (such as HTTP) or a fully
 duplex communication channel such as WebSockets or the [PostMessage
-API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) (TBD).
 Any transport must implement `qx.io.transport.ITransport`. For more information,
 see https://qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.transport
 
 This transport layer is used by implementations of the JSON-RPC and GraphQL 
 protocols. 
 
-### JSON-RPC
-
-The `qx.io.jsonrpc` namespace provides an API implementing
-the [JSON Remote Procedure Call (JSON-RPC) version 2
-specification](https://www.jsonrpc.org/specification).
-
-We provide a high-level API interface (qx.io.jsonrpc.Client),
-and an HTTP transport implementation. Other transports
-based on websockets or other mechanisms can be added later.
-
 #### Selecting a transport
 
-Since JSON-RPC is transport-agnostic, the transport has to be selected manually.
+All protocols that use the transport layer need to select the transport manually.
 The easiest way to do this is to use a compiler hint in the docblock of your
-application class or any class that uses JSON-RPC. For http transport, this would
-be 
+application class or any class that uses JSON-RPC. For the http transport which 
+uses XHR, this would be 
 
-```
+```javascript
 /**
  * @use(qx.io.transport.Xhr)
  */
 qx.Class.define("...
 ```
 
+This way, this transport will be used for any HTTP(S)-URL. Alternatively,
+you can also select a transport for each client instance individually.
 
+### JSON-RPC
+
+The `qx.io.jsonrpc` namespace provides an API implementing
+the [JSON Remote Procedure Call (JSON-RPC) version 2
+specification](https://www.jsonrpc.org/specification).
 
 #### Outgoing requests
 
