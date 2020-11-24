@@ -12,10 +12,12 @@ qx.Class.define("qx.io.transport.AbstractTransport", {
 
   properties : {
     /**
-     * The uri of the endpoint
+     *  A representation of the the endpoint, which is either a uri (a String)
+     *  or an object (such as in the case of the PostMessage transport)
      */
     endpoint : {
-      check : "String",
+      check : v => typeof v == "string" || typeof v == "object",
+      nullable: true,
       event : "changeEndpoint"
     }
   },
@@ -30,7 +32,7 @@ qx.Class.define("qx.io.transport.AbstractTransport", {
 
   /**
    * Constructor
-   * @param {String} endpoint
+   * @param {String|Object} endpoint
    */
   construct(endpoint) {
     this.base(arguments);

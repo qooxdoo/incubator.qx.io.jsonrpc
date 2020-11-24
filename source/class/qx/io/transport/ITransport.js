@@ -1,3 +1,6 @@
+/**
+ * The interface for all transports located in this namespace
+ */
 qx.Interface.define("qx.io.transport.ITransport", {
   properties: {
     /**
@@ -5,7 +8,7 @@ qx.Interface.define("qx.io.transport.ITransport", {
      * @var {String}
      */
     endpoint: {
-      check: "String"
+      event: "changeEndpoint"
     }
   },
   events: {

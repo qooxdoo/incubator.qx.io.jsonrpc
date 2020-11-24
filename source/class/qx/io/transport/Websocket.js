@@ -47,6 +47,7 @@ qx.Class.define("qx.io.transport.Websocket", {
      * @ignore(fetch)
      */
     async send(message) {
+      qx.core.Assert.assertString(message);
       let ws = this.getTransportImpl();
       if (!ws.readyState !== WebSocket.OPEN) {
         await new Promise(resolve => ws.addEventListener("open", resolve));

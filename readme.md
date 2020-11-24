@@ -48,7 +48,7 @@ that it can support any transport that can send and receive a
 UTF-8 encoded strings over the network no matter whether this is
 implemented in a request/response style (such as HTTP) or a fully
 duplex communication channel such as WebSockets or the [PostMessage
-API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) (TBD).
+API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 Any transport must implement `qx.io.transport.ITransport`. For more information,
 see https://qooxdoo.org/incubator.qx.io.jsonrpc/apiviewer/#qx.io.transport
 
