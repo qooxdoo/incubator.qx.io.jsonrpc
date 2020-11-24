@@ -1018,4 +1018,4 @@
   qx.bom.rest.Resource.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Resource.js.map?dt=1606238603809
+//# sourceMappingURL=Resource.js.map?dt=1606253498808

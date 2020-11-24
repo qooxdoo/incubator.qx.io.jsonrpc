@@ -194,4 +194,4 @@
   qx.test.ui.toolbar.ToolBar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ToolBar.js.map?dt=1606238626991
+//# sourceMappingURL=ToolBar.js.map?dt=1606253515863

@@ -9,13 +9,21 @@
   "clazz": {
     "location": {
       "start": {
-        "line": 1,
+        "line": 4,
         "column": 0
       },
       "end": {
-        "line": 37,
+        "line": 40,
         "column": 3
       }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<p>The interface for all transports located in this namespace</p>"
+        }
+      ]
     }
   },
   "type": "interface",
@@ -26,6 +34,7 @@
       "abstract": true,
       "mixin": false,
       "access": "public",
+      "event": "changeEndpoint",
       "jsdoc": {
         "@description": [
           {
@@ -64,11 +73,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 27,
+          "line": 30,
           "column": 4
         },
         "end": {
-          "line": 27,
+          "line": 30,
           "column": 26
         }
       },
@@ -100,11 +109,11 @@
     "getTransportImpl": {
       "location": {
         "start": {
-          "line": 35,
+          "line": 38,
           "column": 4
         },
         "end": {
-          "line": 35,
+          "line": 38,
           "column": 25
         }
       },
@@ -145,7 +154,7 @@
         "@return": [
           {
             "name": "@return",
-            "type": "String",
+            "type": "any",
             "desc": "Returns the value for endpoint"
           }
         ]
@@ -169,7 +178,7 @@
         "@param": [
           {
             "name": "@param",
-            "type": "String",
+            "type": "any",
             "paramName": "value",
             "desc": "Value for endpoint"
           }

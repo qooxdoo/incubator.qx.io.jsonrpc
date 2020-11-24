@@ -172,4 +172,4 @@
   qx.ui.progressive.headfoot.TableHeading.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TableHeading.js.map?dt=1606238640242
+//# sourceMappingURL=TableHeading.js.map?dt=1606253525587

@@ -12,6 +12,7 @@
       "qx.io.transport.ITransport": {
         "require": true
       },
+      "qx.core.Assert": {},
       "qx.io.exception.Transport": {},
       "qx.io.graphql.Client": {
         "defer": "runtime"
@@ -69,6 +70,7 @@
        * @ignore(fetch)
        */
       async send(message) {
+        qx.core.Assert.assertString(message);
         let ws = this.getTransportImpl();
 
         if (!ws.readyState !== WebSocket.OPEN) {
@@ -126,4 +128,4 @@
   qx.io.transport.Websocket.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Websocket.js.map?dt=1606238612498
+//# sourceMappingURL=Websocket.js.map?dt=1606253505235

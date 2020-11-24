@@ -88,4 +88,4 @@
   qx.test.ui.form.Spinner.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Spinner.js.map?dt=1606238625483
+//# sourceMappingURL=Spinner.js.map?dt=1606253514754

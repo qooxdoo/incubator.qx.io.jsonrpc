@@ -221,4 +221,4 @@
   qx.ui.mobile.list.renderer.Default.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Default.js.map?dt=1606238639664
+//# sourceMappingURL=Default.js.map?dt=1606253525187

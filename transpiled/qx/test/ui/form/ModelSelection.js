@@ -267,4 +267,4 @@
   qx.test.ui.form.ModelSelection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ModelSelection.js.map?dt=1606238625237
+//# sourceMappingURL=ModelSelection.js.map?dt=1606253514574

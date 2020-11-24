@@ -220,4 +220,4 @@
   qx.test.ui.selection.AbstractMultiSelectonTest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractMultiSelectonTest.js.map?dt=1606238626395
+//# sourceMappingURL=AbstractMultiSelectonTest.js.map?dt=1606253515436

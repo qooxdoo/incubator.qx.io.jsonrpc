@@ -25,10 +25,12 @@
     type: "abstract",
     properties: {
       /**
-       * The uri of the endpoint
+       *  A representation of the the endpoint, which is either a uri (a String)
+       *  or an object (such as in the case of the PostMessage transport)
        */
       endpoint: {
-        check: "String",
+        check: v => typeof v == "string" || typeof v == "object",
+        nullable: true,
         event: "changeEndpoint"
       }
     },
@@ -42,7 +44,7 @@
 
     /**
      * Constructor
-     * @param {String} endpoint
+     * @param {String|Object} endpoint
      */
     construct(endpoint) {
       qx.core.Object.constructor.call(this);
@@ -53,4 +55,4 @@
   qx.io.transport.AbstractTransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractTransport.js.map?dt=1606238612424
+//# sourceMappingURL=AbstractTransport.js.map?dt=1606253505174

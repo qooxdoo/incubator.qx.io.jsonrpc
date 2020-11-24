@@ -73,4 +73,4 @@
   qx.test.mobile.form.Slider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Slider.js.map?dt=1606238622326
+//# sourceMappingURL=Slider.js.map?dt=1606253512418

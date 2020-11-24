@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 39,
+        "line": 41,
         "column": 3
       }
     },
@@ -34,11 +34,11 @@
     "endpoint": {
       "location": {
         "start": {
-          "line": 17,
+          "line": 18,
           "column": 4
         },
         "end": {
-          "line": 20,
+          "line": 22,
           "column": 5
         }
       },
@@ -46,14 +46,15 @@
         "@description": [
           {
             "name": "@description",
-            "body": "<p>The uri of the endpoint</p>"
+            "body": "<p>A representation of the the endpoint, which is either a uri (a String)\n  or an object (such as in the case of the PostMessage transport)</p>"
           }
         ]
       },
       "name": "endpoint",
       "propertyType": "new",
       "event": "changeEndpoint",
-      "check": "String"
+      "nullable": true,
+      "allowNull": true
     },
     "qxOwner": {
       "type": "property",
@@ -92,11 +93,11 @@
     "message": {
       "location": {
         "start": {
-          "line": 28,
+          "line": 30,
           "column": 4
         },
         "end": {
-          "line": 28,
+          "line": 30,
           "column": 36
         }
       },
@@ -115,11 +116,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 35,
+        "line": 37,
         "column": 2
       },
       "end": {
-        "line": 38,
+        "line": 40,
         "column": 3
       }
     },
@@ -133,7 +134,7 @@
       "@param": [
         {
           "name": "@param",
-          "body": "{String} endpoint"
+          "body": "{String|Object} endpoint"
         }
       ]
     }
@@ -293,7 +294,6 @@
         "@return": [
           {
             "name": "@return",
-            "type": "String",
             "desc": "Returns the value for endpoint"
           }
         ]
@@ -317,7 +317,6 @@
         "@param": [
           {
             "name": "@param",
-            "type": "String",
             "paramName": "value",
             "desc": "Value for endpoint"
           }
@@ -344,6 +343,7 @@
   },
   "descendants": [
     "qx.io.transport.Fetch",
+    "qx.io.transport.PostMessage",
     "qx.io.transport.Websocket",
     "qx.io.transport.Xhr"
   ]

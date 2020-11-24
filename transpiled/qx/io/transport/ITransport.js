@@ -8,6 +8,10 @@
     }
   };
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /**
+   * The interface for all transports located in this namespace
+   */
   qx.Interface.define("qx.io.transport.ITransport", {
     properties: {
       /**
@@ -15,7 +19,7 @@
        * @var {String}
        */
       endpoint: {
-        check: "String"
+        event: "changeEndpoint"
       }
     },
     events: {
@@ -49,4 +53,4 @@
   qx.io.transport.ITransport.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ITransport.js.map?dt=1606238612469
+//# sourceMappingURL=ITransport.js.map?dt=1606253505206

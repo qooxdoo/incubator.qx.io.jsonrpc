@@ -118,4 +118,4 @@
   qx.bom.webfonts.WebFont.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WebFont.js.map?dt=1606238604052
+//# sourceMappingURL=WebFont.js.map?dt=1606253498998

@@ -92,4 +92,4 @@
   qxl.apiviewer.MWidgetRegistry.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MWidgetRegistry.js.map?dt=1606238648383
+//# sourceMappingURL=MWidgetRegistry.js.map?dt=1606253531659

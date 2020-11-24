@@ -199,4 +199,4 @@
   qx.ui.virtual.selection.Row.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Row.js.map?dt=1606238645560
+//# sourceMappingURL=Row.js.map?dt=1606253529538

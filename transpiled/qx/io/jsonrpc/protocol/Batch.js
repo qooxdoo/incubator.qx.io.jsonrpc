@@ -122,4 +122,4 @@
   qx.io.jsonrpc.protocol.Batch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Batch.js.map?dt=1606238610985
+//# sourceMappingURL=Batch.js.map?dt=1606253504136

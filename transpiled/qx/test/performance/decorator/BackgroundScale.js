@@ -45,4 +45,4 @@
   qx.test.performance.decorator.BackgroundScale.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=BackgroundScale.js.map?dt=1606238622780
+//# sourceMappingURL=BackgroundScale.js.map?dt=1606253512753

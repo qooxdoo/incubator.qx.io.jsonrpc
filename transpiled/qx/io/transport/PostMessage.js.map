@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/runner/work/incubator.qx.io.jsonrpc/incubator.qx.io.jsonrpc/source/class/qx/io/transport/PostMessage.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "io",
+    "transport",
+    "AbstractTransport",
+    "implement",
+    "ITransport",
+    "construct",
+    "windowOrWorker",
+    "addEventListener",
+    "evt",
+    "fireDataEvent",
+    "data",
+    "members",
+    "getTransportImpl",
+    "send",
+    "message",
+    "core",
+    "Assert",
+    "assertString",
+    "getEndpoint",
+    "postMessage",
+    "_createTransportImpl",
+    "PostMessage"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;AAOAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,6BAAhB,EAA+C;AAC7CC,IAAAA,MAAM,EAAEN,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBC,iBADqB;AAE7CC,IAAAA,SAAS,EAAE,CAACV,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBG,UAAjB,CAFkC;;AAI7C;;;;;;AAMAC,IAAAA,SAAS,CAACC,cAAD,EAAiB;AACxBA,MAAAA,cAAc,CAACC,gBAAf,CAAgC,SAAhC,EAA2CC,GAAG,IAAI;AAChD,aAAKC,aAAL,CAAmB,SAAnB,EAA8BD,GAAG,CAACE,IAAlC;AACD,OAFD;AAGA,+DAAqBJ,cAArB;AACD,KAf4C;;AAiB7CK,IAAAA,OAAO,EAAE;AAEP;;;;;AAKAC,MAAAA,gBAAgB,GAAG;AACjB,eAAO,IAAP;AACD,OATM;;AAWP;;;;;;;;;;AAUA,YAAMC,IAAN,CAAWC,OAAX,EAAoB;AAClBrB,QAAAA,EAAE,CAACsB,IAAH,CAAQC,MAAR,CAAeC,YAAf,CAA4BH,OAA5B;AACA,aAAKI,WAAL,GAAmBC,WAAnB,CAA+BL,OAA/B;AACD,OAxBM;;AA0BP;;;AAGAM,MAAAA,oBAAoB,GAAG,CAAE;;AA7BlB;AAjBoC,GAA/C;AAPA3B,EAAAA,EAAE,CAACO,EAAH,CAAMC,SAAN,CAAgBoB,WAAhB,CAA4BzB,aAA5B,GAA4CA,aAA5C",
+  "sourcesContent": [
+    "/**\n * An experimental implementation of a PostMessage Transport\n * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)\n *\n * The transport is special isasmuch it is not used with an URI, but with the\n * target Window or Worker object with acts as the endpoint of the message.\n */\nqx.Class.define(\"qx.io.transport.PostMessage\", {\n  extend: qx.io.transport.AbstractTransport,\n  implement: [qx.io.transport.ITransport],\n\n  /**\n   * Constructor.\n   *\n   * @param {Window|Worker} windowOrWorker The target Window or Worker instance\n   * which is the endpoint for the request\n   */\n  construct(windowOrWorker) {\n    windowOrWorker.addEventListener(\"message\", evt => {\n      this.fireDataEvent(\"message\", evt.data);\n    });\n    this.base(arguments, windowOrWorker);\n  },\n\n  members: {\n\n    /**\n     * PostMessage is a very simple protocol without configuration options.\n     * No transport implementation is needed.\n     * @return {null}\n     */\n    getTransportImpl() {\n      return null;\n    },\n\n    /**\n     * Transport the given message to the endpoint\n     *\n     * @param {String} message\n     *\n     * @return {qx.Promise} Promise that resolves (with no data)\n     * when the message has been successfully sent out, and rejects\n     * when there is an error or a cancellation up to that point.\n     * @ignore(fetch)\n     */\n    async send(message) {\n      qx.core.Assert.assertString(message);\n      this.getEndpoint().postMessage(message);\n    },\n\n    /**\n     * Empty stub since no transport implementation is needed.\n     */\n    _createTransportImpl() {}\n  }\n});\n"
+  ]
+}

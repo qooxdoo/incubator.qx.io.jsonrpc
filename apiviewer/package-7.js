@@ -727,10 +727,12 @@
     type: "abstract",
     properties: {
       /**
-       * The uri of the endpoint
+       *  A representation of the the endpoint, which is either a uri (a String)
+       *  or an object (such as in the case of the PostMessage transport)
        */
       endpoint: {
-        check: "String",
+        check: v => typeof v == "string" || typeof v == "object",
+        nullable: true,
         event: "changeEndpoint"
       }
     },
@@ -744,7 +746,7 @@
 
     /**
      * Constructor
-     * @param {String} endpoint
+     * @param {String|Object} endpoint
      */
     construct(endpoint) {
       qx.core.Object.constructor.call(this);
@@ -896,6 +898,85 @@
       "qx.io.transport.ITransport": {
         "require": true
       },
+      "qx.core.Assert": {}
+    }
+  };
+  qx.Bootstrap.executePendingDefers($$dbClassInfo);
+
+  /**
+   * An experimental implementation of a PostMessage Transport
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+   *
+   * The transport is special isasmuch it is not used with an URI, but with the
+   * target Window or Worker object with acts as the endpoint of the message.
+   */
+  qx.Class.define("qx.io.transport.PostMessage", {
+    extend: qx.io.transport.AbstractTransport,
+    implement: [qx.io.transport.ITransport],
+
+    /**
+     * Constructor.
+     *
+     * @param {Window|Worker} windowOrWorker The target Window or Worker instance
+     * which is the endpoint for the request
+     */
+    construct(windowOrWorker) {
+      windowOrWorker.addEventListener("message", evt => {
+        this.fireDataEvent("message", evt.data);
+      });
+      qx.io.transport.AbstractTransport.constructor.call(this, windowOrWorker);
+    },
+
+    members: {
+      /**
+       * PostMessage is a very simple protocol without configuration options.
+       * No transport implementation is needed.
+       * @return {null}
+       */
+      getTransportImpl() {
+        return null;
+      },
+
+      /**
+       * Transport the given message to the endpoint
+       *
+       * @param {String} message
+       *
+       * @return {qx.Promise} Promise that resolves (with no data)
+       * when the message has been successfully sent out, and rejects
+       * when there is an error or a cancellation up to that point.
+       * @ignore(fetch)
+       */
+      async send(message) {
+        qx.core.Assert.assertString(message);
+        this.getEndpoint().postMessage(message);
+      },
+
+      /**
+       * Empty stub since no transport implementation is needed.
+       */
+      _createTransportImpl() {}
+
+    }
+  });
+  qx.io.transport.PostMessage.$$dbClassInfo = $$dbClassInfo;
+})();
+
+(function () {
+  var $$dbClassInfo = {
+    "dependsOn": {
+      "qx.Class": {
+        "usage": "dynamic",
+        "require": true
+      },
+      "qx.io.transport.AbstractTransport": {
+        "construct": true,
+        "require": true
+      },
+      "qx.io.transport.ITransport": {
+        "require": true
+      },
+      "qx.core.Assert": {},
       "qx.io.exception.Transport": {},
       "qx.io.graphql.Client": {
         "defer": "runtime"
@@ -953,6 +1034,7 @@
        * @ignore(fetch)
        */
       async send(message) {
+        qx.core.Assert.assertString(message);
         let ws = this.getTransportImpl();
 
         if (!ws.readyState !== WebSocket.OPEN) {
@@ -110525,8 +110607,11 @@
         if (node.bSelected) {
           // Ensure that the selection model knows it's selected
           var row = rowInfo.row;
+          var selModel = tree.getSelectionModel();
 
-          tree.getSelectionModel()._addSelectionInterval(row, row);
+          if (!selModel.isSelectedIndex(row)) {
+            selModel._addSelectionInterval(row, row);
+          }
         } // Now call our superclass
 
 
@@ -115804,7 +115889,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1606238663135
+//# sourceMappingURL=package-7.js.map?dt=1606253543554
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

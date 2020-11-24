@@ -12,7 +12,7 @@
     "define",
     "properties",
     "endpoint",
-    "check",
+    "event",
     "events",
     "members",
     "send",
@@ -22,8 +22,8 @@
     "transport",
     "ITransport"
   ],
-  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;AAAAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,4BAApB,EAAkD;AAChDC,IAAAA,UAAU,EAAE;AACV;;;;AAIAC,MAAAA,QAAQ,EAAE;AACRC,QAAAA,KAAK,EAAE;AADC;AALA,KADoC;AAUhDC,IAAAA,MAAM,EAAE;AACN;;;;AAIA,iBAAW;AALL,KAVwC;AAiBhDC,IAAAA,OAAO,EAAG;AACR;;;;;;;;AAQA,YAAMC,IAAN,CAAWC,OAAX,EAAoB,CAAE,CATd;;AAWR;;;;;;AAMAC,MAAAA,gBAAgB,GAAG,CAAE;;AAjBb;AAjBsC,GAAlD;AAAAb,EAAAA,EAAE,CAACc,EAAH,CAAMC,SAAN,CAAgBC,UAAhB,CAA2Bb,aAA3B,GAA2CA,aAA3C",
+  "mappings": ";;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;AAGAH,EAAAA,EAAE,CAACI,SAAH,CAAaC,MAAb,CAAoB,4BAApB,EAAkD;AAChDC,IAAAA,UAAU,EAAE;AACV;;;;AAIAC,MAAAA,QAAQ,EAAE;AACRC,QAAAA,KAAK,EAAE;AADC;AALA,KADoC;AAUhDC,IAAAA,MAAM,EAAE;AACN;;;;AAIA,iBAAW;AALL,KAVwC;AAiBhDC,IAAAA,OAAO,EAAG;AACR;;;;;;;;AAQA,YAAMC,IAAN,CAAWC,OAAX,EAAoB,CAAE,CATd;;AAWR;;;;;;AAMAC,MAAAA,gBAAgB,GAAG,CAAE;;AAjBb;AAjBsC,GAAlD;AAHAb,EAAAA,EAAE,CAACc,EAAH,CAAMC,SAAN,CAAgBC,UAAhB,CAA2Bb,aAA3B,GAA2CA,aAA3C",
   "sourcesContent": [
-    "qx.Interface.define(\"qx.io.transport.ITransport\", {\n  properties: {\n    /**\n     * The URI of the endpoint\n     * @var {String}\n     */\n    endpoint: {\n      check: \"String\"\n    }\n  },\n  events: {\n    /**\n     * Event fired when a message is received from the endpoint. Event data\n     * is an UTF-8 encoded string\n     */\n    \"message\": \"qx.event.type.Data\"\n  },\n  members : {\n    /**\n     * Transport the given message to the endpoint\n     *\n     * @param {String} message\n     * @return {qx.Promise} Promise that resolves (with no data)\n     * when the message has been successfully sent out, and rejects\n     * when there is an error or a cancellation up to that point.\n     */\n    async send(message) {},\n\n    /**\n     * Returns the object which implements the transport on the underlying\n     * level, so that transport-specific configuration can be done on it.\n     * The object might be a new one for each request.\n     * @return {Object}\n     */\n    getTransportImpl() {}\n  }\n});\n"
+    "/**\n * The interface for all transports located in this namespace\n */\nqx.Interface.define(\"qx.io.transport.ITransport\", {\n  properties: {\n    /**\n     * The URI of the endpoint\n     * @var {String}\n     */\n    endpoint: {\n      event: \"changeEndpoint\"\n    }\n  },\n  events: {\n    /**\n     * Event fired when a message is received from the endpoint. Event data\n     * is an UTF-8 encoded string\n     */\n    \"message\": \"qx.event.type.Data\"\n  },\n  members : {\n    /**\n     * Transport the given message to the endpoint\n     *\n     * @param {String} message\n     * @return {qx.Promise} Promise that resolves (with no data)\n     * when the message has been successfully sent out, and rejects\n     * when there is an error or a cancellation up to that point.\n     */\n    async send(message) {},\n\n    /**\n     * Returns the object which implements the transport on the underlying\n     * level, so that transport-specific configuration can be done on it.\n     * The object might be a new one for each request.\n     * @return {Object}\n     */\n    getTransportImpl() {}\n  }\n});\n"
   ]
 }

@@ -216,7 +216,7 @@
         "@return": [
           {
             "name": "@return",
-            "type": "String",
+            "type": "any",
             "desc": "Returns the value for endpoint"
           }
         ]
@@ -241,7 +241,7 @@
         "@param": [
           {
             "name": "@param",
-            "type": "String",
+            "type": "any",
             "paramName": "value",
             "desc": "Value for endpoint"
           }

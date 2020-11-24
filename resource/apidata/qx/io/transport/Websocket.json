@@ -15,7 +15,7 @@
         "column": 0
       },
       "end": {
-        "line": 95,
+        "line": 96,
         "column": 3
       }
     },
@@ -134,7 +134,7 @@
           "column": 4
         },
         "end": {
-          "line": 55,
+          "line": 56,
           "column": 5
         }
       },
@@ -176,11 +176,11 @@
     "_createTransportImpl": {
       "location": {
         "start": {
-          "line": 61,
+          "line": 62,
           "column": 4
         },
         "end": {
-          "line": 84,
+          "line": 85,
           "column": 5
         }
       },
@@ -412,11 +412,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 87,
+        "line": 88,
         "column": 2
       },
       "end": {
-        "line": 90,
+        "line": 91,
         "column": 3
       }
     }
@@ -424,11 +424,11 @@
   "defer": {
     "location": {
       "start": {
-        "line": 92,
+        "line": 93,
         "column": 2
       },
       "end": {
-        "line": 94,
+        "line": 95,
         "column": 3
       }
     }

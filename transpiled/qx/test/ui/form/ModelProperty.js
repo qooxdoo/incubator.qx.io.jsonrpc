@@ -98,4 +98,4 @@
   qx.test.ui.form.ModelProperty.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ModelProperty.js.map?dt=1606238625195
+//# sourceMappingURL=ModelProperty.js.map?dt=1606253514543

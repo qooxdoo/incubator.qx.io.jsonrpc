@@ -2482,6 +2482,7 @@
     "qx.test.io.graphql.Request",
     "qx.test.io.jsonrpc.Client",
     "qx.test.io.jsonrpc.Protocol",
+    "qx.test.io.transport.PostMessage",
     "qx.test.io.transport.Websocket",
     "qx.test.lang.Array",
     "qx.test.lang.Function",
