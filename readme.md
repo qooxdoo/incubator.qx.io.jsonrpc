@@ -70,7 +70,12 @@ qx.Class.define("...
 ```
 
 This way, this transport will be used for any HTTP(S)-URL. Alternatively,
-you can also select a transport for each client instance individually.
+you can also select a transport for each client instance individually, 
+for example, using
+
+```javascript
+const client = new qx.io.jsonrpc.Client(new qx.io.transport.Xhr("https://domain.com/endpoint"));
+```
 
 ### JSON-RPC
 
@@ -159,10 +164,10 @@ has been added, the duplex JSON-RPC traffic can be implemented this way.
 
 The high-level Client API does not (yet) handle transport-specific issues like
 authentication - this needs to be done in the transport layer. For example,
-to use HTTP Bearer authentication, do this:
+to use HTTP Bearer authentication for JSON-RPC, using a XHR transport, do this:
 
 ```javascript
-const client = new qx.io.jsonrpc.Client("https://domain.com/endpoint");
+const client = new qx.io.jsonrpc.Client(new qx.io.transport.Xhr("https://domain.com/endpoint"));
 client.addListener("outgoingRequest", () => {
   const auth = new qx.io.request.authentication.Bearer("TOKEN");
   client.getTransport().getTransportImpl().setAuthentication(auth);  
@@ -170,11 +175,10 @@ client.addListener("outgoingRequest", () => {
 client.sendRequest("method-needing-authentication", [1,2,3]);
 ```
 
-Instead, you can also to create a class that inherits
-from `qx.io.transport.Http` and overrides
-`qx.io.transport.Http#_createTransportImpl`. To make
-the client use this transport, provide a `defer` section
-which registers the behavior for your particular class of URIs:
+Instead, you can also to create a class that inherits from `qx.io.transport.Xhr` 
+and overrides `qx.io.transport.Xhr#_createTransportImpl`. To make
+the client use this transport, provide a `defer` section which registers the 
+behavior for your particular class of URIs:
 
 ```javascript 
   defer() {
