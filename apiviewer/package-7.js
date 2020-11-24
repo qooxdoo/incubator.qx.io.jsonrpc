@@ -905,9 +905,7 @@
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
 
   /**
-   * The implementation of a WebSocket Transport
-   * THIS IS JUST A STUB FOR THE PURPOSE OF API DESIGN
-   * Do not rely on it or use it for anything other than testing purposes.
+   * An experimental implementation of a WebSocket Transport
    * @ignore(WebSocket)
    */
   qx.Class.define("qx.io.transport.Websocket", {
@@ -115806,7 +115804,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1606211398148
+//# sourceMappingURL=package-7.js.map?dt=1606238663135
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

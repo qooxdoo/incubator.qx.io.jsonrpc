@@ -21,9 +21,7 @@
   qx.Bootstrap.executePendingDefers($$dbClassInfo);
 
   /**
-   * The implementation of a WebSocket Transport
-   * THIS IS JUST A STUB FOR THE PURPOSE OF API DESIGN
-   * Do not rely on it or use it for anything other than testing purposes.
+   * An experimental implementation of a WebSocket Transport
    * @ignore(WebSocket)
    */
   qx.Class.define("qx.io.transport.Websocket", {
@@ -128,4 +126,4 @@
   qx.io.transport.Websocket.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Websocket.js.map?dt=1606211354307
+//# sourceMappingURL=Websocket.js.map?dt=1606238612498

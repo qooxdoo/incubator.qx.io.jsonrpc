@@ -11,11 +11,11 @@
   "clazz": {
     "location": {
       "start": {
-        "line": 7,
+        "line": 5,
         "column": 0
       },
       "end": {
-        "line": 97,
+        "line": 95,
         "column": 3
       }
     },
@@ -23,7 +23,7 @@
       "@description": [
         {
           "name": "@description",
-          "body": "<p>The implementation of a WebSocket Transport\n THIS IS JUST A STUB FOR THE PURPOSE OF API DESIGN\n Do not rely on it or use it for anything other than testing purposes.</p>"
+          "body": "<p>An experimental implementation of a WebSocket Transport</p>"
         }
       ],
       "@ignore": [
@@ -38,11 +38,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 16,
+        "line": 14,
         "column": 2
       },
       "end": {
-        "line": 18,
+        "line": 16,
         "column": 3
       }
     },
@@ -68,11 +68,11 @@
     "__tranportImpl": {
       "location": {
         "start": {
-          "line": 25,
+          "line": 23,
           "column": 4
         },
         "end": {
-          "line": 25,
+          "line": 23,
           "column": 24
         }
       },
@@ -96,11 +96,11 @@
     "getTransportImpl": {
       "location": {
         "start": {
-          "line": 34,
+          "line": 32,
           "column": 4
         },
         "end": {
-          "line": 39,
+          "line": 37,
           "column": 5
         }
       },
@@ -130,11 +130,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 51,
+          "line": 49,
           "column": 4
         },
         "end": {
-          "line": 57,
+          "line": 55,
           "column": 5
         }
       },
@@ -176,11 +176,11 @@
     "_createTransportImpl": {
       "location": {
         "start": {
-          "line": 63,
+          "line": 61,
           "column": 4
         },
         "end": {
-          "line": 86,
+          "line": 84,
           "column": 5
         }
       },
@@ -412,11 +412,11 @@
   "destruct": {
     "location": {
       "start": {
-        "line": 89,
+        "line": 87,
         "column": 2
       },
       "end": {
-        "line": 92,
+        "line": 90,
         "column": 3
       }
     }
@@ -424,11 +424,11 @@
   "defer": {
     "location": {
       "start": {
-        "line": 94,
+        "line": 92,
         "column": 2
       },
       "end": {
-        "line": 96,
+        "line": 94,
         "column": 3
       }
     }

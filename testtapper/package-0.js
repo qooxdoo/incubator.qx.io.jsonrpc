@@ -582,6 +582,54 @@ qx.$$packageData['0'] = {
       "gif",
       "qx"
     ],
+    "qx/decoration/Classic/datechooser/last-month-invert.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/last-month.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/last-year-invert.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/last-year.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/next-month-invert.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/next-month.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/next-year-invert.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
+    "qx/decoration/Classic/datechooser/next-year.png": [
+      16,
+      16,
+      "png",
+      "qx"
+    ],
     "qx/decoration/Classic/form/checkbox-checked-disabled.png": [
       14,
       14,
@@ -862,54 +910,6 @@ qx.$$packageData['0'] = {
       16,
       5,
       "gif",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/last-month-invert.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/last-month.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/last-year-invert.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/last-year.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/next-month-invert.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/next-month.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/next-year-invert.png": [
-      16,
-      16,
-      "png",
-      "qx"
-    ],
-    "qx/decoration/Classic/datechooser/next-year.png": [
-      16,
-      16,
-      "png",
       "qx"
     ],
     "qx/decoration/Classic/shadow/shadow-b.png": [
