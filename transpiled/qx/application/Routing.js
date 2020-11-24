@@ -496,4 +496,4 @@
   qx.application.Routing.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Routing.js.map?dt=1606150594341
+//# sourceMappingURL=Routing.js.map?dt=1606211342759
