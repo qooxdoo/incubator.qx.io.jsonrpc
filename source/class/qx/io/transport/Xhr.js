@@ -85,6 +85,12 @@ qx.Class.define("qx.io.transport.Xhr", {
                 {message}
               );
           }
+          // unknown error
+          throw new qx.io.exception.Exception(
+            e.toString(),
+            undefined,
+            {message, error:e}
+          );
         }
       }
       // notify listeners

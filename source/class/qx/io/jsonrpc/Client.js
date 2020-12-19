@@ -25,6 +25,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
   extend : qx.io.transport.AbstractClient,
 
   statics: {
+    // statics are not inherited from parent class
     registerTransport : qx.io.transport.AbstractClient.registerTransport
   },
 
@@ -189,7 +190,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
      */
     async sendRequest(method, params) {
       const request = new qx.io.jsonrpc.protocol.Request(this._prependMethodPrefix(method), params);
-      this.send(request); // not awaited because we await the request's promise
+      await this.send(request);
       return await request.getPromise();
     },
 
