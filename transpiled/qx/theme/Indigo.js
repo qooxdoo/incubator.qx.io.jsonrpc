@@ -59,4 +59,4 @@
   qx.theme.Indigo.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Indigo.js.map?dt=1608415614349
+//# sourceMappingURL=Indigo.js.map?dt=1608415666094

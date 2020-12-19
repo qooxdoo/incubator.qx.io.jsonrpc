@@ -155,7 +155,7 @@ var envinfo = {
           "email": "info@bibliograph.org"
         }
       ],
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     "qxl.testtapper": {
       "name": "Commandline Testrunner for Qooxdoo Apps",

@@ -70,4 +70,4 @@
   qx.test.ui.window.Desktop.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Desktop.js.map?dt=1608415613519
+//# sourceMappingURL=Desktop.js.map?dt=1608415665201
