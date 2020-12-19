@@ -29,4 +29,4 @@
   qx.test.log.fixture.ClassC2.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ClassC2.js.map?dt=1606253511998
+//# sourceMappingURL=ClassC2.js.map?dt=1608415607009

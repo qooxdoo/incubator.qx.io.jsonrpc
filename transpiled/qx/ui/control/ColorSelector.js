@@ -1185,4 +1185,4 @@
   qx.ui.control.ColorSelector.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ColorSelector.js.map?dt=1606253519366
+//# sourceMappingURL=ColorSelector.js.map?dt=1608415616804

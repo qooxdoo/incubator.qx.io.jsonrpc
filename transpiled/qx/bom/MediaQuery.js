@@ -467,4 +467,4 @@
   qx.bom.MediaQuery.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MediaQuery.js.map?dt=1606253496078
+//# sourceMappingURL=MediaQuery.js.map?dt=1608415585860

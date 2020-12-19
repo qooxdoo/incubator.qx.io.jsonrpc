@@ -84,4 +84,4 @@
   qx.ui.form.INumberForm.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=INumberForm.js.map?dt=1606253521718
+//# sourceMappingURL=INumberForm.js.map?dt=1608415619892

@@ -16,6 +16,7 @@
       "qx.type.BaseError": {},
       "qx.io.exception.Transport": {},
       "qx.io.exception.Cancel": {},
+      "qx.io.exception.Exception": {},
       "qx.io.request.Xhr": {},
       "qx.io.jsonrpc.Client": {
         "defer": "runtime"
@@ -106,7 +107,13 @@
                 throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.FAILED, {
                   message
                 });
-            }
+            } // unknown error
+
+
+            throw new qx.io.exception.Exception(e.toString(), undefined, {
+              message,
+              error: e
+            });
           }
         } // notify listeners
 
@@ -149,4 +156,4 @@
   qx.io.transport.Xhr.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Xhr.js.map?dt=1606253505257
+//# sourceMappingURL=Xhr.js.map?dt=1608415597842

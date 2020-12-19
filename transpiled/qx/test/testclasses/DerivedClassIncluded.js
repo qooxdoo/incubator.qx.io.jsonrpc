@@ -27,4 +27,4 @@
   qx.test.testclasses.DerivedClassIncluded.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DerivedClassIncluded.js.map?dt=1606253512933
+//# sourceMappingURL=DerivedClassIncluded.js.map?dt=1608415608213

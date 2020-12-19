@@ -45,11 +45,10 @@
       setUp() {
         // see https://medium.com/@dee_bloo/make-multithreading-easier-with-inline-web-workers-a58723428a42
         function createWorker(fn) {
-          var blob = new Blob(['self.onmessage = ', fn.toString()], {
+          let blob = new Blob(['self.onmessage = ', fn.toString()], {
             type: 'text/javascript'
           });
-          var url = URL.createObjectURL(blob);
-          return new Worker(url);
+          return new Worker(URL.createObjectURL(blob));
         } // create echo server
 
 
@@ -74,4 +73,4 @@
   qx.test.io.transport.PostMessage.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PostMessage.js.map?dt=1606253511370
+//# sourceMappingURL=PostMessage.js.map?dt=1608415606163

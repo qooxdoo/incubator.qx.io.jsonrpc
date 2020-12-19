@@ -158,4 +158,4 @@
   qx.ui.tree.selection.SelectionManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SelectionManager.js.map?dt=1606253528392
+//# sourceMappingURL=SelectionManager.js.map?dt=1608415628757

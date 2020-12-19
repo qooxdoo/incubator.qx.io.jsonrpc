@@ -1110,6 +1110,7 @@
       "qx.type.BaseError": {},
       "qx.io.exception.Transport": {},
       "qx.io.exception.Cancel": {},
+      "qx.io.exception.Exception": {},
       "qx.io.request.Xhr": {},
       "qx.io.jsonrpc.Client": {
         "defer": "runtime"
@@ -1200,7 +1201,13 @@
                 throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.FAILED, {
                   message
                 });
-            }
+            } // unknown error
+
+
+            throw new qx.io.exception.Exception(e.toString(), undefined, {
+              message,
+              error: e
+            });
           }
         } // notify listeners
 
@@ -108341,9 +108348,9 @@
           }
 
           node.columnData[columnIndex] = value;
-        }
+          this._rowArr[rowIndex][columnIndex] = value;
+        } // Inform the listeners
 
-        this.setData(); // Inform the listeners
 
         if (this.hasListener("dataChanged")) {
           var data = {
@@ -115889,7 +115896,7 @@
   });
   qx.ui.website.Accordion.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1606253543554
+//# sourceMappingURL=package-7.js.map?dt=1608415647788
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

@@ -48,6 +48,12 @@
    * classes for each check. When using a check of a new category, make sure to
    * rebuild you application and let the compiler include the necessary files.
    *
+   * When you define a new environment check, the compiler needs to know which class
+   * implements the check; to do this, you can either prefix the name of your check 
+   * with your class name (eg `my.package.MyClass.someEnvCheck`) or you can create
+   * short names like the ones below and then add an entry to your library's
+   * Manifest.json (under `provides.environmentChecks`).
+   *
    * The following table shows the available checks. If you are
    * interested in more details, check the reference to the implementation of
    * each check. Please do not use those check implementations directly, as the
@@ -1299,4 +1305,4 @@
   qx.core.Environment.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Environment.js.map?dt=1606253499176
+//# sourceMappingURL=Environment.js.map?dt=1608415589854

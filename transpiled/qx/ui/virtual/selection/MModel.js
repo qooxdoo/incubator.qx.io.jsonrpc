@@ -483,4 +483,4 @@
   qx.ui.virtual.selection.MModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MModel.js.map?dt=1606253529518
+//# sourceMappingURL=MModel.js.map?dt=1608415630192

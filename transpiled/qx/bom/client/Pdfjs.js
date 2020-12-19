@@ -1579,4 +1579,4 @@
   qx.bom.client.Pdfjs.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Pdfjs.js.map?dt=1606253497519
+//# sourceMappingURL=Pdfjs.js.map?dt=1608415587762

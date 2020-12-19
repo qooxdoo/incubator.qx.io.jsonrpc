@@ -57,4 +57,4 @@
   qx.test.mobile.form.CheckBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=CheckBox.js.map?dt=1606253512292
+//# sourceMappingURL=CheckBox.js.map?dt=1608415607386

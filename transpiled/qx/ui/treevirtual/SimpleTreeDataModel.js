@@ -358,9 +358,9 @@
           }
 
           node.columnData[columnIndex] = value;
-        }
+          this._rowArr[rowIndex][columnIndex] = value;
+        } // Inform the listeners
 
-        this.setData(); // Inform the listeners
 
         if (this.hasListener("dataChanged")) {
           var data = {
@@ -1040,4 +1040,4 @@
   qx.ui.treevirtual.SimpleTreeDataModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1606253528617
+//# sourceMappingURL=SimpleTreeDataModel.js.map?dt=1608415629047

@@ -95,4 +95,4 @@
   qx.ui.table.headerrenderer.Icon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Icon.js.map?dt=1606253526892
+//# sourceMappingURL=Icon.js.map?dt=1608415626828

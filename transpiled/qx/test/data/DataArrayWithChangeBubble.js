@@ -562,4 +562,4 @@
   qx.test.data.DataArrayWithChangeBubble.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DataArrayWithChangeBubble.js.map?dt=1606253509388
+//# sourceMappingURL=DataArrayWithChangeBubble.js.map?dt=1608415603351

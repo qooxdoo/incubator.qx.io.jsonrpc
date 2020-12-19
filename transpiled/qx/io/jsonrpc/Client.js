@@ -51,6 +51,7 @@
   qx.Class.define("qx.io.jsonrpc.Client", {
     extend: qx.io.transport.AbstractClient,
     statics: {
+      // statics are not inherited from parent class
       registerTransport: qx.io.transport.AbstractClient.registerTransport
     },
     events: {
@@ -216,8 +217,7 @@
        */
       async sendRequest(method, params) {
         const request = new qx.io.jsonrpc.protocol.Request(this._prependMethodPrefix(method), params);
-        this.send(request); // not awaited because we await the request's promise
-
+        await this.send(request);
         return await request.getPromise();
       },
 
@@ -347,4 +347,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1606253504117
+//# sourceMappingURL=Client.js.map?dt=1608415596365

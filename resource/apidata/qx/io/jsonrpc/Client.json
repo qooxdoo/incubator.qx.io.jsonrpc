@@ -13,7 +13,7 @@
         "column": 0
       },
       "end": {
-        "line": 322,
+        "line": 323,
         "column": 3
       }
     },
@@ -31,14 +31,15 @@
     "registerTransport": {
       "location": {
         "start": {
-          "line": 28,
+          "line": 29,
           "column": 4
         },
         "end": {
-          "line": 28,
+          "line": 29,
           "column": 72
         }
       },
+      "jsdoc": {},
       "type": "variable",
       "access": "public"
     }
@@ -47,11 +48,11 @@
     "outgoingRequest": {
       "location": {
         "start": {
-          "line": 38,
+          "line": 39,
           "column": 4
         },
         "end": {
-          "line": 38,
+          "line": 39,
           "column": 43
         }
       },
@@ -69,11 +70,11 @@
     "error": {
       "location": {
         "start": {
-          "line": 47,
+          "line": 48,
           "column": 4
         },
         "end": {
-          "line": 47,
+          "line": 48,
           "column": 34
         }
       },
@@ -91,11 +92,11 @@
     "incomingRequest": {
       "location": {
         "start": {
-          "line": 55,
+          "line": 56,
           "column": 4
         },
         "end": {
-          "line": 55,
+          "line": 56,
           "column": 44
         }
       },
@@ -114,11 +115,11 @@
   "construct": {
     "location": {
       "start": {
-        "line": 68,
+        "line": 69,
         "column": 14
       },
       "end": {
-        "line": 82,
+        "line": 83,
         "column": 3
       }
     },
@@ -163,11 +164,11 @@
     "methodPrefix": {
       "location": {
         "start": {
-          "line": 90,
+          "line": 91,
           "column": 4
         },
         "end": {
-          "line": 94,
+          "line": 95,
           "column": 5
         }
       },
@@ -188,11 +189,11 @@
     "parser": {
       "location": {
         "start": {
-          "line": 99,
+          "line": 100,
           "column": 4
         },
         "end": {
-          "line": 101,
+          "line": 102,
           "column": 5
         }
       },
@@ -245,11 +246,11 @@
     "__requests": {
       "location": {
         "start": {
-          "line": 110,
+          "line": 111,
           "column": 4
         },
         "end": {
-          "line": 110,
+          "line": 111,
           "column": 21
         }
       },
@@ -267,11 +268,11 @@
     "_prependMethodPrefix": {
       "location": {
         "start": {
-          "line": 119,
+          "line": 120,
           "column": 4
         },
         "end": {
-          "line": 126,
+          "line": 127,
           "column": 5
         }
       },
@@ -309,11 +310,11 @@
     "_throwTransportException": {
       "location": {
         "start": {
-          "line": 134,
+          "line": 135,
           "column": 4
         },
         "end": {
-          "line": 142,
+          "line": 143,
           "column": 5
         }
       },
@@ -345,11 +346,11 @@
     "send": {
       "location": {
         "start": {
-          "line": 152,
+          "line": 153,
           "column": 4
         },
         "end": {
-          "line": 180,
+          "line": 181,
           "column": 5
         }
       },
@@ -381,11 +382,11 @@
     "sendRequest": {
       "location": {
         "start": {
-          "line": 190,
+          "line": 191,
           "column": 4
         },
         "end": {
-          "line": 194,
+          "line": 195,
           "column": 5
         }
       },
@@ -421,11 +422,11 @@
     "sendNotification": {
       "location": {
         "start": {
-          "line": 203,
+          "line": 204,
           "column": 4
         },
         "end": {
-          "line": 206,
+          "line": 207,
           "column": 5
         }
       },
@@ -461,11 +462,11 @@
     "sendBatch": {
       "location": {
         "start": {
-          "line": 214,
+          "line": 215,
           "column": 4
         },
         "end": {
-          "line": 221,
+          "line": 222,
           "column": 5
         }
       },
@@ -497,11 +498,11 @@
     "handleIncoming": {
       "location": {
         "start": {
-          "line": 227,
+          "line": 228,
           "column": 4
         },
         "end": {
-          "line": 246,
+          "line": 247,
           "column": 5
         }
       },
@@ -528,11 +529,11 @@
     "_cleanup": {
       "location": {
         "start": {
-          "line": 253,
+          "line": 254,
           "column": 4
         },
         "end": {
-          "line": 255,
+          "line": 256,
           "column": 5
         }
       },
@@ -562,11 +563,11 @@
     "handleMessage": {
       "location": {
         "start": {
-          "line": 261,
+          "line": 262,
           "column": 4
         },
         "end": {
-          "line": 316,
+          "line": 317,
           "column": 5
         }
       },

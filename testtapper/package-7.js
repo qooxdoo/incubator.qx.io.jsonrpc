@@ -1110,6 +1110,7 @@
       "qx.type.BaseError": {},
       "qx.io.exception.Transport": {},
       "qx.io.exception.Cancel": {},
+      "qx.io.exception.Exception": {},
       "qx.io.request.Xhr": {},
       "qx.io.jsonrpc.Client": {
         "defer": "runtime"
@@ -1200,7 +1201,13 @@
                 throw new qx.io.exception.Transport(e.toString(), qx.io.exception.Transport.FAILED, {
                   message
                 });
-            }
+            } // unknown error
+
+
+            throw new qx.io.exception.Exception(e.toString(), undefined, {
+              message,
+              error: e
+            });
           }
         } // notify listeners
 
@@ -62027,7 +62034,7 @@
   });
   qx.test.io.graphql.Request.$$dbClassInfo = $$dbClassInfo;
 })();
-//# sourceMappingURL=package-7.js.map?dt=1606253543327
+//# sourceMappingURL=package-7.js.map?dt=1608415647506
 qx.$$packageData['7'] = {
   "locales": {},
   "resources": {},

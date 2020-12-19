@@ -1238,4 +1238,4 @@
   qx.test.data.controller.List.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=List.js.map?dt=1606253509673
+//# sourceMappingURL=List.js.map?dt=1608415603723

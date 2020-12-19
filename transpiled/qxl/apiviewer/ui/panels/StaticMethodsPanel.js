@@ -56,4 +56,4 @@
   qxl.apiviewer.ui.panels.StaticMethodsPanel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=StaticMethodsPanel.js.map?dt=1606253532593
+//# sourceMappingURL=StaticMethodsPanel.js.map?dt=1608415634217

@@ -81,4 +81,4 @@
   qx.ui.menu.MenuSlideBar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MenuSlideBar.js.map?dt=1606253523595
+//# sourceMappingURL=MenuSlideBar.js.map?dt=1608415622481

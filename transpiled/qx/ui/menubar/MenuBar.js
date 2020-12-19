@@ -52,4 +52,4 @@
   qx.ui.menubar.MenuBar.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MenuBar.js.map?dt=1606253523648
+//# sourceMappingURL=MenuBar.js.map?dt=1608415622550
