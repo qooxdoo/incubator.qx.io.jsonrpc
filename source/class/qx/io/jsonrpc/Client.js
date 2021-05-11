@@ -217,7 +217,7 @@ qx.Class.define("qx.io.jsonrpc.Client",
       if (this.getMethodPrefix()) {
         batch.getBatch().forEach(message => message.setMethod(this._prependMethodPrefix(message.getMethod())));
       }
-      this.send(batch);
+      await this.send(batch);
       return await qx.Promise.all(batch.getPromises());
     },
 
