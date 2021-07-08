@@ -13,7 +13,9 @@
       "qx.bom.client.Engine": {
         "require": true
       },
-      "qx.bom.client.Css": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
       "qx.bom.element.Style": {}
     },
     "environment": {
@@ -238,4 +240,4 @@
   qx.bom.element.Opacity.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Opacity.js.map?dt=1608415638804
+//# sourceMappingURL=Opacity.js.map?dt=1625734494004

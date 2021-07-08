@@ -14,8 +14,12 @@
       },
       "qx.log.Logger": {},
       "qx.log.appender.RingBuffer": {},
-      "qx.bom.client.EcmaScript": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.EcmaScript": {
+        "require": true
+      },
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.core.Object": {},
       "qx.core.IDisposable": {}
     },
@@ -57,12 +61,12 @@
     },
     members: {
       setUp: function setUp() {
-        this.__initialLogLevel__P_255_0 = qx.log.Logger.getLevel();
+        this.__initialLogLevel__P_252_0 = qx.log.Logger.getLevel();
       },
       tearDown: function tearDown() {
-        qx.log.Logger.setLevel(this.__initialLogLevel__P_255_0);
+        qx.log.Logger.setLevel(this.__initialLogLevel__P_252_0);
       },
-      __testLogException__P_255_1: function __testLogException__P_255_1(exception) {
+      __testLogException__P_252_1: function __testLogException__P_252_1(exception) {
         var appender = new qx.log.appender.RingBuffer();
         qx.log.Logger.setLevel("debug");
         qx.log.Logger.clear();
@@ -82,12 +86,12 @@
       testLogException: function testLogException() {
         var exception = this.newException();
 
-        this.__testLogException__P_255_1(exception);
+        this.__testLogException__P_252_1(exception);
       },
       testLogDOMException: function testLogDOMException() {
         var exception = this.newDOMException();
 
-        this.__testLogException__P_255_1(exception);
+        this.__testLogException__P_252_1(exception);
       },
       testKonstantDeprecation: function testKonstantDeprecation() {
         // call the method to see if its not throwing an error
@@ -149,4 +153,4 @@
   qx.test.log.Logger.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Logger.js.map?dt=1608415658009
+//# sourceMappingURL=Logger.js.map?dt=1625734513388

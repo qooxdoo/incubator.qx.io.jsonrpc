@@ -11,7 +11,8 @@
       },
       "qx.core.Assert": {},
       "qx.bom.client.EcmaScript": {
-        "defer": "runtime"
+        "defer": "load",
+        "require": true
       }
     },
     "environment": {
@@ -22,13 +23,16 @@
           "className": "qx.bom.client.EcmaScript"
         },
         "ecmascript.object.values": {
-          "defer": true
+          "defer": true,
+          "className": "qx.bom.client.EcmaScript"
         },
         "ecmascript.object.is": {
-          "defer": true
+          "defer": true,
+          "className": "qx.bom.client.EcmaScript"
         },
         "ecmascript.object.assign": {
-          "defer": true
+          "defer": true,
+          "className": "qx.bom.client.EcmaScript"
         }
       }
     }
@@ -178,4 +182,4 @@
   qx.lang.normalize.Object.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Object.js.map?dt=1608415648978
+//# sourceMappingURL=Object.js.map?dt=1625734504492

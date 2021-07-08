@@ -18,7 +18,9 @@
       "qx.dev.unit.MMock": {
         "require": true
       },
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.bom.webfonts.Manager": {},
       "qx.ui.form.TextField": {},
       "qx.bom.webfonts.WebFont": {},
@@ -197,4 +199,4 @@
   qx.test.ui.form.Field.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Field.js.map?dt=1608415661420
+//# sourceMappingURL=Field.js.map?dt=1625734516764

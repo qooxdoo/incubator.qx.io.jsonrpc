@@ -18,26 +18,66 @@
       "qx.test.ui.LayoutTestCase": {
         "require": true
       },
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
-      "qx.bom.client.Locale": {},
-      "qx.bom.client.OperatingSystem": {},
-      "qx.bom.client.Plugin": {},
-      "qx.bom.client.Flash": {},
-      "qx.bom.client.Transport": {},
-      "qx.bom.client.Html": {},
-      "qx.bom.client.Stylesheet": {},
-      "qx.bom.client.Xml": {},
-      "qx.bom.client.Css": {},
-      "qx.bom.client.PhoneGap": {},
-      "qx.bom.client.Event": {},
-      "qx.bom.client.EcmaScript": {},
-      "qx.bom.client.Device": {},
-      "qx.event.GlobalError": {},
-      "qx.bom.client.Scroll": {},
-      "qx.bom.client.CssAnimation": {},
-      "qx.bom.client.CssTransform": {},
-      "qx.bom.client.CssTransition": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
+      "qx.bom.client.Locale": {
+        "require": true
+      },
+      "qx.bom.client.OperatingSystem": {
+        "require": true
+      },
+      "qx.bom.client.Plugin": {
+        "require": true
+      },
+      "qx.bom.client.Flash": {
+        "require": true
+      },
+      "qx.bom.client.Transport": {
+        "require": true
+      },
+      "qx.bom.client.Html": {
+        "require": true
+      },
+      "qx.bom.client.Stylesheet": {
+        "require": true
+      },
+      "qx.bom.client.Xml": {
+        "require": true
+      },
+      "qx.bom.client.Css": {
+        "require": true
+      },
+      "qx.bom.client.PhoneGap": {
+        "require": true
+      },
+      "qx.bom.client.Event": {
+        "require": true
+      },
+      "qx.bom.client.EcmaScript": {
+        "require": true
+      },
+      "qx.bom.client.Device": {
+        "require": true
+      },
+      "qx.event.GlobalError": {
+        "require": true
+      },
+      "qx.bom.client.Scroll": {
+        "require": true
+      },
+      "qx.bom.client.CssAnimation": {
+        "require": true
+      },
+      "qx.bom.client.CssTransform": {
+        "require": true
+      },
+      "qx.bom.client.CssTransition": {
+        "require": true
+      }
     },
     "environment": {
       "provided": ["affe"],
@@ -214,7 +254,9 @@
         "html.element.compareDocumentPosition": {
           "className": "qx.bom.client.Html"
         },
-        "html.element.textcontent": {},
+        "html.element.textcontent": {
+          "className": "qx.bom.client.Html"
+        },
         "html.image.naturaldimensions": {
           "className": "qx.bom.client.Html"
         },
@@ -876,4 +918,4 @@
   qx.test.core.Environment.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Environment.js.map?dt=1608415653885
+//# sourceMappingURL=Environment.js.map?dt=1625734509141

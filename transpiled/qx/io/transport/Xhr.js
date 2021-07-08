@@ -51,7 +51,7 @@
        * Internal implementation of the transport
        * @var {qx.io.request.Xhr}
        */
-      __tranportImpl__P_178_0: null,
+      __tranportImpl__P_175_0: null,
 
       /**
        * Returns the object which implements the transport on the
@@ -63,8 +63,8 @@
        * @return {qx.core.Object}
        */
       getTransportImpl() {
-        this.__tranportImpl__P_178_0 = this._createTransportImpl();
-        return this.__tranportImpl__P_178_0;
+        this.__tranportImpl__P_175_0 = this._createTransportImpl();
+        return this.__tranportImpl__P_175_0;
       },
 
       /**
@@ -78,9 +78,9 @@
        */
       async send(message) {
         qx.core.Assert.assertString(message);
-        const req = this.__tranportImpl__P_178_0 || this.getTransportImpl();
+        const req = this.__tranportImpl__P_175_0 || this.getTransportImpl();
         req.setRequestData(message);
-        this.__tranportImpl__P_178_0 = null; // free the internal reference for the next request
+        this.__tranportImpl__P_175_0 = null; // free the internal reference for the next request
 
         try {
           await req.sendWithPromise();
@@ -156,4 +156,4 @@
   qx.io.transport.Xhr.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Xhr.js.map?dt=1608415648339
+//# sourceMappingURL=Xhr.js.map?dt=1625734503872

@@ -67,7 +67,7 @@
 
         var url = this._getClassNameFromUrl();
 
-        if (url !== "__unknown_class____P_109_0") {
+        if (url !== "__unknown_class__") {
           this.setTestNamespace(this._getClassNameFromUrl());
         } else {
           var namespace = qx.core.Environment.get("qx.testNameSpace");
@@ -91,4 +91,4 @@
   qx.dev.unit.TestLoader.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TestLoader.js.map?dt=1608415643326
+//# sourceMappingURL=TestLoader.js.map?dt=1625734498500

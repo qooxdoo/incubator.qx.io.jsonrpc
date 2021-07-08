@@ -17,7 +17,9 @@
       "qx.bom.element.Style": {},
       "qx.bom.Document": {},
       "qx.bom.element.Dimension": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.dom.Hierarchy": {},
       "qx.event.Timer": {},
       "qx.bom.element.Location": {},
@@ -56,12 +58,12 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__blocker__P_209_0 = new qx.bom.Blocker();
+        this.__blocker__P_206_0 = new qx.bom.Blocker();
 
-        this.__blocker__P_209_0.setBlockerZIndex(199);
+        this.__blocker__P_206_0.setBlockerZIndex(199);
 
-        this.__blockedElement__P_209_1 = qx.dom.Element.create("div");
-        qx.bom.element.Style.setStyles(this.__blockedElement__P_209_1, {
+        this.__blockedElement__P_206_1 = qx.dom.Element.create("div");
+        qx.bom.element.Style.setStyles(this.__blockedElement__P_206_1, {
           position: "absolute",
           top: "100px",
           left: "100px",
@@ -69,20 +71,20 @@
           height: "400px",
           zIndex: 200
         });
-        qx.dom.Element.insertBegin(this.__blockedElement__P_209_1, document.body);
+        qx.dom.Element.insertBegin(this.__blockedElement__P_206_1, document.body);
       },
       tearDown: function tearDown() {
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
 
-        this.__blocker__P_209_0.dispose();
+        this.__blocker__P_206_0.dispose();
 
-        this.__blocker__P_209_0 = null;
-        qx.dom.Element.remove(this.__blockedElement__P_209_1);
+        this.__blocker__P_206_0 = null;
+        qx.dom.Element.remove(this.__blockedElement__P_206_1);
       },
       testBlockWholeDocument: function testBlockWholeDocument() {
-        this.__blocker__P_209_0.block();
+        this.__blocker__P_206_0.block();
 
-        var blockerElement = this.__blocker__P_209_0.getBlockerElement();
+        var blockerElement = this.__blocker__P_206_0.getBlockerElement();
 
         this.assertNotNull(blockerElement, "Blocker element not inserted.");
         this.assertEquals(qx.bom.Document.getWidth(), qx.bom.element.Dimension.getWidth(blockerElement));
@@ -96,19 +98,19 @@
           this.assertEquals(qx.bom.Document.getHeight(), qx.bom.element.Dimension.getHeight(blockerIframeElement));
         }
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
       },
       testUnblockWholeDocument: function testUnblockWholeDocument() {
-        this.__blocker__P_209_0.block();
+        this.__blocker__P_206_0.block();
 
         if (qx.core.Environment.get("engine.name") == "mshtml") {
           var childElements = qx.dom.Hierarchy.getChildElements(document.body);
           var blockerIframeElement = childElements[childElements.length - 1];
         }
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
 
-        var blockerElement = this.__blocker__P_209_0.getBlockerElement();
+        var blockerElement = this.__blocker__P_206_0.getBlockerElement();
 
         this.assertFalse(qx.dom.Element.isInDom(blockerElement, window), "Blocker element not correctly removed");
 
@@ -117,39 +119,39 @@
         }
       },
       testBlockElement: function testBlockElement() {
-        this.__blocker__P_209_0.block(this.__blockedElement__P_209_1); // Timer is needed for IE6, otherwise the test will fail because IE6
+        this.__blocker__P_206_0.block(this.__blockedElement__P_206_1); // Timer is needed for IE6, otherwise the test will fail because IE6
         // is not able to resize the blockerElement fast enough
 
 
         qx.event.Timer.once(function () {
           var self = this;
           this.resume(function () {
-            var blockerElement = self.__blocker__P_209_0.getBlockerElement();
+            var blockerElement = self.__blocker__P_206_0.getBlockerElement();
 
             self.assertNotNull(blockerElement, "Blocker element not inserted.");
-            self.assertEquals(qx.bom.element.Dimension.getWidth(self.__blockedElement__P_209_1), qx.bom.element.Dimension.getWidth(blockerElement));
-            self.assertEquals(qx.bom.element.Dimension.getHeight(self.__blockedElement__P_209_1), qx.bom.element.Dimension.getHeight(blockerElement));
-            self.assertEquals(qx.bom.element.Location.getLeft(self.__blockedElement__P_209_1), qx.bom.element.Location.getLeft(blockerElement));
-            self.assertEquals(qx.bom.element.Location.getTop(self.__blockedElement__P_209_1), qx.bom.element.Location.getTop(blockerElement));
-            self.assertEquals(qx.bom.element.Style.get(self.__blockedElement__P_209_1, "zIndex") - 1, qx.bom.element.Style.get(blockerElement, "zIndex"));
+            self.assertEquals(qx.bom.element.Dimension.getWidth(self.__blockedElement__P_206_1), qx.bom.element.Dimension.getWidth(blockerElement));
+            self.assertEquals(qx.bom.element.Dimension.getHeight(self.__blockedElement__P_206_1), qx.bom.element.Dimension.getHeight(blockerElement));
+            self.assertEquals(qx.bom.element.Location.getLeft(self.__blockedElement__P_206_1), qx.bom.element.Location.getLeft(blockerElement));
+            self.assertEquals(qx.bom.element.Location.getTop(self.__blockedElement__P_206_1), qx.bom.element.Location.getTop(blockerElement));
+            self.assertEquals(qx.bom.element.Style.get(self.__blockedElement__P_206_1, "zIndex") - 1, qx.bom.element.Style.get(blockerElement, "zIndex"));
 
             if (qx.core.Environment.get("engine.name") == "mshtml") {
               var childElements = qx.dom.Hierarchy.getChildElements(document.body);
               var blockerIframeElement = childElements[childElements.length - 1];
-              self.assertEquals(qx.bom.element.Style.get(self.__blockedElement__P_209_1, "zIndex") - 2, qx.bom.element.Style.get(blockerIframeElement, "zIndex"));
+              self.assertEquals(qx.bom.element.Style.get(self.__blockedElement__P_206_1, "zIndex") - 2, qx.bom.element.Style.get(blockerIframeElement, "zIndex"));
             }
 
-            self.__blocker__P_209_0.unblock();
+            self.__blocker__P_206_0.unblock();
           }, self);
         }, this, 1000);
         this.wait();
       },
       testBlockerColor: function testBlockerColor() {
-        this.__blocker__P_209_0.setBlockerColor("#FF0000");
+        this.__blocker__P_206_0.setBlockerColor("#FF0000");
 
-        this.__blocker__P_209_0.block();
+        this.__blocker__P_206_0.block();
 
-        var blockerElement = this.__blocker__P_209_0.getBlockerElement();
+        var blockerElement = this.__blocker__P_206_0.getBlockerElement();
 
         var color = qx.bom.element.Style.get(blockerElement, "backgroundColor");
 
@@ -159,14 +161,14 @@
           this.assertEquals("#ff0000", color);
         }
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
       },
       testBlockerOpacity: function testBlockerOpacity() {
-        this.__blocker__P_209_0.setBlockerOpacity(0.7);
+        this.__blocker__P_206_0.setBlockerOpacity(0.7);
 
-        this.__blocker__P_209_0.block();
+        this.__blocker__P_206_0.block();
 
-        var blockerElement = this.__blocker__P_209_0.getBlockerElement();
+        var blockerElement = this.__blocker__P_206_0.getBlockerElement();
 
         var value = qx.bom.element.Opacity.get(blockerElement);
 
@@ -176,14 +178,14 @@
 
         this.assertEquals(0.7, value);
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
       },
       testDoubleBlocking: function testDoubleBlocking() {
         var before = qx.dom.Hierarchy.getDescendants(document.body);
 
-        this.__blocker__P_209_0.block(this.__blockedElement__P_209_1);
+        this.__blocker__P_206_0.block(this.__blockedElement__P_206_1);
 
-        this.__blocker__P_209_0.block(this.__blockedElement__P_209_1);
+        this.__blocker__P_206_0.block(this.__blockedElement__P_206_1);
 
         var after = qx.dom.Hierarchy.getDescendants(document.body);
 
@@ -193,22 +195,22 @@
           this.assertEquals(after.length, before.length + 1);
         }
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
       },
       testDoubleUnBlocking: function testDoubleUnBlocking() {
-        this.__blocker__P_209_0.block(this.__blockedElement__P_209_1);
+        this.__blocker__P_206_0.block(this.__blockedElement__P_206_1);
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
 
-        this.__blocker__P_209_0.unblock();
+        this.__blocker__P_206_0.unblock();
 
-        var blockerElement = this.__blocker__P_209_0.getBlockerElement();
+        var blockerElement = this.__blocker__P_206_0.getBlockerElement();
 
-        this.assertNotEquals(blockerElement.parentNode, this.__blockedElement__P_209_1);
+        this.assertNotEquals(blockerElement.parentNode, this.__blockedElement__P_206_1);
       }
     }
   });
   qx.test.bom.Blocker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Blocker.js.map?dt=1608415651946
+//# sourceMappingURL=Blocker.js.map?dt=1625734507283

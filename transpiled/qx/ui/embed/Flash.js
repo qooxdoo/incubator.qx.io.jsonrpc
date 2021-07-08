@@ -227,7 +227,7 @@
     },
     members: {
       /** @type {Integer} The time stamp when the loading begins. */
-      __time__P_408_0: null,
+      __time__P_404_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -302,11 +302,11 @@
 
         if (source != "" && source != null && source != "undefined") {
           if (!this.isLoaded()) {
-            if (!this.__time__P_408_0) {
-              this.__time__P_408_0 = new Date().getTime();
+            if (!this.__time__P_404_0) {
+              this.__time__P_404_0 = new Date().getTime();
             }
 
-            var timeDiff = new Date().getTime() - this.__time__P_408_0;
+            var timeDiff = new Date().getTime() - this.__time__P_404_0;
 
             if (this.getLoadTimeout() > timeDiff) {
               var timer = qx.util.TimerManager.getInstance();
@@ -317,11 +317,11 @@
                 this.debug("Timeout after: " + timeDiff);
               }
               this.fireEvent("timeout");
-              this.__time__P_408_0 = null;
+              this.__time__P_404_0 = null;
             }
           } else {
             this.fireEvent("loaded");
-            this.__time__P_408_0 = null;
+            this.__time__P_404_0 = null;
           }
         }
       },
@@ -354,35 +354,35 @@
       },
       // property apply
       _applyQuality: function _applyQuality(value, old) {
-        this.__flashParamHelper__P_408_1("quality", value);
+        this.__flashParamHelper__P_404_1("quality", value);
       },
       // property apply
       _applyScale: function _applyScale(value, old) {
-        this.__flashParamHelper__P_408_1("scale", value);
+        this.__flashParamHelper__P_404_1("scale", value);
       },
       // property apply
       _applyWmode: function _applyWmode(value, old) {
-        this.__flashParamHelper__P_408_1("wmode", value);
+        this.__flashParamHelper__P_404_1("wmode", value);
       },
       // property apply
       _applyPlay: function _applyPlay(value, old) {
-        this.__flashParamHelper__P_408_1("play", value);
+        this.__flashParamHelper__P_404_1("play", value);
       },
       // property apply
       _applyLoop: function _applyLoop(value, old) {
-        this.__flashParamHelper__P_408_1("loop", value);
+        this.__flashParamHelper__P_404_1("loop", value);
       },
       // property apply
       _applyMenu: function _applyMenu(value, old) {
-        this.__flashParamHelper__P_408_1("menu", value);
+        this.__flashParamHelper__P_404_1("menu", value);
       },
       // property apply
       _applyAllowScriptAccess: function _applyAllowScriptAccess(value, old) {
-        this.__flashParamHelper__P_408_1("allowScriptAccess", value);
+        this.__flashParamHelper__P_404_1("allowScriptAccess", value);
       },
       // property apply
       _applyLiveConnect: function _applyLiveConnect(value, old) {
-        this.__flashParamHelper__P_408_1("swLiveConnect", value);
+        this.__flashParamHelper__P_404_1("swLiveConnect", value);
       },
 
       /*
@@ -398,7 +398,7 @@
        * @param value {String?null} The value for the attribute, <code>null</code>
        *    if the attribute should be removed from the DOM element.
        */
-      __flashParamHelper__P_408_1: function __flashParamHelper__P_408_1(key, value) {
+      __flashParamHelper__P_404_1: function __flashParamHelper__P_404_1(key, value) {
         this.getContentElement().setParam(key, value);
         qx.ui.core.queue.Layout.add(this);
       }
@@ -407,4 +407,4 @@
   qx.ui.embed.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1608415671288
+//# sourceMappingURL=Flash.js.map?dt=1625734526445

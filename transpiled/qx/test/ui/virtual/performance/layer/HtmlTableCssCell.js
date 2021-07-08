@@ -44,7 +44,7 @@
       this._cellProvider = htmlCellProvider;
       var clazz = qx.test.ui.virtual.performance.layer.HtmlTableCssCell;
 
-      if (!clazz.__style__P_349_0) {
+      if (!clazz.__style__P_345_0) {
         var stylesheet = "table.qooxdoo-table {" + qx.bom.element.Style.compile({
           "tableLayout": "fixed",
           "borderCollapse": "collapse",
@@ -57,7 +57,7 @@
           "margin": "0px",
           "padding": "0px"
         }) + "} ";
-        clazz.__style__P_349_0 = qx.bom.Stylesheet.createElement(stylesheet);
+        clazz.__style__P_345_0 = qx.bom.Stylesheet.createElement(stylesheet);
       }
     },
 
@@ -108,4 +108,4 @@
   qx.test.ui.virtual.performance.layer.HtmlTableCssCell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlTableCssCell.js.map?dt=1608415665183
+//# sourceMappingURL=HtmlTableCssCell.js.map?dt=1625734520486

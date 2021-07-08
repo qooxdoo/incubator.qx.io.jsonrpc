@@ -22,8 +22,12 @@
         "require": true
       },
       "qx.bom.request.Script": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.dev.unit.RequirementError": {}
     },
     "environment": {
@@ -576,4 +580,4 @@
   qx.test.bom.request.Script.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Script.js.map?dt=1608415653133
+//# sourceMappingURL=Script.js.map?dt=1625734508413

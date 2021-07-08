@@ -18,7 +18,9 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.bom.client.Html": {},
+      "qx.bom.client.Html": {
+        "require": true
+      },
       "qx.bom.GeoLocation": {}
     },
     "environment": {
@@ -157,4 +159,4 @@
   qx.test.bom.GeoLocation.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GeoLocation.js.map?dt=1608415652176
+//# sourceMappingURL=GeoLocation.js.map?dt=1625734507499

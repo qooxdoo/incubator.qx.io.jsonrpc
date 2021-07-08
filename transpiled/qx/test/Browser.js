@@ -12,7 +12,9 @@
       "qx.test.ui.LayoutTestCase": {
         "require": true
       },
-      "qx.bom.client.Browser": {}
+      "qx.bom.client.Browser": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -87,4 +89,4 @@
   qx.test.Browser.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Browser.js.map?dt=1608415651229
+//# sourceMappingURL=Browser.js.map?dt=1625734506592

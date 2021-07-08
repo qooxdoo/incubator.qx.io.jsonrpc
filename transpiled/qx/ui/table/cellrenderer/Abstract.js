@@ -24,7 +24,9 @@
       },
       "qx.theme.manager.Color": {},
       "qx.bom.element.Style": {},
-      "qx.bom.client.Css": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
       "qx.bom.element.BoxSizing": {}
     },
     "environment": {
@@ -74,8 +76,8 @@
       qx.core.Object.constructor.call(this);
       var cr = qx.ui.table.cellrenderer.Abstract;
 
-      if (!cr.__clazz__P_506_0) {
-        cr.__clazz__P_506_0 = qx.ui.table.cellrenderer.Abstract;
+      if (!cr.__clazz__P_502_0) {
+        cr.__clazz__P_502_0 = qx.ui.table.cellrenderer.Abstract;
 
         this._createStyleSheet(); // add dynamic theme listener
 
@@ -102,7 +104,7 @@
        * @signature function()
        */
       _onChangeTheme: function _onChangeTheme() {
-        qx.bom.Stylesheet.removeAllRules(qx.ui.table.cellrenderer.Abstract.__clazz__P_506_0.stylesheet);
+        qx.bom.Stylesheet.removeAllRules(qx.ui.table.cellrenderer.Abstract.__clazz__P_502_0.stylesheet);
 
         this._createStyleSheet();
       },
@@ -141,7 +143,7 @@
           stylesheet += ".qooxdoo-table-cell {" + qx.bom.element.BoxSizing.compile("content-box") + "}";
         }
 
-        qx.ui.table.cellrenderer.Abstract.__clazz__P_506_0.stylesheet = qx.bom.Stylesheet.createElement(stylesheet);
+        qx.ui.table.cellrenderer.Abstract.__clazz__P_502_0.stylesheet = qx.bom.Stylesheet.createElement(stylesheet);
       },
 
       /**
@@ -235,4 +237,4 @@
   qx.ui.table.cellrenderer.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1608415678841
+//# sourceMappingURL=Abstract.js.map?dt=1625734534262

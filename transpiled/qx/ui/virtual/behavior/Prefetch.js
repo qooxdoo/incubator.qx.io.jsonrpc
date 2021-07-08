@@ -81,9 +81,9 @@
       qx.core.Object.constructor.call(this);
       this.setPrefetchX(settings.minLeft, settings.maxLeft, settings.minRight, settings.maxRight);
       this.setPrefetchY(settings.minAbove, settings.maxAbove, settings.minBelow, settings.maxBelow);
-      this.__timer__P_538_0 = new qx.event.Timer(this.getInterval());
+      this.__timer__P_534_0 = new qx.event.Timer(this.getInterval());
 
-      this.__timer__P_538_0.addListener("interval", this._onInterval, this);
+      this.__timer__P_534_0.addListener("interval", this._onInterval, this);
 
       if (scroller) {
         this.setScroller(scroller);
@@ -118,11 +118,11 @@
     *****************************************************************************
     */
     members: {
-      __prefetchX__P_538_1: null,
-      __prefetchY__P_538_2: null,
-      __timer__P_538_0: null,
-      __onScrollXId__P_538_3: null,
-      __onScrollYId__P_538_4: null,
+      __prefetchX__P_534_1: null,
+      __prefetchY__P_534_2: null,
+      __timer__P_534_0: null,
+      __onScrollXId__P_534_3: null,
+      __onScrollYId__P_534_4: null,
 
       /**
        * Configure horizontal prefetching
@@ -133,7 +133,7 @@
        * @param maxRight {Integer} maximum pixels to prefetch right to the view port
        */
       setPrefetchX: function setPrefetchX(minLeft, maxLeft, minRight, maxRight) {
-        this.__prefetchX__P_538_1 = [minLeft, maxLeft, minRight, maxRight];
+        this.__prefetchX__P_534_1 = [minLeft, maxLeft, minRight, maxRight];
       },
 
       /**
@@ -145,21 +145,21 @@
        * @param maxBelow {Integer} maximum pixels to prefetch below the view port
        */
       setPrefetchY: function setPrefetchY(minAbove, maxAbove, minBelow, maxBelow) {
-        this.__prefetchY__P_538_2 = [minAbove, maxAbove, minBelow, maxBelow];
+        this.__prefetchY__P_534_2 = [minAbove, maxAbove, minBelow, maxBelow];
       },
 
       /**
        * Update prefetching
        */
       _onInterval: function _onInterval() {
-        var px = this.__prefetchX__P_538_1;
+        var px = this.__prefetchX__P_534_1;
 
         if (px[1] && px[3]) {
           this.getScroller().getPane().prefetchX(px[0], px[1], px[2], px[3]);
           qx.ui.core.queue.Manager.flush();
         }
 
-        var py = this.__prefetchY__P_538_2;
+        var py = this.__prefetchY__P_534_2;
 
         if (py[1] && py[3]) {
           this.getScroller().getPane().prefetchY(py[0], py[1], py[2], py[3]);
@@ -169,38 +169,38 @@
       // property apply
       _applyScroller: function _applyScroller(value, old) {
         if (old) {
-          if (this.__onScrollXId__P_538_3) {
-            old.getChildControl("scrollbar-x").removeListenerById(this.__onScrollXId__P_538_3);
+          if (this.__onScrollXId__P_534_3) {
+            old.getChildControl("scrollbar-x").removeListenerById(this.__onScrollXId__P_534_3);
           }
 
-          if (this.__onScrollYId__P_538_4) {
-            old.getChildControl("scrollbar-y").removeListenerById(this.__onScrollYId__P_538_4);
+          if (this.__onScrollYId__P_534_4) {
+            old.getChildControl("scrollbar-y").removeListenerById(this.__onScrollYId__P_534_4);
           }
         }
 
         if (value) {
           if (!value.getContentElement().getDomElement()) {
-            this.__timer__P_538_0.stop();
+            this.__timer__P_534_0.stop();
 
-            value.addListenerOnce("appear", this.__timer__P_538_0.start, this.__timer__P_538_0);
+            value.addListenerOnce("appear", this.__timer__P_534_0.start, this.__timer__P_534_0);
           } else {
-            this.__timer__P_538_0.restart();
+            this.__timer__P_534_0.restart();
           } //        if (value.hasChildControl("scrollbar-x"))
           //        {
 
 
-          this.__onScrollXId__P_538_3 = value.getChildControl("scrollbar-x").addListener("scroll", this.__timer__P_538_0.restart, this.__timer__P_538_0); //        }
+          this.__onScrollXId__P_534_3 = value.getChildControl("scrollbar-x").addListener("scroll", this.__timer__P_534_0.restart, this.__timer__P_534_0); //        }
           //        if (value.hasChildControl("scrollbar-y"))
           //        {
 
-          this.__onScrollYId__P_538_4 = value.getChildControl("scrollbar-y").addListener("scroll", this.__timer__P_538_0.restart, this.__timer__P_538_0); //        }
+          this.__onScrollYId__P_534_4 = value.getChildControl("scrollbar-y").addListener("scroll", this.__timer__P_534_0.restart, this.__timer__P_534_0); //        }
         } else {
-          this.__timer__P_538_0.stop();
+          this.__timer__P_534_0.stop();
         }
       },
       // property apply
       _applyInterval: function _applyInterval(value, old) {
-        this.__timer__P_538_0.setInterval(value);
+        this.__timer__P_534_0.setInterval(value);
       }
     },
 
@@ -211,12 +211,12 @@
      */
     destruct: function destruct() {
       this.setScroller(null);
-      this.__prefetchX__P_538_1 = this.__prefetchY__P_538_2 = null;
+      this.__prefetchX__P_534_1 = this.__prefetchY__P_534_2 = null;
 
-      this._disposeObjects("__timer__P_538_0");
+      this._disposeObjects("__timer__P_534_0");
     }
   });
   qx.ui.virtual.behavior.Prefetch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Prefetch.js.map?dt=1608415681848
+//# sourceMappingURL=Prefetch.js.map?dt=1625734537275

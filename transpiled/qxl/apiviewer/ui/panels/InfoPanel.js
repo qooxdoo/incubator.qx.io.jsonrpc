@@ -36,7 +36,9 @@
       "qx.Promise": {},
       "qxl.apiviewer.UiModel": {},
       "qxl.apiviewer.dao.ClassItem": {},
-      "qx.bom.client.Engine": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -234,7 +236,7 @@
 
         if (this.itemHasDetails(node, currentDocNode)) {
           // This node has details -> Show the detail button
-          html.add("<img src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/open.gif"), "\" onclick=\"", this.__encodeObject__P_606_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\"/>");
+          html.add("<img src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/open.gif"), "\" onclick=\"", this.__encodeObject__P_602_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\"/>");
         } else {
           html.add("&#160;");
         }
@@ -245,7 +247,7 @@
         html.add("<h3");
 
         if (this.itemHasDetails(node, currentDocNode)) {
-          html.add(" onclick=\"", this.__encodeObject__P_606_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\">");
+          html.add(" onclick=\"", this.__encodeObject__P_602_0(this), ".toggleShowItemDetails('", node.getName(), "'", parentNode != currentDocNode ? ",'" + parentNode.getFullName() + "'" : "", ")\">");
         } else {
           html.add(">");
         }
@@ -276,7 +278,7 @@
       itemHasDetails: function itemHasDetails(node, currentClassDocNode) {
         return true;
       },
-      __encodeObject__P_606_0: function __encodeObject__P_606_0(object) {
+      __encodeObject__P_602_0: function __encodeObject__P_602_0(object) {
         return "qxl.apiviewer.ObjectRegistry.getObjectFromHashCode('" + object.toHashCode() + "')";
       },
 
@@ -289,7 +291,7 @@
         var uppercaseLabelText = this._labelText.charAt(0).toUpperCase() + this._labelText.substring(1);
 
         var html = new qx.util.StringBuilder("<div class=\"info-panel\"><h2>");
-        html.add("<img class=\"openclose\" src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/" + (this.getIsOpen() ? "close.gif" : "open.gif")), "\" onclick=\"", this.__encodeObject__P_606_0(viewer), ".togglePanelVisibility(" + this.__encodeObject__P_606_0(this), ")\"/> ", "<span onclick=\"", this.__encodeObject__P_606_0(viewer), ".togglePanelVisibility(", this.__encodeObject__P_606_0(this), ")\">", uppercaseLabelText, "</span>");
+        html.add("<img class=\"openclose\" src=\"", qx.util.ResourceManager.getInstance().toUri("qxl/apiviewer/image/" + (this.getIsOpen() ? "close.gif" : "open.gif")), "\" onclick=\"", this.__encodeObject__P_602_0(viewer), ".togglePanelVisibility(" + this.__encodeObject__P_602_0(this), ")\"/> ", "<span onclick=\"", this.__encodeObject__P_602_0(viewer), ".togglePanelVisibility(", this.__encodeObject__P_602_0(this), ")\">", uppercaseLabelText, "</span>");
         html.add("</h2><div></div></div>");
         return html.get();
       },
@@ -357,7 +359,7 @@
        *          {Boolean} whether to show internal items
        * @return {qxl.apiviewer.dao.ClassItem[]} filtered list of items
        */
-      __filterItems__P_606_1: function __filterItems__P_606_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal) {
+      __filterItems__P_602_1: function __filterItems__P_602_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal) {
         var copyArr = nodeArr.concat();
 
         for (var i = nodeArr.length - 1; i >= 0; i--) {
@@ -424,7 +426,7 @@
             var showProtected = classViewer.getShowProtected();
             var showPrivate = classViewer.getShowPrivate();
             var showInternal = classViewer.getShowInternal();
-            nodeArr = this.__filterItems__P_606_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal);
+            nodeArr = this.__filterItems__P_602_1(nodeArr, expandProperties, showProtected, showPrivate, showInternal);
             classViewer.sortItems(nodeArr);
           }
 
@@ -725,7 +727,7 @@
                   cleanItemName = cleanItemName.substring(0, parenPos).trim();
                 }
 
-                itemNode = this.__getItemFromClassHierarchy__P_606_2(cleanItemName, classNode);
+                itemNode = this.__getItemFromClassHierarchy__P_602_2(cleanItemName, classNode);
 
                 if (!itemNode && qxl.apiviewer.UiModel.getInstance().getShowIncluded()) {
                   if (qxl.apiviewer.UiModel.getInstance().getShowInherited()) {
@@ -919,7 +921,7 @@
        * @return {qxl.apiviewer.dao.ClassItem} the classItem
        *
        */
-      __getItemFromClassHierarchy__P_606_2: function __getItemFromClassHierarchy__P_606_2(itemName, baseClassNode) {
+      __getItemFromClassHierarchy__P_602_2: function __getItemFromClassHierarchy__P_602_2(itemName, baseClassNode) {
         var itemNode = baseClassNode.getItem(itemName);
 
         if (itemNode) {
@@ -958,7 +960,7 @@
 
         if (desc) {
           if (!showDetails) {
-            desc = this.__extractFirstSentence__P_606_3(desc);
+            desc = this.__extractFirstSentence__P_602_3(desc);
           }
 
           return "<div class=\"item-desc\">" + this.resolveLinkAttributes(desc, packageBaseClass) + "</div>";
@@ -974,7 +976,7 @@
        *          {String} the text.
        * @return {String} the first sentence from the text.
        */
-      __extractFirstSentence__P_606_3: function __extractFirstSentence__P_606_3(text) {
+      __extractFirstSentence__P_602_3: function __extractFirstSentence__P_602_3(text) {
         var ret = text; // Extract first block
 
         var pos = ret.indexOf("</p>");
@@ -1003,7 +1005,7 @@
         var desc = node.getDescription();
 
         if (desc) {
-          return this.__extractFirstSentence__P_606_3(desc) != desc;
+          return this.__extractFirstSentence__P_602_3(desc) != desc;
         }
 
         return false;
@@ -1302,4 +1304,4 @@
   qxl.apiviewer.ui.panels.InfoPanel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=InfoPanel.js.map?dt=1608415687359
+//# sourceMappingURL=InfoPanel.js.map?dt=1625734542646

@@ -56,8 +56,8 @@
        *    The qooxdoo class implementing the transport
        */
       registerTransport(uriRegExp, transportClass) {
-        if (!this.constructor.__transports__P_175_0) {
-          this.constructor.__transports__P_175_0 = [];
+        if (!this.constructor.__transports__P_172_0) {
+          this.constructor.__transports__P_172_0 = [];
         }
 
         if (!qx.lang.Type.isRegExp(uriRegExp)) {
@@ -68,7 +68,7 @@
           throw new Error("Transport class must implement qx.io.transport.ITransport");
         }
 
-        this.constructor.__transports__P_175_0.push({
+        this.constructor.__transports__P_172_0.push({
           uriRegExp,
           transport: transportClass
         });
@@ -96,13 +96,13 @@
         let uri;
 
         if (qx.lang.Type.isString(transportOrUri)) {
-          if (!this.constructor.__transports__P_175_0) {
+          if (!this.constructor.__transports__P_172_0) {
             throw new Error("No transport has been registered. Put @use(qx.io.transport.X) in the doc block of your class, X being the transport class of your choice (such as qx.io.transport.Xhr for http transport).");
           }
 
           uri = transportOrUri;
 
-          for (let registeredTransport of this.constructor.__transports__P_175_0.reverse()) {
+          for (let registeredTransport of this.constructor.__transports__P_172_0.reverse()) {
             if (uri.match(registeredTransport.uriRegExp)) {
               // eslint-disable-next-line new-cap
               transport = new registeredTransport.transport(uri);
@@ -128,4 +128,4 @@
   qx.io.transport.AbstractClient.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractClient.js.map?dt=1608415648201
+//# sourceMappingURL=AbstractClient.js.map?dt=1625734503731

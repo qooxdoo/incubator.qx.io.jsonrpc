@@ -238,20 +238,20 @@
     *****************************************************************************
     */
     members: {
-      __sliderLocation__P_424_0: null,
-      __knobLocation__P_424_1: null,
-      __knobSize__P_424_2: null,
-      __dragMode__P_424_3: null,
-      __dragOffset__P_424_4: null,
-      __trackingMode__P_424_5: null,
-      __trackingDirection__P_424_6: null,
-      __trackingEnd__P_424_7: null,
-      __timer__P_424_8: null,
+      __sliderLocation__P_420_0: null,
+      __knobLocation__P_420_1: null,
+      __knobSize__P_420_2: null,
+      __dragMode__P_420_3: null,
+      __dragOffset__P_420_4: null,
+      __trackingMode__P_420_5: null,
+      __trackingDirection__P_420_6: null,
+      __trackingEnd__P_420_7: null,
+      __timer__P_420_8: null,
       // event delay stuff during drag
-      __dragTimer__P_424_9: null,
-      __lastValueEvent__P_424_10: null,
-      __dragValue__P_424_11: null,
-      __scrollAnimationframe__P_424_12: null,
+      __dragTimer__P_420_9: null,
+      __lastValueEvent__P_420_10: null,
+      __dragValue__P_420_11: null,
+      __scrollAnimationframe__P_420_12: null,
       // overridden
 
       /**
@@ -384,11 +384,11 @@
       _onPointerDown: function _onPointerDown(e) {
         // this can happen if the user releases the button while dragging outside
         // of the browser viewport
-        if (this.__dragMode__P_424_3) {
+        if (this.__dragMode__P_420_3) {
           return;
         }
 
-        var isHorizontal = this.__isHorizontal__P_424_13;
+        var isHorizontal = this.__isHorizontal__P_420_13;
         var knob = this.getChildControl("knob");
         var locationProperty = isHorizontal ? "left" : "top";
         var cursorLocation = isHorizontal ? e.getDocumentLeft() : e.getDocumentTop();
@@ -403,48 +403,48 @@
           var padding = (this.getPaddingTop() || 0) + decoratorPadding;
         }
 
-        var sliderLocation = this.__sliderLocation__P_424_0 = qx.bom.element.Location.get(this.getContentElement().getDomElement())[locationProperty];
+        var sliderLocation = this.__sliderLocation__P_420_0 = qx.bom.element.Location.get(this.getContentElement().getDomElement())[locationProperty];
         sliderLocation += padding;
-        var knobLocation = this.__knobLocation__P_424_1 = qx.bom.element.Location.get(knob.getContentElement().getDomElement())[locationProperty];
+        var knobLocation = this.__knobLocation__P_420_1 = qx.bom.element.Location.get(knob.getContentElement().getDomElement())[locationProperty];
 
         if (e.getTarget() === knob) {
           // Switch into drag mode
-          this.__dragMode__P_424_3 = true;
+          this.__dragMode__P_420_3 = true;
 
-          if (!this.__dragTimer__P_424_9) {
+          if (!this.__dragTimer__P_420_9) {
             // create a timer to fire delayed dragging events if dragging stops.
-            this.__dragTimer__P_424_9 = new qx.event.Timer(100);
+            this.__dragTimer__P_420_9 = new qx.event.Timer(100);
 
-            this.__dragTimer__P_424_9.addListener("interval", this._fireValue, this);
+            this.__dragTimer__P_420_9.addListener("interval", this._fireValue, this);
           }
 
-          this.__dragTimer__P_424_9.start(); // Compute dragOffset (includes both: inner position of the widget and
+          this.__dragTimer__P_420_9.start(); // Compute dragOffset (includes both: inner position of the widget and
           // cursor position on knob)
 
 
-          this.__dragOffset__P_424_4 = cursorLocation + sliderLocation - knobLocation; // add state
+          this.__dragOffset__P_420_4 = cursorLocation + sliderLocation - knobLocation; // add state
 
           knob.addState("pressed");
         } else {
           // Switch into tracking mode
-          this.__trackingMode__P_424_5 = true; // Detect tracking direction
+          this.__trackingMode__P_420_5 = true; // Detect tracking direction
 
-          this.__trackingDirection__P_424_6 = cursorLocation <= knobLocation ? -1 : 1; // Compute end value
+          this.__trackingDirection__P_420_6 = cursorLocation <= knobLocation ? -1 : 1; // Compute end value
 
-          this.__computeTrackingEnd__P_424_14(e); // Directly call interval method once
+          this.__computeTrackingEnd__P_420_14(e); // Directly call interval method once
 
 
           this._onInterval(); // Initialize timer (when needed)
 
 
-          if (!this.__timer__P_424_8) {
-            this.__timer__P_424_8 = new qx.event.Timer(100);
+          if (!this.__timer__P_420_8) {
+            this.__timer__P_420_8 = new qx.event.Timer(100);
 
-            this.__timer__P_424_8.addListener("interval", this._onInterval, this);
+            this.__timer__P_420_8.addListener("interval", this._onInterval, this);
           } // Start timer
 
 
-          this.__timer__P_424_8.start();
+          this.__timer__P_420_8.start();
         } // Register move listener
 
 
@@ -462,18 +462,18 @@
        * @param e {qx.event.type.Pointer} Incoming event object
        */
       _onPointerUp: function _onPointerUp(e) {
-        if (this.__dragMode__P_424_3) {
+        if (this.__dragMode__P_420_3) {
           // Release capture mode
           this.releaseCapture(); // Cleanup status flags
 
-          delete this.__dragMode__P_424_3; // as we come out of drag mode, make
+          delete this.__dragMode__P_420_3; // as we come out of drag mode, make
           // sure content gets synced
 
-          this.__dragTimer__P_424_9.stop();
+          this.__dragTimer__P_420_9.stop();
 
           this._fireValue();
 
-          delete this.__dragOffset__P_424_4; // remove state
+          delete this.__dragOffset__P_420_4; // remove state
 
           this.getChildControl("knob").removeState("pressed"); // it's necessary to check whether the cursor is over the knob widget to be able to
           // to decide whether to remove the 'hovered' state.
@@ -483,30 +483,30 @@
             var deltaPosition;
             var positionSlider;
 
-            if (this.__isHorizontal__P_424_13) {
-              deltaSlider = e.getDocumentLeft() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_424_0);
+            if (this.__isHorizontal__P_420_13) {
+              deltaSlider = e.getDocumentLeft() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_420_0);
               positionSlider = qx.bom.element.Location.get(this.getContentElement().getDomElement())["top"];
               deltaPosition = e.getDocumentTop() - (positionSlider + this.getChildControl("knob").getBounds().top);
             } else {
-              deltaSlider = e.getDocumentTop() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_424_0);
+              deltaSlider = e.getDocumentTop() - (this._valueToPosition(this.getValue()) + this.__sliderLocation__P_420_0);
               positionSlider = qx.bom.element.Location.get(this.getContentElement().getDomElement())["left"];
               deltaPosition = e.getDocumentLeft() - (positionSlider + this.getChildControl("knob").getBounds().left);
             }
 
-            if (deltaPosition < 0 || deltaPosition > this.__knobSize__P_424_2 || deltaSlider < 0 || deltaSlider > this.__knobSize__P_424_2) {
+            if (deltaPosition < 0 || deltaPosition > this.__knobSize__P_420_2 || deltaSlider < 0 || deltaSlider > this.__knobSize__P_420_2) {
               this.getChildControl("knob").removeState("hovered");
             }
           }
-        } else if (this.__trackingMode__P_424_5) {
+        } else if (this.__trackingMode__P_420_5) {
           // Stop timer interval
-          this.__timer__P_424_8.stop(); // Release capture mode
+          this.__timer__P_420_8.stop(); // Release capture mode
 
 
           this.releaseCapture(); // Cleanup status flags
 
-          delete this.__trackingMode__P_424_5;
-          delete this.__trackingDirection__P_424_6;
-          delete this.__trackingEnd__P_424_7;
+          delete this.__trackingMode__P_420_5;
+          delete this.__trackingDirection__P_420_6;
+          delete this.__trackingEnd__P_420_7;
         } // Remove move listener again
 
 
@@ -523,13 +523,13 @@
        * @param e {qx.event.type.Pointer} Incoming event object
        */
       _onPointerMove: function _onPointerMove(e) {
-        if (this.__dragMode__P_424_3) {
-          var dragStop = this.__isHorizontal__P_424_13 ? e.getDocumentLeft() : e.getDocumentTop();
-          var position = dragStop - this.__dragOffset__P_424_4;
+        if (this.__dragMode__P_420_3) {
+          var dragStop = this.__isHorizontal__P_420_13 ? e.getDocumentLeft() : e.getDocumentTop();
+          var position = dragStop - this.__dragOffset__P_420_4;
           this.slideTo(this._positionToValue(position));
-        } else if (this.__trackingMode__P_424_5) {
+        } else if (this.__trackingMode__P_420_5) {
           // Update tracking end on pointermove
-          this.__computeTrackingEnd__P_424_14(e);
+          this.__computeTrackingEnd__P_420_14(e);
         } // Stop event
 
 
@@ -544,7 +544,7 @@
        */
       _onInterval: function _onInterval(e) {
         // Compute new value
-        var value = this.getValue() + this.__trackingDirection__P_424_6 * this.getPageStep(); // Limit value
+        var value = this.getValue() + this.__trackingDirection__P_420_6 * this.getPageStep(); // Limit value
 
         if (value < this.getMinimum()) {
           value = this.getMinimum();
@@ -553,10 +553,10 @@
         } // Stop at tracking position (where the pointer is pressed down)
 
 
-        var slideBack = this.__trackingDirection__P_424_6 == -1;
+        var slideBack = this.__trackingDirection__P_420_6 == -1;
 
-        if (slideBack && value <= this.__trackingEnd__P_424_7 || !slideBack && value >= this.__trackingEnd__P_424_7) {
-          value = this.__trackingEnd__P_424_7;
+        if (slideBack && value <= this.__trackingEnd__P_420_7 || !slideBack && value >= this.__trackingEnd__P_420_7) {
+          value = this.__trackingEnd__P_420_7;
         } // Finally slide to the desired position
 
 
@@ -572,13 +572,13 @@
         // Update sliding space
         var availSize = this.getInnerSize();
         var knobSize = this.getChildControl("knob").getBounds();
-        var sizeProperty = this.__isHorizontal__P_424_13 ? "width" : "height"; // Sync knob size
+        var sizeProperty = this.__isHorizontal__P_420_13 ? "width" : "height"; // Sync knob size
 
         this._updateKnobSize(); // Store knob size
 
 
-        this.__slidingSpace__P_424_15 = availSize[sizeProperty] - knobSize[sizeProperty];
-        this.__knobSize__P_424_2 = knobSize[sizeProperty]; // Update knob position (sliding space must be updated first)
+        this.__slidingSpace__P_420_15 = availSize[sizeProperty] - knobSize[sizeProperty];
+        this.__knobSize__P_420_2 = knobSize[sizeProperty]; // Update knob position (sliding space must be updated first)
 
         this._updateKnobPosition();
       },
@@ -590,13 +590,13 @@
       */
 
       /** @type {Boolean} Whether the slider is laid out horizontally */
-      __isHorizontal__P_424_13: false,
+      __isHorizontal__P_420_13: false,
 
       /**
        * @type {Integer} Available space for knob to slide on, computed on resize of
        * the widget
        */
-      __slidingSpace__P_424_15: 0,
+      __slidingSpace__P_420_15: 0,
 
       /**
        * Computes the value where the tracking should end depending on
@@ -604,12 +604,12 @@
        *
        * @param e {qx.event.type.Pointer} Incoming pointer event
        */
-      __computeTrackingEnd__P_424_14: function __computeTrackingEnd__P_424_14(e) {
-        var isHorizontal = this.__isHorizontal__P_424_13;
+      __computeTrackingEnd__P_420_14: function __computeTrackingEnd__P_420_14(e) {
+        var isHorizontal = this.__isHorizontal__P_420_13;
         var cursorLocation = isHorizontal ? e.getDocumentLeft() : e.getDocumentTop();
-        var sliderLocation = this.__sliderLocation__P_424_0;
-        var knobLocation = this.__knobLocation__P_424_1;
-        var knobSize = this.__knobSize__P_424_2; // Compute relative position
+        var sliderLocation = this.__sliderLocation__P_420_0;
+        var knobLocation = this.__knobLocation__P_420_1;
+        var knobSize = this.__knobSize__P_420_2; // Compute relative position
 
         var position = cursorLocation - sliderLocation;
 
@@ -630,15 +630,15 @@
         } else {
           var old = this.getValue();
           var step = this.getPageStep();
-          var method = this.__trackingDirection__P_424_6 < 0 ? "floor" : "ceil"; // Fix to page step
+          var method = this.__trackingDirection__P_420_6 < 0 ? "floor" : "ceil"; // Fix to page step
 
           value = old + Math[method]((value - old) / step) * step;
         } // Store value when undefined, otherwise only when it follows the
         // current direction e.g. goes up or down
 
 
-        if (this.__trackingEnd__P_424_7 == null || this.__trackingDirection__P_424_6 == -1 && value <= this.__trackingEnd__P_424_7 || this.__trackingDirection__P_424_6 == 1 && value >= this.__trackingEnd__P_424_7) {
-          this.__trackingEnd__P_424_7 = value;
+        if (this.__trackingEnd__P_420_7 == null || this.__trackingDirection__P_420_6 == -1 && value <= this.__trackingEnd__P_420_7 || this.__trackingDirection__P_420_6 == 1 && value >= this.__trackingEnd__P_420_7) {
+          this.__trackingEnd__P_420_7 = value;
         }
       },
 
@@ -652,7 +652,7 @@
        */
       _positionToValue: function _positionToValue(position) {
         // Reading available space
-        var avail = this.__slidingSpace__P_424_15; // Protect undefined value (before initial resize) and division by zero
+        var avail = this.__slidingSpace__P_420_15; // Protect undefined value (before initial resize) and division by zero
 
         if (avail == null || avail == 0) {
           return 0;
@@ -682,7 +682,7 @@
        */
       _valueToPosition: function _valueToPosition(value) {
         // Reading available space
-        var avail = this.__slidingSpace__P_424_15;
+        var avail = this.__slidingSpace__P_420_15;
 
         if (avail == null) {
           return 0;
@@ -733,7 +733,7 @@
         dec = qx.theme.manager.Decoration.getInstance().resolve(dec);
         var content = knob.getContentElement();
 
-        if (this.__isHorizontal__P_424_13) {
+        if (this.__isHorizontal__P_420_13) {
           if (dec && dec.getPadding()) {
             position += dec.getPadding().left;
           }
@@ -771,7 +771,7 @@
         } // Read size property
 
 
-        if (this.__isHorizontal__P_424_13) {
+        if (this.__isHorizontal__P_420_13) {
           this.getChildControl("knob").setWidth(Math.round(knobFactor * avail.width));
         } else {
           this.getChildControl("knob").setHeight(Math.round(knobFactor * avail.height));
@@ -857,7 +857,7 @@
         this.stopSlideAnimation();
 
         if (duration) {
-          this.__animateTo__P_424_16(value, duration);
+          this.__animateTo__P_420_16(value, duration);
         } else {
           this.updatePosition(value);
         }
@@ -868,7 +868,7 @@
        * @param value {Number} The new position.
        */
       updatePosition: function updatePosition(value) {
-        this.setValue(this.__normalizeValue__P_424_17(value));
+        this.setValue(this.__normalizeValue__P_420_17(value));
       },
 
       /**
@@ -876,10 +876,10 @@
        * If not, the method does nothing.
        */
       stopSlideAnimation: function stopSlideAnimation() {
-        if (this.__scrollAnimationframe__P_424_12) {
-          this.__scrollAnimationframe__P_424_12.cancelSequence();
+        if (this.__scrollAnimationframe__P_420_12) {
+          this.__scrollAnimationframe__P_420_12.cancelSequence();
 
-          this.__scrollAnimationframe__P_424_12 = null;
+          this.__scrollAnimationframe__P_420_12 = null;
         }
       },
 
@@ -889,7 +889,7 @@
        * @param value {Number} The value to normalize.
        * @return {Number} The normalized value.
        */
-      __normalizeValue__P_424_17: function __normalizeValue__P_424_17(value) {
+      __normalizeValue__P_420_17: function __normalizeValue__P_420_17(value) {
         // Bring into allowed range or fix to single step grid
         if (value < this.getMinimum()) {
           value = this.getMinimum();
@@ -907,22 +907,22 @@
        * @param to {Number} The target value.
        * @param duration {Number} The time in milliseconds the slide to should take.
        */
-      __animateTo__P_424_16: function __animateTo__P_424_16(to, duration) {
-        to = this.__normalizeValue__P_424_17(to);
+      __animateTo__P_420_16: function __animateTo__P_420_16(to, duration) {
+        to = this.__normalizeValue__P_420_17(to);
         var from = this.getValue();
-        this.__scrollAnimationframe__P_424_12 = new qx.bom.AnimationFrame();
+        this.__scrollAnimationframe__P_420_12 = new qx.bom.AnimationFrame();
 
-        this.__scrollAnimationframe__P_424_12.on("frame", function (timePassed) {
+        this.__scrollAnimationframe__P_420_12.on("frame", function (timePassed) {
           this.setValue(parseInt(timePassed / duration * (to - from) + from));
         }, this);
 
-        this.__scrollAnimationframe__P_424_12.on("end", function () {
+        this.__scrollAnimationframe__P_420_12.on("end", function () {
           this.setValue(to);
-          this.__scrollAnimationframe__P_424_12 = null;
+          this.__scrollAnimationframe__P_420_12 = null;
           this.fireEvent("slideAnimationEnd");
         }, this);
 
-        this.__scrollAnimationframe__P_424_12.startSequence(duration);
+        this.__scrollAnimationframe__P_420_12.startSequence(duration);
       },
 
       /*
@@ -934,9 +934,9 @@
       _applyOrientation: function _applyOrientation(value, old) {
         var knob = this.getChildControl("knob"); // Update private flag for faster access
 
-        this.__isHorizontal__P_424_13 = value === "horizontal"; // Toggle states and knob layout
+        this.__isHorizontal__P_420_13 = value === "horizontal"; // Toggle states and knob layout
 
-        if (this.__isHorizontal__P_424_13) {
+        if (this.__isHorizontal__P_420_13) {
           this.removeState("vertical");
           knob.removeState("vertical");
           this.addState("horizontal");
@@ -966,7 +966,7 @@
         if (value != null) {
           this._updateKnobSize();
         } else {
-          if (this.__isHorizontal__P_424_13) {
+          if (this.__isHorizontal__P_420_13) {
             this.getChildControl("knob").resetWidth();
           } else {
             this.getChildControl("knob").resetHeight();
@@ -978,8 +978,8 @@
         if (value != null) {
           this._updateKnobPosition();
 
-          if (this.__dragMode__P_424_3) {
-            this.__dragValue__P_424_11 = [value, old];
+          if (this.__dragMode__P_420_3) {
+            this.__dragValue__P_420_11 = [value, old];
           } else {
             this.fireEvent("changeValue", qx.event.type.Data, [value, old]);
           }
@@ -992,12 +992,12 @@
        * Helper for applyValue which fires the changeValue event.
        */
       _fireValue: function _fireValue() {
-        if (!this.__dragValue__P_424_11) {
+        if (!this.__dragValue__P_420_11) {
           return;
         }
 
-        var tmp = this.__dragValue__P_424_11;
-        this.__dragValue__P_424_11 = null;
+        var tmp = this.__dragValue__P_420_11;
+        this.__dragValue__P_420_11 = null;
         this.fireEvent("changeValue", qx.event.type.Data, tmp);
       },
       // property apply
@@ -1021,4 +1021,4 @@
   qx.ui.form.Slider.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Slider.js.map?dt=1608415672632
+//# sourceMappingURL=Slider.js.map?dt=1625734527815

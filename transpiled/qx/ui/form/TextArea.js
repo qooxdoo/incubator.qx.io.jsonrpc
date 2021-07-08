@@ -16,8 +16,12 @@
       "qx.ui.core.queue.Layout": {},
       "qx.ui.core.queue.Manager": {},
       "qx.html.Element": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.bom.Element": {},
       "qx.html.Input": {},
       "qx.bom.element.Dimension": {}
@@ -133,14 +137,14 @@
     *****************************************************************************
     */
     members: {
-      __areaClone__P_427_0: null,
-      __areaHeight__P_427_1: null,
-      __originalAreaHeight__P_427_2: null,
+      __areaClone__P_423_0: null,
+      __areaHeight__P_423_1: null,
+      __originalAreaHeight__P_423_2: null,
       // overridden
       setValue: function setValue(value) {
         value = qx.ui.form.TextArea.prototype.setValue.base.call(this, value);
 
-        this.__autoSize__P_427_3();
+        this.__autoSize__P_423_3();
 
         return value;
       },
@@ -173,12 +177,12 @@
        * @param e {qx.event.type.Data} resize event.
        */
       _onResize: function _onResize(e) {
-        if (this.__areaClone__P_427_0) {
-          this.__areaClone__P_427_0.dispose();
+        if (this.__areaClone__P_423_0) {
+          this.__areaClone__P_423_0.dispose();
 
-          this.__areaClone__P_427_0 = null;
+          this.__areaClone__P_423_0 = null;
 
-          this.__autoSize__P_427_3();
+          this.__autoSize__P_423_3();
         }
       },
 
@@ -192,13 +196,13 @@
       * Adjust height of <code>TextArea</code> so that content fits without scroll bar.
       *
       */
-      __autoSize__P_427_3: function __autoSize__P_427_3() {
+      __autoSize__P_423_3: function __autoSize__P_423_3() {
         if (this.isAutoSize()) {
-          var clone = this.__getAreaClone__P_427_4();
+          var clone = this.__getAreaClone__P_423_4();
 
           if (clone && this.getBounds()) {
             // Remember original area height
-            this.__originalAreaHeight__P_427_2 = this.__originalAreaHeight__P_427_2 || this._getAreaHeight();
+            this.__originalAreaHeight__P_423_2 = this.__originalAreaHeight__P_423_2 || this._getAreaHeight();
 
             var scrolledHeight = this._getScrolledAreaHeight(); // Show scroll-bar when above maxHeight, if defined
 
@@ -215,13 +219,13 @@
             } // Never shrink below original area height
 
 
-            var desiredHeight = Math.max(scrolledHeight, this.__originalAreaHeight__P_427_2); // Set new height
+            var desiredHeight = Math.max(scrolledHeight, this.__originalAreaHeight__P_423_2); // Set new height
 
             this._setAreaHeight(desiredHeight); // On init, the clone is not yet present. Try again on appear.
 
           } else {
             this.getContentElement().addListenerOnce("appear", function () {
-              this.__autoSize__P_427_3();
+              this.__autoSize__P_423_3();
             }, this);
           }
         }
@@ -243,7 +247,7 @@
       */
       _setAreaHeight: function _setAreaHeight(height) {
         if (this._getAreaHeight() !== height) {
-          this.__areaHeight__P_427_1 = height;
+          this.__areaHeight__P_423_1 = height;
           qx.ui.core.queue.Layout.add(this); // Apply height directly. This works-around a visual glitch in WebKit
           // browsers where a line-break causes the text to be moved upwards
           // for one line. Since this change appears instantly whereas the queue
@@ -251,7 +255,7 @@
 
           qx.ui.core.queue.Manager.flush();
 
-          this.__forceRewrap__P_427_5();
+          this.__forceRewrap__P_423_5();
         }
       },
 
@@ -262,7 +266,7 @@
       * @return {Integer} Height of scrolled area
       */
       _getScrolledAreaHeight: function _getScrolledAreaHeight() {
-        var clone = this.__getAreaClone__P_427_4();
+        var clone = this.__getAreaClone__P_423_4();
 
         var cloneDom = clone.getDomElement();
 
@@ -303,7 +307,7 @@
           } // Recompute
 
 
-          this.__scrollCloneToBottom__P_427_6(clone);
+          this.__scrollCloneToBottom__P_423_6(clone);
 
           if (qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") == 8) {
             // Flush required for scrollTop to return correct value
@@ -323,9 +327,9 @@
       * @return {Element|null} DOM Element or <code>null</code> if there is no
       * original element
       */
-      __getAreaClone__P_427_4: function __getAreaClone__P_427_4() {
-        this.__areaClone__P_427_0 = this.__areaClone__P_427_0 || this.__createAreaClone__P_427_7();
-        return this.__areaClone__P_427_0;
+      __getAreaClone__P_423_4: function __getAreaClone__P_423_4() {
+        this.__areaClone__P_423_0 = this.__areaClone__P_423_0 || this.__createAreaClone__P_423_7();
+        return this.__areaClone__P_423_0;
       },
 
       /**
@@ -333,7 +337,7 @@
       *
       * @return {Element} Element
       */
-      __createAreaClone__P_427_7: function __createAreaClone__P_427_7() {
+      __createAreaClone__P_423_7: function __createAreaClone__P_423_7() {
         var orig, clone, cloneDom, cloneHtml;
         orig = this.getContentElement(); // An existing DOM element is required
 
@@ -365,7 +369,7 @@
 
         clone.insertBefore(orig); // Make sure scrollTop is actual height
 
-        this.__scrollCloneToBottom__P_427_6(clone);
+        this.__scrollCloneToBottom__P_423_6(clone);
 
         return clone;
       },
@@ -376,7 +380,7 @@
       *
       * @param clone {Element} The <code>TextArea</code> to scroll
       */
-      __scrollCloneToBottom__P_427_6: function __scrollCloneToBottom__P_427_6(clone) {
+      __scrollCloneToBottom__P_423_6: function __scrollCloneToBottom__P_423_6(clone) {
         clone = clone.getDomElement();
 
         if (clone) {
@@ -412,7 +416,7 @@
           this._placeholder.setStyle("whiteSpace", whiteSpace);
         }
 
-        this.__autoSize__P_427_3();
+        this.__autoSize__P_423_3();
       },
       // property apply
       _applyMinimalLineHeight: function _applyMinimalLineHeight() {
@@ -421,13 +425,13 @@
       // property apply
       _applyAutoSize: function _applyAutoSize(value, old) {
         {
-          this.__warnAutoSizeAndHeight__P_427_8();
+          this.__warnAutoSizeAndHeight__P_423_8();
         }
 
         if (value) {
-          this.__autoSize__P_427_3();
+          this.__autoSize__P_423_3();
 
-          this.addListener("input", this.__autoSize__P_427_3, this); // This is done asynchronously on purpose. The style given would
+          this.addListener("input", this.__autoSize__P_423_3, this); // This is done asynchronously on purpose. The style given would
           // otherwise be overridden by the DOM changes queued in the
           // property apply for wrap. See [BUG #4493] for more details.
 
@@ -439,7 +443,7 @@
             this.getContentElement().setStyle("overflowY", "hidden");
           }
         } else {
-          this.removeListener("input", this.__autoSize__P_427_3);
+          this.removeListener("input", this.__autoSize__P_423_3);
           this.getContentElement().setStyle("overflowY", "auto");
         }
       },
@@ -448,11 +452,11 @@
         qx.ui.form.TextArea.prototype._applyDimension.base.call(this);
 
         {
-          this.__warnAutoSizeAndHeight__P_427_8();
+          this.__warnAutoSizeAndHeight__P_423_8();
         }
 
         if (value === this.getMaxHeight()) {
-          this.__autoSize__P_427_3();
+          this.__autoSize__P_423_3();
         }
       },
 
@@ -465,7 +469,7 @@
        *
        * This method is called on change of the area's size.
        */
-      __forceRewrap__P_427_5: function __forceRewrap__P_427_5() {
+      __forceRewrap__P_423_5: function __forceRewrap__P_423_5() {
         var content = this.getContentElement();
         var element = content.getDomElement(); // Temporarily increase width
 
@@ -484,7 +488,7 @@
        * Warn when both autoSize and height property are set.
        *
        */
-      __warnAutoSizeAndHeight__P_427_8: function __warnAutoSizeAndHeight__P_427_8() {
+      __warnAutoSizeAndHeight__P_423_8: function __warnAutoSizeAndHeight__P_423_8() {
         if (this.isAutoSize() && this.getHeight()) {
           this.warn("autoSize is ignored when the height property is set. If you want to set an initial height, use the minHeight property instead.");
         }
@@ -505,7 +509,7 @@
         hint.width = this._getTextSize().width * 20;
 
         if (this.isAutoSize()) {
-          hint.height = this.__areaHeight__P_427_1 || hint.height;
+          hint.height = this.__areaHeight__P_423_1 || hint.height;
         }
 
         return hint;
@@ -514,12 +518,12 @@
     destruct: function destruct() {
       this.setAutoSize(false);
 
-      if (this.__areaClone__P_427_0) {
-        this.__areaClone__P_427_0.dispose();
+      if (this.__areaClone__P_423_0) {
+        this.__areaClone__P_423_0.dispose();
       }
     }
   });
   qx.ui.form.TextArea.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TextArea.js.map?dt=1608415672818
+//# sourceMappingURL=TextArea.js.map?dt=1625734528007

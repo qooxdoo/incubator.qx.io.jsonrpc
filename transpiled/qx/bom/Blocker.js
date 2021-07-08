@@ -22,7 +22,9 @@
       "qx.event.Registration": {},
       "qx.bom.element.Style": {},
       "qx.bom.element.Opacity": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.dom.Element": {},
       "qx.bom.element.Attribute": {},
       "qx.bom.Document": {},
@@ -375,4 +377,4 @@
   qx.bom.Blocker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Blocker.js.map?dt=1608415635008
+//# sourceMappingURL=Blocker.js.map?dt=1625734490209

@@ -99,7 +99,7 @@
        * @param newPromise {qx.Promise} the new promise
        * @return {qx.Promise} the new promise
        */
-      __push__P_121_0: function __push__P_121_0(tracker, newPromise) {
+      __push__P_118_0: function __push__P_118_0(tracker, newPromise) {
         {
           if (tracker.promises === undefined) {
             tracker.promises = [];
@@ -136,11 +136,11 @@
 
         if (tracker.promise) {
           if (qx.lang.Type.isPromise(fn)) {
-            this.__push__P_121_0(tracker, tracker.promise.then(fn));
+            this.__push__P_118_0(tracker, tracker.promise.then(fn));
           } else {
             var self = this;
 
-            this.__push__P_121_0(tracker, tracker.promise.then(function (result) {
+            this.__push__P_118_0(tracker, tracker.promise.then(function (result) {
               if (tracker.rejected) {
                 return null;
               }
@@ -155,19 +155,19 @@
             }));
           }
 
-          this.__addCatcher__P_121_1(tracker);
+          this.__addCatcher__P_118_1(tracker);
 
           return tracker.promise;
         }
 
         if (qx.lang.Type.isPromise(fn)) {
-          return this.__thenPromise__P_121_2(tracker, fn);
+          return this.__thenPromise__P_118_2(tracker, fn);
         }
 
         var result = fn(tracker.result);
 
         if (qx.lang.Type.isPromise(result)) {
-          return this.__thenPromise__P_121_2(tracker, result);
+          return this.__thenPromise__P_118_2(tracker, result);
         }
 
         tracker.result = result;
@@ -186,16 +186,16 @@
        * @param newPromise {qx.Promise} the new promise
        * @return {qx.Promise} the new promise
        */
-      __thenPromise__P_121_2: function __thenPromise__P_121_2(tracker, newPromise) {
+      __thenPromise__P_118_2: function __thenPromise__P_118_2(tracker, newPromise) {
         if (tracker.promise) {
-          this.__push__P_121_0(tracker, tracker.promise.then(function () {
+          this.__push__P_118_0(tracker, tracker.promise.then(function () {
             return newPromise;
           }));
         } else {
-          this.__push__P_121_0(tracker, newPromise);
+          this.__push__P_118_0(tracker, newPromise);
         }
 
-        this.__addCatcher__P_121_1(tracker);
+        this.__addCatcher__P_118_1(tracker);
 
         return tracker.promise;
       },
@@ -218,7 +218,7 @@
           throw new Error("Rejecting Event");
         }
 
-        var result = this.__catcher__P_121_3(tracker);
+        var result = this.__catcher__P_118_3(tracker);
 
         return result === undefined ? this.ABORT : result;
       },
@@ -228,10 +228,10 @@
        *
        * @param tracker {Object} the tracker object
        */
-      __addCatcher__P_121_1: function __addCatcher__P_121_1(tracker) {
+      __addCatcher__P_118_1: function __addCatcher__P_118_1(tracker) {
         if (tracker.promise && tracker.catch) {
           if (!tracker.promise["qx.event.Utils.hasCatcher"]) {
-            this.__push__P_121_0(tracker, tracker.promise.catch(this.__catcher__P_121_3.bind(this, tracker)));
+            this.__push__P_118_0(tracker, tracker.promise.catch(this.__catcher__P_118_3.bind(this, tracker)));
 
             tracker.promise["qx.event.Utils.hasCatcher"] = true;
           }
@@ -245,7 +245,7 @@
        *
        * @param tracker {Object} the tracker object
        */
-      __catcher__P_121_3: function __catcher__P_121_3(tracker, err) {
+      __catcher__P_118_3: function __catcher__P_118_3(tracker, err) {
         var fn = tracker.catch;
 
         if (fn) {
@@ -290,7 +290,7 @@
           tracker.catch = fn;
         }
 
-        this.__addCatcher__P_121_1(tracker);
+        this.__addCatcher__P_118_1(tracker);
       },
 
       /**
@@ -361,4 +361,4 @@
   qx.event.Utils.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Utils.js.map?dt=1608415644097
+//# sourceMappingURL=Utils.js.map?dt=1625734499284

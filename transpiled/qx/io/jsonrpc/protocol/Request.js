@@ -46,14 +46,14 @@
       /**
        * Static counter for all request ids
        */
-      __current_request_id__P_159_0: 0,
+      __current_request_id__P_156_0: 0,
 
       getCurrentId() {
-        return qx.io.jsonrpc.protocol.Request.__current_request_id__P_159_0;
+        return qx.io.jsonrpc.protocol.Request.__current_request_id__P_156_0;
       },
 
       resetId() {
-        qx.io.jsonrpc.protocol.Request.__current_request_id__P_159_0 = 0;
+        qx.io.jsonrpc.protocol.Request.__current_request_id__P_156_0 = 0;
       }
 
     },
@@ -78,24 +78,24 @@
       qx.io.jsonrpc.protocol.Notification.constructor.call(this, method, params);
 
       if (id === undefined) {
-        id = ++qx.io.jsonrpc.protocol.Request.__current_request_id__P_159_0;
+        id = ++qx.io.jsonrpc.protocol.Request.__current_request_id__P_156_0;
       }
 
       this.set({
         id
       });
-      this.__promise__P_159_1 = new qx.Promise();
+      this.__promise__P_156_1 = new qx.Promise();
     },
 
     members: {
-      __promise__P_159_1: null,
+      __promise__P_156_1: null,
 
       /**
        * Getter for promise which resolves with the result to the request
        * @return {qx.Promise}
        */
       getPromise() {
-        return this.__promise__P_159_1;
+        return this.__promise__P_156_1;
       },
 
       /**
@@ -118,4 +118,4 @@
   qx.io.jsonrpc.protocol.Request.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Request.js.map?dt=1608415647075
+//# sourceMappingURL=Request.js.map?dt=1625734502604

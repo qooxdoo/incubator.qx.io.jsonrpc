@@ -13,6 +13,9 @@
         "usage": "dynamic",
         "require": true
       },
+      "qx.bom.client.EcmaScript": {
+        "require": true
+      },
       "qx.lang.Array": {},
       "qx.lang.Function": {},
       "qx.core.ObjectRegistry": {},
@@ -422,4 +425,4 @@
   qx.dev.StackTrace.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=StackTrace.js.map?dt=1608415642210
+//# sourceMappingURL=StackTrace.js.map?dt=1625734497342

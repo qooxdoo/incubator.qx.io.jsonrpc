@@ -46,9 +46,9 @@
      * @param message {String?} Optional error message
      */
     construct: function construct(requirement, message) {
-      this.__message__P_107_0 = message || "Requirement not met";
-      this.__requirement__P_107_1 = requirement;
-      var inst = Error.call(this, this.__message__P_107_0); // map stack trace properties since they're not added by Error's constructor
+      this.__message__P_106_0 = message || "Requirement not met";
+      this.__requirement__P_106_1 = requirement;
+      var inst = Error.call(this, this.__message__P_106_0); // map stack trace properties since they're not added by Error's constructor
 
       if (inst.stack) {
         this.stack = inst.stack;
@@ -65,8 +65,8 @@
     *****************************************************************************
     */
     members: {
-      __message__P_107_0: null,
-      __requirement__P_107_1: null,
+      __message__P_106_0: null,
+      __requirement__P_106_1: null,
 
       /**
        * Returns the ID of the requirement that was not satisfied.
@@ -74,7 +74,7 @@
        * @return {String} The requirement ID
        */
       getRequirement: function getRequirement() {
-        return this.__requirement__P_107_1;
+        return this.__requirement__P_106_1;
       },
 
       /**
@@ -83,10 +83,10 @@
        * @return {String} Error message
        */
       toString: function toString() {
-        var msg = this.__message__P_107_0;
+        var msg = this.__message__P_106_0;
 
-        if (this.__requirement__P_107_1) {
-          msg += ": " + this.__requirement__P_107_1;
+        if (this.__requirement__P_106_1) {
+          msg += ": " + this.__requirement__P_106_1;
         }
 
         return msg;
@@ -96,4 +96,4 @@
   qx.dev.unit.RequirementError.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RequirementError.js.map?dt=1608415642536
+//# sourceMappingURL=RequirementError.js.map?dt=1625734497680

@@ -15,7 +15,9 @@
       "qx.xml.Element": {},
       "qx.xml.Document": {},
       "qx.dom.Node": {},
-      "qx.bom.client.Engine": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -173,4 +175,4 @@
   qx.test.Xml.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Xml.js.map?dt=1608415651756
+//# sourceMappingURL=Xml.js.map?dt=1625734507103

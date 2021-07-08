@@ -44,18 +44,18 @@
     extend: qx.dev.unit.TestCase,
     members: {
       tearDown: function tearDown() {
-        if (this.__sheet__P_216_0) {
-          var ownerNode = this.__sheet__P_216_0.ownerNode || this.__sheet__P_216_0.owningNode;
+        if (this.__sheet__P_213_0) {
+          var ownerNode = this.__sheet__P_213_0.ownerNode || this.__sheet__P_213_0.owningNode;
 
           if (ownerNode && ownerNode.parentNode) {
             ownerNode.parentNode.removeChild(ownerNode);
           } else {
-            qx.bom.Stylesheet.removeAllRules(this.__sheet__P_216_0);
+            qx.bom.Stylesheet.removeAllRules(this.__sheet__P_213_0);
           }
         }
       },
       testAddImport: function testAddImport() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement();
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement();
         var uri = qx.util.ResourceManager.getInstance().toUri("qx/test/style.css");
         qx.bom.Stylesheet.addImport(sheet, uri);
 
@@ -70,7 +70,7 @@
         qx.bom.Stylesheet.removeImport(sheet, uri);
       },
       testAddRule: function testAddRule() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement();
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement();
         qx.bom.Stylesheet.addRule(sheet, "#foo", "color: red;");
         var rules = sheet.cssRules || sheet.rules;
         this.assertEquals(1, rules.length);
@@ -82,14 +82,14 @@
         }
       },
       testCreateElement: function testCreateElement() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement();
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement();
         var rules = sheet.cssRules || sheet.rules;
         this.assertNotUndefined(rules, "Created element is not a stylesheet!");
         this.assertEquals(0, rules.length);
       },
       testCreateElementWithText: function testCreateElementWithText() {
         var cssText = "#foo { color: red; }";
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement(cssText);
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement(cssText);
         var rules = sheet.cssRules || sheet.rules;
         this.assertNotUndefined(rules, "Created element is not a stylesheet!");
         this.assertEquals(1, rules.length);
@@ -111,7 +111,7 @@
         this.assert(found, "Link element was not added to the document!");
       },
       testRemoveAllImports: function testRemoveAllImports() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement();
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement();
         var uri = qx.util.ResourceManager.getInstance().toUri("qx/test/style.css");
         qx.bom.Stylesheet.addImport(sheet, uri);
         qx.bom.Stylesheet.addImport(sheet, uri);
@@ -125,7 +125,7 @@
         }
       },
       testRemoveAllRules: function testRemoveAllRules() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement();
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement();
         qx.bom.Stylesheet.addRule(sheet, "#foo", "color: red;");
         qx.bom.Stylesheet.addRule(sheet, "#bar", "color: blue;");
         var rules = sheet.cssRules || sheet.rules;
@@ -135,7 +135,7 @@
         this.assertEquals(0, rules.length);
       },
       testRemoveImport: function testRemoveImport() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement();
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement();
         var uri = qx.util.ResourceManager.getInstance().toUri("qx/test/style.css");
         qx.bom.Stylesheet.addImport(sheet, uri);
         qx.bom.Stylesheet.removeImport(sheet, uri);
@@ -148,7 +148,7 @@
         }
       },
       testRemoveRule: function testRemoveRule() {
-        var sheet = this.__sheet__P_216_0 = qx.bom.Stylesheet.createElement("#foo { color: red; }");
+        var sheet = this.__sheet__P_213_0 = qx.bom.Stylesheet.createElement("#foo { color: red; }");
         qx.bom.Stylesheet.removeRule(sheet, "#foo");
         var rules = sheet.cssRules || sheet.rules;
         this.assertEquals(0, rules.length);
@@ -158,4 +158,4 @@
   qx.test.bom.Stylesheet.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Stylesheet.js.map?dt=1608415652493
+//# sourceMappingURL=Stylesheet.js.map?dt=1625734507805

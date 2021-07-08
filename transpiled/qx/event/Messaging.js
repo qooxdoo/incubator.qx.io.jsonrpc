@@ -54,13 +54,13 @@
    */
   qx.Bootstrap.define("qx.event.Messaging", {
     construct: function construct() {
-      this._listener = {}, this.__listenerIdCount__P_118_0 = 0;
-      this.__channelToIdMapping__P_118_1 = {};
+      this._listener = {}, this.__listenerIdCount__P_115_0 = 0;
+      this.__channelToIdMapping__P_115_1 = {};
     },
     members: {
       _listener: null,
-      __listenerIdCount__P_118_0: null,
-      __channelToIdMapping__P_118_1: null,
+      __listenerIdCount__P_115_0: null,
+      __channelToIdMapping__P_115_1: null,
 
       /**
        * Adds a route handler for the given channel. The route is called
@@ -100,7 +100,7 @@
        */
       _addListener: function _addListener(channel, type, handler, scope) {
         var listeners = this._listener[channel] = this._listener[channel] || {};
-        var id = this.__listenerIdCount__P_118_0++;
+        var id = this.__listenerIdCount__P_115_0++;
         var params = [];
         var param = null; // Convert the route to a regular expression.
 
@@ -120,7 +120,7 @@
           handler: handler,
           scope: scope
         };
-        this.__channelToIdMapping__P_118_1[id] = channel;
+        this.__channelToIdMapping__P_115_1[id] = channel;
         return id;
       },
 
@@ -130,10 +130,10 @@
        * @param id {String} The id of the registered listener.
        */
       remove: function remove(id) {
-        var channel = this.__channelToIdMapping__P_118_1[id];
+        var channel = this.__channelToIdMapping__P_115_1[id];
         var listener = this._listener[channel];
         delete listener[id];
-        delete this.__channelToIdMapping__P_118_1[id];
+        delete this.__channelToIdMapping__P_115_1[id];
       },
 
       /**
@@ -268,4 +268,4 @@
   qx.event.Messaging.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Messaging.js.map?dt=1608415643929
+//# sourceMappingURL=Messaging.js.map?dt=1625734499114

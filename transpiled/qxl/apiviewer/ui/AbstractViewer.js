@@ -16,7 +16,9 @@
       "qxl.apiviewer.ObjectRegistry": {
         "construct": true
       },
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.dev.Tokenizer": {},
       "qx.util.StringBuilder": {},
       "qx.Promise": {},
@@ -174,13 +176,13 @@
     members: {
       _infoPanelHash: null,
       _infoPanels: null,
-      __valid__P_605_0: false,
+      __valid__P_601_0: false,
       _init: function _init(pkg) {
-        this.__initHtml__P_605_1();
+        this.__initHtml__P_601_1();
 
         this.addListenerOnce("appear", () => this._syncHtml());
       },
-      __initHtml__P_605_1: function __initHtml__P_605_1() {
+      __initHtml__P_601_1: function __initHtml__P_601_1() {
         var html = new qx.util.StringBuilder();
         html.add("<div style=\"padding:24px;\">"); // Add title
 
@@ -242,11 +244,11 @@
           await this._applyDocNode(this.getDocNode());
         }
 
-        this.__valid__P_605_0 = true;
+        this.__valid__P_601_0 = true;
         this.fireEvent("synced");
       },
       isValid: function isValid() {
-        return this.__valid__P_605_0;
+        return this.__valid__P_601_0;
       },
       addInfoPanel: function addInfoPanel(panel) {
         this._infoPanelHash[panel.toHashCode()] = panel;
@@ -413,4 +415,4 @@
   qxl.apiviewer.ui.AbstractViewer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractViewer.js.map?dt=1608415687148
+//# sourceMappingURL=AbstractViewer.js.map?dt=1625734542436

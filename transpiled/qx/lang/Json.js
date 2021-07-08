@@ -9,7 +9,9 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.bom.client.Runtime": {}
+      "qx.bom.client.Runtime": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -1248,4 +1250,4 @@
   qx.lang.Json.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Json.js.map?dt=1608415648647
+//# sourceMappingURL=Json.js.map?dt=1625734504153

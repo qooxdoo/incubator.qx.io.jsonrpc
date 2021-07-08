@@ -12,7 +12,9 @@
       "qx.dev.unit.TestCase": {
         "require": true
       },
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.util.ResourceManager": {},
       "qx.dev.unit.RequirementError": {},
       "qx.bom.WebWorker": {}
@@ -158,4 +160,4 @@
   qx.test.bom.WebWorker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WebWorker.js.map?dt=1608415652586
+//# sourceMappingURL=WebWorker.js.map?dt=1625734507892

@@ -18,7 +18,8 @@
         "require": true
       },
       "qx.bom.client.Html": {
-        "construct": true
+        "construct": true,
+        "require": true
       },
       "qx.lang.Function": {},
       "qx.bom.Event": {},
@@ -193,4 +194,4 @@
   qx.bom.WebWorker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=WebWorker.js.map?dt=1608415636923
+//# sourceMappingURL=WebWorker.js.map?dt=1625734492116

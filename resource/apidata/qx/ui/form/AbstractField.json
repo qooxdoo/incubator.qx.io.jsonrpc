@@ -395,6 +395,7 @@
       },
       "name": "liveUpdateOnRxMatch",
       "propertyType": "new",
+      "transform": "_string2RegExp",
       "check": "RegExp"
     },
     "placeholder": {

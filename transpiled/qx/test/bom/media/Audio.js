@@ -15,7 +15,9 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.bom.client.Html": {},
+      "qx.bom.client.Html": {
+        "require": true
+      },
       "qx.util.ResourceManager": {},
       "qx.bom.media.Audio": {}
     },
@@ -93,4 +95,4 @@
   qx.test.bom.media.Audio.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Audio.js.map?dt=1608415652949
+//# sourceMappingURL=Audio.js.map?dt=1625734508234

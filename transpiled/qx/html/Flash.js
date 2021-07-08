@@ -59,9 +59,9 @@
      */
     construct: function construct(styles, attributes) {
       qx.html.Element.constructor.call(this, "div", styles, attributes);
-      this.__params__P_152_0 = {};
-      this.__variables__P_152_1 = {};
-      this.__attributes__P_152_2 = {};
+      this.__params__P_149_0 = {};
+      this.__variables__P_149_1 = {};
+      this.__attributes__P_149_2 = {};
     },
 
     /*
@@ -71,16 +71,16 @@
     */
     members: {
       /** @type {Map} The attributes for the Flash movie. */
-      __params__P_152_0: null,
+      __params__P_149_0: null,
 
       /** @type {Map} the attributes for the object tag */
-      __attributes__P_152_2: null,
+      __attributes__P_149_2: null,
 
       /** @type {Map} The <code>FlashVars</code> to pass variables to the Flash movie. */
-      __variables__P_152_1: null,
+      __variables__P_149_1: null,
 
       /** @type {qx.bom.Flash} The DOM Flash element. */
-      __flash__P_152_3: null,
+      __flash__P_149_3: null,
       // overridden
       _createDomElement: function _createDomElement() {
         return qx.dom.Element.create("div");
@@ -91,7 +91,7 @@
        * <code>FlashVars</code>.
        */
       createFlash: function createFlash() {
-        this.__flash__P_152_3 = qx.bom.Flash.create(this.getDomElement(), this.getAttributes(), this.__variables__P_152_1, this.__params__P_152_0);
+        this.__flash__P_149_3 = qx.bom.Flash.create(this.getDomElement(), this.getAttributes(), this.__variables__P_149_1, this.__params__P_149_0);
       },
 
       /**
@@ -104,7 +104,7 @@
           qx.core.Assert.assertString(value, "Invalid attribute 'value'.");
         }
 
-        if (this.__flash__P_152_3) {
+        if (this.__flash__P_149_3) {
           throw new Error("The source cannot be modified after initial creation");
         }
 
@@ -121,7 +121,7 @@
           qx.core.Assert.assertString(value, "Invalid attribute 'value'.");
         }
 
-        if (this.__flash__P_152_3) {
+        if (this.__flash__P_149_3) {
           throw new Error("The id cannot be modified after initial creation");
         }
 
@@ -135,7 +135,7 @@
        *    <code>FlashVars</code>}
        */
       getVariables: function getVariables() {
-        return this.__variables__P_152_1;
+        return this.__variables__P_149_1;
       },
 
       /**
@@ -149,11 +149,11 @@
           qx.core.Assert.assertMap(value, "Invalid attribute 'value'.");
         }
 
-        if (this.__flash__P_152_3) {
+        if (this.__flash__P_149_3) {
           throw new Error("The variables cannot be modified after initial creation");
         }
 
-        this.__variables__P_152_1 = value;
+        this.__variables__P_149_1 = value;
       },
 
       /**
@@ -162,7 +162,7 @@
        * @return {Map} Attributes for the DOM element.
        */
       getAttributes: function getAttributes() {
-        return this.__attributes__P_152_2;
+        return this.__attributes__P_149_2;
       },
 
       /**
@@ -184,14 +184,14 @@
 
         if (key.indexOf("$$") === 0) {
           qx.html.Flash.prototype.setAttribute.base.call(this, key, value);
-        } else if (this.__flash__P_152_3) {
+        } else if (this.__flash__P_149_3) {
           throw new Error("The attributes cannot be modified after initial creation");
         }
 
         if (value === null || value === undefined) {
-          delete this.__attributes__P_152_2[key];
+          delete this.__attributes__P_149_2[key];
         } else {
-          this.__attributes__P_152_2[key] = value;
+          this.__attributes__P_149_2[key] = value;
         }
       },
 
@@ -201,7 +201,7 @@
        * @return {Map} Map with key/value pairs for the Flash DOM element.
        */
       getParams: function getParams() {
-        return this.__params__P_152_0;
+        return this.__params__P_149_0;
       },
 
       /**
@@ -221,14 +221,14 @@
           }
         }
 
-        if (this.__flash__P_152_3) {
+        if (this.__flash__P_149_3) {
           throw new Error("The params cannot be modified after initial creation");
         }
 
         if (value === null || value === undefined) {
-          delete this.__params__P_152_0[key];
+          delete this.__params__P_149_0[key];
         } else {
-          this.__params__P_152_0[key] = value;
+          this.__params__P_149_0[key] = value;
         }
       },
 
@@ -238,7 +238,7 @@
        * @return {Element|null} The DOM Flash element, otherwise <code>null</code>.
        */
       getFlashElement: function getFlashElement() {
-        return this.__flash__P_152_3;
+        return this.__flash__P_149_3;
       }
     },
 
@@ -248,14 +248,14 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      if (this.__flash__P_152_3) {
-        qx.bom.Flash.destroy(this.__flash__P_152_3);
+      if (this.__flash__P_149_3) {
+        qx.bom.Flash.destroy(this.__flash__P_149_3);
       }
 
-      this.__params__P_152_0 = this.__variables__P_152_1 = this.__attributes__P_152_2 = null;
+      this.__params__P_149_0 = this.__variables__P_149_1 = this.__attributes__P_149_2 = null;
     }
   });
   qx.html.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1608415646537
+//# sourceMappingURL=Flash.js.map?dt=1625734501985

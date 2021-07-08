@@ -58,7 +58,8 @@
         "require": true
       },
       "qx.bom.client.Event": {
-        "defer": "runtime"
+        "defer": "load",
+        "require": true
       }
     },
     "environment": {
@@ -121,10 +122,10 @@
      */
     construct: function construct(manager) {
       // Define shorthands
-      this.__manager__P_139_0 = manager;
-      this.__window__P_139_1 = manager.getWindow();
-      this.__root__P_139_2 = this.__window__P_139_1.document;
-      qx.event.handler.TouchCore.apply(this, [this.__root__P_139_2]);
+      this.__manager__P_136_0 = manager;
+      this.__window__P_136_1 = manager.getWindow();
+      this.__root__P_136_2 = this.__window__P_136_1.document;
+      qx.event.handler.TouchCore.apply(this, [this.__root__P_136_2]);
     },
 
     /*
@@ -168,11 +169,11 @@
     *****************************************************************************
     */
     members: {
-      __manager__P_139_0: null,
-      __window__P_139_1: null,
-      __root__P_139_2: null,
+      __manager__P_136_0: null,
+      __window__P_136_1: null,
+      __root__P_136_2: null,
       // Checks if the mouse movement is happening while simulating a touch event
-      __isInTouch__P_139_3: false,
+      __isInTouch__P_136_3: false,
 
       /*
       ---------------------------------------------------------------------------
@@ -214,7 +215,7 @@
         } // Fire user action event
 
 
-        qx.event.Registration.fireEvent(this.__window__P_139_1, "useraction", qx.event.type.Data, [type]);
+        qx.event.Registration.fireEvent(this.__window__P_136_1, "useraction", qx.event.type.Data, [type]);
       },
 
       /*
@@ -237,9 +238,9 @@
        * Dispose this object
        */
       dispose: function dispose() {
-        this.__callBase__P_139_4("dispose");
+        this.__callBase__P_136_4("dispose");
 
-        this.__manager__P_139_0 = this.__window__P_139_1 = this.__root__P_139_2 = null;
+        this.__manager__P_136_0 = this.__window__P_136_1 = this.__root__P_136_2 = null;
       },
 
       /**
@@ -248,7 +249,7 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase__P_139_4: function __callBase__P_139_4(method, args) {
+      __callBase__P_136_4: function __callBase__P_136_4(method, args) {
         qx.event.handler.TouchCore.prototype[method].apply(this, args || []);
       }
     },
@@ -270,4 +271,4 @@
   qx.event.handler.Touch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Touch.js.map?dt=1608415645329
+//# sourceMappingURL=Touch.js.map?dt=1625734500587

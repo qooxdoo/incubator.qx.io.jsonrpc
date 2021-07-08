@@ -33,7 +33,9 @@
       },
       "qx.lang.Function": {},
       "qx.bom.Event": {},
-      "qx.event.GlobalError": {}
+      "qx.event.GlobalError": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -187,8 +189,8 @@
        */
       _onNative: function _onNative() {
         var callback = qx.core.Environment.select("qx.globalErrorHandling", {
-          "true": qx.event.GlobalError.observeMethod(this.__onNativeHandler__P_143_0),
-          "false": this.__onNativeHandler__P_143_0
+          "true": qx.event.GlobalError.observeMethod(this.__onNativeHandler__P_140_0),
+          "false": this.__onNativeHandler__P_140_0
         });
         callback.apply(this, arguments);
       },
@@ -199,7 +201,7 @@
        * @param e {Event} Native event
        * @return {String|undefined}
        */
-      __onNativeHandler__P_143_0: function __onNativeHandler__P_143_0(e) {
+      __onNativeHandler__P_140_0: function __onNativeHandler__P_140_0(e) {
         if (this.isDisposed()) {
           return;
         }
@@ -260,4 +262,4 @@
   qx.event.handler.Window.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Window.js.map?dt=1608415645502
+//# sourceMappingURL=Window.js.map?dt=1625734500757

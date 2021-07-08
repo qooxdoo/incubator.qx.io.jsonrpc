@@ -17,9 +17,13 @@
       "qx.bom.client.Event": {
         "require": true
       },
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.bom.HashHistory": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.bom.IframeHistory": {},
       "qx.bom.NativeHistory": {},
       "qx.lang.Type": {},
@@ -396,4 +400,4 @@
   qx.bom.History.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=History.js.map?dt=1608415635495
+//# sourceMappingURL=History.js.map?dt=1625734490726

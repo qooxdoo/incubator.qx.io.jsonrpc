@@ -18,7 +18,9 @@
       "qx.dom.Element": {},
       "qx.bom.Event": {},
       "qx.log.Logger": {},
-      "qx.bom.client.Event": {}
+      "qx.bom.client.Event": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -101,4 +103,4 @@
   qx.test.bom.Event.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Event.js.map?dt=1608415652085
+//# sourceMappingURL=Event.js.map?dt=1625734507407

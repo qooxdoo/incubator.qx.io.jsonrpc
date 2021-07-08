@@ -210,7 +210,7 @@
         qx.Mixin.define("qx.MPatch", {
           members: {
             sayJuhu: function sayJuhu() {
-              return qx.MPatch.$$members.sayJuhu.base.call(this) + " Kinners";
+              return qx.Mixin.baseClassMethod(this.constructor, qx.MPatch, "sayJuhu").call(this) + " Kinners";
             },
 
             /** @lint ignoreUndeclaredPrivates(__b) */
@@ -218,11 +218,11 @@
               var s = "";
 
               if (!dontRecurs) {
-                this.__b__P_204_0 = new qx.Patch2();
-                s += "++" + this.__b__P_204_0.foo(true) + "____P_204_1";
+                this.__b__P_201_0 = new qx.Patch2();
+                s += "++" + this.__b__P_201_0.foo(true) + "__";
               }
 
-              s += qx.MPatch.$$members.foo.base.call(this);
+              s += qx.Mixin.baseClassMethod(this.constructor, qx.MPatch, "foo").call(this);
               return s;
             }
           }
@@ -248,7 +248,7 @@
         var o = new qx.Patch1();
         this.assertEquals("++bar__foo", o.foo());
 
-        o.__b__P_204_0.dispose();
+        o.__b__P_201_0.dispose();
 
         o.dispose();
       },
@@ -301,4 +301,4 @@
   qx.test.Mixin.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Mixin.js.map?dt=1608415651485
+//# sourceMappingURL=Mixin.js.map?dt=1625734506835

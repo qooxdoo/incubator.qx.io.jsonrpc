@@ -10,7 +10,9 @@
         "require": true
       },
       "qx.dom.Node": {},
-      "qx.bom.client.Html": {},
+      "qx.bom.client.Html": {
+        "require": true
+      },
       "qx.lang.Array": {}
     },
     "environment": {
@@ -466,4 +468,4 @@
   qx.dom.Hierarchy.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Hierarchy.js.map?dt=1608415643580
+//# sourceMappingURL=Hierarchy.js.map?dt=1625734498758

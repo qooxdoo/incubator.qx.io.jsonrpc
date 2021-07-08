@@ -41,11 +41,11 @@
     type: "singleton",
     extend: qx.core.Object,
     construct: function construct() {
-      this.__blocker__P_602_0 = new qx.ui.core.Blocker(qxl.apiviewer.MWidgetRegistry.getWidgetById("tabView"));
+      this.__blocker__P_598_0 = new qx.ui.core.Blocker(qxl.apiviewer.MWidgetRegistry.getWidgetById("tabView"));
 
-      this.__blocker__P_602_0.setColor("#D5D5D5");
+      this.__blocker__P_598_0.setColor("#D5D5D5");
 
-      this.__blocker__P_602_0.setOpacity(0.5);
+      this.__blocker__P_598_0.setOpacity(0.5);
       /*
       this.__blocker.getBlockerElement().setStyle("padding-top", "100px");
       this.__blocker.getBlockerElement().setStyle("padding-left", "10px");
@@ -57,16 +57,16 @@
 
     },
     members: {
-      __blocker__P_602_0: null,
+      __blocker__P_598_0: null,
       show: function show() {
-        this.__blocker__P_602_0.block();
+        this.__blocker__P_598_0.block();
       },
       hide: function hide() {
-        this.__blocker__P_602_0.unblock();
+        this.__blocker__P_598_0.unblock();
       }
     }
   });
   qxl.apiviewer.LoadingIndicator.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LoadingIndicator.js.map?dt=1608415686667
+//# sourceMappingURL=LoadingIndicator.js.map?dt=1625734541939

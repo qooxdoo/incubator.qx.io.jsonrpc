@@ -13,8 +13,12 @@
         "require": true
       },
       "qx.util.ResourceManager": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Transport": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Transport": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -98,4 +102,4 @@
   qx.test.util.ResourceManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ResourceManager.js.map?dt=1608415665700
+//# sourceMappingURL=ResourceManager.js.map?dt=1625734520975

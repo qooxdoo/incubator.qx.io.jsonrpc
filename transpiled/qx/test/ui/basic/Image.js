@@ -16,14 +16,18 @@
         "require": true
       },
       "qx.ui.basic.Image": {},
-      "qx.bom.client.Css": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
       "qx.io.ImageLoader": {},
       "qx.dev.unit.RequirementError": {},
       "qx.html.Image": {},
       "qx.html.Label": {},
       "qx.bom.client.Device": {},
       "qx.util.ResourceManager": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.theme.manager.Font": {},
       "qx.Theme": {}
     },
@@ -470,4 +474,4 @@
   qx.test.ui.basic.Image.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Image.js.map?dt=1608415660528
+//# sourceMappingURL=Image.js.map?dt=1625734515887

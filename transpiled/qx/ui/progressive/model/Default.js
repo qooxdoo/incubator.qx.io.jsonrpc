@@ -38,10 +38,10 @@
     extend: qx.ui.progressive.model.Abstract,
     construct: function construct() {
       qx.ui.progressive.model.Abstract.constructor.call(this);
-      this.__elements__P_488_0 = [];
+      this.__elements__P_484_0 = [];
     },
     members: {
-      __elements__P_488_0: null,
+      __elements__P_484_0: null,
 
       /**
        * Add elements to be progressively rendered.  Each element must be an
@@ -53,9 +53,9 @@
        */
       addElements: function addElements(elems) {
         // Add the new elements to our elements queue.
-        this.__elements__P_488_0 = this.__elements__P_488_0.concat(elems); // Tell Progressive that data is available
+        this.__elements__P_484_0 = this.__elements__P_484_0.concat(elems); // Tell Progressive that data is available
 
-        this.fireDataEvent("dataAvailable", this.__elements__P_488_0.length);
+        this.fireDataEvent("dataAvailable", this.__elements__P_484_0.length);
       },
 
       /**
@@ -68,23 +68,23 @@
        */
       addElement: function addElement(elem) {
         // Add the new elements to our elements queue.
-        this.__elements__P_488_0.push(elem); // Tell Progressive that data is available
+        this.__elements__P_484_0.push(elem); // Tell Progressive that data is available
 
 
-        this.fireDataEvent("dataAvailable", this.__elements__P_488_0.length);
+        this.fireDataEvent("dataAvailable", this.__elements__P_484_0.length);
       },
       // overridden
       getElementCount: function getElementCount() {
-        return this.__elements__P_488_0.length;
+        return this.__elements__P_484_0.length;
       },
       // overridden
       getNextElement: function getNextElement() {
         // Do we have any remaining elements?
-        if (this.__elements__P_488_0.length > 0) {
+        if (this.__elements__P_484_0.length > 0) {
           // Yup.  Give 'em the first one and remove it from our queue.
           return {
-            element: this.__elements__P_488_0.shift(),
-            remaining: this.__elements__P_488_0.length
+            element: this.__elements__P_484_0.shift(),
+            remaining: this.__elements__P_484_0.length
           };
         }
 
@@ -92,10 +92,10 @@
       }
     },
     destruct: function destruct() {
-      this.__elements__P_488_0 = null;
+      this.__elements__P_484_0 = null;
     }
   });
   qx.ui.progressive.model.Default.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Default.js.map?dt=1608415677626
+//# sourceMappingURL=Default.js.map?dt=1625734532981

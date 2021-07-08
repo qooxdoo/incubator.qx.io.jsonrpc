@@ -94,4 +94,4 @@
   qxl.apiviewer.ui.panels.PackagePanel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PackagePanel.js.map?dt=1608415687198
+//# sourceMappingURL=PackagePanel.js.map?dt=1625734542484

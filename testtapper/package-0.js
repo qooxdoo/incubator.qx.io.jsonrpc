@@ -1,6 +1,6 @@
 qx.$$packageData['0'] = {
   "locales": {
-    "en": {
+    "C": {
       "alternateQuotationEnd": "’",
       "alternateQuotationStart": "‘",
       "quotationEnd": "”",
@@ -128,7 +128,7 @@ qx.$$packageData['0'] = {
         "time zone"
       ]
     },
-    "C": {
+    "en": {
       "alternateQuotationEnd": "’",
       "alternateQuotationStart": "‘",
       "quotationEnd": "”",
@@ -2352,121 +2352,139 @@ qx.$$packageData['0'] = {
       "png",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialicons-v50.eot": [
+    "qx/iconfont/MaterialIcons/LICENSE.txt": [
+      null,
+      null,
+      "txt",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/MaterialIcons-Regular.nam": [
+      null,
+      null,
+      "nam",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/fetch-fonts.sh": [
+      null,
+      null,
+      "sh",
+      "qx"
+    ],
+    "qx/iconfont/MaterialIcons/materialicons-v70.eot": [
       null,
       null,
       "eot",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialicons-v50.ttf": [
+    "qx/iconfont/MaterialIcons/materialicons-v70.ttf": [
       null,
       null,
       "ttf",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialicons-v50.woff": [
+    "qx/iconfont/MaterialIcons/materialicons-v70.woff": [
       null,
       null,
       "woff",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialicons-v50.woff2": [
+    "qx/iconfont/MaterialIcons/materialicons-v70.woff2": [
       null,
       null,
       "woff2",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.eot": [
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v38.eot": [
       null,
       null,
       "eot",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.otf": [
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v38.otf": [
       null,
       null,
       "otf",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff": [
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v38.woff": [
       null,
       null,
       "woff",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff2": [
+    "qx/iconfont/MaterialIcons/materialiconsoutlined-v38.woff2": [
       null,
       null,
       "woff2",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsround-v18.eot": [
+    "qx/iconfont/MaterialIcons/materialiconsround-v37.eot": [
       null,
       null,
       "eot",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsround-v18.otf": [
+    "qx/iconfont/MaterialIcons/materialiconsround-v37.otf": [
       null,
       null,
       "otf",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsround-v18.woff": [
+    "qx/iconfont/MaterialIcons/materialiconsround-v37.woff": [
       null,
       null,
       "woff",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconsround-v18.woff2": [
+    "qx/iconfont/MaterialIcons/materialiconsround-v37.woff2": [
       null,
       null,
       "woff2",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconssharp-v19.eot": [
+    "qx/iconfont/MaterialIcons/materialiconssharp-v38.eot": [
       null,
       null,
       "eot",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconssharp-v19.otf": [
+    "qx/iconfont/MaterialIcons/materialiconssharp-v38.otf": [
       null,
       null,
       "otf",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconssharp-v19.woff": [
+    "qx/iconfont/MaterialIcons/materialiconssharp-v38.woff": [
       null,
       null,
       "woff",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconssharp-v19.woff2": [
+    "qx/iconfont/MaterialIcons/materialiconssharp-v38.woff2": [
       null,
       null,
       "woff2",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.eot": [
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v36.eot": [
       null,
       null,
       "eot",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.otf": [
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v36.otf": [
       null,
       null,
       "otf",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff": [
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v36.woff": [
       null,
       null,
       "woff",
       "qx"
     ],
-    "qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff2": [
+    "qx/iconfont/MaterialIcons/materialiconstwotone-v36.woff2": [
       null,
       null,
       "woff2",
@@ -2505,6 +2523,18 @@ qx.$$packageData['0'] = {
     "qx/static/blank.png": [
       1,
       1,
+      "png",
+      "qx"
+    ],
+    "qx/static/drawer.png": [
+      23,
+      23,
+      "png",
+      "qx"
+    ],
+    "qx/static/drawer@2x.png": [
+      45,
+      45,
       "png",
       "qx"
     ],

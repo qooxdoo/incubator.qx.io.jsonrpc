@@ -12,7 +12,9 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.data.Array": {},
       "qx.core.Assert": {},
       "qx.lang.Type": {}
@@ -646,4 +648,4 @@
   qx.lang.Array.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Array.js.map?dt=1608415648416
+//# sourceMappingURL=Array.js.map?dt=1625734503949

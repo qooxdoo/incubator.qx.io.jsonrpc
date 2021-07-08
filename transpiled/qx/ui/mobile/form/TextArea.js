@@ -39,7 +39,8 @@
         "require": true
       },
       "qx.bom.client.Scroll": {
-        "construct": true
+        "construct": true,
+        "require": true
       },
       "qx.ui.mobile.container.Scroll": {},
       "qx.ui.mobile.core.Root": {}
@@ -128,7 +129,7 @@
         this.getContentElement().style.height = 'auto';
         this.getContentElement().style.height = this.getContentElement().scrollHeight + 'px';
 
-        var scroll = this.__getScrollContainer__P_470_0();
+        var scroll = this.__getScrollContainer__P_466_0();
 
         if (scroll) {
           scroll.refresh();
@@ -139,7 +140,7 @@
       * Returns the parent scroll container of this widget.
       * @return {qx.ui.mobile.container.Scroll} the parent scroll container or <code>null</code>
       */
-      __getScrollContainer__P_470_0: function __getScrollContainer__P_470_0() {
+      __getScrollContainer__P_466_0: function __getScrollContainer__P_466_0() {
         var scroll = this;
 
         while (!(scroll instanceof qx.ui.mobile.container.Scroll)) {
@@ -170,4 +171,4 @@
   qx.ui.mobile.form.TextArea.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TextArea.js.map?dt=1608415676494
+//# sourceMappingURL=TextArea.js.map?dt=1625734531698

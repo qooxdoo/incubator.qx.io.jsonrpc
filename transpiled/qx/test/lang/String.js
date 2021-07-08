@@ -19,8 +19,12 @@
       "qx.lang.Array": {},
       "qx.bom.String": {},
       "qx.xml.String": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.lang.Function": {}
     },
     "environment": {
@@ -231,4 +235,4 @@
   qx.test.lang.String.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=String.js.map?dt=1608415657611
+//# sourceMappingURL=String.js.map?dt=1625734512988

@@ -35,11 +35,11 @@
     extend: Object,
     statics: {
       /** Static storage for all event listener */
-      __storage__P_114_0: []
+      __storage__P_111_0: []
     },
     members: {
-      __listener__P_114_1: null,
-      __any__P_114_2: null,
+      __listener__P_111_1: null,
+      __any__P_111_2: null,
 
       /**
        * Attach a listener to the event emitter. The given <code>name</code>
@@ -52,16 +52,16 @@
        * @return {Integer} An unique <code>id</code> for the attached listener.
        */
       on: function on(name, listener, ctx) {
-        var id = qx.event.Emitter.__storage__P_114_0.length;
+        var id = qx.event.Emitter.__storage__P_111_0.length;
 
-        this.__getStorage__P_114_3(name).push({
+        this.__getStorage__P_111_3(name).push({
           listener: listener,
           ctx: ctx,
           id: id,
           name: name
         });
 
-        qx.event.Emitter.__storage__P_114_0.push({
+        qx.event.Emitter.__storage__P_111_0.push({
           name: name,
           listener: listener,
           ctx: ctx
@@ -81,16 +81,16 @@
        * @return {Integer} An unique <code>id</code> for the attached listener.
        */
       once: function once(name, listener, ctx) {
-        var id = qx.event.Emitter.__storage__P_114_0.length;
+        var id = qx.event.Emitter.__storage__P_111_0.length;
 
-        this.__getStorage__P_114_3(name).push({
+        this.__getStorage__P_111_3(name).push({
           listener: listener,
           ctx: ctx,
           once: true,
           id: id
         });
 
-        qx.event.Emitter.__storage__P_114_0.push({
+        qx.event.Emitter.__storage__P_111_0.push({
           name: name,
           listener: listener,
           ctx: ctx
@@ -110,14 +110,14 @@
        * <code>null</code> if it wasn't found
        */
       off: function off(name, listener, ctx) {
-        var storage = this.__getStorage__P_114_3(name);
+        var storage = this.__getStorage__P_111_3(name);
 
         for (var i = storage.length - 1; i >= 0; i--) {
           var entry = storage[i];
 
           if (entry.listener == listener && entry.ctx == ctx) {
             storage.splice(i, 1);
-            qx.event.Emitter.__storage__P_114_0[entry.id] = null;
+            qx.event.Emitter.__storage__P_111_0[entry.id] = null;
             return entry.id;
           }
         }
@@ -134,7 +134,7 @@
        * <code>null</code> if it wasn't found
        */
       offById: function offById(id) {
-        var entry = qx.event.Emitter.__storage__P_114_0[id];
+        var entry = qx.event.Emitter.__storage__P_111_0[id];
 
         if (entry) {
           this.off(entry.name, entry.listener, entry.ctx);
@@ -190,7 +190,7 @@
        * @param data {var?undefined} The data which should be passed to the listener.
        */
       emit: function emit(name, data) {
-        var storage = this.__getStorage__P_114_3(name).concat();
+        var storage = this.__getStorage__P_111_3(name).concat();
 
         var toDelete = [];
 
@@ -206,13 +206,13 @@
 
 
         toDelete.forEach(function (entry) {
-          var origStorage = this.__getStorage__P_114_3(name);
+          var origStorage = this.__getStorage__P_111_3(name);
 
           var idx = origStorage.indexOf(entry);
           origStorage.splice(idx, 1);
         }.bind(this)); // call on any
 
-        storage = this.__getStorage__P_114_3("*");
+        storage = this.__getStorage__P_111_3("*");
 
         for (var i = storage.length - 1; i >= 0; i--) {
           var entry = storage[i];
@@ -227,7 +227,7 @@
        *   arrays containing a map with 'listener' and 'ctx'.
        */
       getListeners: function getListeners() {
-        return this.__listener__P_114_1;
+        return this.__listener__P_111_1;
       },
 
       /**
@@ -238,8 +238,8 @@
        * @return {Map|undefined} The data entry if found
        */
       getEntryById: function getEntryById(id) {
-        for (var name in this.__listener__P_114_1) {
-          var store = this.__listener__P_114_1[name];
+        for (var name in this.__listener__P_111_1) {
+          var store = this.__listener__P_111_1[name];
 
           for (var i = 0, j = store.length; i < j; i++) {
             if (store[i].id === id) {
@@ -255,20 +255,20 @@
        * @return {Array} An array which is the storage for the listener and
        *   the given event name.
        */
-      __getStorage__P_114_3: function __getStorage__P_114_3(name) {
-        if (this.__listener__P_114_1 == null) {
-          this.__listener__P_114_1 = {};
+      __getStorage__P_111_3: function __getStorage__P_111_3(name) {
+        if (this.__listener__P_111_1 == null) {
+          this.__listener__P_111_1 = {};
         }
 
-        if (this.__listener__P_114_1[name] == null) {
-          this.__listener__P_114_1[name] = [];
+        if (this.__listener__P_111_1[name] == null) {
+          this.__listener__P_111_1[name] = [];
         }
 
-        return this.__listener__P_114_1[name];
+        return this.__listener__P_111_1[name];
       }
     }
   });
   qx.event.Emitter.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Emitter.js.map?dt=1608415643675
+//# sourceMappingURL=Emitter.js.map?dt=1625734498857

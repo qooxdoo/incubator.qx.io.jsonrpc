@@ -14,7 +14,9 @@
       },
       "qx.bom.Iframe": {},
       "qx.lang.Object": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.bom.element.Attribute": {},
       "qx.dom.Element": {}
     },
@@ -49,23 +51,23 @@
   qx.Class.define("qx.test.bom.Iframe", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __iframe__P_212_0: null,
+      __iframe__P_209_0: null,
       tearDown: function tearDown() {
-        this.__iframe__P_212_0 = null;
+        this.__iframe__P_209_0 = null;
       },
       testCreate: function testCreate() {
-        this.__iframe__P_212_0 = qx.bom.Iframe.create();
+        this.__iframe__P_209_0 = qx.bom.Iframe.create();
 
-        this.__testAttributes__P_212_1(qx.bom.Iframe.DEFAULT_ATTRIBUTES);
+        this.__testAttributes__P_209_1(qx.bom.Iframe.DEFAULT_ATTRIBUTES);
       },
       testCreateWithAttributes: function testCreateWithAttributes() {
         var attributes = qx.lang.Object.clone(qx.bom.Iframe.DEFAULT_ATTRIBUTES);
         attributes.allowTransparency = false;
-        this.__iframe__P_212_0 = qx.bom.Iframe.create(attributes);
+        this.__iframe__P_209_0 = qx.bom.Iframe.create(attributes);
 
-        this.__testAttributes__P_212_1(attributes);
+        this.__testAttributes__P_209_1(attributes);
       },
-      __testAttributes__P_212_1: function __testAttributes__P_212_1(attributes) {
+      __testAttributes__P_209_1: function __testAttributes__P_209_1(attributes) {
         // do not test 'onload' on IE, this returns always 'undefined'
         // http://tobielangel.com/2007/1/11/attribute-nightmare-in-ie/
         if (qx.core.Environment.get("engine.name") == "mshtml") {
@@ -73,18 +75,18 @@
         }
 
         for (var key in attributes) {
-          this.assertEquals(attributes[key], qx.bom.element.Attribute.get(this.__iframe__P_212_0, key), "Wrong value on attribute '" + key + "'");
+          this.assertEquals(attributes[key], qx.bom.element.Attribute.get(this.__iframe__P_209_0, key), "Wrong value on attribute '" + key + "'");
         }
       },
       testGetWindow: function testGetWindow() {
-        this.__iframe__P_212_0 = qx.bom.Iframe.create();
-        qx.dom.Element.insertBegin(this.__iframe__P_212_0, document.body);
-        this.assertNotNull(qx.bom.Iframe.getWindow(this.__iframe__P_212_0));
-        qx.dom.Element.remove(this.__iframe__P_212_0);
+        this.__iframe__P_209_0 = qx.bom.Iframe.create();
+        qx.dom.Element.insertBegin(this.__iframe__P_209_0, document.body);
+        this.assertNotNull(qx.bom.Iframe.getWindow(this.__iframe__P_209_0));
+        qx.dom.Element.remove(this.__iframe__P_209_0);
       }
     }
   });
   qx.test.bom.Iframe.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Iframe.js.map?dt=1608415652272
+//# sourceMappingURL=Iframe.js.map?dt=1625734507586

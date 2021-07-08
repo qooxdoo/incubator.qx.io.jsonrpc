@@ -15,7 +15,8 @@
         "defer": "runtime"
       },
       "qx.bom.client.Html": {
-        "defer": "runtime"
+        "defer": "load",
+        "require": true
       },
       "qx.bom.Stylesheet": {
         "defer": "runtime"
@@ -170,4 +171,4 @@
   qx.bom.Vml.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Vml.js.map?dt=1608415636885
+//# sourceMappingURL=Vml.js.map?dt=1625734492083

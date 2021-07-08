@@ -87,9 +87,9 @@
       } // create the radio group
 
 
-      this.__radioGroup__P_419_0 = new qx.ui.form.RadioGroup(); // attach the listener
+      this.__radioGroup__P_415_0 = new qx.ui.form.RadioGroup(); // attach the listener
 
-      this.__radioGroup__P_419_0.addListener("changeSelection", this._onChangeSelection, this);
+      this.__radioGroup__P_415_0.addListener("changeSelection", this._onChangeSelection, this);
     },
     properties: {
       /**
@@ -142,7 +142,7 @@
       "changeSelection": "qx.event.type.Data"
     },
     members: {
-      __radioGroup__P_419_0: null,
+      __radioGroup__P_415_0: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -178,7 +178,7 @@
        * @return {qx.ui.form.RadioGroup} Returns the used RadioGroup instance.
        */
       getRadioGroup: function getRadioGroup() {
-        return this.__radioGroup__P_419_0;
+        return this.__radioGroup__P_415_0;
       },
 
       /**
@@ -201,7 +201,7 @@
        * @param options {Map?null} Optional layout data for widget.
        */
       add: function add(child, options) {
-        this.__radioGroup__P_419_0.add(child);
+        this.__radioGroup__P_415_0.add(child);
 
         this._add(child, options);
       },
@@ -212,7 +212,7 @@
        * @param child {qx.ui.core.LayoutItem} the widget to remove
        */
       remove: function remove(child) {
-        this.__radioGroup__P_419_0.remove(child);
+        this.__radioGroup__P_415_0.remove(child);
 
         this._remove(child);
       },
@@ -224,10 +224,10 @@
        */
       removeAll: function removeAll() {
         // remove all children from the radio group
-        var radioItems = this.__radioGroup__P_419_0.getItems();
+        var radioItems = this.__radioGroup__P_415_0.getItems();
 
         for (var i = radioItems.length - 1; i >= 0; i--) {
-          this.__radioGroup__P_419_0.remove(radioItems[i]);
+          this.__radioGroup__P_415_0.remove(radioItems[i]);
         }
 
         return this._removeAll();
@@ -248,7 +248,7 @@
        * @return {qx.ui.core.Widget[]} List of items.
        */
       getSelection: function getSelection() {
-        return this.__radioGroup__P_419_0.getSelection();
+        return this.__radioGroup__P_415_0.getSelection();
       },
 
       /**
@@ -258,14 +258,14 @@
        * @throws {Error} if the item is not a child element.
        */
       setSelection: function setSelection(items) {
-        this.__radioGroup__P_419_0.setSelection(items);
+        this.__radioGroup__P_415_0.setSelection(items);
       },
 
       /**
        * Clears the whole selection at once.
        */
       resetSelection: function resetSelection() {
-        this.__radioGroup__P_419_0.resetSelection();
+        this.__radioGroup__P_415_0.resetSelection();
       },
 
       /**
@@ -276,7 +276,7 @@
        * @throws {Error} if the item is not a child element.
        */
       isSelected: function isSelected(item) {
-        return this.__radioGroup__P_419_0.isSelected(item);
+        return this.__radioGroup__P_415_0.isSelected(item);
       },
 
       /**
@@ -285,7 +285,7 @@
        * @return {Boolean} Whether the selection is empty.
        */
       isSelectionEmpty: function isSelectionEmpty() {
-        return this.__radioGroup__P_419_0.isSelectionEmpty();
+        return this.__radioGroup__P_415_0.isSelectionEmpty();
       },
 
       /**
@@ -296,7 +296,7 @@
        * @return {qx.ui.core.Widget[]} The contained items.
        */
       getSelectables: function getSelectables(all) {
-        return this.__radioGroup__P_419_0.getSelectables(all);
+        return this.__radioGroup__P_415_0.getSelectables(all);
       },
 
       /**
@@ -307,7 +307,7 @@
        */
       setValue: function setValue(item) {
         if (item && 'object' === typeof item && item instanceof qx.ui.form.IRadioItem) {
-          return this.__radioGroup__P_419_0.setValue(item);
+          return this.__radioGroup__P_415_0.setValue(item);
         } else {
           return new Error("can not select radio item from value");
         }
@@ -317,14 +317,14 @@
        * @return {null|var} Returns the selected value.
        */
       getValue: function getValue() {
-        return this.__radioGroup__P_419_0.getValue();
+        return this.__radioGroup__P_415_0.getValue();
       },
 
       /**
        * Reset radio item selection.
        */
       resetValue: function resetValue() {
-        this.__radioGroup__P_419_0.resetValue();
+        this.__radioGroup__P_415_0.resetValue();
       },
 
       /**
@@ -338,12 +338,12 @@
       }
     },
     destruct: function destruct() {
-      this.__radioGroup__P_419_0.removeListener("changeSelection", this._onChangeSelection, this);
+      this.__radioGroup__P_415_0.removeListener("changeSelection", this._onChangeSelection, this);
 
-      this._disposeObjects("__radioGroup__P_419_0");
+      this._disposeObjects("__radioGroup__P_415_0");
     }
   });
   qx.ui.form.RadioButtonGroup.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RadioButtonGroup.js.map?dt=1608415672323
+//# sourceMappingURL=RadioButtonGroup.js.map?dt=1625734527512

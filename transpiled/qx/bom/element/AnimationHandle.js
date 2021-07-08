@@ -14,7 +14,8 @@
         "require": true
       },
       "qx.bom.client.CssAnimation": {
-        "construct": true
+        "construct": true,
+        "require": true
       }
     },
     "environment": {
@@ -161,4 +162,4 @@
   qx.bom.element.AnimationHandle.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AnimationHandle.js.map?dt=1608415638222
+//# sourceMappingURL=AnimationHandle.js.map?dt=1625734493447

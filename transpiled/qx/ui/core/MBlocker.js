@@ -62,7 +62,7 @@
       }
     },
     members: {
-      __blocker__P_378_0: null,
+      __blocker__P_374_0: null,
 
       /**
        * Template method for creating the blocker item.
@@ -94,7 +94,7 @@
        * @return {Boolean} Whether the widget is blocked.
        */
       isBlocked: function isBlocked() {
-        return this.__blocker__P_378_0 && this.__blocker__P_378_0.isBlocked();
+        return this.__blocker__P_374_0 && this.__blocker__P_374_0.isBlocked();
       },
 
       /**
@@ -103,8 +103,8 @@
        * the number of {@link #unblock} calls is identical to {@link #block} calls.
        */
       unblock: function unblock() {
-        if (this.__blocker__P_378_0) {
-          this.__blocker__P_378_0.unblock();
+        if (this.__blocker__P_374_0) {
+          this.__blocker__P_374_0.unblock();
         }
       },
 
@@ -113,8 +113,8 @@
        * the amount of {@link #block} calls. The blocker is directly removed.
        */
       forceUnblock: function forceUnblock() {
-        if (this.__blocker__P_378_0) {
-          this.__blocker__P_378_0.forceUnblock();
+        if (this.__blocker__P_374_0) {
+          this.__blocker__P_374_0.forceUnblock();
         }
       },
 
@@ -134,18 +134,18 @@
        * @return {qx.ui.core.Blocker} The blocker
        */
       getBlocker: function getBlocker() {
-        if (!this.__blocker__P_378_0) {
-          this.__blocker__P_378_0 = this._createBlocker();
+        if (!this.__blocker__P_374_0) {
+          this.__blocker__P_374_0 = this._createBlocker();
         }
 
-        return this.__blocker__P_378_0;
+        return this.__blocker__P_374_0;
       }
     },
     destruct: function destruct() {
-      this._disposeObjects("__blocker__P_378_0");
+      this._disposeObjects("__blocker__P_374_0");
     }
   });
   qx.ui.core.MBlocker.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MBlocker.js.map?dt=1608415669023
+//# sourceMappingURL=MBlocker.js.map?dt=1625734524345

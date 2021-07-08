@@ -19,9 +19,13 @@
         "require": true
       },
       "qx.bom.request.Xhr": {},
-      "qx.bom.client.Engine": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
       "qx.lang.Function": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.dev.unit.RequirementError": {}
     },
     "environment": {
@@ -725,4 +729,4 @@
   qx.test.bom.request.Xhr.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Xhr.js.map?dt=1608415653319
+//# sourceMappingURL=Xhr.js.map?dt=1625734508602

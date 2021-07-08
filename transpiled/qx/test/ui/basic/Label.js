@@ -18,7 +18,9 @@
       "qx.dev.unit.MMock": {
         "require": true
       },
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.bom.webfonts.Manager": {},
       "qx.ui.container.Composite": {},
       "qx.ui.layout.Grow": {},
@@ -252,4 +254,4 @@
   qx.test.ui.basic.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1608415660581
+//# sourceMappingURL=Label.js.map?dt=1625734515943

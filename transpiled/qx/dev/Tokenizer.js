@@ -14,7 +14,9 @@
       },
       "qx.util.StringBuilder": {},
       "qx.bom.String": {},
-      "qx.bom.client.Engine": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -310,4 +312,4 @@
   qx.dev.Tokenizer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Tokenizer.js.map?dt=1608415642254
+//# sourceMappingURL=Tokenizer.js.map?dt=1625734497386

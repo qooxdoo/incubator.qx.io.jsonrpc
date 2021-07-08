@@ -22,8 +22,12 @@
         "require": true
       },
       "qx.bom.request.Jsonp": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.dev.unit.RequirementError": {}
     },
     "environment": {
@@ -298,4 +302,4 @@
   qx.test.bom.request.Jsonp.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Jsonp.js.map?dt=1608415653052
+//# sourceMappingURL=Jsonp.js.map?dt=1625734508336

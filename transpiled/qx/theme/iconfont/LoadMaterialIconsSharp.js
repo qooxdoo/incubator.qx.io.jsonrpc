@@ -32,13 +32,13 @@
    */
 
   /**
-   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.otf)
-   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.woff2)
-   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.woff)
-   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v19.eot)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v38.otf)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v38.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v38.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialiconssharp-v38.eot)
    */
   qx.Class.define("qx.theme.iconfont.LoadMaterialIconsSharp", {});
   qx.theme.iconfont.LoadMaterialIconsSharp.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LoadMaterialIconsSharp.js.map?dt=1608415666472
+//# sourceMappingURL=LoadMaterialIconsSharp.js.map?dt=1625734521829

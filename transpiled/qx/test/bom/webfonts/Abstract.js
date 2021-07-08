@@ -12,7 +12,9 @@
       "qx.dev.unit.TestCase": {
         "require": true
       },
-      "qx.bom.client.Browser": {}
+      "qx.bom.client.Browser": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -60,4 +62,4 @@
   qx.test.bom.webfonts.Abstract.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Abstract.js.map?dt=1608415653660
+//# sourceMappingURL=Abstract.js.map?dt=1625734508929

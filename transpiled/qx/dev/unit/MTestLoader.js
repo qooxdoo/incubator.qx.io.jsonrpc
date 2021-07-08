@@ -71,7 +71,7 @@
         if (className) {
           className = className[1];
         } else {
-          className = "__unknown_class____P_105_0";
+          className = "__unknown_class__";
         }
 
         return className;
@@ -193,4 +193,4 @@
   qx.dev.unit.MTestLoader.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MTestLoader.js.map?dt=1608415642494
+//# sourceMappingURL=MTestLoader.js.map?dt=1625734497643

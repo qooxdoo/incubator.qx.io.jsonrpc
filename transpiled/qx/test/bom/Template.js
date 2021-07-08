@@ -36,10 +36,10 @@
   qx.Class.define("qx.test.bom.Template", {
     extend: qx.dev.unit.TestCase,
     members: {
-      __tmpl__P_217_0: null,
+      __tmpl__P_214_0: null,
       tearDown: function tearDown() {
-        if (this.__tmpl__P_217_0) {
-          qx.dom.Element.removeChild(this.__tmpl__P_217_0, document.body);
+        if (this.__tmpl__P_214_0) {
+          qx.dom.Element.removeChild(this.__tmpl__P_214_0, document.body);
         }
       },
 
@@ -194,11 +194,11 @@
        */
       testGet: function testGet() {
         // add template
-        this.__tmpl__P_217_0 = qx.dom.Element.create("div");
-        qx.bom.element.Attribute.set(this.__tmpl__P_217_0, "id", "qx-test-template");
-        qx.bom.element.Style.set(this.__tmpl__P_217_0, "display", "none");
-        this.__tmpl__P_217_0.innerHTML = "<div>{{a}}</div>";
-        qx.dom.Element.insertEnd(this.__tmpl__P_217_0, document.body); // test the get method
+        this.__tmpl__P_214_0 = qx.dom.Element.create("div");
+        qx.bom.element.Attribute.set(this.__tmpl__P_214_0, "id", "qx-test-template");
+        qx.bom.element.Style.set(this.__tmpl__P_214_0, "display", "none");
+        this.__tmpl__P_214_0.innerHTML = "<div>{{a}}</div>";
+        qx.dom.Element.insertEnd(this.__tmpl__P_214_0, document.body); // test the get method
 
         var el = qx.bom.Template.get("qx-test-template", {
           a: 123
@@ -208,11 +208,11 @@
       },
       testPlainText: function testPlainText() {
         // add template
-        this.__tmpl__P_217_0 = qx.dom.Element.create("div");
-        qx.bom.element.Attribute.set(this.__tmpl__P_217_0, "id", "qx-test-template");
-        qx.bom.element.Style.set(this.__tmpl__P_217_0, "display", "none");
-        this.__tmpl__P_217_0.innerHTML = "{{a}}.{{b}}";
-        qx.dom.Element.insertEnd(this.__tmpl__P_217_0, document.body); // test the get method
+        this.__tmpl__P_214_0 = qx.dom.Element.create("div");
+        qx.bom.element.Attribute.set(this.__tmpl__P_214_0, "id", "qx-test-template");
+        qx.bom.element.Style.set(this.__tmpl__P_214_0, "display", "none");
+        this.__tmpl__P_214_0.innerHTML = "{{a}}.{{b}}";
+        qx.dom.Element.insertEnd(this.__tmpl__P_214_0, document.body); // test the get method
 
         var el = qx.bom.Template.get("qx-test-template", {
           a: 123,
@@ -222,11 +222,11 @@
       },
       testGetMixed: function testGetMixed() {
         // add template
-        this.__tmpl__P_217_0 = qx.dom.Element.create("div");
-        qx.bom.element.Attribute.set(this.__tmpl__P_217_0, "id", "qx-test-template");
-        qx.bom.element.Style.set(this.__tmpl__P_217_0, "display", "none");
-        this.__tmpl__P_217_0.innerHTML = "<div>{{a}}<span>{{b}}</span></div>";
-        qx.dom.Element.insertEnd(this.__tmpl__P_217_0, document.body); // test the get method
+        this.__tmpl__P_214_0 = qx.dom.Element.create("div");
+        qx.bom.element.Attribute.set(this.__tmpl__P_214_0, "id", "qx-test-template");
+        qx.bom.element.Style.set(this.__tmpl__P_214_0, "display", "none");
+        this.__tmpl__P_214_0.innerHTML = "<div>{{a}}<span>{{b}}</span></div>";
+        qx.dom.Element.insertEnd(this.__tmpl__P_214_0, document.body); // test the get method
 
         var el = qx.bom.Template.get("qx-test-template", {
           a: 123,
@@ -250,4 +250,4 @@
   qx.test.bom.Template.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Template.js.map?dt=1608415652539
+//# sourceMappingURL=Template.js.map?dt=1625734507845

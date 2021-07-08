@@ -27,7 +27,7 @@
       },
       "qx.bom.client.Engine": {
         "construct": true,
-        "defer": "runtime",
+        "defer": "load",
         "require": true
       },
       "qx.event.Registration": {
@@ -118,17 +118,17 @@
     construct: function construct(manager) {
       qx.core.Object.constructor.call(this); // Define shorthands
 
-      this.__manager__P_132_0 = manager;
-      this.__window__P_132_1 = manager.getWindow(); // Gecko ignores key events when not explicitly clicked in the document.
+      this.__manager__P_129_0 = manager;
+      this.__window__P_129_1 = manager.getWindow(); // Gecko ignores key events when not explicitly clicked in the document.
 
       if (qx.core.Environment.get("engine.name") == "gecko") {
-        this.__root__P_132_2 = this.__window__P_132_1;
+        this.__root__P_129_2 = this.__window__P_129_1;
       } else {
-        this.__root__P_132_2 = this.__window__P_132_1.document.documentElement;
+        this.__root__P_129_2 = this.__window__P_129_1.document.documentElement;
       } // Internal sequence cache
 
 
-      this.__lastUpDownType__P_132_3 = {}; // Initialize observer
+      this.__lastUpDownType__P_129_3 = {}; // Initialize observer
 
       this._initKeyObserver();
     },
@@ -163,14 +163,14 @@
     *****************************************************************************
     */
     members: {
-      __onKeyUpDownWrapper__P_132_4: null,
-      __manager__P_132_0: null,
-      __window__P_132_1: null,
-      __root__P_132_2: null,
-      __lastUpDownType__P_132_3: null,
-      __lastKeyCode__P_132_5: null,
-      __inputListeners__P_132_6: null,
-      __onKeyPressWrapper__P_132_7: null,
+      __onKeyUpDownWrapper__P_129_4: null,
+      __manager__P_129_0: null,
+      __window__P_129_1: null,
+      __root__P_129_2: null,
+      __lastUpDownType__P_129_3: null,
+      __lastKeyCode__P_129_5: null,
+      __inputListeners__P_129_6: null,
+      __onKeyPressWrapper__P_129_7: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -200,7 +200,7 @@
        * @return {qx.Promise?} a promise if the event handlers created one
        */
       _fireInputEvent: function _fireInputEvent(domEvent, charCode) {
-        var target = this.__getEventTarget__P_132_8();
+        var target = this.__getEventTarget__P_129_8();
 
         var tracker = {};
         var self = this; // Only fire when target is defined and visible
@@ -208,16 +208,16 @@
         if (target && target.offsetWidth != 0) {
           var event = qx.event.Registration.createEvent("keyinput", qx.event.type.KeyInput, [domEvent, target, charCode]);
           qx.event.Utils.then(tracker, function () {
-            self.__manager__P_132_0.dispatchEvent(target, event);
+            self.__manager__P_129_0.dispatchEvent(target, event);
           });
         } // Fire user action event
         // Needs to check if still alive first
 
 
-        if (this.__window__P_132_1) {
+        if (this.__window__P_129_1) {
           var self = this;
           qx.event.Utils.then(tracker, function () {
-            return qx.event.Registration.fireEvent(self.__window__P_132_1, "useraction", qx.event.type.Data, ["keyinput"]);
+            return qx.event.Registration.fireEvent(self.__window__P_129_1, "useraction", qx.event.type.Data, ["keyinput"]);
           });
         }
 
@@ -233,7 +233,7 @@
        * @return {qx.Promise?} a promise, if any of the event handlers returned a promise
        */
       _fireSequenceEvent: function _fireSequenceEvent(domEvent, type, keyIdentifier) {
-        var target = this.__getEventTarget__P_132_8();
+        var target = this.__getEventTarget__P_129_8();
 
         var keyCode = domEvent.keyCode;
         var tracker = {};
@@ -241,7 +241,7 @@
 
         var event = qx.event.Registration.createEvent(type, qx.event.type.KeySequence, [domEvent, target, keyIdentifier]);
         qx.event.Utils.then(tracker, function () {
-          return self.__manager__P_132_0.dispatchEvent(target, event);
+          return self.__manager__P_129_0.dispatchEvent(target, event);
         }); // IE and Safari suppress a "keypress" event if the "keydown" event's
         // default action was prevented. In this case we emulate the "keypress"
         //
@@ -261,9 +261,9 @@
         // Needs to check if still alive first
 
 
-        if (this.__window__P_132_1) {
+        if (this.__window__P_129_1) {
           qx.event.Utils.then(tracker, function () {
-            return qx.event.Registration.fireEvent(self.__window__P_132_1, "useraction", qx.event.type.Data, [type]);
+            return qx.event.Registration.fireEvent(self.__window__P_129_1, "useraction", qx.event.type.Data, [type]);
           });
         }
 
@@ -275,8 +275,8 @@
        *
        * @return {Element} the event target element
        */
-      __getEventTarget__P_132_8: function __getEventTarget__P_132_8() {
-        var focusHandler = this.__manager__P_132_0.getHandler(qx.event.handler.Focus);
+      __getEventTarget__P_129_8: function __getEventTarget__P_129_8() {
+        var focusHandler = this.__manager__P_129_0.getHandler(qx.event.handler.Focus);
 
         var target = focusHandler.getActive(); // Fallback to focused element when active is null or invisible
 
@@ -286,7 +286,7 @@
 
 
         if (!target || target.offsetWidth == 0) {
-          target = this.__manager__P_132_0.getWindow().document.body;
+          target = this.__manager__P_129_0.getWindow().document.body;
         }
 
         return target;
@@ -304,12 +304,12 @@
        * @signature function()
        */
       _initKeyObserver: function _initKeyObserver() {
-        this.__onKeyUpDownWrapper__P_132_4 = qx.lang.Function.listener(this.__onKeyUpDown__P_132_9, this);
-        this.__onKeyPressWrapper__P_132_7 = qx.lang.Function.listener(this.__onKeyPress__P_132_10, this);
+        this.__onKeyUpDownWrapper__P_129_4 = qx.lang.Function.listener(this.__onKeyUpDown__P_129_9, this);
+        this.__onKeyPressWrapper__P_129_7 = qx.lang.Function.listener(this.__onKeyPress__P_129_10, this);
         var Event = qx.bom.Event;
-        Event.addNativeListener(this.__root__P_132_2, "keyup", this.__onKeyUpDownWrapper__P_132_4);
-        Event.addNativeListener(this.__root__P_132_2, "keydown", this.__onKeyUpDownWrapper__P_132_4);
-        Event.addNativeListener(this.__root__P_132_2, "keypress", this.__onKeyPressWrapper__P_132_7);
+        Event.addNativeListener(this.__root__P_129_2, "keyup", this.__onKeyUpDownWrapper__P_129_4);
+        Event.addNativeListener(this.__root__P_129_2, "keydown", this.__onKeyUpDownWrapper__P_129_4);
+        Event.addNativeListener(this.__root__P_129_2, "keypress", this.__onKeyPressWrapper__P_129_7);
       },
 
       /**
@@ -319,16 +319,16 @@
        */
       _stopKeyObserver: function _stopKeyObserver() {
         var Event = qx.bom.Event;
-        Event.removeNativeListener(this.__root__P_132_2, "keyup", this.__onKeyUpDownWrapper__P_132_4);
-        Event.removeNativeListener(this.__root__P_132_2, "keydown", this.__onKeyUpDownWrapper__P_132_4);
-        Event.removeNativeListener(this.__root__P_132_2, "keypress", this.__onKeyPressWrapper__P_132_7);
+        Event.removeNativeListener(this.__root__P_129_2, "keyup", this.__onKeyUpDownWrapper__P_129_4);
+        Event.removeNativeListener(this.__root__P_129_2, "keydown", this.__onKeyUpDownWrapper__P_129_4);
+        Event.removeNativeListener(this.__root__P_129_2, "keypress", this.__onKeyPressWrapper__P_129_7);
 
-        for (var key in this.__inputListeners__P_132_6 || {}) {
-          var listener = this.__inputListeners__P_132_6[key];
+        for (var key in this.__inputListeners__P_129_6 || {}) {
+          var listener = this.__inputListeners__P_129_6[key];
           Event.removeNativeListener(listener.target, "keypress", listener.callback);
         }
 
-        delete this.__inputListeners__P_132_6;
+        delete this.__inputListeners__P_129_6;
       },
 
       /*
@@ -344,7 +344,7 @@
        * @signature function(domEvent)
        * @param domEvent {Event} DOM event object
        */
-      __onKeyUpDown__P_132_9: qx.event.GlobalError.observeMethod(qx.core.Environment.select("engine.name", {
+      __onKeyUpDown__P_129_9: qx.event.GlobalError.observeMethod(qx.core.Environment.select("engine.name", {
         "gecko|webkit|mshtml": function geckoWebkitMshtml(domEvent) {
           var keyCode = 0;
           var charCode = 0;
@@ -371,11 +371,11 @@
           } // Store last type
 
 
-          this.__lastUpDownType__P_132_3[keyCode] = type;
+          this.__lastUpDownType__P_129_3[keyCode] = type;
           return tracker.promise;
         },
         "opera": function opera(domEvent) {
-          this.__lastKeyCode__P_132_5 = domEvent.keyCode;
+          this.__lastKeyCode__P_129_5 = domEvent.keyCode;
           return this._idealKeyHandler(domEvent.keyCode, 0, domEvent.type, domEvent);
         }
       })),
@@ -392,29 +392,29 @@
        * @param type {String} The event type
        * @param keyCode {Integer} the key code
        */
-      __firefoxInputFix__P_132_11: qx.core.Environment.select("engine.name", {
+      __firefoxInputFix__P_129_11: qx.core.Environment.select("engine.name", {
         "gecko": function gecko(target, type, keyCode) {
           if (type === "keydown" && (keyCode == 33 || keyCode == 34 || keyCode == 38 || keyCode == 40) && target.type == "text" && target.tagName.toLowerCase() === "input" && target.getAttribute("autoComplete") !== "off") {
-            if (!this.__inputListeners__P_132_6) {
-              this.__inputListeners__P_132_6 = {};
+            if (!this.__inputListeners__P_129_6) {
+              this.__inputListeners__P_129_6 = {};
             }
 
             var hash = qx.core.ObjectRegistry.toHashCode(target);
 
-            if (this.__inputListeners__P_132_6[hash]) {
+            if (this.__inputListeners__P_129_6[hash]) {
               return;
             }
 
             var self = this;
-            this.__inputListeners__P_132_6[hash] = {
+            this.__inputListeners__P_129_6[hash] = {
               target: target,
               callback: function callback(domEvent) {
                 qx.bom.Event.stopPropagation(domEvent);
 
-                self.__onKeyPress__P_132_10(domEvent);
+                self.__onKeyPress__P_129_10(domEvent);
               }
             };
-            var listener = qx.event.GlobalError.observeMethod(this.__inputListeners__P_132_6[hash].callback);
+            var listener = qx.event.GlobalError.observeMethod(this.__inputListeners__P_129_6[hash].callback);
             qx.bom.Event.addNativeListener(target, "keypress", listener);
           }
         },
@@ -427,7 +427,7 @@
        * @signature function(domEvent)
        * @param domEvent {Event} DOM event object
        */
-      __onKeyPress__P_132_10: qx.event.GlobalError.observeMethod(qx.core.Environment.select("engine.name", {
+      __onKeyPress__P_129_10: qx.event.GlobalError.observeMethod(qx.core.Environment.select("engine.name", {
         "mshtml": function mshtml(domEvent) {
           domEvent = window.event || domEvent;
 
@@ -465,8 +465,8 @@
           // current keycode.
           // See http://bugzilla.qooxdoo.org/show_bug.cgi?id=603
 
-          if (keyCode != this.__lastKeyCode__P_132_5) {
-            return this._idealKeyHandler(0, this.__lastKeyCode__P_132_5, type, domEvent);
+          if (keyCode != this.__lastKeyCode__P_129_5) {
+            return this._idealKeyHandler(0, this.__lastKeyCode__P_129_5, type, domEvent);
           } else {
             if (qx.event.util.Keyboard.keyCodeToIdentifierMap[domEvent.keyCode]) {
               return this._idealKeyHandler(domEvent.keyCode, 0, domEvent.type, domEvent);
@@ -565,7 +565,7 @@
     destruct: function destruct() {
       this._stopKeyObserver();
 
-      this.__lastKeyCode__P_132_5 = this.__manager__P_132_0 = this.__window__P_132_1 = this.__root__P_132_2 = this.__lastUpDownType__P_132_3 = null;
+      this.__lastKeyCode__P_129_5 = this.__manager__P_129_0 = this.__window__P_129_1 = this.__root__P_129_2 = this.__lastUpDownType__P_129_3 = null;
     },
 
     /*
@@ -588,4 +588,4 @@
   qx.event.handler.Keyboard.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Keyboard.js.map?dt=1608415645022
+//# sourceMappingURL=Keyboard.js.map?dt=1625734500269

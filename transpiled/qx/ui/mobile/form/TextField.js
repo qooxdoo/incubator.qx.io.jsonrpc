@@ -24,7 +24,8 @@
         "require": true
       },
       "qx.bom.client.OperatingSystem": {
-        "construct": true
+        "construct": true,
+        "require": true
       }
     },
     "environment": {
@@ -125,4 +126,4 @@
   qx.ui.mobile.form.TextField.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=TextField.js.map?dt=1608415676537
+//# sourceMappingURL=TextField.js.map?dt=1625734531721

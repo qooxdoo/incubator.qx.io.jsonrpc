@@ -177,8 +177,8 @@
     *****************************************************************************
     */
     statics: {
-      __dateFormat__P_413_0: null,
-      __formatter__P_413_1: null,
+      __dateFormat__P_409_0: null,
+      __formatter__P_409_1: null,
 
       /**
        * Get the shared default date formatter
@@ -188,17 +188,17 @@
       getDefaultDateFormatter: function getDefaultDateFormatter() {
         var format = qx.locale.Date.getDateFormat("medium").toString();
 
-        if (format == this.__dateFormat__P_413_0) {
-          return this.__formatter__P_413_1;
+        if (format == this.__dateFormat__P_409_0) {
+          return this.__formatter__P_409_1;
         }
 
-        if (this.__formatter__P_413_1) {
-          this.__formatter__P_413_1.dispose();
+        if (this.__formatter__P_409_1) {
+          this.__formatter__P_409_1.dispose();
         }
 
-        this.__formatter__P_413_1 = new qx.util.format.DateFormat(format, qx.locale.Manager.getInstance().getLocale());
-        this.__dateFormat__P_413_0 = format;
-        return this.__formatter__P_413_1;
+        this.__formatter__P_409_1 = new qx.util.format.DateFormat(format, qx.locale.Manager.getInstance().getLocale());
+        this.__dateFormat__P_409_0 = format;
+        return this.__formatter__P_409_1;
       }
     },
 
@@ -208,7 +208,7 @@
     *****************************************************************************
     */
     members: {
-      __localeListenerId__P_413_2: null,
+      __localeListenerId__P_409_2: null,
 
       /**
        * @lint ignoreReferenceField(_forwardStates)
@@ -241,7 +241,7 @@
       _addLocaleChangeListener: function _addLocaleChangeListener() {
         // listen for locale changes
         {
-          this.__localeListenerId__P_413_2 = qx.locale.Manager.getInstance().addListener("changeLocale", function () {
+          this.__localeListenerId__P_409_2 = qx.locale.Manager.getInstance().addListener("changeLocale", function () {
             this._setDefaultDateFormat();
           }, this);
         }
@@ -560,8 +560,8 @@
     destruct: function destruct() {
       // listen for locale changes
       {
-        if (this.__localeListenerId__P_413_2) {
-          qx.locale.Manager.getInstance().removeListenerById(this.__localeListenerId__P_413_2);
+        if (this.__localeListenerId__P_409_2) {
+          qx.locale.Manager.getInstance().removeListenerById(this.__localeListenerId__P_409_2);
         }
       }
     }
@@ -569,4 +569,4 @@
   qx.ui.form.DateField.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=DateField.js.map?dt=1608415671780
+//# sourceMappingURL=DateField.js.map?dt=1625734526938

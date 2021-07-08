@@ -18,12 +18,17 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.bom.IdleCallback": {}
+      "qx.bom.IdleCallback": {},
+      "qx.bom.client.Idle": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
       "required": {
-        "client.idle": {}
+        "client.idle": {
+          "className": "qx.bom.client.Idle"
+        }
       }
     }
   };
@@ -109,4 +114,4 @@
   qx.test.bom.IdleCallback.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=IdleCallback.js.map?dt=1608415652244
+//# sourceMappingURL=IdleCallback.js.map?dt=1625734507564

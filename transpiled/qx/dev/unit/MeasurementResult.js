@@ -42,16 +42,16 @@
      * @param renderTime {Number} Elapsed DOM rendering time
      */
     construct: function construct(message, iterations, ownTime, renderTime) {
-      this.__message__P_106_0 = message;
-      this.__iterations__P_106_1 = iterations;
-      this.__ownTime__P_106_2 = ownTime;
-      this.__renderTime__P_106_3 = renderTime;
+      this.__message__P_105_0 = message;
+      this.__iterations__P_105_1 = iterations;
+      this.__ownTime__P_105_2 = ownTime;
+      this.__renderTime__P_105_3 = renderTime;
     },
     members: {
-      __message__P_106_0: null,
-      __iterations__P_106_1: null,
-      __ownTime__P_106_2: null,
-      __renderTime__P_106_3: null,
+      __message__P_105_0: null,
+      __iterations__P_105_1: null,
+      __ownTime__P_105_2: null,
+      __renderTime__P_105_3: null,
 
       /**
        * Returns the stored data as a map.
@@ -59,10 +59,10 @@
        */
       getData: function getData() {
         return {
-          message: this.__message__P_106_0,
-          iterations: this.__iterations__P_106_1,
-          ownTime: this.__ownTime__P_106_2,
-          renderTime: this.__renderTime__P_106_3
+          message: this.__message__P_105_0,
+          iterations: this.__iterations__P_105_1,
+          ownTime: this.__ownTime__P_105_2,
+          renderTime: this.__renderTime__P_105_3
         };
       },
 
@@ -72,11 +72,11 @@
        * @return {String} Result summary
        */
       toString: function toString() {
-        return ["Measured: " + this.__message__P_106_0, "Iterations: " + this.__iterations__P_106_1, "Time: " + this.__ownTime__P_106_2 + "ms", "Render time: " + this.__renderTime__P_106_3 + "ms"].join("\n");
+        return ["Measured: " + this.__message__P_105_0, "Iterations: " + this.__iterations__P_105_1, "Time: " + this.__ownTime__P_105_2 + "ms", "Render time: " + this.__renderTime__P_105_3 + "ms"].join("\n");
       }
     }
   });
   qx.dev.unit.MeasurementResult.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MeasurementResult.js.map?dt=1608415642518
+//# sourceMappingURL=MeasurementResult.js.map?dt=1625734497662

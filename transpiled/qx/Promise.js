@@ -3027,7 +3027,7 @@
           }
 
           inherits(OperationalError, Error);
-          var errorTypes = Error["__BluebirdErrorTypes____P_8_14"];
+          var errorTypes = Error["__BluebirdErrorTypes__"];
 
           if (!errorTypes) {
             errorTypes = Objectfreeze({
@@ -3037,7 +3037,7 @@
               RejectionError: OperationalError,
               AggregateError: AggregateError
             });
-            es5.defineProperty(Error, "__BluebirdErrorTypes____P_8_14", {
+            es5.defineProperty(Error, "__BluebirdErrorTypes__", {
               value: errorTypes,
               writable: false,
               enumerable: false,
@@ -5131,9 +5131,9 @@
 
             var defaultSuffix = "Async";
             var defaultPromisified = {
-              __isPromisified____P_8_15: true
+              __isPromisified____P_8_14: true
             };
-            var noCopyProps = ["arity", "length", "name", "arguments", "caller", "callee", "prototype", "__isPromisified____P_8_15"];
+            var noCopyProps = ["arity", "length", "name", "arguments", "caller", "callee", "prototype", "__isPromisified____P_8_14"];
             var noCopyPropsPattern = new RegExp("^(?:" + noCopyProps.join("|") + ")$");
 
             var defaultFilter = function defaultFilter(name) {
@@ -5146,7 +5146,7 @@
 
             function isPromisified(fn) {
               try {
-                return fn.__isPromisified____P_8_15 === true;
+                return fn.__isPromisified____P_8_14 === true;
               } catch (e) {
                 return false;
               }
@@ -5197,7 +5197,7 @@
 
             var makeNodePromisifiedEval;
 
-            function makeNodePromisifiedClosure(callback, receiver, _, fn, ____P_8_16, multiArgs) {
+            function makeNodePromisifiedClosure(callback, receiver, _, fn, ____P_8_15, multiArgs) {
               var defaultThis = function () {
                 return this;
               }();
@@ -5228,7 +5228,7 @@
                 return promise;
               }
 
-              util.notEnumerableProp(promisified, "__isPromisified____P_8_15", true);
+              util.notEnumerableProp(promisified, "__isPromisified____P_8_14", true);
               return promisified;
             }
 
@@ -5249,7 +5249,7 @@
                   var promisified = promisifier(fn, function () {
                     return makeNodePromisified(key, THIS, key, fn, suffix, multiArgs);
                   });
-                  util.notEnumerableProp(promisified, "__isPromisified____P_8_15", true);
+                  util.notEnumerableProp(promisified, "__isPromisified____P_8_14", true);
                   obj[promisifiedKey] = promisified;
                 }
               }
@@ -6153,12 +6153,12 @@
               return (this._bitField & 8454144) !== 0;
             };
 
-            Promise.prototype.__isCancelled__P_8_17 = function () {
+            Promise.prototype.__isCancelled__P_8_16 = function () {
               return (this._bitField & 65536) === 65536;
             };
 
             Promise.prototype._isCancelled = function () {
-              return this._target().__isCancelled__P_8_17();
+              return this._target().__isCancelled__P_8_16();
             };
 
             Promise.prototype.isCancelled = function () {
@@ -6910,7 +6910,7 @@
 
           function originatesFromRejection(e) {
             if (e == null) return false;
-            return e instanceof Error["__BluebirdErrorTypes____P_8_14"].OperationalError || e["isOperational"] === true;
+            return e instanceof Error["__BluebirdErrorTypes__"].OperationalError || e["isOperational"] === true;
           }
 
           function canAttachTrace(obj) {
@@ -7069,4 +7069,4 @@
   qx.Promise.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Promise.js.map?dt=1608415634566
+//# sourceMappingURL=Promise.js.map?dt=1625734489784

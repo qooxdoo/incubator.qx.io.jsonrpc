@@ -15,7 +15,9 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.bom.client.Html": {},
+      "qx.bom.client.Html": {
+        "require": true
+      },
       "qx.util.ResourceManager": {},
       "qx.bom.media.Video": {}
     },
@@ -120,4 +122,4 @@
   qx.test.bom.media.Video.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Video.js.map?dt=1608415653013
+//# sourceMappingURL=Video.js.map?dt=1625734508298

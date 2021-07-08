@@ -60,7 +60,7 @@ var envinfo = {
   "qx.application": "qxl.testtapper.Application",
   "qx.revision": "",
   "qx.theme": "qx.theme.Simple",
-  "qx.version": "6.0.0-beta-20201203-1458",
+  "qx.version": "6.0.0",
   "qx.libraryInfoMap": {
     "qx": {
       "name": "qooxdoo framework",
@@ -119,29 +119,13 @@ var envinfo = {
         {
           "name": "Martin Wittemann (wittemann)",
           "email": "martin DOT wittemann AT 1und1 DOT de"
-        },
-        {
-          "name": "John Spackman (johnspackman)",
-          "email": "john.spackman@zenesis.com"
-        },
-        {
-          "name": "Christian Boulanger (cboulanger)",
-          "email": "info@bibliograph.org"
-        },
-        {
-          "name": "Henner Kollmann (hkollmann)",
-          "email": "Henner.Kollmann.gmx.de"
-        },
-        {
-          "name": "Tobias Oetiker (oetiker)",
-          "email": "tobi@oetiker.ch"
-        },
-        {
-          "name": "Dietrich Streifert (level420)",
-          "email": "dietrich.streifert@visionet.de"
         }
       ],
-      "version": "6.0.0-beta-20201203-1458"
+      "version": "6.0.0",
+      "qooxdoo-versions": [
+        "6.0.0"
+      ],
+      "sourceViewUri": "https://github.com/qooxdoo/qooxdoo/blob//framework/source/class/#L"
     },
     "qx.io": {
       "name": "incubator.qx.io.jsonrpc",
@@ -227,7 +211,8 @@ var envinfo = {
   "qx.promise": true,
   "qx.promise.warnings": true,
   "qx.promise.longStackTraces": true,
-  "qx.compiler.version": "1.0.0-beta-20201203-1458",
+  "qx.compiler": true,
+  "qx.compiler.version": "1.0.0",
   "qx.icontheme": "Tango",
   "qx.test.delay.scale": 1,
   "qx.buildType": "source",
@@ -283,6 +268,51 @@ qx.$$resources = {
     32,
     32,
     57348
+  ],
+  "@MaterialIcons/qr_code_2": [
+    32,
+    32,
+    57354
+  ],
+  "@MaterialIcons/flutter_dash": [
+    32,
+    32,
+    57355
+  ],
+  "@MaterialIcons/align_vertical_top": [
+    32,
+    32,
+    57356
+  ],
+  "@MaterialIcons/align_horizontal_left": [
+    32,
+    32,
+    57357
+  ],
+  "@MaterialIcons/align_horizontal_center": [
+    32,
+    32,
+    57359
+  ],
+  "@MaterialIcons/align_horizontal_right": [
+    32,
+    32,
+    57360
+  ],
+  "@MaterialIcons/align_vertical_center": [
+    32,
+    32,
+    57361
+  ],
+  "@MaterialIcons/horizontal_distribute": [
+    32,
+    32,
+    57364
+  ],
+  "@MaterialIcons/align_vertical_bottom": [
+    32,
+    32,
+    57365
   ],
   "@MaterialIcons/album": [
     32,
@@ -359,15 +389,30 @@ qx.$$resources = {
     32,
     57388
   ],
+  "@MaterialIcons/library_add": [
+    32,
+    32,
+    57390
+  ],
   "@MaterialIcons/my_library_add": [
     32,
     32,
     57390
   ],
+  "@MaterialIcons/library_books": [
+    32,
+    32,
+    57391
+  ],
   "@MaterialIcons/my_library_books": [
     32,
     32,
     57391
+  ],
+  "@MaterialIcons/library_music": [
+    32,
+    32,
+    57392
   ],
   "@MaterialIcons/my_library_music": [
     32,
@@ -403,6 +448,11 @@ qx.$$resources = {
     32,
     32,
     57399
+  ],
+  "@MaterialIcons/play_circle_filled": [
+    32,
+    32,
+    57400
   ],
   "@MaterialIcons/play_circle_fill": [
     32,
@@ -490,6 +540,11 @@ qx.$$resources = {
     57417
   ],
   "@MaterialIcons/video_library": [
+    32,
+    32,
+    57418
+  ],
+  "@MaterialIcons/video_collection": [
     32,
     32,
     57418
@@ -699,6 +754,16 @@ qx.$$resources = {
     32,
     57460
   ],
+  "@MaterialIcons/update_disabled": [
+    32,
+    32,
+    57461
+  ],
+  "@MaterialIcons/vertical_distribute": [
+    32,
+    32,
+    57462
+  ],
   "@MaterialIcons/business": [
     32,
     32,
@@ -809,10 +874,20 @@ qx.$$resources = {
     32,
     57545
   ],
+  "@MaterialIcons/chat_bubble": [
+    32,
+    32,
+    57546
+  ],
   "@MaterialIcons/messenger": [
     32,
     32,
     57546
+  ],
+  "@MaterialIcons/chat_bubble_outline": [
+    32,
+    32,
+    57547
   ],
   "@MaterialIcons/messenger_outline": [
     32,
@@ -834,10 +909,20 @@ qx.$$resources = {
     32,
     57550
   ],
+  "@MaterialIcons/contact_phone": [
+    32,
+    32,
+    57551
+  ],
   "@MaterialIcons/quick_contacts_dialer": [
     32,
     32,
     57551
+  ],
+  "@MaterialIcons/contact_mail": [
+    32,
+    32,
+    57552
   ],
   "@MaterialIcons/quick_contacts_mail": [
     32,
@@ -1294,7 +1379,17 @@ qx.$$resources = {
     32,
     57748
   ],
+  "@MaterialIcons/airplanemode_inactive": [
+    32,
+    32,
+    57748
+  ],
   "@MaterialIcons/airplanemode_on": [
+    32,
+    32,
+    57749
+  ],
+  "@MaterialIcons/airplanemode_active": [
     32,
     32,
     57749
@@ -1303,6 +1398,26 @@ qx.$$resources = {
     32,
     32,
     57756
+  ],
+  "@MaterialIcons/shop_2": [
+    32,
+    32,
+    57758
+  ],
+  "@MaterialIcons/workspaces": [
+    32,
+    32,
+    57760
+  ],
+  "@MaterialIcons/inventory_2": [
+    32,
+    32,
+    57761
+  ],
+  "@MaterialIcons/pause_circle": [
+    32,
+    32,
+    57762
   ],
   "@MaterialIcons/battery_charging_full": [
     32,
@@ -1409,6 +1524,11 @@ qx.$$resources = {
     32,
     57783
   ],
+  "@MaterialIcons/graphic_eq": [
+    32,
+    32,
+    57784
+  ],
   "@MaterialIcons/multitrack_audio": [
     32,
     32,
@@ -1429,10 +1549,20 @@ qx.$$resources = {
     32,
     57787
   ],
+  "@MaterialIcons/now_wallpaper": [
+    32,
+    32,
+    57788
+  ],
   "@MaterialIcons/wallpaper": [
     32,
     32,
     57788
+  ],
+  "@MaterialIcons/now_widgets": [
+    32,
+    32,
+    57789
   ],
   "@MaterialIcons/widgets": [
     32,
@@ -1469,10 +1599,40 @@ qx.$$resources = {
     32,
     57795
   ],
+  "@MaterialIcons/play_circle": [
+    32,
+    32,
+    57796
+  ],
+  "@MaterialIcons/edit_location_alt": [
+    32,
+    32,
+    57797
+  ],
+  "@MaterialIcons/wb_twilight": [
+    32,
+    32,
+    57798
+  ],
   "@MaterialIcons/signal_cellular_4_bar": [
     32,
     32,
     57800
+  ],
+  "@MaterialIcons/outbound": [
+    32,
+    32,
+    57802
+  ],
+  "@MaterialIcons/social_distance": [
+    32,
+    32,
+    57803
+  ],
+  "@MaterialIcons/safety_divider": [
+    32,
+    32,
+    57804
   ],
   "@MaterialIcons/signal_cellular_connected_no_internet_4_bar": [
     32,
@@ -1493,6 +1653,21 @@ qx.$$resources = {
     32,
     32,
     57808
+  ],
+  "@MaterialIcons/production_quantity_limits": [
+    32,
+    32,
+    57809
+  ],
+  "@MaterialIcons/add_reaction": [
+    32,
+    32,
+    57811
+  ],
+  "@MaterialIcons/health_and_safety": [
+    32,
+    32,
+    57813
   ],
   "@MaterialIcons/signal_wifi_4_bar": [
     32,
@@ -1728,6 +1903,11 @@ qx.$$resources = {
     32,
     32,
     57928
+  ],
+  "@MaterialIcons/format_underlined": [
+    32,
+    32,
+    57929
   ],
   "@MaterialIcons/format_underline": [
     32,
@@ -1979,6 +2159,36 @@ qx.$$resources = {
     32,
     58060
   ],
+  "@MaterialIcons/travel_explore": [
+    32,
+    32,
+    58075
+  ],
+  "@MaterialIcons/task_alt": [
+    32,
+    32,
+    58086
+  ],
+  "@MaterialIcons/change_circle": [
+    32,
+    32,
+    58087
+  ],
+  "@MaterialIcons/arrow_back_ios_new": [
+    32,
+    32,
+    58090
+  ],
+  "@MaterialIcons/savings": [
+    32,
+    32,
+    58091
+  ],
+  "@MaterialIcons/copy_all": [
+    32,
+    32,
+    58092
+  ],
   "@MaterialIcons/cast": [
     32,
     32,
@@ -2229,6 +2439,11 @@ qx.$$resources = {
     32,
     58170
   ],
+  "@MaterialIcons/notification_add": [
+    32,
+    32,
+    58265
+  ],
   "@MaterialIcons/add_to_photos": [
     32,
     32,
@@ -2464,7 +2679,17 @@ qx.$$resources = {
     32,
     58315
   ],
+  "@MaterialIcons/exposure_minus_1": [
+    32,
+    32,
+    58315
+  ],
   "@MaterialIcons/exposure_neg_2": [
+    32,
+    32,
+    58316
+  ],
+  "@MaterialIcons/exposure_minus_2": [
     32,
     32,
     58316
@@ -2774,6 +2999,11 @@ qx.$$resources = {
     32,
     58380
   ],
+  "@MaterialIcons/panorama_fish_eye": [
+    32,
+    32,
+    58380
+  ],
   "@MaterialIcons/panorama_horizontal": [
     32,
     32,
@@ -2919,6 +3149,11 @@ qx.$$resources = {
     32,
     58410
   ],
+  "@MaterialIcons/view_comfortable": [
+    32,
+    32,
+    58410
+  ],
   "@MaterialIcons/view_compact": [
     32,
     32,
@@ -3024,6 +3259,206 @@ qx.$$resources = {
     32,
     58432
   ],
+  "@MaterialIcons/code_off": [
+    32,
+    32,
+    58611
+  ],
+  "@MaterialIcons/credit_card_off": [
+    32,
+    32,
+    58612
+  ],
+  "@MaterialIcons/extension_off": [
+    32,
+    32,
+    58613
+  ],
+  "@MaterialIcons/open_in_new_off": [
+    32,
+    32,
+    58614
+  ],
+  "@MaterialIcons/web_asset_off": [
+    32,
+    32,
+    58615
+  ],
+  "@MaterialIcons/content_paste_off": [
+    32,
+    32,
+    58616
+  ],
+  "@MaterialIcons/font_download_off": [
+    32,
+    32,
+    58617
+  ],
+  "@MaterialIcons/usb_off": [
+    32,
+    32,
+    58618
+  ],
+  "@MaterialIcons/auto_graph": [
+    32,
+    32,
+    58619
+  ],
+  "@MaterialIcons/query_stats": [
+    32,
+    32,
+    58620
+  ],
+  "@MaterialIcons/schema": [
+    32,
+    32,
+    58621
+  ],
+  "@MaterialIcons/file_download_off": [
+    32,
+    32,
+    58622
+  ],
+  "@MaterialIcons/developer_board_off": [
+    32,
+    32,
+    58623
+  ],
+  "@MaterialIcons/videogame_asset_off": [
+    32,
+    32,
+    58624
+  ],
+  "@MaterialIcons/moving": [
+    32,
+    32,
+    58625
+  ],
+  "@MaterialIcons/sailing": [
+    32,
+    32,
+    58626
+  ],
+  "@MaterialIcons/snowmobile": [
+    32,
+    32,
+    58627
+  ],
+  "@MaterialIcons/catching_pokemon": [
+    32,
+    32,
+    58632
+  ],
+  "@MaterialIcons/downhill_skiing": [
+    32,
+    32,
+    58633
+  ],
+  "@MaterialIcons/hiking": [
+    32,
+    32,
+    58634
+  ],
+  "@MaterialIcons/ice_skating": [
+    32,
+    32,
+    58635
+  ],
+  "@MaterialIcons/kayaking": [
+    32,
+    32,
+    58636
+  ],
+  "@MaterialIcons/kitesurfing": [
+    32,
+    32,
+    58637
+  ],
+  "@MaterialIcons/nordic_walking": [
+    32,
+    32,
+    58638
+  ],
+  "@MaterialIcons/paragliding": [
+    32,
+    32,
+    58639
+  ],
+  "@MaterialIcons/person_off": [
+    32,
+    32,
+    58640
+  ],
+  "@MaterialIcons/skateboarding": [
+    32,
+    32,
+    58641
+  ],
+  "@MaterialIcons/sledding": [
+    32,
+    32,
+    58642
+  ],
+  "@MaterialIcons/snowboarding": [
+    32,
+    32,
+    58643
+  ],
+  "@MaterialIcons/snowshoeing": [
+    32,
+    32,
+    58644
+  ],
+  "@MaterialIcons/surfing": [
+    32,
+    32,
+    58645
+  ],
+  "@MaterialIcons/light_mode": [
+    32,
+    32,
+    58648
+  ],
+  "@MaterialIcons/dark_mode": [
+    32,
+    32,
+    58652
+  ],
+  "@MaterialIcons/running_with_errors": [
+    32,
+    32,
+    58653
+  ],
+  "@MaterialIcons/sensors": [
+    32,
+    32,
+    58654
+  ],
+  "@MaterialIcons/sensors_off": [
+    32,
+    32,
+    58655
+  ],
+  "@MaterialIcons/piano_off": [
+    32,
+    32,
+    58656
+  ],
+  "@MaterialIcons/piano": [
+    32,
+    32,
+    58657
+  ],
+  "@MaterialIcons/share_arrival_time": [
+    32,
+    32,
+    58660
+  ],
+  "@MaterialIcons/edit_notifications": [
+    32,
+    32,
+    58661
+  ],
   "@MaterialIcons/beenhere": [
     32,
     32,
@@ -3049,6 +3484,11 @@ qx.$$resources = {
     32,
     58673
   ],
+  "@MaterialIcons/directions_ferry": [
+    32,
+    32,
+    58674
+  ],
   "@MaterialIcons/directions_boat": [
     32,
     32,
@@ -3060,6 +3500,11 @@ qx.$$resources = {
     58675
   ],
   "@MaterialIcons/directions_train": [
+    32,
+    32,
+    58676
+  ],
+  "@MaterialIcons/directions_railway": [
     32,
     32,
     58676
@@ -3103,6 +3548,11 @@ qx.$$resources = {
     32,
     32,
     58686
+  ],
+  "@MaterialIcons/local_attraction": [
+    32,
+    32,
+    58687
   ],
   "@MaterialIcons/local_activity": [
     32,
@@ -3219,6 +3669,16 @@ qx.$$resources = {
     32,
     58709
   ],
+  "@MaterialIcons/local_print_shop": [
+    32,
+    32,
+    58709
+  ],
+  "@MaterialIcons/local_restaurant": [
+    32,
+    32,
+    58710
+  ],
   "@MaterialIcons/local_dining": [
     32,
     32,
@@ -3238,6 +3698,11 @@ qx.$$resources = {
     32,
     32,
     58713
+  ],
+  "@MaterialIcons/location_history": [
+    32,
+    32,
+    58714
   ],
   "@MaterialIcons/person_pin": [
     32,
@@ -3499,6 +3964,11 @@ qx.$$resources = {
     32,
     58834
   ],
+  "@MaterialIcons/keyboard_control": [
+    32,
+    32,
+    58835
+  ],
   "@MaterialIcons/more_horiz": [
     32,
     32,
@@ -3588,6 +4058,11 @@ qx.$$resources = {
     32,
     32,
     58896
+  ],
+  "@MaterialIcons/do_not_disturb_alt": [
+    32,
+    32,
+    58897
   ],
   "@MaterialIcons/dnd_forwardslash": [
     32,
@@ -3774,6 +4249,11 @@ qx.$$resources = {
     32,
     58935
   ],
+  "@MaterialIcons/confirmation_number": [
+    32,
+    32,
+    58936
+  ],
   "@MaterialIcons/confirmation_num": [
     32,
     32,
@@ -3864,6 +4344,56 @@ qx.$$resources = {
     32,
     58953
   ],
+  "@MaterialIcons/add_to_drive": [
+    32,
+    32,
+    58972
+  ],
+  "@MaterialIcons/auto_awesome": [
+    32,
+    32,
+    58975
+  ],
+  "@MaterialIcons/auto_awesome_mosaic": [
+    32,
+    32,
+    58976
+  ],
+  "@MaterialIcons/auto_awesome_motion": [
+    32,
+    32,
+    58977
+  ],
+  "@MaterialIcons/auto_fix_high": [
+    32,
+    32,
+    58979
+  ],
+  "@MaterialIcons/auto_fix_normal": [
+    32,
+    32,
+    58980
+  ],
+  "@MaterialIcons/auto_fix_off": [
+    32,
+    32,
+    58981
+  ],
+  "@MaterialIcons/auto_stories": [
+    32,
+    32,
+    58982
+  ],
+  "@MaterialIcons/drive_file_move": [
+    32,
+    32,
+    58997
+  ],
+  "@MaterialIcons/ios_share": [
+    32,
+    32,
+    59064
+  ],
   "@MaterialIcons/pie_chart": [
     32,
     32,
@@ -3888,6 +4418,16 @@ qx.$$resources = {
     32,
     32,
     59105
+  ],
+  "@MaterialIcons/animation": [
+    32,
+    32,
+    59164
+  ],
+  "@MaterialIcons/add_business": [
+    32,
+    32,
+    59177
   ],
   "@MaterialIcons/cake": [
     32,
@@ -3940,6 +4480,11 @@ qx.$$resources = {
     59382
   ],
   "@MaterialIcons/notifications_on": [
+    32,
+    32,
+    59383
+  ],
+  "@MaterialIcons/notifications_active": [
     32,
     32,
     59383
@@ -4059,12 +4604,22 @@ qx.$$resources = {
     32,
     59445
   ],
+  "@MaterialIcons/radio_button_unchecked": [
+    32,
+    32,
+    59446
+  ],
   "@MaterialIcons/radio_button_off": [
     32,
     32,
     59446
   ],
   "@MaterialIcons/radio_button_on": [
+    32,
+    32,
+    59447
+  ],
+  "@MaterialIcons/radio_button_checked": [
     32,
     32,
     59447
@@ -4078,6 +4633,11 @@ qx.$$resources = {
     32,
     32,
     59449
+  ],
+  "@MaterialIcons/star_outline": [
+    32,
+    32,
+    61551
   ],
   "@MaterialIcons/star_border": [
     32,
@@ -4209,6 +4769,11 @@ qx.$$resources = {
     32,
     59494
   ],
+  "@MaterialIcons/bookmark_outline": [
+    32,
+    32,
+    59495
+  ],
   "@MaterialIcons/bookmark_border": [
     32,
     32,
@@ -4319,6 +4884,11 @@ qx.$$resources = {
     32,
     59517
   ],
+  "@MaterialIcons/favorite_outline": [
+    32,
+    32,
+    59518
+  ],
   "@MaterialIcons/favorite_border": [
     32,
     32,
@@ -4369,6 +4939,11 @@ qx.$$resources = {
     32,
     59527
   ],
+  "@MaterialIcons/highlight_remove": [
+    32,
+    32,
+    59528
+  ],
   "@MaterialIcons/highlight_off": [
     32,
     32,
@@ -4413,6 +4988,11 @@ qx.$$resources = {
     32,
     32,
     59536
+  ],
+  "@MaterialIcons/invert_colors_on": [
+    32,
+    32,
+    59537
   ],
   "@MaterialIcons/invert_colors": [
     32,
@@ -4504,6 +5084,11 @@ qx.$$resources = {
     32,
     59554
   ],
+  "@MaterialIcons/perm_contact_calendar": [
+    32,
+    32,
+    59555
+  ],
   "@MaterialIcons/perm_contact_cal": [
     32,
     32,
@@ -4513,6 +5098,11 @@ qx.$$resources = {
     32,
     32,
     59556
+  ],
+  "@MaterialIcons/perm_device_information": [
+    32,
+    32,
+    59557
   ],
   "@MaterialIcons/perm_device_info": [
     32,
@@ -4634,6 +5224,11 @@ qx.$$resources = {
     32,
     59581
   ],
+  "@MaterialIcons/settings_brightness": [
+    32,
+    32,
+    59581
+  ],
   "@MaterialIcons/settings_ethernet": [
     32,
     32,
@@ -4749,12 +5344,22 @@ qx.$$resources = {
     32,
     59605
   ],
+  "@MaterialIcons/swap_vertical_circle": [
+    32,
+    32,
+    59606
+  ],
   "@MaterialIcons/swap_vert_circle": [
     32,
     32,
     59606
   ],
   "@MaterialIcons/system_update_tv": [
+    32,
+    32,
+    59607
+  ],
+  "@MaterialIcons/system_update_alt": [
     32,
     32,
     59607
@@ -4818,6 +5423,11 @@ qx.$$resources = {
     32,
     32,
     59619
+  ],
+  "@MaterialIcons/trending_neutral": [
+    32,
+    32,
+    59620
   ],
   "@MaterialIcons/trending_flat": [
     32,
@@ -4909,15 +5519,30 @@ qx.$$resources = {
     32,
     59637
   ],
+  "@MaterialIcons/card_giftcard": [
+    32,
+    32,
+    59638
+  ],
   "@MaterialIcons/wallet_giftcard": [
     32,
     32,
     59638
   ],
+  "@MaterialIcons/card_membership": [
+    32,
+    32,
+    59639
+  ],
   "@MaterialIcons/wallet_membership": [
     32,
     32,
     59639
+  ],
+  "@MaterialIcons/card_travel": [
+    32,
+    32,
+    59640
   ],
   "@MaterialIcons/wallet_travel": [
     32,
@@ -4938,6 +5563,11 @@ qx.$$resources = {
     32,
     32,
     59643
+  ],
+  "@MaterialIcons/camera_enhance": [
+    32,
+    32,
+    59644
   ],
   "@MaterialIcons/enhance_photo_translate": [
     32,
@@ -5714,6 +6344,21 @@ qx.$$resources = {
     32,
     59837
   ],
+  "@MaterialIcons/motion_photos_off": [
+    32,
+    32,
+    59840
+  ],
+  "@MaterialIcons/motion_photos_on": [
+    32,
+    32,
+    59841
+  ],
+  "@MaterialIcons/motion_photos_paused": [
+    32,
+    32,
+    59842
+  ],
   "@MaterialIcons/mp": [
     32,
     32,
@@ -6139,6 +6784,36 @@ qx.$$resources = {
     32,
     59961
   ],
+  "@MaterialIcons/biotech": [
+    32,
+    32,
+    59962
+  ],
+  "@MaterialIcons/architecture": [
+    32,
+    32,
+    59963
+  ],
+  "@MaterialIcons/construction": [
+    32,
+    32,
+    59964
+  ],
+  "@MaterialIcons/engineering": [
+    32,
+    32,
+    59965
+  ],
+  "@MaterialIcons/history_edu": [
+    32,
+    32,
+    59966
+  ],
+  "@MaterialIcons/military_tech": [
+    32,
+    32,
+    59967
+  ],
   "@MaterialIcons/apartment": [
     32,
     32,
@@ -6189,6 +6864,36 @@ qx.$$resources = {
     32,
     59977
   ],
+  "@MaterialIcons/psychology": [
+    32,
+    32,
+    59978
+  ],
+  "@MaterialIcons/science": [
+    32,
+    32,
+    59979
+  ],
+  "@MaterialIcons/auto_delete": [
+    32,
+    32,
+    59980
+  ],
+  "@MaterialIcons/person_add_alt": [
+    32,
+    32,
+    59981
+  ],
+  "@MaterialIcons/comment_bank": [
+    32,
+    32,
+    59982
+  ],
+  "@MaterialIcons/grading": [
+    32,
+    32,
+    59983
+  ],
   "@MaterialIcons/double_arrow": [
     32,
     32,
@@ -6238,6 +6943,36 @@ qx.$$resources = {
     32,
     32,
     59993
+  ],
+  "@MaterialIcons/plagiarism": [
+    32,
+    32,
+    59994
+  ],
+  "@MaterialIcons/hourglass_top": [
+    32,
+    32,
+    59995
+  ],
+  "@MaterialIcons/hourglass_bottom": [
+    32,
+    32,
+    59996
+  ],
+  "@MaterialIcons/more_time": [
+    32,
+    32,
+    59997
+  ],
+  "@MaterialIcons/attach_email": [
+    32,
+    32,
+    59998
+  ],
+  "@MaterialIcons/calculate": [
+    32,
+    32,
+    59999
   ],
   "@MaterialIcons/liquor": [
     32,
@@ -6313,6 +7048,66 @@ qx.$$resources = {
     32,
     32,
     60020
+  ],
+  "@MaterialIcons/video_settings": [
+    32,
+    32,
+    60021
+  ],
+  "@MaterialIcons/search_off": [
+    32,
+    32,
+    60022
+  ],
+  "@MaterialIcons/login": [
+    32,
+    32,
+    60023
+  ],
+  "@MaterialIcons/self_improvement": [
+    32,
+    32,
+    60024
+  ],
+  "@MaterialIcons/agriculture": [
+    32,
+    32,
+    60025
+  ],
+  "@MaterialIcons/electric_bike": [
+    32,
+    32,
+    60187
+  ],
+  "@MaterialIcons/electric_car": [
+    32,
+    32,
+    60188
+  ],
+  "@MaterialIcons/electric_moped": [
+    32,
+    32,
+    60189
+  ],
+  "@MaterialIcons/electric_rickshaw": [
+    32,
+    32,
+    60190
+  ],
+  "@MaterialIcons/electric_scooter": [
+    32,
+    32,
+    60191
+  ],
+  "@MaterialIcons/moped": [
+    32,
+    32,
+    60200
+  ],
+  "@MaterialIcons/pedal_bike": [
+    32,
+    32,
+    60201
   ],
   "@MaterialIcons/ac_unit": [
     32,
@@ -6414,6 +7209,2101 @@ qx.$$resources = {
     32,
     60239
   ],
+  "@MaterialIcons/5g": [
+    32,
+    32,
+    61240
+  ],
+  "@MaterialIcons/ad_units": [
+    32,
+    32,
+    61241
+  ],
+  "@MaterialIcons/add_location_alt": [
+    32,
+    32,
+    61242
+  ],
+  "@MaterialIcons/add_road": [
+    32,
+    32,
+    61243
+  ],
+  "@MaterialIcons/addchart": [
+    32,
+    32,
+    61244
+  ],
+  "@MaterialIcons/admin_panel_settings": [
+    32,
+    32,
+    61245
+  ],
+  "@MaterialIcons/analytics": [
+    32,
+    32,
+    61246
+  ],
+  "@MaterialIcons/app_blocking": [
+    32,
+    32,
+    61247
+  ],
+  "@MaterialIcons/app_registration": [
+    32,
+    32,
+    61248
+  ],
+  "@MaterialIcons/app_settings_alt": [
+    32,
+    32,
+    61249
+  ],
+  "@MaterialIcons/article": [
+    32,
+    32,
+    61250
+  ],
+  "@MaterialIcons/backup_table": [
+    32,
+    32,
+    61251
+  ],
+  "@MaterialIcons/bedtime": [
+    32,
+    32,
+    61252
+  ],
+  "@MaterialIcons/bike_scooter": [
+    32,
+    32,
+    61253
+  ],
+  "@MaterialIcons/block_flipped": [
+    32,
+    32,
+    61254
+  ],
+  "@MaterialIcons/browser_not_supported": [
+    32,
+    32,
+    61255
+  ],
+  "@MaterialIcons/build_circle": [
+    32,
+    32,
+    61256
+  ],
+  "@MaterialIcons/campaign": [
+    32,
+    32,
+    61257
+  ],
+  "@MaterialIcons/circle": [
+    32,
+    32,
+    61258
+  ],
+  "@MaterialIcons/dirty_lens": [
+    32,
+    32,
+    61259
+  ],
+  "@MaterialIcons/domain_verification": [
+    32,
+    32,
+    61260
+  ],
+  "@MaterialIcons/edit_road": [
+    32,
+    32,
+    61261
+  ],
+  "@MaterialIcons/face_retouching_natural": [
+    32,
+    32,
+    61262
+  ],
+  "@MaterialIcons/filter_alt": [
+    32,
+    32,
+    61263
+  ],
+  "@MaterialIcons/flaky": [
+    32,
+    32,
+    61264
+  ],
+  "@MaterialIcons/hdr_enhanced_select": [
+    32,
+    32,
+    61265
+  ],
+  "@MaterialIcons/highlight_alt": [
+    32,
+    32,
+    61266
+  ],
+  "@MaterialIcons/hourglass_disabled": [
+    32,
+    32,
+    61267
+  ],
+  "@MaterialIcons/integration_instructions": [
+    32,
+    32,
+    61268
+  ],
+  "@MaterialIcons/local_fire_department": [
+    32,
+    32,
+    61269
+  ],
+  "@MaterialIcons/local_police": [
+    32,
+    32,
+    61270
+  ],
+  "@MaterialIcons/lock_clock": [
+    32,
+    32,
+    61271
+  ],
+  "@MaterialIcons/maps_ugc": [
+    32,
+    32,
+    61272
+  ],
+  "@MaterialIcons/mic_external_off": [
+    32,
+    32,
+    61273
+  ],
+  "@MaterialIcons/mic_external_on": [
+    32,
+    32,
+    61274
+  ],
+  "@MaterialIcons/monitor": [
+    32,
+    32,
+    61275
+  ],
+  "@MaterialIcons/nat": [
+    32,
+    32,
+    61276
+  ],
+  "@MaterialIcons/next_plan": [
+    32,
+    32,
+    61277
+  ],
+  "@MaterialIcons/nightlight_round": [
+    32,
+    32,
+    61278
+  ],
+  "@MaterialIcons/outbox": [
+    32,
+    32,
+    61279
+  ],
+  "@MaterialIcons/panorama_horizontal_select": [
+    32,
+    32,
+    61280
+  ],
+  "@MaterialIcons/panorama_vertical_select": [
+    32,
+    32,
+    61281
+  ],
+  "@MaterialIcons/panorama_wide_angle_select": [
+    32,
+    32,
+    61282
+  ],
+  "@MaterialIcons/payments": [
+    32,
+    32,
+    61283
+  ],
+  "@MaterialIcons/pending": [
+    32,
+    32,
+    61284
+  ],
+  "@MaterialIcons/person_add_alt_1": [
+    32,
+    32,
+    61285
+  ],
+  "@MaterialIcons/person_remove": [
+    32,
+    32,
+    61286
+  ],
+  "@MaterialIcons/person_remove_alt_1": [
+    32,
+    32,
+    61287
+  ],
+  "@MaterialIcons/photo_camera_back": [
+    32,
+    32,
+    61288
+  ],
+  "@MaterialIcons/photo_camera_front": [
+    32,
+    32,
+    61289
+  ],
+  "@MaterialIcons/play_disabled": [
+    32,
+    32,
+    61290
+  ],
+  "@MaterialIcons/qr_code": [
+    32,
+    32,
+    61291
+  ],
+  "@MaterialIcons/quickreply": [
+    32,
+    32,
+    61292
+  ],
+  "@MaterialIcons/read_more": [
+    32,
+    32,
+    61293
+  ],
+  "@MaterialIcons/receipt_long": [
+    32,
+    32,
+    61294
+  ],
+  "@MaterialIcons/run_circle": [
+    32,
+    32,
+    61295
+  ],
+  "@MaterialIcons/screen_search_desktop": [
+    32,
+    32,
+    61296
+  ],
+  "@MaterialIcons/stop_circle": [
+    32,
+    32,
+    61297
+  ],
+  "@MaterialIcons/subtitles_off": [
+    32,
+    32,
+    61298
+  ],
+  "@MaterialIcons/support": [
+    32,
+    32,
+    61299
+  ],
+  "@MaterialIcons/taxi_alert": [
+    32,
+    32,
+    61300
+  ],
+  "@MaterialIcons/tour": [
+    32,
+    32,
+    61301
+  ],
+  "@MaterialIcons/verified": [
+    32,
+    32,
+    61302
+  ],
+  "@MaterialIcons/wifi_calling": [
+    32,
+    32,
+    61303
+  ],
+  "@MaterialIcons/wrong_location": [
+    32,
+    32,
+    61304
+  ],
+  "@MaterialIcons/mediation": [
+    32,
+    32,
+    61351
+  ],
+  "@MaterialIcons/1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIcons/30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIcons/30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIcons/3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIcons/3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIcons/4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIcons/4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIcons/60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIcons/60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIcons/access_time_filled": [
+    32,
+    32,
+    61398
+  ],
+  "@MaterialIcons/air": [
+    32,
+    32,
+    61400
+  ],
+  "@MaterialIcons/airplane_ticket": [
+    32,
+    32,
+    61401
+  ],
+  "@MaterialIcons/aod": [
+    32,
+    32,
+    61402
+  ],
+  "@MaterialIcons/attribution": [
+    32,
+    32,
+    61403
+  ],
+  "@MaterialIcons/autofps_select": [
+    32,
+    32,
+    61404
+  ],
+  "@MaterialIcons/bathroom": [
+    32,
+    32,
+    61405
+  ],
+  "@MaterialIcons/battery_saver": [
+    32,
+    32,
+    61406
+  ],
+  "@MaterialIcons/bed": [
+    32,
+    32,
+    61407
+  ],
+  "@MaterialIcons/bedroom_baby": [
+    32,
+    32,
+    61408
+  ],
+  "@MaterialIcons/bedroom_child": [
+    32,
+    32,
+    61409
+  ],
+  "@MaterialIcons/bedroom_parent": [
+    32,
+    32,
+    61410
+  ],
+  "@MaterialIcons/blender": [
+    32,
+    32,
+    61411
+  ],
+  "@MaterialIcons/bloodtype": [
+    32,
+    32,
+    61412
+  ],
+  "@MaterialIcons/bluetooth_drive": [
+    32,
+    32,
+    61413
+  ],
+  "@MaterialIcons/cable": [
+    32,
+    32,
+    61414
+  ],
+  "@MaterialIcons/calendar_view_month": [
+    32,
+    32,
+    61415
+  ],
+  "@MaterialIcons/calendar_view_week": [
+    32,
+    32,
+    61416
+  ],
+  "@MaterialIcons/camera_indoor": [
+    32,
+    32,
+    61417
+  ],
+  "@MaterialIcons/camera_outdoor": [
+    32,
+    32,
+    61418
+  ],
+  "@MaterialIcons/cameraswitch": [
+    32,
+    32,
+    61419
+  ],
+  "@MaterialIcons/cast_for_education": [
+    32,
+    32,
+    61420
+  ],
+  "@MaterialIcons/chair": [
+    32,
+    32,
+    61421
+  ],
+  "@MaterialIcons/chair_alt": [
+    32,
+    32,
+    61422
+  ],
+  "@MaterialIcons/coffee": [
+    32,
+    32,
+    61423
+  ],
+  "@MaterialIcons/coffee_maker": [
+    32,
+    32,
+    61424
+  ],
+  "@MaterialIcons/credit_score": [
+    32,
+    32,
+    61425
+  ],
+  "@MaterialIcons/data_saver_off": [
+    32,
+    32,
+    61426
+  ],
+  "@MaterialIcons/data_saver_on": [
+    32,
+    32,
+    61427
+  ],
+  "@MaterialIcons/dining": [
+    32,
+    32,
+    61428
+  ],
+  "@MaterialIcons/directions_boat_filled": [
+    32,
+    32,
+    61429
+  ],
+  "@MaterialIcons/directions_bus_filled": [
+    32,
+    32,
+    61430
+  ],
+  "@MaterialIcons/directions_car_filled": [
+    32,
+    32,
+    61431
+  ],
+  "@MaterialIcons/directions_railway_filled": [
+    32,
+    32,
+    61432
+  ],
+  "@MaterialIcons/directions_subway_filled": [
+    32,
+    32,
+    61433
+  ],
+  "@MaterialIcons/directions_transit_filled": [
+    32,
+    32,
+    61434
+  ],
+  "@MaterialIcons/do_not_disturb_on_total_silence": [
+    32,
+    32,
+    61435
+  ],
+  "@MaterialIcons/door_back": [
+    32,
+    32,
+    61436
+  ],
+  "@MaterialIcons/door_front": [
+    32,
+    32,
+    61437
+  ],
+  "@MaterialIcons/door_sliding": [
+    32,
+    32,
+    61438
+  ],
+  "@MaterialIcons/doorbell": [
+    32,
+    32,
+    61439
+  ],
+  "@MaterialIcons/download_for_offline": [
+    32,
+    32,
+    61440
+  ],
+  "@MaterialIcons/downloading": [
+    32,
+    32,
+    61441
+  ],
+  "@MaterialIcons/e_mobiledata": [
+    32,
+    32,
+    61442
+  ],
+  "@MaterialIcons/earbuds": [
+    32,
+    32,
+    61443
+  ],
+  "@MaterialIcons/earbuds_battery": [
+    32,
+    32,
+    61444
+  ],
+  "@MaterialIcons/edgesensor_high": [
+    32,
+    32,
+    61445
+  ],
+  "@MaterialIcons/edgesensor_low": [
+    32,
+    32,
+    61446
+  ],
+  "@MaterialIcons/face_retouching_off": [
+    32,
+    32,
+    61447
+  ],
+  "@MaterialIcons/feed": [
+    32,
+    32,
+    61449
+  ],
+  "@MaterialIcons/flashlight_off": [
+    32,
+    32,
+    61450
+  ],
+  "@MaterialIcons/flashlight_on": [
+    32,
+    32,
+    61451
+  ],
+  "@MaterialIcons/flatware": [
+    32,
+    32,
+    61452
+  ],
+  "@MaterialIcons/flourescent": [
+    32,
+    32,
+    61453
+  ],
+  "@MaterialIcons/fmd_bad": [
+    32,
+    32,
+    61454
+  ],
+  "@MaterialIcons/fmd_good": [
+    32,
+    32,
+    61455
+  ],
+  "@MaterialIcons/g_mobiledata": [
+    32,
+    32,
+    61456
+  ],
+  "@MaterialIcons/garage": [
+    32,
+    32,
+    61457
+  ],
+  "@MaterialIcons/gpp_bad": [
+    32,
+    32,
+    61458
+  ],
+  "@MaterialIcons/gpp_good": [
+    32,
+    32,
+    61459
+  ],
+  "@MaterialIcons/gpp_maybe": [
+    32,
+    32,
+    61460
+  ],
+  "@MaterialIcons/grid_3x3": [
+    32,
+    32,
+    61461
+  ],
+  "@MaterialIcons/grid_4x4": [
+    32,
+    32,
+    61462
+  ],
+  "@MaterialIcons/grid_goldenratio": [
+    32,
+    32,
+    61463
+  ],
+  "@MaterialIcons/h_mobiledata": [
+    32,
+    32,
+    61464
+  ],
+  "@MaterialIcons/h_plus_mobiledata": [
+    32,
+    32,
+    61465
+  ],
+  "@MaterialIcons/hdr_auto": [
+    32,
+    32,
+    61466
+  ],
+  "@MaterialIcons/hdr_auto_select": [
+    32,
+    32,
+    61467
+  ],
+  "@MaterialIcons/hdr_off_select": [
+    32,
+    32,
+    61468
+  ],
+  "@MaterialIcons/hdr_on_select": [
+    32,
+    32,
+    61469
+  ],
+  "@MaterialIcons/hdr_plus": [
+    32,
+    32,
+    61470
+  ],
+  "@MaterialIcons/headphones": [
+    32,
+    32,
+    61471
+  ],
+  "@MaterialIcons/headphones_battery": [
+    32,
+    32,
+    61472
+  ],
+  "@MaterialIcons/hevc": [
+    32,
+    32,
+    61473
+  ],
+  "@MaterialIcons/hide_image": [
+    32,
+    32,
+    61474
+  ],
+  "@MaterialIcons/hide_source": [
+    32,
+    32,
+    61475
+  ],
+  "@MaterialIcons/home_max": [
+    32,
+    32,
+    61476
+  ],
+  "@MaterialIcons/home_mini": [
+    32,
+    32,
+    61477
+  ],
+  "@MaterialIcons/keyboard_alt": [
+    32,
+    32,
+    61480
+  ],
+  "@MaterialIcons/lens_blur": [
+    32,
+    32,
+    61481
+  ],
+  "@MaterialIcons/light": [
+    32,
+    32,
+    61482
+  ],
+  "@MaterialIcons/living": [
+    32,
+    32,
+    61483
+  ],
+  "@MaterialIcons/lte_mobiledata": [
+    32,
+    32,
+    61484
+  ],
+  "@MaterialIcons/lte_plus_mobiledata": [
+    32,
+    32,
+    61485
+  ],
+  "@MaterialIcons/manage_accounts": [
+    32,
+    32,
+    61486
+  ],
+  "@MaterialIcons/manage_search": [
+    32,
+    32,
+    61487
+  ],
+  "@MaterialIcons/maps_home_work": [
+    32,
+    32,
+    61488
+  ],
+  "@MaterialIcons/media_bluetooth_off": [
+    32,
+    32,
+    61489
+  ],
+  "@MaterialIcons/media_bluetooth_on": [
+    32,
+    32,
+    61490
+  ],
+  "@MaterialIcons/medication": [
+    32,
+    32,
+    61491
+  ],
+  "@MaterialIcons/mobiledata_off": [
+    32,
+    32,
+    61492
+  ],
+  "@MaterialIcons/mode_edit_outline": [
+    32,
+    32,
+    61493
+  ],
+  "@MaterialIcons/mode_night": [
+    32,
+    32,
+    61494
+  ],
+  "@MaterialIcons/mode_standby": [
+    32,
+    32,
+    61495
+  ],
+  "@MaterialIcons/money_off_csred": [
+    32,
+    32,
+    61496
+  ],
+  "@MaterialIcons/monitor_weight": [
+    32,
+    32,
+    61497
+  ],
+  "@MaterialIcons/motion_photos_auto": [
+    32,
+    32,
+    61498
+  ],
+  "@MaterialIcons/nearby_error": [
+    32,
+    32,
+    61499
+  ],
+  "@MaterialIcons/nearby_off": [
+    32,
+    32,
+    61500
+  ],
+  "@MaterialIcons/nightlight": [
+    32,
+    32,
+    61501
+  ],
+  "@MaterialIcons/no_accounts": [
+    32,
+    32,
+    61502
+  ],
+  "@MaterialIcons/no_encryption_gmailerrorred": [
+    32,
+    32,
+    61503
+  ],
+  "@MaterialIcons/note_alt": [
+    32,
+    32,
+    61504
+  ],
+  "@MaterialIcons/paid": [
+    32,
+    32,
+    61505
+  ],
+  "@MaterialIcons/password": [
+    32,
+    32,
+    61506
+  ],
+  "@MaterialIcons/pattern": [
+    32,
+    32,
+    61507
+  ],
+  "@MaterialIcons/pie_chart_outline": [
+    32,
+    32,
+    61508
+  ],
+  "@MaterialIcons/pin": [
+    32,
+    32,
+    61509
+  ],
+  "@MaterialIcons/play_lesson": [
+    32,
+    32,
+    61511
+  ],
+  "@MaterialIcons/podcasts": [
+    32,
+    32,
+    61512
+  ],
+  "@MaterialIcons/precision_manufacturing": [
+    32,
+    32,
+    61513
+  ],
+  "@MaterialIcons/price_change": [
+    32,
+    32,
+    61514
+  ],
+  "@MaterialIcons/price_check": [
+    32,
+    32,
+    61515
+  ],
+  "@MaterialIcons/quiz": [
+    32,
+    32,
+    61516
+  ],
+  "@MaterialIcons/r_mobiledata": [
+    32,
+    32,
+    61517
+  ],
+  "@MaterialIcons/radar": [
+    32,
+    32,
+    61518
+  ],
+  "@MaterialIcons/raw_off": [
+    32,
+    32,
+    61519
+  ],
+  "@MaterialIcons/raw_on": [
+    32,
+    32,
+    61520
+  ],
+  "@MaterialIcons/remember_me": [
+    32,
+    32,
+    61521
+  ],
+  "@MaterialIcons/report_gmailerrorred": [
+    32,
+    32,
+    61522
+  ],
+  "@MaterialIcons/restart_alt": [
+    32,
+    32,
+    61523
+  ],
+  "@MaterialIcons/reviews": [
+    32,
+    32,
+    61524
+  ],
+  "@MaterialIcons/rsvp": [
+    32,
+    32,
+    61525
+  ],
+  "@MaterialIcons/screenshot": [
+    32,
+    32,
+    61526
+  ],
+  "@MaterialIcons/sd_card_alert": [
+    32,
+    32,
+    61527
+  ],
+  "@MaterialIcons/security_update": [
+    32,
+    32,
+    61528
+  ],
+  "@MaterialIcons/security_update_good": [
+    32,
+    32,
+    61529
+  ],
+  "@MaterialIcons/security_update_warning": [
+    32,
+    32,
+    61530
+  ],
+  "@MaterialIcons/sell": [
+    32,
+    32,
+    61531
+  ],
+  "@MaterialIcons/send_to_mobile": [
+    32,
+    32,
+    61532
+  ],
+  "@MaterialIcons/settings_accessibility": [
+    32,
+    32,
+    61533
+  ],
+  "@MaterialIcons/settings_suggest": [
+    32,
+    32,
+    61534
+  ],
+  "@MaterialIcons/share_location": [
+    32,
+    32,
+    61535
+  ],
+  "@MaterialIcons/shortcut": [
+    32,
+    32,
+    61536
+  ],
+  "@MaterialIcons/shower": [
+    32,
+    32,
+    61537
+  ],
+  "@MaterialIcons/signal_cellular_nodata": [
+    32,
+    32,
+    61538
+  ],
+  "@MaterialIcons/signal_wifi_bad": [
+    32,
+    32,
+    61539
+  ],
+  "@MaterialIcons/signal_wifi_connected_no_internet_4": [
+    32,
+    32,
+    61540
+  ],
+  "@MaterialIcons/signal_wifi_statusbar_4_bar": [
+    32,
+    32,
+    61541
+  ],
+  "@MaterialIcons/signal_wifi_statusbar_connected_no_internet_4": [
+    32,
+    32,
+    61542
+  ],
+  "@MaterialIcons/signal_wifi_statusbar_null": [
+    32,
+    32,
+    61543
+  ],
+  "@MaterialIcons/sim_card_download": [
+    32,
+    32,
+    61544
+  ],
+  "@MaterialIcons/sip": [
+    32,
+    32,
+    61545
+  ],
+  "@MaterialIcons/smart_display": [
+    32,
+    32,
+    61546
+  ],
+  "@MaterialIcons/smart_screen": [
+    32,
+    32,
+    61547
+  ],
+  "@MaterialIcons/smart_toy": [
+    32,
+    32,
+    61548
+  ],
+  "@MaterialIcons/splitscreen": [
+    32,
+    32,
+    61549
+  ],
+  "@MaterialIcons/sports_score": [
+    32,
+    32,
+    61550
+  ],
+  "@MaterialIcons/storm": [
+    32,
+    32,
+    61552
+  ],
+  "@MaterialIcons/summarize": [
+    32,
+    32,
+    61553
+  ],
+  "@MaterialIcons/system_security_update": [
+    32,
+    32,
+    61554
+  ],
+  "@MaterialIcons/system_security_update_good": [
+    32,
+    32,
+    61555
+  ],
+  "@MaterialIcons/system_security_update_warning": [
+    32,
+    32,
+    61556
+  ],
+  "@MaterialIcons/task": [
+    32,
+    32,
+    61557
+  ],
+  "@MaterialIcons/thermostat": [
+    32,
+    32,
+    61558
+  ],
+  "@MaterialIcons/thermostat_auto": [
+    32,
+    32,
+    61559
+  ],
+  "@MaterialIcons/timer_10_select": [
+    32,
+    32,
+    61562
+  ],
+  "@MaterialIcons/timer_3_select": [
+    32,
+    32,
+    61563
+  ],
+  "@MaterialIcons/try": [
+    32,
+    32,
+    61564
+  ],
+  "@MaterialIcons/tungsten": [
+    32,
+    32,
+    61565
+  ],
+  "@MaterialIcons/upcoming": [
+    32,
+    32,
+    61566
+  ],
+  "@MaterialIcons/video_camera_back": [
+    32,
+    32,
+    61567
+  ],
+  "@MaterialIcons/video_camera_front": [
+    32,
+    32,
+    61568
+  ],
+  "@MaterialIcons/video_stable": [
+    32,
+    32,
+    61569
+  ],
+  "@MaterialIcons/vrpano": [
+    32,
+    32,
+    61570
+  ],
+  "@MaterialIcons/warning_amber": [
+    32,
+    32,
+    61571
+  ],
+  "@MaterialIcons/water": [
+    32,
+    32,
+    61572
+  ],
+  "@MaterialIcons/wifi_calling_3": [
+    32,
+    32,
+    61573
+  ],
+  "@MaterialIcons/wifi_tethering_error_rounded": [
+    32,
+    32,
+    61574
+  ],
+  "@MaterialIcons/wifi_tethering_off": [
+    32,
+    32,
+    61575
+  ],
+  "@MaterialIcons/window": [
+    32,
+    32,
+    61576
+  ],
+  "@MaterialIcons/yard": [
+    32,
+    32,
+    61577
+  ],
+  "@MaterialIcons/do_disturb": [
+    32,
+    32,
+    61580
+  ],
+  "@MaterialIcons/do_disturb_alt": [
+    32,
+    32,
+    61581
+  ],
+  "@MaterialIcons/do_disturb_off": [
+    32,
+    32,
+    61582
+  ],
+  "@MaterialIcons/do_disturb_on": [
+    32,
+    32,
+    61583
+  ],
+  "@MaterialIcons/download": [
+    32,
+    32,
+    61584
+  ],
+  "@MaterialIcons/download_done": [
+    32,
+    32,
+    61585
+  ],
+  "@MaterialIcons/insights": [
+    32,
+    32,
+    61586
+  ],
+  "@MaterialIcons/mode": [
+    32,
+    32,
+    61591
+  ],
+  "@MaterialIcons/star_border_purple500": [
+    32,
+    32,
+    61593
+  ],
+  "@MaterialIcons/star_purple500": [
+    32,
+    32,
+    61594
+  ],
+  "@MaterialIcons/upload": [
+    32,
+    32,
+    61595
+  ],
+  "@MaterialIcons/signal_cellular_0_bar": [
+    32,
+    32,
+    61608
+  ],
+  "@MaterialIcons/signal_cellular_connected_no_internet_0_bar": [
+    32,
+    32,
+    61612
+  ],
+  "@MaterialIcons/signal_wifi_0_bar": [
+    32,
+    32,
+    61616
+  ],
+  "@MaterialIcons/fact_check": [
+    32,
+    32,
+    61637
+  ],
+  "@MaterialIcons/model_training": [
+    32,
+    32,
+    61647
+  ],
+  "@MaterialIcons/not_started": [
+    32,
+    32,
+    61649
+  ],
+  "@MaterialIcons/outgoing_mail": [
+    32,
+    32,
+    61650
+  ],
+  "@MaterialIcons/privacy_tip": [
+    32,
+    32,
+    61660
+  ],
+  "@MaterialIcons/support_agent": [
+    32,
+    32,
+    61666
+  ],
+  "@MaterialIcons/online_prediction": [
+    32,
+    32,
+    61675
+  ],
+  "@MaterialIcons/star_rate": [
+    32,
+    32,
+    61676
+  ],
+  "@MaterialIcons/batch_prediction": [
+    32,
+    32,
+    61685
+  ],
+  "@MaterialIcons/pest_control": [
+    32,
+    32,
+    61690
+  ],
+  "@MaterialIcons/upgrade": [
+    32,
+    32,
+    61691
+  ],
+  "@MaterialIcons/wifi_protected_setup": [
+    32,
+    32,
+    61692
+  ],
+  "@MaterialIcons/pest_control_rodent": [
+    32,
+    32,
+    61693
+  ],
+  "@MaterialIcons/not_accessible": [
+    32,
+    32,
+    61694
+  ],
+  "@MaterialIcons/cleaning_services": [
+    32,
+    32,
+    61695
+  ],
+  "@MaterialIcons/home_repair_service": [
+    32,
+    32,
+    61696
+  ],
+  "@MaterialIcons/table_rows": [
+    32,
+    32,
+    61697
+  ],
+  "@MaterialIcons/electrical_services": [
+    32,
+    32,
+    61698
+  ],
+  "@MaterialIcons/hearing_disabled": [
+    32,
+    32,
+    61700
+  ],
+  "@MaterialIcons/person_search": [
+    32,
+    32,
+    61702
+  ],
+  "@MaterialIcons/plumbing": [
+    32,
+    32,
+    61703
+  ],
+  "@MaterialIcons/horizontal_rule": [
+    32,
+    32,
+    61704
+  ],
+  "@MaterialIcons/medical_services": [
+    32,
+    32,
+    61705
+  ],
+  "@MaterialIcons/design_services": [
+    32,
+    32,
+    61706
+  ],
+  "@MaterialIcons/handyman": [
+    32,
+    32,
+    61707
+  ],
+  "@MaterialIcons/miscellaneous_services": [
+    32,
+    32,
+    61708
+  ],
+  "@MaterialIcons/push_pin": [
+    32,
+    32,
+    61709
+  ],
+  "@MaterialIcons/hvac": [
+    32,
+    32,
+    61710
+  ],
+  "@MaterialIcons/directions_off": [
+    32,
+    32,
+    61711
+  ],
+  "@MaterialIcons/subscript": [
+    32,
+    32,
+    61713
+  ],
+  "@MaterialIcons/superscript": [
+    32,
+    32,
+    61714
+  ],
+  "@MaterialIcons/view_sidebar": [
+    32,
+    32,
+    61716
+  ],
+  "@MaterialIcons/image_not_supported": [
+    32,
+    32,
+    61718
+  ],
+  "@MaterialIcons/legend_toggle": [
+    32,
+    32,
+    61723
+  ],
+  "@MaterialIcons/history_toggle_off": [
+    32,
+    32,
+    61821
+  ],
+  "@MaterialIcons/point_of_sale": [
+    32,
+    32,
+    61822
+  ],
+  "@MaterialIcons/arrow_circle_down": [
+    32,
+    32,
+    61825
+  ],
+  "@MaterialIcons/arrow_circle_up": [
+    32,
+    32,
+    61826
+  ],
+  "@MaterialIcons/alt_route": [
+    32,
+    32,
+    61828
+  ],
+  "@MaterialIcons/forward_to_inbox": [
+    32,
+    32,
+    61831
+  ],
+  "@MaterialIcons/mark_chat_unread": [
+    32,
+    32,
+    61833
+  ],
+  "@MaterialIcons/mark_email_unread": [
+    32,
+    32,
+    61834
+  ],
+  "@MaterialIcons/mark_chat_read": [
+    32,
+    32,
+    61835
+  ],
+  "@MaterialIcons/mark_email_read": [
+    32,
+    32,
+    61836
+  ],
+  "@MaterialIcons/baby_changing_station": [
+    32,
+    32,
+    61851
+  ],
+  "@MaterialIcons/backpack": [
+    32,
+    32,
+    61852
+  ],
+  "@MaterialIcons/charging_station": [
+    32,
+    32,
+    61853
+  ],
+  "@MaterialIcons/checkroom": [
+    32,
+    32,
+    61854
+  ],
+  "@MaterialIcons/do_not_step": [
+    32,
+    32,
+    61855
+  ],
+  "@MaterialIcons/elevator": [
+    32,
+    32,
+    61856
+  ],
+  "@MaterialIcons/escalator": [
+    32,
+    32,
+    61857
+  ],
+  "@MaterialIcons/family_restroom": [
+    32,
+    32,
+    61858
+  ],
+  "@MaterialIcons/fire_hydrant": [
+    32,
+    32,
+    61859
+  ],
+  "@MaterialIcons/no_cell": [
+    32,
+    32,
+    61860
+  ],
+  "@MaterialIcons/no_drinks": [
+    32,
+    32,
+    61861
+  ],
+  "@MaterialIcons/no_flash": [
+    32,
+    32,
+    61862
+  ],
+  "@MaterialIcons/no_food": [
+    32,
+    32,
+    61863
+  ],
+  "@MaterialIcons/no_photography": [
+    32,
+    32,
+    61864
+  ],
+  "@MaterialIcons/stairs": [
+    32,
+    32,
+    61865
+  ],
+  "@MaterialIcons/tty": [
+    32,
+    32,
+    61866
+  ],
+  "@MaterialIcons/wheelchair_pickup": [
+    32,
+    32,
+    61867
+  ],
+  "@MaterialIcons/escalator_warning": [
+    32,
+    32,
+    61868
+  ],
+  "@MaterialIcons/umbrella": [
+    32,
+    32,
+    61869
+  ],
+  "@MaterialIcons/stroller": [
+    32,
+    32,
+    61870
+  ],
+  "@MaterialIcons/no_stroller": [
+    32,
+    32,
+    61871
+  ],
+  "@MaterialIcons/do_not_touch": [
+    32,
+    32,
+    61872
+  ],
+  "@MaterialIcons/wash": [
+    32,
+    32,
+    61873
+  ],
+  "@MaterialIcons/soap": [
+    32,
+    32,
+    61874
+  ],
+  "@MaterialIcons/dry": [
+    32,
+    32,
+    61875
+  ],
+  "@MaterialIcons/sensor_window": [
+    32,
+    32,
+    61876
+  ],
+  "@MaterialIcons/sensor_door": [
+    32,
+    32,
+    61877
+  ],
+  "@MaterialIcons/request_quote": [
+    32,
+    32,
+    61878
+  ],
+  "@MaterialIcons/api": [
+    32,
+    32,
+    61879
+  ],
+  "@MaterialIcons/room_preferences": [
+    32,
+    32,
+    61880
+  ],
+  "@MaterialIcons/multiple_stop": [
+    32,
+    32,
+    61881
+  ],
+  "@MaterialIcons/pending_actions": [
+    32,
+    32,
+    61883
+  ],
+  "@MaterialIcons/table_view": [
+    32,
+    32,
+    61886
+  ],
+  "@MaterialIcons/dynamic_form": [
+    32,
+    32,
+    61887
+  ],
+  "@MaterialIcons/help_center": [
+    32,
+    32,
+    61888
+  ],
+  "@MaterialIcons/smart_button": [
+    32,
+    32,
+    61889
+  ],
+  "@MaterialIcons/rule": [
+    32,
+    32,
+    61890
+  ],
+  "@MaterialIcons/wysiwyg": [
+    32,
+    32,
+    61891
+  ],
+  "@MaterialIcons/source": [
+    32,
+    32,
+    61892
+  ],
+  "@MaterialIcons/preview": [
+    32,
+    32,
+    61893
+  ],
+  "@MaterialIcons/text_snippet": [
+    32,
+    32,
+    61894
+  ],
+  "@MaterialIcons/snippet_folder": [
+    32,
+    32,
+    61895
+  ],
+  "@MaterialIcons/topic": [
+    32,
+    32,
+    61896
+  ],
+  "@MaterialIcons/rule_folder": [
+    32,
+    32,
+    61897
+  ],
+  "@MaterialIcons/public_off": [
+    32,
+    32,
+    61898
+  ],
+  "@MaterialIcons/shopping_bag": [
+    32,
+    32,
+    61900
+  ],
+  "@MaterialIcons/anchor": [
+    32,
+    32,
+    61901
+  ],
+  "@MaterialIcons/open_in_full": [
+    32,
+    32,
+    61902
+  ],
+  "@MaterialIcons/close_fullscreen": [
+    32,
+    32,
+    61903
+  ],
+  "@MaterialIcons/corporate_fare": [
+    32,
+    32,
+    61904
+  ],
+  "@MaterialIcons/switch_left": [
+    32,
+    32,
+    61905
+  ],
+  "@MaterialIcons/switch_right": [
+    32,
+    32,
+    61906
+  ],
+  "@MaterialIcons/outlet": [
+    32,
+    32,
+    61908
+  ],
+  "@MaterialIcons/no_transfer": [
+    32,
+    32,
+    61909
+  ],
+  "@MaterialIcons/no_meals": [
+    32,
+    32,
+    61910
+  ],
+  "@MaterialIcons/fire_extinguisher": [
+    32,
+    32,
+    61912
+  ],
+  "@MaterialIcons/location_pin": [
+    32,
+    32,
+    61915
+  ],
+  "@MaterialIcons/closed_caption_disabled": [
+    32,
+    32,
+    61916
+  ],
+  "@MaterialIcons/east": [
+    32,
+    32,
+    61919
+  ],
+  "@MaterialIcons/north": [
+    32,
+    32,
+    61920
+  ],
+  "@MaterialIcons/north_east": [
+    32,
+    32,
+    61921
+  ],
+  "@MaterialIcons/north_west": [
+    32,
+    32,
+    61922
+  ],
+  "@MaterialIcons/south": [
+    32,
+    32,
+    61923
+  ],
+  "@MaterialIcons/south_east": [
+    32,
+    32,
+    61924
+  ],
+  "@MaterialIcons/south_west": [
+    32,
+    32,
+    61925
+  ],
+  "@MaterialIcons/west": [
+    32,
+    32,
+    61926
+  ],
+  "@MaterialIcons/wine_bar": [
+    32,
+    32,
+    61928
+  ],
+  "@MaterialIcons/tapas": [
+    32,
+    32,
+    61929
+  ],
+  "@MaterialIcons/set_meal": [
+    32,
+    32,
+    61930
+  ],
+  "@MaterialIcons/near_me_disabled": [
+    32,
+    32,
+    61935
+  ],
+  "@MaterialIcons/night_shelter": [
+    32,
+    32,
+    61937
+  ],
+  "@MaterialIcons/food_bank": [
+    32,
+    32,
+    61938
+  ],
+  "@MaterialIcons/sports_bar": [
+    32,
+    32,
+    61939
+  ],
+  "@MaterialIcons/bento": [
+    32,
+    32,
+    61940
+  ],
+  "@MaterialIcons/rice_bowl": [
+    32,
+    32,
+    61941
+  ],
+  "@MaterialIcons/fence": [
+    32,
+    32,
+    61942
+  ],
+  "@MaterialIcons/countertops": [
+    32,
+    32,
+    61943
+  ],
+  "@MaterialIcons/carpenter": [
+    32,
+    32,
+    61944
+  ],
+  "@MaterialIcons/sticky_note_2": [
+    32,
+    32,
+    61948
+  ],
+  "@MaterialIcons/foundation": [
+    32,
+    32,
+    61952
+  ],
+  "@MaterialIcons/roofing": [
+    32,
+    32,
+    61953
+  ],
+  "@MaterialIcons/house_siding": [
+    32,
+    32,
+    61954
+  ],
+  "@MaterialIcons/water_damage": [
+    32,
+    32,
+    61955
+  ],
+  "@MaterialIcons/microwave": [
+    32,
+    32,
+    61956
+  ],
+  "@MaterialIcons/grass": [
+    32,
+    32,
+    61957
+  ],
+  "@MaterialIcons/qr_code_scanner": [
+    32,
+    32,
+    61958
+  ],
+  "@MaterialIcons/leaderboard": [
+    32,
+    32,
+    61964
+  ],
+  "@MaterialIcons/book_online": [
+    32,
+    32,
+    61975
+  ],
+  "@MaterialIcons/masks": [
+    32,
+    32,
+    61976
+  ],
+  "@MaterialIcons/elderly": [
+    32,
+    32,
+    61978
+  ],
+  "@MaterialIcons/leave_bags_at_home": [
+    32,
+    32,
+    61979
+  ],
+  "@MaterialIcons/reduce_capacity": [
+    32,
+    32,
+    61980
+  ],
+  "@MaterialIcons/sanitizer": [
+    32,
+    32,
+    61981
+  ],
+  "@MaterialIcons/6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIcons/clean_hands": [
+    32,
+    32,
+    61983
+  ],
+  "@MaterialIcons/sick": [
+    32,
+    32,
+    61984
+  ],
+  "@MaterialIcons/coronavirus": [
+    32,
+    32,
+    61985
+  ],
+  "@MaterialIcons/follow_the_signs": [
+    32,
+    32,
+    61986
+  ],
+  "@MaterialIcons/connect_without_contact": [
+    32,
+    32,
+    61987
+  ],
+  "@MaterialIcons/motion_photos_pause": [
+    32,
+    32,
+    61991
+  ],
+  "@MaterialIcons/outbond": [
+    32,
+    32,
+    61992
+  ],
+  "@MaterialIcons/no_meals_ouline": [
+    32,
+    32,
+    61993
+  ],
+  "@MaterialIcons/stacked_line_chart": [
+    32,
+    32,
+    61995
+  ],
+  "@MaterialIcons/request_page": [
+    32,
+    32,
+    61996
+  ],
+  "@MaterialIcons/contact_page": [
+    32,
+    32,
+    61998
+  ],
+  "@MaterialIcons/disabled_by_default": [
+    32,
+    32,
+    62000
+  ],
+  "@MaterialIcons/published_with_changes": [
+    32,
+    32,
+    62002
+  ],
+  "@MaterialIcons/groups": [
+    32,
+    32,
+    62003
+  ],
+  "@MaterialIcons/facebook": [
+    32,
+    32,
+    62004
+  ],
+  "@MaterialIcons/luggage": [
+    32,
+    32,
+    62005
+  ],
+  "@MaterialIcons/unpublished": [
+    32,
+    32,
+    62006
+  ],
+  "@MaterialIcons/no_backpack": [
+    32,
+    32,
+    62007
+  ],
+  "@MaterialIcons/add_task": [
+    32,
+    32,
+    62010
+  ],
+  "@MaterialIcons/no_luggage": [
+    32,
+    32,
+    62011
+  ],
   "@MaterialIconsOutlined/error": [
     32,
     32,
@@ -6438,6 +9328,51 @@ qx.$$resources = {
     32,
     32,
     57348
+  ],
+  "@MaterialIconsOutlined/qr_code_2": [
+    32,
+    32,
+    57354
+  ],
+  "@MaterialIconsOutlined/flutter_dash": [
+    32,
+    32,
+    57355
+  ],
+  "@MaterialIconsOutlined/align_vertical_top": [
+    32,
+    32,
+    57356
+  ],
+  "@MaterialIconsOutlined/align_horizontal_left": [
+    32,
+    32,
+    57357
+  ],
+  "@MaterialIconsOutlined/align_horizontal_center": [
+    32,
+    32,
+    57359
+  ],
+  "@MaterialIconsOutlined/align_horizontal_right": [
+    32,
+    32,
+    57360
+  ],
+  "@MaterialIconsOutlined/align_vertical_center": [
+    32,
+    32,
+    57361
+  ],
+  "@MaterialIconsOutlined/horizontal_distribute": [
+    32,
+    32,
+    57364
+  ],
+  "@MaterialIconsOutlined/align_vertical_bottom": [
+    32,
+    32,
+    57365
   ],
   "@MaterialIconsOutlined/album": [
     32,
@@ -6519,12 +9454,27 @@ qx.$$resources = {
     32,
     57390
   ],
+  "@MaterialIconsOutlined/my_library_add": [
+    32,
+    32,
+    57390
+  ],
   "@MaterialIconsOutlined/library_books": [
     32,
     32,
     57391
   ],
+  "@MaterialIconsOutlined/my_library_books": [
+    32,
+    32,
+    57391
+  ],
   "@MaterialIconsOutlined/library_music": [
+    32,
+    32,
+    57392
+  ],
+  "@MaterialIconsOutlined/my_library_music": [
     32,
     32,
     57392
@@ -6560,6 +9510,11 @@ qx.$$resources = {
     57399
   ],
   "@MaterialIconsOutlined/play_circle_filled": [
+    32,
+    32,
+    57400
+  ],
+  "@MaterialIconsOutlined/play_circle_fill": [
     32,
     32,
     57400
@@ -6645,6 +9600,11 @@ qx.$$resources = {
     57417
   ],
   "@MaterialIconsOutlined/video_library": [
+    32,
+    32,
+    57418
+  ],
+  "@MaterialIconsOutlined/video_collection": [
     32,
     32,
     57418
@@ -6844,6 +9804,11 @@ qx.$$resources = {
     32,
     57458
   ],
+  "@MaterialIconsOutlined/4k": [
+    32,
+    32,
+    57458
+  ],
   "@MaterialIconsOutlined/missed_video_call": [
     32,
     32,
@@ -6853,6 +9818,41 @@ qx.$$resources = {
     32,
     32,
     57460
+  ],
+  "@MaterialIconsOutlined/update_disabled": [
+    32,
+    32,
+    57461
+  ],
+  "@MaterialIconsOutlined/vertical_distribute": [
+    32,
+    32,
+    57462
+  ],
+  "@MaterialIconsOutlined/favorite_border": [
+    32,
+    32,
+    59518
+  ],
+  "@MaterialIconsOutlined/radio_button_unchecked": [
+    32,
+    32,
+    59446
+  ],
+  "@MaterialIconsOutlined/radio_button_off": [
+    32,
+    32,
+    57476
+  ],
+  "@MaterialIconsOutlined/radio_button_checked": [
+    32,
+    32,
+    59447
+  ],
+  "@MaterialIconsOutlined/radio_button_on": [
+    32,
+    32,
+    57477
   ],
   "@MaterialIconsOutlined/business": [
     32,
@@ -6969,7 +9969,17 @@ qx.$$resources = {
     32,
     57546
   ],
+  "@MaterialIconsOutlined/messenger": [
+    32,
+    32,
+    57546
+  ],
   "@MaterialIconsOutlined/chat_bubble_outline": [
+    32,
+    32,
+    57547
+  ],
+  "@MaterialIconsOutlined/messenger_outline": [
     32,
     32,
     57547
@@ -6994,7 +10004,17 @@ qx.$$resources = {
     32,
     57551
   ],
+  "@MaterialIconsOutlined/quick_contacts_dialer": [
+    32,
+    32,
+    57551
+  ],
   "@MaterialIconsOutlined/contact_mail": [
+    32,
+    32,
+    57552
+  ],
+  "@MaterialIconsOutlined/quick_contacts_mail": [
     32,
     32,
     57552
@@ -7129,6 +10149,11 @@ qx.$$resources = {
     32,
     57579
   ],
+  "@MaterialIconsOutlined/cell_wifi": [
+    32,
+    32,
+    57580
+  ],
   "@MaterialIconsOutlined/sentiment_satisfied_alt": [
     32,
     32,
@@ -7188,6 +10213,36 @@ qx.$$resources = {
     32,
     32,
     57676
+  ],
+  "@MaterialIconsOutlined/content_copy": [
+    32,
+    32,
+    61578
+  ],
+  "@MaterialIconsOutlined/copy": [
+    32,
+    32,
+    57677
+  ],
+  "@MaterialIconsOutlined/content_cut": [
+    32,
+    32,
+    61579
+  ],
+  "@MaterialIconsOutlined/cut": [
+    32,
+    32,
+    57678
+  ],
+  "@MaterialIconsOutlined/content_paste": [
+    32,
+    32,
+    61592
+  ],
+  "@MaterialIconsOutlined/paste": [
+    32,
+    32,
+    57679
   ],
   "@MaterialIconsOutlined/create": [
     32,
@@ -7389,6 +10444,16 @@ qx.$$resources = {
     32,
     57719
   ],
+  "@MaterialIconsOutlined/add_link": [
+    32,
+    32,
+    57720
+  ],
+  "@MaterialIconsOutlined/inventory": [
+    32,
+    32,
+    57721
+  ],
   "@MaterialIconsOutlined/access_alarm": [
     32,
     32,
@@ -7414,7 +10479,17 @@ qx.$$resources = {
     32,
     57748
   ],
+  "@MaterialIconsOutlined/airplanemode_off": [
+    32,
+    32,
+    57748
+  ],
   "@MaterialIconsOutlined/airplanemode_active": [
+    32,
+    32,
+    57749
+  ],
+  "@MaterialIconsOutlined/airplanemode_on": [
     32,
     32,
     57749
@@ -7423,6 +10498,26 @@ qx.$$resources = {
     32,
     32,
     57756
+  ],
+  "@MaterialIconsOutlined/shop_2": [
+    32,
+    32,
+    57758
+  ],
+  "@MaterialIconsOutlined/workspaces": [
+    32,
+    32,
+    57760
+  ],
+  "@MaterialIconsOutlined/inventory_2": [
+    32,
+    32,
+    57761
+  ],
+  "@MaterialIconsOutlined/pause_circle": [
+    32,
+    32,
+    57762
   ],
   "@MaterialIconsOutlined/battery_charging_full": [
     32,
@@ -7534,6 +10629,21 @@ qx.$$resources = {
     32,
     57784
   ],
+  "@MaterialIconsOutlined/multitrack_audio": [
+    32,
+    32,
+    57784
+  ],
+  "@MaterialIconsOutlined/network_cell": [
+    32,
+    32,
+    57785
+  ],
+  "@MaterialIconsOutlined/network_wifi": [
+    32,
+    32,
+    57786
+  ],
   "@MaterialIconsOutlined/nfc": [
     32,
     32,
@@ -7544,7 +10654,17 @@ qx.$$resources = {
     32,
     57788
   ],
+  "@MaterialIconsOutlined/now_wallpaper": [
+    32,
+    32,
+    57788
+  ],
   "@MaterialIconsOutlined/widgets": [
+    32,
+    32,
+    57789
+  ],
+  "@MaterialIconsOutlined/now_widgets": [
     32,
     32,
     57789
@@ -7579,10 +10699,40 @@ qx.$$resources = {
     32,
     57795
   ],
+  "@MaterialIconsOutlined/play_circle": [
+    32,
+    32,
+    57796
+  ],
+  "@MaterialIconsOutlined/edit_location_alt": [
+    32,
+    32,
+    57797
+  ],
+  "@MaterialIconsOutlined/wb_twilight": [
+    32,
+    32,
+    57798
+  ],
   "@MaterialIconsOutlined/signal_cellular_4_bar": [
     32,
     32,
     57800
+  ],
+  "@MaterialIconsOutlined/outbound": [
+    32,
+    32,
+    57802
+  ],
+  "@MaterialIconsOutlined/social_distance": [
+    32,
+    32,
+    57803
+  ],
+  "@MaterialIconsOutlined/safety_divider": [
+    32,
+    32,
+    57804
   ],
   "@MaterialIconsOutlined/signal_cellular_connected_no_internet_4_bar": [
     32,
@@ -7603,6 +10753,21 @@ qx.$$resources = {
     32,
     32,
     57808
+  ],
+  "@MaterialIconsOutlined/production_quantity_limits": [
+    32,
+    32,
+    57809
+  ],
+  "@MaterialIconsOutlined/add_reaction": [
+    32,
+    32,
+    57811
+  ],
+  "@MaterialIconsOutlined/health_and_safety": [
+    32,
+    32,
+    57813
   ],
   "@MaterialIconsOutlined/signal_wifi_4_bar": [
     32,
@@ -7644,6 +10809,11 @@ qx.$$resources = {
     32,
     57854
   ],
+  "@MaterialIconsOutlined/device_thermostat": [
+    32,
+    32,
+    57855
+  ],
   "@MaterialIconsOutlined/mobile_friendly": [
     32,
     32,
@@ -7683,6 +10853,11 @@ qx.$$resources = {
     32,
     32,
     57898
+  ],
+  "@MaterialIconsOutlined/border_color": [
+    32,
+    32,
+    57899
   ],
   "@MaterialIconsOutlined/border_horizontal": [
     32,
@@ -7754,10 +10929,20 @@ qx.$$resources = {
     32,
     57913
   ],
+  "@MaterialIconsOutlined/format_color_fill": [
+    32,
+    32,
+    57914
+  ],
   "@MaterialIconsOutlined/format_color_reset": [
     32,
     32,
     57915
+  ],
+  "@MaterialIconsOutlined/format_color_text": [
+    32,
+    32,
+    57916
   ],
   "@MaterialIconsOutlined/format_indent_decrease": [
     32,
@@ -7824,6 +11009,11 @@ qx.$$resources = {
     32,
     57929
   ],
+  "@MaterialIconsOutlined/format_underline": [
+    32,
+    32,
+    57929
+  ],
   "@MaterialIconsOutlined/functions": [
     32,
     32,
@@ -7873,6 +11063,11 @@ qx.$$resources = {
     32,
     32,
     57939
+  ],
+  "@MaterialIconsOutlined/mode_edit": [
+    32,
+    32,
+    57940
   ],
   "@MaterialIconsOutlined/publish": [
     32,
@@ -8034,6 +11229,16 @@ qx.$$resources = {
     32,
     58051
   ],
+  "@MaterialIconsOutlined/file_download": [
+    32,
+    32,
+    58052
+  ],
+  "@MaterialIconsOutlined/file_upload": [
+    32,
+    32,
+    58054
+  ],
   "@MaterialIconsOutlined/folder": [
     32,
     32,
@@ -8053,6 +11258,36 @@ qx.$$resources = {
     32,
     32,
     58060
+  ],
+  "@MaterialIconsOutlined/travel_explore": [
+    32,
+    32,
+    58075
+  ],
+  "@MaterialIconsOutlined/task_alt": [
+    32,
+    32,
+    58086
+  ],
+  "@MaterialIconsOutlined/change_circle": [
+    32,
+    32,
+    58087
+  ],
+  "@MaterialIconsOutlined/arrow_back_ios_new": [
+    32,
+    32,
+    58090
+  ],
+  "@MaterialIconsOutlined/savings": [
+    32,
+    32,
+    58091
+  ],
+  "@MaterialIconsOutlined/copy_all": [
+    32,
+    32,
+    58092
   ],
   "@MaterialIconsOutlined/cast": [
     32,
@@ -8299,6 +11534,16 @@ qx.$$resources = {
     32,
     58169
   ],
+  "@MaterialIconsOutlined/headset_off": [
+    32,
+    32,
+    58170
+  ],
+  "@MaterialIconsOutlined/notification_add": [
+    32,
+    32,
+    58265
+  ],
   "@MaterialIconsOutlined/add_to_photos": [
     32,
     32,
@@ -8534,7 +11779,17 @@ qx.$$resources = {
     32,
     58315
   ],
+  "@MaterialIconsOutlined/exposure_minus_1": [
+    32,
+    32,
+    58315
+  ],
   "@MaterialIconsOutlined/exposure_neg_2": [
+    32,
+    32,
+    58316
+  ],
+  "@MaterialIconsOutlined/exposure_minus_2": [
     32,
     32,
     58316
@@ -8844,6 +12099,11 @@ qx.$$resources = {
     32,
     58380
   ],
+  "@MaterialIconsOutlined/panorama_fisheye": [
+    32,
+    32,
+    58380
+  ],
   "@MaterialIconsOutlined/panorama_horizontal": [
     32,
     32,
@@ -8989,6 +12249,11 @@ qx.$$resources = {
     32,
     58410
   ],
+  "@MaterialIconsOutlined/view_comfortable": [
+    32,
+    32,
+    58410
+  ],
   "@MaterialIconsOutlined/view_compact": [
     32,
     32,
@@ -9094,6 +12359,206 @@ qx.$$resources = {
     32,
     58432
   ],
+  "@MaterialIconsOutlined/code_off": [
+    32,
+    32,
+    58611
+  ],
+  "@MaterialIconsOutlined/credit_card_off": [
+    32,
+    32,
+    58612
+  ],
+  "@MaterialIconsOutlined/extension_off": [
+    32,
+    32,
+    58613
+  ],
+  "@MaterialIconsOutlined/open_in_new_off": [
+    32,
+    32,
+    58614
+  ],
+  "@MaterialIconsOutlined/web_asset_off": [
+    32,
+    32,
+    58615
+  ],
+  "@MaterialIconsOutlined/content_paste_off": [
+    32,
+    32,
+    58616
+  ],
+  "@MaterialIconsOutlined/font_download_off": [
+    32,
+    32,
+    58617
+  ],
+  "@MaterialIconsOutlined/usb_off": [
+    32,
+    32,
+    58618
+  ],
+  "@MaterialIconsOutlined/auto_graph": [
+    32,
+    32,
+    58619
+  ],
+  "@MaterialIconsOutlined/query_stats": [
+    32,
+    32,
+    58620
+  ],
+  "@MaterialIconsOutlined/schema": [
+    32,
+    32,
+    58621
+  ],
+  "@MaterialIconsOutlined/file_download_off": [
+    32,
+    32,
+    58622
+  ],
+  "@MaterialIconsOutlined/developer_board_off": [
+    32,
+    32,
+    58623
+  ],
+  "@MaterialIconsOutlined/videogame_asset_off": [
+    32,
+    32,
+    58624
+  ],
+  "@MaterialIconsOutlined/moving": [
+    32,
+    32,
+    58625
+  ],
+  "@MaterialIconsOutlined/sailing": [
+    32,
+    32,
+    58626
+  ],
+  "@MaterialIconsOutlined/snowmobile": [
+    32,
+    32,
+    58627
+  ],
+  "@MaterialIconsOutlined/catching_pokemon": [
+    32,
+    32,
+    58632
+  ],
+  "@MaterialIconsOutlined/downhill_skiing": [
+    32,
+    32,
+    58633
+  ],
+  "@MaterialIconsOutlined/hiking": [
+    32,
+    32,
+    58634
+  ],
+  "@MaterialIconsOutlined/ice_skating": [
+    32,
+    32,
+    58635
+  ],
+  "@MaterialIconsOutlined/kayaking": [
+    32,
+    32,
+    58636
+  ],
+  "@MaterialIconsOutlined/kitesurfing": [
+    32,
+    32,
+    58637
+  ],
+  "@MaterialIconsOutlined/nordic_walking": [
+    32,
+    32,
+    58638
+  ],
+  "@MaterialIconsOutlined/paragliding": [
+    32,
+    32,
+    58639
+  ],
+  "@MaterialIconsOutlined/person_off": [
+    32,
+    32,
+    58640
+  ],
+  "@MaterialIconsOutlined/skateboarding": [
+    32,
+    32,
+    58641
+  ],
+  "@MaterialIconsOutlined/sledding": [
+    32,
+    32,
+    58642
+  ],
+  "@MaterialIconsOutlined/snowboarding": [
+    32,
+    32,
+    58643
+  ],
+  "@MaterialIconsOutlined/snowshoeing": [
+    32,
+    32,
+    58644
+  ],
+  "@MaterialIconsOutlined/surfing": [
+    32,
+    32,
+    58645
+  ],
+  "@MaterialIconsOutlined/light_mode": [
+    32,
+    32,
+    58648
+  ],
+  "@MaterialIconsOutlined/dark_mode": [
+    32,
+    32,
+    58652
+  ],
+  "@MaterialIconsOutlined/running_with_errors": [
+    32,
+    32,
+    58653
+  ],
+  "@MaterialIconsOutlined/sensors": [
+    32,
+    32,
+    58654
+  ],
+  "@MaterialIconsOutlined/sensors_off": [
+    32,
+    32,
+    58655
+  ],
+  "@MaterialIconsOutlined/piano_off": [
+    32,
+    32,
+    58656
+  ],
+  "@MaterialIconsOutlined/piano": [
+    32,
+    32,
+    58657
+  ],
+  "@MaterialIconsOutlined/share_arrival_time": [
+    32,
+    32,
+    58660
+  ],
+  "@MaterialIconsOutlined/edit_notifications": [
+    32,
+    32,
+    58661
+  ],
   "@MaterialIconsOutlined/beenhere": [
     32,
     32,
@@ -9124,12 +12589,22 @@ qx.$$resources = {
     32,
     58674
   ],
+  "@MaterialIconsOutlined/directions_ferry": [
+    32,
+    32,
+    58674
+  ],
   "@MaterialIconsOutlined/directions_subway": [
     32,
     32,
     58675
   ],
   "@MaterialIconsOutlined/directions_railway": [
+    32,
+    32,
+    58676
+  ],
+  "@MaterialIconsOutlined/directions_train": [
     32,
     32,
     58676
@@ -9175,6 +12650,11 @@ qx.$$resources = {
     58686
   ],
   "@MaterialIconsOutlined/local_activity": [
+    32,
+    32,
+    58687
+  ],
+  "@MaterialIconsOutlined/local_attraction": [
     32,
     32,
     58687
@@ -9289,7 +12769,17 @@ qx.$$resources = {
     32,
     58709
   ],
+  "@MaterialIconsOutlined/local_print_shop": [
+    32,
+    32,
+    58709
+  ],
   "@MaterialIconsOutlined/local_dining": [
+    32,
+    32,
+    58710
+  ],
+  "@MaterialIconsOutlined/local_restaurant": [
     32,
     32,
     58710
@@ -9310,6 +12800,11 @@ qx.$$resources = {
     58713
   ],
   "@MaterialIconsOutlined/person_pin": [
+    32,
+    32,
+    58714
+  ],
+  "@MaterialIconsOutlined/location_history": [
     32,
     32,
     58714
@@ -9459,6 +12954,11 @@ qx.$$resources = {
     32,
     58743
   ],
+  "@MaterialIconsOutlined/360": [
+    32,
+    32,
+    58743
+  ],
   "@MaterialIconsOutlined/edit_attributes": [
     32,
     32,
@@ -9574,6 +13074,11 @@ qx.$$resources = {
     32,
     58835
   ],
+  "@MaterialIconsOutlined/keyboard_control": [
+    32,
+    32,
+    58835
+  ],
   "@MaterialIconsOutlined/more_vert": [
     32,
     32,
@@ -9659,6 +13164,21 @@ qx.$$resources = {
     32,
     58896
   ],
+  "@MaterialIconsOutlined/do_not_disturb_alt": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsOutlined/dnd_forwardslash": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsOutlined/do_not_disturb": [
+    32,
+    32,
+    58898
+  ],
   "@MaterialIconsOutlined/drive_eta": [
     32,
     32,
@@ -9733,6 +13253,11 @@ qx.$$resources = {
     32,
     32,
     58915
+  ],
+  "@MaterialIconsOutlined/sim_card_alert": [
+    32,
+    32,
+    58916
   ],
   "@MaterialIconsOutlined/sms": [
     32,
@@ -9834,6 +13359,11 @@ qx.$$resources = {
     32,
     58936
   ],
+  "@MaterialIconsOutlined/confirmation_num": [
+    32,
+    32,
+    58936
+  ],
   "@MaterialIconsOutlined/live_tv": [
     32,
     32,
@@ -9884,6 +13414,16 @@ qx.$$resources = {
     32,
     58946
   ],
+  "@MaterialIconsOutlined/do_not_disturb_off": [
+    32,
+    32,
+    58947
+  ],
+  "@MaterialIconsOutlined/do_not_disturb_on": [
+    32,
+    32,
+    58948
+  ],
   "@MaterialIconsOutlined/priority_high": [
     32,
     32,
@@ -9909,6 +13449,56 @@ qx.$$resources = {
     32,
     58953
   ],
+  "@MaterialIconsOutlined/add_to_drive": [
+    32,
+    32,
+    58972
+  ],
+  "@MaterialIconsOutlined/auto_awesome": [
+    32,
+    32,
+    58975
+  ],
+  "@MaterialIconsOutlined/auto_awesome_mosaic": [
+    32,
+    32,
+    58976
+  ],
+  "@MaterialIconsOutlined/auto_awesome_motion": [
+    32,
+    32,
+    58977
+  ],
+  "@MaterialIconsOutlined/auto_fix_high": [
+    32,
+    32,
+    58979
+  ],
+  "@MaterialIconsOutlined/auto_fix_normal": [
+    32,
+    32,
+    58980
+  ],
+  "@MaterialIconsOutlined/auto_fix_off": [
+    32,
+    32,
+    58981
+  ],
+  "@MaterialIconsOutlined/auto_stories": [
+    32,
+    32,
+    58982
+  ],
+  "@MaterialIconsOutlined/drive_file_move": [
+    32,
+    32,
+    58997
+  ],
+  "@MaterialIconsOutlined/ios_share": [
+    32,
+    32,
+    59064
+  ],
   "@MaterialIconsOutlined/pie_chart": [
     32,
     32,
@@ -9928,6 +13518,11 @@ qx.$$resources = {
     32,
     32,
     59105
+  ],
+  "@MaterialIconsOutlined/animation": [
+    32,
+    32,
+    59164
   ],
   "@MaterialIconsOutlined/add_business": [
     32,
@@ -9985,6 +13580,11 @@ qx.$$resources = {
     59382
   ],
   "@MaterialIconsOutlined/notifications_active": [
+    32,
+    32,
+    59383
+  ],
+  "@MaterialIconsOutlined/notifications_on": [
     32,
     32,
     59383
@@ -10104,16 +13704,6 @@ qx.$$resources = {
     32,
     59445
   ],
-  "@MaterialIconsOutlined/radio_button_unchecked": [
-    32,
-    32,
-    59446
-  ],
-  "@MaterialIconsOutlined/radio_button_checked": [
-    32,
-    32,
-    59447
-  ],
   "@MaterialIconsOutlined/star": [
     32,
     32,
@@ -10130,6 +13720,11 @@ qx.$$resources = {
     59450
   ],
   "@MaterialIconsOutlined/_3d_rotation": [
+    32,
+    32,
+    59469
+  ],
+  "@MaterialIconsOutlined/3d_rotation": [
     32,
     32,
     59469
@@ -10259,6 +13854,11 @@ qx.$$resources = {
     32,
     59495
   ],
+  "@MaterialIconsOutlined/bookmark_outline": [
+    32,
+    32,
+    59495
+  ],
   "@MaterialIconsOutlined/bug_report": [
     32,
     32,
@@ -10364,7 +13964,7 @@ qx.$$resources = {
     32,
     59517
   ],
-  "@MaterialIconsOutlined/favorite_border": [
+  "@MaterialIconsOutlined/favorite_outline": [
     32,
     32,
     59518
@@ -10419,6 +14019,11 @@ qx.$$resources = {
     32,
     59528
   ],
+  "@MaterialIconsOutlined/highlight_remove": [
+    32,
+    32,
+    59528
+  ],
   "@MaterialIconsOutlined/history": [
     32,
     32,
@@ -10455,6 +14060,11 @@ qx.$$resources = {
     59536
   ],
   "@MaterialIconsOutlined/invert_colors": [
+    32,
+    32,
+    59537
+  ],
+  "@MaterialIconsOutlined/invert_colors_on": [
     32,
     32,
     59537
@@ -10539,12 +14149,22 @@ qx.$$resources = {
     32,
     59555
   ],
+  "@MaterialIconsOutlined/perm_contact_cal": [
+    32,
+    32,
+    59555
+  ],
   "@MaterialIconsOutlined/perm_data_setting": [
     32,
     32,
     59556
   ],
   "@MaterialIconsOutlined/perm_device_information": [
+    32,
+    32,
+    59557
+  ],
+  "@MaterialIconsOutlined/perm_device_info": [
     32,
     32,
     59557
@@ -10660,6 +14280,11 @@ qx.$$resources = {
     59580
   ],
   "@MaterialIconsOutlined/settings_brightness": [
+    32,
+    32,
+    59581
+  ],
+  "@MaterialIconsOutlined/settings_display": [
     32,
     32,
     59581
@@ -10784,7 +14409,17 @@ qx.$$resources = {
     32,
     59606
   ],
+  "@MaterialIconsOutlined/swap_vert_circle": [
+    32,
+    32,
+    59606
+  ],
   "@MaterialIconsOutlined/system_update_alt": [
+    32,
+    32,
+    59607
+  ],
+  "@MaterialIconsOutlined/system_update_tv": [
     32,
     32,
     59607
@@ -10850,6 +14485,11 @@ qx.$$resources = {
     59619
   ],
   "@MaterialIconsOutlined/trending_flat": [
+    32,
+    32,
+    59620
+  ],
+  "@MaterialIconsOutlined/trending_neutral": [
     32,
     32,
     59620
@@ -10944,12 +14584,27 @@ qx.$$resources = {
     32,
     59638
   ],
+  "@MaterialIconsOutlined/wallet_giftcard": [
+    32,
+    32,
+    59638
+  ],
   "@MaterialIconsOutlined/card_membership": [
     32,
     32,
     59639
   ],
+  "@MaterialIconsOutlined/wallet_membership": [
+    32,
+    32,
+    59639
+  ],
   "@MaterialIconsOutlined/card_travel": [
+    32,
+    32,
+    59640
+  ],
+  "@MaterialIconsOutlined/wallet_travel": [
     32,
     32,
     59640
@@ -10970,6 +14625,11 @@ qx.$$resources = {
     59643
   ],
   "@MaterialIconsOutlined/camera_enhance": [
+    32,
+    32,
+    59644
+  ],
+  "@MaterialIconsOutlined/enhance_photo_translate": [
     32,
     32,
     59644
@@ -11329,35 +14989,405 @@ qx.$$resources = {
     32,
     59722
   ],
+  "@MaterialIconsOutlined/segment": [
+    32,
+    32,
+    59723
+  ],
   "@MaterialIconsOutlined/contact_support": [
     32,
     32,
     59724
+  ],
+  "@MaterialIconsOutlined/compress": [
+    32,
+    32,
+    59725
+  ],
+  "@MaterialIconsOutlined/expand": [
+    32,
+    32,
+    59727
+  ],
+  "@MaterialIconsOutlined/edit_off": [
+    32,
+    32,
+    59728
+  ],
+  "@MaterialIconsOutlined/_10k": [
+    32,
+    32,
+    59729
+  ],
+  "@MaterialIconsOutlined/_10mp": [
+    32,
+    32,
+    59730
+  ],
+  "@MaterialIconsOutlined/_11mp": [
+    32,
+    32,
+    59731
+  ],
+  "@MaterialIconsOutlined/_12mp": [
+    32,
+    32,
+    59732
+  ],
+  "@MaterialIconsOutlined/_13mp": [
+    32,
+    32,
+    59733
+  ],
+  "@MaterialIconsOutlined/_14mp": [
+    32,
+    32,
+    59734
+  ],
+  "@MaterialIconsOutlined/_15mp": [
+    32,
+    32,
+    59735
+  ],
+  "@MaterialIconsOutlined/_16mp": [
+    32,
+    32,
+    59736
+  ],
+  "@MaterialIconsOutlined/_17mp": [
+    32,
+    32,
+    59737
+  ],
+  "@MaterialIconsOutlined/_18mp": [
+    32,
+    32,
+    59738
+  ],
+  "@MaterialIconsOutlined/_19mp": [
+    32,
+    32,
+    59739
+  ],
+  "@MaterialIconsOutlined/_1k": [
+    32,
+    32,
+    59740
+  ],
+  "@MaterialIconsOutlined/_1k_plus": [
+    32,
+    32,
+    59741
+  ],
+  "@MaterialIconsOutlined/_20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsOutlined/20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsOutlined/_21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsOutlined/21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsOutlined/_22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsOutlined/22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsOutlined/_23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsOutlined/23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsOutlined/_24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsOutlined/24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsOutlined/_2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsOutlined/2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsOutlined/_2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsOutlined/2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsOutlined/_2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsOutlined/2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsOutlined/_3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsOutlined/3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsOutlined/_3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsOutlined/3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsOutlined/_3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsOutlined/3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsOutlined/_4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsOutlined/4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsOutlined/_4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsOutlined/4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsOutlined/_5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsOutlined/5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsOutlined/_5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsOutlined/5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsOutlined/_5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsOutlined/5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsOutlined/_6k": [
+    32,
+    32,
+    59758
+  ],
+  "@MaterialIconsOutlined/_6k_plus": [
+    32,
+    32,
+    59759
+  ],
+  "@MaterialIconsOutlined/_6mp": [
+    32,
+    32,
+    59760
+  ],
+  "@MaterialIconsOutlined/_7k": [
+    32,
+    32,
+    59761
+  ],
+  "@MaterialIconsOutlined/_7k_plus": [
+    32,
+    32,
+    59762
+  ],
+  "@MaterialIconsOutlined/_7mp": [
+    32,
+    32,
+    59763
+  ],
+  "@MaterialIconsOutlined/_8k": [
+    32,
+    32,
+    59764
+  ],
+  "@MaterialIconsOutlined/_8k_plus": [
+    32,
+    32,
+    59765
+  ],
+  "@MaterialIconsOutlined/_8mp": [
+    32,
+    32,
+    59766
+  ],
+  "@MaterialIconsOutlined/_9k": [
+    32,
+    32,
+    59767
+  ],
+  "@MaterialIconsOutlined/_9k_plus": [
+    32,
+    32,
+    59768
+  ],
+  "@MaterialIconsOutlined/_9mp": [
+    32,
+    32,
+    59769
   ],
   "@MaterialIconsOutlined/account_tree": [
     32,
     32,
     59770
   ],
+  "@MaterialIconsOutlined/add_chart": [
+    32,
+    32,
+    59771
+  ],
   "@MaterialIconsOutlined/add_ic_call": [
     32,
     32,
     59772
+  ],
+  "@MaterialIconsOutlined/add_moderator": [
+    32,
+    32,
+    59773
   ],
   "@MaterialIconsOutlined/all_inbox": [
     32,
     32,
     59775
   ],
+  "@MaterialIconsOutlined/approval": [
+    32,
+    32,
+    59778
+  ],
+  "@MaterialIconsOutlined/assistant_direction": [
+    32,
+    32,
+    59784
+  ],
   "@MaterialIconsOutlined/bookmarks": [
     32,
     32,
     59787
   ],
+  "@MaterialIconsOutlined/bus_alert": [
+    32,
+    32,
+    59791
+  ],
+  "@MaterialIconsOutlined/cases": [
+    32,
+    32,
+    59794
+  ],
+  "@MaterialIconsOutlined/circle_notifications": [
+    32,
+    32,
+    59796
+  ],
+  "@MaterialIconsOutlined/closed_caption_off": [
+    32,
+    32,
+    59798
+  ],
+  "@MaterialIconsOutlined/connected_tv": [
+    32,
+    32,
+    59800
+  ],
+  "@MaterialIconsOutlined/dangerous": [
+    32,
+    32,
+    59802
+  ],
+  "@MaterialIconsOutlined/dashboard_customize": [
+    32,
+    32,
+    59803
+  ],
   "@MaterialIconsOutlined/desktop_access_disabled": [
     32,
     32,
     59805
+  ],
+  "@MaterialIconsOutlined/drive_file_rename_outline": [
+    32,
+    32,
+    59810
+  ],
+  "@MaterialIconsOutlined/drive_folder_upload": [
+    32,
+    32,
+    59811
   ],
   "@MaterialIconsOutlined/duo": [
     32,
@@ -11369,6 +15399,31 @@ qx.$$resources = {
     32,
     59816
   ],
+  "@MaterialIconsOutlined/file_download_done": [
+    32,
+    32,
+    59818
+  ],
+  "@MaterialIconsOutlined/rtt": [
+    32,
+    32,
+    59821
+  ],
+  "@MaterialIconsOutlined/grid_view": [
+    32,
+    32,
+    59824
+  ],
+  "@MaterialIconsOutlined/hail": [
+    32,
+    32,
+    59825
+  ],
+  "@MaterialIconsOutlined/imagesearch_roller": [
+    32,
+    32,
+    59828
+  ],
   "@MaterialIconsOutlined/label_off": [
     32,
     32,
@@ -11379,10 +15434,65 @@ qx.$$resources = {
     32,
     59831
   ],
+  "@MaterialIconsOutlined/logout": [
+    32,
+    32,
+    59834
+  ],
+  "@MaterialIconsOutlined/margin": [
+    32,
+    32,
+    59835
+  ],
+  "@MaterialIconsOutlined/mark_as_unread": [
+    32,
+    32,
+    59836
+  ],
   "@MaterialIconsOutlined/menu_open": [
     32,
     32,
     59837
+  ],
+  "@MaterialIconsOutlined/motion_photos_off": [
+    32,
+    32,
+    59840
+  ],
+  "@MaterialIconsOutlined/motion_photos_on": [
+    32,
+    32,
+    59841
+  ],
+  "@MaterialIconsOutlined/motion_photos_paused": [
+    32,
+    32,
+    59842
+  ],
+  "@MaterialIconsOutlined/mp": [
+    32,
+    32,
+    59843
+  ],
+  "@MaterialIconsOutlined/offline_share": [
+    32,
+    32,
+    59845
+  ],
+  "@MaterialIconsOutlined/padding": [
+    32,
+    32,
+    59848
+  ],
+  "@MaterialIconsOutlined/panorama_photosphere": [
+    32,
+    32,
+    59849
+  ],
+  "@MaterialIconsOutlined/panorama_photosphere_select": [
+    32,
+    32,
+    59850
   ],
   "@MaterialIconsOutlined/person_add_disabled": [
     32,
@@ -11399,15 +15509,110 @@ qx.$$resources = {
     32,
     59853
   ],
+  "@MaterialIconsOutlined/pivot_table_chart": [
+    32,
+    32,
+    59854
+  ],
   "@MaterialIconsOutlined/print_disabled": [
     32,
     32,
     59855
   ],
+  "@MaterialIconsOutlined/railway_alert": [
+    32,
+    32,
+    59857
+  ],
+  "@MaterialIconsOutlined/recommend": [
+    32,
+    32,
+    59858
+  ],
+  "@MaterialIconsOutlined/remove_done": [
+    32,
+    32,
+    59859
+  ],
+  "@MaterialIconsOutlined/remove_moderator": [
+    32,
+    32,
+    59860
+  ],
+  "@MaterialIconsOutlined/repeat_on": [
+    32,
+    32,
+    59862
+  ],
+  "@MaterialIconsOutlined/repeat_one_on": [
+    32,
+    32,
+    59863
+  ],
+  "@MaterialIconsOutlined/replay_circle_filled": [
+    32,
+    32,
+    59864
+  ],
+  "@MaterialIconsOutlined/reset_tv": [
+    32,
+    32,
+    59865
+  ],
+  "@MaterialIconsOutlined/sd": [
+    32,
+    32,
+    59869
+  ],
+  "@MaterialIconsOutlined/shield": [
+    32,
+    32,
+    59872
+  ],
+  "@MaterialIconsOutlined/shuffle_on": [
+    32,
+    32,
+    59873
+  ],
   "@MaterialIconsOutlined/speed": [
     32,
     32,
     59876
+  ],
+  "@MaterialIconsOutlined/stacked_bar_chart": [
+    32,
+    32,
+    59878
+  ],
+  "@MaterialIconsOutlined/stream": [
+    32,
+    32,
+    59881
+  ],
+  "@MaterialIconsOutlined/swipe": [
+    32,
+    32,
+    59884
+  ],
+  "@MaterialIconsOutlined/switch_account": [
+    32,
+    32,
+    59885
+  ],
+  "@MaterialIconsOutlined/tag": [
+    32,
+    32,
+    59887
+  ],
+  "@MaterialIconsOutlined/thumb_down_off_alt": [
+    32,
+    32,
+    59890
+  ],
+  "@MaterialIconsOutlined/thumb_up_off_alt": [
+    32,
+    32,
+    59891
   ],
   "@MaterialIconsOutlined/toggle_off": [
     32,
@@ -11424,10 +15629,60 @@ qx.$$resources = {
     32,
     59897
   ],
+  "@MaterialIconsOutlined/upload_file": [
+    32,
+    32,
+    59900
+  ],
+  "@MaterialIconsOutlined/view_in_ar": [
+    32,
+    32,
+    59902
+  ],
+  "@MaterialIconsOutlined/waterfall_chart": [
+    32,
+    32,
+    59904
+  ],
+  "@MaterialIconsOutlined/wb_shade": [
+    32,
+    32,
+    59905
+  ],
   "@MaterialIconsOutlined/home_work": [
     32,
     32,
     59913
+  ],
+  "@MaterialIconsOutlined/schedule_send": [
+    32,
+    32,
+    59914
+  ],
+  "@MaterialIconsOutlined/bolt": [
+    32,
+    32,
+    59915
+  ],
+  "@MaterialIconsOutlined/send_and_archive": [
+    32,
+    32,
+    59916
+  ],
+  "@MaterialIconsOutlined/file_present": [
+    32,
+    32,
+    59918
+  ],
+  "@MaterialIconsOutlined/fit_screen": [
+    32,
+    32,
+    59920
+  ],
+  "@MaterialIconsOutlined/saved_search": [
+    32,
+    32,
+    59921
   ],
   "@MaterialIconsOutlined/storefront": [
     32,
@@ -11719,6 +15974,11 @@ qx.$$resources = {
     32,
     59980
   ],
+  "@MaterialIconsOutlined/person_add_alt": [
+    32,
+    32,
+    59981
+  ],
   "@MaterialIconsOutlined/comment_bank": [
     32,
     32,
@@ -11738,6 +15998,46 @@ qx.$$resources = {
     32,
     32,
     59985
+  ],
+  "@MaterialIconsOutlined/attractions": [
+    32,
+    32,
+    59986
+  ],
+  "@MaterialIconsOutlined/bakery_dining": [
+    32,
+    32,
+    59987
+  ],
+  "@MaterialIconsOutlined/breakfast_dining": [
+    32,
+    32,
+    59988
+  ],
+  "@MaterialIconsOutlined/car_rental": [
+    32,
+    32,
+    59989
+  ],
+  "@MaterialIconsOutlined/car_repair": [
+    32,
+    32,
+    59990
+  ],
+  "@MaterialIconsOutlined/dinner_dining": [
+    32,
+    32,
+    59991
+  ],
+  "@MaterialIconsOutlined/dry_cleaning": [
+    32,
+    32,
+    59992
+  ],
+  "@MaterialIconsOutlined/hardware": [
+    32,
+    32,
+    59993
   ],
   "@MaterialIconsOutlined/plagiarism": [
     32,
@@ -11769,10 +16069,80 @@ qx.$$resources = {
     32,
     59999
   ],
+  "@MaterialIconsOutlined/liquor": [
+    32,
+    32,
+    60000
+  ],
+  "@MaterialIconsOutlined/lunch_dining": [
+    32,
+    32,
+    60001
+  ],
+  "@MaterialIconsOutlined/nightlife": [
+    32,
+    32,
+    60002
+  ],
+  "@MaterialIconsOutlined/park": [
+    32,
+    32,
+    60003
+  ],
+  "@MaterialIconsOutlined/ramen_dining": [
+    32,
+    32,
+    60004
+  ],
+  "@MaterialIconsOutlined/celebration": [
+    32,
+    32,
+    60005
+  ],
+  "@MaterialIconsOutlined/theater_comedy": [
+    32,
+    32,
+    60006
+  ],
+  "@MaterialIconsOutlined/badge": [
+    32,
+    32,
+    60007
+  ],
+  "@MaterialIconsOutlined/festival": [
+    32,
+    32,
+    60008
+  ],
+  "@MaterialIconsOutlined/icecream": [
+    32,
+    32,
+    60009
+  ],
+  "@MaterialIconsOutlined/volunteer_activism": [
+    32,
+    32,
+    60016
+  ],
   "@MaterialIconsOutlined/contactless": [
     32,
     32,
     60017
+  ],
+  "@MaterialIconsOutlined/delivery_dining": [
+    32,
+    32,
+    60018
+  ],
+  "@MaterialIconsOutlined/brunch_dining": [
+    32,
+    32,
+    60019
+  ],
+  "@MaterialIconsOutlined/takeout_dining": [
+    32,
+    32,
+    60020
   ],
   "@MaterialIconsOutlined/video_settings": [
     32,
@@ -11813,6 +16183,11 @@ qx.$$resources = {
     32,
     32,
     60189
+  ],
+  "@MaterialIconsOutlined/electric_rickshaw": [
+    32,
+    32,
+    60190
   ],
   "@MaterialIconsOutlined/electric_scooter": [
     32,
@@ -11934,6 +16309,11 @@ qx.$$resources = {
     32,
     61240
   ],
+  "@MaterialIconsOutlined/5g": [
+    32,
+    32,
+    61240
+  ],
   "@MaterialIconsOutlined/ad_units": [
     32,
     32,
@@ -11968,6 +16348,11 @@ qx.$$resources = {
     32,
     32,
     61247
+  ],
+  "@MaterialIconsOutlined/app_registration": [
+    32,
+    32,
+    61248
   ],
   "@MaterialIconsOutlined/app_settings_alt": [
     32,
@@ -12009,6 +16394,16 @@ qx.$$resources = {
     32,
     61257
   ],
+  "@MaterialIconsOutlined/circle": [
+    32,
+    32,
+    61258
+  ],
+  "@MaterialIconsOutlined/dirty_lens": [
+    32,
+    32,
+    61259
+  ],
   "@MaterialIconsOutlined/domain_verification": [
     32,
     32,
@@ -12019,6 +16414,11 @@ qx.$$resources = {
     32,
     61261
   ],
+  "@MaterialIconsOutlined/face_retouching_natural": [
+    32,
+    32,
+    61262
+  ],
   "@MaterialIconsOutlined/filter_alt": [
     32,
     32,
@@ -12028,6 +16428,11 @@ qx.$$resources = {
     32,
     32,
     61264
+  ],
+  "@MaterialIconsOutlined/hdr_enhanced_select": [
+    32,
+    32,
+    61265
   ],
   "@MaterialIconsOutlined/highlight_alt": [
     32,
@@ -12044,10 +16449,40 @@ qx.$$resources = {
     32,
     61268
   ],
+  "@MaterialIconsOutlined/local_fire_department": [
+    32,
+    32,
+    61269
+  ],
+  "@MaterialIconsOutlined/local_police": [
+    32,
+    32,
+    61270
+  ],
+  "@MaterialIconsOutlined/lock_clock": [
+    32,
+    32,
+    61271
+  ],
   "@MaterialIconsOutlined/maps_ugc": [
     32,
     32,
     61272
+  ],
+  "@MaterialIconsOutlined/mic_external_off": [
+    32,
+    32,
+    61273
+  ],
+  "@MaterialIconsOutlined/mic_external_on": [
+    32,
+    32,
+    61274
+  ],
+  "@MaterialIconsOutlined/monitor": [
+    32,
+    32,
+    61275
   ],
   "@MaterialIconsOutlined/nat": [
     32,
@@ -12058,6 +16493,31 @@ qx.$$resources = {
     32,
     32,
     61277
+  ],
+  "@MaterialIconsOutlined/nightlight_round": [
+    32,
+    32,
+    61278
+  ],
+  "@MaterialIconsOutlined/outbox": [
+    32,
+    32,
+    61279
+  ],
+  "@MaterialIconsOutlined/panorama_horizontal_select": [
+    32,
+    32,
+    61280
+  ],
+  "@MaterialIconsOutlined/panorama_vertical_select": [
+    32,
+    32,
+    61281
+  ],
+  "@MaterialIconsOutlined/panorama_wide_angle_select": [
+    32,
+    32,
+    61282
   ],
   "@MaterialIconsOutlined/payments": [
     32,
@@ -12084,6 +16544,21 @@ qx.$$resources = {
     32,
     61287
   ],
+  "@MaterialIconsOutlined/photo_camera_back": [
+    32,
+    32,
+    61288
+  ],
+  "@MaterialIconsOutlined/photo_camera_front": [
+    32,
+    32,
+    61289
+  ],
+  "@MaterialIconsOutlined/play_disabled": [
+    32,
+    32,
+    61290
+  ],
   "@MaterialIconsOutlined/qr_code": [
     32,
     32,
@@ -12109,6 +16584,11 @@ qx.$$resources = {
     32,
     61295
   ],
+  "@MaterialIconsOutlined/screen_search_desktop": [
+    32,
+    32,
+    61296
+  ],
   "@MaterialIconsOutlined/stop_circle": [
     32,
     32,
@@ -12123,6 +16603,11 @@ qx.$$resources = {
     32,
     32,
     61299
+  ],
+  "@MaterialIconsOutlined/taxi_alert": [
+    32,
+    32,
+    61300
   ],
   "@MaterialIconsOutlined/tour": [
     32,
@@ -12149,75 +16634,965 @@ qx.$$resources = {
     32,
     61351
   ],
+  "@MaterialIconsOutlined/_1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIconsOutlined/1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIconsOutlined/_30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIconsOutlined/30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIconsOutlined/_30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsOutlined/30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsOutlined/_3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsOutlined/3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsOutlined/_3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsOutlined/3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsOutlined/_4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsOutlined/4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsOutlined/_4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsOutlined/4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsOutlined/_60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsOutlined/60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsOutlined/_60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsOutlined/60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsOutlined/access_time_filled": [
+    32,
+    32,
+    61398
+  ],
+  "@MaterialIconsOutlined/air": [
+    32,
+    32,
+    61400
+  ],
+  "@MaterialIconsOutlined/airplane_ticket": [
+    32,
+    32,
+    61401
+  ],
+  "@MaterialIconsOutlined/aod": [
+    32,
+    32,
+    61402
+  ],
   "@MaterialIconsOutlined/attribution": [
     32,
     32,
     61403
+  ],
+  "@MaterialIconsOutlined/autofps_select": [
+    32,
+    32,
+    61404
+  ],
+  "@MaterialIconsOutlined/bathroom": [
+    32,
+    32,
+    61405
+  ],
+  "@MaterialIconsOutlined/battery_saver": [
+    32,
+    32,
+    61406
+  ],
+  "@MaterialIconsOutlined/bed": [
+    32,
+    32,
+    61407
+  ],
+  "@MaterialIconsOutlined/bedroom_baby": [
+    32,
+    32,
+    61408
+  ],
+  "@MaterialIconsOutlined/bedroom_child": [
+    32,
+    32,
+    61409
+  ],
+  "@MaterialIconsOutlined/bedroom_parent": [
+    32,
+    32,
+    61410
+  ],
+  "@MaterialIconsOutlined/blender": [
+    32,
+    32,
+    61411
+  ],
+  "@MaterialIconsOutlined/bloodtype": [
+    32,
+    32,
+    61412
+  ],
+  "@MaterialIconsOutlined/bluetooth_drive": [
+    32,
+    32,
+    61413
+  ],
+  "@MaterialIconsOutlined/cable": [
+    32,
+    32,
+    61414
+  ],
+  "@MaterialIconsOutlined/calendar_view_month": [
+    32,
+    32,
+    61415
+  ],
+  "@MaterialIconsOutlined/calendar_view_week": [
+    32,
+    32,
+    61416
+  ],
+  "@MaterialIconsOutlined/camera_indoor": [
+    32,
+    32,
+    61417
+  ],
+  "@MaterialIconsOutlined/camera_outdoor": [
+    32,
+    32,
+    61418
+  ],
+  "@MaterialIconsOutlined/cameraswitch": [
+    32,
+    32,
+    61419
   ],
   "@MaterialIconsOutlined/cast_for_education": [
     32,
     32,
     61420
   ],
+  "@MaterialIconsOutlined/chair": [
+    32,
+    32,
+    61421
+  ],
+  "@MaterialIconsOutlined/chair_alt": [
+    32,
+    32,
+    61422
+  ],
+  "@MaterialIconsOutlined/coffee": [
+    32,
+    32,
+    61423
+  ],
+  "@MaterialIconsOutlined/coffee_maker": [
+    32,
+    32,
+    61424
+  ],
+  "@MaterialIconsOutlined/credit_score": [
+    32,
+    32,
+    61425
+  ],
+  "@MaterialIconsOutlined/data_saver_off": [
+    32,
+    32,
+    61426
+  ],
+  "@MaterialIconsOutlined/data_saver_on": [
+    32,
+    32,
+    61427
+  ],
+  "@MaterialIconsOutlined/dining": [
+    32,
+    32,
+    61428
+  ],
+  "@MaterialIconsOutlined/directions_boat_filled": [
+    32,
+    32,
+    61429
+  ],
+  "@MaterialIconsOutlined/directions_bus_filled": [
+    32,
+    32,
+    61430
+  ],
+  "@MaterialIconsOutlined/directions_car_filled": [
+    32,
+    32,
+    61431
+  ],
+  "@MaterialIconsOutlined/directions_railway_filled": [
+    32,
+    32,
+    61432
+  ],
+  "@MaterialIconsOutlined/directions_subway_filled": [
+    32,
+    32,
+    61433
+  ],
+  "@MaterialIconsOutlined/directions_transit_filled": [
+    32,
+    32,
+    61434
+  ],
+  "@MaterialIconsOutlined/do_not_disturb_on_total_silence": [
+    32,
+    32,
+    61435
+  ],
+  "@MaterialIconsOutlined/door_back": [
+    32,
+    32,
+    61436
+  ],
+  "@MaterialIconsOutlined/door_front": [
+    32,
+    32,
+    61437
+  ],
+  "@MaterialIconsOutlined/door_sliding": [
+    32,
+    32,
+    61438
+  ],
+  "@MaterialIconsOutlined/doorbell": [
+    32,
+    32,
+    61439
+  ],
+  "@MaterialIconsOutlined/download_for_offline": [
+    32,
+    32,
+    61440
+  ],
+  "@MaterialIconsOutlined/downloading": [
+    32,
+    32,
+    61441
+  ],
+  "@MaterialIconsOutlined/e_mobiledata": [
+    32,
+    32,
+    61442
+  ],
+  "@MaterialIconsOutlined/earbuds": [
+    32,
+    32,
+    61443
+  ],
+  "@MaterialIconsOutlined/earbuds_battery": [
+    32,
+    32,
+    61444
+  ],
+  "@MaterialIconsOutlined/edgesensor_high": [
+    32,
+    32,
+    61445
+  ],
+  "@MaterialIconsOutlined/edgesensor_low": [
+    32,
+    32,
+    61446
+  ],
+  "@MaterialIconsOutlined/face_retouching_off": [
+    32,
+    32,
+    61447
+  ],
   "@MaterialIconsOutlined/face_unlock": [
     32,
     32,
     61448
+  ],
+  "@MaterialIconsOutlined/feed": [
+    32,
+    32,
+    61449
+  ],
+  "@MaterialIconsOutlined/flashlight_off": [
+    32,
+    32,
+    61450
+  ],
+  "@MaterialIconsOutlined/flashlight_on": [
+    32,
+    32,
+    61451
+  ],
+  "@MaterialIconsOutlined/flatware": [
+    32,
+    32,
+    61452
+  ],
+  "@MaterialIconsOutlined/flourescent": [
+    32,
+    32,
+    61453
+  ],
+  "@MaterialIconsOutlined/fmd_bad": [
+    32,
+    32,
+    61454
+  ],
+  "@MaterialIconsOutlined/fmd_good": [
+    32,
+    32,
+    61455
+  ],
+  "@MaterialIconsOutlined/g_mobiledata": [
+    32,
+    32,
+    61456
+  ],
+  "@MaterialIconsOutlined/garage": [
+    32,
+    32,
+    61457
+  ],
+  "@MaterialIconsOutlined/gpp_bad": [
+    32,
+    32,
+    61458
+  ],
+  "@MaterialIconsOutlined/gpp_good": [
+    32,
+    32,
+    61459
+  ],
+  "@MaterialIconsOutlined/gpp_maybe": [
+    32,
+    32,
+    61460
+  ],
+  "@MaterialIconsOutlined/grid_3x3": [
+    32,
+    32,
+    61461
+  ],
+  "@MaterialIconsOutlined/grid_4x4": [
+    32,
+    32,
+    61462
+  ],
+  "@MaterialIconsOutlined/grid_goldenratio": [
+    32,
+    32,
+    61463
+  ],
+  "@MaterialIconsOutlined/h_mobiledata": [
+    32,
+    32,
+    61464
+  ],
+  "@MaterialIconsOutlined/h_plus_mobiledata": [
+    32,
+    32,
+    61465
+  ],
+  "@MaterialIconsOutlined/hdr_auto": [
+    32,
+    32,
+    61466
+  ],
+  "@MaterialIconsOutlined/hdr_auto_select": [
+    32,
+    32,
+    61467
+  ],
+  "@MaterialIconsOutlined/hdr_off_select": [
+    32,
+    32,
+    61468
+  ],
+  "@MaterialIconsOutlined/hdr_on_select": [
+    32,
+    32,
+    61469
+  ],
+  "@MaterialIconsOutlined/hdr_plus": [
+    32,
+    32,
+    61470
+  ],
+  "@MaterialIconsOutlined/headphones": [
+    32,
+    32,
+    61471
+  ],
+  "@MaterialIconsOutlined/headphones_battery": [
+    32,
+    32,
+    61472
+  ],
+  "@MaterialIconsOutlined/hevc": [
+    32,
+    32,
+    61473
+  ],
+  "@MaterialIconsOutlined/hide_image": [
+    32,
+    32,
+    61474
+  ],
+  "@MaterialIconsOutlined/hide_source": [
+    32,
+    32,
+    61475
+  ],
+  "@MaterialIconsOutlined/home_max": [
+    32,
+    32,
+    61476
+  ],
+  "@MaterialIconsOutlined/home_mini": [
+    32,
+    32,
+    61477
+  ],
+  "@MaterialIconsOutlined/keyboard_alt": [
+    32,
+    32,
+    61480
+  ],
+  "@MaterialIconsOutlined/lens_blur": [
+    32,
+    32,
+    61481
+  ],
+  "@MaterialIconsOutlined/light": [
+    32,
+    32,
+    61482
+  ],
+  "@MaterialIconsOutlined/living": [
+    32,
+    32,
+    61483
+  ],
+  "@MaterialIconsOutlined/lte_mobiledata": [
+    32,
+    32,
+    61484
+  ],
+  "@MaterialIconsOutlined/lte_plus_mobiledata": [
+    32,
+    32,
+    61485
+  ],
+  "@MaterialIconsOutlined/manage_accounts": [
+    32,
+    32,
+    61486
+  ],
+  "@MaterialIconsOutlined/manage_search": [
+    32,
+    32,
+    61487
+  ],
+  "@MaterialIconsOutlined/maps_home_work": [
+    32,
+    32,
+    61488
+  ],
+  "@MaterialIconsOutlined/media_bluetooth_off": [
+    32,
+    32,
+    61489
+  ],
+  "@MaterialIconsOutlined/media_bluetooth_on": [
+    32,
+    32,
+    61490
+  ],
+  "@MaterialIconsOutlined/medication": [
+    32,
+    32,
+    61491
+  ],
+  "@MaterialIconsOutlined/mobiledata_off": [
+    32,
+    32,
+    61492
+  ],
+  "@MaterialIconsOutlined/mode_edit_outline": [
+    32,
+    32,
+    61493
+  ],
+  "@MaterialIconsOutlined/mode_night": [
+    32,
+    32,
+    61494
+  ],
+  "@MaterialIconsOutlined/mode_standby": [
+    32,
+    32,
+    61495
   ],
   "@MaterialIconsOutlined/money_off_csred": [
     32,
     32,
     61496
   ],
+  "@MaterialIconsOutlined/monitor_weight": [
+    32,
+    32,
+    61497
+  ],
+  "@MaterialIconsOutlined/motion_photos_auto": [
+    32,
+    32,
+    61498
+  ],
+  "@MaterialIconsOutlined/nearby_error": [
+    32,
+    32,
+    61499
+  ],
+  "@MaterialIconsOutlined/nearby_off": [
+    32,
+    32,
+    61500
+  ],
+  "@MaterialIconsOutlined/nightlight": [
+    32,
+    32,
+    61501
+  ],
+  "@MaterialIconsOutlined/no_accounts": [
+    32,
+    32,
+    61502
+  ],
   "@MaterialIconsOutlined/no_encryption_gmailerrorred": [
     32,
     32,
     61503
+  ],
+  "@MaterialIconsOutlined/note_alt": [
+    32,
+    32,
+    61504
+  ],
+  "@MaterialIconsOutlined/paid": [
+    32,
+    32,
+    61505
+  ],
+  "@MaterialIconsOutlined/password": [
+    32,
+    32,
+    61506
+  ],
+  "@MaterialIconsOutlined/pattern": [
+    32,
+    32,
+    61507
   ],
   "@MaterialIconsOutlined/pie_chart_outline": [
     32,
     32,
     61508
   ],
+  "@MaterialIconsOutlined/pin": [
+    32,
+    32,
+    61509
+  ],
+  "@MaterialIconsOutlined/play_lesson": [
+    32,
+    32,
+    61511
+  ],
+  "@MaterialIconsOutlined/podcasts": [
+    32,
+    32,
+    61512
+  ],
   "@MaterialIconsOutlined/precision_manufacturing": [
     32,
     32,
     61513
+  ],
+  "@MaterialIconsOutlined/price_change": [
+    32,
+    32,
+    61514
+  ],
+  "@MaterialIconsOutlined/price_check": [
+    32,
+    32,
+    61515
+  ],
+  "@MaterialIconsOutlined/quiz": [
+    32,
+    32,
+    61516
+  ],
+  "@MaterialIconsOutlined/r_mobiledata": [
+    32,
+    32,
+    61517
+  ],
+  "@MaterialIconsOutlined/radar": [
+    32,
+    32,
+    61518
+  ],
+  "@MaterialIconsOutlined/raw_off": [
+    32,
+    32,
+    61519
+  ],
+  "@MaterialIconsOutlined/raw_on": [
+    32,
+    32,
+    61520
+  ],
+  "@MaterialIconsOutlined/remember_me": [
+    32,
+    32,
+    61521
   ],
   "@MaterialIconsOutlined/report_gmailerrorred": [
     32,
     32,
     61522
   ],
+  "@MaterialIconsOutlined/restart_alt": [
+    32,
+    32,
+    61523
+  ],
+  "@MaterialIconsOutlined/reviews": [
+    32,
+    32,
+    61524
+  ],
+  "@MaterialIconsOutlined/rsvp": [
+    32,
+    32,
+    61525
+  ],
+  "@MaterialIconsOutlined/screenshot": [
+    32,
+    32,
+    61526
+  ],
   "@MaterialIconsOutlined/sd_card_alert": [
     32,
     32,
     61527
+  ],
+  "@MaterialIconsOutlined/security_update": [
+    32,
+    32,
+    61528
+  ],
+  "@MaterialIconsOutlined/security_update_good": [
+    32,
+    32,
+    61529
+  ],
+  "@MaterialIconsOutlined/security_update_warning": [
+    32,
+    32,
+    61530
+  ],
+  "@MaterialIconsOutlined/sell": [
+    32,
+    32,
+    61531
+  ],
+  "@MaterialIconsOutlined/send_to_mobile": [
+    32,
+    32,
+    61532
+  ],
+  "@MaterialIconsOutlined/settings_accessibility": [
+    32,
+    32,
+    61533
+  ],
+  "@MaterialIconsOutlined/settings_suggest": [
+    32,
+    32,
+    61534
+  ],
+  "@MaterialIconsOutlined/share_location": [
+    32,
+    32,
+    61535
+  ],
+  "@MaterialIconsOutlined/shortcut": [
+    32,
+    32,
+    61536
+  ],
+  "@MaterialIconsOutlined/shower": [
+    32,
+    32,
+    61537
+  ],
+  "@MaterialIconsOutlined/signal_cellular_nodata": [
+    32,
+    32,
+    61538
+  ],
+  "@MaterialIconsOutlined/signal_wifi_bad": [
+    32,
+    32,
+    61539
+  ],
+  "@MaterialIconsOutlined/signal_wifi_connected_no_internet_4": [
+    32,
+    32,
+    61540
+  ],
+  "@MaterialIconsOutlined/signal_wifi_statusbar_4_bar": [
+    32,
+    32,
+    61541
+  ],
+  "@MaterialIconsOutlined/signal_wifi_statusbar_connected_no_internet_4": [
+    32,
+    32,
+    61542
+  ],
+  "@MaterialIconsOutlined/signal_wifi_statusbar_null": [
+    32,
+    32,
+    61543
+  ],
+  "@MaterialIconsOutlined/sim_card_download": [
+    32,
+    32,
+    61544
+  ],
+  "@MaterialIconsOutlined/sip": [
+    32,
+    32,
+    61545
+  ],
+  "@MaterialIconsOutlined/smart_display": [
+    32,
+    32,
+    61546
+  ],
+  "@MaterialIconsOutlined/smart_screen": [
+    32,
+    32,
+    61547
+  ],
+  "@MaterialIconsOutlined/smart_toy": [
+    32,
+    32,
+    61548
+  ],
+  "@MaterialIconsOutlined/splitscreen": [
+    32,
+    32,
+    61549
+  ],
+  "@MaterialIconsOutlined/sports_score": [
+    32,
+    32,
+    61550
   ],
   "@MaterialIconsOutlined/star_outline": [
     32,
     32,
     61551
   ],
+  "@MaterialIconsOutlined/storm": [
+    32,
+    32,
+    61552
+  ],
+  "@MaterialIconsOutlined/summarize": [
+    32,
+    32,
+    61553
+  ],
+  "@MaterialIconsOutlined/system_security_update": [
+    32,
+    32,
+    61554
+  ],
+  "@MaterialIconsOutlined/system_security_update_good": [
+    32,
+    32,
+    61555
+  ],
+  "@MaterialIconsOutlined/system_security_update_warning": [
+    32,
+    32,
+    61556
+  ],
+  "@MaterialIconsOutlined/task": [
+    32,
+    32,
+    61557
+  ],
   "@MaterialIconsOutlined/thermostat": [
     32,
     32,
     61558
+  ],
+  "@MaterialIconsOutlined/thermostat_auto": [
+    32,
+    32,
+    61559
+  ],
+  "@MaterialIconsOutlined/timer_10_select": [
+    32,
+    32,
+    61562
+  ],
+  "@MaterialIconsOutlined/timer_3_select": [
+    32,
+    32,
+    61563
+  ],
+  "@MaterialIconsOutlined/try": [
+    32,
+    32,
+    61564
+  ],
+  "@MaterialIconsOutlined/tungsten": [
+    32,
+    32,
+    61565
+  ],
+  "@MaterialIconsOutlined/upcoming": [
+    32,
+    32,
+    61566
+  ],
+  "@MaterialIconsOutlined/video_camera_back": [
+    32,
+    32,
+    61567
+  ],
+  "@MaterialIconsOutlined/video_camera_front": [
+    32,
+    32,
+    61568
+  ],
+  "@MaterialIconsOutlined/video_stable": [
+    32,
+    32,
+    61569
+  ],
+  "@MaterialIconsOutlined/vrpano": [
+    32,
+    32,
+    61570
   ],
   "@MaterialIconsOutlined/warning_amber": [
     32,
     32,
     61571
   ],
-  "@MaterialIconsOutlined/copy": [
+  "@MaterialIconsOutlined/water": [
     32,
     32,
-    61578
+    61572
   ],
-  "@MaterialIconsOutlined/cut": [
+  "@MaterialIconsOutlined/wifi_calling_3": [
     32,
     32,
-    61579
+    61573
+  ],
+  "@MaterialIconsOutlined/wifi_tethering_error_rounded": [
+    32,
+    32,
+    61574
+  ],
+  "@MaterialIconsOutlined/wifi_tethering_off": [
+    32,
+    32,
+    61575
+  ],
+  "@MaterialIconsOutlined/window": [
+    32,
+    32,
+    61576
+  ],
+  "@MaterialIconsOutlined/yard": [
+    32,
+    32,
+    61577
   ],
   "@MaterialIconsOutlined/do_disturb": [
     32,
@@ -12259,11 +17634,6 @@ qx.$$resources = {
     32,
     61591
   ],
-  "@MaterialIconsOutlined/paste": [
-    32,
-    32,
-    61592
-  ],
   "@MaterialIconsOutlined/star_border_purple500": [
     32,
     32,
@@ -12278,6 +17648,21 @@ qx.$$resources = {
     32,
     32,
     61595
+  ],
+  "@MaterialIconsOutlined/signal_cellular_0_bar": [
+    32,
+    32,
+    61608
+  ],
+  "@MaterialIconsOutlined/signal_cellular_connected_no_internet_0_bar": [
+    32,
+    32,
+    61612
+  ],
+  "@MaterialIconsOutlined/signal_wifi_0_bar": [
+    32,
+    32,
+    61616
   ],
   "@MaterialIconsOutlined/fact_check": [
     32,
@@ -12754,6 +18139,306 @@ qx.$$resources = {
     32,
     61908
   ],
+  "@MaterialIconsOutlined/no_transfer": [
+    32,
+    32,
+    61909
+  ],
+  "@MaterialIconsOutlined/no_meals": [
+    32,
+    32,
+    61910
+  ],
+  "@MaterialIconsOutlined/fire_extinguisher": [
+    32,
+    32,
+    61912
+  ],
+  "@MaterialIconsOutlined/closed_caption_disabled": [
+    32,
+    32,
+    61916
+  ],
+  "@MaterialIconsOutlined/east": [
+    32,
+    32,
+    61919
+  ],
+  "@MaterialIconsOutlined/north": [
+    32,
+    32,
+    61920
+  ],
+  "@MaterialIconsOutlined/north_east": [
+    32,
+    32,
+    61921
+  ],
+  "@MaterialIconsOutlined/north_west": [
+    32,
+    32,
+    61922
+  ],
+  "@MaterialIconsOutlined/south": [
+    32,
+    32,
+    61923
+  ],
+  "@MaterialIconsOutlined/south_east": [
+    32,
+    32,
+    61924
+  ],
+  "@MaterialIconsOutlined/south_west": [
+    32,
+    32,
+    61925
+  ],
+  "@MaterialIconsOutlined/west": [
+    32,
+    32,
+    61926
+  ],
+  "@MaterialIconsOutlined/wine_bar": [
+    32,
+    32,
+    61928
+  ],
+  "@MaterialIconsOutlined/tapas": [
+    32,
+    32,
+    61929
+  ],
+  "@MaterialIconsOutlined/set_meal": [
+    32,
+    32,
+    61930
+  ],
+  "@MaterialIconsOutlined/near_me_disabled": [
+    32,
+    32,
+    61935
+  ],
+  "@MaterialIconsOutlined/night_shelter": [
+    32,
+    32,
+    61937
+  ],
+  "@MaterialIconsOutlined/food_bank": [
+    32,
+    32,
+    61938
+  ],
+  "@MaterialIconsOutlined/sports_bar": [
+    32,
+    32,
+    61939
+  ],
+  "@MaterialIconsOutlined/bento": [
+    32,
+    32,
+    61940
+  ],
+  "@MaterialIconsOutlined/rice_bowl": [
+    32,
+    32,
+    61941
+  ],
+  "@MaterialIconsOutlined/fence": [
+    32,
+    32,
+    61942
+  ],
+  "@MaterialIconsOutlined/countertops": [
+    32,
+    32,
+    61943
+  ],
+  "@MaterialIconsOutlined/carpenter": [
+    32,
+    32,
+    61944
+  ],
+  "@MaterialIconsOutlined/sticky_note_2": [
+    32,
+    32,
+    61948
+  ],
+  "@MaterialIconsOutlined/foundation": [
+    32,
+    32,
+    61952
+  ],
+  "@MaterialIconsOutlined/roofing": [
+    32,
+    32,
+    61953
+  ],
+  "@MaterialIconsOutlined/house_siding": [
+    32,
+    32,
+    61954
+  ],
+  "@MaterialIconsOutlined/water_damage": [
+    32,
+    32,
+    61955
+  ],
+  "@MaterialIconsOutlined/microwave": [
+    32,
+    32,
+    61956
+  ],
+  "@MaterialIconsOutlined/grass": [
+    32,
+    32,
+    61957
+  ],
+  "@MaterialIconsOutlined/qr_code_scanner": [
+    32,
+    32,
+    61958
+  ],
+  "@MaterialIconsOutlined/leaderboard": [
+    32,
+    32,
+    61964
+  ],
+  "@MaterialIconsOutlined/book_online": [
+    32,
+    32,
+    61975
+  ],
+  "@MaterialIconsOutlined/masks": [
+    32,
+    32,
+    61976
+  ],
+  "@MaterialIconsOutlined/elderly": [
+    32,
+    32,
+    61978
+  ],
+  "@MaterialIconsOutlined/no_luggage": [
+    32,
+    32,
+    62011
+  ],
+  "@MaterialIconsOutlined/leave_bags_at_home": [
+    32,
+    32,
+    61979
+  ],
+  "@MaterialIconsOutlined/reduce_capacity": [
+    32,
+    32,
+    61980
+  ],
+  "@MaterialIconsOutlined/sanitizer": [
+    32,
+    32,
+    61981
+  ],
+  "@MaterialIconsOutlined/_6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsOutlined/6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsOutlined/clean_hands": [
+    32,
+    32,
+    61983
+  ],
+  "@MaterialIconsOutlined/sick": [
+    32,
+    32,
+    61984
+  ],
+  "@MaterialIconsOutlined/coronavirus": [
+    32,
+    32,
+    61985
+  ],
+  "@MaterialIconsOutlined/follow_the_signs": [
+    32,
+    32,
+    61986
+  ],
+  "@MaterialIconsOutlined/connect_without_contact": [
+    32,
+    32,
+    61987
+  ],
+  "@MaterialIconsOutlined/motion_photos_pause": [
+    32,
+    32,
+    61991
+  ],
+  "@MaterialIconsOutlined/outbond": [
+    32,
+    32,
+    61992
+  ],
+  "@MaterialIconsOutlined/stacked_line_chart": [
+    32,
+    32,
+    61995
+  ],
+  "@MaterialIconsOutlined/request_page": [
+    32,
+    32,
+    61996
+  ],
+  "@MaterialIconsOutlined/contact_page": [
+    32,
+    32,
+    61998
+  ],
+  "@MaterialIconsOutlined/disabled_by_default": [
+    32,
+    32,
+    62000
+  ],
+  "@MaterialIconsOutlined/published_with_changes": [
+    32,
+    32,
+    62002
+  ],
+  "@MaterialIconsOutlined/groups": [
+    32,
+    32,
+    62003
+  ],
+  "@MaterialIconsOutlined/facebook": [
+    32,
+    32,
+    62004
+  ],
+  "@MaterialIconsOutlined/luggage": [
+    32,
+    32,
+    62005
+  ],
+  "@MaterialIconsOutlined/unpublished": [
+    32,
+    32,
+    62006
+  ],
+  "@MaterialIconsOutlined/no_backpack": [
+    32,
+    32,
+    62007
+  ],
+  "@MaterialIconsOutlined/add_task": [
+    32,
+    32,
+    62010
+  ],
   "@MaterialIconsRound/error": [
     32,
     32,
@@ -12778,6 +18463,51 @@ qx.$$resources = {
     32,
     32,
     57348
+  ],
+  "@MaterialIconsRound/qr_code_2": [
+    32,
+    32,
+    57354
+  ],
+  "@MaterialIconsRound/flutter_dash": [
+    32,
+    32,
+    57355
+  ],
+  "@MaterialIconsRound/align_vertical_top": [
+    32,
+    32,
+    57356
+  ],
+  "@MaterialIconsRound/align_horizontal_left": [
+    32,
+    32,
+    57357
+  ],
+  "@MaterialIconsRound/align_horizontal_center": [
+    32,
+    32,
+    57359
+  ],
+  "@MaterialIconsRound/align_horizontal_right": [
+    32,
+    32,
+    57360
+  ],
+  "@MaterialIconsRound/align_vertical_center": [
+    32,
+    32,
+    57361
+  ],
+  "@MaterialIconsRound/horizontal_distribute": [
+    32,
+    32,
+    57364
+  ],
+  "@MaterialIconsRound/align_vertical_bottom": [
+    32,
+    32,
+    57365
   ],
   "@MaterialIconsRound/album": [
     32,
@@ -12859,12 +18589,27 @@ qx.$$resources = {
     32,
     57390
   ],
+  "@MaterialIconsRound/my_library_add": [
+    32,
+    32,
+    57390
+  ],
   "@MaterialIconsRound/library_books": [
     32,
     32,
     57391
   ],
+  "@MaterialIconsRound/my_library_books": [
+    32,
+    32,
+    57391
+  ],
   "@MaterialIconsRound/library_music": [
+    32,
+    32,
+    57392
+  ],
+  "@MaterialIconsRound/my_library_music": [
     32,
     32,
     57392
@@ -12900,6 +18645,11 @@ qx.$$resources = {
     57399
   ],
   "@MaterialIconsRound/play_circle_filled": [
+    32,
+    32,
+    57400
+  ],
+  "@MaterialIconsRound/play_circle_fill": [
     32,
     32,
     57400
@@ -12985,6 +18735,11 @@ qx.$$resources = {
     57417
   ],
   "@MaterialIconsRound/video_library": [
+    32,
+    32,
+    57418
+  ],
+  "@MaterialIconsRound/video_collection": [
     32,
     32,
     57418
@@ -13184,6 +18939,11 @@ qx.$$resources = {
     32,
     57458
   ],
+  "@MaterialIconsRound/4k": [
+    32,
+    32,
+    57458
+  ],
   "@MaterialIconsRound/missed_video_call": [
     32,
     32,
@@ -13193,6 +18953,41 @@ qx.$$resources = {
     32,
     32,
     57460
+  ],
+  "@MaterialIconsRound/update_disabled": [
+    32,
+    32,
+    57461
+  ],
+  "@MaterialIconsRound/vertical_distribute": [
+    32,
+    32,
+    57462
+  ],
+  "@MaterialIconsRound/favorite_border": [
+    32,
+    32,
+    59518
+  ],
+  "@MaterialIconsRound/radio_button_unchecked": [
+    32,
+    32,
+    59446
+  ],
+  "@MaterialIconsRound/radio_button_off": [
+    32,
+    32,
+    57476
+  ],
+  "@MaterialIconsRound/radio_button_checked": [
+    32,
+    32,
+    59447
+  ],
+  "@MaterialIconsRound/radio_button_on": [
+    32,
+    32,
+    57477
   ],
   "@MaterialIconsRound/business": [
     32,
@@ -13309,7 +19104,17 @@ qx.$$resources = {
     32,
     57546
   ],
+  "@MaterialIconsRound/messenger": [
+    32,
+    32,
+    57546
+  ],
   "@MaterialIconsRound/chat_bubble_outline": [
+    32,
+    32,
+    57547
+  ],
+  "@MaterialIconsRound/messenger_outline": [
     32,
     32,
     57547
@@ -13334,7 +19139,17 @@ qx.$$resources = {
     32,
     57551
   ],
+  "@MaterialIconsRound/quick_contacts_dialer": [
+    32,
+    32,
+    57551
+  ],
   "@MaterialIconsRound/contact_mail": [
+    32,
+    32,
+    57552
+  ],
+  "@MaterialIconsRound/quick_contacts_mail": [
     32,
     32,
     57552
@@ -13469,6 +19284,11 @@ qx.$$resources = {
     32,
     57579
   ],
+  "@MaterialIconsRound/cell_wifi": [
+    32,
+    32,
+    57580
+  ],
   "@MaterialIconsRound/sentiment_satisfied_alt": [
     32,
     32,
@@ -13483,6 +19303,11 @@ qx.$$resources = {
     32,
     32,
     57583
+  ],
+  "@MaterialIconsRound/lightbulb": [
+    32,
+    32,
+    57584
   ],
   "@MaterialIconsRound/add": [
     32,
@@ -13523,6 +19348,36 @@ qx.$$resources = {
     32,
     32,
     57676
+  ],
+  "@MaterialIconsRound/content_copy": [
+    32,
+    32,
+    61578
+  ],
+  "@MaterialIconsRound/copy": [
+    32,
+    32,
+    57677
+  ],
+  "@MaterialIconsRound/content_cut": [
+    32,
+    32,
+    61579
+  ],
+  "@MaterialIconsRound/cut": [
+    32,
+    32,
+    57678
+  ],
+  "@MaterialIconsRound/content_paste": [
+    32,
+    32,
+    61592
+  ],
+  "@MaterialIconsRound/paste": [
+    32,
+    32,
+    57679
   ],
   "@MaterialIconsRound/create": [
     32,
@@ -13724,6 +19579,16 @@ qx.$$resources = {
     32,
     57719
   ],
+  "@MaterialIconsRound/add_link": [
+    32,
+    32,
+    57720
+  ],
+  "@MaterialIconsRound/inventory": [
+    32,
+    32,
+    57721
+  ],
   "@MaterialIconsRound/access_alarm": [
     32,
     32,
@@ -13749,7 +19614,17 @@ qx.$$resources = {
     32,
     57748
   ],
+  "@MaterialIconsRound/airplanemode_off": [
+    32,
+    32,
+    57748
+  ],
   "@MaterialIconsRound/airplanemode_active": [
+    32,
+    32,
+    57749
+  ],
+  "@MaterialIconsRound/airplanemode_on": [
     32,
     32,
     57749
@@ -13758,6 +19633,26 @@ qx.$$resources = {
     32,
     32,
     57756
+  ],
+  "@MaterialIconsRound/shop_2": [
+    32,
+    32,
+    57758
+  ],
+  "@MaterialIconsRound/workspaces": [
+    32,
+    32,
+    57760
+  ],
+  "@MaterialIconsRound/inventory_2": [
+    32,
+    32,
+    57761
+  ],
+  "@MaterialIconsRound/pause_circle": [
+    32,
+    32,
+    57762
   ],
   "@MaterialIconsRound/battery_charging_full": [
     32,
@@ -13869,6 +19764,21 @@ qx.$$resources = {
     32,
     57784
   ],
+  "@MaterialIconsRound/multitrack_audio": [
+    32,
+    32,
+    57784
+  ],
+  "@MaterialIconsRound/network_cell": [
+    32,
+    32,
+    57785
+  ],
+  "@MaterialIconsRound/network_wifi": [
+    32,
+    32,
+    57786
+  ],
   "@MaterialIconsRound/nfc": [
     32,
     32,
@@ -13879,7 +19789,17 @@ qx.$$resources = {
     32,
     57788
   ],
+  "@MaterialIconsRound/now_wallpaper": [
+    32,
+    32,
+    57788
+  ],
   "@MaterialIconsRound/widgets": [
+    32,
+    32,
+    57789
+  ],
+  "@MaterialIconsRound/now_widgets": [
     32,
     32,
     57789
@@ -13914,10 +19834,40 @@ qx.$$resources = {
     32,
     57795
   ],
+  "@MaterialIconsRound/play_circle": [
+    32,
+    32,
+    57796
+  ],
+  "@MaterialIconsRound/edit_location_alt": [
+    32,
+    32,
+    57797
+  ],
+  "@MaterialIconsRound/wb_twilight": [
+    32,
+    32,
+    57798
+  ],
   "@MaterialIconsRound/signal_cellular_4_bar": [
     32,
     32,
     57800
+  ],
+  "@MaterialIconsRound/outbound": [
+    32,
+    32,
+    57802
+  ],
+  "@MaterialIconsRound/social_distance": [
+    32,
+    32,
+    57803
+  ],
+  "@MaterialIconsRound/safety_divider": [
+    32,
+    32,
+    57804
   ],
   "@MaterialIconsRound/signal_cellular_connected_no_internet_4_bar": [
     32,
@@ -13938,6 +19888,21 @@ qx.$$resources = {
     32,
     32,
     57808
+  ],
+  "@MaterialIconsRound/production_quantity_limits": [
+    32,
+    32,
+    57809
+  ],
+  "@MaterialIconsRound/add_reaction": [
+    32,
+    32,
+    57811
+  ],
+  "@MaterialIconsRound/health_and_safety": [
+    32,
+    32,
+    57813
   ],
   "@MaterialIconsRound/signal_wifi_4_bar": [
     32,
@@ -13979,6 +19944,11 @@ qx.$$resources = {
     32,
     57854
   ],
+  "@MaterialIconsRound/device_thermostat": [
+    32,
+    32,
+    57855
+  ],
   "@MaterialIconsRound/mobile_friendly": [
     32,
     32,
@@ -14018,6 +19988,11 @@ qx.$$resources = {
     32,
     32,
     57898
+  ],
+  "@MaterialIconsRound/border_color": [
+    32,
+    32,
+    57899
   ],
   "@MaterialIconsRound/border_horizontal": [
     32,
@@ -14089,10 +20064,20 @@ qx.$$resources = {
     32,
     57913
   ],
+  "@MaterialIconsRound/format_color_fill": [
+    32,
+    32,
+    57914
+  ],
   "@MaterialIconsRound/format_color_reset": [
     32,
     32,
     57915
+  ],
+  "@MaterialIconsRound/format_color_text": [
+    32,
+    32,
+    57916
   ],
   "@MaterialIconsRound/format_indent_decrease": [
     32,
@@ -14159,6 +20144,11 @@ qx.$$resources = {
     32,
     57929
   ],
+  "@MaterialIconsRound/format_underline": [
+    32,
+    32,
+    57929
+  ],
   "@MaterialIconsRound/functions": [
     32,
     32,
@@ -14208,6 +20198,11 @@ qx.$$resources = {
     32,
     32,
     57939
+  ],
+  "@MaterialIconsRound/mode_edit": [
+    32,
+    32,
+    57940
   ],
   "@MaterialIconsRound/publish": [
     32,
@@ -14369,6 +20364,16 @@ qx.$$resources = {
     32,
     58051
   ],
+  "@MaterialIconsRound/file_download": [
+    32,
+    32,
+    58052
+  ],
+  "@MaterialIconsRound/file_upload": [
+    32,
+    32,
+    58054
+  ],
   "@MaterialIconsRound/folder": [
     32,
     32,
@@ -14388,6 +20393,36 @@ qx.$$resources = {
     32,
     32,
     58060
+  ],
+  "@MaterialIconsRound/travel_explore": [
+    32,
+    32,
+    58075
+  ],
+  "@MaterialIconsRound/task_alt": [
+    32,
+    32,
+    58086
+  ],
+  "@MaterialIconsRound/change_circle": [
+    32,
+    32,
+    58087
+  ],
+  "@MaterialIconsRound/arrow_back_ios_new": [
+    32,
+    32,
+    58090
+  ],
+  "@MaterialIconsRound/savings": [
+    32,
+    32,
+    58091
+  ],
+  "@MaterialIconsRound/copy_all": [
+    32,
+    32,
+    58092
   ],
   "@MaterialIconsRound/cast": [
     32,
@@ -14634,6 +20669,16 @@ qx.$$resources = {
     32,
     58169
   ],
+  "@MaterialIconsRound/headset_off": [
+    32,
+    32,
+    58170
+  ],
+  "@MaterialIconsRound/notification_add": [
+    32,
+    32,
+    58265
+  ],
   "@MaterialIconsRound/add_to_photos": [
     32,
     32,
@@ -14869,7 +20914,17 @@ qx.$$resources = {
     32,
     58315
   ],
+  "@MaterialIconsRound/exposure_minus_1": [
+    32,
+    32,
+    58315
+  ],
   "@MaterialIconsRound/exposure_neg_2": [
+    32,
+    32,
+    58316
+  ],
+  "@MaterialIconsRound/exposure_minus_2": [
     32,
     32,
     58316
@@ -15179,6 +21234,11 @@ qx.$$resources = {
     32,
     58380
   ],
+  "@MaterialIconsRound/panorama_fisheye": [
+    32,
+    32,
+    58380
+  ],
   "@MaterialIconsRound/panorama_horizontal": [
     32,
     32,
@@ -15324,6 +21384,11 @@ qx.$$resources = {
     32,
     58410
   ],
+  "@MaterialIconsRound/view_comfortable": [
+    32,
+    32,
+    58410
+  ],
   "@MaterialIconsRound/view_compact": [
     32,
     32,
@@ -15429,6 +21494,206 @@ qx.$$resources = {
     32,
     58432
   ],
+  "@MaterialIconsRound/code_off": [
+    32,
+    32,
+    58611
+  ],
+  "@MaterialIconsRound/credit_card_off": [
+    32,
+    32,
+    58612
+  ],
+  "@MaterialIconsRound/extension_off": [
+    32,
+    32,
+    58613
+  ],
+  "@MaterialIconsRound/open_in_new_off": [
+    32,
+    32,
+    58614
+  ],
+  "@MaterialIconsRound/web_asset_off": [
+    32,
+    32,
+    58615
+  ],
+  "@MaterialIconsRound/content_paste_off": [
+    32,
+    32,
+    58616
+  ],
+  "@MaterialIconsRound/font_download_off": [
+    32,
+    32,
+    58617
+  ],
+  "@MaterialIconsRound/usb_off": [
+    32,
+    32,
+    58618
+  ],
+  "@MaterialIconsRound/auto_graph": [
+    32,
+    32,
+    58619
+  ],
+  "@MaterialIconsRound/query_stats": [
+    32,
+    32,
+    58620
+  ],
+  "@MaterialIconsRound/schema": [
+    32,
+    32,
+    58621
+  ],
+  "@MaterialIconsRound/file_download_off": [
+    32,
+    32,
+    58622
+  ],
+  "@MaterialIconsRound/developer_board_off": [
+    32,
+    32,
+    58623
+  ],
+  "@MaterialIconsRound/videogame_asset_off": [
+    32,
+    32,
+    58624
+  ],
+  "@MaterialIconsRound/moving": [
+    32,
+    32,
+    58625
+  ],
+  "@MaterialIconsRound/sailing": [
+    32,
+    32,
+    58626
+  ],
+  "@MaterialIconsRound/snowmobile": [
+    32,
+    32,
+    58627
+  ],
+  "@MaterialIconsRound/catching_pokemon": [
+    32,
+    32,
+    58632
+  ],
+  "@MaterialIconsRound/downhill_skiing": [
+    32,
+    32,
+    58633
+  ],
+  "@MaterialIconsRound/hiking": [
+    32,
+    32,
+    58634
+  ],
+  "@MaterialIconsRound/ice_skating": [
+    32,
+    32,
+    58635
+  ],
+  "@MaterialIconsRound/kayaking": [
+    32,
+    32,
+    58636
+  ],
+  "@MaterialIconsRound/kitesurfing": [
+    32,
+    32,
+    58637
+  ],
+  "@MaterialIconsRound/nordic_walking": [
+    32,
+    32,
+    58638
+  ],
+  "@MaterialIconsRound/paragliding": [
+    32,
+    32,
+    58639
+  ],
+  "@MaterialIconsRound/person_off": [
+    32,
+    32,
+    58640
+  ],
+  "@MaterialIconsRound/skateboarding": [
+    32,
+    32,
+    58641
+  ],
+  "@MaterialIconsRound/sledding": [
+    32,
+    32,
+    58642
+  ],
+  "@MaterialIconsRound/snowboarding": [
+    32,
+    32,
+    58643
+  ],
+  "@MaterialIconsRound/snowshoeing": [
+    32,
+    32,
+    58644
+  ],
+  "@MaterialIconsRound/surfing": [
+    32,
+    32,
+    58645
+  ],
+  "@MaterialIconsRound/light_mode": [
+    32,
+    32,
+    58648
+  ],
+  "@MaterialIconsRound/dark_mode": [
+    32,
+    32,
+    58652
+  ],
+  "@MaterialIconsRound/running_with_errors": [
+    32,
+    32,
+    58653
+  ],
+  "@MaterialIconsRound/sensors": [
+    32,
+    32,
+    58654
+  ],
+  "@MaterialIconsRound/sensors_off": [
+    32,
+    32,
+    58655
+  ],
+  "@MaterialIconsRound/piano_off": [
+    32,
+    32,
+    58656
+  ],
+  "@MaterialIconsRound/piano": [
+    32,
+    32,
+    58657
+  ],
+  "@MaterialIconsRound/share_arrival_time": [
+    32,
+    32,
+    58660
+  ],
+  "@MaterialIconsRound/edit_notifications": [
+    32,
+    32,
+    58661
+  ],
   "@MaterialIconsRound/beenhere": [
     32,
     32,
@@ -15459,12 +21724,22 @@ qx.$$resources = {
     32,
     58674
   ],
+  "@MaterialIconsRound/directions_ferry": [
+    32,
+    32,
+    58674
+  ],
   "@MaterialIconsRound/directions_subway": [
     32,
     32,
     58675
   ],
   "@MaterialIconsRound/directions_railway": [
+    32,
+    32,
+    58676
+  ],
+  "@MaterialIconsRound/directions_train": [
     32,
     32,
     58676
@@ -15510,6 +21785,11 @@ qx.$$resources = {
     58686
   ],
   "@MaterialIconsRound/local_activity": [
+    32,
+    32,
+    58687
+  ],
+  "@MaterialIconsRound/local_attraction": [
     32,
     32,
     58687
@@ -15624,7 +21904,17 @@ qx.$$resources = {
     32,
     58709
   ],
+  "@MaterialIconsRound/local_print_shop": [
+    32,
+    32,
+    58709
+  ],
   "@MaterialIconsRound/local_dining": [
+    32,
+    32,
+    58710
+  ],
+  "@MaterialIconsRound/local_restaurant": [
     32,
     32,
     58710
@@ -15645,6 +21935,11 @@ qx.$$resources = {
     58713
   ],
   "@MaterialIconsRound/person_pin": [
+    32,
+    32,
+    58714
+  ],
+  "@MaterialIconsRound/location_history": [
     32,
     32,
     58714
@@ -15794,6 +22089,11 @@ qx.$$resources = {
     32,
     58743
   ],
+  "@MaterialIconsRound/360": [
+    32,
+    32,
+    58743
+  ],
   "@MaterialIconsRound/edit_attributes": [
     32,
     32,
@@ -15909,6 +22209,11 @@ qx.$$resources = {
     32,
     58835
   ],
+  "@MaterialIconsRound/keyboard_control": [
+    32,
+    32,
+    58835
+  ],
   "@MaterialIconsRound/more_vert": [
     32,
     32,
@@ -15994,6 +22299,21 @@ qx.$$resources = {
     32,
     58896
   ],
+  "@MaterialIconsRound/do_not_disturb_alt": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsRound/dnd_forwardslash": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsRound/do_not_disturb": [
+    32,
+    32,
+    58898
+  ],
   "@MaterialIconsRound/drive_eta": [
     32,
     32,
@@ -16068,6 +22388,11 @@ qx.$$resources = {
     32,
     32,
     58915
+  ],
+  "@MaterialIconsRound/sim_card_alert": [
+    32,
+    32,
+    58916
   ],
   "@MaterialIconsRound/sms": [
     32,
@@ -16169,6 +22494,11 @@ qx.$$resources = {
     32,
     58936
   ],
+  "@MaterialIconsRound/confirmation_num": [
+    32,
+    32,
+    58936
+  ],
   "@MaterialIconsRound/live_tv": [
     32,
     32,
@@ -16219,6 +22549,16 @@ qx.$$resources = {
     32,
     58946
   ],
+  "@MaterialIconsRound/do_not_disturb_off": [
+    32,
+    32,
+    58947
+  ],
+  "@MaterialIconsRound/do_not_disturb_on": [
+    32,
+    32,
+    58948
+  ],
   "@MaterialIconsRound/priority_high": [
     32,
     32,
@@ -16244,6 +22584,56 @@ qx.$$resources = {
     32,
     58953
   ],
+  "@MaterialIconsRound/add_to_drive": [
+    32,
+    32,
+    58972
+  ],
+  "@MaterialIconsRound/auto_awesome": [
+    32,
+    32,
+    58975
+  ],
+  "@MaterialIconsRound/auto_awesome_mosaic": [
+    32,
+    32,
+    58976
+  ],
+  "@MaterialIconsRound/auto_awesome_motion": [
+    32,
+    32,
+    58977
+  ],
+  "@MaterialIconsRound/auto_fix_high": [
+    32,
+    32,
+    58979
+  ],
+  "@MaterialIconsRound/auto_fix_normal": [
+    32,
+    32,
+    58980
+  ],
+  "@MaterialIconsRound/auto_fix_off": [
+    32,
+    32,
+    58981
+  ],
+  "@MaterialIconsRound/auto_stories": [
+    32,
+    32,
+    58982
+  ],
+  "@MaterialIconsRound/drive_file_move": [
+    32,
+    32,
+    58997
+  ],
+  "@MaterialIconsRound/ios_share": [
+    32,
+    32,
+    59064
+  ],
   "@MaterialIconsRound/pie_chart": [
     32,
     32,
@@ -16263,6 +22653,11 @@ qx.$$resources = {
     32,
     32,
     59105
+  ],
+  "@MaterialIconsRound/animation": [
+    32,
+    32,
+    59164
   ],
   "@MaterialIconsRound/add_business": [
     32,
@@ -16320,6 +22715,11 @@ qx.$$resources = {
     59382
   ],
   "@MaterialIconsRound/notifications_active": [
+    32,
+    32,
+    59383
+  ],
+  "@MaterialIconsRound/notifications_on": [
     32,
     32,
     59383
@@ -16439,16 +22839,6 @@ qx.$$resources = {
     32,
     59445
   ],
-  "@MaterialIconsRound/radio_button_unchecked": [
-    32,
-    32,
-    59446
-  ],
-  "@MaterialIconsRound/radio_button_checked": [
-    32,
-    32,
-    59447
-  ],
   "@MaterialIconsRound/star": [
     32,
     32,
@@ -16465,6 +22855,11 @@ qx.$$resources = {
     59450
   ],
   "@MaterialIconsRound/_3d_rotation": [
+    32,
+    32,
+    59469
+  ],
+  "@MaterialIconsRound/3d_rotation": [
     32,
     32,
     59469
@@ -16594,6 +22989,11 @@ qx.$$resources = {
     32,
     59495
   ],
+  "@MaterialIconsRound/bookmark_outline": [
+    32,
+    32,
+    59495
+  ],
   "@MaterialIconsRound/bug_report": [
     32,
     32,
@@ -16699,7 +23099,7 @@ qx.$$resources = {
     32,
     59517
   ],
-  "@MaterialIconsRound/favorite_border": [
+  "@MaterialIconsRound/favorite_outline": [
     32,
     32,
     59518
@@ -16754,6 +23154,11 @@ qx.$$resources = {
     32,
     59528
   ],
+  "@MaterialIconsRound/highlight_remove": [
+    32,
+    32,
+    59528
+  ],
   "@MaterialIconsRound/history": [
     32,
     32,
@@ -16795,6 +23200,11 @@ qx.$$resources = {
     59536
   ],
   "@MaterialIconsRound/invert_colors": [
+    32,
+    32,
+    59537
+  ],
+  "@MaterialIconsRound/invert_colors_on": [
     32,
     32,
     59537
@@ -16889,12 +23299,22 @@ qx.$$resources = {
     32,
     59555
   ],
+  "@MaterialIconsRound/perm_contact_cal": [
+    32,
+    32,
+    59555
+  ],
   "@MaterialIconsRound/perm_data_setting": [
     32,
     32,
     59556
   ],
   "@MaterialIconsRound/perm_device_information": [
+    32,
+    32,
+    59557
+  ],
+  "@MaterialIconsRound/perm_device_info": [
     32,
     32,
     59557
@@ -17010,6 +23430,11 @@ qx.$$resources = {
     59580
   ],
   "@MaterialIconsRound/settings_brightness": [
+    32,
+    32,
+    59581
+  ],
+  "@MaterialIconsRound/settings_display": [
     32,
     32,
     59581
@@ -17134,7 +23559,17 @@ qx.$$resources = {
     32,
     59606
   ],
+  "@MaterialIconsRound/swap_vert_circle": [
+    32,
+    32,
+    59606
+  ],
   "@MaterialIconsRound/system_update_alt": [
+    32,
+    32,
+    59607
+  ],
+  "@MaterialIconsRound/system_update_tv": [
     32,
     32,
     59607
@@ -17200,6 +23635,11 @@ qx.$$resources = {
     59619
   ],
   "@MaterialIconsRound/trending_flat": [
+    32,
+    32,
+    59620
+  ],
+  "@MaterialIconsRound/trending_neutral": [
     32,
     32,
     59620
@@ -17294,12 +23734,27 @@ qx.$$resources = {
     32,
     59638
   ],
+  "@MaterialIconsRound/wallet_giftcard": [
+    32,
+    32,
+    59638
+  ],
   "@MaterialIconsRound/card_membership": [
     32,
     32,
     59639
   ],
+  "@MaterialIconsRound/wallet_membership": [
+    32,
+    32,
+    59639
+  ],
   "@MaterialIconsRound/card_travel": [
+    32,
+    32,
+    59640
+  ],
+  "@MaterialIconsRound/wallet_travel": [
     32,
     32,
     59640
@@ -17320,6 +23775,11 @@ qx.$$resources = {
     59643
   ],
   "@MaterialIconsRound/camera_enhance": [
+    32,
+    32,
+    59644
+  ],
+  "@MaterialIconsRound/enhance_photo_translate": [
     32,
     32,
     59644
@@ -17689,35 +24149,405 @@ qx.$$resources = {
     32,
     59722
   ],
+  "@MaterialIconsRound/segment": [
+    32,
+    32,
+    59723
+  ],
   "@MaterialIconsRound/contact_support": [
     32,
     32,
     59724
+  ],
+  "@MaterialIconsRound/compress": [
+    32,
+    32,
+    59725
+  ],
+  "@MaterialIconsRound/expand": [
+    32,
+    32,
+    59727
+  ],
+  "@MaterialIconsRound/edit_off": [
+    32,
+    32,
+    59728
+  ],
+  "@MaterialIconsRound/_10k": [
+    32,
+    32,
+    59729
+  ],
+  "@MaterialIconsRound/_10mp": [
+    32,
+    32,
+    59730
+  ],
+  "@MaterialIconsRound/_11mp": [
+    32,
+    32,
+    59731
+  ],
+  "@MaterialIconsRound/_12mp": [
+    32,
+    32,
+    59732
+  ],
+  "@MaterialIconsRound/_13mp": [
+    32,
+    32,
+    59733
+  ],
+  "@MaterialIconsRound/_14mp": [
+    32,
+    32,
+    59734
+  ],
+  "@MaterialIconsRound/_15mp": [
+    32,
+    32,
+    59735
+  ],
+  "@MaterialIconsRound/_16mp": [
+    32,
+    32,
+    59736
+  ],
+  "@MaterialIconsRound/_17mp": [
+    32,
+    32,
+    59737
+  ],
+  "@MaterialIconsRound/_18mp": [
+    32,
+    32,
+    59738
+  ],
+  "@MaterialIconsRound/_19mp": [
+    32,
+    32,
+    59739
+  ],
+  "@MaterialIconsRound/_1k": [
+    32,
+    32,
+    59740
+  ],
+  "@MaterialIconsRound/_1k_plus": [
+    32,
+    32,
+    59741
+  ],
+  "@MaterialIconsRound/_20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsRound/20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsRound/_21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsRound/21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsRound/_22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsRound/22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsRound/_23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsRound/23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsRound/_24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsRound/24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsRound/_2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsRound/2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsRound/_2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsRound/2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsRound/_2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsRound/2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsRound/_3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsRound/3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsRound/_3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsRound/3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsRound/_3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsRound/3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsRound/_4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsRound/4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsRound/_4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsRound/4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsRound/_5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsRound/5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsRound/_5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsRound/5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsRound/_5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsRound/5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsRound/_6k": [
+    32,
+    32,
+    59758
+  ],
+  "@MaterialIconsRound/_6k_plus": [
+    32,
+    32,
+    59759
+  ],
+  "@MaterialIconsRound/_6mp": [
+    32,
+    32,
+    59760
+  ],
+  "@MaterialIconsRound/_7k": [
+    32,
+    32,
+    59761
+  ],
+  "@MaterialIconsRound/_7k_plus": [
+    32,
+    32,
+    59762
+  ],
+  "@MaterialIconsRound/_7mp": [
+    32,
+    32,
+    59763
+  ],
+  "@MaterialIconsRound/_8k": [
+    32,
+    32,
+    59764
+  ],
+  "@MaterialIconsRound/_8k_plus": [
+    32,
+    32,
+    59765
+  ],
+  "@MaterialIconsRound/_8mp": [
+    32,
+    32,
+    59766
+  ],
+  "@MaterialIconsRound/_9k": [
+    32,
+    32,
+    59767
+  ],
+  "@MaterialIconsRound/_9k_plus": [
+    32,
+    32,
+    59768
+  ],
+  "@MaterialIconsRound/_9mp": [
+    32,
+    32,
+    59769
   ],
   "@MaterialIconsRound/account_tree": [
     32,
     32,
     59770
   ],
+  "@MaterialIconsRound/add_chart": [
+    32,
+    32,
+    59771
+  ],
   "@MaterialIconsRound/add_ic_call": [
     32,
     32,
     59772
+  ],
+  "@MaterialIconsRound/add_moderator": [
+    32,
+    32,
+    59773
   ],
   "@MaterialIconsRound/all_inbox": [
     32,
     32,
     59775
   ],
+  "@MaterialIconsRound/approval": [
+    32,
+    32,
+    59778
+  ],
+  "@MaterialIconsRound/assistant_direction": [
+    32,
+    32,
+    59784
+  ],
   "@MaterialIconsRound/bookmarks": [
     32,
     32,
     59787
   ],
+  "@MaterialIconsRound/bus_alert": [
+    32,
+    32,
+    59791
+  ],
+  "@MaterialIconsRound/cases": [
+    32,
+    32,
+    59794
+  ],
+  "@MaterialIconsRound/circle_notifications": [
+    32,
+    32,
+    59796
+  ],
+  "@MaterialIconsRound/closed_caption_off": [
+    32,
+    32,
+    59798
+  ],
+  "@MaterialIconsRound/connected_tv": [
+    32,
+    32,
+    59800
+  ],
+  "@MaterialIconsRound/dangerous": [
+    32,
+    32,
+    59802
+  ],
+  "@MaterialIconsRound/dashboard_customize": [
+    32,
+    32,
+    59803
+  ],
   "@MaterialIconsRound/desktop_access_disabled": [
     32,
     32,
     59805
+  ],
+  "@MaterialIconsRound/drive_file_rename_outline": [
+    32,
+    32,
+    59810
+  ],
+  "@MaterialIconsRound/drive_folder_upload": [
+    32,
+    32,
+    59811
   ],
   "@MaterialIconsRound/duo": [
     32,
@@ -17729,6 +24559,31 @@ qx.$$resources = {
     32,
     59816
   ],
+  "@MaterialIconsRound/file_download_done": [
+    32,
+    32,
+    59818
+  ],
+  "@MaterialIconsRound/rtt": [
+    32,
+    32,
+    59821
+  ],
+  "@MaterialIconsRound/grid_view": [
+    32,
+    32,
+    59824
+  ],
+  "@MaterialIconsRound/hail": [
+    32,
+    32,
+    59825
+  ],
+  "@MaterialIconsRound/imagesearch_roller": [
+    32,
+    32,
+    59828
+  ],
   "@MaterialIconsRound/label_off": [
     32,
     32,
@@ -17739,10 +24594,65 @@ qx.$$resources = {
     32,
     59831
   ],
+  "@MaterialIconsRound/logout": [
+    32,
+    32,
+    59834
+  ],
+  "@MaterialIconsRound/margin": [
+    32,
+    32,
+    59835
+  ],
+  "@MaterialIconsRound/mark_as_unread": [
+    32,
+    32,
+    59836
+  ],
   "@MaterialIconsRound/menu_open": [
     32,
     32,
     59837
+  ],
+  "@MaterialIconsRound/motion_photos_off": [
+    32,
+    32,
+    59840
+  ],
+  "@MaterialIconsRound/motion_photos_on": [
+    32,
+    32,
+    59841
+  ],
+  "@MaterialIconsRound/motion_photos_paused": [
+    32,
+    32,
+    59842
+  ],
+  "@MaterialIconsRound/mp": [
+    32,
+    32,
+    59843
+  ],
+  "@MaterialIconsRound/offline_share": [
+    32,
+    32,
+    59845
+  ],
+  "@MaterialIconsRound/padding": [
+    32,
+    32,
+    59848
+  ],
+  "@MaterialIconsRound/panorama_photosphere": [
+    32,
+    32,
+    59849
+  ],
+  "@MaterialIconsRound/panorama_photosphere_select": [
+    32,
+    32,
+    59850
   ],
   "@MaterialIconsRound/person_add_disabled": [
     32,
@@ -17759,15 +24669,110 @@ qx.$$resources = {
     32,
     59853
   ],
+  "@MaterialIconsRound/pivot_table_chart": [
+    32,
+    32,
+    59854
+  ],
   "@MaterialIconsRound/print_disabled": [
     32,
     32,
     59855
   ],
+  "@MaterialIconsRound/railway_alert": [
+    32,
+    32,
+    59857
+  ],
+  "@MaterialIconsRound/recommend": [
+    32,
+    32,
+    59858
+  ],
+  "@MaterialIconsRound/remove_done": [
+    32,
+    32,
+    59859
+  ],
+  "@MaterialIconsRound/remove_moderator": [
+    32,
+    32,
+    59860
+  ],
+  "@MaterialIconsRound/repeat_on": [
+    32,
+    32,
+    59862
+  ],
+  "@MaterialIconsRound/repeat_one_on": [
+    32,
+    32,
+    59863
+  ],
+  "@MaterialIconsRound/replay_circle_filled": [
+    32,
+    32,
+    59864
+  ],
+  "@MaterialIconsRound/reset_tv": [
+    32,
+    32,
+    59865
+  ],
+  "@MaterialIconsRound/sd": [
+    32,
+    32,
+    59869
+  ],
+  "@MaterialIconsRound/shield": [
+    32,
+    32,
+    59872
+  ],
+  "@MaterialIconsRound/shuffle_on": [
+    32,
+    32,
+    59873
+  ],
   "@MaterialIconsRound/speed": [
     32,
     32,
     59876
+  ],
+  "@MaterialIconsRound/stacked_bar_chart": [
+    32,
+    32,
+    59878
+  ],
+  "@MaterialIconsRound/stream": [
+    32,
+    32,
+    59881
+  ],
+  "@MaterialIconsRound/swipe": [
+    32,
+    32,
+    59884
+  ],
+  "@MaterialIconsRound/switch_account": [
+    32,
+    32,
+    59885
+  ],
+  "@MaterialIconsRound/tag": [
+    32,
+    32,
+    59887
+  ],
+  "@MaterialIconsRound/thumb_down_off_alt": [
+    32,
+    32,
+    59890
+  ],
+  "@MaterialIconsRound/thumb_up_off_alt": [
+    32,
+    32,
+    59891
   ],
   "@MaterialIconsRound/toggle_off": [
     32,
@@ -17784,10 +24789,60 @@ qx.$$resources = {
     32,
     59897
   ],
+  "@MaterialIconsRound/upload_file": [
+    32,
+    32,
+    59900
+  ],
+  "@MaterialIconsRound/view_in_ar": [
+    32,
+    32,
+    59902
+  ],
+  "@MaterialIconsRound/waterfall_chart": [
+    32,
+    32,
+    59904
+  ],
+  "@MaterialIconsRound/wb_shade": [
+    32,
+    32,
+    59905
+  ],
   "@MaterialIconsRound/home_work": [
     32,
     32,
     59913
+  ],
+  "@MaterialIconsRound/schedule_send": [
+    32,
+    32,
+    59914
+  ],
+  "@MaterialIconsRound/bolt": [
+    32,
+    32,
+    59915
+  ],
+  "@MaterialIconsRound/send_and_archive": [
+    32,
+    32,
+    59916
+  ],
+  "@MaterialIconsRound/file_present": [
+    32,
+    32,
+    59918
+  ],
+  "@MaterialIconsRound/fit_screen": [
+    32,
+    32,
+    59920
+  ],
+  "@MaterialIconsRound/saved_search": [
+    32,
+    32,
+    59921
   ],
   "@MaterialIconsRound/storefront": [
     32,
@@ -18079,6 +25134,11 @@ qx.$$resources = {
     32,
     59980
   ],
+  "@MaterialIconsRound/person_add_alt": [
+    32,
+    32,
+    59981
+  ],
   "@MaterialIconsRound/comment_bank": [
     32,
     32,
@@ -18098,6 +25158,46 @@ qx.$$resources = {
     32,
     32,
     59985
+  ],
+  "@MaterialIconsRound/attractions": [
+    32,
+    32,
+    59986
+  ],
+  "@MaterialIconsRound/bakery_dining": [
+    32,
+    32,
+    59987
+  ],
+  "@MaterialIconsRound/breakfast_dining": [
+    32,
+    32,
+    59988
+  ],
+  "@MaterialIconsRound/car_rental": [
+    32,
+    32,
+    59989
+  ],
+  "@MaterialIconsRound/car_repair": [
+    32,
+    32,
+    59990
+  ],
+  "@MaterialIconsRound/dinner_dining": [
+    32,
+    32,
+    59991
+  ],
+  "@MaterialIconsRound/dry_cleaning": [
+    32,
+    32,
+    59992
+  ],
+  "@MaterialIconsRound/hardware": [
+    32,
+    32,
+    59993
   ],
   "@MaterialIconsRound/plagiarism": [
     32,
@@ -18129,10 +25229,80 @@ qx.$$resources = {
     32,
     59999
   ],
+  "@MaterialIconsRound/liquor": [
+    32,
+    32,
+    60000
+  ],
+  "@MaterialIconsRound/lunch_dining": [
+    32,
+    32,
+    60001
+  ],
+  "@MaterialIconsRound/nightlife": [
+    32,
+    32,
+    60002
+  ],
+  "@MaterialIconsRound/park": [
+    32,
+    32,
+    60003
+  ],
+  "@MaterialIconsRound/ramen_dining": [
+    32,
+    32,
+    60004
+  ],
+  "@MaterialIconsRound/celebration": [
+    32,
+    32,
+    60005
+  ],
+  "@MaterialIconsRound/theater_comedy": [
+    32,
+    32,
+    60006
+  ],
+  "@MaterialIconsRound/badge": [
+    32,
+    32,
+    60007
+  ],
+  "@MaterialIconsRound/festival": [
+    32,
+    32,
+    60008
+  ],
+  "@MaterialIconsRound/icecream": [
+    32,
+    32,
+    60009
+  ],
+  "@MaterialIconsRound/volunteer_activism": [
+    32,
+    32,
+    60016
+  ],
   "@MaterialIconsRound/contactless": [
     32,
     32,
     60017
+  ],
+  "@MaterialIconsRound/delivery_dining": [
+    32,
+    32,
+    60018
+  ],
+  "@MaterialIconsRound/brunch_dining": [
+    32,
+    32,
+    60019
+  ],
+  "@MaterialIconsRound/takeout_dining": [
+    32,
+    32,
+    60020
   ],
   "@MaterialIconsRound/video_settings": [
     32,
@@ -18299,6 +25469,11 @@ qx.$$resources = {
     32,
     61240
   ],
+  "@MaterialIconsRound/5g": [
+    32,
+    32,
+    61240
+  ],
   "@MaterialIconsRound/ad_units": [
     32,
     32,
@@ -18333,6 +25508,11 @@ qx.$$resources = {
     32,
     32,
     61247
+  ],
+  "@MaterialIconsRound/app_registration": [
+    32,
+    32,
+    61248
   ],
   "@MaterialIconsRound/app_settings_alt": [
     32,
@@ -18374,6 +25554,16 @@ qx.$$resources = {
     32,
     61257
   ],
+  "@MaterialIconsRound/circle": [
+    32,
+    32,
+    61258
+  ],
+  "@MaterialIconsRound/dirty_lens": [
+    32,
+    32,
+    61259
+  ],
   "@MaterialIconsRound/domain_verification": [
     32,
     32,
@@ -18384,6 +25574,11 @@ qx.$$resources = {
     32,
     61261
   ],
+  "@MaterialIconsRound/face_retouching_natural": [
+    32,
+    32,
+    61262
+  ],
   "@MaterialIconsRound/filter_alt": [
     32,
     32,
@@ -18393,6 +25588,11 @@ qx.$$resources = {
     32,
     32,
     61264
+  ],
+  "@MaterialIconsRound/hdr_enhanced_select": [
+    32,
+    32,
+    61265
   ],
   "@MaterialIconsRound/highlight_alt": [
     32,
@@ -18409,10 +25609,40 @@ qx.$$resources = {
     32,
     61268
   ],
+  "@MaterialIconsRound/local_fire_department": [
+    32,
+    32,
+    61269
+  ],
+  "@MaterialIconsRound/local_police": [
+    32,
+    32,
+    61270
+  ],
+  "@MaterialIconsRound/lock_clock": [
+    32,
+    32,
+    61271
+  ],
   "@MaterialIconsRound/maps_ugc": [
     32,
     32,
     61272
+  ],
+  "@MaterialIconsRound/mic_external_off": [
+    32,
+    32,
+    61273
+  ],
+  "@MaterialIconsRound/mic_external_on": [
+    32,
+    32,
+    61274
+  ],
+  "@MaterialIconsRound/monitor": [
+    32,
+    32,
+    61275
   ],
   "@MaterialIconsRound/nat": [
     32,
@@ -18423,6 +25653,31 @@ qx.$$resources = {
     32,
     32,
     61277
+  ],
+  "@MaterialIconsRound/nightlight_round": [
+    32,
+    32,
+    61278
+  ],
+  "@MaterialIconsRound/outbox": [
+    32,
+    32,
+    61279
+  ],
+  "@MaterialIconsRound/panorama_horizontal_select": [
+    32,
+    32,
+    61280
+  ],
+  "@MaterialIconsRound/panorama_vertical_select": [
+    32,
+    32,
+    61281
+  ],
+  "@MaterialIconsRound/panorama_wide_angle_select": [
+    32,
+    32,
+    61282
   ],
   "@MaterialIconsRound/payments": [
     32,
@@ -18449,6 +25704,21 @@ qx.$$resources = {
     32,
     61287
   ],
+  "@MaterialIconsRound/photo_camera_back": [
+    32,
+    32,
+    61288
+  ],
+  "@MaterialIconsRound/photo_camera_front": [
+    32,
+    32,
+    61289
+  ],
+  "@MaterialIconsRound/play_disabled": [
+    32,
+    32,
+    61290
+  ],
   "@MaterialIconsRound/qr_code": [
     32,
     32,
@@ -18474,6 +25744,11 @@ qx.$$resources = {
     32,
     61295
   ],
+  "@MaterialIconsRound/screen_search_desktop": [
+    32,
+    32,
+    61296
+  ],
   "@MaterialIconsRound/stop_circle": [
     32,
     32,
@@ -18488,6 +25763,11 @@ qx.$$resources = {
     32,
     32,
     61299
+  ],
+  "@MaterialIconsRound/taxi_alert": [
+    32,
+    32,
+    61300
   ],
   "@MaterialIconsRound/tour": [
     32,
@@ -18514,75 +25794,965 @@ qx.$$resources = {
     32,
     61351
   ],
+  "@MaterialIconsRound/_1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIconsRound/1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIconsRound/_30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIconsRound/30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIconsRound/_30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsRound/30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsRound/_3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsRound/3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsRound/_3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsRound/3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsRound/_4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsRound/4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsRound/_4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsRound/4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsRound/_60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsRound/60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsRound/_60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsRound/60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsRound/access_time_filled": [
+    32,
+    32,
+    61398
+  ],
+  "@MaterialIconsRound/air": [
+    32,
+    32,
+    61400
+  ],
+  "@MaterialIconsRound/airplane_ticket": [
+    32,
+    32,
+    61401
+  ],
+  "@MaterialIconsRound/aod": [
+    32,
+    32,
+    61402
+  ],
   "@MaterialIconsRound/attribution": [
     32,
     32,
     61403
+  ],
+  "@MaterialIconsRound/autofps_select": [
+    32,
+    32,
+    61404
+  ],
+  "@MaterialIconsRound/bathroom": [
+    32,
+    32,
+    61405
+  ],
+  "@MaterialIconsRound/battery_saver": [
+    32,
+    32,
+    61406
+  ],
+  "@MaterialIconsRound/bed": [
+    32,
+    32,
+    61407
+  ],
+  "@MaterialIconsRound/bedroom_baby": [
+    32,
+    32,
+    61408
+  ],
+  "@MaterialIconsRound/bedroom_child": [
+    32,
+    32,
+    61409
+  ],
+  "@MaterialIconsRound/bedroom_parent": [
+    32,
+    32,
+    61410
+  ],
+  "@MaterialIconsRound/blender": [
+    32,
+    32,
+    61411
+  ],
+  "@MaterialIconsRound/bloodtype": [
+    32,
+    32,
+    61412
+  ],
+  "@MaterialIconsRound/bluetooth_drive": [
+    32,
+    32,
+    61413
+  ],
+  "@MaterialIconsRound/cable": [
+    32,
+    32,
+    61414
+  ],
+  "@MaterialIconsRound/calendar_view_month": [
+    32,
+    32,
+    61415
+  ],
+  "@MaterialIconsRound/calendar_view_week": [
+    32,
+    32,
+    61416
+  ],
+  "@MaterialIconsRound/camera_indoor": [
+    32,
+    32,
+    61417
+  ],
+  "@MaterialIconsRound/camera_outdoor": [
+    32,
+    32,
+    61418
+  ],
+  "@MaterialIconsRound/cameraswitch": [
+    32,
+    32,
+    61419
   ],
   "@MaterialIconsRound/cast_for_education": [
     32,
     32,
     61420
   ],
+  "@MaterialIconsRound/chair": [
+    32,
+    32,
+    61421
+  ],
+  "@MaterialIconsRound/chair_alt": [
+    32,
+    32,
+    61422
+  ],
+  "@MaterialIconsRound/coffee": [
+    32,
+    32,
+    61423
+  ],
+  "@MaterialIconsRound/coffee_maker": [
+    32,
+    32,
+    61424
+  ],
+  "@MaterialIconsRound/credit_score": [
+    32,
+    32,
+    61425
+  ],
+  "@MaterialIconsRound/data_saver_off": [
+    32,
+    32,
+    61426
+  ],
+  "@MaterialIconsRound/data_saver_on": [
+    32,
+    32,
+    61427
+  ],
+  "@MaterialIconsRound/dining": [
+    32,
+    32,
+    61428
+  ],
+  "@MaterialIconsRound/directions_boat_filled": [
+    32,
+    32,
+    61429
+  ],
+  "@MaterialIconsRound/directions_bus_filled": [
+    32,
+    32,
+    61430
+  ],
+  "@MaterialIconsRound/directions_car_filled": [
+    32,
+    32,
+    61431
+  ],
+  "@MaterialIconsRound/directions_railway_filled": [
+    32,
+    32,
+    61432
+  ],
+  "@MaterialIconsRound/directions_subway_filled": [
+    32,
+    32,
+    61433
+  ],
+  "@MaterialIconsRound/directions_transit_filled": [
+    32,
+    32,
+    61434
+  ],
+  "@MaterialIconsRound/do_not_disturb_on_total_silence": [
+    32,
+    32,
+    61435
+  ],
+  "@MaterialIconsRound/door_back": [
+    32,
+    32,
+    61436
+  ],
+  "@MaterialIconsRound/door_front": [
+    32,
+    32,
+    61437
+  ],
+  "@MaterialIconsRound/door_sliding": [
+    32,
+    32,
+    61438
+  ],
+  "@MaterialIconsRound/doorbell": [
+    32,
+    32,
+    61439
+  ],
+  "@MaterialIconsRound/download_for_offline": [
+    32,
+    32,
+    61440
+  ],
+  "@MaterialIconsRound/downloading": [
+    32,
+    32,
+    61441
+  ],
+  "@MaterialIconsRound/e_mobiledata": [
+    32,
+    32,
+    61442
+  ],
+  "@MaterialIconsRound/earbuds": [
+    32,
+    32,
+    61443
+  ],
+  "@MaterialIconsRound/earbuds_battery": [
+    32,
+    32,
+    61444
+  ],
+  "@MaterialIconsRound/edgesensor_high": [
+    32,
+    32,
+    61445
+  ],
+  "@MaterialIconsRound/edgesensor_low": [
+    32,
+    32,
+    61446
+  ],
+  "@MaterialIconsRound/face_retouching_off": [
+    32,
+    32,
+    61447
+  ],
   "@MaterialIconsRound/face_unlock": [
     32,
     32,
     61448
+  ],
+  "@MaterialIconsRound/feed": [
+    32,
+    32,
+    61449
+  ],
+  "@MaterialIconsRound/flashlight_off": [
+    32,
+    32,
+    61450
+  ],
+  "@MaterialIconsRound/flashlight_on": [
+    32,
+    32,
+    61451
+  ],
+  "@MaterialIconsRound/flatware": [
+    32,
+    32,
+    61452
+  ],
+  "@MaterialIconsRound/flourescent": [
+    32,
+    32,
+    61453
+  ],
+  "@MaterialIconsRound/fmd_bad": [
+    32,
+    32,
+    61454
+  ],
+  "@MaterialIconsRound/fmd_good": [
+    32,
+    32,
+    61455
+  ],
+  "@MaterialIconsRound/g_mobiledata": [
+    32,
+    32,
+    61456
+  ],
+  "@MaterialIconsRound/garage": [
+    32,
+    32,
+    61457
+  ],
+  "@MaterialIconsRound/gpp_bad": [
+    32,
+    32,
+    61458
+  ],
+  "@MaterialIconsRound/gpp_good": [
+    32,
+    32,
+    61459
+  ],
+  "@MaterialIconsRound/gpp_maybe": [
+    32,
+    32,
+    61460
+  ],
+  "@MaterialIconsRound/grid_3x3": [
+    32,
+    32,
+    61461
+  ],
+  "@MaterialIconsRound/grid_4x4": [
+    32,
+    32,
+    61462
+  ],
+  "@MaterialIconsRound/grid_goldenratio": [
+    32,
+    32,
+    61463
+  ],
+  "@MaterialIconsRound/h_mobiledata": [
+    32,
+    32,
+    61464
+  ],
+  "@MaterialIconsRound/h_plus_mobiledata": [
+    32,
+    32,
+    61465
+  ],
+  "@MaterialIconsRound/hdr_auto": [
+    32,
+    32,
+    61466
+  ],
+  "@MaterialIconsRound/hdr_auto_select": [
+    32,
+    32,
+    61467
+  ],
+  "@MaterialIconsRound/hdr_off_select": [
+    32,
+    32,
+    61468
+  ],
+  "@MaterialIconsRound/hdr_on_select": [
+    32,
+    32,
+    61469
+  ],
+  "@MaterialIconsRound/hdr_plus": [
+    32,
+    32,
+    61470
+  ],
+  "@MaterialIconsRound/headphones": [
+    32,
+    32,
+    61471
+  ],
+  "@MaterialIconsRound/headphones_battery": [
+    32,
+    32,
+    61472
+  ],
+  "@MaterialIconsRound/hevc": [
+    32,
+    32,
+    61473
+  ],
+  "@MaterialIconsRound/hide_image": [
+    32,
+    32,
+    61474
+  ],
+  "@MaterialIconsRound/hide_source": [
+    32,
+    32,
+    61475
+  ],
+  "@MaterialIconsRound/home_max": [
+    32,
+    32,
+    61476
+  ],
+  "@MaterialIconsRound/home_mini": [
+    32,
+    32,
+    61477
+  ],
+  "@MaterialIconsRound/keyboard_alt": [
+    32,
+    32,
+    61480
+  ],
+  "@MaterialIconsRound/lens_blur": [
+    32,
+    32,
+    61481
+  ],
+  "@MaterialIconsRound/light": [
+    32,
+    32,
+    61482
+  ],
+  "@MaterialIconsRound/living": [
+    32,
+    32,
+    61483
+  ],
+  "@MaterialIconsRound/lte_mobiledata": [
+    32,
+    32,
+    61484
+  ],
+  "@MaterialIconsRound/lte_plus_mobiledata": [
+    32,
+    32,
+    61485
+  ],
+  "@MaterialIconsRound/manage_accounts": [
+    32,
+    32,
+    61486
+  ],
+  "@MaterialIconsRound/manage_search": [
+    32,
+    32,
+    61487
+  ],
+  "@MaterialIconsRound/maps_home_work": [
+    32,
+    32,
+    61488
+  ],
+  "@MaterialIconsRound/media_bluetooth_off": [
+    32,
+    32,
+    61489
+  ],
+  "@MaterialIconsRound/media_bluetooth_on": [
+    32,
+    32,
+    61490
+  ],
+  "@MaterialIconsRound/medication": [
+    32,
+    32,
+    61491
+  ],
+  "@MaterialIconsRound/mobiledata_off": [
+    32,
+    32,
+    61492
+  ],
+  "@MaterialIconsRound/mode_edit_outline": [
+    32,
+    32,
+    61493
+  ],
+  "@MaterialIconsRound/mode_night": [
+    32,
+    32,
+    61494
+  ],
+  "@MaterialIconsRound/mode_standby": [
+    32,
+    32,
+    61495
   ],
   "@MaterialIconsRound/money_off_csred": [
     32,
     32,
     61496
   ],
+  "@MaterialIconsRound/monitor_weight": [
+    32,
+    32,
+    61497
+  ],
+  "@MaterialIconsRound/motion_photos_auto": [
+    32,
+    32,
+    61498
+  ],
+  "@MaterialIconsRound/nearby_error": [
+    32,
+    32,
+    61499
+  ],
+  "@MaterialIconsRound/nearby_off": [
+    32,
+    32,
+    61500
+  ],
+  "@MaterialIconsRound/nightlight": [
+    32,
+    32,
+    61501
+  ],
+  "@MaterialIconsRound/no_accounts": [
+    32,
+    32,
+    61502
+  ],
   "@MaterialIconsRound/no_encryption_gmailerrorred": [
     32,
     32,
     61503
+  ],
+  "@MaterialIconsRound/note_alt": [
+    32,
+    32,
+    61504
+  ],
+  "@MaterialIconsRound/paid": [
+    32,
+    32,
+    61505
+  ],
+  "@MaterialIconsRound/password": [
+    32,
+    32,
+    61506
+  ],
+  "@MaterialIconsRound/pattern": [
+    32,
+    32,
+    61507
   ],
   "@MaterialIconsRound/pie_chart_outline": [
     32,
     32,
     61508
   ],
+  "@MaterialIconsRound/pin": [
+    32,
+    32,
+    61509
+  ],
+  "@MaterialIconsRound/play_lesson": [
+    32,
+    32,
+    61511
+  ],
+  "@MaterialIconsRound/podcasts": [
+    32,
+    32,
+    61512
+  ],
   "@MaterialIconsRound/precision_manufacturing": [
     32,
     32,
     61513
+  ],
+  "@MaterialIconsRound/price_change": [
+    32,
+    32,
+    61514
+  ],
+  "@MaterialIconsRound/price_check": [
+    32,
+    32,
+    61515
+  ],
+  "@MaterialIconsRound/quiz": [
+    32,
+    32,
+    61516
+  ],
+  "@MaterialIconsRound/r_mobiledata": [
+    32,
+    32,
+    61517
+  ],
+  "@MaterialIconsRound/radar": [
+    32,
+    32,
+    61518
+  ],
+  "@MaterialIconsRound/raw_off": [
+    32,
+    32,
+    61519
+  ],
+  "@MaterialIconsRound/raw_on": [
+    32,
+    32,
+    61520
+  ],
+  "@MaterialIconsRound/remember_me": [
+    32,
+    32,
+    61521
   ],
   "@MaterialIconsRound/report_gmailerrorred": [
     32,
     32,
     61522
   ],
+  "@MaterialIconsRound/restart_alt": [
+    32,
+    32,
+    61523
+  ],
+  "@MaterialIconsRound/reviews": [
+    32,
+    32,
+    61524
+  ],
+  "@MaterialIconsRound/rsvp": [
+    32,
+    32,
+    61525
+  ],
+  "@MaterialIconsRound/screenshot": [
+    32,
+    32,
+    61526
+  ],
   "@MaterialIconsRound/sd_card_alert": [
     32,
     32,
     61527
+  ],
+  "@MaterialIconsRound/security_update": [
+    32,
+    32,
+    61528
+  ],
+  "@MaterialIconsRound/security_update_good": [
+    32,
+    32,
+    61529
+  ],
+  "@MaterialIconsRound/security_update_warning": [
+    32,
+    32,
+    61530
+  ],
+  "@MaterialIconsRound/sell": [
+    32,
+    32,
+    61531
+  ],
+  "@MaterialIconsRound/send_to_mobile": [
+    32,
+    32,
+    61532
+  ],
+  "@MaterialIconsRound/settings_accessibility": [
+    32,
+    32,
+    61533
+  ],
+  "@MaterialIconsRound/settings_suggest": [
+    32,
+    32,
+    61534
+  ],
+  "@MaterialIconsRound/share_location": [
+    32,
+    32,
+    61535
+  ],
+  "@MaterialIconsRound/shortcut": [
+    32,
+    32,
+    61536
+  ],
+  "@MaterialIconsRound/shower": [
+    32,
+    32,
+    61537
+  ],
+  "@MaterialIconsRound/signal_cellular_nodata": [
+    32,
+    32,
+    61538
+  ],
+  "@MaterialIconsRound/signal_wifi_bad": [
+    32,
+    32,
+    61539
+  ],
+  "@MaterialIconsRound/signal_wifi_connected_no_internet_4": [
+    32,
+    32,
+    61540
+  ],
+  "@MaterialIconsRound/signal_wifi_statusbar_4_bar": [
+    32,
+    32,
+    61541
+  ],
+  "@MaterialIconsRound/signal_wifi_statusbar_connected_no_internet_4": [
+    32,
+    32,
+    61542
+  ],
+  "@MaterialIconsRound/signal_wifi_statusbar_null": [
+    32,
+    32,
+    61543
+  ],
+  "@MaterialIconsRound/sim_card_download": [
+    32,
+    32,
+    61544
+  ],
+  "@MaterialIconsRound/sip": [
+    32,
+    32,
+    61545
+  ],
+  "@MaterialIconsRound/smart_display": [
+    32,
+    32,
+    61546
+  ],
+  "@MaterialIconsRound/smart_screen": [
+    32,
+    32,
+    61547
+  ],
+  "@MaterialIconsRound/smart_toy": [
+    32,
+    32,
+    61548
+  ],
+  "@MaterialIconsRound/splitscreen": [
+    32,
+    32,
+    61549
+  ],
+  "@MaterialIconsRound/sports_score": [
+    32,
+    32,
+    61550
   ],
   "@MaterialIconsRound/star_outline": [
     32,
     32,
     61551
   ],
+  "@MaterialIconsRound/storm": [
+    32,
+    32,
+    61552
+  ],
+  "@MaterialIconsRound/summarize": [
+    32,
+    32,
+    61553
+  ],
+  "@MaterialIconsRound/system_security_update": [
+    32,
+    32,
+    61554
+  ],
+  "@MaterialIconsRound/system_security_update_good": [
+    32,
+    32,
+    61555
+  ],
+  "@MaterialIconsRound/system_security_update_warning": [
+    32,
+    32,
+    61556
+  ],
+  "@MaterialIconsRound/task": [
+    32,
+    32,
+    61557
+  ],
   "@MaterialIconsRound/thermostat": [
     32,
     32,
     61558
+  ],
+  "@MaterialIconsRound/thermostat_auto": [
+    32,
+    32,
+    61559
+  ],
+  "@MaterialIconsRound/timer_10_select": [
+    32,
+    32,
+    61562
+  ],
+  "@MaterialIconsRound/timer_3_select": [
+    32,
+    32,
+    61563
+  ],
+  "@MaterialIconsRound/try": [
+    32,
+    32,
+    61564
+  ],
+  "@MaterialIconsRound/tungsten": [
+    32,
+    32,
+    61565
+  ],
+  "@MaterialIconsRound/upcoming": [
+    32,
+    32,
+    61566
+  ],
+  "@MaterialIconsRound/video_camera_back": [
+    32,
+    32,
+    61567
+  ],
+  "@MaterialIconsRound/video_camera_front": [
+    32,
+    32,
+    61568
+  ],
+  "@MaterialIconsRound/video_stable": [
+    32,
+    32,
+    61569
+  ],
+  "@MaterialIconsRound/vrpano": [
+    32,
+    32,
+    61570
   ],
   "@MaterialIconsRound/warning_amber": [
     32,
     32,
     61571
   ],
-  "@MaterialIconsRound/copy": [
+  "@MaterialIconsRound/water": [
     32,
     32,
-    61578
+    61572
   ],
-  "@MaterialIconsRound/cut": [
+  "@MaterialIconsRound/wifi_calling_3": [
     32,
     32,
-    61579
+    61573
+  ],
+  "@MaterialIconsRound/wifi_tethering_error_rounded": [
+    32,
+    32,
+    61574
+  ],
+  "@MaterialIconsRound/wifi_tethering_off": [
+    32,
+    32,
+    61575
+  ],
+  "@MaterialIconsRound/window": [
+    32,
+    32,
+    61576
+  ],
+  "@MaterialIconsRound/yard": [
+    32,
+    32,
+    61577
   ],
   "@MaterialIconsRound/do_disturb": [
     32,
@@ -18624,15 +26794,35 @@ qx.$$resources = {
     32,
     61591
   ],
-  "@MaterialIconsRound/paste": [
+  "@MaterialIconsRound/star_border_purple500": [
     32,
     32,
-    61592
+    61593
+  ],
+  "@MaterialIconsRound/star_purple500": [
+    32,
+    32,
+    61594
   ],
   "@MaterialIconsRound/upload": [
     32,
     32,
     61595
+  ],
+  "@MaterialIconsRound/signal_cellular_0_bar": [
+    32,
+    32,
+    61608
+  ],
+  "@MaterialIconsRound/signal_cellular_connected_no_internet_0_bar": [
+    32,
+    32,
+    61612
+  ],
+  "@MaterialIconsRound/signal_wifi_0_bar": [
+    32,
+    32,
+    61616
   ],
   "@MaterialIconsRound/fact_check": [
     32,
@@ -19109,6 +27299,306 @@ qx.$$resources = {
     32,
     61908
   ],
+  "@MaterialIconsRound/no_transfer": [
+    32,
+    32,
+    61909
+  ],
+  "@MaterialIconsRound/no_meals": [
+    32,
+    32,
+    61910
+  ],
+  "@MaterialIconsRound/fire_extinguisher": [
+    32,
+    32,
+    61912
+  ],
+  "@MaterialIconsRound/closed_caption_disabled": [
+    32,
+    32,
+    61916
+  ],
+  "@MaterialIconsRound/east": [
+    32,
+    32,
+    61919
+  ],
+  "@MaterialIconsRound/north": [
+    32,
+    32,
+    61920
+  ],
+  "@MaterialIconsRound/north_east": [
+    32,
+    32,
+    61921
+  ],
+  "@MaterialIconsRound/north_west": [
+    32,
+    32,
+    61922
+  ],
+  "@MaterialIconsRound/south": [
+    32,
+    32,
+    61923
+  ],
+  "@MaterialIconsRound/south_east": [
+    32,
+    32,
+    61924
+  ],
+  "@MaterialIconsRound/south_west": [
+    32,
+    32,
+    61925
+  ],
+  "@MaterialIconsRound/west": [
+    32,
+    32,
+    61926
+  ],
+  "@MaterialIconsRound/wine_bar": [
+    32,
+    32,
+    61928
+  ],
+  "@MaterialIconsRound/tapas": [
+    32,
+    32,
+    61929
+  ],
+  "@MaterialIconsRound/set_meal": [
+    32,
+    32,
+    61930
+  ],
+  "@MaterialIconsRound/near_me_disabled": [
+    32,
+    32,
+    61935
+  ],
+  "@MaterialIconsRound/night_shelter": [
+    32,
+    32,
+    61937
+  ],
+  "@MaterialIconsRound/food_bank": [
+    32,
+    32,
+    61938
+  ],
+  "@MaterialIconsRound/sports_bar": [
+    32,
+    32,
+    61939
+  ],
+  "@MaterialIconsRound/bento": [
+    32,
+    32,
+    61940
+  ],
+  "@MaterialIconsRound/rice_bowl": [
+    32,
+    32,
+    61941
+  ],
+  "@MaterialIconsRound/fence": [
+    32,
+    32,
+    61942
+  ],
+  "@MaterialIconsRound/countertops": [
+    32,
+    32,
+    61943
+  ],
+  "@MaterialIconsRound/carpenter": [
+    32,
+    32,
+    61944
+  ],
+  "@MaterialIconsRound/sticky_note_2": [
+    32,
+    32,
+    61948
+  ],
+  "@MaterialIconsRound/foundation": [
+    32,
+    32,
+    61952
+  ],
+  "@MaterialIconsRound/roofing": [
+    32,
+    32,
+    61953
+  ],
+  "@MaterialIconsRound/house_siding": [
+    32,
+    32,
+    61954
+  ],
+  "@MaterialIconsRound/water_damage": [
+    32,
+    32,
+    61955
+  ],
+  "@MaterialIconsRound/microwave": [
+    32,
+    32,
+    61956
+  ],
+  "@MaterialIconsRound/grass": [
+    32,
+    32,
+    61957
+  ],
+  "@MaterialIconsRound/qr_code_scanner": [
+    32,
+    32,
+    61958
+  ],
+  "@MaterialIconsRound/leaderboard": [
+    32,
+    32,
+    61964
+  ],
+  "@MaterialIconsRound/book_online": [
+    32,
+    32,
+    61975
+  ],
+  "@MaterialIconsRound/masks": [
+    32,
+    32,
+    61976
+  ],
+  "@MaterialIconsRound/elderly": [
+    32,
+    32,
+    61978
+  ],
+  "@MaterialIconsRound/no_luggage": [
+    32,
+    32,
+    62011
+  ],
+  "@MaterialIconsRound/leave_bags_at_home": [
+    32,
+    32,
+    61979
+  ],
+  "@MaterialIconsRound/reduce_capacity": [
+    32,
+    32,
+    61980
+  ],
+  "@MaterialIconsRound/sanitizer": [
+    32,
+    32,
+    61981
+  ],
+  "@MaterialIconsRound/_6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsRound/6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsRound/clean_hands": [
+    32,
+    32,
+    61983
+  ],
+  "@MaterialIconsRound/sick": [
+    32,
+    32,
+    61984
+  ],
+  "@MaterialIconsRound/coronavirus": [
+    32,
+    32,
+    61985
+  ],
+  "@MaterialIconsRound/follow_the_signs": [
+    32,
+    32,
+    61986
+  ],
+  "@MaterialIconsRound/connect_without_contact": [
+    32,
+    32,
+    61987
+  ],
+  "@MaterialIconsRound/motion_photos_pause": [
+    32,
+    32,
+    61991
+  ],
+  "@MaterialIconsRound/outbond": [
+    32,
+    32,
+    61992
+  ],
+  "@MaterialIconsRound/stacked_line_chart": [
+    32,
+    32,
+    61995
+  ],
+  "@MaterialIconsRound/request_page": [
+    32,
+    32,
+    61996
+  ],
+  "@MaterialIconsRound/contact_page": [
+    32,
+    32,
+    61998
+  ],
+  "@MaterialIconsRound/disabled_by_default": [
+    32,
+    32,
+    62000
+  ],
+  "@MaterialIconsRound/published_with_changes": [
+    32,
+    32,
+    62002
+  ],
+  "@MaterialIconsRound/groups": [
+    32,
+    32,
+    62003
+  ],
+  "@MaterialIconsRound/facebook": [
+    32,
+    32,
+    62004
+  ],
+  "@MaterialIconsRound/luggage": [
+    32,
+    32,
+    62005
+  ],
+  "@MaterialIconsRound/unpublished": [
+    32,
+    32,
+    62006
+  ],
+  "@MaterialIconsRound/no_backpack": [
+    32,
+    32,
+    62007
+  ],
+  "@MaterialIconsRound/add_task": [
+    32,
+    32,
+    62010
+  ],
   "@MaterialIconsSharp/error": [
     32,
     32,
@@ -19133,6 +27623,51 @@ qx.$$resources = {
     32,
     32,
     57348
+  ],
+  "@MaterialIconsSharp/qr_code_2": [
+    32,
+    32,
+    57354
+  ],
+  "@MaterialIconsSharp/flutter_dash": [
+    32,
+    32,
+    57355
+  ],
+  "@MaterialIconsSharp/align_vertical_top": [
+    32,
+    32,
+    57356
+  ],
+  "@MaterialIconsSharp/align_horizontal_left": [
+    32,
+    32,
+    57357
+  ],
+  "@MaterialIconsSharp/align_horizontal_center": [
+    32,
+    32,
+    57359
+  ],
+  "@MaterialIconsSharp/align_horizontal_right": [
+    32,
+    32,
+    57360
+  ],
+  "@MaterialIconsSharp/align_vertical_center": [
+    32,
+    32,
+    57361
+  ],
+  "@MaterialIconsSharp/horizontal_distribute": [
+    32,
+    32,
+    57364
+  ],
+  "@MaterialIconsSharp/align_vertical_bottom": [
+    32,
+    32,
+    57365
   ],
   "@MaterialIconsSharp/album": [
     32,
@@ -19214,12 +27749,27 @@ qx.$$resources = {
     32,
     57390
   ],
+  "@MaterialIconsSharp/my_library_add": [
+    32,
+    32,
+    57390
+  ],
   "@MaterialIconsSharp/library_books": [
     32,
     32,
     57391
   ],
+  "@MaterialIconsSharp/my_library_books": [
+    32,
+    32,
+    57391
+  ],
   "@MaterialIconsSharp/library_music": [
+    32,
+    32,
+    57392
+  ],
+  "@MaterialIconsSharp/my_library_music": [
     32,
     32,
     57392
@@ -19255,6 +27805,11 @@ qx.$$resources = {
     57399
   ],
   "@MaterialIconsSharp/play_circle_filled": [
+    32,
+    32,
+    57400
+  ],
+  "@MaterialIconsSharp/play_circle_fill": [
     32,
     32,
     57400
@@ -19340,6 +27895,11 @@ qx.$$resources = {
     57417
   ],
   "@MaterialIconsSharp/video_library": [
+    32,
+    32,
+    57418
+  ],
+  "@MaterialIconsSharp/video_collection": [
     32,
     32,
     57418
@@ -19539,6 +28099,11 @@ qx.$$resources = {
     32,
     57458
   ],
+  "@MaterialIconsSharp/4k": [
+    32,
+    32,
+    57458
+  ],
   "@MaterialIconsSharp/missed_video_call": [
     32,
     32,
@@ -19548,6 +28113,41 @@ qx.$$resources = {
     32,
     32,
     57460
+  ],
+  "@MaterialIconsSharp/update_disabled": [
+    32,
+    32,
+    57461
+  ],
+  "@MaterialIconsSharp/vertical_distribute": [
+    32,
+    32,
+    57462
+  ],
+  "@MaterialIconsSharp/favorite_border": [
+    32,
+    32,
+    59518
+  ],
+  "@MaterialIconsSharp/radio_button_unchecked": [
+    32,
+    32,
+    59446
+  ],
+  "@MaterialIconsSharp/radio_button_off": [
+    32,
+    32,
+    57476
+  ],
+  "@MaterialIconsSharp/radio_button_checked": [
+    32,
+    32,
+    59447
+  ],
+  "@MaterialIconsSharp/radio_button_on": [
+    32,
+    32,
+    57477
   ],
   "@MaterialIconsSharp/business": [
     32,
@@ -19664,7 +28264,17 @@ qx.$$resources = {
     32,
     57546
   ],
+  "@MaterialIconsSharp/messenger": [
+    32,
+    32,
+    57546
+  ],
   "@MaterialIconsSharp/chat_bubble_outline": [
+    32,
+    32,
+    57547
+  ],
+  "@MaterialIconsSharp/messenger_outline": [
     32,
     32,
     57547
@@ -19689,7 +28299,17 @@ qx.$$resources = {
     32,
     57551
   ],
+  "@MaterialIconsSharp/quick_contacts_dialer": [
+    32,
+    32,
+    57551
+  ],
   "@MaterialIconsSharp/contact_mail": [
+    32,
+    32,
+    57552
+  ],
+  "@MaterialIconsSharp/quick_contacts_mail": [
     32,
     32,
     57552
@@ -19824,6 +28444,11 @@ qx.$$resources = {
     32,
     57579
   ],
+  "@MaterialIconsSharp/cell_wifi": [
+    32,
+    32,
+    57580
+  ],
   "@MaterialIconsSharp/sentiment_satisfied_alt": [
     32,
     32,
@@ -19838,6 +28463,11 @@ qx.$$resources = {
     32,
     32,
     57583
+  ],
+  "@MaterialIconsSharp/lightbulb": [
+    32,
+    32,
+    57584
   ],
   "@MaterialIconsSharp/add": [
     32,
@@ -19878,6 +28508,36 @@ qx.$$resources = {
     32,
     32,
     57676
+  ],
+  "@MaterialIconsSharp/content_copy": [
+    32,
+    32,
+    61578
+  ],
+  "@MaterialIconsSharp/copy": [
+    32,
+    32,
+    57677
+  ],
+  "@MaterialIconsSharp/content_cut": [
+    32,
+    32,
+    61579
+  ],
+  "@MaterialIconsSharp/cut": [
+    32,
+    32,
+    57678
+  ],
+  "@MaterialIconsSharp/content_paste": [
+    32,
+    32,
+    61592
+  ],
+  "@MaterialIconsSharp/paste": [
+    32,
+    32,
+    57679
   ],
   "@MaterialIconsSharp/create": [
     32,
@@ -20079,6 +28739,16 @@ qx.$$resources = {
     32,
     57719
   ],
+  "@MaterialIconsSharp/add_link": [
+    32,
+    32,
+    57720
+  ],
+  "@MaterialIconsSharp/inventory": [
+    32,
+    32,
+    57721
+  ],
   "@MaterialIconsSharp/access_alarm": [
     32,
     32,
@@ -20104,7 +28774,17 @@ qx.$$resources = {
     32,
     57748
   ],
+  "@MaterialIconsSharp/airplanemode_off": [
+    32,
+    32,
+    57748
+  ],
   "@MaterialIconsSharp/airplanemode_active": [
+    32,
+    32,
+    57749
+  ],
+  "@MaterialIconsSharp/airplanemode_on": [
     32,
     32,
     57749
@@ -20113,6 +28793,26 @@ qx.$$resources = {
     32,
     32,
     57756
+  ],
+  "@MaterialIconsSharp/shop_2": [
+    32,
+    32,
+    57758
+  ],
+  "@MaterialIconsSharp/workspaces": [
+    32,
+    32,
+    57760
+  ],
+  "@MaterialIconsSharp/inventory_2": [
+    32,
+    32,
+    57761
+  ],
+  "@MaterialIconsSharp/pause_circle": [
+    32,
+    32,
+    57762
   ],
   "@MaterialIconsSharp/battery_charging_full": [
     32,
@@ -20224,6 +28924,21 @@ qx.$$resources = {
     32,
     57784
   ],
+  "@MaterialIconsSharp/multitrack_audio": [
+    32,
+    32,
+    57784
+  ],
+  "@MaterialIconsSharp/network_cell": [
+    32,
+    32,
+    57785
+  ],
+  "@MaterialIconsSharp/network_wifi": [
+    32,
+    32,
+    57786
+  ],
   "@MaterialIconsSharp/nfc": [
     32,
     32,
@@ -20234,7 +28949,17 @@ qx.$$resources = {
     32,
     57788
   ],
+  "@MaterialIconsSharp/now_wallpaper": [
+    32,
+    32,
+    57788
+  ],
   "@MaterialIconsSharp/widgets": [
+    32,
+    32,
+    57789
+  ],
+  "@MaterialIconsSharp/now_widgets": [
     32,
     32,
     57789
@@ -20269,10 +28994,40 @@ qx.$$resources = {
     32,
     57795
   ],
+  "@MaterialIconsSharp/play_circle": [
+    32,
+    32,
+    57796
+  ],
+  "@MaterialIconsSharp/edit_location_alt": [
+    32,
+    32,
+    57797
+  ],
+  "@MaterialIconsSharp/wb_twilight": [
+    32,
+    32,
+    57798
+  ],
   "@MaterialIconsSharp/signal_cellular_4_bar": [
     32,
     32,
     57800
+  ],
+  "@MaterialIconsSharp/outbound": [
+    32,
+    32,
+    57802
+  ],
+  "@MaterialIconsSharp/social_distance": [
+    32,
+    32,
+    57803
+  ],
+  "@MaterialIconsSharp/safety_divider": [
+    32,
+    32,
+    57804
   ],
   "@MaterialIconsSharp/signal_cellular_connected_no_internet_4_bar": [
     32,
@@ -20293,6 +29048,21 @@ qx.$$resources = {
     32,
     32,
     57808
+  ],
+  "@MaterialIconsSharp/production_quantity_limits": [
+    32,
+    32,
+    57809
+  ],
+  "@MaterialIconsSharp/add_reaction": [
+    32,
+    32,
+    57811
+  ],
+  "@MaterialIconsSharp/health_and_safety": [
+    32,
+    32,
+    57813
   ],
   "@MaterialIconsSharp/signal_wifi_4_bar": [
     32,
@@ -20334,6 +29104,11 @@ qx.$$resources = {
     32,
     57854
   ],
+  "@MaterialIconsSharp/device_thermostat": [
+    32,
+    32,
+    57855
+  ],
   "@MaterialIconsSharp/mobile_friendly": [
     32,
     32,
@@ -20373,6 +29148,11 @@ qx.$$resources = {
     32,
     32,
     57898
+  ],
+  "@MaterialIconsSharp/border_color": [
+    32,
+    32,
+    57899
   ],
   "@MaterialIconsSharp/border_horizontal": [
     32,
@@ -20444,10 +29224,20 @@ qx.$$resources = {
     32,
     57913
   ],
+  "@MaterialIconsSharp/format_color_fill": [
+    32,
+    32,
+    57914
+  ],
   "@MaterialIconsSharp/format_color_reset": [
     32,
     32,
     57915
+  ],
+  "@MaterialIconsSharp/format_color_text": [
+    32,
+    32,
+    57916
   ],
   "@MaterialIconsSharp/format_indent_decrease": [
     32,
@@ -20514,6 +29304,11 @@ qx.$$resources = {
     32,
     57929
   ],
+  "@MaterialIconsSharp/format_underline": [
+    32,
+    32,
+    57929
+  ],
   "@MaterialIconsSharp/functions": [
     32,
     32,
@@ -20563,6 +29358,11 @@ qx.$$resources = {
     32,
     32,
     57939
+  ],
+  "@MaterialIconsSharp/mode_edit": [
+    32,
+    32,
+    57940
   ],
   "@MaterialIconsSharp/publish": [
     32,
@@ -20724,6 +29524,16 @@ qx.$$resources = {
     32,
     58051
   ],
+  "@MaterialIconsSharp/file_download": [
+    32,
+    32,
+    58052
+  ],
+  "@MaterialIconsSharp/file_upload": [
+    32,
+    32,
+    58054
+  ],
   "@MaterialIconsSharp/folder": [
     32,
     32,
@@ -20743,6 +29553,36 @@ qx.$$resources = {
     32,
     32,
     58060
+  ],
+  "@MaterialIconsSharp/travel_explore": [
+    32,
+    32,
+    58075
+  ],
+  "@MaterialIconsSharp/task_alt": [
+    32,
+    32,
+    58086
+  ],
+  "@MaterialIconsSharp/change_circle": [
+    32,
+    32,
+    58087
+  ],
+  "@MaterialIconsSharp/arrow_back_ios_new": [
+    32,
+    32,
+    58090
+  ],
+  "@MaterialIconsSharp/savings": [
+    32,
+    32,
+    58091
+  ],
+  "@MaterialIconsSharp/copy_all": [
+    32,
+    32,
+    58092
   ],
   "@MaterialIconsSharp/cast": [
     32,
@@ -20989,6 +29829,16 @@ qx.$$resources = {
     32,
     58169
   ],
+  "@MaterialIconsSharp/headset_off": [
+    32,
+    32,
+    58170
+  ],
+  "@MaterialIconsSharp/notification_add": [
+    32,
+    32,
+    58265
+  ],
   "@MaterialIconsSharp/add_to_photos": [
     32,
     32,
@@ -21224,7 +30074,17 @@ qx.$$resources = {
     32,
     58315
   ],
+  "@MaterialIconsSharp/exposure_minus_1": [
+    32,
+    32,
+    58315
+  ],
   "@MaterialIconsSharp/exposure_neg_2": [
+    32,
+    32,
+    58316
+  ],
+  "@MaterialIconsSharp/exposure_minus_2": [
     32,
     32,
     58316
@@ -21534,6 +30394,11 @@ qx.$$resources = {
     32,
     58380
   ],
+  "@MaterialIconsSharp/panorama_fisheye": [
+    32,
+    32,
+    58380
+  ],
   "@MaterialIconsSharp/panorama_horizontal": [
     32,
     32,
@@ -21679,6 +30544,11 @@ qx.$$resources = {
     32,
     58410
   ],
+  "@MaterialIconsSharp/view_comfortable": [
+    32,
+    32,
+    58410
+  ],
   "@MaterialIconsSharp/view_compact": [
     32,
     32,
@@ -21784,6 +30654,206 @@ qx.$$resources = {
     32,
     58432
   ],
+  "@MaterialIconsSharp/code_off": [
+    32,
+    32,
+    58611
+  ],
+  "@MaterialIconsSharp/credit_card_off": [
+    32,
+    32,
+    58612
+  ],
+  "@MaterialIconsSharp/extension_off": [
+    32,
+    32,
+    58613
+  ],
+  "@MaterialIconsSharp/open_in_new_off": [
+    32,
+    32,
+    58614
+  ],
+  "@MaterialIconsSharp/web_asset_off": [
+    32,
+    32,
+    58615
+  ],
+  "@MaterialIconsSharp/content_paste_off": [
+    32,
+    32,
+    58616
+  ],
+  "@MaterialIconsSharp/font_download_off": [
+    32,
+    32,
+    58617
+  ],
+  "@MaterialIconsSharp/usb_off": [
+    32,
+    32,
+    58618
+  ],
+  "@MaterialIconsSharp/auto_graph": [
+    32,
+    32,
+    58619
+  ],
+  "@MaterialIconsSharp/query_stats": [
+    32,
+    32,
+    58620
+  ],
+  "@MaterialIconsSharp/schema": [
+    32,
+    32,
+    58621
+  ],
+  "@MaterialIconsSharp/file_download_off": [
+    32,
+    32,
+    58622
+  ],
+  "@MaterialIconsSharp/developer_board_off": [
+    32,
+    32,
+    58623
+  ],
+  "@MaterialIconsSharp/videogame_asset_off": [
+    32,
+    32,
+    58624
+  ],
+  "@MaterialIconsSharp/moving": [
+    32,
+    32,
+    58625
+  ],
+  "@MaterialIconsSharp/sailing": [
+    32,
+    32,
+    58626
+  ],
+  "@MaterialIconsSharp/snowmobile": [
+    32,
+    32,
+    58627
+  ],
+  "@MaterialIconsSharp/catching_pokemon": [
+    32,
+    32,
+    58632
+  ],
+  "@MaterialIconsSharp/downhill_skiing": [
+    32,
+    32,
+    58633
+  ],
+  "@MaterialIconsSharp/hiking": [
+    32,
+    32,
+    58634
+  ],
+  "@MaterialIconsSharp/ice_skating": [
+    32,
+    32,
+    58635
+  ],
+  "@MaterialIconsSharp/kayaking": [
+    32,
+    32,
+    58636
+  ],
+  "@MaterialIconsSharp/kitesurfing": [
+    32,
+    32,
+    58637
+  ],
+  "@MaterialIconsSharp/nordic_walking": [
+    32,
+    32,
+    58638
+  ],
+  "@MaterialIconsSharp/paragliding": [
+    32,
+    32,
+    58639
+  ],
+  "@MaterialIconsSharp/person_off": [
+    32,
+    32,
+    58640
+  ],
+  "@MaterialIconsSharp/skateboarding": [
+    32,
+    32,
+    58641
+  ],
+  "@MaterialIconsSharp/sledding": [
+    32,
+    32,
+    58642
+  ],
+  "@MaterialIconsSharp/snowboarding": [
+    32,
+    32,
+    58643
+  ],
+  "@MaterialIconsSharp/snowshoeing": [
+    32,
+    32,
+    58644
+  ],
+  "@MaterialIconsSharp/surfing": [
+    32,
+    32,
+    58645
+  ],
+  "@MaterialIconsSharp/light_mode": [
+    32,
+    32,
+    58648
+  ],
+  "@MaterialIconsSharp/dark_mode": [
+    32,
+    32,
+    58652
+  ],
+  "@MaterialIconsSharp/running_with_errors": [
+    32,
+    32,
+    58653
+  ],
+  "@MaterialIconsSharp/sensors": [
+    32,
+    32,
+    58654
+  ],
+  "@MaterialIconsSharp/sensors_off": [
+    32,
+    32,
+    58655
+  ],
+  "@MaterialIconsSharp/piano_off": [
+    32,
+    32,
+    58656
+  ],
+  "@MaterialIconsSharp/piano": [
+    32,
+    32,
+    58657
+  ],
+  "@MaterialIconsSharp/share_arrival_time": [
+    32,
+    32,
+    58660
+  ],
+  "@MaterialIconsSharp/edit_notifications": [
+    32,
+    32,
+    58661
+  ],
   "@MaterialIconsSharp/beenhere": [
     32,
     32,
@@ -21814,12 +30884,22 @@ qx.$$resources = {
     32,
     58674
   ],
+  "@MaterialIconsSharp/directions_ferry": [
+    32,
+    32,
+    58674
+  ],
   "@MaterialIconsSharp/directions_subway": [
     32,
     32,
     58675
   ],
   "@MaterialIconsSharp/directions_railway": [
+    32,
+    32,
+    58676
+  ],
+  "@MaterialIconsSharp/directions_train": [
     32,
     32,
     58676
@@ -21865,6 +30945,11 @@ qx.$$resources = {
     58686
   ],
   "@MaterialIconsSharp/local_activity": [
+    32,
+    32,
+    58687
+  ],
+  "@MaterialIconsSharp/local_attraction": [
     32,
     32,
     58687
@@ -21979,7 +31064,17 @@ qx.$$resources = {
     32,
     58709
   ],
+  "@MaterialIconsSharp/local_print_shop": [
+    32,
+    32,
+    58709
+  ],
   "@MaterialIconsSharp/local_dining": [
+    32,
+    32,
+    58710
+  ],
+  "@MaterialIconsSharp/local_restaurant": [
     32,
     32,
     58710
@@ -22000,6 +31095,11 @@ qx.$$resources = {
     58713
   ],
   "@MaterialIconsSharp/person_pin": [
+    32,
+    32,
+    58714
+  ],
+  "@MaterialIconsSharp/location_history": [
     32,
     32,
     58714
@@ -22149,6 +31249,11 @@ qx.$$resources = {
     32,
     58743
   ],
+  "@MaterialIconsSharp/360": [
+    32,
+    32,
+    58743
+  ],
   "@MaterialIconsSharp/edit_attributes": [
     32,
     32,
@@ -22264,6 +31369,11 @@ qx.$$resources = {
     32,
     58835
   ],
+  "@MaterialIconsSharp/keyboard_control": [
+    32,
+    32,
+    58835
+  ],
   "@MaterialIconsSharp/more_vert": [
     32,
     32,
@@ -22349,6 +31459,21 @@ qx.$$resources = {
     32,
     58896
   ],
+  "@MaterialIconsSharp/do_not_disturb_alt": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsSharp/dnd_forwardslash": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsSharp/do_not_disturb": [
+    32,
+    32,
+    58898
+  ],
   "@MaterialIconsSharp/drive_eta": [
     32,
     32,
@@ -22423,6 +31548,11 @@ qx.$$resources = {
     32,
     32,
     58915
+  ],
+  "@MaterialIconsSharp/sim_card_alert": [
+    32,
+    32,
+    58916
   ],
   "@MaterialIconsSharp/sms": [
     32,
@@ -22524,6 +31654,11 @@ qx.$$resources = {
     32,
     58936
   ],
+  "@MaterialIconsSharp/confirmation_num": [
+    32,
+    32,
+    58936
+  ],
   "@MaterialIconsSharp/live_tv": [
     32,
     32,
@@ -22574,6 +31709,16 @@ qx.$$resources = {
     32,
     58946
   ],
+  "@MaterialIconsSharp/do_not_disturb_off": [
+    32,
+    32,
+    58947
+  ],
+  "@MaterialIconsSharp/do_not_disturb_on": [
+    32,
+    32,
+    58948
+  ],
   "@MaterialIconsSharp/priority_high": [
     32,
     32,
@@ -22599,6 +31744,56 @@ qx.$$resources = {
     32,
     58953
   ],
+  "@MaterialIconsSharp/add_to_drive": [
+    32,
+    32,
+    58972
+  ],
+  "@MaterialIconsSharp/auto_awesome": [
+    32,
+    32,
+    58975
+  ],
+  "@MaterialIconsSharp/auto_awesome_mosaic": [
+    32,
+    32,
+    58976
+  ],
+  "@MaterialIconsSharp/auto_awesome_motion": [
+    32,
+    32,
+    58977
+  ],
+  "@MaterialIconsSharp/auto_fix_high": [
+    32,
+    32,
+    58979
+  ],
+  "@MaterialIconsSharp/auto_fix_normal": [
+    32,
+    32,
+    58980
+  ],
+  "@MaterialIconsSharp/auto_fix_off": [
+    32,
+    32,
+    58981
+  ],
+  "@MaterialIconsSharp/auto_stories": [
+    32,
+    32,
+    58982
+  ],
+  "@MaterialIconsSharp/drive_file_move": [
+    32,
+    32,
+    58997
+  ],
+  "@MaterialIconsSharp/ios_share": [
+    32,
+    32,
+    59064
+  ],
   "@MaterialIconsSharp/pie_chart": [
     32,
     32,
@@ -22618,6 +31813,11 @@ qx.$$resources = {
     32,
     32,
     59105
+  ],
+  "@MaterialIconsSharp/animation": [
+    32,
+    32,
+    59164
   ],
   "@MaterialIconsSharp/add_business": [
     32,
@@ -22675,6 +31875,11 @@ qx.$$resources = {
     59382
   ],
   "@MaterialIconsSharp/notifications_active": [
+    32,
+    32,
+    59383
+  ],
+  "@MaterialIconsSharp/notifications_on": [
     32,
     32,
     59383
@@ -22754,6 +31959,11 @@ qx.$$resources = {
     32,
     59409
   ],
+  "@MaterialIconsSharp/sentiment_neutral": [
+    32,
+    32,
+    59410
+  ],
   "@MaterialIconsSharp/sentiment_satisfied": [
     32,
     32,
@@ -22789,16 +31999,6 @@ qx.$$resources = {
     32,
     59445
   ],
-  "@MaterialIconsSharp/radio_button_unchecked": [
-    32,
-    32,
-    59446
-  ],
-  "@MaterialIconsSharp/radio_button_checked": [
-    32,
-    32,
-    59447
-  ],
   "@MaterialIconsSharp/star": [
     32,
     32,
@@ -22815,6 +32015,11 @@ qx.$$resources = {
     59450
   ],
   "@MaterialIconsSharp/_3d_rotation": [
+    32,
+    32,
+    59469
+  ],
+  "@MaterialIconsSharp/3d_rotation": [
     32,
     32,
     59469
@@ -22944,6 +32149,11 @@ qx.$$resources = {
     32,
     59495
   ],
+  "@MaterialIconsSharp/bookmark_outline": [
+    32,
+    32,
+    59495
+  ],
   "@MaterialIconsSharp/bug_report": [
     32,
     32,
@@ -23049,7 +32259,7 @@ qx.$$resources = {
     32,
     59517
   ],
-  "@MaterialIconsSharp/favorite_border": [
+  "@MaterialIconsSharp/favorite_outline": [
     32,
     32,
     59518
@@ -23104,6 +32314,11 @@ qx.$$resources = {
     32,
     59528
   ],
+  "@MaterialIconsSharp/highlight_remove": [
+    32,
+    32,
+    59528
+  ],
   "@MaterialIconsSharp/history": [
     32,
     32,
@@ -23145,6 +32360,11 @@ qx.$$resources = {
     59536
   ],
   "@MaterialIconsSharp/invert_colors": [
+    32,
+    32,
+    59537
+  ],
+  "@MaterialIconsSharp/invert_colors_on": [
     32,
     32,
     59537
@@ -23239,12 +32459,22 @@ qx.$$resources = {
     32,
     59555
   ],
+  "@MaterialIconsSharp/perm_contact_cal": [
+    32,
+    32,
+    59555
+  ],
   "@MaterialIconsSharp/perm_data_setting": [
     32,
     32,
     59556
   ],
   "@MaterialIconsSharp/perm_device_information": [
+    32,
+    32,
+    59557
+  ],
+  "@MaterialIconsSharp/perm_device_info": [
     32,
     32,
     59557
@@ -23360,6 +32590,11 @@ qx.$$resources = {
     59580
   ],
   "@MaterialIconsSharp/settings_brightness": [
+    32,
+    32,
+    59581
+  ],
+  "@MaterialIconsSharp/settings_display": [
     32,
     32,
     59581
@@ -23484,7 +32719,17 @@ qx.$$resources = {
     32,
     59606
   ],
+  "@MaterialIconsSharp/swap_vert_circle": [
+    32,
+    32,
+    59606
+  ],
   "@MaterialIconsSharp/system_update_alt": [
+    32,
+    32,
+    59607
+  ],
+  "@MaterialIconsSharp/system_update_tv": [
     32,
     32,
     59607
@@ -23550,6 +32795,11 @@ qx.$$resources = {
     59619
   ],
   "@MaterialIconsSharp/trending_flat": [
+    32,
+    32,
+    59620
+  ],
+  "@MaterialIconsSharp/trending_neutral": [
     32,
     32,
     59620
@@ -23644,12 +32894,27 @@ qx.$$resources = {
     32,
     59638
   ],
+  "@MaterialIconsSharp/wallet_giftcard": [
+    32,
+    32,
+    59638
+  ],
   "@MaterialIconsSharp/card_membership": [
     32,
     32,
     59639
   ],
+  "@MaterialIconsSharp/wallet_membership": [
+    32,
+    32,
+    59639
+  ],
   "@MaterialIconsSharp/card_travel": [
+    32,
+    32,
+    59640
+  ],
+  "@MaterialIconsSharp/wallet_travel": [
     32,
     32,
     59640
@@ -23670,6 +32935,11 @@ qx.$$resources = {
     59643
   ],
   "@MaterialIconsSharp/camera_enhance": [
+    32,
+    32,
+    59644
+  ],
+  "@MaterialIconsSharp/enhance_photo_translate": [
     32,
     32,
     59644
@@ -24039,35 +33309,405 @@ qx.$$resources = {
     32,
     59722
   ],
+  "@MaterialIconsSharp/segment": [
+    32,
+    32,
+    59723
+  ],
   "@MaterialIconsSharp/contact_support": [
     32,
     32,
     59724
+  ],
+  "@MaterialIconsSharp/compress": [
+    32,
+    32,
+    59725
+  ],
+  "@MaterialIconsSharp/expand": [
+    32,
+    32,
+    59727
+  ],
+  "@MaterialIconsSharp/edit_off": [
+    32,
+    32,
+    59728
+  ],
+  "@MaterialIconsSharp/_10k": [
+    32,
+    32,
+    59729
+  ],
+  "@MaterialIconsSharp/_10mp": [
+    32,
+    32,
+    59730
+  ],
+  "@MaterialIconsSharp/_11mp": [
+    32,
+    32,
+    59731
+  ],
+  "@MaterialIconsSharp/_12mp": [
+    32,
+    32,
+    59732
+  ],
+  "@MaterialIconsSharp/_13mp": [
+    32,
+    32,
+    59733
+  ],
+  "@MaterialIconsSharp/_14mp": [
+    32,
+    32,
+    59734
+  ],
+  "@MaterialIconsSharp/_15mp": [
+    32,
+    32,
+    59735
+  ],
+  "@MaterialIconsSharp/_16mp": [
+    32,
+    32,
+    59736
+  ],
+  "@MaterialIconsSharp/_17mp": [
+    32,
+    32,
+    59737
+  ],
+  "@MaterialIconsSharp/_18mp": [
+    32,
+    32,
+    59738
+  ],
+  "@MaterialIconsSharp/_19mp": [
+    32,
+    32,
+    59739
+  ],
+  "@MaterialIconsSharp/_1k": [
+    32,
+    32,
+    59740
+  ],
+  "@MaterialIconsSharp/_1k_plus": [
+    32,
+    32,
+    59741
+  ],
+  "@MaterialIconsSharp/_20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsSharp/20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsSharp/_21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsSharp/21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsSharp/_22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsSharp/22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsSharp/_23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsSharp/23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsSharp/_24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsSharp/24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsSharp/_2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsSharp/2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsSharp/_2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsSharp/2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsSharp/_2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsSharp/2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsSharp/_3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsSharp/3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsSharp/_3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsSharp/3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsSharp/_3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsSharp/3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsSharp/_4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsSharp/4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsSharp/_4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsSharp/4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsSharp/_5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsSharp/5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsSharp/_5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsSharp/5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsSharp/_5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsSharp/5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsSharp/_6k": [
+    32,
+    32,
+    59758
+  ],
+  "@MaterialIconsSharp/_6k_plus": [
+    32,
+    32,
+    59759
+  ],
+  "@MaterialIconsSharp/_6mp": [
+    32,
+    32,
+    59760
+  ],
+  "@MaterialIconsSharp/_7k": [
+    32,
+    32,
+    59761
+  ],
+  "@MaterialIconsSharp/_7k_plus": [
+    32,
+    32,
+    59762
+  ],
+  "@MaterialIconsSharp/_7mp": [
+    32,
+    32,
+    59763
+  ],
+  "@MaterialIconsSharp/_8k": [
+    32,
+    32,
+    59764
+  ],
+  "@MaterialIconsSharp/_8k_plus": [
+    32,
+    32,
+    59765
+  ],
+  "@MaterialIconsSharp/_8mp": [
+    32,
+    32,
+    59766
+  ],
+  "@MaterialIconsSharp/_9k": [
+    32,
+    32,
+    59767
+  ],
+  "@MaterialIconsSharp/_9k_plus": [
+    32,
+    32,
+    59768
+  ],
+  "@MaterialIconsSharp/_9mp": [
+    32,
+    32,
+    59769
   ],
   "@MaterialIconsSharp/account_tree": [
     32,
     32,
     59770
   ],
+  "@MaterialIconsSharp/add_chart": [
+    32,
+    32,
+    59771
+  ],
   "@MaterialIconsSharp/add_ic_call": [
     32,
     32,
     59772
+  ],
+  "@MaterialIconsSharp/add_moderator": [
+    32,
+    32,
+    59773
   ],
   "@MaterialIconsSharp/all_inbox": [
     32,
     32,
     59775
   ],
+  "@MaterialIconsSharp/approval": [
+    32,
+    32,
+    59778
+  ],
+  "@MaterialIconsSharp/assistant_direction": [
+    32,
+    32,
+    59784
+  ],
   "@MaterialIconsSharp/bookmarks": [
     32,
     32,
     59787
   ],
+  "@MaterialIconsSharp/bus_alert": [
+    32,
+    32,
+    59791
+  ],
+  "@MaterialIconsSharp/cases": [
+    32,
+    32,
+    59794
+  ],
+  "@MaterialIconsSharp/circle_notifications": [
+    32,
+    32,
+    59796
+  ],
+  "@MaterialIconsSharp/closed_caption_off": [
+    32,
+    32,
+    59798
+  ],
+  "@MaterialIconsSharp/connected_tv": [
+    32,
+    32,
+    59800
+  ],
+  "@MaterialIconsSharp/dangerous": [
+    32,
+    32,
+    59802
+  ],
+  "@MaterialIconsSharp/dashboard_customize": [
+    32,
+    32,
+    59803
+  ],
   "@MaterialIconsSharp/desktop_access_disabled": [
     32,
     32,
     59805
+  ],
+  "@MaterialIconsSharp/drive_file_rename_outline": [
+    32,
+    32,
+    59810
+  ],
+  "@MaterialIconsSharp/drive_folder_upload": [
+    32,
+    32,
+    59811
   ],
   "@MaterialIconsSharp/duo": [
     32,
@@ -24079,6 +33719,31 @@ qx.$$resources = {
     32,
     59816
   ],
+  "@MaterialIconsSharp/file_download_done": [
+    32,
+    32,
+    59818
+  ],
+  "@MaterialIconsSharp/rtt": [
+    32,
+    32,
+    59821
+  ],
+  "@MaterialIconsSharp/grid_view": [
+    32,
+    32,
+    59824
+  ],
+  "@MaterialIconsSharp/hail": [
+    32,
+    32,
+    59825
+  ],
+  "@MaterialIconsSharp/imagesearch_roller": [
+    32,
+    32,
+    59828
+  ],
   "@MaterialIconsSharp/label_off": [
     32,
     32,
@@ -24089,10 +33754,65 @@ qx.$$resources = {
     32,
     59831
   ],
+  "@MaterialIconsSharp/logout": [
+    32,
+    32,
+    59834
+  ],
+  "@MaterialIconsSharp/margin": [
+    32,
+    32,
+    59835
+  ],
+  "@MaterialIconsSharp/mark_as_unread": [
+    32,
+    32,
+    59836
+  ],
   "@MaterialIconsSharp/menu_open": [
     32,
     32,
     59837
+  ],
+  "@MaterialIconsSharp/motion_photos_off": [
+    32,
+    32,
+    59840
+  ],
+  "@MaterialIconsSharp/motion_photos_on": [
+    32,
+    32,
+    59841
+  ],
+  "@MaterialIconsSharp/motion_photos_paused": [
+    32,
+    32,
+    59842
+  ],
+  "@MaterialIconsSharp/mp": [
+    32,
+    32,
+    59843
+  ],
+  "@MaterialIconsSharp/offline_share": [
+    32,
+    32,
+    59845
+  ],
+  "@MaterialIconsSharp/padding": [
+    32,
+    32,
+    59848
+  ],
+  "@MaterialIconsSharp/panorama_photosphere": [
+    32,
+    32,
+    59849
+  ],
+  "@MaterialIconsSharp/panorama_photosphere_select": [
+    32,
+    32,
+    59850
   ],
   "@MaterialIconsSharp/person_add_disabled": [
     32,
@@ -24109,15 +33829,110 @@ qx.$$resources = {
     32,
     59853
   ],
+  "@MaterialIconsSharp/pivot_table_chart": [
+    32,
+    32,
+    59854
+  ],
   "@MaterialIconsSharp/print_disabled": [
     32,
     32,
     59855
   ],
+  "@MaterialIconsSharp/railway_alert": [
+    32,
+    32,
+    59857
+  ],
+  "@MaterialIconsSharp/recommend": [
+    32,
+    32,
+    59858
+  ],
+  "@MaterialIconsSharp/remove_done": [
+    32,
+    32,
+    59859
+  ],
+  "@MaterialIconsSharp/remove_moderator": [
+    32,
+    32,
+    59860
+  ],
+  "@MaterialIconsSharp/repeat_on": [
+    32,
+    32,
+    59862
+  ],
+  "@MaterialIconsSharp/repeat_one_on": [
+    32,
+    32,
+    59863
+  ],
+  "@MaterialIconsSharp/replay_circle_filled": [
+    32,
+    32,
+    59864
+  ],
+  "@MaterialIconsSharp/reset_tv": [
+    32,
+    32,
+    59865
+  ],
+  "@MaterialIconsSharp/sd": [
+    32,
+    32,
+    59869
+  ],
+  "@MaterialIconsSharp/shield": [
+    32,
+    32,
+    59872
+  ],
+  "@MaterialIconsSharp/shuffle_on": [
+    32,
+    32,
+    59873
+  ],
   "@MaterialIconsSharp/speed": [
     32,
     32,
     59876
+  ],
+  "@MaterialIconsSharp/stacked_bar_chart": [
+    32,
+    32,
+    59878
+  ],
+  "@MaterialIconsSharp/stream": [
+    32,
+    32,
+    59881
+  ],
+  "@MaterialIconsSharp/swipe": [
+    32,
+    32,
+    59884
+  ],
+  "@MaterialIconsSharp/switch_account": [
+    32,
+    32,
+    59885
+  ],
+  "@MaterialIconsSharp/tag": [
+    32,
+    32,
+    59887
+  ],
+  "@MaterialIconsSharp/thumb_down_off_alt": [
+    32,
+    32,
+    59890
+  ],
+  "@MaterialIconsSharp/thumb_up_off_alt": [
+    32,
+    32,
+    59891
   ],
   "@MaterialIconsSharp/toggle_off": [
     32,
@@ -24134,10 +33949,60 @@ qx.$$resources = {
     32,
     59897
   ],
+  "@MaterialIconsSharp/upload_file": [
+    32,
+    32,
+    59900
+  ],
+  "@MaterialIconsSharp/view_in_ar": [
+    32,
+    32,
+    59902
+  ],
+  "@MaterialIconsSharp/waterfall_chart": [
+    32,
+    32,
+    59904
+  ],
+  "@MaterialIconsSharp/wb_shade": [
+    32,
+    32,
+    59905
+  ],
   "@MaterialIconsSharp/home_work": [
     32,
     32,
     59913
+  ],
+  "@MaterialIconsSharp/schedule_send": [
+    32,
+    32,
+    59914
+  ],
+  "@MaterialIconsSharp/bolt": [
+    32,
+    32,
+    59915
+  ],
+  "@MaterialIconsSharp/send_and_archive": [
+    32,
+    32,
+    59916
+  ],
+  "@MaterialIconsSharp/file_present": [
+    32,
+    32,
+    59918
+  ],
+  "@MaterialIconsSharp/fit_screen": [
+    32,
+    32,
+    59920
+  ],
+  "@MaterialIconsSharp/saved_search": [
+    32,
+    32,
+    59921
   ],
   "@MaterialIconsSharp/storefront": [
     32,
@@ -24429,6 +34294,11 @@ qx.$$resources = {
     32,
     59980
   ],
+  "@MaterialIconsSharp/person_add_alt": [
+    32,
+    32,
+    59981
+  ],
   "@MaterialIconsSharp/comment_bank": [
     32,
     32,
@@ -24448,6 +34318,46 @@ qx.$$resources = {
     32,
     32,
     59985
+  ],
+  "@MaterialIconsSharp/attractions": [
+    32,
+    32,
+    59986
+  ],
+  "@MaterialIconsSharp/bakery_dining": [
+    32,
+    32,
+    59987
+  ],
+  "@MaterialIconsSharp/breakfast_dining": [
+    32,
+    32,
+    59988
+  ],
+  "@MaterialIconsSharp/car_rental": [
+    32,
+    32,
+    59989
+  ],
+  "@MaterialIconsSharp/car_repair": [
+    32,
+    32,
+    59990
+  ],
+  "@MaterialIconsSharp/dinner_dining": [
+    32,
+    32,
+    59991
+  ],
+  "@MaterialIconsSharp/dry_cleaning": [
+    32,
+    32,
+    59992
+  ],
+  "@MaterialIconsSharp/hardware": [
+    32,
+    32,
+    59993
   ],
   "@MaterialIconsSharp/plagiarism": [
     32,
@@ -24479,10 +34389,80 @@ qx.$$resources = {
     32,
     59999
   ],
+  "@MaterialIconsSharp/liquor": [
+    32,
+    32,
+    60000
+  ],
+  "@MaterialIconsSharp/lunch_dining": [
+    32,
+    32,
+    60001
+  ],
+  "@MaterialIconsSharp/nightlife": [
+    32,
+    32,
+    60002
+  ],
+  "@MaterialIconsSharp/park": [
+    32,
+    32,
+    60003
+  ],
+  "@MaterialIconsSharp/ramen_dining": [
+    32,
+    32,
+    60004
+  ],
+  "@MaterialIconsSharp/celebration": [
+    32,
+    32,
+    60005
+  ],
+  "@MaterialIconsSharp/theater_comedy": [
+    32,
+    32,
+    60006
+  ],
+  "@MaterialIconsSharp/badge": [
+    32,
+    32,
+    60007
+  ],
+  "@MaterialIconsSharp/festival": [
+    32,
+    32,
+    60008
+  ],
+  "@MaterialIconsSharp/icecream": [
+    32,
+    32,
+    60009
+  ],
+  "@MaterialIconsSharp/volunteer_activism": [
+    32,
+    32,
+    60016
+  ],
   "@MaterialIconsSharp/contactless": [
     32,
     32,
     60017
+  ],
+  "@MaterialIconsSharp/delivery_dining": [
+    32,
+    32,
+    60018
+  ],
+  "@MaterialIconsSharp/brunch_dining": [
+    32,
+    32,
+    60019
+  ],
+  "@MaterialIconsSharp/takeout_dining": [
+    32,
+    32,
+    60020
   ],
   "@MaterialIconsSharp/video_settings": [
     32,
@@ -24649,6 +34629,11 @@ qx.$$resources = {
     32,
     61240
   ],
+  "@MaterialIconsSharp/5g": [
+    32,
+    32,
+    61240
+  ],
   "@MaterialIconsSharp/ad_units": [
     32,
     32,
@@ -24683,6 +34668,11 @@ qx.$$resources = {
     32,
     32,
     61247
+  ],
+  "@MaterialIconsSharp/app_registration": [
+    32,
+    32,
+    61248
   ],
   "@MaterialIconsSharp/app_settings_alt": [
     32,
@@ -24724,6 +34714,16 @@ qx.$$resources = {
     32,
     61257
   ],
+  "@MaterialIconsSharp/circle": [
+    32,
+    32,
+    61258
+  ],
+  "@MaterialIconsSharp/dirty_lens": [
+    32,
+    32,
+    61259
+  ],
   "@MaterialIconsSharp/domain_verification": [
     32,
     32,
@@ -24734,6 +34734,11 @@ qx.$$resources = {
     32,
     61261
   ],
+  "@MaterialIconsSharp/face_retouching_natural": [
+    32,
+    32,
+    61262
+  ],
   "@MaterialIconsSharp/filter_alt": [
     32,
     32,
@@ -24743,6 +34748,11 @@ qx.$$resources = {
     32,
     32,
     61264
+  ],
+  "@MaterialIconsSharp/hdr_enhanced_select": [
+    32,
+    32,
+    61265
   ],
   "@MaterialIconsSharp/highlight_alt": [
     32,
@@ -24759,10 +34769,40 @@ qx.$$resources = {
     32,
     61268
   ],
+  "@MaterialIconsSharp/local_fire_department": [
+    32,
+    32,
+    61269
+  ],
+  "@MaterialIconsSharp/local_police": [
+    32,
+    32,
+    61270
+  ],
+  "@MaterialIconsSharp/lock_clock": [
+    32,
+    32,
+    61271
+  ],
   "@MaterialIconsSharp/maps_ugc": [
     32,
     32,
     61272
+  ],
+  "@MaterialIconsSharp/mic_external_off": [
+    32,
+    32,
+    61273
+  ],
+  "@MaterialIconsSharp/mic_external_on": [
+    32,
+    32,
+    61274
+  ],
+  "@MaterialIconsSharp/monitor": [
+    32,
+    32,
+    61275
   ],
   "@MaterialIconsSharp/nat": [
     32,
@@ -24773,6 +34813,31 @@ qx.$$resources = {
     32,
     32,
     61277
+  ],
+  "@MaterialIconsSharp/nightlight_round": [
+    32,
+    32,
+    61278
+  ],
+  "@MaterialIconsSharp/outbox": [
+    32,
+    32,
+    61279
+  ],
+  "@MaterialIconsSharp/panorama_horizontal_select": [
+    32,
+    32,
+    61280
+  ],
+  "@MaterialIconsSharp/panorama_vertical_select": [
+    32,
+    32,
+    61281
+  ],
+  "@MaterialIconsSharp/panorama_wide_angle_select": [
+    32,
+    32,
+    61282
   ],
   "@MaterialIconsSharp/payments": [
     32,
@@ -24799,6 +34864,21 @@ qx.$$resources = {
     32,
     61287
   ],
+  "@MaterialIconsSharp/photo_camera_back": [
+    32,
+    32,
+    61288
+  ],
+  "@MaterialIconsSharp/photo_camera_front": [
+    32,
+    32,
+    61289
+  ],
+  "@MaterialIconsSharp/play_disabled": [
+    32,
+    32,
+    61290
+  ],
   "@MaterialIconsSharp/qr_code": [
     32,
     32,
@@ -24824,6 +34904,11 @@ qx.$$resources = {
     32,
     61295
   ],
+  "@MaterialIconsSharp/screen_search_desktop": [
+    32,
+    32,
+    61296
+  ],
   "@MaterialIconsSharp/stop_circle": [
     32,
     32,
@@ -24838,6 +34923,11 @@ qx.$$resources = {
     32,
     32,
     61299
+  ],
+  "@MaterialIconsSharp/taxi_alert": [
+    32,
+    32,
+    61300
   ],
   "@MaterialIconsSharp/tour": [
     32,
@@ -24864,75 +34954,965 @@ qx.$$resources = {
     32,
     61351
   ],
+  "@MaterialIconsSharp/_1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIconsSharp/1x_mobiledata": [
+    32,
+    32,
+    61389
+  ],
+  "@MaterialIconsSharp/_30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIconsSharp/30fps": [
+    32,
+    32,
+    61390
+  ],
+  "@MaterialIconsSharp/_30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsSharp/30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsSharp/_3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsSharp/3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsSharp/_3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsSharp/3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsSharp/_4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsSharp/4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsSharp/_4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsSharp/4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsSharp/_60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsSharp/60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsSharp/_60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsSharp/60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsSharp/access_time_filled": [
+    32,
+    32,
+    61398
+  ],
+  "@MaterialIconsSharp/air": [
+    32,
+    32,
+    61400
+  ],
+  "@MaterialIconsSharp/airplane_ticket": [
+    32,
+    32,
+    61401
+  ],
+  "@MaterialIconsSharp/aod": [
+    32,
+    32,
+    61402
+  ],
   "@MaterialIconsSharp/attribution": [
     32,
     32,
     61403
+  ],
+  "@MaterialIconsSharp/autofps_select": [
+    32,
+    32,
+    61404
+  ],
+  "@MaterialIconsSharp/bathroom": [
+    32,
+    32,
+    61405
+  ],
+  "@MaterialIconsSharp/battery_saver": [
+    32,
+    32,
+    61406
+  ],
+  "@MaterialIconsSharp/bed": [
+    32,
+    32,
+    61407
+  ],
+  "@MaterialIconsSharp/bedroom_baby": [
+    32,
+    32,
+    61408
+  ],
+  "@MaterialIconsSharp/bedroom_child": [
+    32,
+    32,
+    61409
+  ],
+  "@MaterialIconsSharp/bedroom_parent": [
+    32,
+    32,
+    61410
+  ],
+  "@MaterialIconsSharp/blender": [
+    32,
+    32,
+    61411
+  ],
+  "@MaterialIconsSharp/bloodtype": [
+    32,
+    32,
+    61412
+  ],
+  "@MaterialIconsSharp/bluetooth_drive": [
+    32,
+    32,
+    61413
+  ],
+  "@MaterialIconsSharp/cable": [
+    32,
+    32,
+    61414
+  ],
+  "@MaterialIconsSharp/calendar_view_month": [
+    32,
+    32,
+    61415
+  ],
+  "@MaterialIconsSharp/calendar_view_week": [
+    32,
+    32,
+    61416
+  ],
+  "@MaterialIconsSharp/camera_indoor": [
+    32,
+    32,
+    61417
+  ],
+  "@MaterialIconsSharp/camera_outdoor": [
+    32,
+    32,
+    61418
+  ],
+  "@MaterialIconsSharp/cameraswitch": [
+    32,
+    32,
+    61419
   ],
   "@MaterialIconsSharp/cast_for_education": [
     32,
     32,
     61420
   ],
+  "@MaterialIconsSharp/chair": [
+    32,
+    32,
+    61421
+  ],
+  "@MaterialIconsSharp/chair_alt": [
+    32,
+    32,
+    61422
+  ],
+  "@MaterialIconsSharp/coffee": [
+    32,
+    32,
+    61423
+  ],
+  "@MaterialIconsSharp/coffee_maker": [
+    32,
+    32,
+    61424
+  ],
+  "@MaterialIconsSharp/credit_score": [
+    32,
+    32,
+    61425
+  ],
+  "@MaterialIconsSharp/data_saver_off": [
+    32,
+    32,
+    61426
+  ],
+  "@MaterialIconsSharp/data_saver_on": [
+    32,
+    32,
+    61427
+  ],
+  "@MaterialIconsSharp/dining": [
+    32,
+    32,
+    61428
+  ],
+  "@MaterialIconsSharp/directions_boat_filled": [
+    32,
+    32,
+    61429
+  ],
+  "@MaterialIconsSharp/directions_bus_filled": [
+    32,
+    32,
+    61430
+  ],
+  "@MaterialIconsSharp/directions_car_filled": [
+    32,
+    32,
+    61431
+  ],
+  "@MaterialIconsSharp/directions_railway_filled": [
+    32,
+    32,
+    61432
+  ],
+  "@MaterialIconsSharp/directions_subway_filled": [
+    32,
+    32,
+    61433
+  ],
+  "@MaterialIconsSharp/directions_transit_filled": [
+    32,
+    32,
+    61434
+  ],
+  "@MaterialIconsSharp/do_not_disturb_on_total_silence": [
+    32,
+    32,
+    61435
+  ],
+  "@MaterialIconsSharp/door_back": [
+    32,
+    32,
+    61436
+  ],
+  "@MaterialIconsSharp/door_front": [
+    32,
+    32,
+    61437
+  ],
+  "@MaterialIconsSharp/door_sliding": [
+    32,
+    32,
+    61438
+  ],
+  "@MaterialIconsSharp/doorbell": [
+    32,
+    32,
+    61439
+  ],
+  "@MaterialIconsSharp/download_for_offline": [
+    32,
+    32,
+    61440
+  ],
+  "@MaterialIconsSharp/downloading": [
+    32,
+    32,
+    61441
+  ],
+  "@MaterialIconsSharp/e_mobiledata": [
+    32,
+    32,
+    61442
+  ],
+  "@MaterialIconsSharp/earbuds": [
+    32,
+    32,
+    61443
+  ],
+  "@MaterialIconsSharp/earbuds_battery": [
+    32,
+    32,
+    61444
+  ],
+  "@MaterialIconsSharp/edgesensor_high": [
+    32,
+    32,
+    61445
+  ],
+  "@MaterialIconsSharp/edgesensor_low": [
+    32,
+    32,
+    61446
+  ],
+  "@MaterialIconsSharp/face_retouching_off": [
+    32,
+    32,
+    61447
+  ],
   "@MaterialIconsSharp/face_unlock": [
     32,
     32,
     61448
+  ],
+  "@MaterialIconsSharp/feed": [
+    32,
+    32,
+    61449
+  ],
+  "@MaterialIconsSharp/flashlight_off": [
+    32,
+    32,
+    61450
+  ],
+  "@MaterialIconsSharp/flashlight_on": [
+    32,
+    32,
+    61451
+  ],
+  "@MaterialIconsSharp/flatware": [
+    32,
+    32,
+    61452
+  ],
+  "@MaterialIconsSharp/flourescent": [
+    32,
+    32,
+    61453
+  ],
+  "@MaterialIconsSharp/fmd_bad": [
+    32,
+    32,
+    61454
+  ],
+  "@MaterialIconsSharp/fmd_good": [
+    32,
+    32,
+    61455
+  ],
+  "@MaterialIconsSharp/g_mobiledata": [
+    32,
+    32,
+    61456
+  ],
+  "@MaterialIconsSharp/garage": [
+    32,
+    32,
+    61457
+  ],
+  "@MaterialIconsSharp/gpp_bad": [
+    32,
+    32,
+    61458
+  ],
+  "@MaterialIconsSharp/gpp_good": [
+    32,
+    32,
+    61459
+  ],
+  "@MaterialIconsSharp/gpp_maybe": [
+    32,
+    32,
+    61460
+  ],
+  "@MaterialIconsSharp/grid_3x3": [
+    32,
+    32,
+    61461
+  ],
+  "@MaterialIconsSharp/grid_4x4": [
+    32,
+    32,
+    61462
+  ],
+  "@MaterialIconsSharp/grid_goldenratio": [
+    32,
+    32,
+    61463
+  ],
+  "@MaterialIconsSharp/h_mobiledata": [
+    32,
+    32,
+    61464
+  ],
+  "@MaterialIconsSharp/h_plus_mobiledata": [
+    32,
+    32,
+    61465
+  ],
+  "@MaterialIconsSharp/hdr_auto": [
+    32,
+    32,
+    61466
+  ],
+  "@MaterialIconsSharp/hdr_auto_select": [
+    32,
+    32,
+    61467
+  ],
+  "@MaterialIconsSharp/hdr_off_select": [
+    32,
+    32,
+    61468
+  ],
+  "@MaterialIconsSharp/hdr_on_select": [
+    32,
+    32,
+    61469
+  ],
+  "@MaterialIconsSharp/hdr_plus": [
+    32,
+    32,
+    61470
+  ],
+  "@MaterialIconsSharp/headphones": [
+    32,
+    32,
+    61471
+  ],
+  "@MaterialIconsSharp/headphones_battery": [
+    32,
+    32,
+    61472
+  ],
+  "@MaterialIconsSharp/hevc": [
+    32,
+    32,
+    61473
+  ],
+  "@MaterialIconsSharp/hide_image": [
+    32,
+    32,
+    61474
+  ],
+  "@MaterialIconsSharp/hide_source": [
+    32,
+    32,
+    61475
+  ],
+  "@MaterialIconsSharp/home_max": [
+    32,
+    32,
+    61476
+  ],
+  "@MaterialIconsSharp/home_mini": [
+    32,
+    32,
+    61477
+  ],
+  "@MaterialIconsSharp/keyboard_alt": [
+    32,
+    32,
+    61480
+  ],
+  "@MaterialIconsSharp/lens_blur": [
+    32,
+    32,
+    61481
+  ],
+  "@MaterialIconsSharp/light": [
+    32,
+    32,
+    61482
+  ],
+  "@MaterialIconsSharp/living": [
+    32,
+    32,
+    61483
+  ],
+  "@MaterialIconsSharp/lte_mobiledata": [
+    32,
+    32,
+    61484
+  ],
+  "@MaterialIconsSharp/lte_plus_mobiledata": [
+    32,
+    32,
+    61485
+  ],
+  "@MaterialIconsSharp/manage_accounts": [
+    32,
+    32,
+    61486
+  ],
+  "@MaterialIconsSharp/manage_search": [
+    32,
+    32,
+    61487
+  ],
+  "@MaterialIconsSharp/maps_home_work": [
+    32,
+    32,
+    61488
+  ],
+  "@MaterialIconsSharp/media_bluetooth_off": [
+    32,
+    32,
+    61489
+  ],
+  "@MaterialIconsSharp/media_bluetooth_on": [
+    32,
+    32,
+    61490
+  ],
+  "@MaterialIconsSharp/medication": [
+    32,
+    32,
+    61491
+  ],
+  "@MaterialIconsSharp/mobiledata_off": [
+    32,
+    32,
+    61492
+  ],
+  "@MaterialIconsSharp/mode_edit_outline": [
+    32,
+    32,
+    61493
+  ],
+  "@MaterialIconsSharp/mode_night": [
+    32,
+    32,
+    61494
+  ],
+  "@MaterialIconsSharp/mode_standby": [
+    32,
+    32,
+    61495
   ],
   "@MaterialIconsSharp/money_off_csred": [
     32,
     32,
     61496
   ],
+  "@MaterialIconsSharp/monitor_weight": [
+    32,
+    32,
+    61497
+  ],
+  "@MaterialIconsSharp/motion_photos_auto": [
+    32,
+    32,
+    61498
+  ],
+  "@MaterialIconsSharp/nearby_error": [
+    32,
+    32,
+    61499
+  ],
+  "@MaterialIconsSharp/nearby_off": [
+    32,
+    32,
+    61500
+  ],
+  "@MaterialIconsSharp/nightlight": [
+    32,
+    32,
+    61501
+  ],
+  "@MaterialIconsSharp/no_accounts": [
+    32,
+    32,
+    61502
+  ],
   "@MaterialIconsSharp/no_encryption_gmailerrorred": [
     32,
     32,
     61503
+  ],
+  "@MaterialIconsSharp/note_alt": [
+    32,
+    32,
+    61504
+  ],
+  "@MaterialIconsSharp/paid": [
+    32,
+    32,
+    61505
+  ],
+  "@MaterialIconsSharp/password": [
+    32,
+    32,
+    61506
+  ],
+  "@MaterialIconsSharp/pattern": [
+    32,
+    32,
+    61507
   ],
   "@MaterialIconsSharp/pie_chart_outline": [
     32,
     32,
     61508
   ],
+  "@MaterialIconsSharp/pin": [
+    32,
+    32,
+    61509
+  ],
+  "@MaterialIconsSharp/play_lesson": [
+    32,
+    32,
+    61511
+  ],
+  "@MaterialIconsSharp/podcasts": [
+    32,
+    32,
+    61512
+  ],
   "@MaterialIconsSharp/precision_manufacturing": [
     32,
     32,
     61513
+  ],
+  "@MaterialIconsSharp/price_change": [
+    32,
+    32,
+    61514
+  ],
+  "@MaterialIconsSharp/price_check": [
+    32,
+    32,
+    61515
+  ],
+  "@MaterialIconsSharp/quiz": [
+    32,
+    32,
+    61516
+  ],
+  "@MaterialIconsSharp/r_mobiledata": [
+    32,
+    32,
+    61517
+  ],
+  "@MaterialIconsSharp/radar": [
+    32,
+    32,
+    61518
+  ],
+  "@MaterialIconsSharp/raw_off": [
+    32,
+    32,
+    61519
+  ],
+  "@MaterialIconsSharp/raw_on": [
+    32,
+    32,
+    61520
+  ],
+  "@MaterialIconsSharp/remember_me": [
+    32,
+    32,
+    61521
   ],
   "@MaterialIconsSharp/report_gmailerrorred": [
     32,
     32,
     61522
   ],
+  "@MaterialIconsSharp/restart_alt": [
+    32,
+    32,
+    61523
+  ],
+  "@MaterialIconsSharp/reviews": [
+    32,
+    32,
+    61524
+  ],
+  "@MaterialIconsSharp/rsvp": [
+    32,
+    32,
+    61525
+  ],
+  "@MaterialIconsSharp/screenshot": [
+    32,
+    32,
+    61526
+  ],
   "@MaterialIconsSharp/sd_card_alert": [
     32,
     32,
     61527
+  ],
+  "@MaterialIconsSharp/security_update": [
+    32,
+    32,
+    61528
+  ],
+  "@MaterialIconsSharp/security_update_good": [
+    32,
+    32,
+    61529
+  ],
+  "@MaterialIconsSharp/security_update_warning": [
+    32,
+    32,
+    61530
+  ],
+  "@MaterialIconsSharp/sell": [
+    32,
+    32,
+    61531
+  ],
+  "@MaterialIconsSharp/send_to_mobile": [
+    32,
+    32,
+    61532
+  ],
+  "@MaterialIconsSharp/settings_accessibility": [
+    32,
+    32,
+    61533
+  ],
+  "@MaterialIconsSharp/settings_suggest": [
+    32,
+    32,
+    61534
+  ],
+  "@MaterialIconsSharp/share_location": [
+    32,
+    32,
+    61535
+  ],
+  "@MaterialIconsSharp/shortcut": [
+    32,
+    32,
+    61536
+  ],
+  "@MaterialIconsSharp/shower": [
+    32,
+    32,
+    61537
+  ],
+  "@MaterialIconsSharp/signal_cellular_nodata": [
+    32,
+    32,
+    61538
+  ],
+  "@MaterialIconsSharp/signal_wifi_bad": [
+    32,
+    32,
+    61539
+  ],
+  "@MaterialIconsSharp/signal_wifi_connected_no_internet_4": [
+    32,
+    32,
+    61540
+  ],
+  "@MaterialIconsSharp/signal_wifi_statusbar_4_bar": [
+    32,
+    32,
+    61541
+  ],
+  "@MaterialIconsSharp/signal_wifi_statusbar_connected_no_internet_4": [
+    32,
+    32,
+    61542
+  ],
+  "@MaterialIconsSharp/signal_wifi_statusbar_null": [
+    32,
+    32,
+    61543
+  ],
+  "@MaterialIconsSharp/sim_card_download": [
+    32,
+    32,
+    61544
+  ],
+  "@MaterialIconsSharp/sip": [
+    32,
+    32,
+    61545
+  ],
+  "@MaterialIconsSharp/smart_display": [
+    32,
+    32,
+    61546
+  ],
+  "@MaterialIconsSharp/smart_screen": [
+    32,
+    32,
+    61547
+  ],
+  "@MaterialIconsSharp/smart_toy": [
+    32,
+    32,
+    61548
+  ],
+  "@MaterialIconsSharp/splitscreen": [
+    32,
+    32,
+    61549
+  ],
+  "@MaterialIconsSharp/sports_score": [
+    32,
+    32,
+    61550
   ],
   "@MaterialIconsSharp/star_outline": [
     32,
     32,
     61551
   ],
+  "@MaterialIconsSharp/storm": [
+    32,
+    32,
+    61552
+  ],
+  "@MaterialIconsSharp/summarize": [
+    32,
+    32,
+    61553
+  ],
+  "@MaterialIconsSharp/system_security_update": [
+    32,
+    32,
+    61554
+  ],
+  "@MaterialIconsSharp/system_security_update_good": [
+    32,
+    32,
+    61555
+  ],
+  "@MaterialIconsSharp/system_security_update_warning": [
+    32,
+    32,
+    61556
+  ],
+  "@MaterialIconsSharp/task": [
+    32,
+    32,
+    61557
+  ],
   "@MaterialIconsSharp/thermostat": [
     32,
     32,
     61558
+  ],
+  "@MaterialIconsSharp/thermostat_auto": [
+    32,
+    32,
+    61559
+  ],
+  "@MaterialIconsSharp/timer_10_select": [
+    32,
+    32,
+    61562
+  ],
+  "@MaterialIconsSharp/timer_3_select": [
+    32,
+    32,
+    61563
+  ],
+  "@MaterialIconsSharp/try": [
+    32,
+    32,
+    61564
+  ],
+  "@MaterialIconsSharp/tungsten": [
+    32,
+    32,
+    61565
+  ],
+  "@MaterialIconsSharp/upcoming": [
+    32,
+    32,
+    61566
+  ],
+  "@MaterialIconsSharp/video_camera_back": [
+    32,
+    32,
+    61567
+  ],
+  "@MaterialIconsSharp/video_camera_front": [
+    32,
+    32,
+    61568
+  ],
+  "@MaterialIconsSharp/video_stable": [
+    32,
+    32,
+    61569
+  ],
+  "@MaterialIconsSharp/vrpano": [
+    32,
+    32,
+    61570
   ],
   "@MaterialIconsSharp/warning_amber": [
     32,
     32,
     61571
   ],
-  "@MaterialIconsSharp/copy": [
+  "@MaterialIconsSharp/water": [
     32,
     32,
-    61578
+    61572
   ],
-  "@MaterialIconsSharp/cut": [
+  "@MaterialIconsSharp/wifi_calling_3": [
     32,
     32,
-    61579
+    61573
+  ],
+  "@MaterialIconsSharp/wifi_tethering_error_rounded": [
+    32,
+    32,
+    61574
+  ],
+  "@MaterialIconsSharp/wifi_tethering_off": [
+    32,
+    32,
+    61575
+  ],
+  "@MaterialIconsSharp/window": [
+    32,
+    32,
+    61576
+  ],
+  "@MaterialIconsSharp/yard": [
+    32,
+    32,
+    61577
   ],
   "@MaterialIconsSharp/do_disturb": [
     32,
@@ -24974,11 +35954,6 @@ qx.$$resources = {
     32,
     61591
   ],
-  "@MaterialIconsSharp/paste": [
-    32,
-    32,
-    61592
-  ],
   "@MaterialIconsSharp/star_border_purple500": [
     32,
     32,
@@ -24993,6 +35968,21 @@ qx.$$resources = {
     32,
     32,
     61595
+  ],
+  "@MaterialIconsSharp/signal_cellular_0_bar": [
+    32,
+    32,
+    61608
+  ],
+  "@MaterialIconsSharp/signal_cellular_connected_no_internet_0_bar": [
+    32,
+    32,
+    61612
+  ],
+  "@MaterialIconsSharp/signal_wifi_0_bar": [
+    32,
+    32,
+    61616
   ],
   "@MaterialIconsSharp/fact_check": [
     32,
@@ -25469,6 +36459,306 @@ qx.$$resources = {
     32,
     61908
   ],
+  "@MaterialIconsSharp/no_transfer": [
+    32,
+    32,
+    61909
+  ],
+  "@MaterialIconsSharp/no_meals": [
+    32,
+    32,
+    61910
+  ],
+  "@MaterialIconsSharp/fire_extinguisher": [
+    32,
+    32,
+    61912
+  ],
+  "@MaterialIconsSharp/closed_caption_disabled": [
+    32,
+    32,
+    61916
+  ],
+  "@MaterialIconsSharp/east": [
+    32,
+    32,
+    61919
+  ],
+  "@MaterialIconsSharp/north": [
+    32,
+    32,
+    61920
+  ],
+  "@MaterialIconsSharp/north_east": [
+    32,
+    32,
+    61921
+  ],
+  "@MaterialIconsSharp/north_west": [
+    32,
+    32,
+    61922
+  ],
+  "@MaterialIconsSharp/south": [
+    32,
+    32,
+    61923
+  ],
+  "@MaterialIconsSharp/south_east": [
+    32,
+    32,
+    61924
+  ],
+  "@MaterialIconsSharp/south_west": [
+    32,
+    32,
+    61925
+  ],
+  "@MaterialIconsSharp/west": [
+    32,
+    32,
+    61926
+  ],
+  "@MaterialIconsSharp/wine_bar": [
+    32,
+    32,
+    61928
+  ],
+  "@MaterialIconsSharp/tapas": [
+    32,
+    32,
+    61929
+  ],
+  "@MaterialIconsSharp/set_meal": [
+    32,
+    32,
+    61930
+  ],
+  "@MaterialIconsSharp/near_me_disabled": [
+    32,
+    32,
+    61935
+  ],
+  "@MaterialIconsSharp/night_shelter": [
+    32,
+    32,
+    61937
+  ],
+  "@MaterialIconsSharp/food_bank": [
+    32,
+    32,
+    61938
+  ],
+  "@MaterialIconsSharp/sports_bar": [
+    32,
+    32,
+    61939
+  ],
+  "@MaterialIconsSharp/bento": [
+    32,
+    32,
+    61940
+  ],
+  "@MaterialIconsSharp/rice_bowl": [
+    32,
+    32,
+    61941
+  ],
+  "@MaterialIconsSharp/fence": [
+    32,
+    32,
+    61942
+  ],
+  "@MaterialIconsSharp/countertops": [
+    32,
+    32,
+    61943
+  ],
+  "@MaterialIconsSharp/carpenter": [
+    32,
+    32,
+    61944
+  ],
+  "@MaterialIconsSharp/sticky_note_2": [
+    32,
+    32,
+    61948
+  ],
+  "@MaterialIconsSharp/foundation": [
+    32,
+    32,
+    61952
+  ],
+  "@MaterialIconsSharp/roofing": [
+    32,
+    32,
+    61953
+  ],
+  "@MaterialIconsSharp/house_siding": [
+    32,
+    32,
+    61954
+  ],
+  "@MaterialIconsSharp/water_damage": [
+    32,
+    32,
+    61955
+  ],
+  "@MaterialIconsSharp/microwave": [
+    32,
+    32,
+    61956
+  ],
+  "@MaterialIconsSharp/grass": [
+    32,
+    32,
+    61957
+  ],
+  "@MaterialIconsSharp/qr_code_scanner": [
+    32,
+    32,
+    61958
+  ],
+  "@MaterialIconsSharp/leaderboard": [
+    32,
+    32,
+    61964
+  ],
+  "@MaterialIconsSharp/book_online": [
+    32,
+    32,
+    61975
+  ],
+  "@MaterialIconsSharp/masks": [
+    32,
+    32,
+    61976
+  ],
+  "@MaterialIconsSharp/elderly": [
+    32,
+    32,
+    61978
+  ],
+  "@MaterialIconsSharp/no_luggage": [
+    32,
+    32,
+    62011
+  ],
+  "@MaterialIconsSharp/leave_bags_at_home": [
+    32,
+    32,
+    61979
+  ],
+  "@MaterialIconsSharp/reduce_capacity": [
+    32,
+    32,
+    61980
+  ],
+  "@MaterialIconsSharp/sanitizer": [
+    32,
+    32,
+    61981
+  ],
+  "@MaterialIconsSharp/_6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsSharp/6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsSharp/clean_hands": [
+    32,
+    32,
+    61983
+  ],
+  "@MaterialIconsSharp/sick": [
+    32,
+    32,
+    61984
+  ],
+  "@MaterialIconsSharp/coronavirus": [
+    32,
+    32,
+    61985
+  ],
+  "@MaterialIconsSharp/follow_the_signs": [
+    32,
+    32,
+    61986
+  ],
+  "@MaterialIconsSharp/connect_without_contact": [
+    32,
+    32,
+    61987
+  ],
+  "@MaterialIconsSharp/motion_photos_pause": [
+    32,
+    32,
+    61991
+  ],
+  "@MaterialIconsSharp/outbond": [
+    32,
+    32,
+    61992
+  ],
+  "@MaterialIconsSharp/stacked_line_chart": [
+    32,
+    32,
+    61995
+  ],
+  "@MaterialIconsSharp/request_page": [
+    32,
+    32,
+    61996
+  ],
+  "@MaterialIconsSharp/contact_page": [
+    32,
+    32,
+    61998
+  ],
+  "@MaterialIconsSharp/disabled_by_default": [
+    32,
+    32,
+    62000
+  ],
+  "@MaterialIconsSharp/published_with_changes": [
+    32,
+    32,
+    62002
+  ],
+  "@MaterialIconsSharp/groups": [
+    32,
+    32,
+    62003
+  ],
+  "@MaterialIconsSharp/facebook": [
+    32,
+    32,
+    62004
+  ],
+  "@MaterialIconsSharp/luggage": [
+    32,
+    32,
+    62005
+  ],
+  "@MaterialIconsSharp/unpublished": [
+    32,
+    32,
+    62006
+  ],
+  "@MaterialIconsSharp/no_backpack": [
+    32,
+    32,
+    62007
+  ],
+  "@MaterialIconsSharp/add_task": [
+    32,
+    32,
+    62010
+  ],
   "@MaterialIconsDuoTone/error": [
     32,
     32,
@@ -25493,6 +36783,51 @@ qx.$$resources = {
     32,
     32,
     57348
+  ],
+  "@MaterialIconsDuoTone/qr_code_2": [
+    32,
+    32,
+    57354
+  ],
+  "@MaterialIconsDuoTone/flutter_dash": [
+    32,
+    32,
+    57355
+  ],
+  "@MaterialIconsDuoTone/align_vertical_top": [
+    32,
+    32,
+    57356
+  ],
+  "@MaterialIconsDuoTone/align_horizontal_left": [
+    32,
+    32,
+    57357
+  ],
+  "@MaterialIconsDuoTone/align_horizontal_center": [
+    32,
+    32,
+    57359
+  ],
+  "@MaterialIconsDuoTone/align_horizontal_right": [
+    32,
+    32,
+    57360
+  ],
+  "@MaterialIconsDuoTone/align_vertical_center": [
+    32,
+    32,
+    57361
+  ],
+  "@MaterialIconsDuoTone/horizontal_distribute": [
+    32,
+    32,
+    57364
+  ],
+  "@MaterialIconsDuoTone/align_vertical_bottom": [
+    32,
+    32,
+    57365
   ],
   "@MaterialIconsDuoTone/av_timer": [
     32,
@@ -25569,12 +36904,27 @@ qx.$$resources = {
     32,
     57390
   ],
+  "@MaterialIconsDuoTone/library_add": [
+    32,
+    32,
+    57390
+  ],
   "@MaterialIconsDuoTone/my_library_books": [
     32,
     32,
     57391
   ],
+  "@MaterialIconsDuoTone/library_books": [
+    32,
+    32,
+    57391
+  ],
   "@MaterialIconsDuoTone/my_library_music": [
+    32,
+    32,
+    57392
+  ],
+  "@MaterialIconsDuoTone/library_music": [
     32,
     32,
     57392
@@ -25608,6 +36958,11 @@ qx.$$resources = {
     32,
     32,
     57399
+  ],
+  "@MaterialIconsDuoTone/play_circle_filled": [
+    32,
+    32,
+    57400
   ],
   "@MaterialIconsDuoTone/play_circle_fill": [
     32,
@@ -25693,6 +37048,11 @@ qx.$$resources = {
     32,
     32,
     57417
+  ],
+  "@MaterialIconsDuoTone/video_collection": [
+    32,
+    32,
+    57418
   ],
   "@MaterialIconsDuoTone/video_library": [
     32,
@@ -25904,6 +37264,36 @@ qx.$$resources = {
     32,
     57460
   ],
+  "@MaterialIconsDuoTone/update_disabled": [
+    32,
+    32,
+    57461
+  ],
+  "@MaterialIconsDuoTone/vertical_distribute": [
+    32,
+    32,
+    57462
+  ],
+  "@MaterialIconsDuoTone/radio_button_unchecked": [
+    32,
+    32,
+    57476
+  ],
+  "@MaterialIconsDuoTone/radio_button_off": [
+    32,
+    32,
+    57476
+  ],
+  "@MaterialIconsDuoTone/radio_button_checked": [
+    32,
+    32,
+    57477
+  ],
+  "@MaterialIconsDuoTone/radio_button_on": [
+    32,
+    32,
+    57477
+  ],
   "@MaterialIconsDuoTone/business": [
     32,
     32,
@@ -26019,7 +37409,17 @@ qx.$$resources = {
     32,
     57546
   ],
+  "@MaterialIconsDuoTone/chat_bubble": [
+    32,
+    32,
+    57546
+  ],
   "@MaterialIconsDuoTone/messenger_outline": [
+    32,
+    32,
+    57547
+  ],
+  "@MaterialIconsDuoTone/chat_bubble_outline": [
     32,
     32,
     57547
@@ -26039,10 +37439,20 @@ qx.$$resources = {
     32,
     57550
   ],
+  "@MaterialIconsDuoTone/contact_phone": [
+    32,
+    32,
+    57551
+  ],
   "@MaterialIconsDuoTone/quick_contacts_dialer": [
     32,
     32,
     57551
+  ],
+  "@MaterialIconsDuoTone/contact_mail": [
+    32,
+    32,
+    57552
   ],
   "@MaterialIconsDuoTone/quick_contacts_mail": [
     32,
@@ -26199,6 +37609,11 @@ qx.$$resources = {
     32,
     57583
   ],
+  "@MaterialIconsDuoTone/lightbulb": [
+    32,
+    32,
+    57584
+  ],
   "@MaterialIconsDuoTone/add": [
     32,
     32,
@@ -26238,6 +37653,36 @@ qx.$$resources = {
     32,
     32,
     57676
+  ],
+  "@MaterialIconsDuoTone/content_copy": [
+    32,
+    32,
+    57677
+  ],
+  "@MaterialIconsDuoTone/copy": [
+    32,
+    32,
+    57677
+  ],
+  "@MaterialIconsDuoTone/content_cut": [
+    32,
+    32,
+    57678
+  ],
+  "@MaterialIconsDuoTone/cut": [
+    32,
+    32,
+    57678
+  ],
+  "@MaterialIconsDuoTone/paste": [
+    32,
+    32,
+    57679
+  ],
+  "@MaterialIconsDuoTone/content_paste": [
+    32,
+    32,
+    57679
   ],
   "@MaterialIconsDuoTone/create": [
     32,
@@ -26439,6 +37884,16 @@ qx.$$resources = {
     32,
     57719
   ],
+  "@MaterialIconsDuoTone/add_link": [
+    32,
+    32,
+    57720
+  ],
+  "@MaterialIconsDuoTone/inventory": [
+    32,
+    32,
+    57721
+  ],
   "@MaterialIconsDuoTone/access_alarm": [
     32,
     32,
@@ -26459,15 +37914,40 @@ qx.$$resources = {
     32,
     57747
   ],
+  "@MaterialIconsDuoTone/airplanemode_inactive": [
+    32,
+    32,
+    57748
+  ],
   "@MaterialIconsDuoTone/airplanemode_off": [
     32,
     32,
     57748
   ],
+  "@MaterialIconsDuoTone/airplanemode_active": [
+    32,
+    32,
+    57749
+  ],
   "@MaterialIconsDuoTone/airplanemode_on": [
     32,
     32,
     57749
+  ],
+  "@MaterialIconsDuoTone/workspaces": [
+    32,
+    32,
+    57760
+  ],
+  "@MaterialIconsDuoTone/inventory_2": [
+    32,
+    32,
+    57761
+  ],
+  "@MaterialIconsDuoTone/pause_circle": [
+    32,
+    32,
+    57762
   ],
   "@MaterialIconsDuoTone/battery_charging_full": [
     32,
@@ -26579,6 +38059,11 @@ qx.$$resources = {
     32,
     57784
   ],
+  "@MaterialIconsDuoTone/graphic_eq": [
+    32,
+    32,
+    57784
+  ],
   "@MaterialIconsDuoTone/network_cell": [
     32,
     32,
@@ -26594,10 +38079,20 @@ qx.$$resources = {
     32,
     57787
   ],
+  "@MaterialIconsDuoTone/now_wallpaper": [
+    32,
+    32,
+    57788
+  ],
   "@MaterialIconsDuoTone/wallpaper": [
     32,
     32,
     57788
+  ],
+  "@MaterialIconsDuoTone/now_widgets": [
+    32,
+    32,
+    57789
   ],
   "@MaterialIconsDuoTone/widgets": [
     32,
@@ -26634,6 +38129,61 @@ qx.$$resources = {
     32,
     57795
   ],
+  "@MaterialIconsDuoTone/play_circle": [
+    32,
+    32,
+    57796
+  ],
+  "@MaterialIconsDuoTone/edit_location_alt": [
+    32,
+    32,
+    57797
+  ],
+  "@MaterialIconsDuoTone/wb_twilight": [
+    32,
+    32,
+    57798
+  ],
+  "@MaterialIconsDuoTone/outbound": [
+    32,
+    32,
+    57802
+  ],
+  "@MaterialIconsDuoTone/social_distance": [
+    32,
+    32,
+    57803
+  ],
+  "@MaterialIconsDuoTone/safety_divider": [
+    32,
+    32,
+    57804
+  ],
+  "@MaterialIconsDuoTone/signal_cellular_connected_no_internet_4_bar": [
+    32,
+    32,
+    57805
+  ],
+  "@MaterialIconsDuoTone/signal_cellular_no_sim": [
+    32,
+    32,
+    57806
+  ],
+  "@MaterialIconsDuoTone/signal_cellular_null": [
+    32,
+    32,
+    57807
+  ],
+  "@MaterialIconsDuoTone/signal_cellular_off": [
+    32,
+    32,
+    57808
+  ],
+  "@MaterialIconsDuoTone/production_quantity_limits": [
+    32,
+    32,
+    57809
+  ],
   "@MaterialIconsDuoTone/signal_wifi_4_bar": [
     32,
     32,
@@ -26668,6 +38218,16 @@ qx.$$resources = {
     32,
     32,
     57826
+  ],
+  "@MaterialIconsDuoTone/add_to_home_screen": [
+    32,
+    32,
+    57854
+  ],
+  "@MaterialIconsDuoTone/device_thermostat": [
+    32,
+    32,
+    57855
   ],
   "@MaterialIconsDuoTone/mobile_friendly": [
     32,
@@ -26713,6 +38273,11 @@ qx.$$resources = {
     32,
     32,
     57928
+  ],
+  "@MaterialIconsDuoTone/format_underlined": [
+    32,
+    32,
+    57929
   ],
   "@MaterialIconsDuoTone/format_underline": [
     32,
@@ -26768,6 +38333,11 @@ qx.$$resources = {
     32,
     32,
     57939
+  ],
+  "@MaterialIconsDuoTone/mode_edit": [
+    32,
+    32,
+    57940
   ],
   "@MaterialIconsDuoTone/publish": [
     32,
@@ -26889,6 +38459,96 @@ qx.$$resources = {
     32,
     57964
   ],
+  "@MaterialIconsDuoTone/attachment": [
+    32,
+    32,
+    58044
+  ],
+  "@MaterialIconsDuoTone/cloud": [
+    32,
+    32,
+    58045
+  ],
+  "@MaterialIconsDuoTone/cloud_circle": [
+    32,
+    32,
+    58046
+  ],
+  "@MaterialIconsDuoTone/cloud_done": [
+    32,
+    32,
+    58047
+  ],
+  "@MaterialIconsDuoTone/cloud_download": [
+    32,
+    32,
+    58048
+  ],
+  "@MaterialIconsDuoTone/cloud_off": [
+    32,
+    32,
+    58049
+  ],
+  "@MaterialIconsDuoTone/cloud_queue": [
+    32,
+    32,
+    58050
+  ],
+  "@MaterialIconsDuoTone/cloud_upload": [
+    32,
+    32,
+    58051
+  ],
+  "@MaterialIconsDuoTone/file_download": [
+    32,
+    32,
+    58052
+  ],
+  "@MaterialIconsDuoTone/file_upload": [
+    32,
+    32,
+    58054
+  ],
+  "@MaterialIconsDuoTone/folder": [
+    32,
+    32,
+    58055
+  ],
+  "@MaterialIconsDuoTone/folder_open": [
+    32,
+    32,
+    58056
+  ],
+  "@MaterialIconsDuoTone/folder_shared": [
+    32,
+    32,
+    58057
+  ],
+  "@MaterialIconsDuoTone/task_alt": [
+    32,
+    32,
+    58086
+  ],
+  "@MaterialIconsDuoTone/change_circle": [
+    32,
+    32,
+    58087
+  ],
+  "@MaterialIconsDuoTone/arrow_back_ios_new": [
+    32,
+    32,
+    58090
+  ],
+  "@MaterialIconsDuoTone/savings": [
+    32,
+    32,
+    58091
+  ],
+  "@MaterialIconsDuoTone/copy_all": [
+    32,
+    32,
+    58092
+  ],
   "@MaterialIconsDuoTone/computer": [
     32,
     32,
@@ -26928,6 +38588,11 @@ qx.$$resources = {
     32,
     32,
     58129
+  ],
+  "@MaterialIconsDuoTone/keyboard": [
+    32,
+    32,
+    58130
   ],
   "@MaterialIconsDuoTone/keyboard_hide": [
     32,
@@ -27088,6 +38753,11 @@ qx.$$resources = {
     32,
     32,
     58169
+  ],
+  "@MaterialIconsDuoTone/headset_off": [
+    32,
+    32,
+    58170
   ],
   "@MaterialIconsDuoTone/add_to_photos": [
     32,
@@ -27319,10 +38989,20 @@ qx.$$resources = {
     32,
     58314
   ],
+  "@MaterialIconsDuoTone/exposure_minus_1": [
+    32,
+    32,
+    58315
+  ],
   "@MaterialIconsDuoTone/exposure_neg_1": [
     32,
     32,
     58315
+  ],
+  "@MaterialIconsDuoTone/exposure_minus_2": [
+    32,
+    32,
+    58316
   ],
   "@MaterialIconsDuoTone/exposure_neg_2": [
     32,
@@ -27629,6 +39309,11 @@ qx.$$resources = {
     32,
     58379
   ],
+  "@MaterialIconsDuoTone/panorama_fish_eye": [
+    32,
+    32,
+    58380
+  ],
   "@MaterialIconsDuoTone/panorama_fisheye": [
     32,
     32,
@@ -27774,6 +39459,11 @@ qx.$$resources = {
     32,
     58409
   ],
+  "@MaterialIconsDuoTone/view_comfortable": [
+    32,
+    32,
+    58410
+  ],
   "@MaterialIconsDuoTone/view_comfy": [
     32,
     32,
@@ -27884,6 +39574,201 @@ qx.$$resources = {
     32,
     58432
   ],
+  "@MaterialIconsDuoTone/code_off": [
+    32,
+    32,
+    58611
+  ],
+  "@MaterialIconsDuoTone/credit_card_off": [
+    32,
+    32,
+    58612
+  ],
+  "@MaterialIconsDuoTone/extension_off": [
+    32,
+    32,
+    58613
+  ],
+  "@MaterialIconsDuoTone/open_in_new_off": [
+    32,
+    32,
+    58614
+  ],
+  "@MaterialIconsDuoTone/web_asset_off": [
+    32,
+    32,
+    58615
+  ],
+  "@MaterialIconsDuoTone/content_paste_off": [
+    32,
+    32,
+    58616
+  ],
+  "@MaterialIconsDuoTone/font_download_off": [
+    32,
+    32,
+    58617
+  ],
+  "@MaterialIconsDuoTone/usb_off": [
+    32,
+    32,
+    58618
+  ],
+  "@MaterialIconsDuoTone/auto_graph": [
+    32,
+    32,
+    58619
+  ],
+  "@MaterialIconsDuoTone/query_stats": [
+    32,
+    32,
+    58620
+  ],
+  "@MaterialIconsDuoTone/schema": [
+    32,
+    32,
+    58621
+  ],
+  "@MaterialIconsDuoTone/file_download_off": [
+    32,
+    32,
+    58622
+  ],
+  "@MaterialIconsDuoTone/developer_board_off": [
+    32,
+    32,
+    58623
+  ],
+  "@MaterialIconsDuoTone/videogame_asset_off": [
+    32,
+    32,
+    58624
+  ],
+  "@MaterialIconsDuoTone/moving": [
+    32,
+    32,
+    58625
+  ],
+  "@MaterialIconsDuoTone/sailing": [
+    32,
+    32,
+    58626
+  ],
+  "@MaterialIconsDuoTone/snowmobile": [
+    32,
+    32,
+    58627
+  ],
+  "@MaterialIconsDuoTone/catching_pokemon": [
+    32,
+    32,
+    58632
+  ],
+  "@MaterialIconsDuoTone/downhill_skiing": [
+    32,
+    32,
+    58633
+  ],
+  "@MaterialIconsDuoTone/hiking": [
+    32,
+    32,
+    58634
+  ],
+  "@MaterialIconsDuoTone/ice_skating": [
+    32,
+    32,
+    58635
+  ],
+  "@MaterialIconsDuoTone/kayaking": [
+    32,
+    32,
+    58636
+  ],
+  "@MaterialIconsDuoTone/kitesurfing": [
+    32,
+    32,
+    58637
+  ],
+  "@MaterialIconsDuoTone/nordic_walking": [
+    32,
+    32,
+    58638
+  ],
+  "@MaterialIconsDuoTone/paragliding": [
+    32,
+    32,
+    58639
+  ],
+  "@MaterialIconsDuoTone/person_off": [
+    32,
+    32,
+    58640
+  ],
+  "@MaterialIconsDuoTone/skateboarding": [
+    32,
+    32,
+    58641
+  ],
+  "@MaterialIconsDuoTone/sledding": [
+    32,
+    32,
+    58642
+  ],
+  "@MaterialIconsDuoTone/snowboarding": [
+    32,
+    32,
+    58643
+  ],
+  "@MaterialIconsDuoTone/snowshoeing": [
+    32,
+    32,
+    58644
+  ],
+  "@MaterialIconsDuoTone/surfing": [
+    32,
+    32,
+    58645
+  ],
+  "@MaterialIconsDuoTone/dark_mode": [
+    32,
+    32,
+    58652
+  ],
+  "@MaterialIconsDuoTone/running_with_errors": [
+    32,
+    32,
+    58653
+  ],
+  "@MaterialIconsDuoTone/sensors": [
+    32,
+    32,
+    58654
+  ],
+  "@MaterialIconsDuoTone/sensors_off": [
+    32,
+    32,
+    58655
+  ],
+  "@MaterialIconsDuoTone/piano_off": [
+    32,
+    32,
+    58656
+  ],
+  "@MaterialIconsDuoTone/piano": [
+    32,
+    32,
+    58657
+  ],
+  "@MaterialIconsDuoTone/share_arrival_time": [
+    32,
+    32,
+    58660
+  ],
+  "@MaterialIconsDuoTone/edit_notifications": [
+    32,
+    32,
+    58661
+  ],
   "@MaterialIconsDuoTone/beenhere": [
     32,
     32,
@@ -27909,6 +39794,11 @@ qx.$$resources = {
     32,
     58673
   ],
+  "@MaterialIconsDuoTone/directions_ferry": [
+    32,
+    32,
+    58674
+  ],
   "@MaterialIconsDuoTone/directions_boat": [
     32,
     32,
@@ -27918,6 +39808,11 @@ qx.$$resources = {
     32,
     32,
     58675
+  ],
+  "@MaterialIconsDuoTone/directions_railway": [
+    32,
+    32,
+    58676
   ],
   "@MaterialIconsDuoTone/directions_train": [
     32,
@@ -27964,6 +39859,11 @@ qx.$$resources = {
     32,
     58686
   ],
+  "@MaterialIconsDuoTone/local_attraction": [
+    32,
+    32,
+    58687
+  ],
   "@MaterialIconsDuoTone/local_activity": [
     32,
     32,
@@ -27989,6 +39889,31 @@ qx.$$resources = {
     32,
     58691
   ],
+  "@MaterialIconsDuoTone/local_drink": [
+    32,
+    32,
+    58692
+  ],
+  "@MaterialIconsDuoTone/local_post_office": [
+    32,
+    32,
+    58708
+  ],
+  "@MaterialIconsDuoTone/local_print_shop": [
+    32,
+    32,
+    58709
+  ],
+  "@MaterialIconsDuoTone/local_printshop": [
+    32,
+    32,
+    58709
+  ],
+  "@MaterialIconsDuoTone/local_restaurant": [
+    32,
+    32,
+    58710
+  ],
   "@MaterialIconsDuoTone/local_dining": [
     32,
     32,
@@ -28010,6 +39935,11 @@ qx.$$resources = {
     58713
   ],
   "@MaterialIconsDuoTone/person_pin": [
+    32,
+    32,
+    58714
+  ],
+  "@MaterialIconsDuoTone/location_history": [
     32,
     32,
     58714
@@ -28269,6 +40199,11 @@ qx.$$resources = {
     32,
     58834
   ],
+  "@MaterialIconsDuoTone/keyboard_control": [
+    32,
+    32,
+    58835
+  ],
   "@MaterialIconsDuoTone/more_horiz": [
     32,
     32,
@@ -28359,6 +40294,21 @@ qx.$$resources = {
     32,
     58896
   ],
+  "@MaterialIconsDuoTone/do_not_disturb_alt": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsDuoTone/dnd_forwardslash": [
+    32,
+    32,
+    58897
+  ],
+  "@MaterialIconsDuoTone/do_not_disturb": [
+    32,
+    32,
+    58898
+  ],
   "@MaterialIconsDuoTone/drive_eta": [
     32,
     32,
@@ -28428,6 +40378,16 @@ qx.$$resources = {
     32,
     32,
     58912
+  ],
+  "@MaterialIconsDuoTone/sd_card": [
+    32,
+    32,
+    58915
+  ],
+  "@MaterialIconsDuoTone/sim_card_alert": [
+    32,
+    32,
+    58916
   ],
   "@MaterialIconsDuoTone/sms": [
     32,
@@ -28524,6 +40484,11 @@ qx.$$resources = {
     32,
     58935
   ],
+  "@MaterialIconsDuoTone/confirmation_number": [
+    32,
+    32,
+    58936
+  ],
   "@MaterialIconsDuoTone/confirmation_num": [
     32,
     32,
@@ -28579,6 +40544,16 @@ qx.$$resources = {
     32,
     58946
   ],
+  "@MaterialIconsDuoTone/do_not_disturb_off": [
+    32,
+    32,
+    58947
+  ],
+  "@MaterialIconsDuoTone/do_not_disturb_on": [
+    32,
+    32,
+    58948
+  ],
   "@MaterialIconsDuoTone/priority_high": [
     32,
     32,
@@ -28603,6 +40578,26 @@ qx.$$resources = {
     32,
     32,
     58953
+  ],
+  "@MaterialIconsDuoTone/auto_fix_high": [
+    32,
+    32,
+    58979
+  ],
+  "@MaterialIconsDuoTone/auto_fix_normal": [
+    32,
+    32,
+    58980
+  ],
+  "@MaterialIconsDuoTone/auto_fix_off": [
+    32,
+    32,
+    58981
+  ],
+  "@MaterialIconsDuoTone/auto_stories": [
+    32,
+    32,
+    58982
   ],
   "@MaterialIconsDuoTone/domain": [
     32,
@@ -28648,6 +40643,11 @@ qx.$$resources = {
     32,
     32,
     59382
+  ],
+  "@MaterialIconsDuoTone/notifications_active": [
+    32,
+    32,
+    59383
   ],
   "@MaterialIconsDuoTone/notifications_on": [
     32,
@@ -28768,16 +40768,6 @@ qx.$$resources = {
     32,
     32,
     59445
-  ],
-  "@MaterialIconsDuoTone/radio_button_off": [
-    32,
-    32,
-    59446
-  ],
-  "@MaterialIconsDuoTone/radio_button_on": [
-    32,
-    32,
-    59447
   ],
   "@MaterialIconsDuoTone/star": [
     32,
@@ -28919,6 +40909,11 @@ qx.$$resources = {
     32,
     59494
   ],
+  "@MaterialIconsDuoTone/bookmark_outline": [
+    32,
+    32,
+    59495
+  ],
   "@MaterialIconsDuoTone/bookmark_border": [
     32,
     32,
@@ -29029,6 +41024,11 @@ qx.$$resources = {
     32,
     59517
   ],
+  "@MaterialIconsDuoTone/favorite_outline": [
+    32,
+    32,
+    59518
+  ],
   "@MaterialIconsDuoTone/favorite_border": [
     32,
     32,
@@ -29079,6 +41079,11 @@ qx.$$resources = {
     32,
     59527
   ],
+  "@MaterialIconsDuoTone/highlight_remove": [
+    32,
+    32,
+    59528
+  ],
   "@MaterialIconsDuoTone/highlight_off": [
     32,
     32,
@@ -29123,6 +41128,11 @@ qx.$$resources = {
     32,
     32,
     59536
+  ],
+  "@MaterialIconsDuoTone/invert_colors_on": [
+    32,
+    32,
+    59537
   ],
   "@MaterialIconsDuoTone/invert_colors": [
     32,
@@ -29214,6 +41224,11 @@ qx.$$resources = {
     32,
     59554
   ],
+  "@MaterialIconsDuoTone/perm_contact_calendar": [
+    32,
+    32,
+    59555
+  ],
   "@MaterialIconsDuoTone/perm_contact_cal": [
     32,
     32,
@@ -29223,6 +41238,11 @@ qx.$$resources = {
     32,
     32,
     59556
+  ],
+  "@MaterialIconsDuoTone/perm_device_information": [
+    32,
+    32,
+    59557
   ],
   "@MaterialIconsDuoTone/perm_device_info": [
     32,
@@ -29339,6 +41359,11 @@ qx.$$resources = {
     32,
     59580
   ],
+  "@MaterialIconsDuoTone/settings_brightness": [
+    32,
+    32,
+    59581
+  ],
   "@MaterialIconsDuoTone/settings_display": [
     32,
     32,
@@ -29409,10 +41434,20 @@ qx.$$resources = {
     32,
     59605
   ],
+  "@MaterialIconsDuoTone/swap_vertical_circle": [
+    32,
+    32,
+    59606
+  ],
   "@MaterialIconsDuoTone/swap_vert_circle": [
     32,
     32,
     59606
+  ],
+  "@MaterialIconsDuoTone/system_update_alt": [
+    32,
+    32,
+    59607
   ],
   "@MaterialIconsDuoTone/system_update_tv": [
     32,
@@ -29478,6 +41513,11 @@ qx.$$resources = {
     32,
     32,
     59619
+  ],
+  "@MaterialIconsDuoTone/trending_neutral": [
+    32,
+    32,
+    59620
   ],
   "@MaterialIconsDuoTone/trending_flat": [
     32,
@@ -29569,15 +41609,30 @@ qx.$$resources = {
     32,
     59637
   ],
+  "@MaterialIconsDuoTone/card_giftcard": [
+    32,
+    32,
+    59638
+  ],
   "@MaterialIconsDuoTone/wallet_giftcard": [
     32,
     32,
     59638
   ],
+  "@MaterialIconsDuoTone/card_membership": [
+    32,
+    32,
+    59639
+  ],
   "@MaterialIconsDuoTone/wallet_membership": [
     32,
     32,
     59639
+  ],
+  "@MaterialIconsDuoTone/card_travel": [
+    32,
+    32,
+    59640
   ],
   "@MaterialIconsDuoTone/wallet_travel": [
     32,
@@ -29600,6 +41655,11 @@ qx.$$resources = {
     59643
   ],
   "@MaterialIconsDuoTone/enhance_photo_translate": [
+    32,
+    32,
+    59644
+  ],
+  "@MaterialIconsDuoTone/camera_enhance": [
     32,
     32,
     59644
@@ -29964,6 +42024,151 @@ qx.$$resources = {
     32,
     59722
   ],
+  "@MaterialIconsDuoTone/segment": [
+    32,
+    32,
+    59723
+  ],
+  "@MaterialIconsDuoTone/contact_support": [
+    32,
+    32,
+    59724
+  ],
+  "@MaterialIconsDuoTone/compress": [
+    32,
+    32,
+    59725
+  ],
+  "@MaterialIconsDuoTone/expand": [
+    32,
+    32,
+    59727
+  ],
+  "@MaterialIconsDuoTone/edit_off": [
+    32,
+    32,
+    59728
+  ],
+  "@MaterialIconsDuoTone/20mp": [
+    32,
+    32,
+    59742
+  ],
+  "@MaterialIconsDuoTone/21mp": [
+    32,
+    32,
+    59743
+  ],
+  "@MaterialIconsDuoTone/22mp": [
+    32,
+    32,
+    59744
+  ],
+  "@MaterialIconsDuoTone/23mp": [
+    32,
+    32,
+    59745
+  ],
+  "@MaterialIconsDuoTone/24mp": [
+    32,
+    32,
+    59746
+  ],
+  "@MaterialIconsDuoTone/2k": [
+    32,
+    32,
+    59747
+  ],
+  "@MaterialIconsDuoTone/2k_plus": [
+    32,
+    32,
+    59748
+  ],
+  "@MaterialIconsDuoTone/2mp": [
+    32,
+    32,
+    59749
+  ],
+  "@MaterialIconsDuoTone/3k": [
+    32,
+    32,
+    59750
+  ],
+  "@MaterialIconsDuoTone/3k_plus": [
+    32,
+    32,
+    59751
+  ],
+  "@MaterialIconsDuoTone/3mp": [
+    32,
+    32,
+    59752
+  ],
+  "@MaterialIconsDuoTone/4k_plus": [
+    32,
+    32,
+    59753
+  ],
+  "@MaterialIconsDuoTone/4mp": [
+    32,
+    32,
+    59754
+  ],
+  "@MaterialIconsDuoTone/5k": [
+    32,
+    32,
+    59755
+  ],
+  "@MaterialIconsDuoTone/5k_plus": [
+    32,
+    32,
+    59756
+  ],
+  "@MaterialIconsDuoTone/5mp": [
+    32,
+    32,
+    59757
+  ],
+  "@MaterialIconsDuoTone/account_tree": [
+    32,
+    32,
+    59770
+  ],
+  "@MaterialIconsDuoTone/add_chart": [
+    32,
+    32,
+    59771
+  ],
+  "@MaterialIconsDuoTone/add_ic_call": [
+    32,
+    32,
+    59772
+  ],
+  "@MaterialIconsDuoTone/add_moderator": [
+    32,
+    32,
+    59773
+  ],
+  "@MaterialIconsDuoTone/dangerous": [
+    32,
+    32,
+    59802
+  ],
+  "@MaterialIconsDuoTone/dashboard_customize": [
+    32,
+    32,
+    59803
+  ],
+  "@MaterialIconsDuoTone/grid_view": [
+    32,
+    32,
+    59824
+  ],
+  "@MaterialIconsDuoTone/hail": [
+    32,
+    32,
+    59825
+  ],
   "@MaterialIconsDuoTone/label_off": [
     32,
     32,
@@ -29973,6 +42178,61 @@ qx.$$resources = {
     32,
     32,
     59831
+  ],
+  "@MaterialIconsDuoTone/logout": [
+    32,
+    32,
+    59834
+  ],
+  "@MaterialIconsDuoTone/margin": [
+    32,
+    32,
+    59835
+  ],
+  "@MaterialIconsDuoTone/mark_as_unread": [
+    32,
+    32,
+    59836
+  ],
+  "@MaterialIconsDuoTone/menu_open": [
+    32,
+    32,
+    59837
+  ],
+  "@MaterialIconsDuoTone/motion_photos_off": [
+    32,
+    32,
+    59840
+  ],
+  "@MaterialIconsDuoTone/motion_photos_on": [
+    32,
+    32,
+    59841
+  ],
+  "@MaterialIconsDuoTone/motion_photos_paused": [
+    32,
+    32,
+    59842
+  ],
+  "@MaterialIconsDuoTone/mp": [
+    32,
+    32,
+    59843
+  ],
+  "@MaterialIconsDuoTone/padding": [
+    32,
+    32,
+    59848
+  ],
+  "@MaterialIconsDuoTone/panorama_photosphere": [
+    32,
+    32,
+    59849
+  ],
+  "@MaterialIconsDuoTone/panorama_photosphere_select": [
+    32,
+    32,
+    59850
   ],
   "@MaterialIconsDuoTone/person_add_disabled": [
     32,
@@ -29988,6 +42248,116 @@ qx.$$resources = {
     32,
     32,
     59853
+  ],
+  "@MaterialIconsDuoTone/pivot_table_chart": [
+    32,
+    32,
+    59854
+  ],
+  "@MaterialIconsDuoTone/print_disabled": [
+    32,
+    32,
+    59855
+  ],
+  "@MaterialIconsDuoTone/railway_alert": [
+    32,
+    32,
+    59857
+  ],
+  "@MaterialIconsDuoTone/recommend": [
+    32,
+    32,
+    59858
+  ],
+  "@MaterialIconsDuoTone/remove_done": [
+    32,
+    32,
+    59859
+  ],
+  "@MaterialIconsDuoTone/remove_moderator": [
+    32,
+    32,
+    59860
+  ],
+  "@MaterialIconsDuoTone/repeat_on": [
+    32,
+    32,
+    59862
+  ],
+  "@MaterialIconsDuoTone/repeat_one_on": [
+    32,
+    32,
+    59863
+  ],
+  "@MaterialIconsDuoTone/replay_circle_filled": [
+    32,
+    32,
+    59864
+  ],
+  "@MaterialIconsDuoTone/reset_tv": [
+    32,
+    32,
+    59865
+  ],
+  "@MaterialIconsDuoTone/shield": [
+    32,
+    32,
+    59872
+  ],
+  "@MaterialIconsDuoTone/shuffle_on": [
+    32,
+    32,
+    59873
+  ],
+  "@MaterialIconsDuoTone/thumb_down_off_alt": [
+    32,
+    32,
+    59890
+  ],
+  "@MaterialIconsDuoTone/thumb_up_off_alt": [
+    32,
+    32,
+    59891
+  ],
+  "@MaterialIconsDuoTone/waterfall_chart": [
+    32,
+    32,
+    59904
+  ],
+  "@MaterialIconsDuoTone/wb_shade": [
+    32,
+    32,
+    59905
+  ],
+  "@MaterialIconsDuoTone/home_work": [
+    32,
+    32,
+    59913
+  ],
+  "@MaterialIconsDuoTone/schedule_send": [
+    32,
+    32,
+    59914
+  ],
+  "@MaterialIconsDuoTone/bolt": [
+    32,
+    32,
+    59915
+  ],
+  "@MaterialIconsDuoTone/send_and_archive": [
+    32,
+    32,
+    59916
+  ],
+  "@MaterialIconsDuoTone/fit_screen": [
+    32,
+    32,
+    59920
+  ],
+  "@MaterialIconsDuoTone/saved_search": [
+    32,
+    32,
+    59921
   ],
   "@MaterialIconsDuoTone/storefront": [
     32,
@@ -30254,6 +42624,11 @@ qx.$$resources = {
     32,
     59980
   ],
+  "@MaterialIconsDuoTone/person_add_alt": [
+    32,
+    32,
+    59981
+  ],
   "@MaterialIconsDuoTone/comment_bank": [
     32,
     32,
@@ -30273,6 +42648,46 @@ qx.$$resources = {
     32,
     32,
     59985
+  ],
+  "@MaterialIconsDuoTone/attractions": [
+    32,
+    32,
+    59986
+  ],
+  "@MaterialIconsDuoTone/bakery_dining": [
+    32,
+    32,
+    59987
+  ],
+  "@MaterialIconsDuoTone/breakfast_dining": [
+    32,
+    32,
+    59988
+  ],
+  "@MaterialIconsDuoTone/car_rental": [
+    32,
+    32,
+    59989
+  ],
+  "@MaterialIconsDuoTone/car_repair": [
+    32,
+    32,
+    59990
+  ],
+  "@MaterialIconsDuoTone/dinner_dining": [
+    32,
+    32,
+    59991
+  ],
+  "@MaterialIconsDuoTone/dry_cleaning": [
+    32,
+    32,
+    59992
+  ],
+  "@MaterialIconsDuoTone/hardware": [
+    32,
+    32,
+    59993
   ],
   "@MaterialIconsDuoTone/plagiarism": [
     32,
@@ -30303,6 +42718,81 @@ qx.$$resources = {
     32,
     32,
     59999
+  ],
+  "@MaterialIconsDuoTone/liquor": [
+    32,
+    32,
+    60000
+  ],
+  "@MaterialIconsDuoTone/lunch_dining": [
+    32,
+    32,
+    60001
+  ],
+  "@MaterialIconsDuoTone/nightlife": [
+    32,
+    32,
+    60002
+  ],
+  "@MaterialIconsDuoTone/park": [
+    32,
+    32,
+    60003
+  ],
+  "@MaterialIconsDuoTone/ramen_dining": [
+    32,
+    32,
+    60004
+  ],
+  "@MaterialIconsDuoTone/celebration": [
+    32,
+    32,
+    60005
+  ],
+  "@MaterialIconsDuoTone/theater_comedy": [
+    32,
+    32,
+    60006
+  ],
+  "@MaterialIconsDuoTone/badge": [
+    32,
+    32,
+    60007
+  ],
+  "@MaterialIconsDuoTone/festival": [
+    32,
+    32,
+    60008
+  ],
+  "@MaterialIconsDuoTone/icecream": [
+    32,
+    32,
+    60009
+  ],
+  "@MaterialIconsDuoTone/volunteer_activism": [
+    32,
+    32,
+    60016
+  ],
+  "@MaterialIconsDuoTone/contactless": [
+    32,
+    32,
+    60017
+  ],
+  "@MaterialIconsDuoTone/delivery_dining": [
+    32,
+    32,
+    60018
+  ],
+  "@MaterialIconsDuoTone/brunch_dining": [
+    32,
+    32,
+    60019
+  ],
+  "@MaterialIconsDuoTone/takeout_dining": [
+    32,
+    32,
+    60020
   ],
   "@MaterialIconsDuoTone/video_settings": [
     32,
@@ -30479,6 +42969,11 @@ qx.$$resources = {
     32,
     61247
   ],
+  "@MaterialIconsDuoTone/app_registration": [
+    32,
+    32,
+    61248
+  ],
   "@MaterialIconsDuoTone/app_settings_alt": [
     32,
     32,
@@ -30519,6 +43014,16 @@ qx.$$resources = {
     32,
     61257
   ],
+  "@MaterialIconsDuoTone/circle": [
+    32,
+    32,
+    61258
+  ],
+  "@MaterialIconsDuoTone/dirty_lens": [
+    32,
+    32,
+    61259
+  ],
   "@MaterialIconsDuoTone/domain_verification": [
     32,
     32,
@@ -30529,6 +43034,11 @@ qx.$$resources = {
     32,
     61261
   ],
+  "@MaterialIconsDuoTone/face_retouching_natural": [
+    32,
+    32,
+    61262
+  ],
   "@MaterialIconsDuoTone/filter_alt": [
     32,
     32,
@@ -30538,6 +43048,11 @@ qx.$$resources = {
     32,
     32,
     61264
+  ],
+  "@MaterialIconsDuoTone/hdr_enhanced_select": [
+    32,
+    32,
+    61265
   ],
   "@MaterialIconsDuoTone/highlight_alt": [
     32,
@@ -30554,6 +43069,41 @@ qx.$$resources = {
     32,
     61268
   ],
+  "@MaterialIconsDuoTone/local_fire_department": [
+    32,
+    32,
+    61269
+  ],
+  "@MaterialIconsDuoTone/local_police": [
+    32,
+    32,
+    61270
+  ],
+  "@MaterialIconsDuoTone/lock_clock": [
+    32,
+    32,
+    61271
+  ],
+  "@MaterialIconsDuoTone/maps_ugc": [
+    32,
+    32,
+    61272
+  ],
+  "@MaterialIconsDuoTone/mic_external_off": [
+    32,
+    32,
+    61273
+  ],
+  "@MaterialIconsDuoTone/mic_external_on": [
+    32,
+    32,
+    61274
+  ],
+  "@MaterialIconsDuoTone/monitor": [
+    32,
+    32,
+    61275
+  ],
   "@MaterialIconsDuoTone/nat": [
     32,
     32,
@@ -30563,6 +43113,31 @@ qx.$$resources = {
     32,
     32,
     61277
+  ],
+  "@MaterialIconsDuoTone/nightlight_round": [
+    32,
+    32,
+    61278
+  ],
+  "@MaterialIconsDuoTone/outbox": [
+    32,
+    32,
+    61279
+  ],
+  "@MaterialIconsDuoTone/panorama_horizontal_select": [
+    32,
+    32,
+    61280
+  ],
+  "@MaterialIconsDuoTone/panorama_vertical_select": [
+    32,
+    32,
+    61281
+  ],
+  "@MaterialIconsDuoTone/panorama_wide_angle_select": [
+    32,
+    32,
+    61282
   ],
   "@MaterialIconsDuoTone/payments": [
     32,
@@ -30589,6 +43164,21 @@ qx.$$resources = {
     32,
     61287
   ],
+  "@MaterialIconsDuoTone/photo_camera_back": [
+    32,
+    32,
+    61288
+  ],
+  "@MaterialIconsDuoTone/photo_camera_front": [
+    32,
+    32,
+    61289
+  ],
+  "@MaterialIconsDuoTone/play_disabled": [
+    32,
+    32,
+    61290
+  ],
   "@MaterialIconsDuoTone/qr_code": [
     32,
     32,
@@ -30614,6 +43204,11 @@ qx.$$resources = {
     32,
     61295
   ],
+  "@MaterialIconsDuoTone/screen_search_desktop": [
+    32,
+    32,
+    61296
+  ],
   "@MaterialIconsDuoTone/stop_circle": [
     32,
     32,
@@ -30628,6 +43223,11 @@ qx.$$resources = {
     32,
     32,
     61299
+  ],
+  "@MaterialIconsDuoTone/taxi_alert": [
+    32,
+    32,
+    61300
   ],
   "@MaterialIconsDuoTone/tour": [
     32,
@@ -30649,15 +43249,920 @@ qx.$$resources = {
     32,
     61304
   ],
-  "@MaterialIconsDuoTone/copy": [
+  "@MaterialIconsDuoTone/1x_mobiledata": [
     32,
     32,
-    61578
+    61389
   ],
-  "@MaterialIconsDuoTone/cut": [
+  "@MaterialIconsDuoTone/30fps": [
     32,
     32,
-    61579
+    61390
+  ],
+  "@MaterialIconsDuoTone/30fps_select": [
+    32,
+    32,
+    61391
+  ],
+  "@MaterialIconsDuoTone/3g_mobiledata": [
+    32,
+    32,
+    61392
+  ],
+  "@MaterialIconsDuoTone/3p": [
+    32,
+    32,
+    61393
+  ],
+  "@MaterialIconsDuoTone/4g_mobiledata": [
+    32,
+    32,
+    61394
+  ],
+  "@MaterialIconsDuoTone/4g_plus_mobiledata": [
+    32,
+    32,
+    61395
+  ],
+  "@MaterialIconsDuoTone/60fps": [
+    32,
+    32,
+    61396
+  ],
+  "@MaterialIconsDuoTone/60fps_select": [
+    32,
+    32,
+    61397
+  ],
+  "@MaterialIconsDuoTone/access_time_filled": [
+    32,
+    32,
+    61398
+  ],
+  "@MaterialIconsDuoTone/air": [
+    32,
+    32,
+    61400
+  ],
+  "@MaterialIconsDuoTone/airplane_ticket": [
+    32,
+    32,
+    61401
+  ],
+  "@MaterialIconsDuoTone/aod": [
+    32,
+    32,
+    61402
+  ],
+  "@MaterialIconsDuoTone/attribution": [
+    32,
+    32,
+    61403
+  ],
+  "@MaterialIconsDuoTone/autofps_select": [
+    32,
+    32,
+    61404
+  ],
+  "@MaterialIconsDuoTone/bathroom": [
+    32,
+    32,
+    61405
+  ],
+  "@MaterialIconsDuoTone/battery_saver": [
+    32,
+    32,
+    61406
+  ],
+  "@MaterialIconsDuoTone/bed": [
+    32,
+    32,
+    61407
+  ],
+  "@MaterialIconsDuoTone/bedroom_baby": [
+    32,
+    32,
+    61408
+  ],
+  "@MaterialIconsDuoTone/bedroom_child": [
+    32,
+    32,
+    61409
+  ],
+  "@MaterialIconsDuoTone/bedroom_parent": [
+    32,
+    32,
+    61410
+  ],
+  "@MaterialIconsDuoTone/blender": [
+    32,
+    32,
+    61411
+  ],
+  "@MaterialIconsDuoTone/bloodtype": [
+    32,
+    32,
+    61412
+  ],
+  "@MaterialIconsDuoTone/bluetooth_drive": [
+    32,
+    32,
+    61413
+  ],
+  "@MaterialIconsDuoTone/cable": [
+    32,
+    32,
+    61414
+  ],
+  "@MaterialIconsDuoTone/calendar_view_month": [
+    32,
+    32,
+    61415
+  ],
+  "@MaterialIconsDuoTone/calendar_view_week": [
+    32,
+    32,
+    61416
+  ],
+  "@MaterialIconsDuoTone/camera_indoor": [
+    32,
+    32,
+    61417
+  ],
+  "@MaterialIconsDuoTone/camera_outdoor": [
+    32,
+    32,
+    61418
+  ],
+  "@MaterialIconsDuoTone/cameraswitch": [
+    32,
+    32,
+    61419
+  ],
+  "@MaterialIconsDuoTone/cast_for_education": [
+    32,
+    32,
+    61420
+  ],
+  "@MaterialIconsDuoTone/chair": [
+    32,
+    32,
+    61421
+  ],
+  "@MaterialIconsDuoTone/chair_alt": [
+    32,
+    32,
+    61422
+  ],
+  "@MaterialIconsDuoTone/coffee": [
+    32,
+    32,
+    61423
+  ],
+  "@MaterialIconsDuoTone/coffee_maker": [
+    32,
+    32,
+    61424
+  ],
+  "@MaterialIconsDuoTone/credit_score": [
+    32,
+    32,
+    61425
+  ],
+  "@MaterialIconsDuoTone/data_saver_off": [
+    32,
+    32,
+    61426
+  ],
+  "@MaterialIconsDuoTone/data_saver_on": [
+    32,
+    32,
+    61427
+  ],
+  "@MaterialIconsDuoTone/dining": [
+    32,
+    32,
+    61428
+  ],
+  "@MaterialIconsDuoTone/directions_boat_filled": [
+    32,
+    32,
+    61429
+  ],
+  "@MaterialIconsDuoTone/directions_bus_filled": [
+    32,
+    32,
+    61430
+  ],
+  "@MaterialIconsDuoTone/directions_car_filled": [
+    32,
+    32,
+    61431
+  ],
+  "@MaterialIconsDuoTone/directions_railway_filled": [
+    32,
+    32,
+    61432
+  ],
+  "@MaterialIconsDuoTone/directions_subway_filled": [
+    32,
+    32,
+    61433
+  ],
+  "@MaterialIconsDuoTone/directions_transit_filled": [
+    32,
+    32,
+    61434
+  ],
+  "@MaterialIconsDuoTone/do_not_disturb_on_total_silence": [
+    32,
+    32,
+    61435
+  ],
+  "@MaterialIconsDuoTone/door_back": [
+    32,
+    32,
+    61436
+  ],
+  "@MaterialIconsDuoTone/door_front": [
+    32,
+    32,
+    61437
+  ],
+  "@MaterialIconsDuoTone/door_sliding": [
+    32,
+    32,
+    61438
+  ],
+  "@MaterialIconsDuoTone/doorbell": [
+    32,
+    32,
+    61439
+  ],
+  "@MaterialIconsDuoTone/download_for_offline": [
+    32,
+    32,
+    61440
+  ],
+  "@MaterialIconsDuoTone/downloading": [
+    32,
+    32,
+    61441
+  ],
+  "@MaterialIconsDuoTone/e_mobiledata": [
+    32,
+    32,
+    61442
+  ],
+  "@MaterialIconsDuoTone/earbuds": [
+    32,
+    32,
+    61443
+  ],
+  "@MaterialIconsDuoTone/earbuds_battery": [
+    32,
+    32,
+    61444
+  ],
+  "@MaterialIconsDuoTone/edgesensor_high": [
+    32,
+    32,
+    61445
+  ],
+  "@MaterialIconsDuoTone/edgesensor_low": [
+    32,
+    32,
+    61446
+  ],
+  "@MaterialIconsDuoTone/face_retouching_off": [
+    32,
+    32,
+    61447
+  ],
+  "@MaterialIconsDuoTone/face_unlock": [
+    32,
+    32,
+    61448
+  ],
+  "@MaterialIconsDuoTone/feed": [
+    32,
+    32,
+    61449
+  ],
+  "@MaterialIconsDuoTone/flashlight_off": [
+    32,
+    32,
+    61450
+  ],
+  "@MaterialIconsDuoTone/flashlight_on": [
+    32,
+    32,
+    61451
+  ],
+  "@MaterialIconsDuoTone/flatware": [
+    32,
+    32,
+    61452
+  ],
+  "@MaterialIconsDuoTone/flourescent": [
+    32,
+    32,
+    61453
+  ],
+  "@MaterialIconsDuoTone/fmd_bad": [
+    32,
+    32,
+    61454
+  ],
+  "@MaterialIconsDuoTone/fmd_good": [
+    32,
+    32,
+    61455
+  ],
+  "@MaterialIconsDuoTone/g_mobiledata": [
+    32,
+    32,
+    61456
+  ],
+  "@MaterialIconsDuoTone/garage": [
+    32,
+    32,
+    61457
+  ],
+  "@MaterialIconsDuoTone/gpp_bad": [
+    32,
+    32,
+    61458
+  ],
+  "@MaterialIconsDuoTone/gpp_good": [
+    32,
+    32,
+    61459
+  ],
+  "@MaterialIconsDuoTone/gpp_maybe": [
+    32,
+    32,
+    61460
+  ],
+  "@MaterialIconsDuoTone/grid_3x3": [
+    32,
+    32,
+    61461
+  ],
+  "@MaterialIconsDuoTone/grid_4x4": [
+    32,
+    32,
+    61462
+  ],
+  "@MaterialIconsDuoTone/grid_goldenratio": [
+    32,
+    32,
+    61463
+  ],
+  "@MaterialIconsDuoTone/h_mobiledata": [
+    32,
+    32,
+    61464
+  ],
+  "@MaterialIconsDuoTone/h_plus_mobiledata": [
+    32,
+    32,
+    61465
+  ],
+  "@MaterialIconsDuoTone/hdr_auto": [
+    32,
+    32,
+    61466
+  ],
+  "@MaterialIconsDuoTone/hdr_auto_select": [
+    32,
+    32,
+    61467
+  ],
+  "@MaterialIconsDuoTone/hdr_off_select": [
+    32,
+    32,
+    61468
+  ],
+  "@MaterialIconsDuoTone/hdr_on_select": [
+    32,
+    32,
+    61469
+  ],
+  "@MaterialIconsDuoTone/hdr_plus": [
+    32,
+    32,
+    61470
+  ],
+  "@MaterialIconsDuoTone/headphones": [
+    32,
+    32,
+    61471
+  ],
+  "@MaterialIconsDuoTone/headphones_battery": [
+    32,
+    32,
+    61472
+  ],
+  "@MaterialIconsDuoTone/hevc": [
+    32,
+    32,
+    61473
+  ],
+  "@MaterialIconsDuoTone/hide_image": [
+    32,
+    32,
+    61474
+  ],
+  "@MaterialIconsDuoTone/hide_source": [
+    32,
+    32,
+    61475
+  ],
+  "@MaterialIconsDuoTone/home_max": [
+    32,
+    32,
+    61476
+  ],
+  "@MaterialIconsDuoTone/home_mini": [
+    32,
+    32,
+    61477
+  ],
+  "@MaterialIconsDuoTone/keyboard_alt": [
+    32,
+    32,
+    61480
+  ],
+  "@MaterialIconsDuoTone/lens_blur": [
+    32,
+    32,
+    61481
+  ],
+  "@MaterialIconsDuoTone/light": [
+    32,
+    32,
+    61482
+  ],
+  "@MaterialIconsDuoTone/living": [
+    32,
+    32,
+    61483
+  ],
+  "@MaterialIconsDuoTone/lte_mobiledata": [
+    32,
+    32,
+    61484
+  ],
+  "@MaterialIconsDuoTone/lte_plus_mobiledata": [
+    32,
+    32,
+    61485
+  ],
+  "@MaterialIconsDuoTone/manage_accounts": [
+    32,
+    32,
+    61486
+  ],
+  "@MaterialIconsDuoTone/manage_search": [
+    32,
+    32,
+    61487
+  ],
+  "@MaterialIconsDuoTone/maps_home_work": [
+    32,
+    32,
+    61488
+  ],
+  "@MaterialIconsDuoTone/media_bluetooth_off": [
+    32,
+    32,
+    61489
+  ],
+  "@MaterialIconsDuoTone/media_bluetooth_on": [
+    32,
+    32,
+    61490
+  ],
+  "@MaterialIconsDuoTone/medication": [
+    32,
+    32,
+    61491
+  ],
+  "@MaterialIconsDuoTone/mobiledata_off": [
+    32,
+    32,
+    61492
+  ],
+  "@MaterialIconsDuoTone/mode_edit_outline": [
+    32,
+    32,
+    61493
+  ],
+  "@MaterialIconsDuoTone/mode_night": [
+    32,
+    32,
+    61494
+  ],
+  "@MaterialIconsDuoTone/mode_standby": [
+    32,
+    32,
+    61495
+  ],
+  "@MaterialIconsDuoTone/money_off_csred": [
+    32,
+    32,
+    61496
+  ],
+  "@MaterialIconsDuoTone/monitor_weight": [
+    32,
+    32,
+    61497
+  ],
+  "@MaterialIconsDuoTone/motion_photos_auto": [
+    32,
+    32,
+    61498
+  ],
+  "@MaterialIconsDuoTone/nearby_error": [
+    32,
+    32,
+    61499
+  ],
+  "@MaterialIconsDuoTone/nearby_off": [
+    32,
+    32,
+    61500
+  ],
+  "@MaterialIconsDuoTone/nightlight": [
+    32,
+    32,
+    61501
+  ],
+  "@MaterialIconsDuoTone/no_accounts": [
+    32,
+    32,
+    61502
+  ],
+  "@MaterialIconsDuoTone/no_encryption_gmailerrorred": [
+    32,
+    32,
+    61503
+  ],
+  "@MaterialIconsDuoTone/note_alt": [
+    32,
+    32,
+    61504
+  ],
+  "@MaterialIconsDuoTone/paid": [
+    32,
+    32,
+    61505
+  ],
+  "@MaterialIconsDuoTone/password": [
+    32,
+    32,
+    61506
+  ],
+  "@MaterialIconsDuoTone/pattern": [
+    32,
+    32,
+    61507
+  ],
+  "@MaterialIconsDuoTone/pie_chart_outline": [
+    32,
+    32,
+    61508
+  ],
+  "@MaterialIconsDuoTone/pin": [
+    32,
+    32,
+    61509
+  ],
+  "@MaterialIconsDuoTone/play_lesson": [
+    32,
+    32,
+    61511
+  ],
+  "@MaterialIconsDuoTone/podcasts": [
+    32,
+    32,
+    61512
+  ],
+  "@MaterialIconsDuoTone/precision_manufacturing": [
+    32,
+    32,
+    61513
+  ],
+  "@MaterialIconsDuoTone/price_change": [
+    32,
+    32,
+    61514
+  ],
+  "@MaterialIconsDuoTone/price_check": [
+    32,
+    32,
+    61515
+  ],
+  "@MaterialIconsDuoTone/quiz": [
+    32,
+    32,
+    61516
+  ],
+  "@MaterialIconsDuoTone/r_mobiledata": [
+    32,
+    32,
+    61517
+  ],
+  "@MaterialIconsDuoTone/radar": [
+    32,
+    32,
+    61518
+  ],
+  "@MaterialIconsDuoTone/raw_off": [
+    32,
+    32,
+    61519
+  ],
+  "@MaterialIconsDuoTone/raw_on": [
+    32,
+    32,
+    61520
+  ],
+  "@MaterialIconsDuoTone/remember_me": [
+    32,
+    32,
+    61521
+  ],
+  "@MaterialIconsDuoTone/report_gmailerrorred": [
+    32,
+    32,
+    61522
+  ],
+  "@MaterialIconsDuoTone/restart_alt": [
+    32,
+    32,
+    61523
+  ],
+  "@MaterialIconsDuoTone/reviews": [
+    32,
+    32,
+    61524
+  ],
+  "@MaterialIconsDuoTone/rsvp": [
+    32,
+    32,
+    61525
+  ],
+  "@MaterialIconsDuoTone/screenshot": [
+    32,
+    32,
+    61526
+  ],
+  "@MaterialIconsDuoTone/sd_card_alert": [
+    32,
+    32,
+    61527
+  ],
+  "@MaterialIconsDuoTone/security_update": [
+    32,
+    32,
+    61528
+  ],
+  "@MaterialIconsDuoTone/security_update_good": [
+    32,
+    32,
+    61529
+  ],
+  "@MaterialIconsDuoTone/security_update_warning": [
+    32,
+    32,
+    61530
+  ],
+  "@MaterialIconsDuoTone/sell": [
+    32,
+    32,
+    61531
+  ],
+  "@MaterialIconsDuoTone/send_to_mobile": [
+    32,
+    32,
+    61532
+  ],
+  "@MaterialIconsDuoTone/settings_accessibility": [
+    32,
+    32,
+    61533
+  ],
+  "@MaterialIconsDuoTone/settings_suggest": [
+    32,
+    32,
+    61534
+  ],
+  "@MaterialIconsDuoTone/share_location": [
+    32,
+    32,
+    61535
+  ],
+  "@MaterialIconsDuoTone/shortcut": [
+    32,
+    32,
+    61536
+  ],
+  "@MaterialIconsDuoTone/shower": [
+    32,
+    32,
+    61537
+  ],
+  "@MaterialIconsDuoTone/signal_cellular_nodata": [
+    32,
+    32,
+    61538
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_bad": [
+    32,
+    32,
+    61539
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_connected_no_internet_4": [
+    32,
+    32,
+    61540
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_4_bar": [
+    32,
+    32,
+    61541
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_connected_no_internet_4": [
+    32,
+    32,
+    61542
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_null": [
+    32,
+    32,
+    61543
+  ],
+  "@MaterialIconsDuoTone/sim_card_download": [
+    32,
+    32,
+    61544
+  ],
+  "@MaterialIconsDuoTone/sip": [
+    32,
+    32,
+    61545
+  ],
+  "@MaterialIconsDuoTone/smart_display": [
+    32,
+    32,
+    61546
+  ],
+  "@MaterialIconsDuoTone/smart_screen": [
+    32,
+    32,
+    61547
+  ],
+  "@MaterialIconsDuoTone/smart_toy": [
+    32,
+    32,
+    61548
+  ],
+  "@MaterialIconsDuoTone/splitscreen": [
+    32,
+    32,
+    61549
+  ],
+  "@MaterialIconsDuoTone/sports_score": [
+    32,
+    32,
+    61550
+  ],
+  "@MaterialIconsDuoTone/star_outline": [
+    32,
+    32,
+    61551
+  ],
+  "@MaterialIconsDuoTone/storm": [
+    32,
+    32,
+    61552
+  ],
+  "@MaterialIconsDuoTone/summarize": [
+    32,
+    32,
+    61553
+  ],
+  "@MaterialIconsDuoTone/system_security_update": [
+    32,
+    32,
+    61554
+  ],
+  "@MaterialIconsDuoTone/system_security_update_good": [
+    32,
+    32,
+    61555
+  ],
+  "@MaterialIconsDuoTone/system_security_update_warning": [
+    32,
+    32,
+    61556
+  ],
+  "@MaterialIconsDuoTone/task": [
+    32,
+    32,
+    61557
+  ],
+  "@MaterialIconsDuoTone/thermostat": [
+    32,
+    32,
+    61558
+  ],
+  "@MaterialIconsDuoTone/thermostat_auto": [
+    32,
+    32,
+    61559
+  ],
+  "@MaterialIconsDuoTone/timer_10_select": [
+    32,
+    32,
+    61562
+  ],
+  "@MaterialIconsDuoTone/timer_3_select": [
+    32,
+    32,
+    61563
+  ],
+  "@MaterialIconsDuoTone/try": [
+    32,
+    32,
+    61564
+  ],
+  "@MaterialIconsDuoTone/tungsten": [
+    32,
+    32,
+    61565
+  ],
+  "@MaterialIconsDuoTone/upcoming": [
+    32,
+    32,
+    61566
+  ],
+  "@MaterialIconsDuoTone/video_camera_back": [
+    32,
+    32,
+    61567
+  ],
+  "@MaterialIconsDuoTone/video_camera_front": [
+    32,
+    32,
+    61568
+  ],
+  "@MaterialIconsDuoTone/video_stable": [
+    32,
+    32,
+    61569
+  ],
+  "@MaterialIconsDuoTone/vrpano": [
+    32,
+    32,
+    61570
+  ],
+  "@MaterialIconsDuoTone/warning_amber": [
+    32,
+    32,
+    61571
+  ],
+  "@MaterialIconsDuoTone/water": [
+    32,
+    32,
+    61572
+  ],
+  "@MaterialIconsDuoTone/wifi_calling_3": [
+    32,
+    32,
+    61573
+  ],
+  "@MaterialIconsDuoTone/wifi_tethering_error_rounded": [
+    32,
+    32,
+    61574
+  ],
+  "@MaterialIconsDuoTone/wifi_tethering_off": [
+    32,
+    32,
+    61575
+  ],
+  "@MaterialIconsDuoTone/window": [
+    32,
+    32,
+    61576
+  ],
+  "@MaterialIconsDuoTone/yard": [
+    32,
+    32,
+    61577
   ],
   "@MaterialIconsDuoTone/do_disturb": [
     32,
@@ -30699,10 +44204,15 @@ qx.$$resources = {
     32,
     61591
   ],
-  "@MaterialIconsDuoTone/paste": [
+  "@MaterialIconsDuoTone/star_border_purple500": [
     32,
     32,
-    61592
+    61593
+  ],
+  "@MaterialIconsDuoTone/star_purple500": [
+    32,
+    32,
+    61594
   ],
   "@MaterialIconsDuoTone/upload": [
     32,
@@ -30809,6 +44319,31 @@ qx.$$resources = {
     32,
     61615
   ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_1_bar": [
+    32,
+    32,
+    61670
+  ],
+  "@MaterialIconsDuoTone/wifi_calling_1": [
+    32,
+    32,
+    61671
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_connected_no_internet_3": [
+    32,
+    32,
+    61672
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_connected_no_internet_1": [
+    32,
+    32,
+    61673
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_3_bar": [
+    32,
+    32,
+    61674
+  ],
   "@MaterialIconsDuoTone/online_prediction": [
     32,
     32,
@@ -30818,6 +44353,56 @@ qx.$$resources = {
     32,
     32,
     61676
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_connected_no_internet_3": [
+    32,
+    32,
+    61677
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_connected_no_internet_1": [
+    32,
+    32,
+    61678
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_not_connected": [
+    32,
+    32,
+    61679
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_2_bar": [
+    32,
+    32,
+    61680
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_connected_no_internet_2": [
+    32,
+    32,
+    61681
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_connected_no_internet_0": [
+    32,
+    32,
+    61682
+  ],
+  "@MaterialIconsDuoTone/batch_prediction": [
+    32,
+    32,
+    61685
+  ],
+  "@MaterialIconsDuoTone/wifi_calling_2": [
+    32,
+    32,
+    61686
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_connected_no_internet_2": [
+    32,
+    32,
+    61687
+  ],
+  "@MaterialIconsDuoTone/signal_wifi_statusbar_connected_no_internet": [
+    32,
+    32,
+    61688
   ],
   "@MaterialIconsDuoTone/pest_control": [
     32,
@@ -31203,6 +44788,271 @@ qx.$$resources = {
     32,
     32,
     61906
+  ],
+  "@MaterialIconsDuoTone/outlet": [
+    32,
+    32,
+    61908
+  ],
+  "@MaterialIconsDuoTone/no_transfer": [
+    32,
+    32,
+    61909
+  ],
+  "@MaterialIconsDuoTone/no_meals": [
+    32,
+    32,
+    61910
+  ],
+  "@MaterialIconsDuoTone/east": [
+    32,
+    32,
+    61919
+  ],
+  "@MaterialIconsDuoTone/north": [
+    32,
+    32,
+    61920
+  ],
+  "@MaterialIconsDuoTone/north_east": [
+    32,
+    32,
+    61921
+  ],
+  "@MaterialIconsDuoTone/north_west": [
+    32,
+    32,
+    61922
+  ],
+  "@MaterialIconsDuoTone/south": [
+    32,
+    32,
+    61923
+  ],
+  "@MaterialIconsDuoTone/south_east": [
+    32,
+    32,
+    61924
+  ],
+  "@MaterialIconsDuoTone/south_west": [
+    32,
+    32,
+    61925
+  ],
+  "@MaterialIconsDuoTone/west": [
+    32,
+    32,
+    61926
+  ],
+  "@MaterialIconsDuoTone/wine_bar": [
+    32,
+    32,
+    61928
+  ],
+  "@MaterialIconsDuoTone/tapas": [
+    32,
+    32,
+    61929
+  ],
+  "@MaterialIconsDuoTone/set_meal": [
+    32,
+    32,
+    61930
+  ],
+  "@MaterialIconsDuoTone/night_shelter": [
+    32,
+    32,
+    61937
+  ],
+  "@MaterialIconsDuoTone/food_bank": [
+    32,
+    32,
+    61938
+  ],
+  "@MaterialIconsDuoTone/sports_bar": [
+    32,
+    32,
+    61939
+  ],
+  "@MaterialIconsDuoTone/bento": [
+    32,
+    32,
+    61940
+  ],
+  "@MaterialIconsDuoTone/rice_bowl": [
+    32,
+    32,
+    61941
+  ],
+  "@MaterialIconsDuoTone/fence": [
+    32,
+    32,
+    61942
+  ],
+  "@MaterialIconsDuoTone/countertops": [
+    32,
+    32,
+    61943
+  ],
+  "@MaterialIconsDuoTone/carpenter": [
+    32,
+    32,
+    61944
+  ],
+  "@MaterialIconsDuoTone/foundation": [
+    32,
+    32,
+    61952
+  ],
+  "@MaterialIconsDuoTone/roofing": [
+    32,
+    32,
+    61953
+  ],
+  "@MaterialIconsDuoTone/house_siding": [
+    32,
+    32,
+    61954
+  ],
+  "@MaterialIconsDuoTone/water_damage": [
+    32,
+    32,
+    61955
+  ],
+  "@MaterialIconsDuoTone/microwave": [
+    32,
+    32,
+    61956
+  ],
+  "@MaterialIconsDuoTone/grass": [
+    32,
+    32,
+    61957
+  ],
+  "@MaterialIconsDuoTone/qr_code_scanner": [
+    32,
+    32,
+    61958
+  ],
+  "@MaterialIconsDuoTone/book_online": [
+    32,
+    32,
+    61975
+  ],
+  "@MaterialIconsDuoTone/masks": [
+    32,
+    32,
+    61976
+  ],
+  "@MaterialIconsDuoTone/elderly": [
+    32,
+    32,
+    61978
+  ],
+  "@MaterialIconsDuoTone/leave_bags_at_home": [
+    32,
+    32,
+    61979
+  ],
+  "@MaterialIconsDuoTone/no_luggage": [
+    32,
+    32,
+    61979
+  ],
+  "@MaterialIconsDuoTone/reduce_capacity": [
+    32,
+    32,
+    61980
+  ],
+  "@MaterialIconsDuoTone/sanitizer": [
+    32,
+    32,
+    61981
+  ],
+  "@MaterialIconsDuoTone/6_ft_apart": [
+    32,
+    32,
+    61982
+  ],
+  "@MaterialIconsDuoTone/clean_hands": [
+    32,
+    32,
+    61983
+  ],
+  "@MaterialIconsDuoTone/sick": [
+    32,
+    32,
+    61984
+  ],
+  "@MaterialIconsDuoTone/coronavirus": [
+    32,
+    32,
+    61985
+  ],
+  "@MaterialIconsDuoTone/follow_the_signs": [
+    32,
+    32,
+    61986
+  ],
+  "@MaterialIconsDuoTone/connect_without_contact": [
+    32,
+    32,
+    61987
+  ],
+  "@MaterialIconsDuoTone/motion_photos_pause": [
+    32,
+    32,
+    61991
+  ],
+  "@MaterialIconsDuoTone/outbond": [
+    32,
+    32,
+    61992
+  ],
+  "@MaterialIconsDuoTone/stacked_line_chart": [
+    32,
+    32,
+    61995
+  ],
+  "@MaterialIconsDuoTone/request_page": [
+    32,
+    32,
+    61996
+  ],
+  "@MaterialIconsDuoTone/published_with_changes": [
+    32,
+    32,
+    62002
+  ],
+  "@MaterialIconsDuoTone/groups": [
+    32,
+    32,
+    62003
+  ],
+  "@MaterialIconsDuoTone/facebook": [
+    32,
+    32,
+    62004
+  ],
+  "@MaterialIconsDuoTone/luggage": [
+    32,
+    32,
+    62005
+  ],
+  "@MaterialIconsDuoTone/unpublished": [
+    32,
+    32,
+    62006
+  ],
+  "@MaterialIconsDuoTone/no_backpack": [
+    32,
+    32,
+    62007
+  ],
+  "@MaterialIconsDuoTone/add_task": [
+    32,
+    32,
+    62010
   ]
 };
 qx.$$translations = {
@@ -31721,11 +45571,11 @@ if (document.addEventListener) {
 })();
 
 qx.$$fontBootstrap={};
-qx.$$fontBootstrap['MaterialIcons']={"size":32,"lineHeight":1,"family":["MaterialIcons"],"sources":[{"family":"MaterialIcons","source":["qx/iconfont/MaterialIcons/materialicons-v50.eot","qx/iconfont/MaterialIcons/materialicons-v50.woff2","qx/iconfont/MaterialIcons/materialicons-v50.woff","qx/iconfont/MaterialIcons/materialicons-v50.ttf"]}],"comparisonString":""};
-qx.$$fontBootstrap['MaterialIconsOutlined']={"size":32,"lineHeight":1,"family":["MaterialIconsOutlined"],"sources":[{"family":"MaterialIconsOutlined","source":["qx/iconfont/MaterialIcons/materialiconsoutlined-v18.eot","qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff2","qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff","qx/iconfont/MaterialIcons/materialiconsoutlined-v18.otf"]}],"comparisonString":""};
-qx.$$fontBootstrap['MaterialIconsRound']={"size":32,"lineHeight":1,"family":["MaterialIconsRound"],"sources":[{"family":"MaterialIconsRound","source":["qx/iconfont/MaterialIcons/materialiconsround-v18.eot","qx/iconfont/MaterialIcons/materialiconsround-v18.woff2","qx/iconfont/MaterialIcons/materialiconsround-v18.woff","qx/iconfont/MaterialIcons/materialiconsround-v18.otf"]}],"comparisonString":""};
-qx.$$fontBootstrap['MaterialIconsSharp']={"size":32,"lineHeight":1,"family":["MaterialIconsSharp"],"sources":[{"family":"MaterialIconsSharp","source":["qx/iconfont/MaterialIcons/materialiconssharp-v19.eot","qx/iconfont/MaterialIcons/materialiconssharp-v19.woff2","qx/iconfont/MaterialIcons/materialiconssharp-v19.woff","qx/iconfont/MaterialIcons/materialiconssharp-v19.otf"]}],"comparisonString":""};
-qx.$$fontBootstrap['MaterialIconsDuoTone']={"size":32,"lineHeight":1,"family":["MaterialIconsDuoTone"],"sources":[{"family":"MaterialIconsDuoTone","source":["qx/iconfont/MaterialIcons/materialiconstwotone-v17.eot","qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff2","qx/iconfont/MaterialIcons/materialiconstwotone-v17.woff","qx/iconfont/MaterialIcons/materialiconstwotone-v17.otf"]}],"comparisonString":""};
+qx.$$fontBootstrap['MaterialIcons']={"size":32,"lineHeight":1,"family":["MaterialIcons"],"sources":[{"family":"MaterialIcons","source":["qx/iconfont/MaterialIcons/materialicons-v70.eot","qx/iconfont/MaterialIcons/materialicons-v70.woff2","qx/iconfont/MaterialIcons/materialicons-v70.woff","qx/iconfont/MaterialIcons/materialicons-v70.ttf"]}],"comparisonString":"e1feef39"};
+qx.$$fontBootstrap['MaterialIconsOutlined']={"size":32,"lineHeight":1,"family":["MaterialIconsOutlined"],"sources":[{"family":"MaterialIconsOutlined","source":["qx/iconfont/MaterialIcons/materialiconsoutlined-v38.eot","qx/iconfont/MaterialIcons/materialiconsoutlined-v38.woff2","qx/iconfont/MaterialIcons/materialiconsoutlined-v38.woff","qx/iconfont/MaterialIcons/materialiconsoutlined-v38.otf"]}],"comparisonString":"e1feef39"};
+qx.$$fontBootstrap['MaterialIconsRound']={"size":32,"lineHeight":1,"family":["MaterialIconsRound"],"sources":[{"family":"MaterialIconsRound","source":["qx/iconfont/MaterialIcons/materialiconsround-v37.eot","qx/iconfont/MaterialIcons/materialiconsround-v37.woff2","qx/iconfont/MaterialIcons/materialiconsround-v37.woff","qx/iconfont/MaterialIcons/materialiconsround-v37.otf"]}],"comparisonString":"e1feef39"};
+qx.$$fontBootstrap['MaterialIconsSharp']={"size":32,"lineHeight":1,"family":["MaterialIconsSharp"],"sources":[{"family":"MaterialIconsSharp","source":["qx/iconfont/MaterialIcons/materialiconssharp-v38.eot","qx/iconfont/MaterialIcons/materialiconssharp-v38.woff2","qx/iconfont/MaterialIcons/materialiconssharp-v38.woff","qx/iconfont/MaterialIcons/materialiconssharp-v38.otf"]}],"comparisonString":"e1feef39"};
+qx.$$fontBootstrap['MaterialIconsDuoTone']={"size":32,"lineHeight":1,"family":["MaterialIconsDuoTone"],"sources":[{"family":"MaterialIconsDuoTone","source":["qx/iconfont/MaterialIcons/materialiconstwotone-v36.eot","qx/iconfont/MaterialIcons/materialiconstwotone-v36.woff2","qx/iconfont/MaterialIcons/materialiconstwotone-v36.woff","qx/iconfont/MaterialIcons/materialiconstwotone-v36.otf"]}],"comparisonString":"e1feef39"};
 qx.$$packageData['2'] = {
   "locales": {},
   "resources": {},

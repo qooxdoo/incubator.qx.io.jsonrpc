@@ -9,7 +9,9 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.bom.client.Css": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
       "qx.bom.Style": {},
       "qx.theme.manager.Color": {}
     },
@@ -187,4 +189,4 @@
   qx.ui.decoration.MBoxShadow.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MBoxShadow.js.map?dt=1608415670852
+//# sourceMappingURL=MBoxShadow.js.map?dt=1625734526164

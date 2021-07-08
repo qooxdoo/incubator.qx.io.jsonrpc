@@ -23,10 +23,12 @@
         "defer": "runtime"
       },
       "qx.bom.client.PhoneGap": {
-        "defer": "runtime"
+        "defer": "load",
+        "require": true
       },
       "qx.bom.client.OperatingSystem": {
-        "defer": "runtime"
+        "defer": "load",
+        "require": true
       },
       "qx.core.Init": {}
     },
@@ -210,7 +212,7 @@
      *****************************************************************************
      */
     members: {
-      __initialized__P_481_0: false,
+      __initialized__P_477_0: false,
       // overridden
       show: function show(properties) {
         if (qx.ui.mobile.page.Page._currentPage) {
@@ -292,7 +294,7 @@
         if (!this.isInitialized()) {
           this._initialize();
 
-          this.__initialized__P_481_0 = true;
+          this.__initialized__P_477_0 = true;
           this.setLifeCycleState("initialize");
         }
       },
@@ -311,7 +313,7 @@
        * @return {Boolean} Whether the page is already initialized or not
        */
       isInitialized: function isInitialized() {
-        return this.__initialized__P_481_0;
+        return this.__initialized__P_477_0;
       },
 
       /**
@@ -438,4 +440,4 @@
   qx.ui.mobile.page.Page.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Page.js.map?dt=1608415677310
+//# sourceMappingURL=Page.js.map?dt=1625734532516

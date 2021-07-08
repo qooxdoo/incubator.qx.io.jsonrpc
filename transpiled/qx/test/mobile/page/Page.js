@@ -58,27 +58,27 @@
         page.destroy();
       },
       testInitialize: function testInitialize() {
-        this.__testEventOnPage__P_262_0("initialize");
+        this.__testEventOnPage__P_259_0("initialize");
       },
       testStart: function testStart() {
-        this.__testEventOnPageAndApplication__P_262_1("start");
+        this.__testEventOnPageAndApplication__P_259_1("start");
       },
       testStop: function testStop() {
-        this.__testEventOnPageAndApplication__P_262_1("stop", function (page) {
+        this.__testEventOnPageAndApplication__P_259_1("stop", function (page) {
           page.initialize();
         });
       },
       testPause: function testPause() {
-        this.__testEventOnPage__P_262_0("pause");
+        this.__testEventOnPage__P_259_0("pause");
       },
       testResume: function testResume() {
-        this.__testEventOnPage__P_262_0("resume");
+        this.__testEventOnPage__P_259_0("resume");
       },
       testWait: function testWait() {
-        this.__testEventOnPage__P_262_0("wait");
+        this.__testEventOnPage__P_259_0("wait");
       },
       testBack: function testBack() {
-        this.__testEventOnPageAndApplication__P_262_1("back");
+        this.__testEventOnPageAndApplication__P_259_1("back");
       },
       testPreventBack: function testPreventBack() {
         var page = new qx.ui.mobile.page.Page();
@@ -100,9 +100,9 @@
         page.destroy();
       },
       testMenu: function testMenu() {
-        this.__testEventOnPage__P_262_0("menu");
+        this.__testEventOnPage__P_259_0("menu");
       },
-      __testEventOnPage__P_262_0: function __testEventOnPage__P_262_0(name) {
+      __testEventOnPage__P_259_0: function __testEventOnPage__P_259_0(name) {
         var page = new qx.ui.mobile.page.Page();
         this.getRoot().add(page);
         var isEventFired = false;
@@ -113,7 +113,7 @@
         this.assertTrue(isEventFired, "The '" + name + "' event is not fired!");
         page.destroy();
       },
-      __testEventOnPageAndApplication__P_262_1: function __testEventOnPageAndApplication__P_262_1(name, beforeCallback) {
+      __testEventOnPageAndApplication__P_259_1: function __testEventOnPageAndApplication__P_259_1(name, beforeCallback) {
         var page = new qx.ui.mobile.page.Page();
         this.getRoot().add(page);
         var eventFiredOnApplication = false;
@@ -141,4 +141,4 @@
   qx.test.mobile.page.Page.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Page.js.map?dt=1608415658967
+//# sourceMappingURL=Page.js.map?dt=1625734514331

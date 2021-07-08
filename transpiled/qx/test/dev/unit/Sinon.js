@@ -20,8 +20,12 @@
       },
       "qx.dev.unit.Sinon": {},
       "qx.core.Object": {},
-      "qx.bom.client.Browser": {},
-      "qx.bom.client.Transport": {}
+      "qx.bom.client.Browser": {
+        "require": true
+      },
+      "qx.bom.client.Transport": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -341,4 +345,4 @@
   qx.test.dev.unit.Sinon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Sinon.js.map?dt=1608415656252
+//# sourceMappingURL=Sinon.js.map?dt=1625734511647

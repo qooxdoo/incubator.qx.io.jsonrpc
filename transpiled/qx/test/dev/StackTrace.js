@@ -13,7 +13,9 @@
         "require": true
       },
       "qx.dev.StackTrace": {},
-      "qx.bom.client.EcmaScript": {},
+      "qx.bom.client.EcmaScript": {
+        "require": true
+      },
       "qx.core.Assert": {},
       "qx.type.BaseError": {},
       "qx.core.GlobalError": {},
@@ -139,4 +141,4 @@
   qx.test.dev.StackTrace.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=StackTrace.js.map?dt=1608415656165
+//# sourceMappingURL=StackTrace.js.map?dt=1625734511565

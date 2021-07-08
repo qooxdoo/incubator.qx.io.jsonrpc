@@ -10,7 +10,8 @@
         "require": true
       },
       "qx.bom.client.EcmaScript": {
-        "defer": "runtime"
+        "defer": "load",
+        "require": true
       }
     },
     "environment": {
@@ -29,10 +30,12 @@
           "className": "qx.bom.client.EcmaScript"
         },
         "ecmascript.string.codePointAt": {
-          "defer": true
+          "defer": true,
+          "className": "qx.bom.client.EcmaScript"
         },
         "ecmascript.string.fromCodePoint": {
-          "defer": true
+          "defer": true,
+          "className": "qx.bom.client.EcmaScript"
         }
       }
     }
@@ -241,4 +244,4 @@
   qx.lang.normalize.String.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=String.js.map?dt=1608415649011
+//# sourceMappingURL=String.js.map?dt=1625734504527

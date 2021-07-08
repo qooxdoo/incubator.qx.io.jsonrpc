@@ -2278,10 +2278,25 @@
             decorator: states.disabled ? "group-item" : "selected"
           };
         }
+      },
+
+      /*
+        --------------------
+        VIRTUAL SELECTBOX 
+        --------------------
+      */
+      "list-search-highlight": {
+        style: function style(states) {
+          return {
+            backgroundColor: 'rgba(255, 251, 0, 0.53)',
+            textDecorationStyle: 'dotted',
+            textDecorationLine: 'underline'
+          };
+        }
       }
     }
   });
   qx.theme.modern.Appearance.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Appearance.js.map?dt=1608415666953
+//# sourceMappingURL=Appearance.js.map?dt=1625734522302

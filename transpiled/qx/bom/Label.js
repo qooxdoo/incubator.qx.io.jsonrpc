@@ -10,8 +10,12 @@
         "require": true
       },
       "qx.dom.Element": {},
-      "qx.bom.client.Css": {},
-      "qx.bom.client.Html": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
+      "qx.bom.client.Html": {
+        "require": true
+      },
       "qx.bom.element.Style": {},
       "qx.core.Assert": {},
       "qx.bom.element.Attribute": {},
@@ -346,4 +350,4 @@
   qx.bom.Label.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Label.js.map?dt=1608415635773
+//# sourceMappingURL=Label.js.map?dt=1625734491003

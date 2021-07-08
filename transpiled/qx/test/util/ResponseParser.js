@@ -39,56 +39,56 @@
       tearDown: function tearDown() {
         this.responseParser = null;
       },
-      __assertParser__P_355_0: function __assertParser__P_355_0(contentType, parser) {
+      __assertParser__P_351_0: function __assertParser__P_351_0(contentType, parser) {
         var msg = "Content type '" + contentType + "' handled incorrectly";
         this.assertEquals(parser, this.responseParser._getParser(contentType), msg);
       },
       "test: getParser() returns undefined for unknown": function testGetParserReturnsUndefinedForUnknown() {
-        this.__assertParser__P_355_0("text/html", undefined);
+        this.__assertParser__P_351_0("text/html", undefined);
 
-        this.__assertParser__P_355_0("application/pdf", undefined);
+        this.__assertParser__P_351_0("application/pdf", undefined);
       },
       "test: getParser() returns undefined for malformed": function testGetParserReturnsUndefinedForMalformed() {
-        this.__assertParser__P_355_0("", undefined);
+        this.__assertParser__P_351_0("", undefined);
 
-        this.__assertParser__P_355_0("json", undefined);
+        this.__assertParser__P_351_0("json", undefined);
 
-        this.__assertParser__P_355_0("text/foo+json", undefined);
+        this.__assertParser__P_351_0("text/foo+json", undefined);
 
-        this.__assertParser__P_355_0("application/foo+jsonish", undefined);
+        this.__assertParser__P_351_0("application/foo+jsonish", undefined);
 
-        this.__assertParser__P_355_0("application/foo+xmlish", undefined);
+        this.__assertParser__P_351_0("application/foo+xmlish", undefined);
       },
       "test: getParser() detects json": function testGetParserDetectsJson() {
         var json = qx.util.ResponseParser.PARSER.json;
 
-        this.__assertParser__P_355_0("application/json", json);
+        this.__assertParser__P_351_0("application/json", json);
 
-        this.__assertParser__P_355_0("application/vnd.affe+json", json);
+        this.__assertParser__P_351_0("application/vnd.affe+json", json);
 
-        this.__assertParser__P_355_0("application/prs.affe+json", json);
+        this.__assertParser__P_351_0("application/prs.affe+json", json);
 
-        this.__assertParser__P_355_0("application/vnd.oneandone.onlineoffice.email+json", json);
+        this.__assertParser__P_351_0("application/vnd.oneandone.onlineoffice.email+json", json);
       },
       "test: getParser() detects xml": function testGetParserDetectsXml() {
         var xml = qx.util.ResponseParser.PARSER.xml;
 
-        this.__assertParser__P_355_0("application/xml", xml);
+        this.__assertParser__P_351_0("application/xml", xml);
 
-        this.__assertParser__P_355_0("application/vnd.oneandone.domains.domain+xml", xml);
+        this.__assertParser__P_351_0("application/vnd.oneandone.domains.domain+xml", xml);
 
-        this.__assertParser__P_355_0("text/xml"); // Deprecated
+        this.__assertParser__P_351_0("text/xml"); // Deprecated
 
       },
       "test: getParser() detects deprecated xml": function testGetParserDetectsDeprecatedXml() {
         var xml = qx.util.ResponseParser.PARSER.xml;
 
-        this.__assertParser__P_355_0("text/xml");
+        this.__assertParser__P_351_0("text/xml");
       },
       "test: getParser() handles character set": function testGetParserHandlesCharacterSet() {
         var json = qx.util.ResponseParser.PARSER.json;
 
-        this.__assertParser__P_355_0("application/json; charset=utf-8", json);
+        this.__assertParser__P_351_0("application/json; charset=utf-8", json);
       },
       "test: setParser() function": function testSetParserFunction() {
         var customParser = function customParser() {};
@@ -133,4 +133,4 @@
   qx.test.util.ResponseParser.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ResponseParser.js.map?dt=1608415665724
+//# sourceMappingURL=ResponseParser.js.map?dt=1625734521006

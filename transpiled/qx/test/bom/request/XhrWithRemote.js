@@ -24,8 +24,12 @@
       },
       "qx.bom.request.Xhr": {},
       "qx.event.Timer": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -800,4 +804,4 @@
   qx.test.bom.request.XhrWithRemote.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=XhrWithRemote.js.map?dt=1608415653425
+//# sourceMappingURL=XhrWithRemote.js.map?dt=1625734508697

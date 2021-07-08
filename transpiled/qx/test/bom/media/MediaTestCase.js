@@ -13,7 +13,9 @@
         "require": true
       },
       "qx.bom.media.Audio": {},
-      "qx.bom.client.Browser": {}
+      "qx.bom.client.Browser": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -232,4 +234,4 @@
   qx.test.bom.media.MediaTestCase.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MediaTestCase.js.map?dt=1608415652989
+//# sourceMappingURL=MediaTestCase.js.map?dt=1625734508273

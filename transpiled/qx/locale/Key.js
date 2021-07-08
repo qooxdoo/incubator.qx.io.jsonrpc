@@ -10,7 +10,9 @@
         "require": true
       },
       "qx.core.Assert": {},
-      "qx.bom.client.OperatingSystem": {},
+      "qx.bom.client.OperatingSystem": {
+        "require": true
+      },
       "qx.locale.Manager": {
         "defer": "runtime"
       }
@@ -157,4 +159,4 @@
   qx.locale.Key.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Key.js.map?dt=1608415649114
+//# sourceMappingURL=Key.js.map?dt=1625734504623

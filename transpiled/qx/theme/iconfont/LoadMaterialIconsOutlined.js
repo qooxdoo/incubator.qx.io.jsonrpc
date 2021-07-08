@@ -32,13 +32,13 @@
    */
 
   /**
-   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.otf)
-   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff2)
-   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.woff)
-   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v18.eot)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v38.otf)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v38.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v38.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialiconsoutlined-v38.eot)
    */
   qx.Class.define("qx.theme.iconfont.LoadMaterialIconsOutlined", {});
   qx.theme.iconfont.LoadMaterialIconsOutlined.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LoadMaterialIconsOutlined.js.map?dt=1608415666444
+//# sourceMappingURL=LoadMaterialIconsOutlined.js.map?dt=1625734521807

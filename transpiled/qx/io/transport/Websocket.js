@@ -42,7 +42,7 @@
       /**
        * @type {WebSocket}
        */
-      __tranportImpl__P_177_0: null,
+      __tranportImpl__P_174_0: null,
 
       /**
        * Returns the object which implements the transport on the
@@ -52,11 +52,11 @@
        * @return {WebSocket}
        */
       getTransportImpl() {
-        if (!this.__tranportImpl__P_177_0) {
-          this.__tranportImpl__P_177_0 = this._createTransportImpl();
+        if (!this.__tranportImpl__P_174_0) {
+          this.__tranportImpl__P_174_0 = this._createTransportImpl();
         }
 
-        return this.__tranportImpl__P_177_0;
+        return this.__tranportImpl__P_174_0;
       },
 
       /**
@@ -115,9 +115,9 @@
     },
 
     destruct() {
-      this.__tranportImpl__P_177_0.close();
+      this.__tranportImpl__P_174_0.close();
 
-      this.__tranportImpl__P_177_0 = null;
+      this.__tranportImpl__P_174_0 = null;
     },
 
     defer() {
@@ -128,4 +128,4 @@
   qx.io.transport.Websocket.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Websocket.js.map?dt=1608415648306
+//# sourceMappingURL=Websocket.js.map?dt=1625734503844

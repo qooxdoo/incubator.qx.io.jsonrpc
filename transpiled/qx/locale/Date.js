@@ -47,7 +47,7 @@
        *
        * @internal
        */
-      __mgr__P_181_0: qx.locale.Manager.getInstance(),
+      __mgr__P_178_0: qx.locale.Manager.getInstance(),
 
       /**
        * Get AM marker for time definitions
@@ -56,7 +56,7 @@
        * @return {String} translated AM marker.
        */
       getAmMarker: function getAmMarker(locale) {
-        return this.__mgr__P_181_0.localize("cldr_am", [], locale);
+        return this.__mgr__P_178_0.localize("cldr_am", [], locale);
       },
 
       /**
@@ -66,7 +66,7 @@
        * @return {String} translated PM marker.
        */
       getPmMarker: function getPmMarker(locale) {
-        return this.__mgr__P_181_0.localize("cldr_pm", [], locale);
+        return this.__mgr__P_178_0.localize("cldr_pm", [], locale);
       },
 
       /**
@@ -92,7 +92,7 @@
 
         for (var i = 0; i < days.length; i++) {
           var key = "cldr_day_" + context + "_" + length + "_" + days[i];
-          names.push(withFallback ? this.__localizeWithFallback__P_181_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_181_0.localize(key, [], locale));
+          names.push(withFallback ? this.__localizeWithFallback__P_178_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_178_0.localize(key, [], locale));
         }
 
         return names;
@@ -121,7 +121,7 @@
         }
         var days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
         var key = "cldr_day_" + context + "_" + length + "_" + days[day];
-        return withFallback ? this.__localizeWithFallback__P_181_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_181_0.localize(key, [], locale);
+        return withFallback ? this.__localizeWithFallback__P_178_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_178_0.localize(key, [], locale);
       },
 
       /**
@@ -146,7 +146,7 @@
 
         for (var i = 0; i < 12; i++) {
           var key = "cldr_month_" + context + "_" + length + "_" + (i + 1);
-          names.push(withFallback ? this.__localizeWithFallback__P_181_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_181_0.localize(key, [], locale));
+          names.push(withFallback ? this.__localizeWithFallback__P_178_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_178_0.localize(key, [], locale));
         }
 
         return names;
@@ -172,7 +172,7 @@
           qx.core.Assert.assertInArray(context, ["format", "stand-alone"]);
         }
         var key = "cldr_month_" + context + "_" + length + "_" + (month + 1);
-        return withFallback ? this.__localizeWithFallback__P_181_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_181_0.localize(key, [], locale);
+        return withFallback ? this.__localizeWithFallback__P_178_1(context, context === 'format' ? 'stand-alone' : 'format', key, locale) : this.__mgr__P_178_0.localize(key, [], locale);
       },
 
       /**
@@ -188,7 +188,7 @@
           qx.core.Assert.assertInArray(size, ["short", "medium", "long", "full"]);
         }
         var key = "cldr_date_format_" + size;
-        return this.__mgr__P_181_0.localize(key, [], locale);
+        return this.__mgr__P_178_0.localize(key, [], locale);
       },
 
       /**
@@ -207,7 +207,7 @@
       getDateTimeFormat: function getDateTimeFormat(canonical, fallback, locale) {
         var key = "cldr_date_time_format_" + canonical;
 
-        var localizedFormat = this.__mgr__P_181_0.localize(key, [], locale);
+        var localizedFormat = this.__mgr__P_178_0.localize(key, [], locale);
 
         if (localizedFormat == key) {
           localizedFormat = fallback;
@@ -230,7 +230,7 @@
         }
         var key = "cldr_time_format_" + size;
 
-        var localizedFormat = this.__mgr__P_181_0.localize(key, [], locale);
+        var localizedFormat = this.__mgr__P_178_0.localize(key, [], locale);
 
         if (localizedFormat != key) {
           return localizedFormat;
@@ -448,7 +448,7 @@
         if (locale) {
           var territory = locale.split("_")[1] || locale;
         } else {
-          territory = this.__mgr__P_181_0.getTerritory() || this.__mgr__P_181_0.getLanguage();
+          territory = this.__mgr__P_178_0.getTerritory() || this.__mgr__P_178_0.getLanguage();
         }
 
         return territory.toUpperCase();
@@ -466,12 +466,12 @@
        * @return {String} localized name for the key
        *
        */
-      __localizeWithFallback__P_181_1: function __localizeWithFallback__P_181_1(context, fallbackContext, key, locale) {
-        var localizedString = this.__mgr__P_181_0.localize(key, [], locale);
+      __localizeWithFallback__P_178_1: function __localizeWithFallback__P_178_1(context, fallbackContext, key, locale) {
+        var localizedString = this.__mgr__P_178_0.localize(key, [], locale);
 
         if (localizedString == key) {
           var newKey = key.replace('_' + context + '_', '_' + fallbackContext + '_');
-          return this.__mgr__P_181_0.localize(newKey, [], locale);
+          return this.__mgr__P_178_0.localize(newKey, [], locale);
         } else {
           return localizedString;
         }
@@ -481,4 +481,4 @@
   qx.locale.Date.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Date.js.map?dt=1608415649079
+//# sourceMappingURL=Date.js.map?dt=1625734504584

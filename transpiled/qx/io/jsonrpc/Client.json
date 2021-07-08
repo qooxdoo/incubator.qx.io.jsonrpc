@@ -133,9 +133,9 @@
       "@param": [
         {
           "name": "@param",
-          "body": "{qx.io.transport.ITransport|String} transportOrUri\n    Transport object, which must implement {@link qx.io.transport.ITransport}\n    or a string URI, which will trigger auto-detection of transport, as long as an\n    appropriate transport has been registered with the static `registerTransport()` function.",
+          "body": "{qx.io.transport.ITransport|String} transportOrUri\n    Transport object, which must implement {@link qx.io.transport.ITransport}\n    or a string URI, which will trigger auto-detection of transport, as long as an\n    appropriate transport has been registered with the static <code>registerTransport()</code> function.",
           "paramName": "transportOrUri",
-          "description": "Transport object, which must implement {@link qx.io.transport.ITransport}\n    or a string URI, which will trigger auto-detection of transport, as long as an\n    appropriate transport has been registered with the static `registerTransport()` function.",
+          "description": "Transport object, which must implement {@link qx.io.transport.ITransport}\n    or a string URI, which will trigger auto-detection of transport, as long as an\n    appropriate transport has been registered with the static <code>registerTransport()</code> function.",
           "type": [
             "qx.io.transport.ITransport",
             "String"

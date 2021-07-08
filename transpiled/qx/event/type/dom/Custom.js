@@ -9,7 +9,9 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.bom.client.Event": {},
+      "qx.bom.client.Event": {
+        "require": true
+      },
       "qx.lang.Object": {}
     },
     "environment": {
@@ -152,4 +154,4 @@
   qx.event.type.dom.Custom.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Custom.js.map?dt=1608415646094
+//# sourceMappingURL=Custom.js.map?dt=1625734501404

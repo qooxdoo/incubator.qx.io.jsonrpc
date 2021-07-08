@@ -108,7 +108,7 @@
       }
 
       this.setParser(parser);
-      this.__requests__P_158_0 = [];
+      this.__requests__P_155_0 = [];
     },
     properties: {
       /**
@@ -131,7 +131,7 @@
       /**
        * A cache of the requests which have been sent out and are still pending
        */
-      __requests__P_158_0: null,
+      __requests__P_155_0: null,
 
       /**
        * If a service name has been configured, prepend it to the method name,
@@ -160,7 +160,7 @@
       _throwTransportException(exception) {
         this.fireDataEvent("error", exception);
 
-        this.__requests__P_158_0.forEach(request => {
+        this.__requests__P_155_0.forEach(request => {
           if (request instanceof qx.io.jsonrpc.protocol.Request) {
             request.handleTransportException(exception);
           }
@@ -189,13 +189,13 @@
         requests.forEach(request => {
           let id = request.getId();
 
-          if (this.__requests__P_158_0[id] !== undefined) {
+          if (this.__requests__P_155_0[id] !== undefined) {
             throw new qx.io.exception.Transport(`Request ID ${id} is already in use`, qx.io.exception.Transport.INVALID_ID, {
               request: message.toObject()
             });
           }
 
-          this.__requests__P_158_0[id] = request;
+          this.__requests__P_155_0[id] = request;
         }); // inform listeners
 
         this.fireDataEvent("outgoingRequest", message); // debugging
@@ -246,7 +246,7 @@
           batch.getBatch().forEach(message => message.setMethod(this._prependMethodPrefix(message.getMethod())));
         }
 
-        this.send(batch);
+        await this.send(batch);
         return await qx.Promise.all(batch.getPromises());
       },
 
@@ -304,7 +304,7 @@
         if (message instanceof qx.io.jsonrpc.protocol.Result || message instanceof qx.io.jsonrpc.protocol.Error) {
           // handle results and errors, which are responses to sent requests
           id = message.getId();
-          request = this.__requests__P_158_0[id];
+          request = this.__requests__P_155_0[id];
 
           if (request === undefined) {
             // no request with this id exists
@@ -336,7 +336,7 @@
         } // mark request as handled (and remove reference so it can be gc'ed)
 
 
-        this.__requests__P_158_0[id] = true;
+        this.__requests__P_155_0[id] = true;
       }
 
     },
@@ -347,4 +347,4 @@
   qx.io.jsonrpc.Client.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Client.js.map?dt=1608415646931
+//# sourceMappingURL=Client.js.map?dt=1625734502452

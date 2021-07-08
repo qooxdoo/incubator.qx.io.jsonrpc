@@ -14,8 +14,12 @@
       },
       "qx.lang.Json": {},
       "qx.dev.unit.RequirementError": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -231,4 +235,4 @@
   qx.test.lang.Json.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Json.js.map?dt=1608415657477
+//# sourceMappingURL=Json.js.map?dt=1625734512851

@@ -51,7 +51,7 @@
      */
     construct: function construct(styles, attributes) {
       qx.html.Element.constructor.call(this, "canvas", styles, attributes);
-      this.__canvas__P_150_0 = document.createElement("canvas");
+      this.__canvas__P_147_0 = document.createElement("canvas");
     },
 
     /*
@@ -60,10 +60,10 @@
     *****************************************************************************
     */
     members: {
-      __canvas__P_150_0: null,
+      __canvas__P_147_0: null,
       // overridden
       _createDomElement: function _createDomElement() {
-        return this.__canvas__P_150_0;
+        return this.__canvas__P_147_0;
       },
 
       /**
@@ -72,7 +72,7 @@
        * @return {Element} The canvas DOM element.
        */
       getCanvas: function getCanvas() {
-        return this.__canvas__P_150_0;
+        return this.__canvas__P_147_0;
       },
 
       /**
@@ -82,7 +82,7 @@
        * @param width {Integer} canvas width
        */
       setWidth: function setWidth(width) {
-        this.__canvas__P_150_0.width = width;
+        this.__canvas__P_147_0.width = width;
       },
 
       /**
@@ -91,7 +91,7 @@
        * @return {Integer} canvas width
        */
       getWidth: function getWidth() {
-        return this.__canvas__P_150_0.width;
+        return this.__canvas__P_147_0.width;
       },
 
       /**
@@ -101,7 +101,7 @@
        * @param height {Integer} canvas height
        */
       setHeight: function setHeight(height) {
-        this.__canvas__P_150_0.height = height;
+        this.__canvas__P_147_0.height = height;
       },
 
       /**
@@ -110,7 +110,7 @@
        * @return {Integer} canvas height
        */
       getHeight: function getHeight() {
-        return this.__canvas__P_150_0.height;
+        return this.__canvas__P_147_0.height;
       },
 
       /**
@@ -121,11 +121,11 @@
        * @return {CanvasRenderingContext2D} The 2D rendering context.
        */
       getContext2d: function getContext2d() {
-        return this.__canvas__P_150_0.getContext("2d");
+        return this.__canvas__P_147_0.getContext("2d");
       }
     }
   });
   qx.html.Canvas.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Canvas.js.map?dt=1608415646224
+//# sourceMappingURL=Canvas.js.map?dt=1625734501545

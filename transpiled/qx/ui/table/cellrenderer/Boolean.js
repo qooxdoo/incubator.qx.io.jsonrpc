@@ -52,7 +52,7 @@
     */
     construct: function construct() {
       qx.ui.table.cellrenderer.AbstractImage.constructor.call(this);
-      this.__aliasManager__P_508_0 = qx.util.AliasManager.getInstance();
+      this.__aliasManager__P_504_0 = qx.util.AliasManager.getInstance();
       this.initIconTrue();
       this.initIconFalse(); // dynamic theme switch
 
@@ -92,9 +92,9 @@
     *****************************************************************************
     */
     members: {
-      __iconUrlTrue__P_508_1: null,
-      __iconUrlFalse__P_508_2: false,
-      __aliasManager__P_508_0: null,
+      __iconUrlTrue__P_504_1: null,
+      __iconUrlFalse__P_504_2: false,
+      __aliasManager__P_504_0: null,
 
       /**
        * Handler for theme changes.
@@ -107,11 +107,11 @@
       },
       // property apply
       _applyIconTrue: function _applyIconTrue(value) {
-        this.__iconUrlTrue__P_508_1 = this.__aliasManager__P_508_0.resolve(value);
+        this.__iconUrlTrue__P_504_1 = this.__aliasManager__P_504_0.resolve(value);
       },
       // property apply
       _applyIconFalse: function _applyIconFalse(value) {
-        this.__iconUrlFalse__P_508_2 = this.__aliasManager__P_508_0.resolve(value);
+        this.__iconUrlFalse__P_504_2 = this.__aliasManager__P_504_0.resolve(value);
       },
       // overridden
       _identifyImage: function _identifyImage(cellInfo) {
@@ -124,10 +124,10 @@
 
         rm = qx.util.ResourceManager.getInstance();
 
-        if (rm.has(this.__iconUrlTrue__P_508_1)) {
-          id = this.__iconUrlTrue__P_508_1;
+        if (rm.has(this.__iconUrlTrue__P_504_1)) {
+          id = this.__iconUrlTrue__P_504_1;
         } else {
-          ids = rm.getIds(this.__iconUrlTrue__P_508_1); // If ID was found, we'll use its first (likely only) element here.
+          ids = rm.getIds(this.__iconUrlTrue__P_504_1); // If ID was found, we'll use its first (likely only) element here.
 
           if (ids) {
             id = ids[0];
@@ -152,11 +152,11 @@
 
         switch (cellInfo.value) {
           case true:
-            imageHints.url = this.__iconUrlTrue__P_508_1;
+            imageHints.url = this.__iconUrlTrue__P_504_1;
             break;
 
           case false:
-            imageHints.url = this.__iconUrlFalse__P_508_2;
+            imageHints.url = this.__iconUrlFalse__P_504_2;
             break;
 
           default:
@@ -174,7 +174,7 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__aliasManager__P_508_0 = null; // remove dynamic theme listener
+      this.__aliasManager__P_504_0 = null; // remove dynamic theme listener
 
       {
         qx.theme.manager.Meta.getInstance().removeListener("changeTheme", this._onChangeTheme, this);
@@ -184,4 +184,4 @@
   qx.ui.table.cellrenderer.Boolean.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Boolean.js.map?dt=1608415678903
+//# sourceMappingURL=Boolean.js.map?dt=1625734534326

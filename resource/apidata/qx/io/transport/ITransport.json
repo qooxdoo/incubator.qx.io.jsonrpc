@@ -29,12 +29,16 @@
   "type": "interface",
   "properties": {
     "endpoint": {
-      "type": "property",
-      "name": "endpoint",
-      "abstract": true,
-      "mixin": false,
-      "access": "public",
-      "event": "changeEndpoint",
+      "location": {
+        "start": {
+          "line": 10,
+          "column": 4
+        },
+        "end": {
+          "line": 12,
+          "column": 5
+        }
+      },
       "jsdoc": {
         "@description": [
           {
@@ -48,7 +52,10 @@
             "body": "{String}"
           }
         ]
-      }
+      },
+      "name": "endpoint",
+      "propertyType": "new",
+      "event": "changeEndpoint"
     }
   },
   "events": {

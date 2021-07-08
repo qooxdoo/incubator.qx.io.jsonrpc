@@ -14,11 +14,17 @@
         "require": true
       },
       "qx.util.ResourceManager": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.event.Timer": {},
       "qx.lang.Array": {},
-      "qx.bom.client.OperatingSystem": {},
+      "qx.bom.client.OperatingSystem": {
+        "require": true
+      },
       "qx.bom.Stylesheet": {},
       "qx.bom.webfonts.Validator": {}
     },
@@ -243,10 +249,10 @@
           qx.lang.Array.removeAt(this.__createdStyles__P_68_0, index);
         }
 
-        if (familyName in this.__validators__P_68_1) {
-          this.__validators__P_68_1[familyName].dispose();
+        if (fontLookupKey in this.__validators__P_68_1) {
+          this.__validators__P_68_1[fontLookupKey].dispose();
 
-          delete this.__validators__P_68_1[familyName];
+          delete this.__validators__P_68_1[fontLookupKey];
         }
       },
 
@@ -368,21 +374,21 @@
           this.__createdStyles__P_68_0.push(fontLookupKey);
         }
 
-        if (!this.__validators__P_68_1[familyName]) {
-          this.__validators__P_68_1[familyName] = new qx.bom.webfonts.Validator(familyName, comparisonString);
+        if (!this.__validators__P_68_1[fontLookupKey]) {
+          this.__validators__P_68_1[fontLookupKey] = new qx.bom.webfonts.Validator(familyName, comparisonString, fontWeight, fontStyle);
 
-          this.__validators__P_68_1[familyName].setTimeout(qx.bom.webfonts.Manager.VALIDATION_TIMEOUT);
+          this.__validators__P_68_1[fontLookupKey].setTimeout(qx.bom.webfonts.Manager.VALIDATION_TIMEOUT);
 
-          this.__validators__P_68_1[familyName].addListenerOnce("changeStatus", this.__onFontChangeStatus__P_68_13, this);
+          this.__validators__P_68_1[fontLookupKey].addListenerOnce("changeStatus", this.__onFontChangeStatus__P_68_13, this);
         }
 
         if (callback) {
           var cbContext = context || window;
 
-          this.__validators__P_68_1[familyName].addListenerOnce("changeStatus", callback, cbContext);
+          this.__validators__P_68_1[fontLookupKey].addListenerOnce("changeStatus", callback, cbContext);
         }
 
-        this.__validators__P_68_1[familyName].validate();
+        this.__validators__P_68_1[fontLookupKey].validate();
       },
 
       /**
@@ -603,4 +609,4 @@
   qx.bom.webfonts.Manager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Manager.js.map?dt=1608415639726
+//# sourceMappingURL=Manager.js.map?dt=1625734494958

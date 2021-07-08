@@ -123,8 +123,8 @@
     *****************************************************************************
     */
     members: {
-      __preSelectedItem__P_412_0: null,
-      __onInputId__P_412_1: null,
+      __preSelectedItem__P_408_0: null,
+      __onInputId__P_408_1: null,
       // property apply
       _applyPlaceholder: function _applyPlaceholder(value, old) {
         this.getChildControl("textfield").setPlaceholder(value);
@@ -258,11 +258,11 @@
        * Apply pre-selected item
        */
       _setPreselectedItem: function _setPreselectedItem() {
-        if (this.__preSelectedItem__P_412_0) {
-          var label = this.__preSelectedItem__P_412_0.getLabel();
+        if (this.__preSelectedItem__P_408_0) {
+          var label = this.__preSelectedItem__P_408_0.getLabel();
 
           if (this.getFormat() != null) {
-            label = this.getFormat().call(this, this.__preSelectedItem__P_412_0);
+            label = this.getFormat().call(this, this.__preSelectedItem__P_408_0);
           } // check for translation
 
 
@@ -271,7 +271,7 @@
           }
 
           this.setValue(label);
-          this.__preSelectedItem__P_412_0 = null;
+          this.__preSelectedItem__P_408_0 = null;
         }
       },
       // overridden
@@ -285,7 +285,7 @@
           var ctx = list.getSelectionContext();
 
           if (ctx == "quick" || ctx == "key") {
-            this.__preSelectedItem__P_412_0 = current[0];
+            this.__preSelectedItem__P_408_0 = current[0];
           } else {
             var label = current[0].getLabel();
 
@@ -299,7 +299,7 @@
             }
 
             this.setValue(label);
-            this.__preSelectedItem__P_412_0 = null;
+            this.__preSelectedItem__P_408_0 = null;
           }
         }
       },
@@ -442,4 +442,4 @@
   qx.ui.form.ComboBox.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ComboBox.js.map?dt=1608415671714
+//# sourceMappingURL=ComboBox.js.map?dt=1625734526872

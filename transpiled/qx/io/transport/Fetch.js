@@ -42,7 +42,7 @@
       /**
        * @type {Object}
        */
-      __tranportImpl__P_176_0: null,
+      __tranportImpl__P_173_0: null,
 
       /**
        * Returns the object which implements the transport on the
@@ -54,11 +54,11 @@
        * @return {Object}
        */
       getTransportImpl() {
-        if (!this.__tranportImpl__P_176_0) {
-          this.__tranportImpl__P_176_0 = this._createTransportImpl();
+        if (!this.__tranportImpl__P_173_0) {
+          this.__tranportImpl__P_173_0 = this._createTransportImpl();
         }
 
-        return this.__tranportImpl__P_176_0;
+        return this.__tranportImpl__P_173_0;
       },
 
       /**
@@ -125,4 +125,4 @@
   qx.io.transport.Fetch.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Fetch.js.map?dt=1608415648243
+//# sourceMappingURL=Fetch.js.map?dt=1625734503783

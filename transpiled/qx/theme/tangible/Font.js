@@ -34,6 +34,7 @@
    * @asset(qx/font/Roboto/*.woff2)
    * @asset(qx/font/Roboto/*.eot)
    * @asset(qx/font/Roboto/*.ttf)
+   * @asset(qx/iconfont/MaterialIcons/*)
    */
 
   /**
@@ -92,4 +93,4 @@
   qx.theme.tangible.Font.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Font.js.map?dt=1608415667686
+//# sourceMappingURL=Font.js.map?dt=1625734522996

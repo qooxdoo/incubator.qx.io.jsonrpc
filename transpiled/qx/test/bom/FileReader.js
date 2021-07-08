@@ -15,7 +15,9 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.bom.client.Html": {}
+      "qx.bom.client.Html": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -69,4 +71,4 @@
   qx.test.bom.FileReader.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=FileReader.js.map?dt=1608415652099
+//# sourceMappingURL=FileReader.js.map?dt=1625734507425

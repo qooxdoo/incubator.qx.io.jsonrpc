@@ -2,6 +2,7 @@
   var $$dbClassInfo = {
     "dependsOn": {
       "qx.util.ColorUtil": {},
+      "qx.theme.manager.Color": {},
       "qx.Theme": {
         "usage": "dynamic",
         "require": true
@@ -75,7 +76,7 @@
           primary: "rgba(0,0,0,0.87)",
           secondary: "rgba(0,0,0,0.54)",
           hint: "rgba(0,0,0,0.38)",
-          disabled: "rgba(0,0,0,0,0.38)",
+          disabled: "rgba(0,0,0,0.38)",
           icon: "rgba(0,0,0,0.38)"
         },
         light: {
@@ -141,9 +142,16 @@
     },
     setAlpha: function setAlpha(key) {
       var splitKey = key.split('-');
+
+      if (splitKey.length == 4) {
+        splitKey[1] = splitKey[0] + "-" + splitKey[1];
+        splitKey.shift();
+      }
+
       var baseColor = splitKey[0];
       var alphaPercent = splitKey[2];
-      var rgba = qx.util.ColorUtil.stringToRgb(baseColor);
+      var actualColor = qx.theme.manager.Color.getInstance().resolve(baseColor);
+      var rgba = qx.util.ColorUtil.stringToRgb(actualColor);
       rgba[3] = alphaPercent / 100;
       return qx.util.ColorUtil.rgbToRgbString(rgba);
     }
@@ -209,4 +217,4 @@
   qx.theme.tangible.ColorEngine.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=ColorEngine.js.map?dt=1608415667593
+//# sourceMappingURL=ColorEngine.js.map?dt=1625734522906

@@ -16,7 +16,9 @@
       "qx.ui.virtual.core.IHtmlCellProvider": {
         "construct": true
       },
-      "qx.bom.client.Css": {}
+      "qx.bom.client.Css": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -141,4 +143,4 @@
   qx.ui.virtual.layer.HtmlCell.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=HtmlCell.js.map?dt=1608415682613
+//# sourceMappingURL=HtmlCell.js.map?dt=1625734538044

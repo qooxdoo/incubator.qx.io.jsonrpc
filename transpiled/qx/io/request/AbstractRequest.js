@@ -21,6 +21,9 @@
       },
       "qx.lang.Type": {},
       "qx.Bootstrap": {},
+      "qx.bom.request.Script": {
+        "require": true
+      },
       "qx.Promise": {},
       "qx.lang.String": {},
       "qx.type.BaseError": {},
@@ -35,7 +38,9 @@
     "environment": {
       "provided": [],
       "required": {
-        "qx.debug.io": {}
+        "qx.debug.io": {
+          "className": "qx.bom.request.Script"
+        }
       }
     }
   };
@@ -90,24 +95,24 @@
         this.setUrl(url);
       }
 
-      this.__requestHeaders__P_171_0 = {};
+      this.__requestHeaders__P_168_0 = {};
 
       var transport = this._transport = this._createTransport();
 
       this._setPhase("unsent");
 
-      this.__onReadyStateChangeBound__P_171_1 = qx.lang.Function.bind(this._onReadyStateChange, this);
-      this.__onLoadBound__P_171_2 = qx.lang.Function.bind(this._onLoad, this);
-      this.__onLoadEndBound__P_171_3 = qx.lang.Function.bind(this._onLoadEnd, this);
-      this.__onAbortBound__P_171_4 = qx.lang.Function.bind(this._onAbort, this);
-      this.__onTimeoutBound__P_171_5 = qx.lang.Function.bind(this._onTimeout, this);
-      this.__onErrorBound__P_171_6 = qx.lang.Function.bind(this._onError, this);
-      transport.onreadystatechange = this.__onReadyStateChangeBound__P_171_1;
-      transport.onload = this.__onLoadBound__P_171_2;
-      transport.onloadend = this.__onLoadEndBound__P_171_3;
-      transport.onabort = this.__onAbortBound__P_171_4;
-      transport.ontimeout = this.__onTimeoutBound__P_171_5;
-      transport.onerror = this.__onErrorBound__P_171_6;
+      this.__onReadyStateChangeBound__P_168_1 = qx.lang.Function.bind(this._onReadyStateChange, this);
+      this.__onLoadBound__P_168_2 = qx.lang.Function.bind(this._onLoad, this);
+      this.__onLoadEndBound__P_168_3 = qx.lang.Function.bind(this._onLoadEnd, this);
+      this.__onAbortBound__P_168_4 = qx.lang.Function.bind(this._onAbort, this);
+      this.__onTimeoutBound__P_168_5 = qx.lang.Function.bind(this._onTimeout, this);
+      this.__onErrorBound__P_168_6 = qx.lang.Function.bind(this._onError, this);
+      transport.onreadystatechange = this.__onReadyStateChangeBound__P_168_1;
+      transport.onload = this.__onLoadBound__P_168_2;
+      transport.onloadend = this.__onLoadEndBound__P_168_3;
+      transport.onabort = this.__onAbortBound__P_168_4;
+      transport.ontimeout = this.__onTimeoutBound__P_168_5;
+      transport.onerror = this.__onErrorBound__P_168_6;
     },
     events: {
       /**
@@ -257,37 +262,37 @@
       /**
        * Bound handlers.
        */
-      __onReadyStateChangeBound__P_171_1: null,
-      __onLoadBound__P_171_2: null,
-      __onLoadEndBound__P_171_3: null,
-      __onAbortBound__P_171_4: null,
-      __onTimeoutBound__P_171_5: null,
-      __onErrorBound__P_171_6: null,
+      __onReadyStateChangeBound__P_168_1: null,
+      __onLoadBound__P_168_2: null,
+      __onLoadEndBound__P_168_3: null,
+      __onAbortBound__P_168_4: null,
+      __onTimeoutBound__P_168_5: null,
+      __onErrorBound__P_168_6: null,
 
       /**
        * Parsed response.
        */
-      __response__P_171_7: null,
+      __response__P_168_7: null,
 
       /**
        * Abort flag.
        */
-      __abort__P_171_8: null,
+      __abort__P_168_8: null,
 
       /**
        * Current phase.
        */
-      __phase__P_171_9: null,
+      __phase__P_168_9: null,
 
       /**
        * Request headers.
        */
-      __requestHeaders__P_171_0: null,
+      __requestHeaders__P_168_0: null,
 
       /**
        * Request headers (deprecated).
        */
-      __requestHeadersDeprecated__P_171_10: null,
+      __requestHeadersDeprecated__P_168_10: null,
 
       /**
        * Holds transport.
@@ -519,9 +524,9 @@
           this.debug("Abort request");
         }
 
-        this.__abort__P_171_8 = true; // Update phase to "abort" before user handler are invoked [BUG #5485]
+        this.__abort__P_168_8 = true; // Update phase to "abort" before user handler are invoked [BUG #5485]
 
-        this.__phase__P_171_9 = "abort";
+        this.__phase__P_168_9 = "abort";
 
         this._transport.abort();
       },
@@ -557,11 +562,11 @@
 
         qx.lang.Object.mergeWith(requestHeaders, this._getConfiguredRequestHeaders()); // Authentication delegate
 
-        qx.lang.Object.mergeWith(requestHeaders, this.__getAuthRequestHeaders__P_171_11()); // User-defined, requestHeaders property (deprecated)
+        qx.lang.Object.mergeWith(requestHeaders, this.__getAuthRequestHeaders__P_168_11()); // User-defined, requestHeaders property (deprecated)
 
-        qx.lang.Object.mergeWith(requestHeaders, this.__requestHeadersDeprecated__P_171_10); // User-defined
+        qx.lang.Object.mergeWith(requestHeaders, this.__requestHeadersDeprecated__P_168_10); // User-defined
 
-        qx.lang.Object.mergeWith(requestHeaders, this.__requestHeaders__P_171_0);
+        qx.lang.Object.mergeWith(requestHeaders, this.__requestHeaders__P_168_0);
         return requestHeaders;
       },
 
@@ -570,7 +575,7 @@
       *
       * @return {Map} Authentication related request headers.
       */
-      __getAuthRequestHeaders__P_171_11: function __getAuthRequestHeaders__P_171_11() {
+      __getAuthRequestHeaders__P_168_11: function __getAuthRequestHeaders__P_168_11() {
         var auth = this.getAuthentication(),
             headers = {};
 
@@ -591,7 +596,7 @@
        * @param value {String} Value of the header.
        */
       setRequestHeader: function setRequestHeader(key, value) {
-        this.__requestHeaders__P_171_0[key] = value;
+        this.__requestHeaders__P_168_0[key] = value;
       },
 
       /**
@@ -601,7 +606,7 @@
        * @return {String} The value of the header.
        */
       getRequestHeader: function getRequestHeader(key) {
-        return this.__requestHeaders__P_171_0[key];
+        return this.__requestHeaders__P_168_0[key];
       },
 
       /**
@@ -612,8 +617,8 @@
        * @param key {String} Key of the header.
        */
       removeRequestHeader: function removeRequestHeader(key) {
-        if (this.__requestHeaders__P_171_0[key]) {
-          delete this.__requestHeaders__P_171_0[key];
+        if (this.__requestHeaders__P_168_0[key]) {
+          delete this.__requestHeaders__P_168_0[key];
         }
       },
 
@@ -684,7 +689,7 @@
        *
        */
       getPhase: function getPhase() {
-        return this.__phase__P_171_9;
+        return this.__phase__P_168_9;
       },
 
       /**
@@ -775,7 +780,7 @@
        * @return {String} The parsed response of the request.
        */
       getResponse: function getResponse() {
-        return this.__response__P_171_7;
+        return this.__response__P_168_7;
       },
 
       /**
@@ -786,9 +791,9 @@
       _setResponse: function _setResponse(response) {
         var oldResponse = response;
 
-        if (this.__response__P_171_7 !== response) {
-          this.__response__P_171_7 = response;
-          this.fireEvent("changeResponse", qx.event.type.Data, [this.__response__P_171_7, oldResponse]);
+        if (this.__response__P_168_7 !== response) {
+          this.__response__P_168_7 = response;
+          this.fireEvent("changeResponse", qx.event.type.Data, [this.__response__P_168_7, oldResponse]);
         }
       },
 
@@ -813,7 +818,7 @@
         //
         // Not fire custom event "loading" (or "success", when cached).
 
-        if (this.__abort__P_171_8) {
+        if (this.__abort__P_168_8) {
           return;
         }
 
@@ -822,14 +827,14 @@
         }
 
         if (this.isDone()) {
-          this.__onReadyStateDone__P_171_12();
+          this.__onReadyStateDone__P_168_12();
         }
       },
 
       /**
        * Called internally when readyState is DONE.
        */
-      __onReadyStateDone__P_171_12: function __onReadyStateDone__P_171_12() {
+      __onReadyStateDone__P_168_12: function __onReadyStateDone__P_168_12() {
         if (qx.core.Environment.get("qx.debug.io")) {
           this.debug("Request completed with HTTP status: " + this.getStatus());
         } // Event "load" fired in onLoad
@@ -936,12 +941,12 @@
        * @param phase {String} The phase to set.
        */
       _setPhase: function _setPhase(phase) {
-        var previousPhase = this.__phase__P_171_9;
+        var previousPhase = this.__phase__P_168_9;
         {
           qx.core.Assert.assertString(phase);
           qx.core.Assert.assertMatch(phase, /^(unsent)|(opened)|(sent)|(loading)|(load)|(success)|(abort)|(timeout)|(statusError)$/);
         }
-        this.__phase__P_171_9 = phase;
+        this.__phase__P_168_9 = phase;
         this.fireDataEvent("changePhase", phase, previousPhase);
       },
 
@@ -993,10 +998,10 @@
         }, 0);
       }
 
-      this.__response__P_171_7 = null;
+      this.__response__P_168_7 = null;
     }
   });
   qx.io.request.AbstractRequest.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AbstractRequest.js.map?dt=1608415647975
+//# sourceMappingURL=AbstractRequest.js.map?dt=1625734503506

@@ -19,7 +19,9 @@
       "qx.util.ResourceManager": {
         "construct": true
       },
-      "qx.bom.client.Css": {}
+      "qx.bom.client.Css": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -66,13 +68,13 @@
       var aliasManager = qx.util.AliasManager.getInstance();
       var resourceManager = qx.util.ResourceManager.getInstance();
       var blankImg = aliasManager.resolve("qx/static/blank.gif");
-      this.__imageBlank__P_493_0 = resourceManager.toUri(blankImg);
+      this.__imageBlank__P_489_0 = resourceManager.toUri(blankImg);
     },
     members: {
       /**
        * A blank image for use as a spacer in place of another image
        */
-      __imageBlank__P_493_0: null,
+      __imageBlank__P_489_0: null,
 
       /**
        * Retrieve the URI for a blank image
@@ -81,7 +83,7 @@
        *   The URI of the blank image.
        */
       getBlankImage: function getBlankImage() {
-        return this.__imageBlank__P_493_0;
+        return this.__imageBlank__P_489_0;
       },
 
       /**
@@ -145,13 +147,13 @@
       _getContentHtml: function _getContentHtml(cellInfo) {
         var html = [];
 
-        var imageData = this.__getImageData__P_493_1(cellInfo); // Start the image tag
+        var imageData = this.__getImageData__P_489_1(cellInfo); // Start the image tag
 
 
         html.push('<img '); // Add magic to make png images work in IE
 
         if (qx.core.Environment.get("css.alphaimageloaderneeded") && /\.png$/i.test(imageData.url)) {
-          html.push('src="', this.__imageBlank__P_493_0, '" style="filter:', "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='", imageData.url, "',sizingMethod='scale')", '" ');
+          html.push('src="', this.__imageBlank__P_489_0, '" style="filter:', "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='", imageData.url, "',sizingMethod='scale')", '" ');
         } else {
           html.push('src="', imageData.url, '" ');
         } // If image width is specified...
@@ -205,7 +207,7 @@
        * @return {Map}
        *   See {@link #_identifyImage}
        */
-      __getImageData__P_493_1: function __getImageData__P_493_1(cellInfo) {
+      __getImageData__P_489_1: function __getImageData__P_489_1(cellInfo) {
         // Query the subclass about image and tooltip
         var imageData = this._identifyImage(cellInfo); // If subclass refuses to give map, construct it
 
@@ -219,7 +221,7 @@
 
 
         if (imageData.url == null) {
-          imageData.url = this.__imageBlank__P_493_0;
+          imageData.url = this.__imageBlank__P_489_0;
         }
 
         return imageData;
@@ -229,4 +231,4 @@
   qx.ui.progressive.renderer.table.cell.Icon.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Icon.js.map?dt=1608415677889
+//# sourceMappingURL=Icon.js.map?dt=1625734533259

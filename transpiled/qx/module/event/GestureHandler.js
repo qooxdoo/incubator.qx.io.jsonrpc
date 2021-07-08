@@ -16,7 +16,9 @@
         "usage": "dynamic",
         "require": true
       },
-      "qx.bom.client.Event": {},
+      "qx.bom.client.Event": {
+        "require": true
+      },
       "qx.event.Emitter": {},
       "qx.event.handler.GestureCore": {},
       "qxWeb": {
@@ -115,4 +117,4 @@
   qx.module.event.GestureHandler.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GestureHandler.js.map?dt=1608415650537
+//# sourceMappingURL=GestureHandler.js.map?dt=1625734506059

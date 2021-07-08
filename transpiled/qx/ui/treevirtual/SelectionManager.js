@@ -50,10 +50,10 @@
      */
     construct: function construct(table) {
       qx.ui.table.selection.Manager.constructor.call(this);
-      this.__table__P_535_0 = table;
+      this.__table__P_531_0 = table;
     },
     members: {
-      __table__P_535_0: null,
+      __table__P_531_0: null,
 
       /**
        * Getter for the table being managed
@@ -62,7 +62,7 @@
        *   Table being managed
        */
       getTable: function getTable() {
-        return this.__table__P_535_0;
+        return this.__table__P_531_0;
       },
 
       /**
@@ -169,7 +169,7 @@
         } // Call our local method to toggle the open/close state, if necessary
 
 
-        var bNoSelect = handleButtonClick(this.__table__P_535_0, index, evt); // If we haven't been told not to do the selection...
+        var bNoSelect = handleButtonClick(this.__table__P_531_0, index, evt); // If we haven't been told not to do the selection...
 
         if (!bNoSelect) {
           // then call the superclass to handle it.
@@ -205,10 +205,10 @@
       }
     },
     destruct: function destruct() {
-      this.__table__P_535_0 = null;
+      this.__table__P_531_0 = null;
     }
   });
   qx.ui.treevirtual.SelectionManager.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=SelectionManager.js.map?dt=1608415681481
+//# sourceMappingURL=SelectionManager.js.map?dt=1625734536920

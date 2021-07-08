@@ -16,7 +16,9 @@
       "qx.event.Emitter": {
         "require": true
       },
-      "qx.bom.client.CssAnimation": {}
+      "qx.bom.client.CssAnimation": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -236,4 +238,4 @@
   qx.bom.AnimationFrame.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=AnimationFrame.js.map?dt=1608415634931
+//# sourceMappingURL=AnimationFrame.js.map?dt=1625734490142

@@ -45,7 +45,11 @@
         },
         {
           "name": "@asset",
-          "body": "qx/static/drawer.png)\n <code>asset(qx/static/drawer</code>2x.png"
+          "body": "qx/static/drawer.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/static/drawer@2x.png"
         }
       ]
     }

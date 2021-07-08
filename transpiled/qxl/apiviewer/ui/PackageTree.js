@@ -52,12 +52,12 @@
       qx.ui.tree.Tree.constructor.call(this, "Documentation");
       this.setDecorator(null);
       this.setPadding(0);
-      this.__root__P_595_0 = new qx.ui.tree.TreeFolder("Packages");
+      this.__root__P_591_0 = new qx.ui.tree.TreeFolder("Packages");
 
-      this.__root__P_595_0.setOpen(true);
+      this.__root__P_591_0.setOpen(true);
 
-      this.setRoot(this.__root__P_595_0);
-      this.setSelection([this.__root__P_595_0]); // Workaround: Since navigating in qx.ui.tree.Tree doesn't work, we've to
+      this.setRoot(this.__root__P_591_0);
+      this.setSelection([this.__root__P_591_0]); // Workaround: Since navigating in qx.ui.tree.Tree doesn't work, we've to
       // maintain a hash that keeps the tree nodes for class names
 
       this._classTreeNodeHash = {};
@@ -69,7 +69,7 @@
     * ****************************************************************************
     */
     members: {
-      __root__P_595_0: null,
+      __root__P_591_0: null,
 
       /**
        * Updates the tree on the left.
@@ -82,7 +82,7 @@
       setTreeData: function setTreeData(docTree) {
         this._docTree = docTree; // Fill the packages tree
 
-        this.__fillPackageNode__P_595_1(this.__root__P_595_0, docTree, 0);
+        this.__fillPackageNode__P_591_1(this.__root__P_591_0, docTree, 0);
 
         if (this._wantedClassName) {
           this.selectTreeNodeByClassName(this._wantedClassName);
@@ -106,10 +106,10 @@
         }
 
         if (!className) {
-          this.__root__P_595_0.setOpen(true);
+          this.__root__P_591_0.setOpen(true);
 
-          this.setSelection([this.__root__P_595_0]);
-          this.scrollChildIntoView(this.__root__P_595_0);
+          this.setSelection([this.__root__P_591_0]);
+          this.scrollChildIntoView(this.__root__P_591_0);
           return qx.Promise.resolve(true);
         }
 
@@ -164,13 +164,13 @@
        *          {var} current depth in the tree
        * @return {Function} the opener callback function
        */
-      __getPackageNodeOpener__P_595_2: function __getPackageNodeOpener__P_595_2(packageTreeNode, packageDoc, depth) {
+      __getPackageNodeOpener__P_591_2: function __getPackageNodeOpener__P_591_2(packageTreeNode, packageDoc, depth) {
         var self = this;
         return function () {
           if (!packageTreeNode.loaded) {
             packageTreeNode.loaded = true;
 
-            self.__fillPackageNode__P_595_1(packageTreeNode, packageDoc, depth + 1);
+            self.__fillPackageNode__P_591_1(packageTreeNode, packageDoc, depth + 1);
 
             packageTreeNode.setOpenSymbolMode("always");
           }
@@ -188,7 +188,7 @@
        * @param depth
        *          {var} current depth in the tree
        */
-      __fillPackageNode__P_595_1: function __fillPackageNode__P_595_1(treeNode, docNode, depth) {
+      __fillPackageNode__P_591_1: function __fillPackageNode__P_591_1(treeNode, docNode, depth) {
         var PackageTree = qxl.apiviewer.ui.PackageTree;
         var packagesDoc = docNode.getPackages();
         packagesDoc.sort((l, r) => {
@@ -205,7 +205,7 @@
           packageTreeNode.setUserData("nodeName", packageDoc.getFullName());
           treeNode.add(packageTreeNode); // defer adding of child nodes
 
-          packageTreeNode.addListener("changeOpen", this.__getPackageNodeOpener__P_595_2(packageTreeNode, packageDoc, depth + 1), this); // Register the tree node
+          packageTreeNode.addListener("changeOpen", this.__getPackageNodeOpener__P_591_2(packageTreeNode, packageDoc, depth + 1), this); // Register the tree node
 
           this._classTreeNodeHash[packageDoc.getFullName()] = packageTreeNode;
           return packageDoc.load();
@@ -242,10 +242,10 @@
     destruct: function destruct() {
       this._docTree = this._classTreeNodeHash = null;
 
-      this._disposeObjects("__root__P_595_0");
+      this._disposeObjects("__root__P_591_0");
     }
   });
   qxl.apiviewer.ui.PackageTree.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=PackageTree.js.map?dt=1608415686294
+//# sourceMappingURL=PackageTree.js.map?dt=1625734541545

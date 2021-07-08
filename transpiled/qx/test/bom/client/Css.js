@@ -12,7 +12,9 @@
       "qx.dev.unit.TestCase": {
         "require": true
       },
-      "qx.bom.client.Css": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
       "qx.dev.unit.RequirementError": {}
     },
     "environment": {
@@ -70,4 +72,4 @@
   qx.test.bom.client.Css.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Css.js.map?dt=1608415652614
+//# sourceMappingURL=Css.js.map?dt=1625734507919

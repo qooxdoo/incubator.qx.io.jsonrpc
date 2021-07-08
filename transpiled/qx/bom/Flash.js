@@ -15,10 +15,12 @@
       "qx.log.Logger": {},
       "qx.lang.Object": {},
       "qx.bom.client.Engine": {
-        "defer": "runtime",
+        "defer": "load",
         "require": true
       },
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.bom.Event": {
         "defer": "runtime"
       },
@@ -370,4 +372,4 @@
   qx.bom.Flash.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Flash.js.map?dt=1608415635291
+//# sourceMappingURL=Flash.js.map?dt=1625734490509

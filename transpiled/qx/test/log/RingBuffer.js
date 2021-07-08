@@ -35,10 +35,10 @@
     extend: qx.dev.unit.TestCase,
     members: {
       setUp: function setUp() {
-        this.__initialLogLevel__P_256_0 = qx.log.Logger.getLevel();
+        this.__initialLogLevel__P_253_0 = qx.log.Logger.getLevel();
       },
       tearDown: function tearDown() {
-        qx.log.Logger.setLevel(this.__initialLogLevel__P_256_0);
+        qx.log.Logger.setLevel(this.__initialLogLevel__P_253_0);
 
         if (this.appender) {
           qx.log.Logger.unregister(this.appender);
@@ -99,4 +99,4 @@
   qx.test.log.RingBuffer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RingBuffer.js.map?dt=1608415658031
+//# sourceMappingURL=RingBuffer.js.map?dt=1625734513414

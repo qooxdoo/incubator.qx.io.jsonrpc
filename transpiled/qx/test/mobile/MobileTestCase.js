@@ -15,7 +15,9 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.dev.unit.RequirementError": {},
       "qx.core.Init": {},
       "qx.ui.mobile.core.Root": {},
@@ -114,4 +116,4 @@
   qx.test.mobile.MobileTestCase.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MobileTestCase.js.map?dt=1608415658158
+//# sourceMappingURL=MobileTestCase.js.map?dt=1625734513539

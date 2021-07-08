@@ -1,6 +1,9 @@
 (function () {
   var $$dbClassInfo = {
     "dependsOn": {
+      "qx.bom.client.Transport": {
+        "require": true
+      },
       "qx.core.Environment": {
         "defer": "load",
         "usage": "dynamic",
@@ -19,9 +22,6 @@
       },
       "qx.event.Timer": {
         "construct": true
-      },
-      "qx.bom.client.Transport": {
-        "require": true
       },
       "qx.io.remote.Exchange": {},
       "qx.lang.Array": {},
@@ -71,6 +71,7 @@
    * NOTE: Instances of this class must be disposed of after use
    *
    * @internal
+   * @require(qx.bom.client.Transport)
    */
   qx.Class.define("qx.io.remote.RequestQueue", {
     type: "singleton",
@@ -84,13 +85,13 @@
     */
     construct: function construct() {
       qx.core.Object.constructor.call(this);
-      this.__queue__P_165_0 = [];
-      this.__active__P_165_1 = [];
-      this.__totalRequests__P_165_2 = 0; // timeout handling
+      this.__queue__P_162_0 = [];
+      this.__active__P_162_1 = [];
+      this.__totalRequests__P_162_2 = 0; // timeout handling
 
-      this.__timer__P_165_3 = new qx.event.Timer(500);
+      this.__timer__P_162_3 = new qx.event.Timer(500);
 
-      this.__timer__P_165_3.addListener("interval", this._oninterval, this);
+      this.__timer__P_162_3.addListener("interval", this._oninterval, this);
     },
 
     /*
@@ -139,10 +140,10 @@
     *****************************************************************************
     */
     members: {
-      __queue__P_165_0: null,
-      __active__P_165_1: null,
-      __totalRequests__P_165_2: null,
-      __timer__P_165_3: null,
+      __queue__P_162_0: null,
+      __active__P_162_1: null,
+      __totalRequests__P_162_2: null,
+      __timer__P_162_3: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -156,7 +157,7 @@
        * @return {qx.io.remote.Request[]} The list of queued requests
        */
       getRequestQueue: function getRequestQueue() {
-        return this.__queue__P_165_0;
+        return this.__queue__P_162_0;
       },
 
       /**
@@ -167,7 +168,7 @@
        *   wrapped in an instance of {@link qx.io.remote.Exchange}
        */
       getActiveQueue: function getActiveQueue() {
-        return this.__active__P_165_1;
+        return this.__active__P_162_1;
       },
 
       /**
@@ -177,7 +178,7 @@
         {
           if (qx.core.Environment.get("qx.debug.io.remote")) {
             // Debug output
-            var vText = this.__active__P_165_1.length + "/" + (this.__queue__P_165_0.length + this.__active__P_165_1.length);
+            var vText = this.__active__P_162_1.length + "/" + (this.__queue__P_162_0.length + this.__active__P_162_1.length);
             this.debug("Progress: " + vText);
             window.status = "Request-Queue Progress: " + vText;
           }
@@ -195,8 +196,8 @@
         this._debug(); // Check queues and stop timer if not needed anymore
 
 
-        if (this.__active__P_165_1.length == 0 && this.__queue__P_165_0.length == 0) {
-          this.__timer__P_165_3.stop();
+        if (this.__active__P_162_1.length == 0 && this.__queue__P_162_0.length == 0) {
+          this.__timer__P_162_3.stop();
         } // Checking if enabled
 
 
@@ -205,22 +206,22 @@
         } // Checking active queue fill
 
 
-        if (this.__queue__P_165_0.length == 0 || this.__queue__P_165_0[0].isAsynchronous() && this.__active__P_165_1.length >= this.getMaxConcurrentRequests()) {
+        if (this.__queue__P_162_0.length == 0 || this.__queue__P_162_0[0].isAsynchronous() && this.__active__P_162_1.length >= this.getMaxConcurrentRequests()) {
           return;
         } // Checking number of total requests
 
 
-        if (this.getMaxTotalRequests() != null && this.__totalRequests__P_165_2 >= this.getMaxTotalRequests()) {
+        if (this.getMaxTotalRequests() != null && this.__totalRequests__P_162_2 >= this.getMaxTotalRequests()) {
           return;
         }
 
-        var vRequest = this.__queue__P_165_0.shift();
+        var vRequest = this.__queue__P_162_0.shift();
 
         var vTransport = new qx.io.remote.Exchange(vRequest); // Increment counter
 
-        this.__totalRequests__P_165_2++; // Add to active queue
+        this.__totalRequests__P_162_2++; // Add to active queue
 
-        this.__active__P_165_1.push(vTransport); // Debug output
+        this.__active__P_162_1.push(vTransport); // Debug output
 
 
         this._debug(); // Establish event connection between qx.io.remote.Exchange and me.
@@ -237,7 +238,7 @@
 
         vTransport.send(); // Retry
 
-        if (this.__queue__P_165_0.length > 0) {
+        if (this.__queue__P_162_0.length > 0) {
           this._check();
         }
       },
@@ -250,7 +251,7 @@
        */
       _remove: function _remove(vTransport) {
         // Remove from active transports
-        qx.lang.Array.remove(this.__active__P_165_1, vTransport); // Dispose transport object
+        qx.lang.Array.remove(this.__active__P_162_1, vTransport); // Dispose transport object
 
         vTransport.dispose(); // Check again
 
@@ -262,7 +263,7 @@
         EVENT HANDLING
       ---------------------------------------------------------------------------
       */
-      __activeCount__P_165_4: 0,
+      __activeCount__P_162_4: 0,
 
       /**
        * Listens for the "sending" event of the transport object and increases
@@ -273,9 +274,9 @@
       _onsending: function _onsending(e) {
         {
           if (qx.core.Environment.get("qx.debug.io.remote")) {
-            this.__activeCount__P_165_4++;
+            this.__activeCount__P_162_4++;
             e.getTarget()._counted = true;
-            this.debug("ActiveCount: " + this.__activeCount__P_165_4);
+            this.debug("ActiveCount: " + this.__activeCount__P_162_4);
           }
         }
 
@@ -302,8 +303,8 @@
         {
           if (qx.core.Environment.get("qx.debug.io.remote")) {
             if (e.getTarget()._counted) {
-              this.__activeCount__P_165_4--;
-              this.debug("ActiveCount: " + this.__activeCount__P_165_4);
+              this.__activeCount__P_162_4--;
+              this.debug("ActiveCount: " + this.__activeCount__P_162_4);
             }
           }
         } // delegate the event to the handler method of the request depending
@@ -348,10 +349,10 @@
        * @param e {qx.event.type.Event} event object
        */
       _oninterval: function _oninterval(e) {
-        var vActive = this.__active__P_165_1;
+        var vActive = this.__active__P_162_1;
 
         if (vActive.length == 0) {
-          this.__timer__P_165_3.stop();
+          this.__timer__P_162_3.stop();
 
           return;
         }
@@ -401,7 +402,7 @@
           this._check();
         }
 
-        this.__timer__P_165_3.setEnabled(value);
+        this.__timer__P_162_3.setEnabled(value);
       },
 
       /*
@@ -419,15 +420,15 @@
         vRequest.setState("queued");
 
         if (vRequest.isAsynchronous()) {
-          this.__queue__P_165_0.push(vRequest);
+          this.__queue__P_162_0.push(vRequest);
         } else {
-          this.__queue__P_165_0.unshift(vRequest);
+          this.__queue__P_162_0.unshift(vRequest);
         }
 
         this._check();
 
         if (this.getEnabled()) {
-          this.__timer__P_165_3.start();
+          this.__timer__P_162_3.start();
         }
       },
 
@@ -446,8 +447,8 @@
 
         if (vTransport) {
           vTransport.abort();
-        } else if (this.__queue__P_165_0.includes(vRequest)) {
-          qx.lang.Array.remove(this.__queue__P_165_0, vRequest);
+        } else if (this.__queue__P_162_0.includes(vRequest)) {
+          qx.lang.Array.remove(this.__queue__P_162_0, vRequest);
         }
       }
     },
@@ -458,14 +459,14 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeArray("__active__P_165_1");
+      this._disposeArray("__active__P_162_1");
 
-      this._disposeObjects("__timer__P_165_3");
+      this._disposeObjects("__timer__P_162_3");
 
-      this.__queue__P_165_0 = null;
+      this.__queue__P_162_0 = null;
     }
   });
   qx.io.remote.RequestQueue.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=RequestQueue.js.map?dt=1608415647457
+//# sourceMappingURL=RequestQueue.js.map?dt=1625734502976

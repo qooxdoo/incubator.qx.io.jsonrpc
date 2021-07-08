@@ -52,15 +52,15 @@
    */
   qx.Bootstrap.define("qx.event.GlobalError", {
     statics: {
-      __callback__P_115_0: null,
-      __originalOnError__P_115_1: null,
-      __context__P_115_2: null,
+      __callback__P_112_0: null,
+      __originalOnError__P_112_1: null,
+      __context__P_112_2: null,
 
       /**
        * Little helper to check if the global error handling is enabled.
        * @return {Boolean} <code>true</code>, if it is enabled.
        */
-      __isGlobalErrorHandlingEnabled__P_115_3: function __isGlobalErrorHandlingEnabled__P_115_3() {
+      __isGlobalErrorHandlingEnabled__P_112_3: function __isGlobalErrorHandlingEnabled__P_112_3() {
         if (qx.core && qx.core.Environment) {
           return qx.core.Environment.get("qx.globalErrorHandling");
         } else {
@@ -76,36 +76,36 @@
        * @param context {Object?window} The "this" context of the callback function
        */
       setErrorHandler: function setErrorHandler(callback, context) {
-        this.__callback__P_115_0 = callback || null;
-        this.__context__P_115_2 = context || window;
+        this.__callback__P_112_0 = callback || null;
+        this.__context__P_112_2 = context || window;
 
-        if (this.__isGlobalErrorHandlingEnabled__P_115_3()) {
+        if (this.__isGlobalErrorHandlingEnabled__P_112_3()) {
           // wrap the original onerror
           if (callback && window.onerror) {
-            var wrappedHandler = qx.Bootstrap.bind(this.__onErrorWindow__P_115_4, this);
+            var wrappedHandler = qx.Bootstrap.bind(this.__onErrorWindow__P_112_4, this);
 
-            if (this.__originalOnError__P_115_1 == null) {
-              this.__originalOnError__P_115_1 = window.onerror;
+            if (this.__originalOnError__P_112_1 == null) {
+              this.__originalOnError__P_112_1 = window.onerror;
             }
 
             var self = this;
 
             window.onerror = function (msg, uri, lineNumber) {
-              self.__originalOnError__P_115_1(msg, uri, lineNumber);
+              self.__originalOnError__P_112_1(msg, uri, lineNumber);
 
               wrappedHandler(msg, uri, lineNumber);
             };
           }
 
           if (callback && !window.onerror) {
-            window.onerror = qx.Bootstrap.bind(this.__onErrorWindow__P_115_4, this);
+            window.onerror = qx.Bootstrap.bind(this.__onErrorWindow__P_112_4, this);
           } // reset
 
 
-          if (this.__callback__P_115_0 == null) {
-            if (this.__originalOnError__P_115_1 != null) {
-              window.onerror = this.__originalOnError__P_115_1;
-              this.__originalOnError__P_115_1 = null;
+          if (this.__callback__P_112_0 == null) {
+            if (this.__originalOnError__P_112_1 != null) {
+              window.onerror = this.__originalOnError__P_112_1;
+              this.__originalOnError__P_112_1 = null;
             } else {
               window.onerror = null;
             }
@@ -124,8 +124,8 @@
        * @param columnNumber {Integer} column number of error
        * @param exception {Error} orginal error
        */
-      __onErrorWindow__P_115_4: function __onErrorWindow__P_115_4(msg, uri, lineNumber, columnNumber, exception) {
-        if (this.__callback__P_115_0) {
+      __onErrorWindow__P_112_4: function __onErrorWindow__P_112_4(msg, uri, lineNumber, columnNumber, exception) {
+        if (this.__callback__P_112_0) {
           this.handleError(new qx.core.WindowError(msg, uri, lineNumber, columnNumber, exception));
         }
       },
@@ -138,10 +138,10 @@
        * @return {Function} The function wrapped with error handling code
        */
       observeMethod: function observeMethod(method) {
-        if (this.__isGlobalErrorHandlingEnabled__P_115_3()) {
+        if (this.__isGlobalErrorHandlingEnabled__P_112_3()) {
           var self = this;
           return function () {
-            if (!self.__callback__P_115_0) {
+            if (!self.__callback__P_112_0) {
               return method.apply(this, arguments);
             }
 
@@ -162,8 +162,8 @@
        * @param ex {qx.core.WindowError|Error} Exception to delegate
        */
       handleError: function handleError(ex) {
-        if (this.__callback__P_115_0) {
-          this.__callback__P_115_0.call(this.__context__P_115_2, ex);
+        if (this.__callback__P_112_0) {
+          this.__callback__P_112_0.call(this.__context__P_112_2, ex);
         }
       }
     },
@@ -181,4 +181,4 @@
   qx.event.GlobalError.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GlobalError.js.map?dt=1608415643703
+//# sourceMappingURL=GlobalError.js.map?dt=1625734498887

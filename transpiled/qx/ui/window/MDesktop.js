@@ -71,8 +71,8 @@
     *****************************************************************************
     */
     members: {
-      __windows__P_563_0: null,
-      __manager__P_563_1: null,
+      __windows__P_559_0: null,
+      __manager__P_559_1: null,
 
       /**
        * Get the desktop's window manager. Each desktop must have a window manager.
@@ -82,11 +82,11 @@
        * @return {qx.ui.window.IWindowManager} The desktop's window manager
        */
       getWindowManager: function getWindowManager() {
-        if (!this.__manager__P_563_1) {
+        if (!this.__manager__P_559_1) {
           this.setWindowManager(new qx.ui.window.Window.DEFAULT_MANAGER_CLASS());
         }
 
-        return this.__manager__P_563_1;
+        return this.__manager__P_559_1;
       },
 
       /**
@@ -105,12 +105,12 @@
        * @param manager {qx.ui.window.IWindowManager} The window manager
        */
       setWindowManager: function setWindowManager(manager) {
-        if (this.__manager__P_563_1) {
-          this.__manager__P_563_1.setDesktop(null);
+        if (this.__manager__P_559_1) {
+          this.__manager__P_559_1.setDesktop(null);
         }
 
         manager.setDesktop(this);
-        this.__manager__P_563_1 = manager;
+        this.__manager__P_559_1 = manager;
       },
 
       /**
@@ -214,11 +214,11 @@
        * @return {qx.ui.window.Window[]} Array of managed windows
        */
       getWindows: function getWindows() {
-        if (!this.__windows__P_563_0) {
-          this.__windows__P_563_0 = [];
+        if (!this.__windows__P_559_0) {
+          this.__windows__P_559_0 = [];
         }
 
-        return this.__windows__P_563_0;
+        return this.__windows__P_559_0;
       }
     },
 
@@ -228,12 +228,12 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this._disposeArray("__windows__P_563_0");
+      this._disposeArray("__windows__P_559_0");
 
-      this._disposeObjects("__manager__P_563_1");
+      this._disposeObjects("__manager__P_559_1");
     }
   });
   qx.ui.window.MDesktop.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MDesktop.js.map?dt=1608415684014
+//# sourceMappingURL=MDesktop.js.map?dt=1625734539259

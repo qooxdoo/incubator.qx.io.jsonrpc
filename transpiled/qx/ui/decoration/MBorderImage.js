@@ -11,7 +11,9 @@
       },
       "qx.util.AliasManager": {},
       "qx.util.ResourceManager": {},
-      "qx.bom.client.Css": {},
+      "qx.bom.client.Css": {
+        "require": true
+      },
       "qx.bom.Style": {}
     },
     "environment": {
@@ -236,7 +238,7 @@
 
         var resolvedImage = qx.util.AliasManager.getInstance().resolve(this.getBorderImage());
 
-        var computedSlices = this.__getSlices__P_403_0(resolvedImage);
+        var computedSlices = this.__getSlices__P_399_0(resolvedImage);
 
         return {
           top: this.getSliceTop() || computedSlices[0],
@@ -259,7 +261,7 @@
        * @param baseImage {String} Resource Id of the base border image
        * @return {Integer[]} Array with the top, right, bottom and left slice widths
        */
-      __getSlices__P_403_0: function __getSlices__P_403_0(baseImage) {
+      __getSlices__P_399_0: function __getSlices__P_399_0(baseImage) {
         var mode = this.getBorderImageMode();
         var topSlice = 0;
         var rightSlice = 0;
@@ -287,4 +289,4 @@
   qx.ui.decoration.MBorderImage.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MBorderImage.js.map?dt=1608415670793
+//# sourceMappingURL=MBorderImage.js.map?dt=1625734526106

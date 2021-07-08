@@ -199,6 +199,7 @@
       "name": "name",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformName__P_581_1",
       "allowNull": true
     },
     "onentry": {
@@ -223,6 +224,7 @@
       "name": "onentry",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformOnentry__P_581_2",
       "allowNull": true
     },
     "onexit": {
@@ -247,6 +249,7 @@
       "name": "onexit",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformOnexit__P_581_3",
       "allowNull": true
     },
     "autoActionsBeforeOnentry": {
@@ -271,6 +274,7 @@
       "name": "autoActionsBeforeOnentry",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformAutoActionsBeforeOnentry__P_581_4",
       "allowNull": true
     },
     "autoActionsAfterOnentry": {
@@ -295,6 +299,7 @@
       "name": "autoActionsAfterOnentry",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformAutoActionsAfterOnentry__P_581_5",
       "allowNull": true
     },
     "autoActionsBeforeOnexit": {
@@ -319,6 +324,7 @@
       "name": "autoActionsBeforeOnexit",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformAutoActionsBeforeOnexit__P_581_6",
       "allowNull": true
     },
     "autoActionsAfterOnexit": {
@@ -343,6 +349,7 @@
       "name": "autoActionsAfterOnexit",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformAutoActionsAfterOnexit__P_581_7",
       "allowNull": true
     },
     "events": {
@@ -367,6 +374,7 @@
       "name": "events",
       "propertyType": "new",
       "nullable": true,
+      "transform": "__transformEvents__P_581_8",
       "allowNull": true
     },
     "qxOwner": {

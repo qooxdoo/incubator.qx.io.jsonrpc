@@ -147,9 +147,9 @@
           },
           {
             "name": "@param",
-            "body": "{*|Function|undefined} data The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass `undefined` explicitly.",
+            "body": "{*|Function|undefined} data The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass <code>undefined</code> explicitly.",
             "paramName": "data",
-            "description": "The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass `undefined` explicitly.",
+            "description": "The data of the message, if any, or a\n valiation function which returns true of false depending on whether the\n data was correct. If you dont want to check the data and want to provide\n a message as the third argument, pass <code>undefined</code> explicitly.",
             "type": [
               "*",
               "Function",

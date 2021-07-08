@@ -79,6 +79,7 @@
       "propertyType": "new",
       "event": "changeVariables",
       "nullable": true,
+      "transform": "_transformVariables",
       "allowNull": true,
       "check": "qx.core.Object"
     },

@@ -93,10 +93,10 @@
           extend: C,
           members: {
             setProp: function setProp(value) {
-              return undefined.prototype.setProp.base.call(this, value + "-set");
+              return C.prototype.setProp.call(this, value + "-set");
             },
             getProp: function getProp() {
-              return undefined.prototype.getProp.base.call(this) + "-get";
+              return C.prototype.getProp.call(this) + "-get";
             }
           }
         });
@@ -150,7 +150,7 @@
               return "brrr " + ret;
             },
             getWheels: function getWheels() {
-              return qx.test.Class.WHEELS;
+              return qx.Bmw.WHEELS;
             },
             getMaxSpeed: function getMaxSpeed() {
               // call base in non overridden method
@@ -306,7 +306,7 @@
       testPatchWithConstructor: function testPatchWithConstructor() {
         qx.Mixin.define("qx.MyMixin", {
           construct: function construct() {
-            this.__p__P_203_0 = "p";
+            this.__p__P_200_0 = "p";
           },
           properties: {
             "property": {
@@ -315,7 +315,7 @@
           },
           members: {
             getP: function getP() {
-              return this.__p__P_203_0;
+              return this.__p__P_200_0;
             }
           }
         });
@@ -361,7 +361,7 @@
       testIncludeWithConstructor: function testIncludeWithConstructor() {
         qx.Mixin.define("qx.MyMixin", {
           construct: function construct() {
-            this.__p__P_203_0 = "p";
+            this.__p__P_200_0 = "p";
           },
           properties: {
             "property": {
@@ -370,7 +370,7 @@
           },
           members: {
             getP: function getP() {
-              return this.__p__P_203_0;
+              return this.__p__P_200_0;
             }
           }
         });
@@ -433,4 +433,4 @@
   qx.test.Class.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Class.js.map?dt=1608415651302
+//# sourceMappingURL=Class.js.map?dt=1625734506657

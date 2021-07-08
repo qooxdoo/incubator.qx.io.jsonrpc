@@ -92,21 +92,21 @@
      */
     construct: function construct(manager, registration) {
       qx.event.dispatch.AbstractBubbling.constructor.call(this, manager);
-      this.__window__P_123_0 = manager.getWindow();
-      this.__registration__P_123_1 = registration;
-      manager.addListener(this.__window__P_123_0, "blur", this.releaseCapture, this);
-      manager.addListener(this.__window__P_123_0, "focus", this.releaseCapture, this);
-      manager.addListener(this.__window__P_123_0, "scroll", this.releaseCapture, this);
+      this.__window__P_120_0 = manager.getWindow();
+      this.__registration__P_120_1 = registration;
+      manager.addListener(this.__window__P_120_0, "blur", this.releaseCapture, this);
+      manager.addListener(this.__window__P_120_0, "focus", this.releaseCapture, this);
+      manager.addListener(this.__window__P_120_0, "scroll", this.releaseCapture, this);
     },
     statics: {
       /** @type {Integer} Priority of this dispatcher */
       PRIORITY: qx.event.Registration.PRIORITY_FIRST
     },
     members: {
-      __registration__P_123_1: null,
-      __captureElement__P_123_2: null,
-      __containerCapture__P_123_3: true,
-      __window__P_123_0: null,
+      __registration__P_120_1: null,
+      __captureElement__P_120_2: null,
+      __containerCapture__P_120_3: true,
+      __window__P_120_0: null,
       // overridden
       _getParent: function _getParent(target) {
         return target.parentNode;
@@ -119,7 +119,7 @@
       */
       // overridden
       canDispatchEvent: function canDispatchEvent(target, event, type) {
-        return !!(this.__captureElement__P_123_2 && this.__captureEvents__P_123_4[type]);
+        return !!(this.__captureElement__P_120_2 && this.__captureEvents__P_120_4[type]);
       },
       // overridden
       dispatchEvent: function dispatchEvent(target, event, type) {
@@ -129,8 +129,8 @@
           return;
         }
 
-        if (this.__containerCapture__P_123_3 || !qx.dom.Hierarchy.contains(this.__captureElement__P_123_2, target)) {
-          target = this.__captureElement__P_123_2;
+        if (this.__containerCapture__P_120_3 || !qx.dom.Hierarchy.contains(this.__captureElement__P_120_2, target)) {
+          target = this.__captureElement__P_120_2;
         }
 
         return qx.event.dispatch.MouseCapture.prototype.dispatchEvent.base.call(this, target, event, type);
@@ -145,7 +145,7 @@
       /**
        * @lint ignoreReferenceField(__captureEvents)
        */
-      __captureEvents__P_123_4: {
+      __captureEvents__P_120_4: {
         "mouseup": 1,
         "mousedown": 1,
         "click": 1,
@@ -179,11 +179,11 @@
       activateCapture: function activateCapture(element, containerCapture) {
         var containerCapture = containerCapture !== false;
 
-        if (this.__captureElement__P_123_2 === element && this.__containerCapture__P_123_3 == containerCapture) {
+        if (this.__captureElement__P_120_2 === element && this.__containerCapture__P_120_3 == containerCapture) {
           return;
         }
 
-        if (this.__captureElement__P_123_2) {
+        if (this.__captureElement__P_120_2) {
           this.releaseCapture();
         } // turn on native mouse capturing if the browser supports it
 
@@ -200,10 +200,10 @@
           qx.bom.Event.addNativeListener(element, "losecapture", onNativeListener);
         }
 
-        this.__containerCapture__P_123_3 = containerCapture;
-        this.__captureElement__P_123_2 = element;
+        this.__containerCapture__P_120_3 = containerCapture;
+        this.__captureElement__P_120_2 = element;
 
-        this.__registration__P_123_1.fireEvent(element, "capture", qx.event.type.Event, [true, false]);
+        this.__registration__P_120_1.fireEvent(element, "capture", qx.event.type.Event, [true, false]);
       },
 
       /**
@@ -213,22 +213,22 @@
        *    null.
        */
       getCaptureElement: function getCaptureElement() {
-        return this.__captureElement__P_123_2;
+        return this.__captureElement__P_120_2;
       },
 
       /**
        * Stop capturing of mouse events.
        */
       releaseCapture: function releaseCapture() {
-        var element = this.__captureElement__P_123_2;
+        var element = this.__captureElement__P_120_2;
 
         if (!element) {
           return;
         }
 
-        this.__captureElement__P_123_2 = null;
+        this.__captureElement__P_120_2 = null;
 
-        this.__registration__P_123_1.fireEvent(element, "losecapture", qx.event.type.Event, [true, false]); // turn off native mouse capturing if the browser supports it
+        this.__registration__P_120_1.fireEvent(element, "losecapture", qx.event.type.Event, [true, false]); // turn off native mouse capturing if the browser supports it
 
 
         this.nativeReleaseCapture(element);
@@ -278,4 +278,4 @@
   qx.event.dispatch.MouseCapture.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MouseCapture.js.map?dt=1608415644237
+//# sourceMappingURL=MouseCapture.js.map?dt=1625734499444

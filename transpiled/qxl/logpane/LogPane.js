@@ -30,7 +30,8 @@
         "construct": true
       },
       "qx.bom.client.Device": {
-        "construct": true
+        "construct": true,
+        "require": true
       },
       "qx.log.appender.Element": {
         "construct": true
@@ -88,7 +89,7 @@
   qx.Class.define("qxl.logpane.LogPane", {
     extend: qx.ui.container.Composite,
     construct: function construct() {
-      this.__logLevelData__P_591_0 = [["debug", "Debug", "icon/16/categories/system.png"], ["info", "Info", "icon/16/status/dialog-information.png"], ["warn", "Warning", "icon/16/status/dialog-warning.png"], ["error", "Error", "icon/16/status/dialog-error.png"]];
+      this.__logLevelData__P_587_0 = [["debug", "Debug", "icon/16/categories/system.png"], ["info", "Info", "icon/16/status/dialog-information.png"], ["warn", "Warning", "icon/16/status/dialog-warning.png"], ["error", "Error", "icon/16/status/dialog-error.png"]];
       var layout = new qx.ui.layout.VBox();
       layout.setSeparator("separator-vertical");
       qx.ui.container.Composite.constructor.call(this, layout);
@@ -103,22 +104,22 @@
       }); //this.add(caption);
       //toolbar of the log pane
 
-      this.__toolbar__P_591_1 = new qx.ui.toolbar.ToolBar();
+      this.__toolbar__P_587_1 = new qx.ui.toolbar.ToolBar();
 
-      this.__toolbar__P_591_1.add(caption);
+      this.__toolbar__P_587_1.add(caption);
 
-      this.__toolbar__P_591_1.addSpacer();
+      this.__toolbar__P_587_1.addSpacer();
 
-      this.__toolbar__P_591_1.setBackgroundColor("white");
+      this.__toolbar__P_587_1.setBackgroundColor("white");
 
       var clearButton = new qx.ui.toolbar.Button(this.tr("Clear"), "icon/16/actions/edit-clear.png");
       clearButton.addListener("execute", function (e) {
         this.clear();
       }, this);
 
-      this.__toolbar__P_591_1.add(clearButton);
+      this.__toolbar__P_587_1.add(clearButton);
 
-      this.add(this.__toolbar__P_591_1); // log pane
+      this.add(this.__toolbar__P_587_1); // log pane
 
       var logArea = new qx.ui.embed.Html('');
       logArea.set({
@@ -138,15 +139,15 @@
         flex: 1
       }); // log appender
 
-      this.__logAppender__P_591_2 = new qx.log.appender.Element();
-      qx.log.Logger.unregister(this.__logAppender__P_591_2); // Directly create DOM element to use
+      this.__logAppender__P_587_2 = new qx.log.appender.Element();
+      qx.log.Logger.unregister(this.__logAppender__P_587_2); // Directly create DOM element to use
 
-      this.__logElem__P_591_3 = document.createElement("DIV");
+      this.__logElem__P_587_3 = document.createElement("DIV");
 
-      this.__logAppender__P_591_2.setElement(this.__logElem__P_591_3);
+      this.__logAppender__P_587_2.setElement(this.__logElem__P_587_3);
 
       logArea.addListenerOnce("appear", function () {
-        logArea.getContentElement().getDomElement().appendChild(this.__logElem__P_591_3);
+        logArea.getContentElement().getDomElement().appendChild(this.__logElem__P_587_3);
       }, this);
     },
     properties: {
@@ -167,17 +168,17 @@
       }
     },
     members: {
-      __logElem__P_591_3: null,
-      __logAppender__P_591_2: null,
-      __logLevelData__P_591_0: null,
-      __logLevelButton__P_591_4: null,
-      __toolbar__P_591_1: null,
+      __logElem__P_587_3: null,
+      __logAppender__P_587_2: null,
+      __logLevelData__P_587_0: null,
+      __logLevelButton__P_587_4: null,
+      __toolbar__P_587_1: null,
 
       /**
        * Clears the log.
        */
       clear: function clear() {
-        this.__logAppender__P_591_2.clear();
+        this.__logAppender__P_587_2.clear();
       },
 
       /**
@@ -192,7 +193,7 @@
         } // Register to flush the log queue into the appender.
 
 
-        Logger.register(this.__logAppender__P_591_2); // Clear buffer
+        Logger.register(this.__logAppender__P_587_2); // Clear buffer
 
         Logger.clear();
       },
@@ -202,27 +203,27 @@
        * @return {DIV} The appender element.
        */
       getAppenderElement: function getAppenderElement() {
-        return this.__logElem__P_591_3;
+        return this.__logElem__P_587_3;
       },
       _applyShowToolBar: function _applyShowToolBar(value, old) {
         if (value) {
-          this.__toolbar__P_591_1.show();
+          this.__toolbar__P_587_1.show();
         } else {
-          this.__toolbar__P_591_1.exclude();
+          this.__toolbar__P_587_1.exclude();
         }
       },
       // property apply
       _applyShowLogLevel: function _applyShowLogLevel(value, old) {
-        if (!this.__logLevelButton__P_591_4) {
-          this.__logLevelButton__P_591_4 = this.__createLogLevelMenu__P_591_5();
+        if (!this.__logLevelButton__P_587_4) {
+          this.__logLevelButton__P_587_4 = this.__createLogLevelMenu__P_587_5();
 
-          this.__toolbar__P_591_1.add(this.__logLevelButton__P_591_4);
+          this.__toolbar__P_587_1.add(this.__logLevelButton__P_587_4);
         }
 
         if (value) {
-          this.__logLevelButton__P_591_4.show();
+          this.__logLevelButton__P_587_4.show();
         } else {
-          this.__logLevelButton__P_591_4.exclude();
+          this.__logLevelButton__P_587_4.exclude();
         }
       },
 
@@ -231,13 +232,13 @@
        *
        * @return {qx.ui.toolbar.MenuButton}
        */
-      __createLogLevelMenu__P_591_5: function __createLogLevelMenu__P_591_5() {
+      __createLogLevelMenu__P_587_5: function __createLogLevelMenu__P_587_5() {
         var logLevelMenu = new qx.ui.menu.Menu();
         var logLevelMenuButton = new qx.ui.toolbar.MenuButton("Log Level", "icon/16/categories/system.png");
         logLevelMenuButton.setMenu(logLevelMenu);
 
-        for (var i = 0, l = this.__logLevelData__P_591_0.length; i < l; i++) {
-          var data = this.__logLevelData__P_591_0[i];
+        for (var i = 0, l = this.__logLevelData__P_587_0.length; i < l; i++) {
+          var data = this.__logLevelData__P_587_0[i];
           var button = new qx.ui.menu.Button(data[1], data[2]);
           button.setUserData("model", data[0]);
           button.addListener("execute", function (ev) {
@@ -258,12 +259,12 @@
      *****************************************************************************
      */
     destruct: function destruct() {
-      this._disposeObjects("__logAppender__P_591_2");
+      this._disposeObjects("__logAppender__P_587_2");
 
-      this.__logElem__P_591_3 = null;
+      this.__logElem__P_587_3 = null;
     }
   });
   qxl.logpane.LogPane.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LogPane.js.map?dt=1608415686075
+//# sourceMappingURL=LogPane.js.map?dt=1625734541336

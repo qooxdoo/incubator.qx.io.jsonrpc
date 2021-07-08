@@ -22,7 +22,7 @@
     "fixture",
     "GroupMock"
   ],
-  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;AAiBAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAGEC,IAAAA,UAAU,EACV;AACEC,MAAAA,IAAI,EACJ;AACEC,QAAAA,KAAK,EAAG;AADV;AAFF;AAJF,GADA;AAjBAX,EAAAA,EAAE,CAACY,IAAH,CAAQC,EAAR,CAAWC,IAAX,CAAgBC,OAAhB,CAAwBC,SAAxB,CAAkCb,aAAlC,GAAkDA,aAAlD",
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,mCAAhB,EACA;AACEC,IAAAA,MAAM,EAAGN,EAAE,CAACO,IAAH,CAAQC,MADnB;AAGEC,IAAAA,UAAU,EACV;AACEC,MAAAA,IAAI,EACJ;AACEC,QAAAA,KAAK,EAAG;AADV;AAFF;AAJF,GADA;AAjBAX,EAAAA,EAAE,CAACY,IAAH,CAAQC,EAAR,CAAWC,IAAX,CAAgBC,OAAhB,CAAwBC,SAAxB,CAAkCb,aAAlC,GAAkDA,aAAlD",
   "sourcesContent": [
     "/* ************************************************************************\n\n   qooxdoo - the new era of web development\n\n   http://qooxdoo.org\n\n   Copyright:\n     2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\n   License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n   Authors:\n     * Christian Hagendorn (chris_schmidt)\n\n************************************************************************ */\nqx.Class.define(\"qx.test.ui.list.fixture.GroupMock\",\n{\n  extend : qx.core.Object,\n\n  properties :\n  {\n    name :\n    {\n      event : \"changeName\"\n    }\n  }\n});"
   ]

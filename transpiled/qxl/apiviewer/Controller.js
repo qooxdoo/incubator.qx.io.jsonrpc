@@ -87,30 +87,30 @@
       this._detailLoader = this._widgetRegistry.getWidgetById("detail_loader");
       this._tabViewController = new qxl.apiviewer.TabViewController(this._widgetRegistry);
 
-      this.__bindTabViewController__P_594_0();
+      this.__bindTabViewController__P_590_0();
 
       this._tree = this._widgetRegistry.getWidgetById("tree");
 
-      this.__bindTree__P_594_1();
+      this.__bindTree__P_590_1();
 
-      this.__bindToolbar__P_594_2();
+      this.__bindToolbar__P_590_2();
 
       var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
 
       var btn_included = this._widgetRegistry.getWidgetById("btn_included");
 
-      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_594_3, this);
-      btn_included.addListener("changeValue", this.__syncMenuButton__P_594_3, this);
+      btn_inherited.addListener("changeValue", this.__syncMenuButton__P_590_3, this);
+      btn_included.addListener("changeValue", this.__syncMenuButton__P_590_3, this);
       this._history = qx.bom.History.getInstance();
 
-      this.__bindHistory__P_594_4();
+      this.__bindHistory__P_590_4();
 
       qx.core.Init.getApplication().getRoot().addListener("pointerdown", function (e) {
-        this.__openInNewTab__P_594_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
+        this.__openInNewTab__P_590_5 = e.isShiftPressed() || e.isCtrlOrCommandPressed();
       }, this, true);
     },
     members: {
-      __openInNewTab__P_594_5: false,
+      __openInNewTab__P_590_5: false,
       // overridden
       $$logCategory: "application",
 
@@ -146,9 +146,9 @@
             var state = this._history.getState();
 
             if (state) {
-              this.__selectItem__P_594_6(this.__decodeState__P_594_7(state));
+              this.__selectItem__P_590_6(this.__decodeState__P_590_7(state));
             } else {
-              this.__selectItem__P_594_6("");
+              this.__selectItem__P_590_6("");
             }
           });
         });
@@ -157,7 +157,7 @@
       /**
        * binds the events of the TabView controller
        */
-      __bindTabViewController__P_594_0: function __bindTabViewController__P_594_0() {
+      __bindTabViewController__P_590_0: function __bindTabViewController__P_590_0() {
         this._tabViewController.addListener("classLinkTapped", function (evt) {
           this._updateHistory(evt.getData());
         }, this);
@@ -187,7 +187,7 @@
       /**
        * binds the selection event of the package tree.
        */
-      __bindTree__P_594_1: function __bindTree__P_594_1() {
+      __bindTree__P_590_1: function __bindTree__P_590_1() {
         this._tree.addListener("changeSelection", function (evt) {
           var treeNode = evt.getData()[0];
 
@@ -202,7 +202,7 @@
       /**
        * binds the actions of the toolbar buttons.
        */
-      __bindToolbar__P_594_2: function __bindToolbar__P_594_2() {
+      __bindToolbar__P_590_2: function __bindToolbar__P_590_2() {
         var uiModel = qxl.apiviewer.UiModel.getInstance();
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -241,7 +241,7 @@
        * inherited and mixin includes.
        * 
        */
-      __syncMenuButton__P_594_3: function __syncMenuButton__P_594_3() {
+      __syncMenuButton__P_590_3: function __syncMenuButton__P_590_3() {
         var menuButton = this._widgetRegistry.getWidgetById("menubtn_includes");
 
         var btn_inherited = this._widgetRegistry.getWidgetById("btn_inherited");
@@ -271,12 +271,12 @@
       /**
        * bind history events
        */
-      __bindHistory__P_594_4: function __bindHistory__P_594_4() {
+      __bindHistory__P_590_4: function __bindHistory__P_590_4() {
         this._history.addListener("changeState", function (evt) {
-          var item = this.__decodeState__P_594_7(evt.getData());
+          var item = this.__decodeState__P_590_7(evt.getData());
 
           if (item) {
-            this.__selectItem__P_594_6(item);
+            this.__selectItem__P_590_6(item);
           }
         }, this);
       },
@@ -289,7 +289,7 @@
        */
       _updateHistory: function _updateHistory(className) {
         var newTitle = className + " - " + this._titlePrefix;
-        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_594_8(className), newTitle);
+        qx.bom.History.getInstance().addToHistory(this.__encodeState__P_590_8(className), newTitle);
       },
 
       /**
@@ -306,9 +306,9 @@
         await classNode.loadDependedClasses();
 
         if (classNode instanceof qxl.apiviewer.dao.Class) {
-          await this._tabViewController.openClass(classNode, this.__openInNewTab__P_594_5);
+          await this._tabViewController.openClass(classNode, this.__openInNewTab__P_590_5);
         } else {
-          await this._tabViewController.openPackage(classNode, this.__openInNewTab__P_594_5);
+          await this._tabViewController.openPackage(classNode, this.__openInNewTab__P_590_5);
         }
 
         callback && callback.call(self);
@@ -322,7 +322,7 @@
        *          "qx.mypackage.MyClass" or "qx.mypackage.MyClass#myProperty")
        * 
        */
-      __selectItem__P_594_6: function __selectItem__P_594_6(fullItemName) {
+      __selectItem__P_590_6: function __selectItem__P_590_6(fullItemName) {
         qxl.apiviewer.LoadingIndicator.getInstance().show();
         var className = fullItemName;
         var itemName = null;
@@ -380,10 +380,10 @@
           });
         });
       },
-      __encodeState__P_594_8: function __encodeState__P_594_8(state) {
+      __encodeState__P_590_8: function __encodeState__P_590_8(state) {
         return state.replace(/(.*)#(.*)/g, "$1~$2");
       },
-      __decodeState__P_594_7: function __decodeState__P_594_7(encodedState) {
+      __decodeState__P_590_7: function __decodeState__P_590_7(encodedState) {
         return encodedState.replace(/(.*)~(.*)/g, "$1#$2");
       }
     },
@@ -402,4 +402,4 @@
   qxl.apiviewer.Controller.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Controller.js.map?dt=1608415686236
+//# sourceMappingURL=Controller.js.map?dt=1625734541491

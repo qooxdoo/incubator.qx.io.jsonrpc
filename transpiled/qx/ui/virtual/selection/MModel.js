@@ -62,11 +62,11 @@
     construct: function construct() {
       this._initSelectionManager();
 
-      this.__selection__P_555_0 = new qx.data.Array();
+      this.__selection__P_551_0 = new qx.data.Array();
 
-      this.__selection__P_555_0.addListener("change", this._onChangeSelection, this);
+      this.__selection__P_551_0.addListener("change", this._onChangeSelection, this);
 
-      this._applySelection(this.__selection__P_555_0, null);
+      this._applySelection(this.__selection__P_551_0, null);
     },
     properties: {
       /** Current selected items */
@@ -136,11 +136,11 @@
       _manager: null,
 
       /** @type {Boolean} flag to ignore the selection change from {@link #selection} */
-      __ignoreChangeSelection__P_555_1: false,
+      __ignoreChangeSelection__P_551_1: false,
 
       /** @type {Boolean} flag to ignore the selection change from <code>_manager</code> */
-      __ignoreManagerChangeSelection__P_555_2: false,
-      __selection__P_555_0: null,
+      __ignoreManagerChangeSelection__P_551_2: false,
+      __selection__P_551_0: null,
 
       /**
        * setValue implements part of the {@link qx.ui.form.IField} interface.
@@ -249,9 +249,9 @@
        */
       setSelection: function setSelection(value) {
         if (value) {
-          this.__selection__P_555_0.replace(value);
+          this.__selection__P_551_0.replace(value);
         } else {
-          this.__selection__P_555_0.removeAll();
+          this.__selection__P_551_0.removeAll();
         }
       },
 
@@ -261,14 +261,14 @@
        * @return {qx.data.Array}
        */
       getSelection: function getSelection() {
-        return this.__selection__P_555_0;
+        return this.__selection__P_551_0;
       },
 
       /**
        * Reset for selection property
        */
       resetSelection: function resetSelection() {
-        this.__selection__P_555_0.removeAll();
+        this.__selection__P_551_0.removeAll();
       },
 
       /**
@@ -316,11 +316,11 @@
        * @param e {qx.event.type.Data} the change event.
        */
       _onChangeSelection: function _onChangeSelection(e) {
-        if (this.__ignoreManagerChangeSelection__P_555_2 == true) {
+        if (this.__ignoreManagerChangeSelection__P_551_2 == true) {
           return;
         }
 
-        this.__ignoreChangeSelection__P_555_1 = true;
+        this.__ignoreChangeSelection__P_551_1 = true;
         var selection = this.getSelection();
         var newSelection = [];
 
@@ -354,13 +354,13 @@
           this._manager.selectItem(newSelection[newSelection.length - 1]);
         }
 
-        this.__synchronizeSelection__P_555_3();
+        this.__synchronizeSelection__P_551_3();
 
         if (this._afterApplySelection != null && qx.lang.Type.isFunction(this._afterApplySelection)) {
           this._afterApplySelection();
         }
 
-        this.__ignoreChangeSelection__P_555_1 = false;
+        this.__ignoreChangeSelection__P_551_1 = false;
       },
 
       /**
@@ -369,23 +369,23 @@
        * @param e {qx.event.type.Data} the change event.
        */
       _onManagerChangeSelection: function _onManagerChangeSelection(e) {
-        if (this.__ignoreChangeSelection__P_555_1 == true) {
+        if (this.__ignoreChangeSelection__P_551_1 == true) {
           return;
         }
 
-        this.__ignoreManagerChangeSelection__P_555_2 = true;
+        this.__ignoreManagerChangeSelection__P_551_2 = true;
 
-        this.__synchronizeSelection__P_555_3();
+        this.__synchronizeSelection__P_551_3();
 
-        this.__ignoreManagerChangeSelection__P_555_2 = false;
+        this.__ignoreManagerChangeSelection__P_551_2 = false;
         this.fireDataEvent("changeValue", e.getData(), e.getOldData());
       },
 
       /**
        * Synchronized the selection form the manager with the local one.
        */
-      __synchronizeSelection__P_555_3: function __synchronizeSelection__P_555_3() {
-        if (this.__isSelectionEquals__P_555_4()) {
+      __synchronizeSelection__P_551_3: function __synchronizeSelection__P_551_3() {
+        if (this.__isSelectionEquals__P_551_4()) {
           return;
         }
 
@@ -401,7 +401,7 @@
           }
         }
 
-        this.__replaceSelection__P_555_5(newSelection);
+        this.__replaceSelection__P_551_5(newSelection);
       },
 
       /**
@@ -409,7 +409,7 @@
        *
        * @param newSelection {qx.data.Array} The new selection.
        */
-      __replaceSelection__P_555_5: function __replaceSelection__P_555_5(newSelection) {
+      __replaceSelection__P_551_5: function __replaceSelection__P_551_5(newSelection) {
         var selection = this.getSelection();
 
         if (newSelection.length > 0) {
@@ -429,7 +429,7 @@
        * @return {Boolean} <code>true</code> if the selections are equal,
        *   <code>false</code> otherwise.
        */
-      __isSelectionEquals__P_555_4: function __isSelectionEquals__P_555_4() {
+      __isSelectionEquals__P_551_4: function __isSelectionEquals__P_551_4() {
         var selection = this.getSelection();
 
         var managerSelection = this._manager.getSelection();
@@ -475,12 +475,12 @@
 
       this._manager = null;
 
-      if (this.__selection__P_555_0) {
-        this.__selection__P_555_0.dispose();
+      if (this.__selection__P_551_0) {
+        this.__selection__P_551_0.dispose();
       }
     }
   });
   qx.ui.virtual.selection.MModel.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=MModel.js.map?dt=1608415682949
+//# sourceMappingURL=MModel.js.map?dt=1625734538362

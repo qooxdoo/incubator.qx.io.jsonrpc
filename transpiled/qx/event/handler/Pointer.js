@@ -35,8 +35,12 @@
         "defer": "runtime",
         "require": true
       },
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.bom.Event": {},
       "qx.event.Utils": {},
       "qx.event.type.Data": {}
@@ -115,15 +119,15 @@
      */
     construct: function construct(manager) {
       // Define shorthands
-      this.__manager__P_137_0 = manager;
-      this.__window__P_137_1 = manager.getWindow();
-      this.__root__P_137_2 = this.__window__P_137_1.document;
-      qx.event.handler.PointerCore.apply(this, [this.__root__P_137_2]);
+      this.__manager__P_134_0 = manager;
+      this.__window__P_134_1 = manager.getWindow();
+      this.__root__P_134_2 = this.__window__P_134_1.document;
+      qx.event.handler.PointerCore.apply(this, [this.__root__P_134_2]);
     },
     members: {
-      __manager__P_137_0: null,
-      __window__P_137_1: null,
-      __root__P_137_2: null,
+      __manager__P_134_0: null,
+      __window__P_134_1: null,
+      __root__P_134_2: null,
       // interface implementation
       canHandleEvent: function canHandleEvent(target, type) {},
       // interface implementation
@@ -183,12 +187,12 @@
           });
           qx.event.Utils.then(tracker, function () {
             if ((domEvent.getPointerType() !== "mouse" || domEvent.button <= qx.event.handler.PointerCore.LEFT_BUTTON) && (type == "pointerdown" || type == "pointerup" || type == "pointermove" || type == "pointercancel")) {
-              return qx.event.Registration.fireEvent(self.__root__P_137_2, qx.event.handler.PointerCore.POINTER_TO_GESTURE_MAPPING[type], qx.event.type.Pointer, [domEvent, target, null, false, false]);
+              return qx.event.Registration.fireEvent(self.__root__P_134_2, qx.event.handler.PointerCore.POINTER_TO_GESTURE_MAPPING[type], qx.event.type.Pointer, [domEvent, target, null, false, false]);
             }
           });
           qx.event.Utils.then(tracker, function () {
             // Fire user action event
-            return qx.event.Registration.fireEvent(self.__window__P_137_1, "useraction", qx.event.type.Data, [type]);
+            return qx.event.Registration.fireEvent(self.__window__P_134_1, "useraction", qx.event.type.Data, [type]);
           });
           return tracker.promise;
         }
@@ -207,9 +211,9 @@
        * Dispose this object
        */
       dispose: function dispose() {
-        this.__callBase__P_137_3("dispose");
+        this.__callBase__P_134_3("dispose");
 
-        this.__manager__P_137_0 = this.__window__P_137_1 = this.__root__P_137_2 = null;
+        this.__manager__P_134_0 = this.__window__P_134_1 = this.__root__P_134_2 = null;
       },
 
       /**
@@ -218,7 +222,7 @@
        * @param method {String} Name of the overridden method.
        * @param args {Array} Arguments.
        */
-      __callBase__P_137_3: function __callBase__P_137_3(method, args) {
+      __callBase__P_134_3: function __callBase__P_134_3(method, args) {
         qx.event.handler.PointerCore.prototype[method].apply(this, args || []);
       }
     },
@@ -230,4 +234,4 @@
   qx.event.handler.Pointer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Pointer.js.map?dt=1608415645222
+//# sourceMappingURL=Pointer.js.map?dt=1625734500472

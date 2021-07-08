@@ -13,7 +13,9 @@
         "require": true
       },
       "qx.core.Assert": {},
-      "qx.event.GlobalError": {}
+      "qx.event.GlobalError": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -444,4 +446,4 @@
   qx.lang.Function.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Function.js.map?dt=1608415648463
+//# sourceMappingURL=Function.js.map?dt=1625734504004

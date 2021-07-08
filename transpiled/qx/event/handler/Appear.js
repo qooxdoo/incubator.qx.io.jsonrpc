@@ -24,8 +24,12 @@
         "require": true
       },
       "qx.core.ObjectRegistry": {},
-      "qx.bom.client.Engine": {},
-      "qx.bom.client.Browser": {},
+      "qx.bom.client.Engine": {
+        "require": true
+      },
+      "qx.bom.client.Browser": {
+        "require": true
+      },
       "qx.event.Utils": {}
     },
     "environment": {
@@ -84,10 +88,10 @@
      */
     construct: function construct(manager) {
       qx.core.Object.constructor.call(this);
-      this.__manager__P_124_0 = manager;
-      this.__targets__P_124_1 = {}; // Register
+      this.__manager__P_121_0 = manager;
+      this.__targets__P_121_1 = {}; // Register
 
-      qx.event.handler.Appear.__instances__P_124_2[this.toHashCode()] = this;
+      qx.event.handler.Appear.__instances__P_121_2[this.toHashCode()] = this;
     },
 
     /*
@@ -112,7 +116,7 @@
       IGNORE_CAN_HANDLE: true,
 
       /** @type {Map} Stores all appear manager instances */
-      __instances__P_124_2: {},
+      __instances__P_121_2: {},
 
       /**
        * Refreshes all appear handlers. Useful after massive DOM manipulations e.g.
@@ -120,7 +124,7 @@
        *
        */
       refresh: function refresh() {
-        var all = this.__instances__P_124_2;
+        var all = this.__instances__P_121_2;
 
         for (var hash in all) {
           all[hash].refresh();
@@ -134,8 +138,8 @@
     *****************************************************************************
     */
     members: {
-      __manager__P_124_0: null,
-      __targets__P_124_1: null,
+      __manager__P_121_0: null,
+      __targets__P_121_1: null,
 
       /*
       ---------------------------------------------------------------------------
@@ -147,7 +151,7 @@
       // interface implementation
       registerEvent: function registerEvent(target, type, capture) {
         var hash = qx.core.ObjectRegistry.toHashCode(target) + type;
-        var targets = this.__targets__P_124_1;
+        var targets = this.__targets__P_121_1;
 
         if (targets && !targets[hash]) {
           targets[hash] = target;
@@ -157,7 +161,7 @@
       // interface implementation
       unregisterEvent: function unregisterEvent(target, type, capture) {
         var hash = qx.core.ObjectRegistry.toHashCode(target) + type;
-        var targets = this.__targets__P_124_1;
+        var targets = this.__targets__P_121_1;
 
         if (!targets) {
           return;
@@ -181,7 +185,7 @@
        * @return {qx.Promise?} a promise, if one or more of the event handlers returned one 
        */
       refresh: function refresh() {
-        var targets = this.__targets__P_124_1;
+        var targets = this.__targets__P_121_1;
         var legacyIe = qx.core.Environment.get("engine.name") == "mshtml" && qx.core.Environment.get("browser.documentmode") < 9;
         var tracker = {};
         var self = this;
@@ -203,7 +207,7 @@
             if (!!elem.$$displayed !== displayed) {
               elem.$$displayed = displayed;
               var evt = qx.event.Registration.createEvent(displayed ? "appear" : "disappear");
-              return self.__manager__P_124_0.dispatchEvent(elem, evt);
+              return self.__manager__P_121_0.dispatchEvent(elem, evt);
             }
           });
         });
@@ -217,9 +221,9 @@
     *****************************************************************************
     */
     destruct: function destruct() {
-      this.__manager__P_124_0 = this.__targets__P_124_1 = null; // Deregister
+      this.__manager__P_121_0 = this.__targets__P_121_1 = null; // Deregister
 
-      delete qx.event.handler.Appear.__instances__P_124_2[this.toHashCode()];
+      delete qx.event.handler.Appear.__instances__P_121_2[this.toHashCode()];
     },
 
     /*
@@ -234,4 +238,4 @@
   qx.event.handler.Appear.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Appear.js.map?dt=1608415644268
+//# sourceMappingURL=Appear.js.map?dt=1625734499478

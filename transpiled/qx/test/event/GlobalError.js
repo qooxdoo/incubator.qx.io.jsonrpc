@@ -15,9 +15,13 @@
       "qx.dev.unit.MRequirements": {
         "require": true
       },
-      "qx.event.GlobalError": {},
+      "qx.event.GlobalError": {
+        "require": true
+      },
       "qx.core.WindowError": {},
-      "qx.bom.client.Engine": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -249,4 +253,4 @@
   qx.test.event.GlobalError.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=GlobalError.js.map?dt=1608415656488
+//# sourceMappingURL=GlobalError.js.map?dt=1625734511869

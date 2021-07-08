@@ -32,13 +32,13 @@
    */
 
   /**
-   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.ttf)
-   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.woff2)
-   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.woff)
-   * @asset(qx/iconfont/MaterialIcons/materialicons-v50.eot)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v70.ttf)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v70.woff2)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v70.woff)
+   * @asset(qx/iconfont/MaterialIcons/materialicons-v70.eot)
    */
   qx.Class.define("qx.theme.iconfont.LoadMaterialIcons", {});
   qx.theme.iconfont.LoadMaterialIcons.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=LoadMaterialIcons.js.map?dt=1608415666434
+//# sourceMappingURL=LoadMaterialIcons.js.map?dt=1625734521795

@@ -45,10 +45,10 @@
      * @param token {string} The token to use.
      */
     construct: function construct(token) {
-      this.__credentials__P_173_0 = token;
+      this.__credentials__P_170_0 = token;
     },
     members: {
-      __credentials__P_173_0: null,
+      __credentials__P_170_0: null,
 
       /**
        * Headers to include for bearer (token) authentication.
@@ -57,7 +57,7 @@
       getAuthHeaders: function getAuthHeaders() {
         return [{
           key: "Authorization",
-          value: "Bearer " + this.__credentials__P_173_0
+          value: "Bearer " + this.__credentials__P_170_0
         }];
       }
     }
@@ -65,4 +65,4 @@
   qx.io.request.authentication.Bearer.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Bearer.js.map?dt=1608415648084
+//# sourceMappingURL=Bearer.js.map?dt=1625734503614

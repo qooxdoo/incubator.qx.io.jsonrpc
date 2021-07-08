@@ -16,7 +16,9 @@
       "qx.dom.Node": {},
       "qx.bom.Range": {},
       "qx.util.StringSplit": {},
-      "qx.bom.client.Engine": {}
+      "qx.bom.client.Engine": {
+        "require": true
+      }
     },
     "environment": {
       "provided": [],
@@ -592,4 +594,4 @@
   qx.bom.Selection.$$dbClassInfo = $$dbClassInfo;
 })();
 
-//# sourceMappingURL=Selection.js.map?dt=1608415636112
+//# sourceMappingURL=Selection.js.map?dt=1625734491339
