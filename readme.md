@@ -1,3 +1,5 @@
+# DEPRECATED. Moved into the framework. #
+
 # Qooxdoo transport-agnostic high-level I/O APIs (JSON-RPC, GraphQl) 
 
 ![Build and Deploy](https://github.com/qooxdoo/incubator.qx.io.jsonrpc/workflows/Build%20and%20Deploy/badge.svg)
